@@ -2,15 +2,18 @@
 
 This is a setup guide for contributors and local readers. It is excluded from the reader's lesson library.
 
-Double-click **Open Learning Guide.command** in the project folder. The launcher starts the reader and opens a browser at `http://127.0.0.1:4186`. Keep the terminal window running; Ctrl+C stops it. If this reader is already running on that port, the launcher opens the existing instance.
-
-Alternatively, run the following from the project folder:
+Run these commands in Terminal:
 
 ```sh
+cd "/Users/manu/Documents/ChatGPT/LLM Engineering"
 node browser-reader/scripts/server.mjs
 ```
 
-Node.js must be installed. There are no packages to install. To use another port, prefix the command with `READER_PORT=4187`.
+The reader stays in the foreground. Keep that Terminal window open while reading; press Ctrl+C to stop it. Closing the chat does not stop a server you started yourself in Terminal.
+
+On this Mac, open `http://127.0.0.1:4186`. Other devices on the same network can use the **Network reader** address printed at startup. You can also double-click **Open Learning Guide.command** to run the same foreground server in a terminal window.
+
+Node.js must be installed. There are no packages to install. To use another port, prefix the server command with `READER_PORT=4187`.
 
 ## Read and refresh
 
@@ -37,3 +40,9 @@ READER_HOST=127.0.0.1 node browser-reader/scripts/server.mjs
 ```
 
 Notes, bookmarks and progress remain separate in each browser; they do not sync between devices.
+
+## Why Node rather than Python?
+
+The Node server rebuilds the reading collection when the browser refreshes. Python's simple HTTP server only serves files that have already been generated. Both can serve a static site, but the Node reader keeps the preview current as lessons are edited.
+
+No background service or automatic launch at login is installed. Start and stop the server in Terminal, as with a Python HTTP server.

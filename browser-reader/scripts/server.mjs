@@ -42,5 +42,5 @@ server.listen(port, host, () => {
     const addresses = new Set(Object.values(networkInterfaces()).flat().filter(address => address && address.family === 'IPv4' && !address.internal).map(address => address.address));
     for (const address of addresses) console.log(`Network reader: http://${address}:${port}`);
   } else if (host !== '127.0.0.1') console.log(`Network reader: http://${host}:${port}`);
-  console.log('Keep this terminal running. Ctrl+C stops the reader.');
+  console.log('For a foreground session, Ctrl+C stops the reader.');
 });
