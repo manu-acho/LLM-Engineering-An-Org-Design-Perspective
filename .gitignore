@@ -1,0 +1,8 @@
+browser-reader/dist/
+browser-reader/output/
+.private/
+.DS_Store
+.env
+.env.*
+!.env.example
+*.log

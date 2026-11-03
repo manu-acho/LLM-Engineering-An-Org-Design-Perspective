@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A learning guide to AI engineering, business application and organisation design">
+  <title>AI engineering and organisation design | Learning Reader</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app" class="app-shell" aria-busy="true">
+    <header class="topbar">
+      <button class="icon-button mobile-only" id="menuButton" aria-label="Open navigation">Menu</button>
+      <button class="brand" id="homeButton" aria-label="Learning Reader home">
+        <span class="brand-mark">AI</span>
+        <span class="brand-copy"><strong>Learning Reader</strong><small>AI engineering & organisation design</small></span>
+      </button>
+      <button class="icon-button mobile-only" id="searchButton" aria-label="Open search">Search</button>
+      <label class="search-box" for="searchInput">
+        <span>Search</span>
+        <input id="searchInput" type="search" placeholder="Search lessons, concepts, code, authors..." autocomplete="off">
+        <kbd>/</kbd>
+      </label>
+      <button class="text-button refresh-button" onclick="location.reload()" title="Reload the latest Markdown files">Refresh library</button>
+      <div class="progress-chip" id="progressChip">0% read</div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-heading">
+        <span>Library</span>
+        <button class="text-button" id="collapseAllButton">Collapse</button>
+      </div>
+      <div class="filter-row" id="filterRow">
+        <button class="filter active" data-filter="all">All</button>
+        
+        
+        <button class="filter" data-filter="unread">Unread</button>
+        <button class="filter" data-filter="bookmarks">Saved</button>
+      </div>
+      <nav id="libraryNav" aria-label="Project documents"></nav>
+      <div class="privacy-note">
+        <span class="status-dot"></span>
+        <div><strong>Independent learning guide</strong><small>Lessons, code workshops and public source links.</small></div>
+      </div>
+    </aside>
+
+    <main class="main" id="mainContent" tabindex="-1"></main>
+
+    <aside class="context-panel" id="contextPanel">
+      <button class="context-close mobile-only" id="contextCloseButton">Close</button>
+      <div id="documentMeta"></div>
+      <nav id="tableOfContents" aria-label="On this page"></nav>
+      <div class="notes-panel" id="notesPanel" hidden>
+        <label for="personalNotes">Private note</label>
+        <textarea id="personalNotes" placeholder="Add a note for this document..."></textarea>
+        <small>Stored only in this browser.</small>
+      </div>
+    </aside>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

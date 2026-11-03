@@ -1,0 +1,10 @@
+{
+  "name": "ai-engineering-learning-reader",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "start": "node scripts/server.mjs",
+    "dev": "node scripts/server.mjs"
+  }
+}
