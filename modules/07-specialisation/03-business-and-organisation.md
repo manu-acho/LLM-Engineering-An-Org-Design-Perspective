@@ -57,3 +57,7 @@ Prepare a category-governance memo: who defines, labels, approves, challenges an
 For research, a model's agreement with a coding scheme does not independently validate the scheme. The model may reproduce the researcher's interpretation consistently. That consistency alone does not show that the interpretation explains the evidence well.
 
 **Research basis:** [Stream 3](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_03_Decision_Theory_Detailed_Review.md), [Stream 4](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_04_Enterprise_Systems_Implementation_Transformation_Detailed_Review.md) and [Stream 5](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_05_Organisational_Routines_Detailed_Review.md). See the [literature foundation](../../reference/literature-guide.md) for access status and transfer boundaries.
+
+## Continue the module
+
+The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.

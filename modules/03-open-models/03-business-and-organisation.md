@@ -59,3 +59,7 @@ Return to the conditional credit sentence above. A second person at the meeting 
 Measure false commitments, missing conditions, wrong ownership, correction effort and whether participants can contest the record before others act on it. Shorter notes alone do not show improved coordination.
 
 **Research basis:** [Stream 2](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_02_Coordination_Theory_Detailed_Review.md) on knowledge boundaries; [Stream 4](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_04_Enterprise_Systems_Implementation_Transformation_Detailed_Review.md) on multidimensional fit; [Stream 5](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_05_Organisational_Routines_Detailed_Review.md) on artefacts and recurrent work. The applications are illustrative transfers, with the [review access limits](../../reference/literature-guide.md) retained.
+
+## Continue the module
+
+The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.

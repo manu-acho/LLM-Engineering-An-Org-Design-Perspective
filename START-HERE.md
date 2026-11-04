@@ -8,7 +8,7 @@ You do not need to arrive knowing Python, statistics, cloud computing or machine
 
 ## Inspired by Ed Donner's LLM Engineering course
 
-This guide is inspired by and builds on [Ed Donner's LLM Engineering course](https://github.com/ed-donner/llm_engineering). His course provides the engineering foundation: a practical sequence of notebooks and projects covering model requests, conversation and tools, open models, evaluation, retrieval, training and agents. The eight modules here follow that broad progression. Credit for the original course, its projects and its implementation examples belongs to Ed and the contributors credited in his repository.
+This guide is inspired by and builds on [Ed Donner's LLM Engineering course](https://github.com/ed-donner/llm_engineering). His course provides the engineering foundation: a practical sequence of notebooks and projects covering model requests, conversation and tools, open models, evaluation, retrieval, training and agents. The first eight modules here follow that broad progression. Credit for the original course, its projects and its implementation examples belongs to Ed and the contributors credited in his repository.
 
 This guide develops that foundation in three connected ways:
 
@@ -20,11 +20,21 @@ The purpose of these additions is to help readers move between understanding a m
 
 ### How the links connect the two
 
+To study the original video courses, visit [Ed Donner's Udemy instructor page](https://www.udemy.com/user/ed-donner-3/), [AI Engineer Core Track: LLM Engineering, RAG, QLoRA, Agents](https://www.udemy.com/course/llm-engineering-master-ai-and-large-language-models/) and [AI Engineer Agentic Track: The Complete Agent & MCP Course](https://www.udemy.com/course/the-complete-agentic-ai-engineering-course/). These are links to the original courses, separate from this independent learning companion.
+
 The code lessons and compact engineering references link to the relevant notebooks and helper files in Ed's GitHub repository. For example, Module 1 connects its small evidence-to-brief program to [the original first notebook](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week1/day1.ipynb). Follow those links to compare the explanation here with the original implementation. The small worked examples in this guide are identified separately from the original course code.
 
 Course-file links use the repository version used to prepare these explanations, so a reference stays aligned with the code it discusses. [Ed's current repository](https://github.com/ed-donner/llm_engineering) may include newer material. The [source guide](SOURCE-MAP.md) maps the modules to the original course and explains coverage limits, including remote lessons that were not available for review.
 
 This is an independent companion. It does not reproduce the full course or its videos, and it does not imply Ed's endorsement. It can be read alongside his course, with the original projects providing a route into further practice.
+
+### A second part inspired by Ed's Agents course
+
+[Ed Donner's Agents course](https://github.com/ed-donner/agents) supplies the foundation for [Part II: Agent engineering and business integration](AGENT-ENGINEERING.md), Modules 9 to 14. Its six sections explore manual agent loops, the OpenAI Agents SDK, CrewAI, LangChain and LangGraph, several other frameworks, and MCP.
+
+Part II explains how these implementations connect to organisational work: who chooses a next step, how specialists exchange evidence, what a paused review requires, which meaning a shared task status carries, and who owns a reusable business capability. It includes plain-language concepts, worked code, alternatives, literature-grounded cases and a final integration plan. The code lessons link to the relevant files in the original Agents repository.
+
+Both parts are independent companions to Ed's courses, with credit to Ed and the contributors for the original projects and implementation examples. The [agents source guide](reference/agents-source-guide.md) records the version used and the limits of the inspected material. The new small examples are distinct from the original implementations.
 
 ## How to use the guide
 
@@ -33,6 +43,8 @@ Start with the concepts in each module, then follow the code and the business ap
 If a code passage is unfamiliar, read its explanation and trace a small example before trying to run it. Write down what enters the program, what changes and what comes back. You do not need to memorise every symbol or install every library to understand the pattern.
 
 For an initial overview, you can read the concepts and business applications first. Return to the code when you want to inspect how a claim becomes an actual operation. The [workbook](WORKBOOK.md) helps you connect the three parts through short exercises.
+
+The guide has two parts: [AI engineering foundations](README.md#part-i-ai-engineering-foundations), Modules 1 to 8, and [agent engineering and business integration](AGENT-ENGINEERING.md), Modules 9 to 14. Start with the foundations if the vocabulary is new. If you already understand tools, state and evaluation, the second part offers a route into more detailed agent design.
 
 Harbour Services is a fictional case used throughout the guide. The examples explore possible designs and consequences; they do not report results from a real deployment.
 

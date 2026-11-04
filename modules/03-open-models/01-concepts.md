@@ -45,3 +45,7 @@ Available weights can allow different hosting and adaptation arrangements. They 
 Self-hosting may be appropriate for control or specialised requirements. A hosted service may be appropriate when it meets the data and performance requirements and operating a model would add unnecessary work. Neither follows from a universal rule that one form is always cheaper, safer or more capable.
 
 **Explain it back:** A colleague says, “We downloaded the model, so the meeting-notes system is private and ready.” Identify the missing questions. Your answer should include licensing, the full data path, hardware/runtime compatibility, task quality, storage and access, rather than discussing weights alone.
+
+## Continue the module
+
+The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.

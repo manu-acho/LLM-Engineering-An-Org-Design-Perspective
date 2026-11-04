@@ -53,3 +53,7 @@ If the system lacks current policy, retrieval or a database tool may help more t
 **Check:** Explain why a model can predict historical team assignments accurately and still route tomorrow's requests badly. Include ambiguity in labels, unavailable features, changing work and the difference between imitation and an appropriate operating rule.
 
 [Engineering reference](../06-data-baselines-and-adaptation.md) connects these ideas to the original curation, batch-processing, regression and neural-network code.
+
+## Continue the module
+
+The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.

@@ -1,0 +1,42 @@
+# Lesson 4.6: Decide whether a measured improvement changes the organisation
+
+[Module route](README.md) · [Next module](../05-rag/README.md)
+
+## Put the entire case into the measurement
+
+**Fictional comparison.** Harbour evaluates two drafting systems on 100 comparable delivery complaints. Both reduce drafting time. System A is cheaper per request; System B preserves qualifications more consistently. The decision concerns completed work, so the team records effort after generation as well.
+
+| Per-case measure | Existing process | System A | System B |
+|---|---|---|---|
+| Preparation | 10 minutes | 3 minutes | 4 minutes |
+| Review | 2 minutes | 6 minutes | 3 minutes |
+| Expected rework effort | 1 minute | 3 minutes | 1 minute |
+| Total recorded effort | 13 minutes | 12 minutes | 8 minutes |
+
+These are illustrative averages, not empirical findings. A's seven-minute preparation gain becomes a one-minute total gain. B saves five minutes despite generating more slowly. Compare software cost against those complete effort differences.
+
+## Explain why local metrics can conflict
+
+The account manager's preparation target rewards submitting quickly. Operations needs usable evidence. Finance needs a justified remedy. Each role can meet its local target while the case moves poorly across the process. The decision-premise lens explains how a measure directs attention and behaviour, rather than simply describing it afterwards.
+
+Harbour therefore uses a small set of connected measures: supported draft, accepted handoff, total effort, elapsed resolution and harmful error. It retains the local measures for diagnosis. The aim is not one universal score in which consequential failures can be hidden by many quick successes.
+
+## Hold alternative explanations open
+
+During the pilot, Harbour also introduces a clearer intake form. That may explain some of the gain. A three-way comparison can help: existing process, improved intake alone, and improved intake plus system B. Where assignment is not random, document differences in case difficulty, staff experience and workload. A before/after average alone cannot isolate the model's contribution.
+
+Suppose the improved form saves four minutes and the model adds one more. The business case should recognise both contributions. This does not make the model useless. It establishes a smaller, better-supported claim about its incremental value.
+
+## Check fit among the design elements
+
+The [organisation design review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_01_Organisation_Design_Detailed_Review.md) describes interdependent configurations. Better source access, reviewer skill, workload and incentives can complement a referenced draft. They can also be inconsistent: rewarding submission count while expecting careful evidence checking gives staff competing signals.
+
+There may be more than one coherent design. A central specialist pool can support rare, difficult cases. Trained frontline resolution can support a standardised population. This is the practical significance of **equifinality**: different configurations can produce an appropriate result under different conditions. It does not imply that every arrangement is equally good.
+
+## Reach a decision with explicit conditions
+
+Harbour chooses system B for the defined population, keeps human authorisation for remedies and retains the improved intake form. It postpones expansion to urgent and ambiguous cases until those groups have their own evaluation. The service owner reviews unsupported claims and effort by role weekly during stabilisation.
+
+A scale decision requires both technical quality and an operating arrangement. If B generates twice as many drafts but finance cannot review them, capacity becomes the binding constraint. In that case a scope limit or a different division of work may be preferable to another model upgrade.
+
+**Exercise with a worked response:** Suppose B saves five staff minutes per case but resolution still takes two days. Can the pilot claim improved customer responsiveness? It can claim the measured effort reduction under its comparison assumptions. To claim responsiveness, it needs evidence of changed elapsed time or another defined customer outcome. The next redesign should investigate waiting and dependencies, using the [coordination review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_02_Coordination_Theory_Detailed_Review.md).

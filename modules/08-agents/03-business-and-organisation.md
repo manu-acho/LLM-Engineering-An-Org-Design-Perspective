@@ -67,3 +67,7 @@ Create a pilot operating design containing the dependency map, permitted action 
 The result is a practical brief for an AI pilot. Its value is the connection between mechanism and organisational judgement: what the system does, what work remains and what evidence would justify expanding its scope.
 
 **Research basis:** The [six-stream foundation](../../reference/literature-guide.md), especially dependency management, configurational fit, decision premises, implementation over time and the artefact/practice distinction. These concepts guide the fictional design; the curriculum claims no empirical AI implementation outcomes.
+
+## Continue the module
+
+The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.

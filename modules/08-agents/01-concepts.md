@@ -53,3 +53,7 @@ Set limits on steps, time, cost and permitted actions. Define what happens when 
 The most appropriate design may be a fixed workflow with one model-mediated classification step. Choose autonomy when its added flexibility addresses a demonstrated need, and evaluate that need against the added burden.
 
 **Check:** Explain why a guard preventing a second notification within one run does not establish protection against duplicates after a crash. Include persistence, concurrent workers and the acknowledgement boundary in your answer.
+
+## Continue the module
+
+The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.

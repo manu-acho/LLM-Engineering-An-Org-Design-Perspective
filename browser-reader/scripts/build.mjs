@@ -10,23 +10,25 @@ const moduleNames = {
   '01-foundations': '01 · Foundations', '02-conversation': '02 · Conversation and tools',
   '03-open-models': '03 · Open models', '04-evaluation': '04 · Evaluation',
   '05-rag': '05 · Knowledge and RAG', '06-data': '06 · Data and baselines',
-  '07-specialisation': '07 · Specialisation', '08-agents': '08 · Agents and operations'
+  '07-specialisation': '07 · Specialisation', '08-agents': '08 · Agents and operations',
+  '09-agent-loops': '09 · Agent loops', '10-agent-orchestration': '10 · Agent orchestration',
+  '11-agent-teams': '11 · Agent teams', '12-stateful-agents': '12 · Stateful agents',
+  '13-agent-frameworks': '13 · Frameworks and interoperability', '14-agent-integration': '14 · MCP and business integration'
 };
 // An explicit reading list prevents authoring records or future working files
 // from appearing on the site just because they are Markdown.
 const readingFiles = [
-  'README.md', 'START-HERE.md', 'WORKBOOK.md', 'SOURCE-MAP.md',
-  'reference/glossary.md', 'reference/python-patterns.md', 'reference/literature-guide.md',
+  'README.md', 'START-HERE.md', 'WORKBOOK.md', 'AGENT-ENGINEERING.md', 'SOURCE-MAP.md',
+  'reference/glossary.md', 'reference/python-patterns.md', 'reference/literature-guide.md', 'reference/agents-source-guide.md',
   'modules/01-foundations-and-pipelines.md', 'modules/02-conversation-and-tools.md',
   'modules/03-open-models-and-inference.md', 'modules/04-evaluation-and-code-generation.md',
   'modules/05-knowledge-and-rag.md', 'modules/06-data-baselines-and-adaptation.md',
   'modules/07-fine-tuning-and-qlora.md', 'modules/08-agents-and-operations.md',
-  ...Object.keys(moduleNames).flatMap(module => ['README.md', '01-concepts.md', '02-code-workshop.md', '03-business-and-organisation.md'].map(file => `modules/${module}/${file}`)),
-  'modules/08-agents/04-technology-in-practice.md'
+  'reference/local-labs.md'
 ];
 
 function sectionFor(relative) {
-  if (['README.md', 'START-HERE.md', 'WORKBOOK.md'].includes(relative)) return 'Start and study';
+  if (['README.md', 'START-HERE.md', 'WORKBOOK.md', 'AGENT-ENGINEERING.md'].includes(relative)) return 'Start and study';
   if (relative.startsWith('modules/')) return moduleNames[relative.split('/')[1]] || 'Engineering references';
   return 'Sources and further reading';
 }
@@ -48,8 +50,14 @@ function makeDocument(relative, content, modified) {
 }
 
 export async function buildReader() {
+  // Read the explicit public manifest for every rebuild. Adding an approved
+  // lesson does not require a running server to reload this module.
+  const moduleFiles = JSON.parse(await fs.readFile(path.join(readerRoot, 'module-readings.json'), 'utf8'));
+  if (!Array.isArray(moduleFiles) || moduleFiles.some(file => typeof file !== 'string' || !/^modules\/[a-z0-9-]+\/(?:README|\d{2}-[a-z0-9-]+)\.md$/.test(file))) throw new Error('Invalid public module reading manifest');
+  const publicFiles = [...readingFiles, ...moduleFiles];
+  if (new Set(publicFiles).size !== publicFiles.length) throw new Error('Duplicate public reading path');
   const documents = [];
-  for (const relative of readingFiles) {
+  for (const relative of publicFiles) {
     if (relative.split('/').some(part => part.startsWith('.')) || relative.startsWith('teaching/')) throw new Error(`Non-learner file in public reading list: ${relative}`);
     const full = path.join(projectRoot, relative);
     const content = await fs.readFile(full, 'utf8');
@@ -63,12 +71,16 @@ export async function buildReader() {
   const sectionOrder = ['Start and study', ...Object.values(moduleNames), 'Engineering references', 'Sources and further reading'];
   const priority = doc => doc.path === 'START-HERE.md' ? 0 : doc.path === 'README.md' ? 1 : doc.path.endsWith('/README.md') ? 0 : 2;
   documents.sort((a, b) => sectionOrder.indexOf(a.section) - sectionOrder.indexOf(b.section) || priority(a) - priority(b) || a.path.localeCompare(b.path));
-  const payload = { generatedAt: new Date().toISOString(), repoName: 'AI engineering and organisation design', documents, sectionOrder, warnings: [] };
+  const moduleGroups = [
+    { title: 'Part I: AI engineering foundations', sections: Object.values(moduleNames).slice(0, 8) },
+    { title: 'Part II: Agent engineering and business integration', sections: Object.values(moduleNames).slice(8) }
+  ];
+  const payload = { generatedAt: new Date().toISOString(), repoName: 'AI engineering and organisation design', documents, sectionOrder, moduleGroups, warnings: [] };
   await fs.mkdir(distRoot, { recursive: true });
   await fs.writeFile(path.join(distRoot, 'content-index.json.tmp'), JSON.stringify(payload));
   await fs.rename(path.join(distRoot, 'content-index.json.tmp'), path.join(distRoot, 'content-index.json'));
   for (const file of ['index.html', 'app.js', 'styles.css']) await fs.copyFile(path.join(readerRoot, 'src', file), path.join(distRoot, file));
-  return { documents: documents.length, lessons: documents.filter(d => /^modules\/[^/]+\/0[1-4]-/.test(d.path)).length, warnings: [] };
+  return { documents: documents.length, lessons: documents.filter(d => /^modules\/[^/]+\/\d{2}-/.test(d.path)).length, warnings: [] };
 }
 
-if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) console.log(await buildReader());
+if (process.argv[1] && await fs.realpath(process.argv[1]) === await fs.realpath(fileURLToPath(import.meta.url))) console.log(await buildReader());

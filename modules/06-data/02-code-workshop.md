@@ -78,3 +78,7 @@ Results may finish out of order. Stable IDs preserve the relationship between an
 Compare the majority baseline with a hand-written rule that routes explicit “credit” requests to finance. Fix the validation examples before comparing. If you repeatedly change rules based on these examples, treat them as development cases and obtain another set for final assessment.
 
 **What the example shows:** The rule may improve these two examples while failing on “Do not issue a credit; check delivery first.” A keyword feature and an appropriate classification are different objects. Retain difficult cases and examine whether the label represents first action, eventual owner or decision authority.
+
+## Continue the module
+
+The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.

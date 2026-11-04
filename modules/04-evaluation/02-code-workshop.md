@@ -69,3 +69,7 @@ Before translating an entire application, profile it: measure which operations c
 Add a case where one shortage of two and one overdelivery of two occur. Calculate both the “sum of shortages” and “net difference” rules. Explain which one your candidate implements and who should approve that choice.
 
 **What the example shows:** Both programs above return two. A net-difference rule returns zero. This is a semantic choice requiring business judgement, not a compiler optimisation. Testing makes that choice visible before a speed claim obscures it.
+
+## Continue the module
+
+The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.

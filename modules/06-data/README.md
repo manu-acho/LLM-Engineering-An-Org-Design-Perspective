@@ -1,13 +1,28 @@
 # Module 6: Data, labels, baselines and adaptation
 
-[Previous module](../05-rag/README.md) · [Curriculum index](../../README.md) · [Next module](../07-specialisation/README.md)
+[Curriculum index](../../README.md) · [Start here](../../START-HERE.md) · [Local lab guide](../../reference/local-labs.md)
 
-Read the lessons in order to connect the concept, the code and the business problem. No programming background is required. Later lessons build on ideas introduced earlier.
+Trace raw records, features, training updates and predictions. Redesign ambiguous routing labels before learning from them.
 
-1. [Understand the mechanism](01-concepts.md): begin with a concrete situation and develop the technical concepts.
-2. [Work through the code](02-code-workshop.md): follow values, instructions and failure points in a small example, then connect it to the original course.
-3. [Apply organisational judgement](03-business-and-organisation.md): use the literature, a fictional case and a worked analysis to assess a business design.
+## Complete reading route
 
-The [compact engineering reference](../06-data-baselines-and-adaptation.md) remains available for its compact walkthrough of the original notebooks. It is supplementary reference material. Begin with the fuller lessons above, then use the reference to explore the original implementations.
+The early lessons introduce the vocabulary and a small transparent example. Continue through the technical/source walkthrough and completed design case to connect the mechanism with its use in organisational work.
 
-Use the [literature guide](../../reference/literature-guide.md) to explore the research behind the organisational concepts. The [workbook](../../WORKBOOK.md) provides prompts for comparing designs and applying the ideas.
+1. [Lesson 6.1: How examples become a prediction system](01-concepts.md)
+2. [Lesson 6.2: Build and inspect a baseline before training](02-code-workshop.md)
+3. [Lesson 6.3: Historical labels contain an operating model](03-business-and-organisation.md)
+4. [Lesson 6.4: Calculate a training update and a task error](04-learning-an-update.md)
+5. [Lesson 6.5: Follow an example from raw record to evaluated prediction](05-source-walkthrough.md)
+6. [Lesson 6.6: Redesign a routing task before learning its labels](06-design-lab.md)
+
+## Choose how to study
+
+For business and organisation design, read the concept lesson, organisational discussion and completed design case. Inspect the mechanism and source walkthrough as well when evaluating an implementation claim. For technical study, follow the full route, predict intermediate values and try the failure cases. Unfamiliar syntax is introduced in [Start here](../../START-HERE.md) and [Python patterns](../../reference/python-patterns.md).
+
+A source-reading walkthrough explains inspected original code. An independent lab is identified separately. External integrations have additional environment and access requirements; a readable example is not a claim that an untested account, model or deployment will work.
+
+## Connect the evidence
+
+Use the [literature guide](../../reference/literature-guide.md) for the organisational concepts and the [workbook](../../WORKBOOK.md) for cumulative outputs. The [source map](../../SOURCE-MAP.md) records course versions and coverage limits.
+
+The [compact engineering reference](../06-data-baselines-and-adaptation.md) supplies a supplementary source overview.

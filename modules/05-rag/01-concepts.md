@@ -53,3 +53,7 @@ A retrieved document may be relevant while failing to support the specific answe
 Separate retrieval evaluation from answer evaluation. First ask whether the needed evidence was available and retrieved. Then ask whether generation represented it faithfully and handled absence or conflict appropriately.
 
 **Check:** A system cites an old policy that exactly matches the question. Which parts might be working, and which part could still be wrong? A strong answer identifies successful matching alongside failed version selection, and avoids attributing every wrong answer to generation.
+
+## Continue the module
+
+The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.

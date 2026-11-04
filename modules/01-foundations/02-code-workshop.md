@@ -94,3 +94,7 @@ A class could group the order data and its methods together. Separate functions 
 Change the received quantity to 12 and predict the output before running. Then remove the key `reported_received`. Explain the different outcomes.
 
 **What the example shows:** The first change produces a zero reported difference; it does not verify completeness. The second produces an error at dictionary lookup. A useful application would surface missing evidence clearly. Silently substituting zero would create a false shortage and turn a technical default into a business assertion.
+
+## Continue the module
+
+The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.

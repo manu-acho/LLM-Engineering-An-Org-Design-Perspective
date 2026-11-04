@@ -232,27 +232,39 @@ function renderContext(doc = null) {
   el.notes.value = state.notes[doc.id] || "";
 }
 
-function routeCards() {
-  return state.payload.sectionOrder.filter(section => /^0[1-8] /.test(section)).map(section => {
+function routeCards(sections) {
+  return sections.map(section => {
     const docs = state.documents.filter(doc => doc.section === section);
-    const lessons = docs.filter(doc => /\/0[1-4]-[^/]+\.md$/.test(doc.path));
-    return `<button class="route-card" data-route-section="${escapeHtml(section)}"><strong>${escapeHtml(section)}</strong><span>${lessons.length} lessons · concepts, code and organisational judgement</span></button>`;
+    const lessons = docs.filter(doc => /\/\d{2}-[^/]+\.md$/.test(doc.path));
+    const [number, title] = section.split(' · ');
+    return `<button class="route-card module-card" data-route-section="${escapeHtml(section)}"><span class="module-number">${escapeHtml(number)}</span><span class="module-copy"><strong>${escapeHtml(title || section)}</strong><span>${lessons.length} lessons · concepts, code and organisational design</span></span><span class="card-arrow" aria-hidden="true">↗</span></button>`;
   }).join('');
 }
 
 function renderHome(push = false) {
+  el.app.classList.add('home-view');
+  el.sidebar.classList.remove('open');
+  el.context.classList.remove('mobile-open');
   state.currentId = null;
   const start = state.byPath.get('START-HERE.md');
   const index = state.byPath.get('README.md');
-  const lessons = state.documents.filter(doc => /^modules\/[^/]+\/0[1-4]-/.test(doc.path)).length;
+  const lessons = state.documents.filter(doc => /^modules\/[^/]+\/\d{2}-/.test(doc.path)).length;
+  const groups = state.payload.moduleGroups || [{ title: 'Explore the modules', sections: state.payload.sectionOrder.filter(section => /^\d{2} ·/.test(section)) }];
+  const moduleCount = groups.reduce((total, group) => total + group.sections.length, 0);
   el.main.innerHTML = `<div class="dashboard">
-    <section class="dashboard-hero"><div class="eyebrow">AI engineering · Learning guide</div><h1>Understand the technology.<br>Design the work around it.</h1><p>A learning guide to AI engineering, business application and organisation design. Start from first principles, follow the code, and examine what changes for people and organisations.</p></section>
-    <section class="stats-grid"><div class="stat-card"><strong>8</strong><span>Modules</span></div><div class="stat-card"><strong>${lessons}</strong><span>Lessons</span></div><div class="stat-card"><strong>6</strong><span>Literature streams</span></div><div class="stat-card"><strong>${state.documents.length}</strong><span>Reading documents</span></div></section>
-    <h2>Begin here</h2><section class="route-grid"><button class="route-card start-card" data-home-doc="${start.id}"><strong>Start without a technical background</strong><span>Files, functions, APIs and the delivery case that connects the lessons.</span></button><button class="route-card" data-home-doc="${index.id}"><strong>Full curriculum and reading routes</strong><span>Concepts, worked code and business applications across all eight modules.</span></button></section>
-    <h2>Explore the eight modules</h2><section class="route-grid">${routeCards()}</section>
+    <section class="dashboard-hero">
+      <div class="hero-copy"><div class="eyebrow">AI engineering × organisation design</div><h1>Understand AI.<br>Design better ways<br class="desktop-break"> to work.</h1><p>Learn how the technology works, follow the code, and explore how to integrate AI into businesses through the design of work.</p><div class="hero-actions"><button class="primary-button" data-home-doc="${start.id}">Start learning <span aria-hidden="true">→</span></button><button class="secondary-button" data-home-doc="${index.id}">Explore the curriculum</button></div><p class="hero-credit">Inspired by <a href="https://www.udemy.com/user/ed-donner-3/" target="_blank" rel="noopener noreferrer">Ed Donner</a> and his LLM Engineering and Agents courses.</p></div>
+      <aside class="learning-map" aria-label="How the guide connects technology and organisational work"><div class="map-label">A connected way to learn</div><div class="map-step"><span>01</span><div><h2>Understand the mechanism</h2><p>Models, retrieval, learning and agents, explained from first principles.</p></div></div><div class="map-step"><span>02</span><div><h2>Open up the code</h2><p>Trace inputs, decisions and outputs. Compare patterns and alternatives.</p></div></div><div class="map-step"><span>03</span><div><h2>Design the work</h2><p>Connect capabilities with roles, coordination, decisions and business value.</p></div></div><div class="map-note">For curious learners, managers and executives.<br>No programming background required.</div></aside>
+    </section>
+    <section class="stats-grid" aria-label="Inside the guide"><div class="stat-card"><strong>${moduleCount}</strong><span>Connected modules</span></div><div class="stat-card"><strong>${lessons}</strong><span>Step-by-step lessons</span></div><div class="stat-card"><strong>6</strong><span>Literature streams</span></div><div class="stat-card"><strong>2</strong><span>Engineering courses</span></div></section>
+    <section class="course-credit" aria-labelledby="credit-title"><div class="credit-intro"><div class="eyebrow">The engineering foundation</div><h2 id="credit-title">With credit to Ed Donner</h2><p>Ed’s courses and code provide the engineering foundation. This independent companion adds plain-language explanations, business applications and perspectives from organisation design research.</p><a class="text-link" href="https://www.udemy.com/user/ed-donner-3/" target="_blank" rel="noopener noreferrer">Ed’s Udemy instructor page ↗</a></div><div class="course-links"><a href="https://www.udemy.com/course/llm-engineering-master-ai-and-large-language-models/" target="_blank" rel="noopener noreferrer"><span>AI Engineer Core Track</span><strong>LLM Engineering</strong><small>LLMs, RAG, QLoRA and agents <span aria-hidden="true">↗</span></small></a><a href="https://www.udemy.com/course/the-complete-agentic-ai-engineering-course/" target="_blank" rel="noopener noreferrer"><span>AI Engineer Agentic Track</span><strong>Agents & MCP</strong><small>The Complete Agent & MCP Course <span aria-hidden="true">↗</span></small></a></div><p class="credit-boundary">Credit for the original courses and repository examples belongs to Ed Donner and their credited contributors. This guide does not imply affiliation or endorsement.</p></section>
+    <div class="section-heading"><div><div class="eyebrow">Choose your route</div><h2>Make a start</h2></div><p>Build understanding at your own pace.</p></div><section class="route-grid entry-routes"><button class="route-card start-card" data-home-doc="${start.id}"><strong>New to the technology?</strong><span>Begin with files, functions, APIs and a concrete business problem.</span></button><button class="route-card" data-home-doc="${index.id}"><strong>See the whole curriculum</strong><span>Find the technical and organisational routes through both parts.</span></button><button class="route-card" data-home-doc="${state.byPath.get('AGENT-ENGINEERING.md')?.id || index.id}"><strong>Go deeper into agents</strong><span>Explore loops, specialist teams, state and integration into business work.</span></button></section>
+    ${groups.map((group, i) => `<section class="curriculum-section"><div class="section-heading"><div><div class="eyebrow">${i === 0 ? 'Build the foundations' : 'Connect capabilities to work'}</div><h2>${escapeHtml(group.title)}</h2></div><span class="section-count">${group.sections.length} modules</span></div><div class="route-grid">${routeCards(group.sections)}</div></section>`).join('')}
     <h2>Explore further</h2><section class="route-grid"><button class="route-card" data-home-doc="${state.byPath.get('reference/literature-guide.md').id}"><strong>Organisation design research</strong><span>Six perspectives on work, coordination, decisions and technology in practice.</span></button><button class="route-card" data-home-doc="${state.byPath.get('SOURCE-MAP.md').id}"><strong>Sources and further reading</strong><span>Original course notebooks, literature reviews and the guide's coverage.</span></button></section>
+    <footer class="landing-footer"><span>AI engineering & organisation design</span><button class="text-button" data-home-doc="${state.byPath.get('SOURCE-MAP.md').id}">Sources, acknowledgements and coverage →</button></footer>
   </div>`;
   renderContext(); renderNavigation();
+  window.scrollTo({ top: 0, behavior: 'instant' });
   if (push) history.pushState(null, '', location.pathname);
   document.title = 'AI engineering and organisation design | Learning Reader';
 }
@@ -277,6 +289,7 @@ function routeTo(doc, heading = '') {
 }
 
 function renderDocument(doc, heading = "") {
+  el.app.classList.remove('home-view');
   state.currentId = doc.id;
   const isRead = state.read.has(doc.id);
   const isBookmarked = state.bookmarks.has(doc.id);
@@ -302,8 +315,8 @@ function renderDocument(doc, heading = "") {
 
   document.title = `${doc.title} | Learning Reader`;
   el.main.scrollTop = 0;
-  window.scrollTo(0, 0);
-  if (heading) document.getElementById(heading)?.scrollIntoView();
+  window.scrollTo({ top: 0, behavior: 'instant' });
+  if (heading) document.getElementById(heading)?.scrollIntoView({ behavior: 'instant', block: 'start' });
 
   document.querySelector("#readButton").addEventListener("click", () => {
     state.read.has(doc.id) ? state.read.delete(doc.id) : state.read.add(doc.id);
@@ -364,6 +377,7 @@ function excerpt(doc, query) {
 }
 
 function renderSearch(query) {
+  el.app.classList.remove('home-view');
   state.query = query;
   const results = searchDocuments(query);
   el.main.innerHTML = `<div class="search-results"><div class="eyebrow">Full library search</div><h1>${results.length} result${results.length === 1 ? "" : "s"} for “${escapeHtml(query)}”</h1>${results.length ? `<div class="result-list">${results.map(({ doc }) => `<button class="result-card" data-result-id="${doc.id}"><small>${escapeHtml(doc.section)} / ${escapeHtml(doc.visibility)}</small><strong>${escapeHtml(doc.title)}</strong><p>${escapeHtml(excerpt(doc, query))}</p></button>`).join("")}</div>` : `<div class="empty-state">No document matches that search. Try a shorter phrase or a related term.</div>`}</div>`;
@@ -383,6 +397,11 @@ function handleHash() {
 }
 
 function bindGlobalEvents() {
+  document.querySelector('.skip-link').addEventListener('click', event => {
+    event.preventDefault();
+    el.main.focus();
+    el.main.scrollIntoView({ block: 'start', behavior: 'instant' });
+  });
   document.querySelector("#homeButton").addEventListener("click", () => renderHome(true));
   document.querySelector("#menuButton").addEventListener("click", () => el.sidebar.classList.toggle("open"));
   document.querySelector("#searchButton").addEventListener("click", () => {

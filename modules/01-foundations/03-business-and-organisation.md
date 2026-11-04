@@ -65,3 +65,7 @@ Suppose preparation takes 15 minutes, operations waits one day for a warehouse c
 Prepare a one-page design brief stating the dependency, the proposed information transformation, its evidence owner, a correction route and an outcome measure. Add a sentence identifying what remains unknown about actual practice.
 
 **Research basis:** [Stream 1](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_01_Organisation_Design_Detailed_Review.md), particularly division/integration and information processing; [Stream 5](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_05_Organisational_Routines_Detailed_Review.md), particularly artefacts, understandings and performances. These links identify the review syntheses used here. They do not imply a new verification of every original study.
+
+## Continue the module
+
+The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.

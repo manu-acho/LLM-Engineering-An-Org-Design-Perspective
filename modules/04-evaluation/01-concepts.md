@@ -53,3 +53,7 @@ Freeze a set of cases, define criteria before running, keep a baseline, record c
 **Check:** A founder says, “Our AI reduced drafting time by 70%, so service productivity rose by 70%.” Explain what remains unknown. Your response should identify review effort, the share of work spent drafting, delays elsewhere, quality and whether freed capacity actually changed an outcome.
 
 [Engineering reference](../04-evaluation-and-code-generation.md) links the source code-generation notebooks and their historical results.
+
+## Continue the module
+
+The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.

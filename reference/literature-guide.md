@@ -95,3 +95,9 @@ These questions supplement the existing explanations, code workshops and cases. 
 Use a concept when it helps explain something specific. Truncation changes which facts remain visible. A dispatch table limits the actions an application can take. Training labels preserve selected categories. A queue distributes waiting and attention. An execution log records an event, but it cannot make someone take responsibility for a problem.
 
 Start with one of those mechanisms. Ask what the research concept helps you notice, which alternative explanation remains possible and what evidence would distinguish them. That is more useful than attaching a theorist's name to a recommendation without changing the inquiry.
+
+## Carry the literature into agent engineering
+
+[Part II](../AGENT-ENGINEERING.md) uses the same six perspectives to examine loops, specialist teams, stateful review and shared capabilities. Division of work creates integration needs. Tool and category choices shape decision premises. Review interrupts create queues that need capacity and ownership. A common protocol does not make different teams agree on completion.
+
+The [final integration plan](../modules/14-agent-integration/04-integration-plan.md) connects these ideas to a proposed business pilot. It separates the represented design, configured capabilities, actual work and outcomes rather than treating a working agent demonstration as evidence of organisational benefit.

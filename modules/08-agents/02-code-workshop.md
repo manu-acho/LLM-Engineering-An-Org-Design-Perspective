@@ -73,3 +73,7 @@ For a fixed process, keep Python or a state machine in charge of transitions and
 Change `approved` to `proposed` and predict the result. Empty the evidence list and try again. Then explain what additional checks you would need before replacing simulation with a real handoff.
 
 **What the example shows:** Both modified cases are blocked without creating a receipt. The real version still needs authenticated authority, validated evidence, destination controls, durable state and acknowledged outcome handling. A simple successful run cannot establish those properties.
+
+## Continue the module
+
+The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.

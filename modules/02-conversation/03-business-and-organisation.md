@@ -61,3 +61,7 @@ Assess correct resolution, review effort, disagreement handling and duplicate ef
 **Try it:** Create an action/authority table with separate rows for information, calculation, recommendation, authorisation and execution.
 
 **Research basis:** [Stream 3](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_03_Decision_Theory_Detailed_Review.md), particularly premises, authority and discretion; [Stream 2](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_02_Coordination_Theory_Detailed_Review.md), particularly conditions and knowledge boundaries. See [transfer limits](../../reference/literature-guide.md).
+
+## Continue the module
+
+The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.

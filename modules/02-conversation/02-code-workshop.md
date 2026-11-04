@@ -92,3 +92,7 @@ For a form with a mandatory order ID, the application could call `lookup_order` 
 Add a second tool, `draft_handoff`, which returns a proposed message without sending it. Define permitted arguments and a clear status. Then predict what happens for an unknown tool, an extra argument and an unpermitted order.
 
 **Worked explanation:** Each invalid request should fail before the business operation. The draft tool should return a draft receipt, not `sent`. The distinction prevents a user or later program from treating prepared text as an acknowledged external action.
+
+## Continue the module
+
+The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.

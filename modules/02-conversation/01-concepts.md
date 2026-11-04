@@ -55,3 +55,7 @@ Chat can help with variable language and follow-up questions. A form may be bett
 The interface should follow the task. A friendly conversation that repeatedly fails to collect required evidence can be worse than a short form.
 
 **Check:** Explain why retaining the order ID in a session is different from training a model, and why a correct tool request still needs an application permission check. A strong answer identifies separately the information needed to understand the request and the authority needed to execute it.
+
+## Continue the module
+
+The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.

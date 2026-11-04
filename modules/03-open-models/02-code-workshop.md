@@ -72,3 +72,7 @@ A task-level library pipeline hides some steps for convenience. Direct tokenizer
 Change the toy input to `delivery confirmed`. Then try an unknown word. Predict where the error occurs.
 
 **What the example shows:** Known words encode, although our fake continuation is still hard-coded and may be nonsensical. An unknown word raises a lookup error. Real tokenizers usually have ways to handle unfamiliar strings, but that does not mean they understand those strings. The exercise distinguishes coverage of representation from appropriateness of output.
+
+## Continue the module
+
+The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.

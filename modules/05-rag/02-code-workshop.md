@@ -74,3 +74,7 @@ Exact lexical search handles order numbers and named codes well. Embeddings help
 Try “Who handles commercial adjustments?” in our toy search. It may return no useful result because the terms do not overlap. That is a representation limitation, not proof that no policy exists. Then mark P-0 current as well and inspect what the program does. It can retrieve conflicting records; it cannot resolve policy authority without an explicit rule.
 
 **What the example shows:** An empty result should become a bounded statement about the search, not a declaration that the organisation has no policy. Conflicting evidence should trigger a version/scope check or a visible uncertainty, not arbitrary selection of the most convenient sentence.
+
+## Continue the module
+
+The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.

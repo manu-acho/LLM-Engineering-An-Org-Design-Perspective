@@ -71,3 +71,7 @@ In your own words, explain why a model can write a convincing answer without ver
 **Worked response:** The model generates a continuation from available input and learned patterns. Convincing language is not an independent check against the order system. Supplying the record changes the evidence available during inference; it does not establish that the record is accurate, that the model used it correctly or that the model has been retrained.
 
 **Reading connection:** The compact [week 1 chapter](../01-foundations-and-pipelines.md) links the original notebook and scraper functions. Technical source notes are in the [source map](../../SOURCE-MAP.md).
+
+## Continue the module
+
+The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.

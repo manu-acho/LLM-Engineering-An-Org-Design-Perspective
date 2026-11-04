@@ -63,3 +63,7 @@ Prompt examples can sometimes establish the desired format without training. A d
 Create one ambiguous request and two defensible category interpretations. Then write the rule that would resolve it. If you cannot state that rule or identify an adjudicator, identify the organisational uncertainty before generating more training examples.
 
 **What the example shows:** More examples of inconsistent labels can teach inconsistency. The programming pipeline can validate fields and still carry a conceptually unresolved target. Label validity belongs alongside code correctness in the experiment design.
+
+## Continue the module
+
+The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.

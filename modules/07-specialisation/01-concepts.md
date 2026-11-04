@@ -47,3 +47,7 @@ The output artifact may be an adapter rather than a complete standalone model. T
 The local week 7 notebooks refer to remote training lessons whose cells were unavailable during authoring. The new explanation teaches the mechanism using inspected local preparation/serving code and identified technical references; it does not claim to reproduce unseen training instructions.
 
 **Check:** Explain why a lower training loss does not settle whether Harbour's routing improved. A strong answer distinguishes the token objective from the operational target, training cases from new cases, and successful imitation from a legitimate category definition.
+
+## Continue the module
+
+The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.

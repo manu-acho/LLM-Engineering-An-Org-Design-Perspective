@@ -53,7 +53,7 @@ For the mechanism in each module, ask:
 
 [Lesson 8.4](modules/08-agents/04-technology-in-practice.md) works through these questions in detail. The [literature guide](reference/literature-guide.md) explains the research concepts behind them.
 
-## Practice across the eight modules
+## Practice through Part I
 
 | Module | Try this | What to explain afterwards |
 |---|---|---|
@@ -65,6 +65,21 @@ For the mechanism in each module, ask:
 | 6 | Specify labels, splits, baselines and error consequences | Explain why one evaluation is fit for the intended decision |
 | 7 | Inspect prompt/completion examples and loss labels | Identify target leakage and train/serve mismatches |
 | 8 | Simulate retry, crash and exception scenarios | Show how state and authority prevent duplicate effects |
+
+## Practice through Part II
+
+Use the same module record for the six agent-engineering modules. No external model call is required to investigate the small examples.
+
+| Module | Try this | What to explain afterwards |
+|---|---|---|
+| 9 | Trace one allowed lookup, a denied lookup and a budget-exhausted loop | A proposed action, executed tool and verified business conclusion differ |
+| 10 | Fail one required evidence branch | A coordinator needs a policy for partial results and separate authorisation |
+| 11 | Reorder a task and remove an evidence field | Data-contract checks do not establish factual support or reviewer independence |
+| 12 | Resume with an old proposal approval | Stored state, matching authority and durable effects require distinct controls |
+| 13 | Claim the same task with two workers | A conditional update and a common status meaning solve different problems |
+| 14 | Call an undiscovered operation without permission | Discovery does not replace enforcement at execution |
+
+For a complete application, use the [integration plan](modules/14-agent-integration/04-integration-plan.md). Define a bounded problem, compare an alternative, allocate responsibility and state what evidence would justify expanding the system's scope.
 
 ## Recurring Harbour Services case
 
@@ -134,3 +149,28 @@ Keep a case notebook with these evolving artifacts:
 ## Check your understanding
 
 You can explain the mechanism, trace the code without guessing, implement a small variation, justify an alternative and make a bounded business decision from evidence. Completing a notebook or obtaining a fluent answer alone is not enough.
+
+## Build a cumulative application record
+
+Each module's completed design case demonstrates an output before asking for a new application. Read that worked example, then prepare the corresponding record below. Keep assumptions explicit and use fictional data when practising.
+
+The cases vary volume, adoption, effort and cost assumptions to investigate different decisions. They are scenarios rather than one empirical financial history. When combining them into a single proposal, choose one consistent set of assumptions and recalculate the results.
+
+| Module | Technical record | Organisational decision record |
+|---|---|---|
+| 1 | Request, response and evidence transformation trace | Compare intake, referenced drafting and specialist conversation |
+| 2 | Tool schema, checked arguments, call IDs and result round trip | Allocate recommendation, approval and execution; calculate review capacity |
+| 3 | Model/template/input/output shape and meeting-note claim trace | Define draft, confirmation, correction and accepted commitment |
+| 4 | Frozen cases, confusion counts, failure coverage and timing boundaries | Compare total effort, quality and end-to-end outcomes |
+| 5 | Source-to-chunk-to-retrieval-to-answer evidence record | Complete a source registry and conflict-resolution route |
+| 6 | Feature representation, fitted predictor and held-out outcomes | Define what a routing label means and who adjudicates it |
+| 7 | Masked batch, update history, adapter/base manifest and reload check | Compare specialisation with simpler methods and govern category revision |
+| 8 | Service/persistence/queue boundaries and uncertain action state | Complete roles, capacity, recovery and pilot scope |
+| 9 | Plan, executed observations, budgets and terminal outcome | Define an honest service promise and accepted intake |
+| 10 | Structured contribution, SDK run and trace interpretation | Specify specialist contributions and receiving ownership |
+| 11 | Configuration, predecessor context, crew result and acceptance evidence | Justify specialisation against integration cost |
+| 12 | State/reducer/checkpoint/interrupt and versioned review | Design waiting, discretion, capacity and recovery work |
+| 13 | Common contract, actual invocation differences and stale-result checks | Agree shared meanings, maintenance and acceptance responsibilities |
+| 14 | MCP discovery/call/resource path and backend record | Complete a comparative pilot dossier with costs and evidence gates |
+
+Finish by comparing the [completed integration dossier](modules/14-agent-integration/06-design-lab.md) with your record. If a proposed business outcome cannot be connected to a mechanism, role, action and evidence, identify the missing part rather than filling it with an optimistic assertion.
