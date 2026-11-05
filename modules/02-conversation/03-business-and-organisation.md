@@ -71,3 +71,44 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 A technical entitlement does not by itself establish an organisational mandate. The research chapter explains [permission and authority](../../reference/research/03-decisions.md#permission-and-authority).
+
+## Practical activity: Distinguish a read, a proposed remedy and permission to decide.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Which role in this fictional arrangement holds the decide right?
+
+```python
+rights = {"investigator":{"read","draft"},"manager":{"read","draft","decide"}}
+assert "decide" not in rights["investigator"]
+assert "decide" in rights["manager"]
+print(rights)
+```
+
+The manager holds the stated right. A model writing manager in its output does not acquire that role.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Which role in this fictional arrangement holds the decide right?
+
+**Worked answer.** The manager holds the stated right. A model writing manager in its output does not acquire that role.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

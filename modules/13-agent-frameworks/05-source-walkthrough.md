@@ -1,49 +1,62 @@
 # Lesson 13.5: Compare runtime outputs and failure boundaries
 
-[Download the matching notebook](/downloads/13-05-source-walkthrough.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+[Download the matching notebook](/downloads/13-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
-[Module route](README.md) · [Previous workshop](02-code-workshop.md)
+## Practical activity: Compare two actual runtimes on stable factual fields.
 
-## Follow the path in the course checkout
+ An asynchronous operation can suspend while compatible work proceeds. The notebook uses await to obtain its result; this is different from a business acceptance acknowledgement.
 
-The implementation is included here, so this walkthrough does not require another course, video or repository. Open `src/ai_orgdesign/labs/m13.py`. The lab's public functions expose inputs and return values; supporting service code lives in `src/ai_orgdesign/business.py` where required.
 
-State is a TypedDict describing named fields for tooling; it does not validate them at runtime. inspect_record reads the scoped fictional case and returns only the updated difference and status. plain merges those updates with the input dictionary. graph registers the same function as a LangGraph node, links START to inspect and inspect to END, then compiles the graph. invoke runs the compiled graph. Comparing both results isolates execution packaging while holding the business function constant.
 
-Read the function from entry to return. Locate input validation before substantive work, transformations that create a new representation, any call into another component and the point that produces the observable result. A model call, a database commit and constructing a dictionary are different operations. Identify which actually occur in this program.
-
-## Work through the contrasting case
-
-List three features that would require additional comparison tests before replacing an established runtime. Explain why passing this one equivalence check is useful but insufficient.
-
-The following variation either checks a failure boundary or exposes another aspect of the same implementation. Catching an expected exception allows the notebook to continue; the `else` branch raises an assertion if the expected boundary fails to appear.
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
 
 ```python
-from ai_orgdesign.labs.m13 import plain
-try:
-    plain({"case_id":"H-18", "tenant":"north"})
-except PermissionError:
-    print("The shared scope rule survives the runtime boundary")
-else:
-    raise AssertionError("Scope check failed")
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
 ```
 
-**Interpretation.** Persistence across interruption, treatment of a failed tool and cancellation of concurrent work are three candidates. Authentication propagation, ordering, tracing and nested budgets may also differ. The small equivalence check catches changed task results, but only tests the behaviours actually exercised.
+### Predict and follow the values
 
-## Inspect the implementation rather than a duplicate
+Must independently generated summaries be identical strings?
 
-The matching notebook can display saved functions using `inspect.getsource`. This shows the implementation currently imported by Python. Reading code is useful, but a displayed function is not proof it executed or that every branch was tested. The behavioural checks deliberately include invalid inputs and contrasting outcomes.
+```python
+fields=["case_id","ordered","reported","receipt_status","permitted_output"]
+print("Fields compared:",fields)
+```
 
-Run the course checks from the root folder with `uv run --locked pytest`. Run the notebook checks with `uv run --locked python scripts/verify_notebooks.py`. The [verification guide](../../reference/verification.md) distinguishes offline execution, real protocol tests, model downloads and paid-provider checks. It records the limits of each claim.
+No. Compare the declared contract and evaluate meaning; string equality is not a general semantic test.
 
-## What a result can establish
+### Use the live model
 
-Both routes return case H-17 in north, difference two and status review. Equality checks observable output for this one contract. It does not establish equivalent persistence, retries, streaming or remote-service behaviour. This is a real framework run with deterministic nodes, not a framework-generated language answer.
+Live mode is the recommended implementation route after [API setup](../../reference/live-model-guide.md). The following operation uses the fictional evidence shown here, returns an actual result and retains usage. Named arguments label a function's inputs; a returned object provides fields such as text, value and record. Read those fields independently instead of treating fluent text as a success certificate.
 
-Keep inputs, configuration identity, observed result and interpretation separate in an experiment record. If the program behaves as predicted but the business problem remains, investigate the surrounding evidence, roles and dependencies. A successful run should sharpen that inquiry rather than end it.
+```python
+if RUN_LIVE:
+    from ai_orgdesign.frameworks import langgraph_run,agents_sdk_run
+    a=langgraph_run(gateway)
+    b=await agents_sdk_run(gateway)
+    print({field:(a["brief"][field],b["brief"][field]) for field in fields})
+    assert all(a["brief"][field]==b["brief"][field] for field in fields)
+else:
+    print("Live exercise not run. Set COURSE_LIVE_MODE=1 in the local .env when ready.")
+```
 
-## Explain the pattern without the library name
+A failed or incomplete result must remain visible. The [live-model guide](../../reference/live-model-guide.md) explains authentication, quota, timeout, refusal and response-format problems, with the offline verification route kept separate.
 
-A useful completion check is to explain the operation in ordinary language, then name the exact implementation. The course implements one framework and one plain runtime rather than assuming identical behaviour across many SDKs. Other frameworks can be evaluated through the same contract suite. A remote agent interface adds network, identity and partial-failure obligations that a second local function does not have.
+### Complete the exercise
 
-The [research connection](../../reference/research/02-coordination.md) develops the organisational questions. Follow the module's design lesson to turn this technical understanding into a decision with stated conditions and a recovery route.
+Write the prediction before consulting the worked answer: Must independently generated summaries be identical strings?
+
+**Worked answer.** No. Compare the declared contract and evaluate meaning; string equality is not a general semantic test.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+
+The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

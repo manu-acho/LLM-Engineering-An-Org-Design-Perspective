@@ -1,5 +1,6 @@
 """A harness records bounded execution, instruction identity and assumed costs."""
 
+import math
 import time
 
 from ai_orgdesign.business import fingerprint
@@ -8,7 +9,9 @@ from ai_orgdesign.labs.m09 import run, scripted_planner
 
 def estimate_cost(input_tokens, output_tokens, input_per_million, output_per_million):
     values = [input_tokens, output_tokens, input_per_million, output_per_million]
-    if any(value < 0 for value in values):
+    if any(
+        type(value) not in (int, float) or not math.isfinite(value) or value < 0 for value in values
+    ):
         raise ValueError("Usage and prices must be nonnegative")
     return (input_tokens * input_per_million + output_tokens * output_per_million) / 1_000_000
 

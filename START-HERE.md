@@ -1,66 +1,37 @@
-# Start here: the learning route
+# Start here: read, run and understand
 
-[Course home](README.md) · [Module 1](modules/01-standalone-foundations/README.md)
+[Course home](README.md) · [Curriculum](CURRICULUM.md) · [Glossary](reference/glossary.md)
 
-## Begin with the business question
+## Begin with one case
 
-A customer reports a shortage. A program can assemble the available records; a model can generate words; someone still needs to determine what happened and what action is justified. Module 1 opens these contributions one at a time.
+An order records twelve boxes. A customer reports ten. The course follows the preparation, investigation and review of that discrepancy while explaining what AI can contribute and how the surrounding work should be designed. Other examples explore meeting records and request routing; the [case guide](reference/case-data-guide.md) explains their relationship.
 
-The completed pilot can be studied without Ed Donner's courses, notebooks or datasets. Its examples are original, use fictional data and make no network calls. The later modules extend the same reasoning into models, agents and operational services.
+No previous course or programming background is required. Begin with Module 1. When a new term appears, read its local explanation before following the code. The [technical foundations](reference/technical-foundations.md) and [programming patterns](reference/python-patterns.md) provide worked revision material; the glossary is a reference, not a substitute for the explanation.
 
-## Vocabulary and prerequisites
+## Open the prepared workspace
 
-No prior technical knowledge is assumed. Begin with Module 1, use the [technical foundations](reference/technical-foundations.md) before numerical or systems-heavy lessons, and keep the [glossary](reference/glossary.md) available. Concepts are explained in the lessons; the [selected further explanations](reference/further-learning.md) are optional second accounts, not required missing steps.
+1. Open the course folder in VS Code.
+2. Open `modules/01-standalone-foundations/01-model-and-application.md` as the written lesson, or read it in the browser.
+3. Open `notebooks/01-foundations/01-model-and-application.ipynb` alongside it.
+4. Select the Python kernel inside this project's `.venv` folder. A kernel is the Python process that runs cells and retains their values.
+5. Read the explanation, predict the next result, run the cell and compare the output with the supplied facts.
 
-## Choose a route
+The files are already present in a prepared checkout; no lab-file download is needed. For a fresh copy, use the [workspace guide](STUDY-WORKSPACE.md) and run `python3 scripts/setup.py` from the course folder. That command recreates the locked environment. The reader and Python notebooks are separate applications: opening a lesson in the reading website does not execute its code.
 
-For concepts and business design, read Lessons 1.1, 1.3, 1.5, 1.6 and 1.7. The examples and worked answers provide the necessary context even without running code. Read Lesson 1.2 to become familiar with what a program is doing, and Lesson 1.4 when examining implementation decisions.
+## Choose the learning route
 
-For implementation, begin with all seven Module 1 lessons in order, then follow the remaining module routes. Predict an output, run the example, compare the result and change one input. The aim is to understand the pattern and its limits, not simply produce a successful run.
+The business route follows concepts, organisational cases and design decisions. It uses technical outputs as evidence about the mechanism without requiring Python execution. The implementation route follows the complete sequence and adds the notebook activities, including recommended live-model experiments.
 
-## Read and run side by side
+For live study, follow the [live-model guide](reference/live-model-guide.md). Configure the key locally, select a supported model and set `COURSE_LIVE_MODE=1`. The first live request appears in Module 1. Later exercises add streaming, embeddings, retrieval, specialists, tool loops, durable review and the capstone. Public weights for the local inference and adaptation exercises have a separate download switch.
 
-Each pilot lesson has a matching notebook. The [study workspace guide](STUDY-WORKSPACE.md) explains the prepared Python environment, VS Code kernel selection and Jupyter browser option. Begin with `notebooks/01-foundations/01-model-and-application.ipynb`. Read the lesson, run a cell, inspect its output and try the exercise. No API keys are needed for the pilot.
+## Work rather than only run
 
-The two-file download route below remains available for running the underlying Python examples without Jupyter.
+An executed notebook is not evidence that its contents were understood. Record a prediction before the example. Complete the independent answer or programming task before consulting its labelled solution. Then change one input, explain why the result changes and identify the limit of the claim being made.
 
-## Files, folders and the terminal
+Restart the kernel and run the notebook from the beginning after substantial experiments. This checks that the result does not depend on a forgotten earlier cell. The core route can be verified offline; marked live cells execute actual provider calls only in live mode. The [verification guide](reference/verification.md) distinguishes these checks from claims about deployment or business outcomes.
 
-A **file** contains saved text or code. A **folder** groups files. The **terminal** accepts commands that start programs and reports their output. A **working directory** is the folder from which a command runs. `cd` changes that directory. Paths identify files or folders.
+## Carry a design record forward
 
-A **Python interpreter** reads and executes Python code. A `.py` file is a text file containing that code. The pilot is written for Python 3.10 or later and is checked on the interpreter version recorded in the lab guide. It needs no additional packages. Python can be obtained from the [official Python site](https://www.python.org/downloads/).
+Use the [workbook](WORKBOOK.md) to retain the contribution, evidence, unresolved questions, recipient, acceptance conditions, authority and recovery route. In later modules, add evaluation, capacity, context ownership, release and improvement decisions. The [research chapters](reference/literature-guide.md) develop the organisation design arguments and cite their scholarly sources.
 
-On macOS or Linux, check the interpreter with:
-
-```sh
-python3 --version
-```
-
-On Windows, the Python launcher commonly uses:
-
-```powershell
-py -3 --version
-```
-
-If the command is not found, install Python and reopen the terminal. Running the command reports which interpreter is available; it does not install it. The code is intended to be portable, but this pilot's recorded execution check is on macOS, not a claim of a Windows runtime test.
-
-## Get the two lab files
-
-Download [foundations_lab.py](/downloads/foundations_lab.py) and [test_foundations.py](/downloads/test_foundations.py) into one folder. Keep the exact filenames, including `.py`. The examples include their own small training sentences and fictional case, so no separate data download is required.
-
-Open a terminal in that folder. On macOS or Linux:
-
-```sh
-python3 foundations_lab.py model
-python3 foundations_lab.py brief
-python3 foundations_lab.py request
-python3 -m unittest -v test_foundations.py
-```
-
-On Windows, replace `python3` with `py -3`. The first three commands print JSON, structured text whose named fields preserve the distinction between quantities, sources and unresolved questions. The last command runs the checks. Detailed outputs and troubleshooting are in [the lab guide](LAB-GUIDE.md).
-
-## What runs, and what does not
-
-The `model` example trains and runs a tiny statistical language model. It is a real count-based model, not a modern neural LLM. The `brief` example is ordinary deterministic code. The `request` example constructs messages but sends nothing to a model provider. It needs no key and cannot incur inference charges.
-
-The distinction matters: correct evidence preparation is not proof of model behaviour, and a fluent continuation is not verification of a business record. The lessons explain both mechanisms before connecting them.
+The course should leave a learner able to explain the technology, inspect a working contribution and defend how that contribution fits into work. A successful model answer is one observation within that judgement.

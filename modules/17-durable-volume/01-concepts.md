@@ -43,3 +43,43 @@ The module's numerical queue example is an illustrative steady-rate calculation.
 Little's law can be written as average work in the system = average throughput × average time in the system, under its applicable stable-flow conditions. If a stable review process completes twenty cases per hour and each case spends an average of half an hour there, average work in that process is ten cases. Keep the units consistent: cases per hour multiplied by hours produces cases.
 
 This is not the earlier example with arrivals of thirty and capacity of twenty, where the backlog keeps growing. It also does not predict a waiting-time distribution or explain why particular cases are delayed. Use measured boundaries and conditions before applying the relationship.
+
+## Practical activity: Identify where an arrival rate exceeds completion capacity.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+How many additional cases accumulate after three hours under these assumptions?
+
+```python
+arrivals,capacity,hours=30,20,3
+backlog_growth=(arrivals-capacity)*hours
+print("Illustrative additional queued cases:",backlog_growth)
+```
+
+Thirty. Variability and exceptions need separate evidence in a real queue.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: How many additional cases accumulate after three hours under these assumptions?
+
+**Worked answer.** Thirty. Variability and exceptions need separate evidence in a real queue.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

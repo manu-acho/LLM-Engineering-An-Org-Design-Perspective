@@ -35,3 +35,45 @@ Suppose an improver repeatedly tests candidates against the same held-out cases.
 **Worked answer.** Selection decisions convey information about the test set. Repeated optimisation against its scores can overfit the selection process without directly displaying labels. Keep separate development and final confirmation sets, restrict evaluation access, record the number of selection rounds and use a new representative comparison when scope changes. Human approval should examine the experiment design as well as the displayed score.
 
 Carry that answer into the design record: required input, permitted contribution, acceptance owner, escalation trigger, recovery route and evidence for any benefit claim. A design record describes the proposed arrangement. Repeated observation and outcome comparisons are needed to examine what it becomes in practice.
+
+## Practical activity: Require explicit approval and comparable evaluation before promotion.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Can the gate promote while human_approved is False?
+
+```python
+from ai_orgdesign.labs.m20 import gate
+baseline={"n":2,"dataset_hash":"same-cases","accuracy":1.,"unsafe":0,"cost":100}
+candidate={**baseline,"cost":105}
+assert not gate(baseline,candidate,human_approved=False)["promote"]
+print(gate(baseline,candidate,human_approved=True))
+```
+
+No. These local numbers illustrate the rule; Lesson 20.2 supplies a measured model comparison.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Can the gate promote while human_approved is False?
+
+**Worked answer.** No. These local numbers illustrate the rule; Lesson 20.2 supplies a measured model comparison.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

@@ -1,47 +1,63 @@
 # Lesson 20.2: Evaluate a candidate against a promotion gate
 
-[Download the matching notebook](/downloads/20-02-code-workshop.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+[Download the matching notebook](/downloads/20-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
-[Module route](README.md) · [Workspace setup](../../STUDY-WORKSPACE.md) · [Technical foundations](../../reference/technical-foundations.md)
+## Practical activity: Measure the current and candidate instruction paths on the same cases.
 
-## The problem this program addresses
 
-An improvement loop can optimise a proxy while degrading the service. Harbour treats a proposed configuration as a candidate that must pass comparable evaluation, explicit safety and cost conditions, and a human promotion decision.
 
-The implementation lives in `src/ai_orgdesign/labs/m20.py`. All examples use fictional data. The default exercise needs no provider account or API key. Installing the locked dependencies initially requires network access; running the core exercise does not send a model-provider request.
 
-## Read the operation before running it
 
-gate requires baseline and candidate records with the same nonempty evaluation size and dataset hash. It compares unsafe decisions, accuracy and a chosen ten-percent cost tolerance, then requires explicit human approval. It returns reasons rather than silently changing a live version. demo constructs illustrative scores and shows how approval changes the promotion result. The dataset hash names a teaching evaluation identity; it is not proof that hidden test labels were protected or that the sample is statistically adequate.
-
-`import` makes the saved implementation available in the notebook. Calling a function supplies its inputs and receives its return value. `assert` checks an expected property and raises an error if that property is false. An assertion is evidence about that specific property, not a certificate that the application is correct in every situation.
-
-## Predict, run and inspect
-
-Run this block in the matching notebook, with the project `.venv` kernel selected. The asynchronous examples use the notebook's supported top-level `await`; ordinary scripts need an event-loop entry point such as `asyncio.run` instead.
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
 
 ```python
-from ai_orgdesign.labs.m20 import demo
-result = demo()
-assert not result["without_approval"]["promote"]
-assert result["approved"]["promote"]
-print(result)
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
 ```
 
-The illustrative candidate is blocked without approval and passes the stated gate with approval. A candidate with more unsafe decisions is blocked even if its accuracy improves. Different dataset identities raise an error because the comparison is not the declared experiment. Promotion does not establish statistical significance or guarantee future performance.
+### Predict and follow the values
 
-If an import fails, run `python3 scripts/setup.py` from the course folder and select the project kernel again. If a shared-code edit appears ignored, restart the kernel so Python loads the new file. Read an exception before changing the code: it may report a deliberate boundary such as forbidden scope or stale state.
+Should the comparison use different denominators for the two versions?
 
-## Change one condition
+```python
+from ai_orgdesign.case_data import CONFIRMATION_IDS
+print("Teaching confirmation cases:",CONFIRMATION_IDS)
+print("The live comparison below uses returned predictions, not supplied accuracy figures.")
+```
 
-**Exercise.** Suppose an improver repeatedly tests candidates against the same held-out cases. Explain why those cases eventually stop functioning as an independent test, even if their filenames never change.
+No. Preserve the declared population, reference decisions and resource units.
 
-Before opening the answer, identify which function owns the relevant check and whether the change should affect data, control flow, authority or evaluation. Keeping these categories distinct helps locate a failure without blaming every unexpected result on a model.
+### Use the live model
 
-**Worked answer.** Selection decisions convey information about the test set. Repeated optimisation against its scores can overfit the selection process without directly displaying labels. Keep separate development and final confirmation sets, restrict evaluation access, record the number of selection rounds and use a new representative comparison when scope changes. Human approval should examine the experiment design as well as the displayed score.
+Live mode is the recommended implementation route after [API setup](../../reference/live-model-guide.md). The following operation uses the fictional evidence shown here, returns an actual result and retains usage. Named arguments label a function's inputs; a returned object provides fields such as text, value and record. Read those fields independently instead of treating fluent text as a success certificate.
 
-## Consider the alternative
+```python
+if RUN_LIVE:
+    from ai_orgdesign.investigation import evaluate
+    baseline=evaluate(gateway,["H-23","H-24"],version="unassisted-v1")
+    candidate=evaluate(gateway,["H-23","H-24"],version="grounded-v3")
+    print("Baseline:",baseline)
+    print("Candidate:",candidate)
+else:
+    print("Live exercise not run. Set COURSE_LIVE_MODE=1 in the local .env when ready.")
+```
 
-A fixed, periodically reviewed configuration may be safer and cheaper than automatic proposal generation. An improver can suggest changes without holding promotion authority. Versioning and rollback preserve a recovery route, but cannot undo every external consequence already caused by a released version.
+A failed or incomplete result must remain visible. The [live-model guide](../../reference/live-model-guide.md) explains authentication, quota, timeout, refusal and response-format problems, with the offline verification route kept separate.
 
-The [organisation design reading](../../reference/research/05-routines.md) develops the relevant argument and its scholarly references. The lab demonstrates an implementation pattern; the business and design lessons examine the conditions under which that contribution might be useful.
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Should the comparison use different denominators for the two versions?
+
+**Worked answer.** No. Preserve the declared population, reference decisions and resource units.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+
+The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

@@ -56,3 +56,53 @@ Assign an owner to uncertain work. The operator can inspect service health; the 
 ## Read the organisational connection
 
 A failure state creates recovery work whose owner and downstream dependencies need examination. The research chapter explains [connected routines and hidden work](../../reference/research/05-routines.md#connected-routines-and-hidden-work).
+
+## Practical activity: Show an expired attempt losing permission to finish a job.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Which attempt owns the work after time eleven?
+
+```python
+from tempfile import TemporaryDirectory
+from pathlib import Path
+from ai_orgdesign.business import CaseStore
+with TemporaryDirectory() as directory:
+    store=CaseStore(Path(directory)/"jobs.db");store.enqueue("job")
+    assert store.claim("job","attempt-a",0,seconds=10)
+    assert store.claim("job","attempt-b",11)
+    try:
+        store.finish("job","attempt-a",12)
+    except ValueError:
+        print("Expired owner rejected")
+    else:
+        raise AssertionError("Old owner finished reclaimed work")
+```
+
+attempt-b owns it in this local exercise. External effects need their own identity and reconciliation arrangements.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Which attempt owns the work after time eleven?
+
+**Worked answer.** attempt-b owns it in this local exercise. External effects need their own identity and reconciliation arrangements.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

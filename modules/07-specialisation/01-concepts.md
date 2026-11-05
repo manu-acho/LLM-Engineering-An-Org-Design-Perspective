@@ -57,3 +57,45 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Model specialisation cannot by itself settle whether its categories suit the work. The research chapter explains [fit and misfit](../../reference/research/04-implementation.md#six-kinds-of-misfit).
+
+## Practical activity: Compare the parameter count of full and low-rank changes.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+How many trainable entries are in the two low-rank tables?
+
+```python
+width, rank = 128, 4
+full = width * width
+low_rank = width * rank + rank * width
+print({"full_update":full,"low_rank_update":low_rank})
+assert low_rank < full
+```
+
+1024. The saving depends on dimensions; the two-by-two toy does not itself demonstrate a storage saving.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: How many trainable entries are in the two low-rank tables?
+
+**Worked answer.** 1024. The saving depends on dimensions; the two-by-two toy does not itself demonstrate a storage saving.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

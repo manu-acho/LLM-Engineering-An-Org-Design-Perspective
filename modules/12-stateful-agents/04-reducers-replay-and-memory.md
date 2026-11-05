@@ -49,3 +49,61 @@ The course wraps a framework worker with a separate evaluator loop. A model-call
 ## Read the organisational connection
 
 Replaying events and repeating organisational action have different consequences to investigate. The research chapter explains [variation in recurrent work](../../reference/research/05-routines.md#variation-is-a-question-not-a-verdict).
+
+## Practical activity: Compare replacing a state field with appending an update.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+How many messages remain under the append rule?
+
+```python
+old={"messages":["case selected"]}
+update={"messages":["policy found"]}
+replace={**old,**update}
+append={"messages":old["messages"]+update["messages"]}
+print("Replace:",replace,"Append:",append)
+assert len(replace["messages"])==1 and len(append["messages"])==2
+```
+
+Two. A reducer specifies how updates combine; a type hint alone does not choose that behaviour.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: How many messages remain under the append rule?
+
+**Worked answer.** Two. A reducer specifies how updates combine; a type hint alone does not choose that behaviour.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+### Programming practice
+
+Write append_messages(old, new) without mutating either input list.
+
+Start with the placeholder in the notebook, then compare with this worked solution. The contrasting checks are part of understanding the contract.
+
+```python
+def append_messages(old, new):
+    return old + new
+
+original=["one"]
+assert append_messages(original,["two"]) == ["one","two"]
+assert original == ["one"]
+```
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

@@ -56,3 +56,44 @@ If one system fails where another succeeds, inspect those paired cases. An avera
 ## Read the organisational connection
 
 An aggregate score can conceal differences in case difficulty and work shifted to other roles. The research chapter explains [benefit evidence](../../reference/research/04-implementation.md#benefits-need-a-population-and-a-comparison).
+
+## Practical activity: Calculate precision and recall with explicit counts.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+What is recall for this example?
+
+```python
+true_positive, false_positive, false_negative = 3, 1, 2
+precision = true_positive / (true_positive + false_positive)
+recall = true_positive / (true_positive + false_negative)
+print({"precision":precision,"recall":recall})
+```
+
+Three out of five actual positive cases were found, so recall is 0.6. Precision asks a different denominator question.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: What is recall for this example?
+
+**Worked answer.** Three out of five actual positive cases were found, so recall is 0.6. Precision asks a different denominator question.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

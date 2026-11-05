@@ -201,14 +201,24 @@ function orderedSections(docs) {
 
 function renderNavigation() {
   const docs = documentsForCurrentFilter();
-  el.nav.innerHTML = orderedSections(docs).map((section) => {
-    const sectionDocs = docs.filter((doc) => doc.section === section);
+  const sections = orderedSections(docs);
+  const sectionMarkup = (section) => {
+    const sectionDocs = docs.filter(doc => doc.section === section);
     const collapsed = state.collapsed.has(section);
-    return `<section class="nav-section ${collapsed ? "collapsed" : ""}" data-section="${escapeHtml(section)}">
-      <button class="section-toggle" data-section-toggle="${escapeHtml(section)}"><span>${escapeHtml(section)}</span><span>${sectionDocs.length}</span></button>
-      <div class="section-docs">${sectionDocs.map((doc) => `<button class="doc-link ${doc.id === state.currentId ? "active" : ""} ${state.read.has(doc.id) ? "read" : ""} ${state.bookmarks.has(doc.id) ? "bookmarked" : ""}" data-doc-id="${doc.id}"><span class="read-dot"></span><span>${escapeHtml(doc.title)}</span></button>`).join("")}</div>
+    return `<section class="nav-section ${collapsed ? 'collapsed' : ''}" data-section="${escapeHtml(section)}">
+      <button class="section-toggle" aria-expanded="${!collapsed}" data-section-toggle="${escapeHtml(section)}"><span>${escapeHtml(section)}</span><span>${sectionDocs.length}</span></button>
+      <div class="section-docs">${sectionDocs.map(doc => `<button class="doc-link ${doc.id === state.currentId ? 'active' : ''} ${state.read.has(doc.id) ? 'read' : ''} ${state.bookmarks.has(doc.id) ? 'bookmarked' : ''}" data-doc-id="${doc.id}"><span class="read-dot"></span><span>${escapeHtml(doc.title)}</span></button>`).join('')}</div>
     </section>`;
-  }).join("");
+  };
+  const groups = state.payload.moduleGroups || [];
+  const moduleSections = new Set(groups.flatMap(group => group.sections));
+  const parts = groups.map(group => {
+    const available = group.sections.filter(section => sections.includes(section));
+    if (!available.length) return '';
+    const collapsed = state.collapsed.has(group.title);
+    return `<section class="nav-part ${collapsed ? 'collapsed' : ''}"><button class="part-toggle" aria-expanded="${!collapsed}" data-section-toggle="${escapeHtml(group.title)}"><span>${escapeHtml(group.title)}</span><span>${available.length} modules</span></button><div class="part-modules">${available.map(sectionMarkup).join('')}</div></section>`;
+  }).join('');
+  el.nav.innerHTML = (sections.includes('Start and study') ? sectionMarkup('Start and study') : '') + parts + sections.filter(section => section !== 'Start and study' && !moduleSections.has(section)).map(sectionMarkup).join('');
 }
 
 function renderContext(doc = null) {
@@ -252,9 +262,9 @@ function renderHome(push = false) {
   const modules = state.payload.curriculum;
   const lessons = state.documents.filter(doc => /^modules\/[^/]+\/\d{2}-/.test(doc.path)).length;
   el.main.innerHTML = `<div class="dashboard">
-    <section class="dashboard-hero"><div class="hero-copy"><div class="eyebrow">AI engineering & organisation design</div><h1>Understand AI.<br>Design the work.<br>Build the service.</h1><p>A course connecting technical understanding with business implementation and organisation design. Twenty connected modules, with original runnable examples and a local route that needs no paid model services.</p><div class="hero-actions"><button class="primary-button" data-home-doc="${pilot.id}">Open Module 1 →</button><button class="secondary-button" data-home-doc="${start.id}">Start here</button></div><p class="hero-credit">Read the concepts. Run the notebooks. Design the surrounding work.</p></div>
+    <section class="dashboard-hero"><div class="hero-copy"><div class="eyebrow">AI engineering & organisation design</div><h1>Understand AI.<br>Design the work.<br>Build the service.</h1><p>A course connecting technical understanding with business implementation and organisation design. Twenty connected modules, with explained local examples and recommended live-model experiments.</p><div class="hero-actions"><button class="primary-button" data-home-doc="${pilot.id}">Open Module 1 →</button><button class="secondary-button" data-home-doc="${start.id}">Start here</button></div><p class="hero-credit">Read the concepts. Run the notebooks. Design the surrounding work.</p></div>
     <aside class="learning-map"><div class="map-label">A connected learning path</div><div class="map-step"><span>01</span><div><h2>Foundations</h2><p>Explain the mechanism. Trace the code. Preserve the evidence.</p></div></div><div class="map-step"><span>02</span><div><h2>Agent engineering</h2><p>Connect bounded contributions, state and human review.</p></div></div><div class="map-step"><span>03</span><div><h2>Business operations</h2><p>Design requirements, controls, deployment and continuing ownership.</p></div></div><div class="map-note">For learners, managers and executives.<br>No programming background required.</div></aside></section>
-    <section class="stats-grid"><div class="stat-card"><strong>20</strong><span>Available modules</span></div><div class="stat-card"><strong>${lessons}</strong><span>Lessons with notebooks</span></div><div class="stat-card"><strong>6</strong><span>Research chapters</span></div><div class="stat-card"><strong>${modules.length}</strong><span>Modules in the curriculum</span></div></section>
+    <section class="stats-grid"><div class="stat-card"><strong>20</strong><span>Available modules</span></div><div class="stat-card"><strong>${lessons}</strong><span>Lessons with notebooks</span></div><div class="stat-card"><strong>6</strong><span>Research chapters</span></div><div class="stat-card"><strong>${state.payload.learning.liveActivities}</strong><span>Recommended live activities</span></div></section>
     <section class="route-grid entry-routes"><button class="route-card" data-home-doc="${pilot.id}"><strong>Learn through one complete case</strong><span>Original examples, worked exercises and a business design.</span></button><button class="route-card" data-home-doc="${research.id}"><strong>Organisation design research</strong><span>Six chapters explain the literature within the course.</span></button><button class="route-card" data-home-doc="${state.byPath.get('STUDY-WORKSPACE.md').id}"><strong>Set up the study workspace</strong><span>Matching notebooks, shared code and a locked environment.</span></button></section>
     ${state.payload.moduleGroups.map((group, index) => `<section class="curriculum-section"><div class="section-heading"><h2>${escapeHtml(group.title)}</h2><span>Read, run and apply</span></div><div class="route-grid">${modules.filter(module => module.part === index + 1).map(module => `<button class="route-card module-card" data-home-doc="${state.byPath.get(module.path).id}"><span class="module-number">${String(module.number).padStart(2, '0')}</span><span class="module-copy"><strong>${escapeHtml(module.title)}</strong><span>${module.lessons} lessons · matching notebooks</span></span></button>`).join('')}</div></section>`).join('')}
     <footer class="landing-footer"><button class="text-button" data-home-doc="${curriculum.id}">Full curriculum →</button><button class="text-button" data-home-doc="${sources.id}">Sources and acknowledgements →</button></footer>
@@ -287,6 +297,10 @@ function routeTo(doc, heading = '') {
 function renderDocument(doc, heading = "") {
   el.app.classList.remove('home-view');
   state.currentId = doc.id;
+  state.collapsed.delete(doc.section);
+  for (const group of state.payload.moduleGroups || []) {
+    if (group.sections.includes(doc.section)) state.collapsed.delete(group.title);
+  }
   const isRead = state.read.has(doc.id);
   const isBookmarked = state.bookmarks.has(doc.id);
   const body = doc.format === "md" ? renderMarkdown(doc.content.replace(/^# .+\n/, "")) : doc.format === "csv" ? renderCsv(doc.content) : `<pre class="data-pre"><code>${escapeHtml(doc.content)}</code></pre>`;
@@ -407,7 +421,7 @@ function bindGlobalEvents() {
   });
   document.querySelector("#contextCloseButton").addEventListener("click", () => el.context.classList.remove("mobile-open"));
   document.querySelector("#collapseAllButton").addEventListener("click", () => {
-    const sections = orderedSections(documentsForCurrentFilter());
+    const sections = [...orderedSections(documentsForCurrentFilter()), ...state.payload.moduleGroups.map(group => group.title)];
     const allCollapsed = sections.every((section) => state.collapsed.has(section));
     state.collapsed = allCollapsed ? new Set() : new Set(sections);
     renderNavigation();
@@ -475,7 +489,7 @@ async function initialise() {
     if (!response.ok) throw new Error(`Index request failed with ${response.status}`);
     state.payload = await response.json();
     state.documents = state.payload.documents;
-    state.collapsed = new Set(['Engineering references', 'Sources and further reading']);
+    state.collapsed = new Set([...state.payload.sectionOrder, ...state.payload.moduleGroups.map(group => group.title)]);
     state.byId = new Map(state.documents.map((doc) => [doc.id, doc]));
     state.byPath = new Map(state.documents.map(doc => [doc.path, doc]));
     bindGlobalEvents();

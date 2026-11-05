@@ -1,47 +1,64 @@
 # Lesson 2.2: Follow a conversation through a validated tool
 
-[Download the matching notebook](/downloads/02-02-code-workshop.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+[Download the matching notebook](/downloads/02-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
-[Module route](README.md) · [Workspace setup](../../STUDY-WORKSPACE.md) · [Technical foundations](../../reference/technical-foundations.md)
+## Practical activity: Trace an allowed lookup through validation before using a model.
 
-## The problem this program addresses
+A tool is a named application capability. A model can request a tool, but application code checks its name, arguments and scope before execution.
 
-A conversation can appear coherent while the application has lost the selected case or confused two users. Harbour therefore keeps the selected case as explicit state and treats each tool request as a proposal that still needs validation.
 
-The implementation lives in `src/ai_orgdesign/labs/m02.py`. All examples use fictional data. The default exercise needs no provider account or API key. Installing the locked dependencies initially requires network access; running the core exercise does not send a model-provider request.
 
-## Read the operation before running it
-
-The conversation function creates a fresh history list for each call. A scripted call carries an identifier, a capability name and an arguments dictionary. dispatch permits only lookup_case with exactly one case_id field, then lookup checks the tenant before returning a copy of the record. Serialising that result makes the tool observation inspectable without changing the authoritative record. stream_words yields one word at a time; it demonstrates incremental delivery without pretending that a model produced the words.
-
-`import` makes the saved implementation available in the notebook. Calling a function supplies its inputs and receives its return value. `assert` checks an expected property and raises an error if that property is false. An assertion is evidence about that specific property, not a certificate that the application is correct in every situation.
-
-## Predict, run and inspect
-
-Run this block in the matching notebook, with the project `.venv` kernel selected. The asynchronous examples use the notebook's supported top-level `await`; ordinary scripts need an event-loop entry point such as `asyncio.run` instead.
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
 
 ```python
-from ai_orgdesign.labs.m02 import conversation, stream_words
-result = conversation()
-assert result["state"]["selected_case"] == "H-17"
-assert "".join(stream_words("Evidence awaits review")).strip() == "Evidence awaits review"
-print(result)
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
 ```
 
-The selected case is H-17, its ordered quantity is twelve and its reported quantity is ten. The tool observation has call_id equal to call-1. Joining the stream pieces reconstructs Evidence awaits review, with a trailing space. Nothing approves a remedy.
+A tenant names the caller's authorised organisational scope. This exercise uses north and south as regions. It is an application parameter supplied from trusted identity, not a role a model can grant itself.
 
-If an import fails, run `python3 scripts/setup.py` from the course folder and select the project kernel again. If a shared-code edit appears ignored, restart the kernel so Python loads the new file. Read an exception before changing the code: it may report a deliberate boundary such as forbidden scope or stale state.
+### Predict and follow the values
 
-## Change one condition
+What reported quantity should the allowed lookup return?
 
-**Exercise.** Request H-18 while keeping the north scope. Predict whether the record will be returned and whether changing a name inside a model message should alter that decision.
+```python
+from ai_orgdesign.agent_loop import execute
+record = execute("lookup_case", {"case_id":"H-17"}, "north")
+print(record)
+assert record["reported"] == 10
+```
 
-Before opening the answer, identify which function owns the relevant check and whether the change should affect data, control flow, authority or evaluation. Keeping these categories distinct helps locate a failure without blaming every unexpected result on a model.
+Ten is the customer report, while actual receipt remains unknown.
 
-**Worked answer.** lookup raises PermissionError because H-18 belongs to south. Identity and scope enter through the application, not the request text. A real authentication system would supply that trusted scope; this local function parameter is a teaching boundary, not authentication.
+### Use the live model
 
-## Consider the alternative
+Live mode is the recommended implementation route after [API setup](../../reference/live-model-guide.md). The following operation uses the fictional evidence shown here, returns an actual result and retains usage. Named arguments label a function's inputs; a returned object provides fields such as text, value and record. Read those fields independently instead of treating fluent text as a success certificate.
 
-A form with a required case identifier may be more dependable than extracting it from chat. A provider adapter can propose the same tool call, but should not bypass dispatch. Streaming can improve perceived responsiveness while adding partial-output and cancellation problems.
+```python
+if RUN_LIVE:
+    from ai_orgdesign.agent_loop import investigate
+    result = investigate(gateway, "Read H-17 and explain what the record establishes.")
+    print(result)
+else:
+    print("Live exercise not run. Set COURSE_LIVE_MODE=1 in the local .env when ready.")
+```
 
-The [organisation design reading](../../reference/research/03-decisions.md) develops the relevant argument and its scholarly references. The lab demonstrates an implementation pattern; the business and design lessons examine the conditions under which that contribution might be useful.
+A failed or incomplete result must remain visible. The [live-model guide](../../reference/live-model-guide.md) explains authentication, quota, timeout, refusal and response-format problems, with the offline verification route kept separate.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: What reported quantity should the allowed lookup return?
+
+**Worked answer.** Ten is the customer report, while actual receipt remains unknown.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+
+The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

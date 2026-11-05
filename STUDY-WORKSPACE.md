@@ -48,11 +48,13 @@ Each of the course lessons has a notebook with the same number and filename. The
 
 The notebooks import `examples/01-foundations/foundations_lab.py`. Opening that file reveals the complete implementation. Editing it changes the shared code for all notebooks; restart the kernel after such an edit so Python imports the new version. Use copies of case data for experiments so one exercise does not silently alter another.
 
-## API keys for future service lessons
+## Recommended live-model route
 
-The pilot needs no keys or provider accounts. `.env.example` lists optional key names; `.env` is a local, gitignored configuration file. Add a real key only when an implemented lesson specifies that provider. Never paste keys into notebook cells, saved outputs, screenshots or Git. The shared configuration helper loads this project's `.env` and preserves values already set in the terminal.
+The [live-model guide](reference/live-model-guide.md) explains `.env`, model selection, the learning-mode switch and a first request. Live activities are recommended throughout the implementation route, beginning in Module 1. Set `COURSE_LIVE_MODE=1` locally after configuring the key, save the file and restart the notebook kernel. Marked cells then make actual requests and display the relevant result and usage.
 
-No provider is called merely by loading the configuration. The disabled service cells identify required configuration, possible charges and the exact request boundary. See the [verification guide](reference/verification.md) for the difference between offline checks and live calls. The locked environment includes the packages used by the implemented local routes. Optional pretrained weights are fetched separately only when enabled.
+The shared code keeps provider responses, application validation and business authority separate. Live calls do not create a payment capability. The [worked experiments](reference/worked-model-experiments.md) include observed mistakes and application corrections, so a learner can compare successful execution with evidence support.
+
+The ordinary notebook verifier always sets an offline override. The public `.env.example` keeps live mode off until a learner enables it. A copied virtual environment is not portable; another computer needs its own setup and local credentials. Viewing the reader from another Mac displays notes but does not automatically give that Mac a Python kernel or a provider key.
 
 ## Check readiness
 

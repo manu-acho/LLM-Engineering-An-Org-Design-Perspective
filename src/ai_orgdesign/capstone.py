@@ -52,3 +52,56 @@ def run(database_path):
         "candidate_gate": gate(baseline, candidate, human_approved=True),
         "boundary": "Scripted contribution, human role simulated, in-process HTTP, invented metrics; no model, cloud or payment call",
     }
+
+
+def run_live(gateway, database_path, *, action="return", confirmation_ids=None):
+    """A real model-backed local service journey with measured candidate results.
+
+    The caller chooses the simulated review action. No payment capability exists.
+    """
+    from ai_orgdesign.case_data import CONFIRMATION_IDS
+    from ai_orgdesign.investigation import evaluate
+
+    if action not in {"return", "approve"}:
+        raise ValueError("Choose the review action explicitly")
+    confirmation_ids = confirmation_ids or CONFIRMATION_IDS[:2]
+    token = "fictional-capstone-session-token"
+    app = create_app(
+        database_path,
+        {token: {"id": "course-reviewer", "role": "manager", "tenant": "north"}},
+        gateway=gateway,
+    )
+    headers = {"x-course-token": token}
+    with TestClient(app) as client:
+        prepared = client.post("/cases/H-17/drafts", headers=headers)
+        prepared.raise_for_status()
+        saved = client.get("/cases/H-17/drafts", headers=headers)
+        saved.raise_for_status()
+        current = client.get("/cases/H-17", headers=headers).json()
+        command = {
+            "expected_version": current["version"],
+            "policy_version": current["policy_version"],
+            "action": action,
+            "key": "live-review-1",
+        }
+        decision = client.post("/cases/H-17/decisions", headers=headers, json=command)
+        decision.raise_for_status()
+        replay = client.post("/cases/H-17/decisions", headers=headers, json=command)
+        replay.raise_for_status()
+    baseline = evaluate(gateway, confirmation_ids, version="unassisted-v1")
+    candidate = evaluate(gateway, confirmation_ids, version="grounded-v3")
+    promotion = (
+        gate(baseline, candidate, human_approved=False)
+        if baseline["cost"] is not None and candidate["cost"] is not None
+        else {"promote": False, "reasons": ["usage incomplete"]}
+    )
+    return {
+        "draft": saved.json(),
+        "decision": decision.json(),
+        "replay_equal": decision.json() == replay.json(),
+        "baseline": baseline,
+        "candidate": candidate,
+        "promotion": promotion,
+        "resource_unit": "tokens, not money",
+        "boundary": "Real model calls and local HTTP handling; simulated review identity and remedy, no payment or cloud deployment",
+    }

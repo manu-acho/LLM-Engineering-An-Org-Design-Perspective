@@ -61,3 +61,43 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 A label supplies a category through which subsequent cases become recognisable. The research chapter explains [decision premises](../../reference/research/03-decisions.md#decision-premises).
+
+## Practical activity: Separate a message, its historical label and the meaning of that label.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Are first_team and final_owner necessarily the same target?
+
+```python
+rows = [{"text":"invoice and missing shipment","first_team":"finance","final_owner":"operations"}]
+print(rows[0])
+assert rows[0]["first_team"] != rows[0]["final_owner"]
+```
+
+No. Their operational meanings must be decided before fitting a predictor.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Are first_team and final_owner necessarily the same target?
+
+**Worked answer.** No. Their operational meanings must be decided before fitting a predictor.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

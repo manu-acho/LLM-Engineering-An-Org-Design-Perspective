@@ -1,47 +1,55 @@
 # Lesson 19.2: Exercise authenticated HTTP routes
 
-[Download the matching notebook](/downloads/19-02-code-workshop.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+[Download the matching notebook](/downloads/19-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
-[Module route](README.md) · [Workspace setup](../../STUDY-WORKSPACE.md) · [Technical foundations](../../reference/technical-foundations.md)
+## Practical activity: Authenticate a local request before reading case state.
 
-## The problem this program addresses
 
-Deployment exposes a service to more clients, failures and responsibilities. Harbour starts with an authenticated local HTTP application so its identity, state and failure contracts can be exercised before selecting a hosting provider.
 
-The implementation lives in `src/ai_orgdesign/labs/m19.py`. All examples use fictional data. The default exercise needs no provider account or API key. Installing the locked dependencies initially requires network access; running the core exercise does not send a model-provider request.
 
-## Read the operation before running it
 
-create_app constructs a FastAPI application backed by CaseStore. The caller supplies a mapping from opaque tokens to principals containing identity, role and tenant. Header authentication resolves that mapping on the server; request payloads cannot choose their actor. The read route uses the principal's tenant. The decision route validates a Pydantic command and delegates to the transactional store. A test client exercises the HTTP contract in process; the separate serve entry point starts an actual local Uvicorn server with a token loaded from .env.
-
-`import` makes the saved implementation available in the notebook. Calling a function supplies its inputs and receives its return value. `assert` checks an expected property and raises an error if that property is false. An assertion is evidence about that specific property, not a certificate that the application is correct in every situation.
-
-## Predict, run and inspect
-
-Run this block in the matching notebook, with the project `.venv` kernel selected. The asynchronous examples use the notebook's supported top-level `await`; ordinary scripts need an event-loop entry point such as `asyncio.run` instead.
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
 
 ```python
-from ai_orgdesign.labs.m19 import demo
-result = demo()
-assert result["unauthenticated"] == 401
-assert result["authorised"] == 200
-print(result)
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
 ```
 
-The public health route reports teaching simulation. An unauthenticated case read receives 401. A correctly authenticated north caller can read H-17. Readers cannot approve, a stale decision receives a conflict response, and an extra actor field is rejected by schema validation. No payment or external customer integration is included.
+### Predict and follow the values
 
-If an import fails, run `python3 scripts/setup.py` from the course folder and select the project kernel again. If a shared-code edit appears ignored, restart the kernel so Python loads the new file. Read an exception before changing the code: it may report a deliberate boundary such as forbidden scope or stale state.
+Which status does the unauthenticated read receive?
 
-## Change one condition
+```python
+from tempfile import TemporaryDirectory
+from pathlib import Path
+from fastapi.testclient import TestClient
+from ai_orgdesign.labs.m19 import create_app
+token="fictional-notebook-token"
+with TemporaryDirectory() as directory:
+    app=create_app(Path(directory)/"api.db",{token:{"id":"reviewer","role":"manager","tenant":"north"}})
+    with TestClient(app) as client:
+        assert client.get("/cases/H-17").status_code==401
+        response=client.get("/cases/H-17",headers={"x-course-token":token})
+        response.raise_for_status()
+        print(response.json())
+```
 
-**Exercise.** Identify what must be added before the local token-based teaching application can be offered to several organisations on the public internet. Distinguish those requirements from the fact that a local endpoint returned HTTP 200.
+401. The token in this cell is an explicit fictional fixture, not a credential for a real service.
 
-Before opening the answer, identify which function owns the relevant check and whether the change should affect data, control flow, authority or evaluation. Keeping these categories distinct helps locate a failure without blaming every unexpected result on a model.
+### Complete the exercise
 
-**Worked answer.** The deployment needs an appropriate identity provider and credential lifecycle, HTTPS termination, persistent storage with backup and restore tests, least-privilege networking, secret management, monitoring, quotas, updates and accountable support. Multi-tenant isolation needs broader tests than these two fictional scopes. A successful local request proves only the exercised route, not the full deployment design.
+Write the prediction before consulting the worked answer: Which status does the unauthenticated read receive?
 
-## Consider the alternative
+**Worked answer.** 401. The token in this cell is an explicit fictional fixture, not a credential for a real service.
 
-A single-host service is a useful first operating boundary. A managed container or serverless platform changes scaling, timeout and persistence assumptions. Static Netlify hosting serves the course notes; it does not operate the Python application. Cloud deployment is optional and must not be presented as tested when only local execution was observed.
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
-The [organisation design reading](../../reference/research/04-implementation.md) develops the relevant argument and its scholarly references. The lab demonstrates an implementation pattern; the business and design lessons examine the conditions under which that contribution might be useful.
+
+The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

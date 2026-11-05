@@ -1,46 +1,47 @@
 # Lesson 14.2: Expose a narrow case-reading capability
 
-[Download the matching notebook](/downloads/14-02-code-workshop.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+[Download the matching notebook](/downloads/14-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
-[Module route](README.md) · [Workspace setup](../../STUDY-WORKSPACE.md) · [Technical foundations](../../reference/technical-foundations.md)
+## Practical activity: Inspect the capability's direct Python result before transport.
 
-## The problem this program addresses
 
-MCP gives clients a common way to discover and call capabilities. Discovery tells a client that a tool exists; it does not give the client authority over every case the backing service can see.
 
-The implementation lives in `src/ai_orgdesign/labs/m14.py`. All examples use fictional data. The default exercise needs no provider account or API key. Installing the locked dependencies initially requires network access; running the core exercise does not send a model-provider request.
 
-## Read the operation before running it
 
-FastMCP registers read_case as a tool with a schema derived from its typed parameter. The direct demo calls the Python function, while exchange launches a real child process over standard input and output, initialises ClientSession, lists tools and calls read_case. Nested async with blocks close the session and process resources on exit. The tool has a fixed north scope in this local server. Error content is checked before returning the result. Protocol messages use stdout, so ordinary debug printing must not corrupt the server stream.
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
 
-`import` makes the saved implementation available in the notebook. Calling a function supplies its inputs and receives its return value. `assert` checks an expected property and raises an error if that property is false. An assertion is evidence about that specific property, not a certificate that the application is correct in every situation.
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
 
-## Predict, run and inspect
+### Predict and follow the values
 
-Run this block in the matching notebook, with the project `.venv` kernel selected. The asynchronous examples use the notebook's supported top-level `await`; ordinary scripts need an event-loop entry point such as `asyncio.run` instead.
+Which tenant is fixed for this local teaching server?
 
 ```python
 from ai_orgdesign.labs.m14 import read_case
-record = read_case("H-17")
-assert record["tenant"] == "north"
+record=read_case("H-17")
 print(record)
+assert record["tenant"]=="north"
 ```
 
-The actual MCP exchange lists read_case and returns the H-17 fictional record. The direct demo has a clear label stating that it bypasses transport. Neither path authorises a remedy. The fixed scope is appropriate for a narrow local lab, not a substitute for authenticated per-user scope in a shared deployment.
+north. A shared service would need authenticated delegated scope rather than this fixed local configuration.
 
-If an import fails, run `python3 scripts/setup.py` from the course folder and select the project kernel again. If a shared-code edit appears ignored, restart the kernel so Python loads the new file. Read an exception before changing the code: it may report a deliberate boundary such as forbidden scope or stale state.
+### Complete the exercise
 
-## Change one condition
+Write the prediction before consulting the worked answer: Which tenant is fixed for this local teaching server?
 
-**Exercise.** Compare calling read_case directly with awaiting exchange. Which additional failure modes does the second path expose, and which security questions remain untested?
+**Worked answer.** north. A shared service would need authenticated delegated scope rather than this fixed local configuration.
 
-Before opening the answer, identify which function owns the relevant check and whether the change should affect data, control flow, authority or evaluation. Keeping these categories distinct helps locate a failure without blaming every unexpected result on a model.
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
-**Worked answer.** The transport path adds process startup, initialisation, schema discovery, message serialisation and cleanup. It still does not test internet-facing authentication, gateway policy, delegated user identity or a payment integration. A capability catalogue should identify its backing service owner and its authority boundaries.
 
-## Consider the alternative
+The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
-A direct application API can be simpler when one client uses one service. MCP helps standardise discovery and invocation across clients. A gateway can centralise some controls while creating another dependency. Transport interoperability should be tested separately from business permission and evidence fidelity.
-
-The [organisation design reading](../../reference/research/06-technology-in-practice.md) develops the relevant argument and its scholarly references. The lab demonstrates an implementation pattern; the business and design lessons examine the conditions under which that contribution might be useful.
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

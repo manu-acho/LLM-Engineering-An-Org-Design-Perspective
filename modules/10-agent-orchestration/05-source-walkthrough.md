@@ -1,49 +1,61 @@
 # Lesson 10.5: Separate schema checks from evidence support
 
-[Download the matching notebook](/downloads/10-05-source-walkthrough.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+[Download the matching notebook](/downloads/10-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
-[Module route](README.md) · [Previous workshop](02-code-workshop.md)
+## Practical activity: Integrate sequential evidence and policy specialists into a checked brief.
 
-## Follow the path in the course checkout
+ An asynchronous operation can suspend while compatible work proceeds. The notebook uses await to obtain its result; this is different from a business acceptance acknowledgement.
 
-The implementation is included here, so this walkthrough does not require another course, video or repository. Open `src/ai_orgdesign/labs/m10.py`. The lab's public functions expose inputs and return values; supporting service code lives in `src/ai_orgdesign/business.py` where required.
 
-Contribution is a Pydantic model. Its fields require a case identifier, at least one source, a conclusion and at least one unresolved item; extra fields are forbidden. model_validate checks the payload against that structure. accept then checks that the case identifier is the expected one and every cited source belongs to the allowed set. A successful result is labelled accepted_for_review. That status deliberately stops short of verifying the conclusion or authorising a remedy.
 
-Read the function from entry to return. Locate input validation before substantive work, transformations that create a new representation, any call into another component and the point that produces the observable result. A model call, a database commit and constructing a dictionary are different operations. Identify which actually occur in this program.
-
-## Work through the contrasting case
-
-Write a false conclusion using order-17 as its source and determine whether the current acceptance function detects the falsehood. Propose the next check rather than claiming schema validation solved it.
-
-The following variation either checks a failure boundary or exposes another aspect of the same implementation. Catching an expected exception allows the notebook to continue; the `else` branch raises an assertion if the expected boundary fails to appear.
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
 
 ```python
-from ai_orgdesign.labs.m10 import accept
-try:
-    accept({"case_id":"H-17", "sources":["invented"], "conclusion":"ok", "unresolved":["receipt"]})
-except ValueError:
-    print("Unsupported source rejected")
-else:
-    raise AssertionError("Acceptance failed")
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
 ```
 
-**Interpretation.** The function cannot judge entailment. A deterministic quantity comparison, a reviewer or a separately evaluated evidence-support check must examine whether the source supports the conclusion. Each additional checker has its own error modes. An acceptance contract should state exactly which checks were applied and what remains for review.
+### Predict and follow the values
 
-## Inspect the implementation rather than a duplicate
+How many model contributions precede application validation here?
 
-The matching notebook can display saved functions using `inspect.getsource`. This shows the implementation currently imported by Python. Reading code is useful, but a displayed function is not proof it executed or that every branch was tested. The behavioural checks deliberately include invalid inputs and contrasting outcomes.
+```python
+expected_stages = ["evidence contribution","policy contribution","coordinator brief","application validation"]
+print(expected_stages)
+```
 
-Run the course checks from the root folder with `uv run --locked pytest`. Run the notebook checks with `uv run --locked python scripts/verify_notebooks.py`. The [verification guide](../../reference/verification.md) distinguishes offline execution, real protocol tests, model downloads and paid-provider checks. It records the limits of each claim.
+Three: two specialists and a coordinator. More generated agreement is not independent factual verification.
 
-## What a result can establish
+### Use the live model
 
-The supplied H-17 contribution passes the structural and case/source membership checks. An invented source or another case identifier raises ValueError. A conclusion that is false but cites an allowed source may still pass, exposing the distinction between membership validation and factual support.
+Live mode is the recommended implementation route after [API setup](../../reference/live-model-guide.md). The following operation uses the fictional evidence shown here, returns an actual result and retains usage. Named arguments label a function's inputs; a returned object provides fields such as text, value and record. Read those fields independently instead of treating fluent text as a success certificate.
 
-Keep inputs, configuration identity, observed result and interpretation separate in an experiment record. If the program behaves as predicted but the business problem remains, investigate the surrounding evidence, roles and dependencies. A successful run should sharpen that inquiry rather than end it.
+```python
+if RUN_LIVE:
+    from ai_orgdesign.investigation import team
+    result = await team(gateway,parallel=False)
+    print(result)
+    print(gateway.ledger())
+else:
+    print("Live exercise not run. Set COURSE_LIVE_MODE=1 in the local .env when ready.")
+```
 
-## Explain the pattern without the library name
+A failed or incomplete result must remain visible. The [live-model guide](../../reference/live-model-guide.md) explains authentication, quota, timeout, refusal and response-format problems, with the offline verification route kept separate.
 
-A useful completion check is to explain the operation in ordinary language, then name the exact implementation. A specialist-as-tool returns a contribution to its coordinator. A handoff transfers the active interaction to another role. Neither pattern should leave ownership implicit. Plain functions are adequate for many fixed routes and make a useful comparison before introducing a model-driven coordinator.
+### Complete the exercise
 
-The [research connection](../../reference/research/02-coordination.md) develops the organisational questions. Follow the module's design lesson to turn this technical understanding into a decision with stated conditions and a recovery route.
+Write the prediction before consulting the worked answer: How many model contributions precede application validation here?
+
+**Worked answer.** Three: two specialists and a coordinator. More generated agreement is not independent factual verification.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+
+The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

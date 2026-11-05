@@ -63,3 +63,44 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Separating contributions creates a need for reintegration even when all roles use software. The research chapter explains [division and integration](../../reference/research/01-organisation-design.md#division-creates-a-need-for-integration).
+
+## Practical activity: Inspect the integration relationships created by more specialists.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+How many possible pairwise relationships are there among six participants?
+
+```python
+def possible_pairs(n):
+    return n*(n-1)//2
+print("Two participants:",possible_pairs(2))
+print("Six participants:",possible_pairs(6))
+```
+
+Fifteen. This counts possible relationships, not measured coordination cost or a prescription that every pair must communicate.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: How many possible pairwise relationships are there among six participants?
+
+**Worked answer.** Fifteen. This counts possible relationships, not measured coordination cost or a prescription that every pair must communicate.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

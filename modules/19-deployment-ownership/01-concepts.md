@@ -33,3 +33,42 @@ The course reading website is static and can be hosted on Netlify. That website 
 A release should identify the code version, dependency lock, model and instruction versions, database compatibility, test results and configuration requirements. Readiness checks should exercise necessary dependencies without exposing secrets. Liveness answers whether the process is responding; readiness answers whether it should receive work. A health endpoint returning ok is only as meaningful as its checks.
 
 Use a small initial population and retain a route back to a known working configuration. A rollback can prevent new bad decisions while leaving earlier consequences to reconcile. Record which version handled each case so an incident can be scoped. Local HTTP tests and startup checks are provided here; cloud deployment, load capacity, backup restoration and real identity-provider integration require separate execution evidence.
+
+## Practical activity: Read an HTTP contract before starting the server.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Which method submits a draft-preparation request?
+
+```python
+routes=[("GET","/health","public liveness"),("GET","/cases/H-17","scoped read"),("POST","/cases/H-17/drafts","model-backed draft"),("POST","/cases/H-17/decisions","authorised simulated decision")]
+for route in routes:print(route)
+```
+
+POST. A read and a command have different contracts even when both return JSON.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Which method submits a draft-preparation request?
+
+**Worked answer.** POST. A read and a command have different contracts even when both return JSON.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

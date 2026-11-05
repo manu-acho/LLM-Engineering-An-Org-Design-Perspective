@@ -1,45 +1,61 @@
 # Lesson 11.2: Schedule tasks through their dependencies
 
-[Download the matching notebook](/downloads/11-02-code-workshop.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+[Download the matching notebook](/downloads/11-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
-[Module route](README.md) · [Workspace setup](../../STUDY-WORKSPACE.md) · [Technical foundations](../../reference/technical-foundations.md)
+## Practical activity: Prepare the sequential comparison before running a team.
 
-## The problem this program addresses
+ An asynchronous operation can suspend while compatible work proceeds. The notebook uses await to obtain its result; this is different from a business acceptance acknowledgement.
 
-Adding specialists can improve local expertise while increasing integration work. The first design question is what depends on what, not how many named agents can be created.
 
-The implementation lives in `src/ai_orgdesign/labs/m11.py`. All examples use fictional data. The default exercise needs no provider account or API key. Installing the locked dependencies initially requires network access; running the core exercise does not send a model-provider request.
 
-## Read the operation before running it
-
-order_tasks receives a mapping from task names to prerequisite names. It first rejects unknown prerequisites. At each pass it finds tasks whose prerequisites are already done, sorts them to make the displayed order reproducible, and removes them from the remaining graph. If no task is ready while tasks remain, the graph has a cycle. This topological ordering exposes feasible precedence; it does not assign people, schedule elapsed time or create autonomous agents.
-
-`import` makes the saved implementation available in the notebook. Calling a function supplies its inputs and receives its return value. `assert` checks an expected property and raises an error if that property is false. An assertion is evidence about that specific property, not a certificate that the application is correct in every situation.
-
-## Predict, run and inspect
-
-Run this block in the matching notebook, with the project `.venv` kernel selected. The asynchronous examples use the notebook's supported top-level `await`; ordinary scripts need an event-loop entry point such as `asyncio.run` instead.
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
 
 ```python
-from ai_orgdesign.labs.m11 import order_tasks, demo
-print(demo())
-assert order_tasks({"a":[], "b":["a"]}) == ["a", "b"]
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
 ```
 
-Records and policy preparation precede comparison, which precedes review. Both preparation tasks are independent in this graph, so a runtime could execute them concurrently. The printed sorted sequence is one valid order, not evidence that concurrency occurred.
+### Predict and follow the values
 
-If an import fails, run `python3 scripts/setup.py` from the course folder and select the project kernel again. If a shared-code edit appears ignored, restart the kernel so Python loads the new file. Read an exception before changing the code: it may report a deliberate boundary such as forbidden scope or stale state.
+Does a sequential arrangement allow the coordinator to run before policy returns?
 
-## Change one condition
+```python
+sequence=["evidence","policy","coordination"]
+print("Sequential model contributions:",sequence)
+assert sequence[-1] == "coordination"
+```
 
-**Exercise.** Make policy preparation depend on review while review already depends on compare and compare on policy. Explain why adding a faster worker cannot repair the resulting graph.
+Not under this declared dependency.
 
-Before opening the answer, identify which function owns the relevant check and whether the change should affect data, control flow, authority or evaluation. Keeping these categories distinct helps locate a failure without blaming every unexpected result on a model.
+### Use the live model
 
-**Worked answer.** The dependencies form a cycle. No task can become ready under the stated rules. The design must change: supply an initial policy, permit an explicit iterative cycle with a stopping rule, or separate preliminary review from final review. Faster execution cannot remove a logical prerequisite contradiction.
+Live mode is the recommended implementation route after [API setup](../../reference/live-model-guide.md). The following operation uses the fictional evidence shown here, returns an actual result and retains usage. Named arguments label a function's inputs; a returned object provides fields such as text, value and record. Read those fields independently instead of treating fluent text as a success certificate.
 
-## Consider the alternative
+```python
+if RUN_LIVE:
+    from ai_orgdesign.investigation import team
+    result = await team(gateway,case_id="H-19",parallel=False)
+    print(result)
+else:
+    print("Live exercise not run. Set COURSE_LIVE_MODE=1 in the local .env when ready.")
+```
 
-A single generalist may reduce handoffs for small cases. Parallel specialists are useful when inputs are separable and outputs can be integrated. Reciprocal interdependence needs continuing adjustment rather than pretending every task fits a one-pass dependency graph.
+A failed or incomplete result must remain visible. The [live-model guide](../../reference/live-model-guide.md) explains authentication, quota, timeout, refusal and response-format problems, with the offline verification route kept separate.
 
-The [organisation design reading](../../reference/research/01-organisation-design.md) develops the relevant argument and its scholarly references. The lab demonstrates an implementation pattern; the business and design lessons examine the conditions under which that contribution might be useful.
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Does a sequential arrangement allow the coordinator to run before policy returns?
+
+**Worked answer.** Not under this declared dependency.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+
+The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

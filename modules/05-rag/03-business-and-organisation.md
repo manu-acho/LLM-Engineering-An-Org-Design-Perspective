@@ -69,3 +69,45 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Access to a policy passage does not confer authority to settle a disputed interpretation. The research chapter explains [permission and authority](../../reference/research/03-decisions.md#permission-and-authority).
+
+## Practical activity: Expose a policy disagreement instead of choosing silently.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Does this declared-value conflict require an accountable resolution?
+
+```python
+rules = [{"id":"A","key":"remedy_owner","value":"manager"},{"id":"B","key":"remedy_owner","value":"regional lead"}]
+values = {rule["value"] for rule in rules if rule["key"] == "remedy_owner"}
+conflict = len(values) > 1
+print("Conflicting declared values:", values)
+assert conflict
+```
+
+Yes. The example compares explicit rule values; it is not a universal detector of contradictions in prose.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Does this declared-value conflict require an accountable resolution?
+
+**Worked answer.** Yes. The example compares explicit rule values; it is not a universal detector of contradictions in prose.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

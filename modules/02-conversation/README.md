@@ -32,3 +32,12 @@ A satisfactory response explains the mechanism, interprets the observed output, 
 ## Another explanation
 
 [OpenAI function-calling protocol](https://developers.openai.com/api/docs/guides/function-calling) provides a primary technical account alongside the included implementation. Use the [further learning guide](../../reference/further-learning.md) to choose additional explanations. External examples may use another task or version; completing them is not required to follow this module.
+
+## Demonstrate the learning
+
+- Trace an allowed lookup through validation before using a model.
+- Assemble a streamed answer from deltas and inspect its completion.
+- Inspect the actual response object before hiding it behind a helper.
+- Explain the case-specific acceptance, authority, correction and evaluation arrangements.
+
+The matching notebooks provide prediction spaces, practical activities and labelled answers. Some include independent programming tasks. Use the [live-model guide](../../reference/live-model-guide.md) for recommended live work and the [case guide](../../reference/case-data-guide.md) to keep the records and route meanings distinct.

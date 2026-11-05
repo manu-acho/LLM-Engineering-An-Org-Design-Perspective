@@ -48,3 +48,50 @@ Harbour selects a bounded adaptation pilot because the fictional exception resul
 ## Read the organisational connection
 
 Corrections need interpretation before they become durable training or procedure changes. The research chapter explains [repeated action and learning](../../reference/research/05-routines.md#repeated-action-and-learning).
+
+## Practical activity: Compare a simple text baseline with the saved adaptation evidence.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Should a four-case test score be reported as enterprise routing accuracy?
+
+```python
+import json
+from ai_orgdesign.text_adaptation import TEST
+from ai_orgdesign.labs.m06 import fit_baseline
+baseline_predictions = fit_baseline().predict([text for text,label in TEST]).tolist()
+print("Baseline:",baseline_predictions)
+path = ROOT / "outputs" / "text-adapter" / "experiment.json"
+if path.exists():
+    print("Saved adaptation run:", json.loads(path.read_text()))
+else:
+    print("Run the preceding download-and-training exercise to obtain an actual adaptation record.")
+```
+
+No. It demonstrates the experiment mechanics on the declared tiny invented split.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Should a four-case test score be reported as enterprise routing accuracy?
+
+**Worked answer.** No. It demonstrates the experiment mechanics on the declared tiny invented split.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

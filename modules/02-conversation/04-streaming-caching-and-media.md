@@ -47,3 +47,80 @@ For a spoken order enquiry, transcription may turn `O-17` into `017`. The lookup
 ## Read the organisational connection
 
 Streaming and media interfaces change what becomes visible and when it can be examined. The research chapter explains [materiality in digital systems](../../reference/research/06-technology-in-practice.md#materiality-in-digital-systems).
+
+## Practical activity: Assemble a streamed answer from deltas and inspect its completion.
+
+A delta is the new part of an output. A generator yields successive pieces while retaining its place. A completed stream includes a final response status; an interrupted one leaves partial text.
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+What is the complete string after all three deltas?
+
+```python
+pieces = ["Evidence ","awaits ","review."]
+answer = ""
+for piece in pieces:
+    answer += piece
+    print(answer)
+assert answer == "Evidence awaits review."
+```
+
+Each piece contains only newly arrived text; joining them reconstructs the full answer. A partial prefix is not a completed response.
+
+### Use the live model
+
+Live mode is the recommended implementation route after [API setup](../../reference/live-model-guide.md). The following operation uses the fictional evidence shown here, returns an actual result and retains usage. Named arguments label a function's inputs; a returned object provides fields such as text, value and record. Read those fields independently instead of treating fluent text as a success certificate.
+
+```python
+if RUN_LIVE:
+    parts = []
+    for delta in gateway.stream("Explain the difference between an order and verified receipt in two sentences."):
+        parts.append(delta)
+        print(delta, end="")
+    print("\nCompletion record:", gateway.ledger())
+else:
+    print("Live exercise not run. Set COURSE_LIVE_MODE=1 in the local .env when ready.")
+```
+
+A failed or incomplete result must remain visible. The [live-model guide](../../reference/live-model-guide.md) explains authentication, quota, timeout, refusal and response-format problems, with the offline verification route kept separate.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: What is the complete string after all three deltas?
+
+**Worked answer.** Each piece contains only newly arrived text; joining them reconstructs the full answer. A partial prefix is not a completed response.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+### Programming practice
+
+Write join_deltas(parts) to reconstruct a streamed answer.
+
+Start with the placeholder in the notebook, then compare with this worked solution. The contrasting checks are part of understanding the contract.
+
+```python
+def join_deltas(parts):
+    answer = ""
+    for part in parts:
+        answer += part
+    return answer
+
+assert join_deltas(["one ","two"]) == "one two"
+assert join_deltas([]) == ""
+```
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

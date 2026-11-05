@@ -93,7 +93,7 @@ def test_framework_equivalence():
 
 def test_real_mcp_transport():
     result = asyncio.run(m14.exchange())
-    assert result["tools"] == ["read_case"]
+    assert set(result["tools"]) == {"read_case", "search_policy"}
     assert "H-17" in json.dumps(result["content"])
 
 
@@ -200,7 +200,12 @@ def test_live_model_adapter_offline_protocol_only():
     def create(**kwargs):
         sent.append(copy.deepcopy(kwargs))
         return SimpleNamespace(
-            output=[call] if len(sent) == 1 else [], output_text="Review required"
+            status="completed",
+            id="offline-response",
+            model="offline-test",
+            usage=None,
+            output=[call] if len(sent) == 1 else [],
+            output_text="Review required",
         )
 
     client = SimpleNamespace(responses=SimpleNamespace(create=create))

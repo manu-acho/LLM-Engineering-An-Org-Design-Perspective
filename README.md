@@ -6,7 +6,11 @@ Learn how AI systems work and how to integrate their contributions into the desi
 
 - [Start here](START-HERE.md): choose a learning route and understand the course's boundaries.
 - [Curriculum](CURRICULUM.md): twenty modules across AI foundations, agent engineering and business implementation.
+- [Live-model guide](reference/live-model-guide.md): configure a key, make a first call and interpret errors and usage.
+- [Case and data guide](reference/case-data-guide.md): follow the records, routes and example identities.
+- [Worked model experiments](reference/worked-model-experiments.md): actual failures, corrections and measured results.
 - [Study workspace](STUDY-WORKSPACE.md): open the notes and notebooks side by side.
+- [Application code walkthrough](reference/application-code-walkthrough.md): trace the shared helpers and their boundaries.
 - [Technical foundations](reference/technical-foundations.md): worked introductions to mathematical and systems concepts.
 - [Glossary](reference/glossary.md): definitions and concrete examples.
 - [Further explanations](reference/further-learning.md): selected external tutorials and primary technical resources.
@@ -21,7 +25,7 @@ No previous course is required. Module 1 introduces the programming vocabulary. 
 
 ## Read, predict, run and explain
 
-Each lesson has a notebook with the same learning focus. Shared Python implementations keep the notebooks consistent. The core route runs locally without paid model services after the environment is installed. Optional model downloads and paid-provider cells are clearly disabled until explicitly enabled. Local test success does not imply a production deployment or an organisational benefit.
+Each lesson has a notebook with the same learning focus. Shared Python implementations keep the notebooks consistent. Technical study includes recommended live-model activities after API setup, alongside local examples that expose the mechanism. Live cells use the local learning-mode switch; the ordinary verifier forces them off. Public model downloads have a separate explicit switch. Local test success does not imply a production deployment or an organisational benefit.
 
 ## Influences and acknowledgement
 

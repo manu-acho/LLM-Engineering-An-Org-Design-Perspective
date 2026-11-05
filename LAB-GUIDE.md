@@ -46,7 +46,7 @@ The `neural_score_illustration` field applies softmax to three supplied scores. 
 
 ## Expected brief
 
-The `brief` command returns case `D-17`. Its facts preserve the order quantity twelve, shipment quantity twelve and customer-reported quantity ten. The first two have status `recorded`, the third `reported`. Each retains its own source identifier.
+The `brief` command returns case `H-17`. Its facts preserve the order quantity twelve, shipment quantity twelve and customer-reported quantity ten. The first two have status `recorded`, the third `reported`. Each retains its own source identifier.
 
 Its comparison contains:
 

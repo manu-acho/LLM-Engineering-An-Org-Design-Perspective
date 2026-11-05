@@ -1,47 +1,48 @@
 # Lesson 7.2: Train and reconstruct a low-rank update
 
-[Download the matching notebook](/downloads/07-02-code-workshop.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+[Download the matching notebook](/downloads/07-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
-[Module route](README.md) · [Workspace setup](../../STUDY-WORKSPACE.md) · [Technical foundations](../../reference/technical-foundations.md)
+## Practical activity: Train and reconstruct the transparent linear update.
 
-## The problem this program addresses
 
-Fine-tuning changes numerical parameters, while retrieval changes the supplied evidence. This module exposes a real parameter update on a small enough task that every trained quantity and saved artefact can be inspected.
 
-The implementation lives in `src/ai_orgdesign/labs/m07.py`. All examples use fictional data. The default exercise needs no provider account or API key. Installing the locked dependencies initially requires network access; running the core exercise does not send a model-provider request.
 
-## Read the operation before running it
 
-LowRank keeps a two-by-two identity matrix as a frozen buffer. Two trainable matrices, a and b, produce an additive update b @ a. The @ operator means matrix multiplication, so a two-by-one matrix multiplied by a one-by-two matrix produces a two-by-two update with rank at most one. adapt evaluates an initial mean squared error, performs 120 Adam steps against four supplied input-target pairs, saves the state dictionary, constructs a fresh model and reloads it. The base matrix never enters the optimiser parameters. This is a linear demonstration of low-rank adaptation, not an implementation of full transformer LoRA or QLoRA.
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
 
-`import` makes the saved implementation available in the notebook. Calling a function supplies its inputs and receives its return value. `assert` checks an expected property and raises an error if that property is false. An assertion is evidence about that specific property, not a certificate that the application is correct in every situation.
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
 
-## Predict, run and inspect
+### Predict and follow the values
 
-Run this block in the matching notebook, with the project `.venv` kernel selected. The asynchronous examples use the notebook's supported top-level `await`; ordinary scripts need an event-loop entry point such as `asyncio.run` instead.
+Does reload equality test reconstruction or business usefulness?
 
 ```python
 from ai_orgdesign.labs.m07 import demo
 result = demo()
-assert result["loss_after"] < result["loss_before"] / 10
-assert result["base_unchanged"] and result["reload_equal"]
 print(result)
+assert result["base_unchanged"] and result["reload_equal"]
+assert result["loss_after"] < result["loss_before"]
 ```
 
-The final training loss should be substantially below the initial loss. Reloading should reproduce the trained outputs, and the frozen base should equal the identity matrix. The test checks these properties rather than requiring platform-identical final decimal digits. There is no held-out generalisation claim from this four-pair training exercise.
+It tests reconstruction of the saved model state. Business usefulness needs an appropriate task comparison.
 
-If an import fails, run `python3 scripts/setup.py` from the course folder and select the project kernel again. If a shared-code edit appears ignored, restart the kernel so Python loads the new file. Read an exception before changing the code: it may report a deliberate boundary such as forbidden scope or stale state.
+### Complete the exercise
 
-## Change one condition
+Write the prediction before consulting the worked answer: Does reload equality test reconstruction or business usefulness?
 
-**Exercise.** Explain why matching the saved outputs proves neither successful business adaptation nor the quality of a quantized language model. Identify what additional artefacts would be needed to reproduce a real adapter deployment.
+**Worked answer.** It tests reconstruction of the saved model state. Business usefulness needs an appropriate task comparison.
 
-Before opening the answer, identify which function owns the relevant check and whether the change should affect data, control flow, authority or evaluation. Keeping these categories distinct helps locate a failure without blaming every unexpected result on a model.
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
-**Worked answer.** Reload equality checks artefact reconstruction. A business task also needs representative held-out evaluation, correct labels and a comparison with prompting and retrieval. A real language-model adapter requires the exact base revision, tokenizer, adapter configuration, training data identity, package versions and serving settings. Quantization introduces another numerical approximation that this unquantized lab does not test.
 
-## Consider the alternative
+The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
-Prompt changes are inexpensive to reverse, retrieval can supply current evidence and parameter adaptation can shape repeated behaviour. These mechanisms can be combined, but each creates a different maintenance obligation. Smaller low-rank updates reduce trainable parameter count; they do not by themselves establish lower total service cost.
-
-The [organisation design reading](../../reference/research/05-routines.md) develops the relevant argument and its scholarly references. The lab demonstrates an implementation pattern; the business and design lessons examine the conditions under which that contribution might be useful.
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

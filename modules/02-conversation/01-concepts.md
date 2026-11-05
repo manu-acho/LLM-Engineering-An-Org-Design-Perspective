@@ -65,3 +65,60 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Conversation state and rules structure the situations the service can recognise. The research chapter explains [programmes and exceptions](../../reference/research/03-decisions.md#programmes-and-exceptions).
+
+## Practical activity: Keep an order selection separate from the words used in a follow-up.
+
+History is the saved sequence of turns. State is the information the application retains to continue its task. A role labels who supplied a message.
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Which case identifier should be retained across the follow-up?
+
+```python
+history = [{"role":"user","content":"Inspect order O-17"}]
+state = {"case_id":"H-17"}
+history.append({"role":"user","content":"Who should review it?"})
+print(history)
+print(state)
+```
+
+H-17 identifies the investigation case; O-17 is its order. Neither storing a message nor selecting a case trains the model.
+
+### Use the live model
+
+Live mode is the recommended implementation route after [API setup](../../reference/live-model-guide.md). The following operation uses the fictional evidence shown here, returns an actual result and retains usage. Named arguments label a function's inputs; a returned object provides fields such as text, value and record. Read those fields independently instead of treating fluent text as a success certificate.
+
+```python
+if RUN_LIVE:
+    answer = gateway.generate("Who should review it?", messages=history, instructions="Discuss the fictional delivery investigation. Ask for missing information; do not infer verified receipt.")
+    print(answer.text)
+    print(gateway.ledger())
+else:
+    print("Live exercise not run. Set COURSE_LIVE_MODE=1 in the local .env when ready.")
+```
+
+A failed or incomplete result must remain visible. The [live-model guide](../../reference/live-model-guide.md) explains authentication, quota, timeout, refusal and response-format problems, with the offline verification route kept separate.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Which case identifier should be retained across the follow-up?
+
+**Worked answer.** H-17 identifies the investigation case; O-17 is its order. Neither storing a message nor selecting a case trains the model.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

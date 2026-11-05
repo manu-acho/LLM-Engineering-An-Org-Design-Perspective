@@ -232,3 +232,12 @@ kbd { padding: 2px 6px; color: var(--ink-soft); background: white; border: 1px s
 
 /* Planned curriculum cards are descriptions, not inactive buttons. */
 article.module-card { cursor: default; }
+
+/* Course parts use the same hierarchy as the landing page. */
+.nav-part { margin: 16px 0; border-top: 1px solid var(--line); padding-top: 9px; }
+.part-toggle { display: flex; flex-direction: column; gap: 5px; width: 100%; padding: 10px; text-align: left; border: 0; background: transparent; color: var(--forest); font: inherit; font-size: 13px; font-weight: 750; cursor: pointer; }
+.part-toggle > span:last-child { font-size: 10px; color: var(--ink-soft); font-weight: 500; }
+.part-toggle::before { content: '▾'; float: right; }
+.nav-part.collapsed .part-toggle::before { content: '▸'; }
+.nav-part.collapsed .part-modules { display: none; }
+.part-modules { border-left: 2px solid var(--line); margin-left: 10px; padding-left: 4px; }

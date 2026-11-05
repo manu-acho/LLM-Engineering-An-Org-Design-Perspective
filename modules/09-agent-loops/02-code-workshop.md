@@ -1,46 +1,62 @@
 # Lesson 9.2: Run a bounded investigation loop
 
-[Download the matching notebook](/downloads/09-02-code-workshop.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+[Download the matching notebook](/downloads/09-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
-[Module route](README.md) · [Workspace setup](../../STUDY-WORKSPACE.md) · [Technical foundations](../../reference/technical-foundations.md)
+## Practical activity: Let a live model choose read-only investigation steps.
 
-## The problem this program addresses
 
-An agent loop chooses another step after observing an earlier result. That flexibility can help an investigation, but also creates repeated calls, unexpected branches and uncertain completion. The application must bound the execution independently of the planner.
 
-The implementation lives in `src/ai_orgdesign/labs/m09.py`. All examples use fictional data. The default exercise needs no provider account or API key. Installing the locked dependencies initially requires network access; running the core exercise does not send a model-provider request.
 
-## Read the operation before running it
 
-run receives a planner function instead of constructing a hidden model client. Each iteration supplies accumulated observations and expects either a final answer or a structured tool request. The application validates the decision, rejects repeated call identifiers, invokes the same scoped dispatcher used in Module 2 and records the observation. A positive integer budget bounds iterations. scripted_planner supplies deterministic decisions for reproducible tests; it is not called an LLM. The optional live adapter in ai_orgdesign.live uses the provider protocol while retaining the dispatcher and a separate tool-call limit.
-
-`import` makes the saved implementation available in the notebook. Calling a function supplies its inputs and receives its return value. `assert` checks an expected property and raises an error if that property is false. An assertion is evidence about that specific property, not a certificate that the application is correct in every situation.
-
-## Predict, run and inspect
-
-Run this block in the matching notebook, with the project `.venv` kernel selected. The asynchronous examples use the notebook's supported top-level `await`; ordinary scripts need an event-loop entry point such as `asyncio.run` instead.
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
 
 ```python
-from ai_orgdesign.labs.m09 import run, scripted_planner
-assert run(scripted_planner)["stop"] == "final"
-assert run(scripted_planner, budget=1)["stop"] == "budget"
-print(run(scripted_planner))
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
 ```
 
-The supplied planner first reads H-17 and then returns an investigation statement. With a budget of one, the tool can run but the loop stops at budget before a final answer. Repeated call identifiers stop the loop instead of executing indefinitely. Reaching a stop condition does not mean the business case is resolved.
+### Predict and follow the values
 
-If an import fails, run `python3 scripts/setup.py` from the course folder and select the project kernel again. If a shared-code edit appears ignored, restart the kernel so Python loads the new file. Read an exception before changing the code: it may report a deliberate boundary such as forbidden scope or stale state.
+Can a model execute approve_payment through this registry?
 
-## Change one condition
+```python
+from ai_orgdesign.agent_loop import TOOLS
+print("Permitted capabilities:",[tool["name"] for tool in TOOLS])
+assert "approve_payment" not in [tool["name"] for tool in TOOLS]
+```
 
-**Exercise.** Supply a planner that always asks for the same call. Then change the call identifier on every step. Which independent bound remains necessary?
+No. It is not an exposed capability; a generated name does not create one.
 
-Before opening the answer, identify which function owns the relevant check and whether the change should affect data, control flow, authority or evaluation. Keeping these categories distinct helps locate a failure without blaming every unexpected result on a model.
+### Use the live model
 
-**Worked answer.** The repeated-identifier check catches the first planner. Unique identifiers evade that check, so the iteration budget remains essential. A live service also needs timeouts, token and cost limits, cancellation and recovery. Tool checks still apply on every execution; a model instruction to behave carefully is not a substitute.
+Live mode is the recommended implementation route after [API setup](../../reference/live-model-guide.md). The following operation uses the fictional evidence shown here, returns an actual result and retains usage. Named arguments label a function's inputs; a returned object provides fields such as text, value and record. Read those fields independently instead of treating fluent text as a success certificate.
 
-## Consider the alternative
+```python
+if RUN_LIVE:
+    from ai_orgdesign.agent_loop import investigate
+    result = investigate(gateway,"Investigate H-17. Read the case and current policy, then state unresolved facts.")
+    print(result["text"])
+    print(result["trace"])
+else:
+    print("Live exercise not run. Set COURSE_LIVE_MODE=1 in the local .env when ready.")
+```
 
-A fixed workflow is often easier to verify when the route is known. An adaptive loop is justified when observations genuinely determine the next action. Framework runners can implement the loop, but the application still owns permissions, budgets and accepted completion.
+A failed or incomplete result must remain visible. The [live-model guide](../../reference/live-model-guide.md) explains authentication, quota, timeout, refusal and response-format problems, with the offline verification route kept separate.
 
-The [organisation design reading](../../reference/research/03-decisions.md) develops the relevant argument and its scholarly references. The lab demonstrates an implementation pattern; the business and design lessons examine the conditions under which that contribution might be useful.
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Can a model execute approve_payment through this registry?
+
+**Worked answer.** No. It is not an exposed capability; a generated name does not create one.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+
+The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

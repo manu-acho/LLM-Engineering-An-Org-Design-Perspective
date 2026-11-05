@@ -141,3 +141,22 @@ Concurrency introduces ordering, cancellation, rate-limit and partial-failure qu
 6. Ask how each failure becomes visible.
 7. Replace one dependency with a fake to understand the wiring.
 8. Compare one simpler alternative before adding an abstraction.
+
+## Equality, identity and missing values
+
+`=` assigns a value to a name. `==` compares values. `is` compares object identity. Two dictionaries can contain equal values while remaining distinct objects:
+
+```python
+left = {"quantity": 12}
+right = {"quantity": 12}
+assert left == right
+assert left is not right
+```
+
+Use `value is None` to ask whether a value is the special absent-value object. A missing reported quantity should not be replaced with zero merely to make a calculation run. Boolean values `True` and `False` express conditions; the strict quantity contract rejects them even though Python relates booleans to integers.
+
+## Read errors from the final line upward
+
+A traceback lists the calls leading to an exception. The final line names the exception and gives its message. `NameError` often means a name was never defined in the current kernel. `ModuleNotFoundError` can indicate the wrong environment or missing installation. `ValueError` in the course may be a deliberate refusal of an invalid or stale input.
+
+First identify the category and the relevant course line. Restart and run from the beginning when a notebook might depend on earlier hidden state. Do not keep rerunning a paid request to repair a local name or import error. The [live-model guide](live-model-guide.md) separates local Python errors from provider failures.

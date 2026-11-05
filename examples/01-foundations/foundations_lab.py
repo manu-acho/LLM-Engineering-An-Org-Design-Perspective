@@ -20,7 +20,7 @@ TRAINING_TEXT = [
 ]
 
 CASE = {
-    "case_id": "D-17",
+    "case_id": "H-17",
     "unit": "boxes",
     "order": {"quantity": 12, "source_id": "order-17"},
     "shipment": {"quantity": 12, "source_id": "shipment-17"},

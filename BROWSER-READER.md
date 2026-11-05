@@ -1,6 +1,6 @@
 # Running and deploying the course reader
 
-This branch publishes the course pilot, curriculum and research chapters. It retains the companion sources in Git for future redevelopment, but the explicit reading manifest excludes unfinished companion lessons from the reading site.
+The reader publishes twenty modules, their lessons, six research chapters and study references. The landing page and library share the same three course parts. Each module opens its overview and individual lessons. The downloadable workspace includes matching notebooks and shared Python implementations.
 
 From this checkout:
 

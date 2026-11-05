@@ -33,3 +33,43 @@ The same principle applies to people. A case handed to a new investigator should
 Harbour caps preparation concurrency, exposes review backlog and age, and records reasons for return. It compares changes to intake quality before increasing reviewer headcount. The plan defines an escalation owner for lease failures and a business owner for delayed cases. These are hypotheses about a coherent arrangement, to be examined in use.
 
 The [organisation design chapter](../../reference/research/01-organisation-design.md) explains why task division creates integration work and why several coherent responses may exist. The [routines chapter](../../reference/research/05-routines.md) adds a warning: a configured queue is an artefact, and repeated coordination must still be studied.
+
+## Practical activity: Distinguish priority policy from average throughput.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Which case risks remaining hidden if only easy completions are celebrated?
+
+```python
+queue=[{"case":"easy","age_hours":1},{"case":"difficult","age_hours":48}]
+oldest=max(queue,key=lambda row:row["age_hours"])
+print("Oldest case:",oldest)
+```
+
+difficult. A queue policy should state how ageing and unresolved cases are handled.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Which case risks remaining hidden if only easy completions are celebrated?
+
+**Worked answer.** difficult. A queue policy should state how ageing and unresolved cases are handled.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

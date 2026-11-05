@@ -83,3 +83,27 @@ SQL is a language for querying and changing relational tables. A table contains 
 `BEGIN IMMEDIATE` requests a write transaction before the case decision checks and update. Another writer cannot simultaneously commit a conflicting write inside that transaction. If a validation check raises an exception, the context manager rolls the transaction back. On success it commits, and its `finally` block closes the connection. SQL transaction behaviour does not reach outside this database file.
 
 The example's version check and stored command result make a particular retry contract inspectable. They do not supply distributed consensus, account reconciliation, backup restoration or a schema migration system. These are distinct capabilities that a larger operating design may require.
+
+## Objects and named inputs before SDK code
+
+An object groups values and operations. In `session = Gateway(max_requests=1)`, `Gateway` constructs a session object and the named input sets its attempt ceiling. `session.generate(prompt)` calls an operation belonging to that object. `result.text` reads a named attribute of the returned object. The dot expresses access; it does not imply that a network request happened. Construction, calling and reading are different operations.
+
+A class defines how such objects are constructed and behave. `def` defines a function; a function declared inside a class can act as a method. This is why the shared implementation contains both `class Gateway` and `def generate`. The early live exercise needs only their public input/output contract; the later walkthrough opens the implementation.
+
+A type annotation such as `reported: int | None` describes either a whole number or absence. Pydantic interprets its model annotations during validation. Ordinary Python annotations do not automatically perform all those checks. A valid integer can still describe the wrong case, so the application also compares it with the authoritative input.
+
+## Read a comprehension in ordinary steps
+
+`[row for row in records if row['active']]` creates a list. Read it as: visit each row, keep it when active is true, then place the row into the new list. A longer equivalent starts with an empty list, loops over records, checks an if condition and appends each retained row. A set expression uses braces and retains distinct values. The syntax is concise, but the underlying operations should remain explainable.
+
+## Understand the review pause
+
+The graph first prepares and validates a contribution, then reaches an interrupt. The interrupt records that an external choice is required. A later resume supplies the review choice and continues against the saved state. Code before the interrupt can run again when its node resumes, so consequential effects belong after the pause and still require current-version checks.
+
+The SQLite checkpointer used by the revised lesson persists actual graph execution state. It is distinct from the business database that records case decisions. A model call completed before a checkpoint may still be repeated after a failure between those events, so a checkpoint is not a universal exactly-once guarantee. The application retains idempotency and reconciliation questions at their real boundaries.
+
+## Read generated code without assuming it is safe
+
+An abstract syntax tree represents code as structured nodes. The small routing exercise accepts only a tightly restricted collection of nodes: a function, conditions, comparisons, dictionary reads and returns. It rejects calls, imports, attribute access, loops and mutation before compilation. Its acceptance cases then check behaviour. This is an inspectable exercise restriction, not a general mechanism for safely executing arbitrary Python.
+
+A generated program can parse successfully and still implement the wrong policy. Likewise a test can share the generator's mistaken interpretation. Write some expected outcomes independently, include contrasting cases and inspect the smallest change that could explain a failure.

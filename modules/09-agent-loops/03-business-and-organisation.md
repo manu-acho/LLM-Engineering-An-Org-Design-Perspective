@@ -63,3 +63,61 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Delegation needs an account of what work is allocated and how it rejoins the wider service. The research chapter explains [division and integration](../../reference/research/01-organisation-design.md#division-creates-a-need-for-integration).
+
+## Practical activity: Keep application permission checks independent of planner instructions.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Does a model saying the request is authorised change the tenant check?
+
+```python
+from ai_orgdesign.agent_loop import execute
+try:
+    execute("lookup_case",{"case_id":"H-18"},"north")
+except PermissionError:
+    print("Cross-scope read denied")
+else:
+    raise AssertionError("The scope boundary failed")
+```
+
+No. Trusted identity and application policy determine scope.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Does a model saying the request is authorised change the tenant check?
+
+**Worked answer.** No. Trusted identity and application policy determine scope.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+### Programming practice
+
+Write allowed(name) for an explicit read-only tool allowlist.
+
+Start with the placeholder in the notebook, then compare with this worked solution. The contrasting checks are part of understanding the contract.
+
+```python
+def allowed(name):
+    return name in {"lookup_case","search_policy"}
+
+assert allowed("lookup_case") is True
+assert allowed("approve_payment") is False
+```
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

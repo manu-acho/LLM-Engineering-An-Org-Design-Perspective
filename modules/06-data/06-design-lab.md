@@ -49,3 +49,59 @@ The [routines review](../../reference/research/05-routines.md) helps explain why
 ## Read the organisational connection
 
 A routing category can create role or data mismatches even when prediction accuracy is high. The research chapter explains [six kinds of misfit](../../reference/research/04-implementation.md#six-kinds-of-misfit).
+
+## Practical activity: Compare a learned baseline with a model-labelled route on new text.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Does a single correct prediction establish generalisation?
+
+```python
+from ai_orgdesign.labs.m06 import fit_baseline
+message = "invoice tax question"
+print("Classical baseline:", fit_baseline().predict([message]).tolist())
+```
+
+No. It is one observation; evaluate representative cases and meaningful error categories.
+
+### Use the live model
+
+Live mode is the recommended implementation route after [API setup](../../reference/live-model-guide.md). The following operation uses the fictional evidence shown here, returns an actual result and retains usage. Named arguments label a function's inputs; a returned object provides fields such as text, value and record. Read those fields independently instead of treating fluent text as a success certificate.
+
+```python
+if RUN_LIVE:
+    schema = {"type":"object","additionalProperties":False,"properties":{"label":{"type":"string","enum":["finance","operations"]}},"required":["label"]}
+    result = gateway.generate(message, instructions="Classify a fictional request into finance or operations. Invoice and tax queries go to finance; delivery issues to operations.", schema=schema)
+    print("Live label:", result.value)
+    print(result.record)
+else:
+    print("Live exercise not run. Set COURSE_LIVE_MODE=1 in the local .env when ready.")
+```
+
+A failed or incomplete result must remain visible. The [live-model guide](../../reference/live-model-guide.md) explains authentication, quota, timeout, refusal and response-format problems, with the offline verification route kept separate.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Does a single correct prediction establish generalisation?
+
+**Worked answer.** No. It is one observation; evaluate representative cases and meaningful error categories.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

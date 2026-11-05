@@ -34,9 +34,9 @@ A defensible decision can retain the simpler alternative, narrow the contributio
 
 A strong response defines unfamiliar terms, names the relevant owner rather than a vague human-in-the-loop, explains what the code establishes and identifies at least one rival explanation for a favourable result. It should also state what new evidence could change the decision. The linked research chapter supplies the theoretical argument and scholarly references; the case here is an application, not a finding from that literature.
 
-## Run the cumulative service slice
+## An offline illustration before the measured capstone
 
-The capstone implementation is `src/ai_orgdesign/capstone.py`. It retrieves permitted current policy, accepts a source-labelled contribution, opens the authenticated application, records a simulated return-for-evidence decision, retries the same command and applies the declared improvement gate. The contribution and manager action are scripted. The evaluation figures are illustrative. No model decides the remedy.
+The offline `run()` illustration is in `src/ai_orgdesign/capstone.py`. The practical extension below uses `run_live()` with actual generated drafts and calculated evaluation results. It retrieves permitted current policy, accepts a source-labelled contribution, opens the authenticated application, records a simulated return-for-evidence decision, retries the same command and applies the declared improvement gate. The contribution and manager action are scripted. The evaluation figures are illustrative. No model decides the remedy.
 
 ```python
 from pathlib import Path
@@ -55,3 +55,62 @@ Read the boundary field in the result before interpreting it. The integrated loc
 **Worked final proposal.** Harbour can use the service to prepare evidence-linked material while investigators retain unresolved facts and managers retain remedy authority. Record owners handle corrections; operations owns the case; the engineering owner handles execution defects. Test with a bounded population and compare manual preparation, a simpler record view and the assisted route. Include evidence completeness, review effort, unsupported conclusions, waiting, reopening and customer outcomes. Expansion depends on those observations, not the mere fact that this capstone ran.
 
 **Extension.** Propose one change to the retrieval corpus or acceptance contract. State its expected benefit and a negative case it could worsen. Run the relevant local checks, retain the baseline and describe a confirmation study. A defensible answer may choose not to release the change.
+
+## Practical activity: Join actual model drafting, HTTP review, retries and measured evaluation.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Does this capstone demonstrate cloud operation or real organisational benefit?
+
+```python
+print("The live capstone uses fictional evidence, a simulated reviewer and actual model responses.")
+print("The reviewer returns the case for further evidence; no payment capability exists.")
+```
+
+No. It verifies an integrated local learning path. The service proposal must identify the additional operating and outcome evidence needed.
+
+### Use the live model
+
+Live mode is the recommended implementation route after [API setup](../../reference/live-model-guide.md). The following operation uses the fictional evidence shown here, returns an actual result and retains usage. Named arguments label a function's inputs; a returned object provides fields such as text, value and record. Read those fields independently instead of treating fluent text as a success certificate.
+
+```python
+if RUN_LIVE:
+    from tempfile import TemporaryDirectory
+    from pathlib import Path
+    from ai_orgdesign.capstone import run_live
+    with TemporaryDirectory() as directory:
+        result=run_live(gateway,Path(directory)/"capstone.db",action="return")
+        print(result)
+        assert result["replay_equal"]
+        assert result["promotion"]["promote"] is False
+else:
+    print("Live exercise not run. Set COURSE_LIVE_MODE=1 in the local .env when ready.")
+```
+
+A failed or incomplete result must remain visible. The [live-model guide](../../reference/live-model-guide.md) explains authentication, quota, timeout, refusal and response-format problems, with the offline verification route kept separate.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Does this capstone demonstrate cloud operation or real organisational benefit?
+
+**Worked answer.** No. It verifies an integrated local learning path. The service proposal must identify the additional operating and outcome evidence needed.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

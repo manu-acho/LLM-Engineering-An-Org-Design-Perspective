@@ -49,3 +49,45 @@ Measure retrieval coverage, supported claims and appropriate abstention alongsid
 ## Read the organisational connection
 
 A knowledge service needs routes for translation and contestation as well as document transfer. The research chapter explains [knowledge boundaries](../../reference/research/02-coordination.md#shared-data-and-shared-meaning).
+
+## Practical activity: Design what happens when no permitted evidence is found.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Which status preserves the missing-evidence condition?
+
+```python
+from ai_orgdesign.labs.m05 import retrieve
+from ai_orgdesign.case_data import POLICIES
+hits = retrieve("delivery", tenant="unknown", documents=POLICIES)
+response = {"status":"needs_evidence","next_owner":"knowledge service owner"} if not hits else {"status":"ready"}
+print(response)
+```
+
+needs_evidence. It does not assert that no relevant policy exists anywhere.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Which status preserves the missing-evidence condition?
+
+**Worked answer.** needs_evidence. It does not assert that no relevant policy exists anywhere.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

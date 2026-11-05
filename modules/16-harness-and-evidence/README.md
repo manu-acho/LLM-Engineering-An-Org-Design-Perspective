@@ -32,3 +32,12 @@ A satisfactory response explains the mechanism, interprets the observed output, 
 ## Another explanation
 
 [OpenAI function-calling boundaries](https://developers.openai.com/api/docs/guides/function-calling) provides a primary technical account alongside the included implementation. Use the [further learning guide](../../reference/further-learning.md) to choose additional explanations. External examples may use another task or version; completing them is not required to follow this module.
+
+## Demonstrate the learning
+
+- Measure actual provider usage for a live contribution.
+- Calculate an explicitly assumed token cost and reject invalid values.
+- Inspect an incomplete response without accepting it as an answer.
+- Explain the case-specific acceptance, authority, correction and evaluation arrangements.
+
+The matching notebooks provide prediction spaces, practical activities and labelled answers. Some include independent programming tasks. Use the [live-model guide](../../reference/live-model-guide.md) for recommended live work and the [case guide](../../reference/case-data-guide.md) to keep the records and route meanings distinct.

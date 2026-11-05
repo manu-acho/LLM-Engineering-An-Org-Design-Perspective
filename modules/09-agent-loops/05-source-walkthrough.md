@@ -1,46 +1,65 @@
 # Lesson 9.5: Test repeated calls and independent stopping limits
 
-[Download the matching notebook](/downloads/09-05-source-walkthrough.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+[Download the matching notebook](/downloads/09-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
-[Module route](README.md) · [Previous workshop](02-code-workshop.md)
+## Practical activity: Inspect bounded model execution through returned observations.
 
-## Follow the path in the course checkout
 
-The implementation is included here, so this walkthrough does not require another course, video or repository. Open `src/ai_orgdesign/labs/m09.py`. The lab's public functions expose inputs and return values; supporting service code lives in `src/ai_orgdesign/business.py` where required.
 
-run receives a planner function instead of constructing a hidden model client. Each iteration supplies accumulated observations and expects either a final answer or a structured tool request. The application validates the decision, rejects repeated call identifiers, invokes the same scoped dispatcher used in Module 2 and records the observation. A positive integer budget bounds iterations. scripted_planner supplies deterministic decisions for reproducible tests; it is not called an LLM. The optional live adapter in ai_orgdesign.live uses the provider protocol while retaining the dispatcher and a separate tool-call limit.
+A `lambda` is a short function written as an expression. Here it supplies a callback; it does not run until the receiving operation calls it.
 
-Read the function from entry to return. Locate input validation before substantive work, transformations that create a new representation, any call into another component and the point that produces the observable result. A model call, a database commit and constructing a dictionary are different operations. Identify which actually occur in this program.
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
 
-## Work through the contrasting case
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
 
-Supply a planner that always asks for the same call. Then change the call identifier on every step. Which independent bound remains necessary?
+### Predict and follow the values
 
-The following variation either checks a failure boundary or exposes another aspect of the same implementation. Catching an expected exception allows the notebook to continue; the `else` branch raises an assertion if the expected boundary fails to appear.
+Which independent bound is still needed when identifiers are always different?
 
 ```python
 from ai_orgdesign.labs.m09 import run
-request = {"kind":"tool", "id":"one", "name":"lookup_case", "arguments":{"case_id":"H-17"}}
-assert run(lambda observations: request)["stop"] == "repeated_call"
-print("Repeated call stopped")
+request = {"kind":"tool","id":"same","name":"lookup_case","arguments":{"case_id":"H-17"}}
+result = run(lambda observations:request)
+print(result)
+assert result["stop"] == "repeated_call"
 ```
 
-**Interpretation.** The repeated-identifier check catches the first planner. Unique identifiers evade that check, so the iteration budget remains essential. A live service also needs timeouts, token and cost limits, cancellation and recovery. Tool checks still apply on every execution; a model instruction to behave carefully is not a substitute.
+The iteration or request budget still bounds repeated work with new identifiers.
 
-## Inspect the implementation rather than a duplicate
+### Use the live model
 
-The matching notebook can display saved functions using `inspect.getsource`. This shows the implementation currently imported by Python. Reading code is useful, but a displayed function is not proof it executed or that every branch was tested. The behavioural checks deliberately include invalid inputs and contrasting outcomes.
+Live mode is the recommended implementation route after [API setup](../../reference/live-model-guide.md). The following operation uses the fictional evidence shown here, returns an actual result and retains usage. Named arguments label a function's inputs; a returned object provides fields such as text, value and record. Read those fields independently instead of treating fluent text as a success certificate.
 
-Run the course checks from the root folder with `uv run --locked pytest`. Run the notebook checks with `uv run --locked python scripts/verify_notebooks.py`. The [verification guide](../../reference/verification.md) distinguishes offline execution, real protocol tests, model downloads and paid-provider checks. It records the limits of each claim.
+```python
+if RUN_LIVE:
+    from ai_orgdesign.agent_loop import investigate
+    result = investigate(gateway,"Read H-19 and identify what still needs review.",max_rounds=4,max_tools=3)
+    for row in result["trace"]:
+        print(row)
+    print(gateway.ledger())
+else:
+    print("Live exercise not run. Set COURSE_LIVE_MODE=1 in the local .env when ready.")
+```
 
-## What a result can establish
+A failed or incomplete result must remain visible. The [live-model guide](../../reference/live-model-guide.md) explains authentication, quota, timeout, refusal and response-format problems, with the offline verification route kept separate.
 
-The supplied planner first reads H-17 and then returns an investigation statement. With a budget of one, the tool can run but the loop stops at budget before a final answer. Repeated call identifiers stop the loop instead of executing indefinitely. Reaching a stop condition does not mean the business case is resolved.
+### Complete the exercise
 
-Keep inputs, configuration identity, observed result and interpretation separate in an experiment record. If the program behaves as predicted but the business problem remains, investigate the surrounding evidence, roles and dependencies. A successful run should sharpen that inquiry rather than end it.
+Write the prediction before consulting the worked answer: Which independent bound is still needed when identifiers are always different?
 
-## Explain the pattern without the library name
+**Worked answer.** The iteration or request budget still bounds repeated work with new identifiers.
 
-A useful completion check is to explain the operation in ordinary language, then name the exact implementation. A fixed workflow is often easier to verify when the route is known. An adaptive loop is justified when observations genuinely determine the next action. Framework runners can implement the loop, but the application still owns permissions, budgets and accepted completion.
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
-The [research connection](../../reference/research/03-decisions.md) develops the organisational questions. Follow the module's design lesson to turn this technical understanding into a decision with stated conditions and a recovery route.
+
+The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

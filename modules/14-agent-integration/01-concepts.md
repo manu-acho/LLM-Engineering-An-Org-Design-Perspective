@@ -61,3 +61,44 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Discovering an available capability does not establish a mandate for its business use. The research chapter explains [permission and authority](../../reference/research/03-decisions.md#permission-and-authority).
+
+## Practical activity: Discover actual MCP tools before invoking one.
+
+
+
+`await` waits for an asynchronous operation. In these notebooks it can appear at the top level; an ordinary script needs an asynchronous entry point. It does not mean the business task has been accepted or resolved.
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Does discovery itself grant access to every region?
+
+```python
+from ai_orgdesign.labs.m14 import exchange
+result=await exchange()
+print("Discovered:",result["tools"])
+assert "read_case" in result["tools"]
+```
+
+No. The backing service still enforces its scope.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Does discovery itself grant access to every region?
+
+**Worked answer.** No. The backing service still enforces its scope.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

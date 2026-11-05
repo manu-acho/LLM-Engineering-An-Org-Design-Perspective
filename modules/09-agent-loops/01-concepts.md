@@ -57,3 +57,44 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 The application bounds available steps while organisational authority remains a separate question. The research chapter explains [permission and authority](../../reference/research/03-decisions.md#permission-and-authority).
+
+## Practical activity: Observe the difference between a scripted planner and a model proposal.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Was scripted_planner a live language model?
+
+```python
+from ai_orgdesign.labs.m09 import run, scripted_planner
+result = run(scripted_planner)
+print(result)
+assert result["stop"] == "final"
+```
+
+No. It is controlled code that makes the loop repeatable for tests. The live activity replaces the planner, not the application checks.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Was scripted_planner a live language model?
+
+**Worked answer.** No. It is controlled code that makes the loop repeatable for tests. The live activity replaces the planner, not the application checks.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

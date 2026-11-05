@@ -25,3 +25,11 @@ def require_api_key(name):
     if not value:
         raise RuntimeError(f"Set {name} in the local .env file before running this service lesson.")
     return value
+
+
+def live_mode():
+    """A learner chooses live mode once; verification always overrides it offline."""
+    if os.environ.get("COURSE_OFFLINE_TEST") == "1":
+        return False
+    load_local_environment()
+    return os.environ.get("COURSE_LIVE_MODE", "0").strip().lower() in {"1", "true", "yes"}

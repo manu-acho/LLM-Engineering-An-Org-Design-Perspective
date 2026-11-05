@@ -13,7 +13,7 @@ const moduleNames = Object.fromEntries(curriculumData.map(m => [m.path.split('/'
 const readingFiles = [
   'README.md', 'START-HERE.md', 'CURRICULUM.md', 'WORKBOOK.md', 'SOURCE-MAP.md',
   'LAB-GUIDE.md', 'STUDY-WORKSPACE.md', 'AGENT-ENGINEERING.md', 'reference/glossary.md',
-  'reference/literature-guide.md', 'reference/python-patterns.md', 'reference/technical-foundations.md', 'reference/further-learning.md', 'reference/verification.md'
+  'reference/literature-guide.md', 'reference/python-patterns.md', 'reference/technical-foundations.md', 'reference/further-learning.md', 'reference/verification.md', 'reference/live-model-guide.md', 'reference/case-data-guide.md', 'reference/worked-model-experiments.md', 'reference/application-code-walkthrough.md'
 ];
 
 const researchFiles = [
@@ -26,7 +26,8 @@ function sectionFor(relative) {
   if (relative === 'reference/literature-guide.md' || researchFiles.includes(relative)) return 'Organisation design research';
   if (['README.md', 'START-HERE.md', 'WORKBOOK.md', 'AGENT-ENGINEERING.md', 'CURRICULUM.md', 'LAB-GUIDE.md', 'STUDY-WORKSPACE.md'].includes(relative)) return 'Start and study';
   if (relative.startsWith('modules/')) return moduleNames[relative.split('/')[1]] || 'Engineering references';
-  return 'Sources and further reading';
+  if (relative === 'SOURCE-MAP.md' || relative === 'reference/further-learning.md') return 'Sources and further reading';
+  return 'Engineering references';
 }
 
 function makeDocument(relative, content, modified) {
@@ -69,11 +70,13 @@ export async function buildReader() {
   documents.sort((a, b) => sectionOrder.indexOf(a.section) - sectionOrder.indexOf(b.section) || priority(a) - priority(b) || a.path.localeCompare(b.path));
   const curriculum = JSON.parse(await fs.readFile(path.join(readerRoot, 'standalone-curriculum.json'), 'utf8'));
   const moduleGroups = [
-    { title: 'Part I: AI engineering foundations', sections: curriculumData.filter(m => m.part === 1).map(m => moduleNames[m.path.split('/')[1]]) },
-    { title: 'Part II: Agent engineering', sections: curriculumData.filter(m => m.part === 2).map(m => moduleNames[m.path.split('/')[1]]) },
-    { title: 'Part III: Business implementation and operations', sections: curriculumData.filter(m => m.part === 3).map(m => moduleNames[m.path.split('/')[1]]) }
+    { title: 'Part 1: AI engineering foundations', sections: curriculumData.filter(m => m.part === 1).map(m => moduleNames[m.path.split('/')[1]]) },
+    { title: 'Part 2: Agent engineering', sections: curriculumData.filter(m => m.part === 2).map(m => moduleNames[m.path.split('/')[1]]) },
+    { title: 'Part 3: Business implementation and operations', sections: curriculumData.filter(m => m.part === 3).map(m => moduleNames[m.path.split('/')[1]]) }
   ];
-  const payload = { generatedAt: new Date().toISOString(), edition: 'course', curriculum,
+  const study = JSON.parse(await fs.readFile(path.join(projectRoot, "study-manifest.json"), "utf8"));
+  const learning = { notebooks: study.lessons.length, liveActivities: study.lessons.filter(item => item.live_recommended).length };
+  const payload = { learning, generatedAt: new Date().toISOString(), edition: 'course', curriculum,
     repoName: 'AI engineering and organisation design', documents,
     sectionOrder, moduleGroups, warnings: [] };
   await fs.mkdir(distRoot, { recursive: true });
@@ -84,7 +87,6 @@ export async function buildReader() {
   for (const file of ['foundations_lab.py', 'test_foundations.py']) {
     await fs.copyFile(path.join(projectRoot, 'examples/01-foundations', file), path.join(distRoot, 'downloads', file));
   }
-  const study = JSON.parse(await fs.readFile(path.join(projectRoot, 'study-manifest.json'), 'utf8'));
   for (const lesson of study.lessons) {
     if (!/^notebooks\/[a-z0-9-]+\/\d{2}-[a-z0-9-]+\.ipynb$/.test(lesson.notebook)) throw new Error('Invalid notebook path');
     await fs.copyFile(path.join(projectRoot, lesson.notebook), path.join(distRoot, 'downloads', path.basename(lesson.notebook)));

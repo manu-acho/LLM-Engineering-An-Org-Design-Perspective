@@ -33,3 +33,12 @@ A satisfactory response explains the mechanism, interprets the observed output, 
 ## Another explanation
 
 [SQLite transaction boundaries](https://www.sqlite.org/lang_transaction.html) provides a primary technical account alongside the included implementation. Use the [further learning guide](../../reference/further-learning.md) to choose additional explanations. External examples may use another task or version; completing them is not required to follow this module.
+
+## Demonstrate the learning
+
+- Commit a versioned simulated decision exactly once in the local database.
+- Distinguish an available review feature from its use.
+- Reject a different decision based on a stale case version.
+- Explain the case-specific acceptance, authority, correction and evaluation arrangements.
+
+The matching notebooks provide prediction spaces, practical activities and labelled answers. Some include independent programming tasks. Use the [live-model guide](../../reference/live-model-guide.md) for recommended live work and the [case guide](../../reference/case-data-guide.md) to keep the records and route meanings distinct.

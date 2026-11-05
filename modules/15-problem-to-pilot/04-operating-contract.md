@@ -35,3 +35,47 @@ Add an acceptance example with equal quantities but a damaged box. Identify whic
 **Worked answer.** Quantity comparison cannot recognise condition or contractual remedy. The pilot needs an explicit damage report, supporting evidence and an agreed review route. Expanding the schema and examples changes scope; changing a prompt alone would hide that change. Keep damaged-goods cases outside automated handling until the revised specification is tested.
 
 Carry that answer into the design record: required input, permitted contribution, acceptance owner, escalation trigger, recovery route and evidence for any benefit claim. A design record describes the proposed arrangement. Repeated observation and outcome comparisons are needed to examine what it becomes in practice.
+
+## Practical activity: Inspect generated code before allowing a restricted execution.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Does this restricted exercise permit arbitrary generated Python?
+
+```python
+from ai_orgdesign.code_generation import compile_routing
+try:
+    compile_routing("def route_case(case):\n    return open('private.txt')")
+except ValueError:
+    print("File access is outside the exercise subset")
+else:
+    raise AssertionError("Disallowed code accepted")
+```
+
+No. Calls, imports, attributes, loops and mutation are refused. This is not a general-purpose sandbox.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Does this restricted exercise permit arbitrary generated Python?
+
+**Worked answer.** No. Calls, imports, attributes, loops and mutation are refused. This is not a general-purpose sandbox.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

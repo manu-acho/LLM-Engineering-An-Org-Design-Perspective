@@ -33,3 +33,58 @@ A defensible decision can retain the simpler alternative, narrow the contributio
 ## Check the completed explanation
 
 A strong response defines unfamiliar terms, names the relevant owner rather than a vague human-in-the-loop, explains what the code establishes and identifies at least one rival explanation for a favourable result. It should also state what new evidence could change the decision. The linked research chapter supplies the theoretical argument and scholarly references; the case here is an application, not a finding from that literature.
+
+## Practical activity: Inspect actual batch failures as a receiving-work problem.
+
+ An asynchronous operation can suspend while compatible work proceeds. The notebook uses await to obtain its result; this is different from a business acceptance acknowledgement.
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Should unresolved cases be excluded from the denominator?
+
+```python
+statuses=["prepared","needs_investigation","prepared"]
+print("Prepared:",statuses.count("prepared"),"Unresolved:",statuses.count("needs_investigation"))
+```
+
+No. Their handling is part of the service and capacity assessment.
+
+### Use the live model
+
+Live mode is the recommended implementation route after [API setup](../../reference/live-model-guide.md). The following operation uses the fictional evidence shown here, returns an actual result and retains usage. Named arguments label a function's inputs; a returned object provides fields such as text, value and record. Read those fields independently instead of treating fluent text as a success certificate.
+
+```python
+if RUN_LIVE:
+    from ai_orgdesign.investigation import batch
+    rows=await batch(gateway,["H-17","H-18"],concurrency=1)
+    print(rows)
+    assert rows[1]["status"]=="needs_investigation"
+else:
+    print("Live exercise not run. Set COURSE_LIVE_MODE=1 in the local .env when ready.")
+```
+
+A failed or incomplete result must remain visible. The [live-model guide](../../reference/live-model-guide.md) explains authentication, quota, timeout, refusal and response-format problems, with the offline verification route kept separate.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Should unresolved cases be excluded from the denominator?
+
+**Worked answer.** No. Their handling is part of the service and capacity assessment.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

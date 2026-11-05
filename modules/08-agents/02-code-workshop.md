@@ -1,48 +1,53 @@
 # Lesson 8.2: Record a simulated decision and safe retry
 
-[Download the matching notebook](/downloads/08-02-code-workshop.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+[Download the matching notebook](/downloads/08-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
-[Module route](README.md) · [Workspace setup](../../STUDY-WORKSPACE.md) · [Technical foundations](../../reference/technical-foundations.md)
+## Practical activity: Commit a versioned simulated decision exactly once in the local database.
 
-## The problem this program addresses
 
-A technically successful brief is only one contribution to a service. Harbour also needs an accountable investigator, a remedy decision and a route for retries, errors and corrections. These arrangements belong in the operating model.
 
-The implementation lives in `src/ai_orgdesign/labs/m08.py`. All examples use fictional data. The default exercise needs no provider account or API key. Installing the locked dependencies initially requires network access; running the core exercise does not send a model-provider request.
+A `with` block manages a resource lifetime. The indented operations run while the resource is open; cleanup follows when the block exits.
 
-## Read the operation before running it
-
-CaseStore initialises three operational tables and a job table in SQLite. seed creates a pending review only if the case is absent. read returns a scoped current version. decide requires a manager role, a recognised action, a matching case version and the same policy version before recording a simulated decision. A command key stores a fingerprint and result in the same transaction. Repeating the same key and command returns the prior result; reusing it for a different command fails. These are local transactional controls, not a distributed exactly-once guarantee.
-
-`import` makes the saved implementation available in the notebook. Calling a function supplies its inputs and receives its return value. `assert` checks an expected property and raises an error if that property is false. An assertion is evidence about that specific property, not a certificate that the application is correct in every situation.
-
-## Predict, run and inspect
-
-Run this block in the matching notebook, with the project `.venv` kernel selected. The asynchronous examples use the notebook's supported top-level `await`; ordinary scripts need an event-loop entry point such as `asyncio.run` instead.
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
 
 ```python
-from ai_orgdesign.labs.m08 import demo
-result = demo()
-assert result["retry_same"]
-assert result["decision"]["version"] == 2
-assert result["money_moved"] is False
-print(result)
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
 ```
 
-The pending case starts at version one in review. Approval changes it to version two with status approved_simulation. Retrying the identical command returns the same result without an additional audit event. No money moves and no customer message is sent.
+### Predict and follow the values
 
-If an import fails, run `python3 scripts/setup.py` from the course folder and select the project kernel again. If a shared-code edit appears ignored, restart the kernel so Python loads the new file. Read an exception before changing the code: it may report a deliberate boundary such as forbidden scope or stale state.
+Which version should the committed result contain?
 
-## Change one condition
+```python
+from tempfile import TemporaryDirectory
+from pathlib import Path
+from ai_orgdesign.business import CaseStore
+with TemporaryDirectory() as directory:
+    store = CaseStore(Path(directory)/"case.db")
+    store.seed()
+    first = store.decide("H-17","north","reviewer","manager",1,"return","one-command")
+    retry = store.decide("H-17","north","reviewer","manager",1,"return","one-command")
+    assert first == retry
+    print(first)
+```
 
-**Exercise.** Specify who should investigate a case when the evidence is incomplete, and what should happen if two managers act on version one at the same time.
+Version two. The identical retry retrieves the first result rather than adding another decision.
 
-Before opening the answer, identify which function owns the relevant check and whether the change should affect data, control flow, authority or evaluation. Keeping these categories distinct helps locate a failure without blaming every unexpected result on a model.
+### Complete the exercise
 
-**Worked answer.** An explicit case owner should obtain and reconcile evidence before requesting a decision. Two managers may both have read version one, but only one decision should commit. The second must receive a conflict and read the new state. Quietly accepting both would turn a stale view into a new consequential decision.
+Write the prediction before consulting the worked answer: Which version should the committed result contain?
 
-## Consider the alternative
+**Worked answer.** Version two. The identical retry retrieves the first result rather than adding another decision.
 
-A human work queue may be sufficient before an autonomous agent is justified. A workflow engine adds state management but needs explicit ownership and recovery rules. A local SQLite transaction provides a useful learning boundary; external payments require an additional protocol and reconciliation arrangements.
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
-The [organisation design reading](../../reference/research/01-organisation-design.md) develops the relevant argument and its scholarly references. The lab demonstrates an implementation pattern; the business and design lessons examine the conditions under which that contribution might be useful.
+
+The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

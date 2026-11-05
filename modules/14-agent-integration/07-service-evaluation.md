@@ -45,3 +45,49 @@ The [technology and organisation review](../../reference/research/06-technology-
 ## Read the organisational connection
 
 Continuing evaluation should examine which changes actually account for a service improvement. The research chapter explains [redesign and rival explanations](../../reference/research/06-technology-in-practice.md#a-worked-redesign-and-its-rival-explanations).
+
+## Practical activity: Observe changed backend state through a fresh read.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Does a screen refresh itself perform the decision?
+
+```python
+from tempfile import TemporaryDirectory
+from pathlib import Path
+from ai_orgdesign.business import CaseStore
+with TemporaryDirectory() as directory:
+    store=CaseStore(Path(directory)/"service.db");store.seed()
+    before=store.read("H-17","north")
+    store.decide("H-17","north","reviewer","manager",1,"return","observe")
+    after=store.read("H-17","north")
+    print("Before:",before["status"],"After:",after["status"])
+```
+
+No. A read observes the state changed by the separate authorised command.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Does a screen refresh itself perform the decision?
+
+**Worked answer.** No. A read observes the state changed by the separate authorised command.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

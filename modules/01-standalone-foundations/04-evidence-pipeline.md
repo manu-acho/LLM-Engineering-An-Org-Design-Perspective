@@ -73,3 +73,7 @@ Choosing among these depends on the contribution required. If the problem is sub
 Which output changes if `customer_report.quantity` becomes eleven, and which claim should remain unresolved?
 
 **Worked response:** the customer fact becomes eleven and the comparison becomes one. Its source identifier remains `customer-17`, assuming that identifier refers to the revised teaching record. The actual received quantity and cause remain unresolved. In a production version, record revision identity would also need to distinguish the old and new evidence rather than overwrite their history.
+
+## Try the live model
+
+The [live-model guide](../../reference/live-model-guide.md) prepares the API configuration. The matching notebook adds a real request and records the returned model, status, usage and duration. Inspect every factual claim. In a development run, the model inferred shipped quantity from an order record; the source did not establish that inference. The [worked experiment record](../../reference/worked-model-experiments.md) explains this observed failure and the later corrections.

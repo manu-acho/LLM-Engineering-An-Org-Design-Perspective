@@ -57,3 +57,43 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Orchestration is assessable when the connected contributions and their dependencies are explicit. The research chapter explains [dependency management](../../reference/research/02-coordination.md#identify-what-depends-on-what).
+
+## Practical activity: Define the receiving contract before naming a specialist.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Which required field identifies the evidential basis?
+
+```python
+from ai_orgdesign.investigation import Specialist
+print(Specialist.model_json_schema()["required"])
+assert "sources" in Specialist.model_json_schema()["required"]
+```
+
+sources identifies the returned basis, whose membership and meaning still need checking.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Which required field identifies the evidential basis?
+
+**Worked answer.** sources identifies the returned basis, whose membership and meaning still need checking.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

@@ -37,3 +37,62 @@ The next lesson deliberately uses a tiny non-quantized model so ordinary local h
 ## Read the organisational connection
 
 An adapter changes a technical arrangement; consequences for work require a further account. The research chapter explains [materiality in digital systems](../../reference/research/06-technology-in-practice.md#materiality-in-digital-systems).
+
+## Practical activity: Calculate which prediction positions contribute to a masked loss.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+How many positions contribute under this mask?
+
+```python
+import math
+probabilities = [0.5,0.25,0.8]
+mask = [0,0,1]
+loss = sum(-math.log(p)*use for p,use in zip(probabilities,mask)) / sum(mask)
+print("Answer-only loss:", loss)
+assert abs(loss + math.log(0.8)) < 1e-12
+```
+
+One. A loss mask selects grading positions; it is different from the attention mask controlling which positions participate in relevant model operations.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: How many positions contribute under this mask?
+
+**Worked answer.** One. A loss mask selects grading positions; it is different from the attention mask controlling which positions participate in relevant model operations.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+### Programming practice
+
+Write masked_mean(values, mask) that averages only selected values. Reject an empty selection.
+
+Start with the placeholder in the notebook, then compare with this worked solution. The contrasting checks are part of understanding the contract.
+
+```python
+def masked_mean(values, mask):
+    if not sum(mask):
+        raise ValueError("No selected positions")
+    return sum(value*selected for value,selected in zip(values,mask))/sum(mask)
+
+assert masked_mean([10.,2.],[0,1]) == 2.
+assert masked_mean([10.,2.],[1,1]) == 6.
+```
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

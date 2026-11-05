@@ -1,48 +1,49 @@
 # Lesson 4.2: Compare equal accuracy with unequal consequences
 
-[Download the matching notebook](/downloads/04-02-code-workshop.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+[Download the matching notebook](/downloads/04-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
-[Module route](README.md) · [Workspace setup](../../STUDY-WORKSPACE.md) · [Technical foundations](../../reference/technical-foundations.md)
+## Practical activity: Compare identical accuracy with different consequences.
 
-## The problem this program addresses
 
-Two systems can have equal accuracy while imposing very different harms. Harbour needs to distinguish an unnecessary review from clearing a case that still requires investigation, then compare the resulting work with an existing process.
 
-The implementation lives in `src/ai_orgdesign/labs/m04.py`. All examples use fictional data. The default exercise needs no provider account or API key. Installing the locked dependencies initially requires network access; running the core exercise does not send a model-provider request.
 
-## Read the operation before running it
 
-score accepts equally sized, nonempty lists of reference labels and predictions. zip pairs each reference with the prediction for the same position. Boolean comparisons count correct outcomes, unsafe clearances and unnecessary reviews. The illustrative loss multiplies unsafe clearances by a chosen cost and adds unnecessary reviews. This is an explicit preference model, not a discovered financial valuation. demo compares an always-clear rule with a more conservative rule against the same four fictional reference cases.
-
-`import` makes the saved implementation available in the notebook. Calling a function supplies its inputs and receives its return value. `assert` checks an expected property and raises an error if that property is false. An assertion is evidence about that specific property, not a certificate that the application is correct in every situation.
-
-## Predict, run and inspect
-
-Run this block in the matching notebook, with the project `.venv` kernel selected. The asynchronous examples use the notebook's supported top-level `await`; ordinary scripts need an event-loop entry point such as `asyncio.run` instead.
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
 
 ```python
-from ai_orgdesign.labs.m04 import score, demo
-print(demo())
-a = score(["review", "clear"], ["clear", "clear"])
-b = score(["review", "clear"], ["review", "review"])
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Which prediction has the larger loss under the supplied cost rule: a or b?
+
+```python
+from ai_orgdesign.labs.m04 import score
+a = score(["review","clear"],["clear","clear"])
+b = score(["review","clear"],["review","review"])
+print(a, b)
 assert a["accuracy"] == b["accuracy"]
 assert a["illustrative_loss"] > b["illustrative_loss"]
 ```
 
-The always-clear rule has accuracy one half, two unsafe clearances and illustrative loss forty. The conservative rule has accuracy three quarters, no unsafe clearances and loss one. These are exact calculations on invented cases. A larger evaluation and observations of actual work would be needed for a deployment decision.
+a has the larger loss because it clears a case requiring review. The penalty remains an explicit assumption.
 
-If an import fails, run `python3 scripts/setup.py` from the course folder and select the project kernel again. If a shared-code edit appears ignored, restart the kernel so Python loads the new file. Read an exception before changing the code: it may report a deliberate boundary such as forbidden scope or stale state.
+### Complete the exercise
 
-## Change one condition
+Write the prediction before consulting the worked answer: Which prediction has the larger loss under the supplied cost rule: a or b?
 
-**Exercise.** Construct two predictions with equal accuracy but different unsafe-clearance counts. Then ask whether the chosen twenty-to-one penalty reflects an agreed business preference or only an author assumption.
+**Worked answer.** a has the larger loss because it clears a case requiring review. The penalty remains an explicit assumption.
 
-Before opening the answer, identify which function owns the relevant check and whether the change should affect data, control flow, authority or evaluation. Keeping these categories distinct helps locate a failure without blaming every unexpected result on a model.
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
-**Worked answer.** Against [review, clear], predicting [clear, clear] and [review, review] both gives one correct result out of two. The first produces an unsafe clearance; the second produces an unnecessary review. Under the illustrative penalty the losses are twenty and one. The penalty should be agreed and sensitivity-tested rather than presented as an empirical cost.
 
-## Consider the alternative
+The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
-A confusion matrix exposes the types of error; a single accuracy number conceals them. A randomised or carefully matched service comparison can examine outcomes more credibly than a before-and-after anecdote. Where harmful decisions are rare, deliberately constructed challenge cases complement, rather than replace, representative cases.
-
-The [organisation design reading](../../reference/research/04-implementation.md) develops the relevant argument and its scholarly references. The lab demonstrates an implementation pattern; the business and design lessons examine the conditions under which that contribution might be useful.
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

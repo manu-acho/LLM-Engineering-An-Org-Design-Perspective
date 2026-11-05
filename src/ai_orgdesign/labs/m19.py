@@ -16,7 +16,7 @@ class Decision(BaseModel):
     policy_version: int
 
 
-def create_app(database_path, principals):
+def create_app(database_path, principals, gateway=None):
     if not principals or any(len(key) < 16 for key in principals):
         raise ValueError("Configure nonempty principal mapping with long random tokens")
     app = FastAPI(title="Harbour teaching service")
@@ -59,6 +59,66 @@ def create_app(database_path, principals):
             raise HTTPException(403, "Decision not permitted") from None
         except ValueError as error:
             raise HTTPException(409, str(error)) from None
+
+    @app.post("/cases/{case_id}/drafts")
+    def prepare_draft(case_id: str, x_course_token: str = Header(default="")):
+        actor = identity(x_course_token)
+        if actor["role"] not in {"manager", "investigator"}:
+            raise HTTPException(403, "Draft preparation is not permitted for this role")
+        if gateway is None:
+            raise HTTPException(503, "Live drafting is disabled for this service session")
+        from ai_orgdesign.case_data import get_case
+        from ai_orgdesign.investigation import draft
+        from ai_orgdesign.provider import ModelRunError
+
+        try:
+            get_case(case_id, actor["tenant"])
+            store.seed(case_id, actor["tenant"])
+            current = store.read(case_id, actor["tenant"])
+            result = draft(gateway, case_id, actor["tenant"])
+            with store.connect() as db:
+                db.execute(
+                    "CREATE TABLE IF NOT EXISTS drafts (case_id TEXT PRIMARY KEY, case_version INTEGER, payload TEXT)"
+                )
+                db.execute("BEGIN IMMEDIATE")
+                latest = db.execute("SELECT version FROM cases WHERE id=?", (case_id,)).fetchone()
+                if latest["version"] != current["version"]:
+                    raise HTTPException(409, "Case changed while the model worked; review again")
+                import json
+
+                db.execute(
+                    "INSERT OR REPLACE INTO drafts VALUES (?, ?, ?)",
+                    (case_id, current["version"], json.dumps(result)),
+                )
+            return {"case_version": current["version"], "result": result}
+        except PermissionError:
+            raise HTTPException(404, "Case unavailable") from None
+        except (ModelRunError, ValueError):
+            raise HTTPException(
+                502, "No accepted draft: inspect the model session ledger"
+            ) from None
+
+    @app.get("/cases/{case_id}/drafts")
+    def read_draft(case_id: str, x_course_token: str = Header(default="")):
+        actor = identity(x_course_token)
+        try:
+            current = store.read(case_id, actor["tenant"])
+        except PermissionError:
+            raise HTTPException(404, "Case unavailable") from None
+        with store.connect() as db:
+            db.execute(
+                "CREATE TABLE IF NOT EXISTS drafts (case_id TEXT PRIMARY KEY, case_version INTEGER, payload TEXT)"
+            )
+            row = db.execute("SELECT * FROM drafts WHERE case_id=?", (case_id,)).fetchone()
+        if row is None:
+            raise HTTPException(404, "No draft prepared")
+        import json
+
+        return {
+            "case_version": row["case_version"],
+            "current_case_version": current["version"],
+            "result": json.loads(row["payload"]),
+        }
 
     return app
 

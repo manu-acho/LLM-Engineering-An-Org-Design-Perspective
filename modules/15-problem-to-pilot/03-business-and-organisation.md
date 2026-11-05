@@ -29,3 +29,42 @@ The design should be challenged. A rival explanation is that poor source access,
 Harbour authorises a limited comparison of manual preparation, a deterministic record view and an assisted brief. The same inclusion rules apply to each route. The comparison records preparation effort, missing evidence, review effort, unsupported conclusions and elapsed resolution time. Excluded cases and their handling remain visible.
 
 This decision does not claim an expected percentage saving. It creates a way to learn whether the contribution helps under the stated conditions. The [implementation chapter](../../reference/research/04-implementation.md) develops fit, adjustment and rival explanations. It also explains why installing software and observing benefit are separate evidential steps.
+
+## Practical activity: Compare an AI proposal with a simpler organisational intervention.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Which alternative directly addresses unclear initial responsibility?
+
+```python
+alternatives=[{"name":"record view","changes":"source access"},{"name":"intake owner","changes":"responsibility"},{"name":"drafting assistant","changes":"preparation"}]
+print(alternatives)
+```
+
+intake owner addresses that mechanism. A model upgrade may leave it unchanged.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Which alternative directly addresses unclear initial responsibility?
+
+**Worked answer.** intake owner addresses that mechanism. A model upgrade may leave it unchanged.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

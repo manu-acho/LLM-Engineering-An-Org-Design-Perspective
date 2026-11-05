@@ -33,3 +33,42 @@ Conversely, some initial support work can build a shared understanding that impr
 Harbour permits a local learning release with fictional data and a fixed principal mapping. A public customer-facing release requires additional evidence about identity, hosting, persistence, recovery, security and service capacity. The release record separates completed local tests from these unexecuted conditions.
 
 The decision also specifies retirement. When a source or model becomes unsupported, the owner must decide whether to replace, narrow or withdraw the contribution. Preserve required case records and provide an alternative route for pending work. Continuing ownership includes the possibility of stopping a service whose contribution no longer justifies its operating burden.
+
+## Practical activity: Distinguish a process health response from a service outcome.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Does the responding process establish readiness for policy-supported work?
+
+```python
+evidence={"process_responds":True,"policy_source_available":False,"customer_resolved":False}
+print(evidence)
+```
+
+No. Readiness must account for the dependencies required by the declared task.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Does the responding process establish readiness for policy-supported work?
+
+**Worked answer.** No. Readiness must account for the dependencies required by the declared task.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

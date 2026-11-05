@@ -1,6 +1,9 @@
 """Execute each published notebook in a fresh kernel; never save learner edits."""
 
 import json
+import os
+
+os.environ["COURSE_OFFLINE_TEST"] = "1"
 import tempfile
 
 import nbformat
@@ -22,7 +25,7 @@ for lesson in manifest["lessons"]:
         # An unrelated working directory detects accidental dependence on where Jupyter starts.
         NotebookClient(
             notebook,
-            timeout=90,
+            timeout=180,
             kernel_name="ai-orgdesign",
             resources={"metadata": {"path": directory}},
         ).execute()

@@ -47,3 +47,59 @@ Likewise, a source project's tool list determines whether an agent can read, wri
 ## Read the organisational connection
 
 Configuration encodes categories, permitted contributions and criteria before execution starts. The research chapter explains [decision premises](../../reference/research/03-decisions.md#decision-premises).
+
+## Practical activity: Find ready work from completed prerequisites.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Which task is ready after records alone is complete?
+
+```python
+tasks={"records":[],"policy":[],"compare":["records","policy"]}
+done={"records"}
+ready=[name for name,dependencies in tasks.items() if name not in done and set(dependencies)<=done]
+print("Ready:",ready)
+assert ready == ["policy"]
+```
+
+policy is ready. compare still needs its other prerequisite.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Which task is ready after records alone is complete?
+
+**Worked answer.** policy is ready. compare still needs its other prerequisite.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+### Programming practice
+
+Write ready(tasks, done) to find uncompleted tasks whose dependencies are complete.
+
+Start with the placeholder in the notebook, then compare with this worked solution. The contrasting checks are part of understanding the contract.
+
+```python
+def ready(tasks, done):
+    return sorted(name for name,deps in tasks.items() if name not in done and set(deps)<=set(done))
+
+assert ready({"a":[],"b":["a"]},[]) == ["a"]
+assert ready({"a":[],"b":["a"]},["a"]) == ["b"]
+```
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

@@ -33,3 +33,42 @@ A defensible decision can retain the simpler alternative, narrow the contributio
 ## Check the completed explanation
 
 A strong response defines unfamiliar terms, names the relevant owner rather than a vague human-in-the-loop, explains what the code establishes and identifies at least one rival explanation for a favourable result. It should also state what new evidence could change the decision. The linked research chapter supplies the theoretical argument and scholarly references; the case here is an application, not a finding from that literature.
+
+## Practical activity: Define an incident handover that someone else can act on.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Who owns the unresolved business case during a technical incident?
+
+```python
+handover={"purpose":"evidence preparation","exclusions":["payments","real customer data"],"failure_owner":"engineering","pending_case_owner":"operations","recovery":"inspect current state before retry"}
+print(handover)
+```
+
+operations retains that responsibility; fixing a process does not itself resolve the customer problem.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Who owns the unresolved business case during a technical incident?
+
+**Worked answer.** operations retains that responsibility; fixing a process does not itself resolve the customer problem.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

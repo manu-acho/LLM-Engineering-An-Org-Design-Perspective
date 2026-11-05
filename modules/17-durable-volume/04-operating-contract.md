@@ -35,3 +35,58 @@ Assume thirty cases per hour enter review and reviewers can finish twenty per ho
 **Worked answer.** The review backlog grows by ten cases each hour under the stated steady rates. Faster preparation does not increase review capacity and may expose the bottleneck sooner. A lease alone cannot establish whether an external action happened. Use a stable command identity, the external service's idempotency facilities where available, and reconciliation before retrying an uncertain action.
 
 Carry that answer into the design record: required input, permitted contribution, acceptance owner, escalation trigger, recovery route and evidence for any benefit claim. A design record describes the proposed arrangement. Repeated observation and outcome comparisons are needed to examine what it becomes in practice.
+
+## Practical activity: Check whether a stable-flow calculation is applicable.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+What is average work under these declared stable-flow assumptions?
+
+```python
+throughput_per_hour=20
+average_hours=.5
+average_work=throughput_per_hour*average_hours
+print("Stable-flow illustrative work:",average_work)
+```
+
+Ten cases. This calculation does not describe the separate example with a continually growing backlog.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: What is average work under these declared stable-flow assumptions?
+
+**Worked answer.** Ten cases. This calculation does not describe the separate example with a continually growing backlog.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+### Programming practice
+
+Write growth(arrivals, completions, hours) for the stated constant-rate illustration.
+
+Start with the placeholder in the notebook, then compare with this worked solution. The contrasting checks are part of understanding the contract.
+
+```python
+def growth(arrivals, completions, hours):
+    return (arrivals-completions)*hours
+
+assert growth(30,20,3) == 30
+assert growth(20,20,3) == 0
+```
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

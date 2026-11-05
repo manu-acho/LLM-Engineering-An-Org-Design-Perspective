@@ -33,3 +33,48 @@ A promotion gate is a decision rule, not proof of statistical significance. A co
 Versioning records which configuration was used. Rollback selects a previous configuration for new work. Neither automatically undoes messages already sent, records already changed or expectations already created. Recovery needs an affected-case query, responsible owners and a correction route.
 
 The capstone therefore joins the technical service and its operating model. A defensible proposal explains the contribution, the data and model boundaries, who accepts outputs, how exceptions move, what was tested and which claims remain unsupported. Completion is the ability to reason across these layers, not merely obtaining a green test suite.
+
+## Practical activity: Separate a configuration proposal from the active version.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Which version remains active after a proposal is recorded?
+
+```python
+from tempfile import TemporaryDirectory
+from pathlib import Path
+from ai_orgdesign.governance import Versions
+with TemporaryDirectory() as directory:
+    registry=Versions(Path(directory)/"versions.json")
+    registry.propose("candidate","Preserve report status explicitly")
+    print(registry.read())
+    assert registry.read()["current"]=="baseline"
+```
+
+baseline. Recording a proposed change does not release it.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Which version remains active after a proposal is recorded?
+
+**Worked answer.** baseline. Recording a proposed change does not release it.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

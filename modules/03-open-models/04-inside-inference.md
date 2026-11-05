@@ -53,3 +53,47 @@ The output shape means one sequence, three positions and sixteen candidate-token
 ## Read the organisational connection
 
 A numerical inference trace supports a technical claim within its tested scope. The research chapter explains [the evidence path](../../reference/research/06-technology-in-practice.md#an-evidence-path-without-skipped-steps).
+
+## Practical activity: Calculate a small attention-weighted combination by hand and in code.
+
+
+
+A comprehension constructs a new collection from an existing one. Read `[expression for item in items if condition]` as: visit each item, keep those meeting the condition, and calculate the expression. `zip` pairs corresponding items from sequences. It stops at the shortest input, so paired evaluation needs an explicit equal-length condition.
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Which source value receives the larger weight?
+
+```python
+import math
+scores = [1.0, 0.0]
+weights = [math.exp(s) / sum(math.exp(x) for x in scores) for s in scores]
+values = [10.0, 2.0]
+combined = sum(w * value for w, value in zip(weights, values))
+print("Weights:", weights, "Weighted value:", combined)
+assert weights[0] > weights[1]
+```
+
+Ten receives the larger weight because its score is larger. This arithmetic illustrates attention weighting, not how the full transformer learns its scores.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Which source value receives the larger weight?
+
+**Worked answer.** Ten receives the larger weight because its score is larger. This arithmetic illustrates attention weighting, not how the full transformer learns its scores.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

@@ -1,47 +1,64 @@
 # Lesson 12.2: Reopen durable work and resume review
 
-[Download the matching notebook](/downloads/12-02-code-workshop.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+[Download the matching notebook](/downloads/12-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
-[Module route](README.md) · [Workspace setup](../../STUDY-WORKSPACE.md) · [Technical foundations](../../reference/technical-foundations.md)
+## Practical activity: Pause an actual model-backed graph at a human-review boundary.
 
-## The problem this program addresses
 
-A review that waits overnight cannot rely on a notebook variable. Durable state preserves the pending work across sessions, but it must not preserve expired authority or repeat an already committed decision.
 
-The implementation lives in `src/ai_orgdesign/labs/m12.py`. All examples use fictional data. The default exercise needs no provider account or API key. Installing the locked dependencies initially requires network access; running the core exercise does not send a model-provider request.
 
-## Read the operation before running it
 
-The example writes a pending case to a SQLite file, then constructs a second CaseStore using that same file. Reading the saved version provides the basis for a later return decision. The stored version is checked again inside the transaction that records the decision. This is a real database reopen and resume exercise. It does not kill an operating-system process, checkpoint a neural model or claim distributed crash recovery.
-
-`import` makes the saved implementation available in the notebook. Calling a function supplies its inputs and receives its return value. `assert` checks an expected property and raises an error if that property is false. An assertion is evidence about that specific property, not a certificate that the application is correct in every situation.
-
-## Predict, run and inspect
-
-Run this block in the matching notebook, with the project `.venv` kernel selected. The asynchronous examples use the notebook's supported top-level `await`; ordinary scripts need an event-loop entry point such as `asyncio.run` instead.
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
 
 ```python
-from ai_orgdesign.labs.m12 import demo
-result = demo()
-assert result["before_restart"]["status"] == "review"
-assert result["after_resume"]["status"] == "returned"
-print(result)
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
 ```
 
-Before the reopen, H-17 is in review at version one. The resumed return decision becomes version two with status returned. A later command based on version one is stale. Replaying the exact committed command with its original key retrieves its original result.
+### Predict and follow the values
 
-If an import fails, run `python3 scripts/setup.py` from the course folder and select the project kernel again. If a shared-code edit appears ignored, restart the kernel so Python loads the new file. Read an exception before changing the code: it may report a deliberate boundary such as forbidden scope or stale state.
+Should the prepare node authorise the remedy before human review?
 
-## Change one condition
+```python
+from pathlib import Path
+from uuid import uuid4
+review_path = ROOT / "outputs" / ("review-" + uuid4().hex + ".db")
+review_path.parent.mkdir(exist_ok=True)
+print("A new local checkpoint path is prepared for this experiment.")
+```
 
-**Exercise.** Distinguish a snapshot used to display a review screen from authority to commit a decision. What should happen after a policy change while the screen remains open?
+No. The checkpoint preserves a contribution awaiting an explicit decision.
 
-Before opening the answer, identify which function owns the relevant check and whether the change should affect data, control flow, authority or evaluation. Keeping these categories distinct helps locate a failure without blaming every unexpected result on a model.
+### Use the live model
 
-**Worked answer.** The snapshot describes what was read. It cannot guarantee that the case or policy remains current. Decision-time checks must compare the submitted versions with the authoritative current versions, then require a fresh review if either changed. Durable storage preserves facts about work; it does not make an old approval valid forever.
+Live mode is the recommended implementation route after [API setup](../../reference/live-model-guide.md). The following operation uses the fictional evidence shown here, returns an actual result and retains usage. Named arguments label a function's inputs; a returned object provides fields such as text, value and record. Read those fields independently instead of treating fluent text as a success certificate.
 
-## Consider the alternative
+```python
+if RUN_LIVE:
+    from ai_orgdesign.durable_review import start, inspect_pending
+    pending=start(review_path,gateway)
+    print("Interrupt present:","__interrupt__" in pending)
+    print(inspect_pending(review_path))
+else:
+    print("Live exercise not run. Set COURSE_LIVE_MODE=1 in the local .env when ready.")
+```
 
-A graph checkpointer can persist execution state; a business database records authoritative case decisions. These may be separate stores with different lifecycles. Event logs aid reconstruction but do not automatically reproduce side effects safely. An outbox and reconciliation become relevant when external actions cross the database boundary.
+A failed or incomplete result must remain visible. The [live-model guide](../../reference/live-model-guide.md) explains authentication, quota, timeout, refusal and response-format problems, with the offline verification route kept separate.
 
-The [organisation design reading](../../reference/research/05-routines.md) develops the relevant argument and its scholarly references. The lab demonstrates an implementation pattern; the business and design lessons examine the conditions under which that contribution might be useful.
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Should the prepare node authorise the remedy before human review?
+
+**Worked answer.** No. The checkpoint preserves a contribution awaiting an explicit decision.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+
+The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

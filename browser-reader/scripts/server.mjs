@@ -36,7 +36,7 @@ const server = http.createServer(async (request, response) => {
     }
     const entry = allowed.get(url.pathname);
     if (!entry || !['GET', 'HEAD'].includes(request.method)) { response.writeHead(404); response.end('Not found'); return; }
-    if (url.pathname === '/content-index.json') await refresh();
+    if (['/', '/index.html', '/content-index.json'].includes(url.pathname)) await refresh();
     const body = await fs.readFile(path.join(distRoot, entry[0]));
     response.writeHead(200, { 'Content-Type': entry[1], 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff',
       'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'" });

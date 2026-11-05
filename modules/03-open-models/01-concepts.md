@@ -55,3 +55,45 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Running the model locally creates continuing maintenance and support work. The research chapter explains [implementation beyond launch](../../reference/research/04-implementation.md#implementation-extends-beyond-launch).
+
+## Practical activity: Estimate weight storage separately from context and other runtime memory.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+How many decimal megabytes do these illustrative FP32 weights occupy?
+
+```python
+parameters = 135_000_000
+bytes_per_parameter = 4
+weight_bytes = parameters * bytes_per_parameter
+print("Illustrative FP32 weight MB:", weight_bytes / 1_000_000)
+assert weight_bytes == 540_000_000
+```
+
+540 MB for weights alone. Actual checkpoint precision, activations, caches and runtime overhead change the memory requirement.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: How many decimal megabytes do these illustrative FP32 weights occupy?
+
+**Worked answer.** 540 MB for weights alone. Actual checkpoint precision, activations, caches and runtime overhead change the memory requirement.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

@@ -43,3 +43,7 @@ Which part of the system should calculate twelve minus ten, and what would that 
 **Worked response:** ordinary code can calculate the difference as two. It establishes the difference between the selected inputs under their stated meanings. It does not independently verify receipt or identify the cause. A model can help express the comparison, but no generation is required for the subtraction.
 
 The [decision research chapter](../../reference/research/03-decisions.md#distinct-acts-in-one-workflow) explains why calculation, recommendation, authorisation and execution need separate examination. The next lesson makes these distinctions visible in a small program.
+
+## Try the live model
+
+The [live-model guide](../../reference/live-model-guide.md) prepares the API configuration. The matching notebook adds a real request and records the returned model, status, usage and duration. Inspect every factual claim. In a development run, the model inferred shipped quantity from an order record; the source did not establish that inference. The [worked experiment record](../../reference/worked-model-experiments.md) explains this observed failure and the later corrections.

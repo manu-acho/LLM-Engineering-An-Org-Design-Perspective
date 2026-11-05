@@ -65,3 +65,44 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 The metric selects properties to reward and can redirect attention. The research chapter explains [decision premises](../../reference/research/03-decisions.md#decision-premises).
+
+## Practical activity: Locate the work transferred by a faster draft.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Which route has the lower total in this invented example?
+
+```python
+manual = {"preparation_minutes":12,"review_minutes":3}
+assisted = {"preparation_minutes":4,"review_minutes":12}
+print("Manual total:", sum(manual.values()))
+print("Assisted total:", sum(assisted.values()))
+```
+
+manual totals fifteen minutes; assisted totals sixteen. Faster drafting alone does not establish a service improvement.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Which route has the lower total in this invented example?
+
+**Worked answer.** manual totals fifteen minutes; assisted totals sixteen. Faster drafting alone does not establish a service improvement.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

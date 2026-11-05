@@ -82,3 +82,43 @@ Extend the capstone operating design with two actor-specific affordance/constrai
 ## Read the organisational connection
 
 The relevant question names an actor, action, goal and conditions rather than only a feature. The research chapter explains [features, affordances and constraints](../../reference/research/06-technology-in-practice.md#feature-affordance-and-constraint).
+
+## Practical activity: Distinguish an available review feature from its use.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Does installation establish an improved outcome?
+
+```python
+evidence = {"panel_installed":True,"reviewer_can_access":True,"reviewer_used_sources":False,"outcome_improved":None}
+print(evidence)
+assert evidence["outcome_improved"] is None
+```
+
+No. Availability, actual use and consequences require different evidence.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: Does installation establish an improved outcome?
+
+**Worked answer.** No. Availability, actual use and consequences require different evidence.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

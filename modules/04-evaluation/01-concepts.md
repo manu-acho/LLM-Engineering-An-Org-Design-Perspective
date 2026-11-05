@@ -61,3 +61,44 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Usefulness requires a defined population, consequence and comparison. The research chapter explains [benefit evidence](../../reference/research/04-implementation.md#benefits-need-a-population-and-a-comparison).
+
+## Practical activity: Define the evaluation unit and denominator before calculating accuracy.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+What is this rule's accuracy on these four cases?
+
+```python
+truth = ["review","review","clear","clear"]
+predictions = ["clear"] * 4
+correct = sum(a == b for a, b in zip(truth, predictions))
+print("Correct:", correct, "Cases:", len(truth), "Accuracy:", correct / len(truth))
+```
+
+0.5. The score describes these cases and does not show that the population is representative.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: What is this rule's accuracy on these four cases?
+
+**Worked answer.** 0.5. The score describes these cases and does not show that the population is representative.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

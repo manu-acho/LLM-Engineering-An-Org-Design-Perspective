@@ -64,3 +64,60 @@ Test an empty result, explicit error, stale input revision, missing output and a
 ## Read the organisational connection
 
 An adapter that replaces unknown with a definite value changes the basis of later choices. The research chapter explains [decision premises](../../reference/research/03-decisions.md#decision-premises).
+
+## Practical activity: Build a small adapter that refuses an unknown status.
+
+
+
+
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+What value should remain when a pending payload has no result?
+
+```python
+def normalise(payload):
+    if payload["state"] not in {"pending","complete"}:
+        raise ValueError("Unknown state")
+    return {"status":payload["state"],"value":payload.get("value")}
+print(normalise({"state":"pending"}))
+assert normalise({"state":"pending"})["value"] is None
+```
+
+None preserves absence. It should not become an invented success or a zero-valued result.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: What value should remain when a pending payload has no result?
+
+**Worked answer.** None preserves absence. It should not become an invented success or a zero-valued result.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+### Programming practice
+
+Write adapt_pending(payload) preserving a missing result as None.
+
+Start with the placeholder in the notebook, then compare with this worked solution. The contrasting checks are part of understanding the contract.
+
+```python
+def adapt_pending(payload):
+    return {"status":payload["state"],"value":payload.get("value")}
+
+assert adapt_pending({"state":"pending"}) == {"status":"pending","value":None}
+assert adapt_pending({"state":"complete","value":0})["value"] == 0
+```
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

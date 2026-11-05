@@ -159,3 +159,38 @@ Short definitions are a starting point. The [technical foundations](technical-fo
 | Transaction | A database commit-or-rollback unit; it does not automatically include external side effects |
 | Vector | An ordered collection of numbers, such as [12, 10] for ordered and reported quantities |
 | Vertical slice | One end-to-end contribution through the necessary layers, rather than one disconnected layer |
+
+## Vocabulary for the live implementation route
+
+| Term | Plain meaning and example |
+|---|---|
+| SDK | A software library for using a service; the Python client packages HTTP requests and response objects |
+| Gateway, course helper | The included session object that sets request limits, checks completion and retains usage; it is not a separate model |
+| Attribute | A named part of an object, accessed with a dot, such as result.text |
+| Keyword argument | A labelled function input, such as max_requests=1 |
+| Schema | A declared structure and allowed types; it can require a field without establishing the field's truth |
+| Typed output | A returned value checked against a declared structure, such as a brief with an integer quantity |
+| Null / None | JSON null corresponds to Python None here; both preserve absence rather than inventing a zero |
+| Delta | The newly arrived part of streamed output, not necessarily the full text so far |
+| Refusal | A model response declining the task; it should not be presented as a completed investigation contribution |
+| Incomplete response | A run that ended without a completed answer, potentially after consuming tokens |
+| Transport fixture | Controlled local request/response behaviour used in a test; it is not a provider observation |
+| Async client | A client whose operations are awaited; passing a synchronous client to an asynchronous framework is an interface mismatch |
+| Annotation | Type information attached to a Python definition; its runtime effect depends on the component interpreting it |
+| Checkpoint | Saved execution state at a boundary, used here to resume the review graph after reopening its database |
+| AST | Abstract syntax tree, a structured representation of code used to inspect allowed operations before a restricted execution |
+| Classification head | A task-specific output layer mapping model representations to class scores; new weights need training |
+| Query expansion | Adding related search terms under an explicit rule, such as crushed to the damage-policy wording |
+| Evidence contract | Declared checks linking returned fields to a case, allowed sources and unresolved facts |
+| Route agreement | Fraction of predictions matching the specified reference categories; its interpretation depends on what those categories mean |
+| Resource proxy | A measure used to represent one aspect of resource use, such as token counts; it must not be relabelled as an observed financial expense |
+
+The [live-model guide](live-model-guide.md) works through these terms in a request. The [worked experiments](worked-model-experiments.md) show why their distinctions affect actual outcomes.
+
+| Additional term | Meaning |
+|---|---|
+| Tenant, in this course | The caller's authorised organisational scope; north and south are teaching regions, not evidence of a complete multi-tenant deployment |
+| Encoder | A model component producing representations of supplied input; the BERT exercise adds a classification head to them |
+| Decoder, autoregressive | A model component predicting successive output tokens under the permitted context |
+| Traceback | The sequence of calls shown when Python raises an exception; inspect the final category and the relevant course line |
+| Idempotency scope | The boundary within which a repeated command identity has its declared effect, such as one local database |

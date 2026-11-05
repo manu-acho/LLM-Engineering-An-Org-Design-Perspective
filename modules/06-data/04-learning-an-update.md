@@ -48,3 +48,65 @@ A word-vector vocabulary fitted on training descriptions maps words to columns. 
 ## Read the organisational connection
 
 The selected error measure defines which differences the training procedure treats as costly. The research chapter explains [decision premises](../../reference/research/03-decisions.md#decision-premises).
+
+## Practical activity: Calculate an actual gradient-descent trace from the written lesson.
+
+A gradient describes how the loss changes locally with a parameter. A learning rate scales the update. Here the derivative formula is supplied for squared error; the example works through its arithmetic before relying on automatic differentiation.
+
+`**` raises a number to a power in arithmetic. In a function call or dictionary expression the same characters can unpack named values; their meaning depends on the surrounding syntax.
+
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+
+```python
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+What is the weight after the first update?
+
+```python
+examples = [(1.0,2.0),(2.0,4.0)]
+weight = 0.0
+history = []
+for step in range(4):
+    loss = sum((weight*x-y)**2 for x,y in examples) / len(examples)
+    gradient = sum(2*x*(weight*x-y) for x,y in examples) / len(examples)
+    history.append({"step":step,"weight":weight,"loss":loss,"gradient":gradient})
+    weight -= 0.1 * gradient
+print(history)
+assert history[0]["gradient"] == -10.0
+assert weight == 1.875
+```
+
+One. The initial gradient is minus ten, and subtracting 0.1 times that gradient increases the weight from zero to one.
+
+### Complete the exercise
+
+Write the prediction before consulting the worked answer: What is the weight after the first update?
+
+**Worked answer.** One. The initial gradient is minus ten, and subtracting 0.1 times that gradient increases the weight from zero to one.
+
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+
+### Programming practice
+
+Write update(weight, gradient, rate) for one gradient-descent step.
+
+Start with the placeholder in the notebook, then compare with this worked solution. The contrasting checks are part of understanding the contract.
+
+```python
+def update(weight, gradient, rate):
+    return weight - rate * gradient
+
+assert update(0.,-10.,.1) == 1.
+assert update(2.,0.,.1) == 2.
+```
+
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

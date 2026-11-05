@@ -1,75 +1,71 @@
 # Lesson 19.5: Start and inspect the local case service
 
-[Download the matching notebook](/downloads/19-05-source-walkthrough.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+[Download the matching notebook](/downloads/19-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
-[Module route](README.md) · [Previous workshop](02-code-workshop.md)
+## Practical activity: Run the full authenticated draft-read-review HTTP journey.
 
-## Follow the path in the course checkout
 
-The implementation is included here, so this walkthrough does not require another course, video or repository. Open `src/ai_orgdesign/labs/m19.py`. The lab's public functions expose inputs and return values; supporting service code lives in `src/ai_orgdesign/business.py` where required.
 
-create_app constructs a FastAPI application backed by CaseStore. The caller supplies a mapping from opaque tokens to principals containing identity, role and tenant. Header authentication resolves that mapping on the server; request payloads cannot choose their actor. The read route uses the principal's tenant. The decision route validates a Pydantic command and delegates to the transactional store. A test client exercises the HTTP contract in process; the separate serve entry point starts an actual local Uvicorn server with a token loaded from .env.
 
-Read the function from entry to return. Locate input validation before substantive work, transformations that create a new representation, any call into another component and the point that produces the observable result. A model call, a database commit and constructing a dictionary are different operations. Identify which actually occur in this program.
 
-## Work through the contrasting case
-
-Identify what must be added before the local token-based teaching application can be offered to several organisations on the public internet. Distinguish those requirements from the fact that a local endpoint returned HTTP 200.
-
-The following variation either checks a failure boundary or exposes another aspect of the same implementation. Catching an expected exception allows the notebook to continue; the `else` branch raises an assertion if the expected boundary fails to appear.
+The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
 
 ```python
-from ai_orgdesign.labs.m19 import Decision
-from pydantic import ValidationError
-try:
-    Decision(expected_version=1, action="approve", key="one", policy_version=2, actor="invented")
-except ValidationError:
-    print("Caller-supplied actor rejected")
+from ai_orgdesign.workspace import project_root, live_mode
+ROOT = project_root()
+RUN_LIVE = live_mode()
+if RUN_LIVE:
+    from ai_orgdesign.provider import Gateway
+    gateway = Gateway(max_requests=12, max_output_tokens=1000)
+print("Live mode:", RUN_LIVE)
+```
+
+### Predict and follow the values
+
+Does the static reading website run the Python application?
+
+```python
+print("Start the local server separately with: uv run --locked python -m ai_orgdesign.serve")
+print("Its default endpoint is http://127.0.0.1:4192; Ctrl+C stops its Terminal process.")
+```
+
+No. The course reader and the Python service are separate processes.
+
+### Use the live model
+
+Live mode is the recommended implementation route after [API setup](../../reference/live-model-guide.md). The following operation uses the fictional evidence shown here, returns an actual result and retains usage. Named arguments label a function's inputs; a returned object provides fields such as text, value and record. Read those fields independently instead of treating fluent text as a success certificate.
+
+```python
+if RUN_LIVE:
+    from tempfile import TemporaryDirectory
+    from pathlib import Path
+    from fastapi.testclient import TestClient
+    from ai_orgdesign.labs.m19 import create_app
+    token="fictional-live-http-token"
+    with TemporaryDirectory() as directory:
+        app=create_app(Path(directory)/"service.db",{token:{"id":"reviewer","role":"manager","tenant":"north"}},gateway=gateway)
+        with TestClient(app) as client:
+            headers={"x-course-token":token}
+            prepared=client.post("/cases/H-17/drafts",headers=headers)
+            prepared.raise_for_status()
+            saved=client.get("/cases/H-17/drafts",headers=headers)
+            saved.raise_for_status()
+            print(saved.json())
 else:
-    raise AssertionError("Unexpected actor field accepted")
+    print("Live exercise not run. Set COURSE_LIVE_MODE=1 in the local .env when ready.")
 ```
 
-**Interpretation.** The deployment needs an appropriate identity provider and credential lifecycle, HTTPS termination, persistent storage with backup and restore tests, least-privilege networking, secret management, monitoring, quotas, updates and accountable support. Multi-tenant isolation needs broader tests than these two fictional scopes. A successful local request proves only the exercised route, not the full deployment design.
+A failed or incomplete result must remain visible. The [live-model guide](../../reference/live-model-guide.md) explains authentication, quota, timeout, refusal and response-format problems, with the offline verification route kept separate.
 
-## Inspect the implementation rather than a duplicate
+### Complete the exercise
 
-The matching notebook can display saved functions using `inspect.getsource`. This shows the implementation currently imported by Python. Reading code is useful, but a displayed function is not proof it executed or that every branch was tested. The behavioural checks deliberately include invalid inputs and contrasting outcomes.
+Write the prediction before consulting the worked answer: Does the static reading website run the Python application?
 
-Run the course checks from the root folder with `uv run --locked pytest`. Run the notebook checks with `uv run --locked python scripts/verify_notebooks.py`. The [verification guide](../../reference/verification.md) distinguishes offline execution, real protocol tests, model downloads and paid-provider checks. It records the limits of each claim.
+**Worked answer.** No. The course reader and the Python service are separate processes.
 
-## What a result can establish
+The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
-The public health route reports teaching simulation. An unauthenticated case read receives 401. A correctly authenticated north caller can read H-17. Readers cannot approve, a stale decision receives a conflict response, and an extra actor field is rejected by schema validation. No payment or external customer integration is included.
 
-Keep inputs, configuration identity, observed result and interpretation separate in an experiment record. If the program behaves as predicted but the business problem remains, investigate the surrounding evidence, roles and dependencies. A successful run should sharpen that inquiry rather than end it.
+The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
-## Explain the pattern without the library name
-
-A useful completion check is to explain the operation in ordinary language, then name the exact implementation. A single-host service is a useful first operating boundary. A managed container or serverless platform changes scaling, timeout and persistence assumptions. Static Netlify hosting serves the course notes; it does not operate the Python application. Cloud deployment is optional and must not be presented as tested when only local execution was observed.
-
-The [research connection](../../reference/research/04-implementation.md) develops the organisational questions. Follow the module's design lesson to turn this technical understanding into a decision with stated conditions and a recovery route.
-
-## Start the real local HTTP server
-
-After running the setup script, a random local service token is configured in `.env`. From the course root, run:
-
-```sh
-uv run --locked python -m ai_orgdesign.serve
-```
-
-The server listens on `http://127.0.0.1:4192`. Keep its Terminal window open; Ctrl+C stops it. `/health` is public, while case reads require the local token. The database is retained under `outputs/harbour.db`; it is fictional learning state, not a managed backup.
-
-In a separate local Python session, a scoped read can use the token without printing it:
-
-```python
-import httpx
-from ai_orgdesign.workspace import require_api_key
-
-with httpx.Client(base_url="http://127.0.0.1:4192",
-                  headers={"x-course-token": require_api_key("COURSE_SERVICE_TOKEN")}) as client:
-    response = client.get("/cases/H-17")
-    response.raise_for_status()
-    print(response.json())
-```
-
-This connects to a local socket, unlike TestClient. It is an optional second execution route, not a required network operation during the default notebook run. Do not expose the teaching token application publicly as though it already supplies a production identity system.
+For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

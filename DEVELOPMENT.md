@@ -11,3 +11,5 @@ The learner-facing setup is in `STUDY-WORKSPACE.md`. This file documents the tec
 7. Save published notebooks with empty outputs. Keep learner edits and local results out of the shared baseline. Check public notes and notebook Markdown for personal framing, unsupported claims, complex prose and em dashes.
 
 The setup script recreates the locked environment and kernel registration on another computer. Virtual environments, credentials, caches and generated reader files remain ignored. The existing companion edition is maintained separately on `main`; this checkout stays on the course development branch.
+
+Each lesson needs a distinct activity, an independent attempt and a separate worked answer. Run `uv run --locked python scripts/check_learning_path.py` to check mappings and repeated activities. This structural check supports, but does not replace, human review. Model-facing examples must show usage and failure handling; their deterministic fixtures cannot be reported as model observations.
