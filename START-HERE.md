@@ -16,7 +16,7 @@ No previous course or programming background is required. Begin with Module 1. W
 4. Select the Python kernel inside this project's `.venv` folder. A kernel is the Python process that runs cells and retains their values.
 5. Read the explanation, predict the next result, run the cell and compare the output with the supplied facts.
 
-The files are already present in a prepared checkout; no lab-file download is needed. For a fresh copy, use the [workspace guide](STUDY-WORKSPACE.md) and run `python3 scripts/setup.py` from the course folder. That command recreates the locked environment. The reader and Python notebooks are separate applications: opening a lesson in the reading website does not execute its code.
+The files are already present in a prepared checkout; no lab-file download is needed. For a fresh copy, follow the [setup guide](SETUP.md) and run `uv run --locked python scripts/setup.py` from the course folder. That command recreates the locked environment. The reader and Python notebooks are separate applications: opening a lesson in the reading website does not execute its code.
 
 ## Choose the learning route
 

@@ -4,6 +4,8 @@ Learn how AI systems work and how to integrate their contributions into the desi
 
 ## Begin here
 
+**Cloned the repository?** Follow the [setup guide](SETUP.md) to install the complete environment, open the reader and run the notebooks.
+
 - [Start here](START-HERE.md): choose a learning route and understand the course's boundaries.
 - [Curriculum](CURRICULUM.md): twenty modules across AI foundations, agent engineering and business implementation.
 - [Live-model guide](reference/live-model-guide.md): configure a key, make a first call and interpret errors and usage.

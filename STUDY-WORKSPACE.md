@@ -1,6 +1,6 @@
 # Read, experiment and run the code
 
-[Start here](START-HERE.md) · [Pilot lessons](modules/01-standalone-foundations/README.md) · [Lab guide](LAB-GUIDE.md)
+[Setup from a Git clone](SETUP.md) · [Start here](START-HERE.md) · [Pilot lessons](modules/01-standalone-foundations/README.md) · [Lab guide](LAB-GUIDE.md)
 
 The course combines complete written lessons with runnable Jupyter notebooks. A notebook is a document with explanatory text and code cells. A cell can be run on its own, making it possible to inspect an intermediate result before continuing. The written lessons remain the full teaching route; notebooks add practice rather than replace the explanations.
 
@@ -20,10 +20,10 @@ The **kernel** is the Python process holding the notebook's current values. Rest
 
 ## Prepare a fresh checkout or receive course updates
 
-The environment is already prepared on the development machine. A fresh checkout needs [uv](https://docs.astral.sh/uv/getting-started/installation/), which installs and selects the required Python and packages. Open a terminal in the course folder and run:
+For a fresh checkout, follow the complete [setup guide](SETUP.md). The workspace needs [uv](https://docs.astral.sh/uv/getting-started/installation/), which installs and selects the required Python and packages. Open a terminal in the course folder and run:
 
 ```sh
-python3 scripts/setup.py
+uv run --locked python scripts/setup.py
 ```
 
 The script runs `uv sync --locked`, creates `.venv`, installs the versions recorded in `uv.lock`, creates a local `.env` if absent, registers the notebook kernel inside the environment, adds any missing blank settings and generates a local service token without displaying it. It preserves an existing `.env`. The first setup needs an internet connection for packages. The pilot then runs without network access.
@@ -46,7 +46,7 @@ Keep that Terminal window open while studying. Jupyter prints a local URL and no
 
 Each of the course lessons has a notebook with the same number and filename. The lesson pages offer notebook downloads. A downloaded notebook still needs the course checkout and its shared Python files; it is not an isolated program. In VS Code, open the notebook already present in the checkout to keep the directory structure intact.
 
-The notebooks import `examples/01-foundations/foundations_lab.py`. Opening that file reveals the complete implementation. Editing it changes the shared code for all notebooks; restart the kernel after such an edit so Python imports the new version. Use copies of case data for experiments so one exercise does not silently alter another.
+Pilot notebooks load `examples/01-foundations/foundations_lab.py`; later modules import the shared implementations under `src/ai_orgdesign/`. The [application code walkthrough](reference/application-code-walkthrough.md) explains those helpers. Editing shared code changes the notebooks that import it; restart the kernel after such an edit so Python imports the new version. Use copies of case data for experiments so one exercise does not silently alter another.
 
 ## Recommended live-model route
 
@@ -76,4 +76,4 @@ The first command checks the interpreter and core tools without displaying keys.
 | A shared-code edit seems ignored | Restart the kernel to clear Python's imported copy |
 | `uv` not found | Install uv, then reopen the terminal |
 | Permission or package download failure | Check the error and network connection; do not paste API keys into diagnostics |
-| Notebook runs but no LLM answer appears | The pilot trains a tiny count model and constructs request messages; it sends no provider request |
+| Notebook runs but no LLM answer appears | Check the live-mode setting and the cell label; local mechanism cells do not send provider requests |
