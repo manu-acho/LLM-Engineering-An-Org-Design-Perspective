@@ -81,3 +81,7 @@ The source parser extracts a number after the price prefix and returns zero if p
 **Worked exercise:** A saved adapter loads successfully but scores worse after deployment. Compare base revision, tokenizer, prompt prefix, truncation, numerical parser and task population before assuming the adapter weights changed. The running system is a chain of compatible artefacts.
 
 **Further reading:** [PEFT quicktour](https://huggingface.co/docs/peft/en/quicktour) and [bitsandbytes integration](https://huggingface.co/docs/transformers/en/quantization/bitsandbytes). The local lab and the source's large-model service have deliberately different resource requirements.
+
+## Read the organisational connection
+
+Saved weights, versions and reconstruction requirements create continuing service responsibilities. The research chapter explains [implementation beyond launch](../../reference/research/04-implementation.md#implementation-extends-beyond-launch).

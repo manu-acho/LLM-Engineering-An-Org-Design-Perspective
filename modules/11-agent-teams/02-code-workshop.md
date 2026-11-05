@@ -92,3 +92,7 @@ A graph scheduler could find ready tasks and run independent ones together. It w
 ## Continue the module
 
 The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
+
+## Read the organisational connection
+
+A task graph makes prerequisites visible, but shared-resource and meaning problems can remain. The research chapter explains [dependency management](../../reference/research/02-coordination.md#identify-what-depends-on-what).

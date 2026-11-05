@@ -8,7 +8,7 @@
 
 Several explanations are possible. The panel may contain incomplete records, use unfamiliar labels or be unavailable to an important reviewer. Reviewers may trust the email sender more than the indexed source. Their allotted review time may be too short. Or they may not yet have learned that the panel supplies the necessary evidence.
 
-The feature exists. Its relation to the work is still a question. Stream 6 gives us a vocabulary for investigating that relation without assuming either that the feature determines practice or that its technical design is irrelevant.
+The feature exists. Its relation to the work is still a question. Research chapter 6 gives us a vocabulary for investigating that relation without assuming either that the feature determines practice or that its technical design is irrelevant.
 
 ## Materiality: digital arrangements can make a concrete difference
 
@@ -57,7 +57,7 @@ This is a teaching adaptation of the six-layer synthesis in the linked literatur
 
 The review uses Orlikowski's practice lens to distinguish a system's capabilities from structures enacted through recurrent use. One team might make the panel its working record. Another might enter minimal information and coordinate through email. These possibilities need observation rather than inference from the interface.
 
-Stream 6 also discusses **sociomateriality**. Some accounts argue that people and technology are so bound together in an activity that separating a purely social part from a purely technical part distorts what is happening. This is what **constitutive entanglement** means here.
+Research chapter 6 also discusses **sociomateriality**. Some accounts argue that people and technology are so bound together in an activity that separating a purely social part from a purely technical part distorts what is happening. This is what **constitutive entanglement** means here.
 
 Other approaches preserve a distinction between people and technical arrangements. **Critical-realist affordance** accounts examine how relations between them make actions possible under particular conditions. **Imbrication** examines how human goals and the effects of material arrangements become interlocked over time. The review records real disagreements between these positions. They are not interchangeable names for “people plus technology”.
 
@@ -75,4 +75,8 @@ Now suppose the pilot reports an improvement. Could clearer policy or extra revi
 
 Extend the capstone operating design with two actor-specific affordance/constraint statements, an account of the actions needed for actualisation and an evidence plan across the six layers. Connect at least one statement to an actual code check or representation from an earlier workshop. This preserves technical precision while asking what the mechanism means for particular work.
 
-**Research basis:** [Stream 6 review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_06_Technology_Materiality_Organisation_Detailed_Review.md). These review syntheses are the sources consulted here; primary-source reading and version-of-record limits are retained in the [literature foundation](../../reference/literature-guide.md).
+**Research basis:** [Research chapter 6](../../reference/research/06-technology-in-practice.md). The chapter explains the concepts, theoretical disagreements and evidence distinctions introduced in this lesson.
+
+## Read the organisational connection
+
+The relevant question names an actor, action, goal and conditions rather than only a feature. The research chapter explains [features, affordances and constraints](../../reference/research/06-technology-in-practice.md#feature-affordance-and-constraint).

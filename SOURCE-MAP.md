@@ -18,13 +18,13 @@ The original course repository has an [MIT licence](https://github.com/ed-donner
 
 Agents-course file links use revision `542a7036c321a9308379507b06ce8d0deb370d5d`. Part II adds small worked examples, framework comparisons and organisational applications. Original API calls, notifications, browser workflows and trading examples were not executed. The source guide distinguishes source reading, dependency-free examples and integration requirements.
 
-## The organisation-design literature
+## Organisation design research
 
-The organisational lessons draw on literature from organisation design research, covering how work is divided, coordination, decision-making, system implementation, routines and technology in practice. The [literature guide](reference/literature-guide.md) introduces the ideas and links directly to six reviews.
+The [research reading guide](reference/literature-guide.md) opens six chapters on designing work, coordinating contributions, making decisions, implementation, routines and technology in practice. They explain the concepts through AI-supported business cases and include their own scholarly references, exercises and worked responses.
 
-The reviews use enterprise software, including SAP, as a research setting. Here, selected concepts help us examine fictional AI examples. A finding from an enterprise-system study does not establish that an AI application will have the same result.
+Individual lessons link to the relevant concepts inside the reader. The research chapters connect technical operations, such as filtering evidence, routing a case or checking a proposal version, with questions about information, responsibility, discretion and organisational outcomes.
 
-The reviews are the sources consulted for this synthesis. References to original authors identify where ideas come from; they do not imply that every original article was independently read for this guide. The literature links use a fixed revision so their content stays aligned with the explanations.
+The chapters distinguish theory from findings in particular settings and from fictional applications. A simulation of organisational design is not an empirical AI deployment; a successful enterprise-system implementation is not proof of benefit from a language-model service. References identify the publications supporting the conceptual argument.
 
 ## Part I coverage
 
@@ -49,7 +49,7 @@ The [local lab guide](reference/local-labs.md) identifies dependencies and separ
 
 The remote Colab lesson contents remain outside inspected coverage. Attempts to retrieve the referenced training and meeting-note notebooks did not expose their cells. Independent local examples supplement those gaps without claiming to reproduce the inaccessible lessons. Lecture videos remain outside the source-reading scope.
 
-Literature references retain the fixed revision used for the synthesis. Later editorial changes in the supplied research folder are not silently substituted into those references. The guide preserves its own evidence qualifications and links only to the literature reviews.
+Lesson research links open the relevant chapters inside the reader. Scholarly publication links support further study; the explanations and worked cases are available within the course.
 
 ## Reading the cases and evidence
 

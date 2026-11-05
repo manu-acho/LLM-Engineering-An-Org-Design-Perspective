@@ -51,3 +51,7 @@ The original [manual tool loop](https://github.com/ed-donner/agents/blob/542a703
 ## Continue the module
 
 The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
+
+## Read the organisational connection
+
+The application bounds available steps while organisational authority remains a separate question. The research chapter explains [permission and authority](../../reference/research/03-decisions.md#permission-and-authority).

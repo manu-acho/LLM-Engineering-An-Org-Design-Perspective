@@ -49,3 +49,7 @@ Self-hosting may be appropriate for control or specialised requirements. A hoste
 ## Continue the module
 
 The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
+
+## Read the organisational connection
+
+Running the model locally creates continuing maintenance and support work. The research chapter explains [implementation beyond launch](../../reference/research/04-implementation.md#implementation-extends-beyond-launch).

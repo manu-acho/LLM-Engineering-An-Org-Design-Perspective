@@ -64,6 +64,6 @@ Across the modules, this situation becomes a brief, an assistant conversation, m
 
 The [workbook](WORKBOOK.md) offers exercises and templates for applying the lessons. The [glossary](reference/glossary.md) explains unfamiliar terms, and [Python patterns](reference/python-patterns.md) gives a closer look at common code structures. Part I also supplies eight compact engineering references. Part II connects its source walkthroughs through the [Agents source guide](reference/agents-source-guide.md).
 
-The organisational discussions draw on literature from organisation design research. The [literature guide](reference/literature-guide.md) introduces the six topics and links to the reviews. The [source guide](SOURCE-MAP.md) explains the engineering material, its coverage and its limits.
+The organisational discussions draw on literature from organisation design research. The [literature guide](reference/literature-guide.md) opens six AI-focused research chapters, with concept explanations, worked cases and cited references. The [source guide](SOURCE-MAP.md) explains the engineering material, its coverage and its limits.
 
 Links to original notebooks open on GitHub so you can connect an explanation to the code it discusses.

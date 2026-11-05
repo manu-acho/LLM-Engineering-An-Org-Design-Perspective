@@ -47,3 +47,7 @@ The [evaluator](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f
 For each case, retain source ID, split, available description, preprocessing revision, expected target, prediction, validity and error. Across the experiment, retain the selected population and excluded records. That makes it possible to distinguish a model failure from a changed dataset or parser.
 
 **Practice with feedback:** A new model improves average price error, but all missing outputs were dropped. Restore those cases with explicit invalid status, compare coverage and then compare error among valid predictions. A better average on fewer usable cases may be an unsuitable service improvement.
+
+## Read the organisational connection
+
+A stored record captures selected events rather than every interpretation or repair activity. The research chapter explains [the limits of recorded evidence](../../reference/research/05-routines.md#what-logs-can-show).

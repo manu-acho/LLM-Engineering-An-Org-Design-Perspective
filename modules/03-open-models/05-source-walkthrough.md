@@ -66,3 +66,7 @@ First use a short, synthetic transcript. Generate structured notes containing cl
 Speaker attribution, recording permission, storage and access are additional application concerns. Running the final text model locally does not make an upstream transcription service local. Map the entire data path before making a privacy or operating claim.
 
 **Worked exercise:** The transcript says “finance could approve after recount”; the note says “finance approved”. Even if every model-loading and tensor-shape check passes, the note fails a claim-preservation test. Add a case specifically checking modality and conditions rather than increasing the hardware allocation.
+
+## Read the organisational connection
+
+A successful load-and-generate path does not establish that the surrounding service works well. The research chapter explains [capability, configuration, practice and outcome](../../reference/research/04-implementation.md#capability-configuration-practice-and-outcome).

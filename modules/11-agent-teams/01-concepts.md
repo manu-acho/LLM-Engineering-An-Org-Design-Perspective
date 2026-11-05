@@ -55,3 +55,7 @@ The original [researcher crew](https://github.com/ed-donner/agents/blob/542a7036
 ## Continue the module
 
 The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
+
+## Read the organisational connection
+
+Agent role names do not establish independence among the tasks they perform. The research chapter explains [interdependence](../../reference/research/01-organisation-design.md#dependencies-before-departments).

@@ -55,3 +55,7 @@ The course's trading-floor project uses account records and market information t
 ## Continue the module
 
 The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
+
+## Read the organisational connection
+
+Discovering an available capability does not establish a mandate for its business use. The research chapter explains [permission and authority](../../reference/research/03-decisions.md#permission-and-authority).

@@ -86,3 +86,7 @@ This demonstration trusts the calling application to authenticate the reviewer. 
 The evaluator receives the task, criteria, latest reply and tool names. That evidence can support some judgements but cannot independently establish all outside effects. Inspect the exact evaluator input before interpreting its success flag.
 
 **Worked experiments:** Resume the local graph with a wrong revision, then reject a separate new case. The first should fail before simulated completion; the second should end with `needs_revision`. Neither requires a model to reveal the state-control issue. For an actual process-restart exercise, persist a chosen database path, run the pause and resume stages in separate processes and retain the same case contract.
+
+## Read the organisational connection
+
+A checkpoint and resume operation have inspectable effects without proving recovery of the wider service. The research chapter explains [materiality in digital systems](../../reference/research/06-technology-in-practice.md#materiality-in-digital-systems).

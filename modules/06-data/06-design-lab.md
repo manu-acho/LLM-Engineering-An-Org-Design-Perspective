@@ -26,7 +26,7 @@ Two reviewers label a development sample independently. They retain disagreement
 
 ## Diagnose misfit and compare responses
 
-Strong and Volkoff's fit/misfit perspective, discussed in the [enterprise systems review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_04_Enterprise_Systems_Implementation_Transformation_Detailed_Review.md), directs attention to data, functionality, roles and controls. Harbour's one-column history contains data and role misfit. A model extension alone cannot resolve it.
+Strong and Volkoff's fit/misfit perspective, discussed in the [enterprise systems review](../../reference/research/04-implementation.md), directs attention to data, functionality, roles and controls. Harbour's one-column history contains data and role misfit. A model extension alone cannot resolve it.
 
 Options include changing the process, adding fields, configuring routing rules, using a classifier for ambiguous language or declining automation for certain categories. Harbour chooses rules for explicit order-status requests and a classifier that recommends the next contribution for free-text cases. Uncertain cases enter clarification rather than being forced into a wrong team.
 
@@ -40,6 +40,10 @@ A classifier that correctly predicts “finance” but abandons customer ownersh
 
 For the first month, staff record why recommendations were overridden: missing evidence, category ambiguity, source error, workload or model interpretation. The label owner reviews recurring patterns. A temporary workload workaround should not automatically become the target for future training.
 
-The [routines review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_05_Organisational_Routines_Detailed_Review.md) helps explain why recorded performance is a selective representation of work. Informal repairs may be absent from the export. Treat observation and staff accounts as additional evidence, while preserving their own limits.
+The [routines review](../../reference/research/05-routines.md) helps explain why recorded performance is a selective representation of work. Informal repairs may be absent from the export. Treat observation and staff accounts as additional evidence, while preserving their own limits.
 
 **Worked decision:** Override rates rise after a policy change. Before retraining, determine whether the label definition changed, the new rule reached the application and the current evaluation still represents the task. New data can help only after the organisation knows what behaviour it wants to learn.
+
+## Read the organisational connection
+
+A routing category can create role or data mismatches even when prediction accuracy is high. The research chapter explains [six kinds of misfit](../../reference/research/04-implementation.md#six-kinds-of-misfit).

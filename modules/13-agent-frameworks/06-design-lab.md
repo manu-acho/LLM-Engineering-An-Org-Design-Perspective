@@ -42,4 +42,8 @@ Measure accepted contributions, rework, cross-team clarification, version failur
 
 **Worked decision:** A new framework produces faster outputs but loses source identity during conversion. It should not pass the common acceptance test until that contract is preserved or an explicitly justified new contract is agreed. Faster incompatible output can increase coordination work.
 
-**Research basis:** [Organisation design](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_01_Organisation_Design_Detailed_Review.md), [coordination](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_02_Coordination_Theory_Detailed_Review.md) and [decision theory](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_03_Decision_Theory_Detailed_Review.md).
+**Research basis:** [Organisation design](../../reference/research/01-organisation-design.md), [coordination](../../reference/research/02-coordination.md) and [decision theory](../../reference/research/03-decisions.md).
+
+## Read the organisational connection
+
+Interoperability requires attention to interpretation and interests alongside schemas. The research chapter explains [knowledge boundaries](../../reference/research/02-coordination.md#shared-data-and-shared-meaning).

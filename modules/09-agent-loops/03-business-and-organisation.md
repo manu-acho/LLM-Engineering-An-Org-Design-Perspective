@@ -10,7 +10,7 @@ The application has acquired a place in the workflow, whether or not anyone call
 
 ## Decision premises enter before a recommendation
 
-Simon's decision-premise perspective, developed in the [decision-theory review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_03_Decision_Theory_Detailed_Review.md), asks which facts, categories and alternatives shape a later choice. The portal decides which questions to ask and which tools to call. It may classify a report as a shortage rather than a damaged delivery, shaping the evidence that the next team sees.
+Simon's decision-premise perspective, developed in the [decision-theory review](../../reference/research/03-decisions.md), asks which facts, categories and alternatives shape a later choice. The portal decides which questions to ask and which tools to call. It may classify a report as a shortage rather than a damaged delivery, shaping the evidence that the next team sees.
 
 The explicit registry in the workshop helps identify one boundary: the application can look up an order but cannot issue a credit. That boundary is necessary but incomplete. The wording of the final draft can still imply that compensation is coming. A system can shape a commitment without possessing an execution tool.
 
@@ -18,7 +18,7 @@ Define separate permissions to collect a report, ask for evidence, recommend an 
 
 ## A handoff needs a receiving arrangement
 
-The [coordination review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_02_Coordination_Theory_Detailed_Review.md) starts with dependencies. Customer intake supplies something another activity needs. Who receives the issue? In what form? By when? What happens if the warehouse record conflicts with the customer's account?
+The [coordination review](../../reference/research/02-coordination.md) starts with dependencies. Customer intake supplies something another activity needs. Who receives the issue? In what form? By when? What happens if the warehouse record conflicts with the customer's account?
 
 Adding an uncertainty log is not enough. Someone needs to read it, distinguish urgent cases, request missing evidence and communicate a next step. Otherwise the assistant has moved work into a quieter queue rather than resolved a coordination problem.
 
@@ -34,13 +34,13 @@ The lesson is not that assistants should be impersonal or unhelpful. It is that 
 
 ## A checklist can hide the work that matters
 
-The [routines review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_05_Organisational_Routines_Detailed_Review.md) separates artefacts from people's understandings and actual performances. A checklist is an artefact. An employee may understand “investigate” to include a call to the warehouse supervisor. The system may mark the item complete after retrieving a database row.
+The [routines review](../../reference/research/05-routines.md) separates artefacts from people's understandings and actual performances. A checklist is an artefact. An employee may understand “investigate” to include a call to the warehouse supervisor. The system may mark the item complete after retrieving a database row.
 
 Compare those meanings before measuring completion rates. If staff repair the assistant's cases through calls and spreadsheets, include that effort in the assessment. A cleaner portal can coexist with more difficult work for the receiving team.
 
 ## Who can use the new information?
 
-The [technology-and-organisation review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_06_Technology_Materiality_Organisation_Detailed_Review.md) adds an actor-specific question. The brief may enable an operations specialist to compare records if they have source access, time and a correction route. The same brief may only enable a customer-service adviser to notice that a specialist is needed.
+The [technology-and-organisation review](../../reference/research/06-technology-in-practice.md) adds an actor-specific question. The brief may enable an operations specialist to compare records if they have source access, time and a correction route. The same brief may only enable a customer-service adviser to notice that a specialist is needed.
 
 These are different possibilities, or **affordances**, of the same output. The code establishes that a lookup result was returned. Evidence of actual work is needed to establish that a particular person could use it, did use it and produced a useful result.
 
@@ -57,3 +57,7 @@ A simpler alternative may be a structured intake form plus a supported summarisa
 ## Continue the module
 
 The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
+
+## Read the organisational connection
+
+Delegation needs an account of what work is allocated and how it rejoins the wider service. The research chapter explains [division and integration](../../reference/research/01-organisation-design.md#division-creates-a-need-for-integration).

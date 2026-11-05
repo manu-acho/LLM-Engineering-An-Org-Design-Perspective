@@ -44,3 +44,7 @@ An answer can be factually consistent with P-3 and still omit the exception. Eva
 A query rewrite may resolve “Who handles it?” using earlier context. Retaining the original query offers a fallback when the rewrite changes intent. A reranker compares retrieved candidates more closely, but cannot rank a passage that was never retrieved. Hybrid search can combine exact-code matching with semantic matching.
 
 **Worked exercise:** An embedding search fails on order `O-1704`, but a database lookup finds it. That is a reason to route exact identifiers to a suitable exact-match operation, not a reason to train embeddings until they approximate database identity. The better architecture can combine mechanisms rather than demand that one search method solve every task.
+
+## Read the organisational connection
+
+Similarity measures compare representations without resolving differences in meaning or interest. The research chapter explains [knowledge boundaries](../../reference/research/02-coordination.md#shared-data-and-shared-meaning).

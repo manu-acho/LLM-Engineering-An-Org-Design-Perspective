@@ -36,6 +36,10 @@ This is a learning lifecycle, not an assumption that benefits inevitably grow. S
 
 Inspecting a prompt establishes represented design. Testing enabled tools establishes selected configuration. Deployment records establish an installed arrangement. Repeated observation and situated accounts help examine use. Outcome comparisons support claims about consequences under stated conditions. Moving up this chain requires additional evidence.
 
-The [technology and organisation review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_06_Technology_Materiality_Organisation_Detailed_Review.md) explains why a feature, possibility, actualisation and outcome are distinct. The [implementation review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_04_Enterprise_Systems_Implementation_Transformation_Detailed_Review.md) connects fit and adjustment beyond go-live.
+The [technology and organisation review](../../reference/research/06-technology-in-practice.md) explains why a feature, possibility, actualisation and outcome are distinct. The [implementation review](../../reference/research/04-implementation.md) connects fit and adjustment beyond go-live.
 
 **Worked final judgement:** An agent has run for three months with no process crashes. That is useful availability evidence. To decide whether it should expand, also examine supported work, changed effort, accepted responsibility, recovery, affected actors and business outcomes. The course's technical patterns become valuable through those concrete arrangements, rather than through the label “agentic” alone.
+
+## Read the organisational connection
+
+Continuing evaluation should examine which changes actually account for a service improvement. The research chapter explains [redesign and rival explanations](../../reference/research/06-technology-in-practice.md#a-worked-redesign-and-its-rival-explanations).

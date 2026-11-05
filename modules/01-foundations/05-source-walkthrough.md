@@ -50,3 +50,7 @@ Parsing establishes JSON structure. Before fetching, compare every selected URL 
 Streaming changes presentation timing. Accumulating text deltas and replacing a display gives the reader progressive output. A broken stream can leave readable but incomplete text. Store completion status independently from the displayed prefix.
 
 **Practice with feedback:** The output omits the credit exception. Which three things should be inspected first? Check whether the correct page was selected, whether extraction retained the exception and whether the final request included that extract. Only then investigate whether generation failed to use available evidence.
+
+## Read the organisational connection
+
+Scraping, selecting and compressing text change what the receiving activity can consider. The research chapter explains [information demand and capacity](../../reference/research/01-organisation-design.md#information-demand-and-capacity).

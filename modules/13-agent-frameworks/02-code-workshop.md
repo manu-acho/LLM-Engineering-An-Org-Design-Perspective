@@ -95,3 +95,7 @@ If completion depends on a file, retain the output identity and version. If a re
 ## Continue the module
 
 The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
+
+## Read the organisational connection
+
+Claiming work needs allocation rules when several workers compete for the same task. The research chapter explains [shared-resource dependencies](../../reference/research/02-coordination.md#identify-what-depends-on-what).

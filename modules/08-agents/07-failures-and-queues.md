@@ -50,3 +50,7 @@ Retry repeats an operation believed safe to repeat. Resume continues from an ide
 Assign an owner to uncertain work. The operator can inspect service health; the case owner determines what the customer still needs. The receiving team may be needed to confirm whether the handoff entered its working queue. A log available only to engineers is not a complete operating recovery process.
 
 **Worked exercise:** Replace the operation with a function raising `ValueError`. The terminal event should be `error`, so the interface can stop waiting and show an appropriate status. Then imagine the whole process is forcibly stopped: no in-memory error event can be relied on. A restarted service needs a durable job record and a stale-work policy. The distinction is between a caught function error and failure of the process that would report it.
+
+## Read the organisational connection
+
+A failure state creates recovery work whose owner and downstream dependencies need examination. The research chapter explains [connected routines and hidden work](../../reference/research/05-routines.md#connected-routines-and-hidden-work).

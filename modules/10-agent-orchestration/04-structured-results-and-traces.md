@@ -40,3 +40,7 @@ For independent reads, an all-required policy can collect results and withhold t
 **Worked check:** A trace shows that both specialists returned results, and the final Pydantic object validates. Is the recommendation verified? No. Inspect returned evidence, support and decision conditions. The trace establishes an execution path; the schema establishes representation. Neither alone establishes the truth of the business conclusion.
 
 **Source connection:** The course [structured-output and guardrail lab](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/2_openai/3_lab3.ipynb) supplies concrete implementations for comparison.
+
+## Read the organisational connection
+
+An execution trace records selected events without showing every judgement or off-system contribution. The research chapter explains [the limits of logs](../../reference/research/05-routines.md#what-logs-can-show).

@@ -69,3 +69,7 @@ For a sequential/hierarchical comparison, hold task, source evidence, model acce
 **Worked diagnosis:** The analyst confidently recommends a credit, although collection only contained a customer report. Inspect whether the expected-output wording encouraged a remedy, whether the evidence qualification survived and whether the final acceptance check catches unsupported authority. Adding another similarly prompted reviewer may preserve the same mistake.
 
 **Documentation:** [CrewAI crews](https://docs.crewai.com/en/concepts/crews), alongside the pinned reference project. Current documentation and source dependency versions can differ.
+
+## Read the organisational connection
+
+A configuration and returned artefact do not establish recurrent organisational performance. The research chapter explains [artefacts and patterns of action](../../reference/research/05-routines.md#designing-an-artefact-and-designing-a-pattern).

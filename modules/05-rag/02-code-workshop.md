@@ -78,3 +78,7 @@ Try “Who handles commercial adjustments?” in our toy search. It may return n
 ## Continue the module
 
 The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
+
+## Read the organisational connection
+
+Filtering and ranking select evidence that can shape a later choice. The research chapter explains [decision premises](../../reference/research/03-decisions.md#decision-premises).

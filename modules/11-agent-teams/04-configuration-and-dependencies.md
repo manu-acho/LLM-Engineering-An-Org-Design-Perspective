@@ -43,3 +43,7 @@ Likewise, a source project's tool list determines whether an agent can read, wri
 **Worked check:** The YAML names a `test_task` and asks for a test summary. What establishes that testing occurred? Inspect executed tools, test artefacts, outcomes and scope. A generated summary alone establishes that text was produced. It does not establish backend correctness or frontend behaviour.
 
 **Source connection:** The [engineering task settings](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/3_crewai/reference/engineering_team/src/engineering_team/config/tasks.yaml) make these boundaries especially visible.
+
+## Read the organisational connection
+
+Configuration encodes categories, permitted contributions and criteria before execution starts. The research chapter explains [decision premises](../../reference/research/03-decisions.md#decision-premises).

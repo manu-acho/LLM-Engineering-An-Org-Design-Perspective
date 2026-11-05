@@ -10,7 +10,7 @@ The technical interfaces can become more consistent while the work remains diffe
 
 ## Standards help with some boundaries
 
-The [coordination review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_02_Coordination_Theory_Detailed_Review.md), drawing on Carlile, distinguishes representation, meaning and interests. Shared schemas help information cross a representation boundary. A common field called `accepted` does not settle who accepts what or why.
+The [coordination review](../../reference/research/02-coordination.md), drawing on Carlile, distinguishes representation, meaning and interests. Shared schemas help information cross a representation boundary. A common field called `accepted` does not settle who accepts what or why.
 
 Ask the teams to describe the same real or fictional case. At which point does responsibility move? Which evidence is mandatory? Which exceptions require negotiation? These questions reveal differences that a technical adapter cannot resolve by renaming fields.
 
@@ -18,7 +18,7 @@ A shared protocol can make a request possible across systems. A service agreemen
 
 ## Shared infrastructure brings shared maintenance work
 
-The [enterprise-systems review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_04_Enterprise_Systems_Implementation_Transformation_Detailed_Review.md) helps examine the tension between common capability and local fit. A shared board can reduce integration effort and improve visibility. It can also impose categories that fit one unit poorly or concentrate change authority in a central technical team.
+The [enterprise-systems review](../../reference/research/04-implementation.md) helps examine the tension between common capability and local fit. A shared board can reduce integration effort and improve visibility. It can also impose categories that fit one unit poorly or concentrate change authority in a central technical team.
 
 Separate what must be common from what may vary. Case identity, versioning and evidence references may need stable contracts. A region's internal staffing sequence may not. Standardising the interface is often more useful than insisting every team use the same framework, but only if the agreed semantics are strong enough for the work.
 
@@ -26,7 +26,7 @@ Someone must own schema changes, version compatibility, access rules and depreca
 
 ## A task board distributes visibility and attention
 
-The [organisation-design review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_01_Organisation_Design_Detailed_Review.md) asks how information and authority fit together. A central board may make delays visible to managers while adding reporting work for staff. The status design can make some activities count and leave informal repair invisible.
+The [organisation-design review](../../reference/research/01-organisation-design.md) asks how information and authority fit together. A central board may make delays visible to managers while adding reporting work for staff. The status design can make some activities count and leave informal repair invisible.
 
 The workshop's distinction between `reported_done` and acceptance is an example of a category with organisational consequences. If incentives reward only the former, workers or agents may finish their local steps while leaving unusable outputs for others.
 
@@ -34,15 +34,15 @@ Decide which measures describe local activity and which describe accepted servic
 
 ## Interoperability can move discretion
 
-The [decision-theory review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_03_Decision_Theory_Detailed_Review.md) directs attention to who defines the common categories and exceptions. An adapter that converts a regional classification into a global one is applying a decision premise. Its mapping can alter routing and authority even if it is described as routine data transformation.
+The [decision-theory review](../../reference/research/03-decisions.md) directs attention to who defines the common categories and exceptions. An adapter that converts a regional classification into a global one is applying a decision premise. Its mapping can alter routing and authority even if it is described as routine data transformation.
 
 Treat disputed mappings as business decisions. Record who approved them, what evidence informed them and who can challenge the result. Technical ownership of the integration should not silently become policy ownership.
 
 ## What must be observed after connection?
 
-The [routines review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_05_Organisational_Routines_Detailed_Review.md) reminds us that standard interfaces are artefacts. Staff may continue calling trusted contacts to resolve difficult cases. That may be essential repair work rather than evidence that the integration is irrelevant.
+The [routines review](../../reference/research/05-routines.md) reminds us that standard interfaces are artefacts. Staff may continue calling trusted contacts to resolve difficult cases. That may be essential repair work rather than evidence that the integration is irrelevant.
 
-The [technology-and-organisation review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_06_Technology_Materiality_Organisation_Detailed_Review.md) adds the question of possibilities for particular roles. Shared visibility may enable a coordinator to identify stalled work, but only if they have authority to obtain a response. A new route to another team's agent may be available without being understood or trusted.
+The [technology-and-organisation review](../../reference/research/06-technology-in-practice.md) adds the question of possibilities for particular roles. Shared visibility may enable a coordinator to identify stalled work, but only if they have authority to obtain a response. A new route to another team's agent may be available without being understood or trusted.
 
 Observe accepted transfers, corrections, unresolved ownership and manual reconciliation over time. Then compare service outcomes and effort across roles. A successful protocol test establishes less than a successful organisational integration.
 
@@ -57,3 +57,7 @@ A useful answer investigates which differences matter to the rejected cases. Fra
 ## Continue the module
 
 The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
+
+## Read the organisational connection
+
+A common interface can transfer values while leaving their meaning or ownership disputed. The research chapter explains [knowledge boundaries](../../reference/research/02-coordination.md#shared-data-and-shared-meaning).

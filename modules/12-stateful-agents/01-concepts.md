@@ -55,3 +55,7 @@ Store the case identity, relevant source versions, proposal revision, pending ac
 ## Continue the module
 
 The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
+
+## Read the organisational connection
+
+Saved state preserves selected information rather than the entire situation in which work occurred. The research chapter explains [the limits of recorded evidence](../../reference/research/05-routines.md#what-logs-can-show).

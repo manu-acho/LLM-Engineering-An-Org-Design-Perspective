@@ -27,7 +27,7 @@ The first rehearsal reveals that some legitimate complaints have no receipt ID. 
 
 A second rehearsal reveals that reviewers cannot open warehouse records. More explanatory text in the draft will not fix the role/access mismatch. Harbour grants appropriately scoped evidence access and provides a correction route. The arrangement now connects the feature with the actor's ability to use it.
 
-The [enterprise systems review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_04_Enterprise_Systems_Implementation_Transformation_Detailed_Review.md) helps compare process change, configuration, extension and bounded workarounds. Generic capability is the starting point for local fit, not proof of it.
+The [enterprise systems review](../../reference/research/04-implementation.md) helps compare process change, configuration, extension and bounded workarounds. Generic capability is the starting point for local fit, not proof of it.
 
 ## Capacity and value calculation
 
@@ -46,3 +46,7 @@ This lifecycle connects installation, use and outcome without treating them as i
 Harbour approves a read-only drafting pilot with a structured-intake comparator, explicit stop conditions for unsupported commitments, and a recovery owner. It retains an ordinary manual route. It will consider external actions only after the smaller contribution and receiving arrangement have evidence of usefulness.
 
 **Worked challenge:** The pilot lowers preparation effort but creates a growing evidence-pending queue. The next decision is to examine missing-source causes, ownership and capacity, then change the arrangement. Increasing the agent's step limit without addressing those dependencies is unlikely to clear the queue responsibly.
+
+## Read the organisational connection
+
+A bounded pilot connects scope, roles, evidence and measures before claiming improvement. The research chapter explains [the worked implementation choice](../../reference/research/04-implementation.md#a-worked-implementation-choice).

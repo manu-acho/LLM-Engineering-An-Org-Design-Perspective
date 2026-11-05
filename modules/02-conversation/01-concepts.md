@@ -59,3 +59,7 @@ The interface should follow the task. A friendly conversation that repeatedly fa
 ## Continue the module
 
 The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
+
+## Read the organisational connection
+
+Conversation state and rules structure the situations the service can recognise. The research chapter explains [programmes and exceptions](../../reference/research/03-decisions.md#programmes-and-exceptions).

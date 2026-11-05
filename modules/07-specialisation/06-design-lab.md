@@ -41,4 +41,8 @@ Harbour selects a bounded adaptation pilot because the fictional exception resul
 
 **Worked decision:** The adapted model becomes less accurate after a new team starts work. Should Harbour immediately add more epochs? First check whether the task and category meanings changed. More training against the old target can make the new arrangement harder to implement.
 
-**Research basis:** [Decision theory](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_03_Decision_Theory_Detailed_Review.md), [routines](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_05_Organisational_Routines_Detailed_Review.md) and [technology in practice](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_06_Technology_Materiality_Organisation_Detailed_Review.md).
+**Research basis:** [Decision theory](../../reference/research/03-decisions.md), [routines](../../reference/research/05-routines.md) and [technology in practice](../../reference/research/06-technology-in-practice.md).
+
+## Read the organisational connection
+
+Corrections need interpretation before they become durable training or procedure changes. The research chapter explains [repeated action and learning](../../reference/research/05-routines.md#repeated-action-and-learning).

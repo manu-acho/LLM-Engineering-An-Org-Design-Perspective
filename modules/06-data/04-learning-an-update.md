@@ -42,3 +42,7 @@ For categorical routing, a £10 error has no direct meaning. Use category-level 
 A word-vector vocabulary fitted on training descriptions maps words to columns. The predictor learns relationships involving those columns. At evaluation, use the same mapping. Rebuilding the vocabulary from test cases can leak information or change column meaning. Save the preprocessing with the fitted model.
 
 **Worked check:** A training loss falls while held-out routing gets worse. That is a reason to examine overfitting, split design, label quality and distribution differences. It is not a reason to report the training curve as operational accuracy. The loss is the objective used for updating; the business decision needs evidence on cases it will actually encounter.
+
+## Read the organisational connection
+
+The selected error measure defines which differences the training procedure treats as costly. The research chapter explains [decision premises](../../reference/research/03-decisions.md#decision-premises).

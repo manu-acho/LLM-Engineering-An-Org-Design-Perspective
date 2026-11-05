@@ -10,7 +10,7 @@ The problem is partly model maintenance and partly the authority attached to a l
 
 ## Where judgement moved
 
-Stream 3 asks where decision premises originate and who can revise them. In this case, judgement entered through category definitions, selected examples, annotation decisions, the training objective, validation criteria and deployment rules. The model's output is downstream of those choices.
+Research chapter 3 asks where decision premises originate and who can revise them. In this case, judgement entered through category definitions, selected examples, annotation decisions, the training objective, validation criteria and deployment rules. The model's output is downstream of those choices.
 
 Calling the result automatic does not remove that judgement. It can move it away from the frontline user to people who curate data and approve versions. Whether this improves or worsens the work depends on the arrangement and evidence; the review does not justify a universal claim that automation removes discretion.
 
@@ -18,7 +18,7 @@ The organisation should know who owns the category scheme, who can challenge a c
 
 ## Routines can change through performance
 
-Stream 5 examines how routines change through repeated work. This **routine-dynamics** perspective helps explain why a task can change even when no formal redesign has been announced. Repeated exceptions, local learning and new connections among teams can produce adjustments. Stable performance need not mean an identical sequence every time.
+Research chapter 5 examines how routines change through repeated work. This **routine-dynamics** perspective helps explain why a task can change even when no formal redesign has been announced. Repeated exceptions, local learning and new connections among teams can produce adjustments. Stable performance need not mean an identical sequence every time.
 
 A model trained on recorded history sees only what was represented in that history. It may not see the conversation that made an unusual routing appropriate. Treating every later departure as an error can suppress useful variation. Treating every departure as innovation can conceal poor practice. Investigate the actual cases.
 
@@ -26,7 +26,7 @@ This is a reason to keep disagreement and override records, with context. They a
 
 ## Consistency is a conditional benefit
 
-Standardisation can help when common categories and stable responsibilities support coordination. It can impose a poor fit when local requirements differ. Stream 4's implementation perspective asks whether a generic capability fits particular roles, controls and knowledge requirements.
+Standardisation can help when common categories and stable responsibilities support coordination. It can impose a poor fit when local requirements differ. Research chapter 4's implementation perspective asks whether a generic capability fits particular roles, controls and knowledge requirements.
 
 A specialist model deployed across several clients may carry the first client's categories into another setting. Fine-tuning creates a technical adaptation, but local organisational adaptation is still needed. Do not describe similarity of industry as evidence that decision rights and exception practices are the same.
 
@@ -36,9 +36,9 @@ A pinned adapter, a category vocabulary and an override button are inspectable t
 
 For a case worker, an override may make a legitimate exception possible. For a process owner, accumulated override reasons may support identifying an obsolete category. Those possibilities require usable reasons, review capacity and a path to change the deployed rules. An unused override log actualises neither merely by existing.
 
-Stream 6's practice lens also suggests asking how recurrent use changes the significance of the model. A team may treat it as an authoritative route selector or as a first suggestion checked against local expertise. Neither can be inferred from the model's validation score.
+Research chapter 6's practice lens also suggests asking how recurrent use changes the significance of the model. A team may treat it as an authoritative route selector or as a first suggestion checked against local expertise. Neither can be inferred from the model's validation score.
 
-Extend the category-governance memo with an account of who can act on override evidence and how that action changes later work. This is a teaching application of [Stream 6](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_06_Technology_Materiality_Organisation_Detailed_Review.md), not a finding that adaptation necessarily improves or constrains discretion.
+Extend the category-governance memo with an account of who can act on override evidence and how that action changes later work. This is a teaching application of [Research chapter 6](../../reference/research/06-technology-in-practice.md), not a finding that adaptation necessarily improves or constrains discretion.
 
 ## Apply the idea
 
@@ -56,8 +56,12 @@ Prepare a category-governance memo: who defines, labels, approves, challenges an
 
 For research, a model's agreement with a coding scheme does not independently validate the scheme. The model may reproduce the researcher's interpretation consistently. That consistency alone does not show that the interpretation explains the evidence well.
 
-**Research basis:** [Stream 3](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_03_Decision_Theory_Detailed_Review.md), [Stream 4](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_04_Enterprise_Systems_Implementation_Transformation_Detailed_Review.md) and [Stream 5](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_05_Organisational_Routines_Detailed_Review.md). See the [literature foundation](../../reference/literature-guide.md) for access status and transfer boundaries.
+**Research basis:** [Research chapter 3](../../reference/research/03-decisions.md), [Research chapter 4](../../reference/research/04-implementation.md) and [Research chapter 5](../../reference/research/05-routines.md). See the [literature foundation](../../reference/literature-guide.md) for the research perspectives and evidence boundaries.
 
 ## Continue the module
 
 The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
+
+## Read the organisational connection
+
+The right to revise a category matters alongside the right to override one prediction. The research chapter explains [where discretion moves](../../reference/research/03-decisions.md#where-discretion-moves).

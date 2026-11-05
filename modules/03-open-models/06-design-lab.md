@@ -48,4 +48,8 @@ The pilot compares omitted conditions, incorrect owners, time spent confirming n
 
 **Worked decision:** Staff stop using confirmation because they cannot open transcript spans. Address access, presentation and review time first. This is a misfit between the feature and the role's conditions, rather than immediate evidence that local models or employees are the problem.
 
-**Research basis:** [Coordination](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_02_Coordination_Theory_Detailed_Review.md), [routines](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_05_Organisational_Routines_Detailed_Review.md) and [technology in practice](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_06_Technology_Materiality_Organisation_Detailed_Review.md).
+**Research basis:** [Coordination](../../reference/research/02-coordination.md), [routines](../../reference/research/05-routines.md) and [technology in practice](../../reference/research/06-technology-in-practice.md).
+
+## Read the organisational connection
+
+A correction interface needs to connect to the recurring work of confirming and using the record. The research chapter explains [artefacts and patterns of action](../../reference/research/05-routines.md#designing-an-artefact-and-designing-a-pattern).

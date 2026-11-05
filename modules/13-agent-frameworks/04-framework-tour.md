@@ -59,3 +59,7 @@ The distinction matters when explaining an outcome. A successful site depends on
 For any implementation, trace one task ID from creation to output and acceptance. Mark the model boundary, tool boundary, storage boundary and service boundary. Then ask what a failure at each point means for the people waiting on the work.
 
 The most useful comparison may end with one shared runtime, a mix behind stable interfaces or a simpler application with no multi-agent coordination. The choice should follow the work, evidence and maintenance capacity rather than a requirement to use every framework encountered.
+
+## Read the organisational connection
+
+Different technical arrangements can distribute and reconnect contributions in different ways. The research chapter explains [division and integration](../../reference/research/01-organisation-design.md#division-creates-a-need-for-integration).

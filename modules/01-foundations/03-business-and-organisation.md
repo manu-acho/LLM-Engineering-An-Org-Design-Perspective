@@ -14,7 +14,7 @@ The operating problem is therefore partly information preparation and partly the
 
 The [organisation design review](../../reference/literature-guide.md) begins with **differentiation**, dividing work into tasks, roles and units, and **integration**, reconnecting those contributions. Specialisation makes expertise possible. It also creates dependencies.
 
-Thompson distinguishes different ways in which tasks depend on each other. Stream 1 explains these as forms of **interdependence**. A brief passed from account management to operations is a sequential dependency: one task needs the output of another. A disputed delivery can create a reciprocal dependency: the warehouse and account manager must respond to each other, perhaps more than once, before either can finish.
+Thompson distinguishes different ways in which tasks depend on each other. Research chapter 1 explains these as forms of **interdependence**. A brief passed from account management to operations is a sequential dependency: one task needs the output of another. A disputed delivery can create a reciprocal dependency: the warehouse and account manager must respond to each other, perhaps more than once, before either can finish.
 
 This is a transfer of theory to the fictional case. It does not establish how a particular organisation coordinates. Its practical value is to distinguish two designs. A fixed report may help a straightforward handoff. An unresolved discrepancy may need a conversation between specialists rather than a longer report.
 
@@ -28,7 +28,7 @@ Assess what the brief makes visible, what it removes and who can correct it. Mor
 
 ## A representation is not the routine
 
-Stream 5's routines review distinguishes an **artefact**, such as a procedure or software output, from participants' understandings and actual performances. Feldman and Pentland give names to two sides of a routine. The **ostensive aspect** is the understanding people use to describe and guide the work. The **performative aspect** is what particular people do on particular occasions. The formal procedure is a separate artefact: it may influence both, but it is not a complete account of either.
+Research chapter 5 distinguishes an **artefact**, such as a procedure or software output, from participants' understandings and actual performances. Feldman and Pentland give names to two sides of a routine. The **ostensive aspect** is the understanding people use to describe and guide the work. The **performative aspect** is what particular people do on particular occasions. The formal procedure is a separate artefact: it may influence both, but it is not a complete account of either.
 
 An AI brief is an artefact. A manager's statement that “operations always verifies shortages” is an account of how the work should or usually does proceed. Observing several cases may reveal that account managers sometimes resolve small complaints directly because operations is unavailable. These are different kinds of evidence.
 
@@ -44,13 +44,13 @@ There is no claim here that the proposed system will improve those measures. The
 
 ## Who can act through the brief?
 
-Stream 6 adds an actor-specific question to the information-processing analysis. A **feature** is an inspectable arrangement, such as source labels in a brief. An **affordance** is a possibility for a particular actor to do something through that arrangement under relevant conditions. These are different claims.
+Research chapter 6 adds an actor-specific question to the information-processing analysis. A **feature** is an inspectable arrangement, such as source labels in a brief. An **affordance** is a possibility for a particular actor to do something through that arrangement under relevant conditions. These are different claims.
 
 For an operations specialist who can open the source records, the brief may enable comparison of customer and warehouse accounts. For an account manager without warehouse access, the same labels may offer little ability to check the discrepancy. A readable brief can exist while meaningful verification remains unavailable.
 
 The material representation matters: removing “customer reports” changes the claim; truncating the evidence can remove an exception. The code's transformation has a precise effect. Whether the resulting brief helps the recipient coordinate work depends on access, interpretation, responsibility and a route to act.
 
-Extend the discussion below by asking who can correct a wrong brief and what happens after correction. Observe actual corrections and downstream responses before claiming the possibility has been realised. This is an application of [Stream 6](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_06_Technology_Materiality_Organisation_Detailed_Review.md), not evidence of a Harbour outcome.
+Extend the discussion below by asking who can correct a wrong brief and what happens after correction. Observe actual corrections and downstream responses before claiming the possibility has been realised. This is an application of [Research chapter 6](../../reference/research/06-technology-in-practice.md), not evidence of a Harbour outcome.
 
 ## Apply the idea: where would you start?
 
@@ -64,8 +64,12 @@ Suppose preparation takes 15 minutes, operations waits one day for a warehouse c
 
 Prepare a one-page design brief stating the dependency, the proposed information transformation, its evidence owner, a correction route and an outcome measure. Add a sentence identifying what remains unknown about actual practice.
 
-**Research basis:** [Stream 1](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_01_Organisation_Design_Detailed_Review.md), particularly division/integration and information processing; [Stream 5](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_05_Organisational_Routines_Detailed_Review.md), particularly artefacts, understandings and performances. These links identify the review syntheses used here. They do not imply a new verification of every original study.
+**Research basis:** [Research chapter 1](../../reference/research/01-organisation-design.md), particularly division/integration and information processing; [Research chapter 5](../../reference/research/05-routines.md), particularly artefacts, understandings and performances. The chapters explain the cited concepts and distinguish the fictional case from empirical findings.
 
 ## Continue the module
 
 The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
+
+## Read the organisational connection
+
+A useful brief needs source access, a recipient and a correction route. The research chapter explains [fit among design choices](../../reference/research/01-organisation-design.md#fit-is-a-relationship-among-choices).

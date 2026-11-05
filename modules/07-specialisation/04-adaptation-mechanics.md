@@ -31,3 +31,7 @@ The next lesson deliberately uses a tiny non-quantized model so ordinary local h
 **Worked check:** A trained adapter file is small. Can it serve independently? Usually it needs the compatible base, tokenizer or defined token mapping, configuration, input contract and output interpretation. Its size is a property of what was saved, not a complete account of the running system's resource needs.
 
 **Technical foundation:** [LoRA paper](https://arxiv.org/abs/2106.09685), [QLoRA paper](https://arxiv.org/abs/2305.14314) and the source walkthrough below.
+
+## Read the organisational connection
+
+An adapter changes a technical arrangement; consequences for work require a further account. The research chapter explains [materiality in digital systems](../../reference/research/06-technology-in-practice.md#materiality-in-digital-systems).

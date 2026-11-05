@@ -47,3 +47,7 @@ The output shape means one sequence, three positions and sixteen candidate-token
 **Worked check:** Why would increasing the vocabulary to 32 change the last output dimension but not make the model twice as knowledgeable? It changes the number of token scores the architecture produces. Knowledge-like behaviour depends on learned parameters, data and use, not the dimension alone.
 
 **Technical reference:** [Transformers GPT-2 model documentation](https://huggingface.co/docs/transformers/model_doc/gpt2). This independent exercise supplements the source course's remotely hosted lessons.
+
+## Read the organisational connection
+
+A numerical inference trace supports a technical claim within its tested scope. The research chapter explains [the evidence path](../../reference/research/06-technology-in-practice.md#an-evidence-path-without-skipped-steps).

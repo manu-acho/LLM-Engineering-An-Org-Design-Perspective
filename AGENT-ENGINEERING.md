@@ -38,7 +38,7 @@ Harbour Services remains fictional. Its disputed delivery now passes through a s
 | Shared board and adapter | Do different teams mean the same thing by complete? |
 | MCP service and context selection | Who owns capability semantics, source authority and permitted effects? |
 
-These questions draw on literature from organisation design research. The [literature guide](reference/literature-guide.md) explains the concepts and links directly to the reviews. Their application to Harbour is a reasoned interpretation, not an observed business outcome.
+These questions draw on literature from organisation design research. The [literature guide](reference/literature-guide.md) opens six research chapters that explain the concepts through AI-focused cases and cited references. Their application to Harbour is a reasoned interpretation, not an observed business outcome.
 
 ## Finish with an integration decision
 

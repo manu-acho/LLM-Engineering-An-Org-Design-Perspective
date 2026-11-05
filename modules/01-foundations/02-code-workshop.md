@@ -98,3 +98,7 @@ Change the received quantity to 12 and predict the output before running. Then r
 ## Continue the module
 
 The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
+
+## Read the organisational connection
+
+A transformation can preserve a reported fact or silently turn it into a stronger claim. The research chapter explains [decision premises](../../reference/research/03-decisions.md#decision-premises).

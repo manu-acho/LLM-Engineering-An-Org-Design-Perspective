@@ -54,3 +54,7 @@ Measure at least two questions: how long does the accepted program run, and how 
 The original [day 4](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week4/day4.ipynb) also runs Python text using `exec` and captures output through `StringIO`. That is useful to read, but ordinary Python execution is not isolation for untrusted generated code. This lesson executes only its own deterministic Python algorithms; it does not execute model-generated programs.
 
 **Worked diagnosis:** A C++ result differs only for large values. Inspect integer widths and overflow before concluding that sampling made the model unreliable. A source program using arbitrary-precision integers and a translation using fixed-width integers can implement different numerical semantics while looking algorithmically similar.
+
+## Read the organisational connection
+
+Timing a generated program answers a narrower question than whether the business process improved. The research chapter explains [the evidence path](../../reference/research/06-technology-in-practice.md#an-evidence-path-without-skipped-steps).

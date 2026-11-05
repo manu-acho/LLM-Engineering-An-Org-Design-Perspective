@@ -57,3 +57,7 @@ Separate retrieval evaluation from answer evaluation. First ask whether the need
 ## Continue the module
 
 The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
+
+## Read the organisational connection
+
+Finding passages does not settle what different groups understand them to mean. The research chapter explains [shared data and shared meaning](../../reference/research/02-coordination.md#shared-data-and-shared-meaning).

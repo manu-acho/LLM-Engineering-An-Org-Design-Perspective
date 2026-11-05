@@ -58,7 +58,7 @@
 | State | Information retained by an application or workflow across steps/runs |
 | Streaming | Incremental delivery of output/events |
 | Tensor | A multidimensional numerical array |
-| Technology-in-practice | Structures enacted through recurrent situated interaction with technology in the practice lens discussed by Stream 6; not a feature list |
+| Technology-in-practice | Structures enacted through recurrent situated interaction with technology in the practice lens discussed by Research chapter 6; not a feature list |
 | Token | A model/tokenizer-specific unit of encoded text or other input/output |
 | Tool call | A model's request for an application-defined capability with arguments |
 | Validation | Checking data constraints, or assessing models during selection; specify which meaning applies |

@@ -18,13 +18,13 @@ The same distinction matters in research. A retrieved interview passage is evide
 
 ## Finding language does not reconcile knowledge
 
-Carlile, discussed in Stream 2, helps explain why sharing information can still leave disagreement. Common fields and vocabulary can help with a **syntactic** boundary, a difference in how information is represented. Explaining that “approval” means financial authorisation to one team and customer agreement to another addresses a **semantic** boundary, a difference in meaning. If teams disagree about acceptable risk or response time, they face a **pragmatic** boundary: different interests that may require negotiation.
+Carlile, discussed in Research chapter 2, helps explain why sharing information can still leave disagreement. Common fields and vocabulary can help with a **syntactic** boundary, a difference in how information is represented. Explaining that “approval” means financial authorisation to one team and customer agreement to another addresses a **semantic** boundary, a difference in meaning. If teams disagree about acceptable risk or response time, they face a **pragmatic** boundary: different interests that may require negotiation.
 
 An assistant can help expose those differences by showing passages side by side. It should not silently transform an unresolved policy dispute into a new policy. That would allocate decision authority through a text-generation step without an agreed mandate.
 
 ## The index and prompt influence which claims count
 
-The decision-premise lens from Stream 3 applies before the final answer. Which documents are indexed? Which source types rank higher? Does the prompt treat official policy as binding, and how does it handle local exceptions? Who sets the current-version flag?
+The decision-premise lens from Research chapter 3 applies before the final answer. Which documents are indexed? Which source types rank higher? Does the prompt treat official policy as binding, and how does it handle local exceptions? Who sets the current-version flag?
 
 These are governance choices. A technical team can implement them, but the organisation must own them. A passage can resemble the question closely without being the right authority for an answer. The organisation needs rules about which sources take priority for this task.
 
@@ -40,11 +40,11 @@ A correction route needs an owner and an expected action. A “thumbs down” is
 
 The search workshop filters records before returning them. That materially changes what the answer can draw on. It is evidence of a technical boundary, not proof that every authorised user can understand or resolve what they retrieve.
 
-For a policy owner with source access and revision authority, a conflict display may enable correcting inconsistent instructions. For a frontline user, it may enable recognising uncertainty and escalating, while leaving resolution outside their authority. Stream 6 calls these **candidate affordances**: proposed possibilities for particular people to act through the system. They remain candidates until the necessary conditions and use are investigated.
+For a policy owner with source access and revision authority, a conflict display may enable correcting inconsistent instructions. For a frontline user, it may enable recognising uncertainty and escalating, while leaving resolution outside their authority. Research chapter 6 calls these **candidate affordances**: proposed possibilities for particular people to act through the system. They remain candidates until the necessary conditions and use are investigated.
 
 A filter can support confidentiality while limiting the evidence available for a case. Keep that trade-off visible. A prompt asking for certainty cannot repair an intentionally unavailable source or confer authority to adjudicate a dispute.
 
-Specify what each user can do after finding conflicting passages. Then trace whether that action occurs and reaches an owner who can respond. This investigates actualisation instead of equating retrieval success with knowledge governance. The transfer is based on [Stream 6](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_06_Technology_Materiality_Organisation_Detailed_Review.md).
+Specify what each user can do after finding conflicting passages. Then trace whether that action occurs and reaches an owner who can respond. This investigates actualisation instead of equating retrieval success with knowledge governance. The transfer is based on [Research chapter 6](../../reference/research/06-technology-in-practice.md).
 
 ## Apply the idea
 
@@ -58,8 +58,12 @@ The answer is longer than “finance approves”, but its distinctions are usefu
 
 **Try it:** Map which sources have authority for which claims. Then describe two answers, one for operational guidance and one for research analysis. Explain why they should differ.
 
-**Research basis:** [Stream 2](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_02_Coordination_Theory_Detailed_Review.md), [Stream 3](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_03_Decision_Theory_Detailed_Review.md) and [Stream 5](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_05_Organisational_Routines_Detailed_Review.md). The linked reviews support these perspectives; they do not establish the fictional case as an empirical result.
+**Research basis:** [Research chapter 2](../../reference/research/02-coordination.md), [Research chapter 3](../../reference/research/03-decisions.md) and [Research chapter 5](../../reference/research/05-routines.md). The linked chapters explain these perspectives; the fictional case illustrates their application.
 
 ## Continue the module
 
 The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
+
+## Read the organisational connection
+
+Access to a policy passage does not confer authority to settle a disputed interpretation. The research chapter explains [permission and authority](../../reference/research/03-decisions.md#permission-and-authority).

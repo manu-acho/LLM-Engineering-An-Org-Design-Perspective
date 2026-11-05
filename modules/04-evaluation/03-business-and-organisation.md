@@ -10,7 +10,7 @@ Evaluation needs a unit of analysis: an individual task, a whole request, a team
 
 ## Metrics select attention
 
-Stream 3's decision-premise lens explains why a metric is more than a reporting device. A target such as “close the ticket within one hour” selects what deserves attention and what appears satisfactory. If closure can occur before the customer receives a workable answer, the metric can reward a narrow interpretation of completion.
+Research chapter 3's decision-premise lens explains why a metric is more than a reporting device. A target such as “close the ticket within one hour” selects what deserves attention and what appears satisfactory. If closure can occur before the customer receives a workable answer, the metric can reward a narrow interpretation of completion.
 
 An AI model evaluated on drafting speed will be selected differently from one evaluated on supported commitments and successful handoffs. The evaluator is helping define the task. Ask who can contest that definition and whose costs are missing.
 
@@ -18,9 +18,9 @@ This does not imply that quantitative metrics are useless. It implies that a mea
 
 ## Does the proposed system fit the rest of the work?
 
-Stream 1 examines how the parts of an organisation fit together. This **configurational** view asks whether tasks, roles, information and authority support one another. It gives us a reason to examine more than the new feature. Faster drafting can help if evidence is reliable, reviewers have appropriate capacity and downstream teams can act. The same feature can increase congestion if it produces submissions faster than specialists can inspect them.
+Research chapter 1 examines how the parts of an organisation fit together. This **configurational** view asks whether tasks, roles, information and authority support one another. It gives us a reason to examine more than the new feature. Faster drafting can help if evidence is reliable, reviewers have appropriate capacity and downstream teams can act. The same feature can increase congestion if it produces submissions faster than specialists can inspect them.
 
-Stream 4 extends the point to implementation. A system can fit functionality but impose an unsuitable role or control. Strong and Volkoff's misfit domains, as synthesised in that review, provide questions about functionality, data, usability, roles, controls and culture. They are a diagnostic lens, not an automatic scorecard that establishes causation.
+Research chapter 4 extends the point to implementation. A system can fit functionality but impose an unsuitable role or control. Strong and Volkoff's misfit domains, explained in that chapter, provide questions about functionality, data, usability, roles, controls and culture. They are a diagnostic lens, not an automatic scorecard that establishes causation.
 
 For the pilot, investigate whether operations receives better evidence, merely more text or a different burden of interpreting uncertain claims. A model upgrade cannot by itself resolve a disputed definition of a complete handoff.
 
@@ -34,13 +34,13 @@ Add qualitative investigation when a metric shifts unexpectedly. A lower overrid
 
 ## Locate the missing step between feature and result
 
-Stream 6 distinguishes an arrangement's existence, an actor's possibility to act through it, the process of realising that possibility and an outcome. A live evidence panel does not establish meaningful review; meaningful review does not by itself establish fewer incorrect credits.
+Research chapter 6 distinguishes an arrangement's existence, an actor's possibility to act through it, the process of realising that possibility and an outcome. A live evidence panel does not establish meaningful review; meaningful review does not by itself establish fewer incorrect credits.
 
 Build the evaluation in layers. Inspect what is configured, establish which roles and procedures are operating, ask how participants perceive the arrangement, observe repeated use, then assess relevant outcomes. These are evidence needs, not a guaranteed linear causal chain. The six-layer framework brings together ideas from several reviews. It is a teaching synthesis, not a model created by one author.
 
 Apply this to the pilot metrics: increased panel use could mean useful checking, confusion requiring repeated openings or extra evidence work. Follow cases and investigate differences rather than assigning one interpretation to the click count.
 
-Add a question to the evaluation plan: who should be able to do what with this system, and what conditions would make that possible? [Stream 6](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_06_Technology_Materiality_Organisation_Detailed_Review.md) supplies the conceptual distinction; case evidence must establish the actual process and consequences.
+Add a question to the evaluation plan: who should be able to do what with this system, and what conditions would make that possible? [Research chapter 6](../../reference/research/06-technology-in-practice.md) supplies the conceptual distinction; case evidence must establish the actual process and consequences.
 
 ## Apply the idea
 
@@ -54,8 +54,12 @@ A project team can use this analysis to agree how the system will be evaluated. 
 
 **Try it:** Write a one-page evaluation plan with a primary end-to-end outcome, two quality gates, measures of effort for each role, and a way to investigate contradictory results.
 
-**Research basis:** [Stream 1](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_01_Organisation_Design_Detailed_Review.md) on fit and interdependent design; [Stream 3](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_03_Decision_Theory_Detailed_Review.md) on attention and premises; [Stream 4](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_04_Enterprise_Systems_Implementation_Transformation_Detailed_Review.md) on fit and outcomes. These are review-grounded teaching interpretations.
+**Research basis:** [Research chapter 1](../../reference/research/01-organisation-design.md) on fit and interdependent design; [Research chapter 3](../../reference/research/03-decisions.md) on attention and premises; [Research chapter 4](../../reference/research/04-implementation.md) on fit and outcomes. These chapters develop the research concepts used in the teaching case.
 
 ## Continue the module
 
 The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
+
+## Read the organisational connection
+
+The metric selects properties to reward and can redirect attention. The research chapter explains [decision premises](../../reference/research/03-decisions.md#decision-premises).

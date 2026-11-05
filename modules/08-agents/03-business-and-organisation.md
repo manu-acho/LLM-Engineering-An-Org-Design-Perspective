@@ -10,7 +10,7 @@ That question turns an architecture diagram into an organisation design problem.
 
 ## Start with dependencies
 
-Stream 2's dependency lens asks what one activity needs from another. Intake supplies an identifiable request. Evidence gathering supplies reliable records. A reviewer needs a supported proposal. The execution service needs an authorisation it can validate. The receiving team needs a handoff it accepts as usable.
+Research chapter 2's dependency lens asks what one activity needs from another. Intake supplies an identifiable request. Evidence gathering supplies reliable records. A reviewer needs a supported proposal. The execution service needs an authorisation it can validate. The receiving team needs a handoff it accepts as usable.
 
 Some relations are sequential. Others become reciprocal when evidence conflicts and teams must revise their understanding. A message queue can manage transfer and waiting; it cannot settle what finance and operations consider adequate evidence.
 
@@ -18,7 +18,7 @@ Describe the dependency before choosing the mechanism. A status field, escalatio
 
 ## Fit concerns the whole arrangement
 
-Stream 1's configurational view asks whether division of work, information, roles and authority fit together. A reviewer with formal approval rights but no source access cannot perform the intended review. A queue owner without capacity becomes a bottleneck. An assistant that increases proposal volume without improving quality can intensify those dependencies.
+Research chapter 1's configurational view asks whether division of work, information, roles and authority fit together. A reviewer with formal approval rights but no source access cannot perform the intended review. A queue owner without capacity becomes a bottleneck. An assistant that increases proposal volume without improving quality can intensify those dependencies.
 
 Technical component boundaries need not match organisational boundaries. One service may support several roles; one human task may require several services. Do not infer an effective organisation chart from the number of agents.
 
@@ -30,15 +30,15 @@ The linked reviews distinguish what a design describes, what an organisation con
 
 A workflow file proves what was encoded. It does not show whether employees use it, work around it or repair it off-system. Conversely, a workaround does not prove the encoded rules had no effect. It may be a response to a very consequential constraint.
 
-Stream 5's artefact perspective avoids both extremes. Software can block, route and record while still leaving interpretation, communication and adaptation in the wider routine.
+Research chapter 5's artefact perspective avoids both extremes. Software can block, route and record while still leaving interpretation, communication and adaptation in the wider routine.
 
 ## Implementation continues after launch
 
-Stream 4's lifecycle lens treats go-live as one point in a longer process. The team learns during stabilisation, discovers misfit and adjusts use. Define how that learning reaches design owners.
+Research chapter 4's lifecycle lens treats go-live as one point in a longer process. The team learns during stabilisation, discovers misfit and adjusts use. Define how that learning reaches design owners.
 
 A proposed operating arrangement might include an intake owner, a source/policy owner, a reviewer role, an execution owner, a service operator and a process owner who reviews end-to-end performance. In a small firm, one person may hold several roles. Keep the responsibilities distinct so changes and failures have an owner.
 
-Stream 3 adds a question about discretion: who can revise the categories and thresholds that guide the workflow? An escalation route that permits only individual exceptions, with no route to challenge a repeatedly bad rule, leaves important design authority unaddressed.
+Research chapter 3 adds a question about discretion: who can revise the categories and thresholds that guide the workflow? An escalation route that permits only individual exceptions, with no route to challenge a repeatedly bad rule, leaves important design authority unaddressed.
 
 ## Actualisation joins the components to the work
 
@@ -48,7 +48,7 @@ The workflow's tools and states are material arrangements with identifiable tech
 
 A record can help someone trace an event without ensuring that anyone explains it, takes responsibility or corrects a problem. The receipt simulator demonstrates a local acknowledgement pattern; its code cannot establish that an organisational owner investigates a disputed handoff or can enforce a correction.
 
-The [capstone lesson](04-technology-in-practice.md) develops this distinction through an evidence-panel case and compares feature, affordance, constraint, actualisation and outcome. Its framework adapts [Stream 6](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_06_Technology_Materiality_Organisation_Detailed_Review.md) without treating its theoretical perspectives as interchangeable.
+The [capstone lesson](04-technology-in-practice.md) develops this distinction through an evidence-panel case and compares feature, affordance, constraint, actualisation and outcome. Its framework adapts [Research chapter 6](../../reference/research/06-technology-in-practice.md) without treating its theoretical perspectives as interchangeable.
 
 ## Apply the idea: respond to three breakdowns
 
@@ -71,3 +71,7 @@ The result is a practical brief for an AI pilot. Its value is the connection bet
 ## Continue the module
 
 The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
+
+## Read the organisational connection
+
+Workflow, roles, evidence, capacity and incentives need to be considered together. The research chapter explains [fit among design choices](../../reference/research/01-organisation-design.md#fit-is-a-relationship-among-choices).

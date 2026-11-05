@@ -47,3 +47,7 @@ The course also illustrates `globals().get`, which looks for a name in the curre
 Adding all of them does not settle what the public-facing service should promise. If it says “I have recorded your enquiry”, the operating arrangement must define where the record exists, who receives it, how quickly they respond and how a failure becomes visible.
 
 **Worked trace:** A visitor supplies an email, the tool is called, the notification service returns an error page and the helper returns `OK`. The runtime trace can establish that a call occurred. It cannot establish delivery or follow-up. A better result contract returns an explicit accepted/error status tied to a request ID, and the service promise identifies the receiving owner.
+
+## Read the organisational connection
+
+An engineering agent can request actions without thereby acquiring legitimate authority or accountability. The research chapter explains [agency and responsibility](../../reference/research/06-technology-in-practice.md#agency-does-not-imply-responsibility).

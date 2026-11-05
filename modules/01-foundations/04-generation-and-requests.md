@@ -38,3 +38,7 @@ If all ten outputs invent a warehouse failure, investigate the question and evid
 **Worked check:** Would lowering temperature resolve two contradictory source records? No. It changes selection behaviour. The application still needs a rule for representing disagreement and a person or process that can resolve the underlying issue.
 
 **Further reading:** [OpenAI text generation](https://developers.openai.com/api/docs/guides/text), alongside the pinned source in the next lesson. Settings must be checked for the selected model.
+
+## Read the organisational connection
+
+Generating a response and verifying a business fact are different operations. The research chapter explains [distinct acts in a workflow](../../reference/research/03-decisions.md#distinct-acts-in-one-workflow).

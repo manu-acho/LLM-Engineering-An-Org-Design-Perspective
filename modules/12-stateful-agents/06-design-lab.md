@@ -25,7 +25,7 @@ Reviewers need to see the evidence, understand it, reject a proposal and obtain 
 
 Harbour measures unsupported approvals and justified revisions alongside turnaround. Recurrent rule disputes reach the policy owner. The reviewer is not expected to solve every category problem through individual exceptions.
 
-The [decision theory review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_03_Decision_Theory_Detailed_Review.md) distinguishes permission, practical influence and accepted authority. Those distinctions help identify why a technically complete interrupt might produce superficial confirmation.
+The [decision theory review](../../reference/research/03-decisions.md) distinguishes permission, practical influence and accepted authority. Those distinctions help identify why a technically complete interrupt might produce superficial confirmation.
 
 ## Follow a delayed case
 
@@ -45,4 +45,8 @@ The pilot can expand when supported review decisions, waiting, effort and custom
 
 **Worked challenge:** Review reduces wrong remedies but doubles elapsed time. The answer is not automatically to remove review. Compare which errors were prevented, where waiting arose and whether scope, capacity or evidence can be redesigned. The appropriate trade-off follows the service's consequences and conditions.
 
-**Research basis:** [Coordination](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_02_Coordination_Theory_Detailed_Review.md), [routines](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_05_Organisational_Routines_Detailed_Review.md) and [technology in practice](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_06_Technology_Materiality_Organisation_Detailed_Review.md).
+**Research basis:** [Coordination](../../reference/research/02-coordination.md), [routines](../../reference/research/05-routines.md) and [technology in practice](../../reference/research/06-technology-in-practice.md).
+
+## Read the organisational connection
+
+Meaningful review depends on access, expertise, time and a practical route to respond. The research chapter explains [actualisation](../../reference/research/06-technology-in-practice.md#actualisation-from-possibility-to-action).

@@ -41,3 +41,7 @@ The source [day 5 project](https://github.com/ed-donner/llm_engineering/blob/103
 For a spoken order enquiry, transcription may turn `O-17` into `017`. The lookup can be correct for its input while referring to the wrong record. An image of a destination can be attractive without improving ticket-price accuracy. Make media optional where it does not contribute to the task.
 
 **Worked diagnosis:** An assistant answers quickly, displays the same sentence twice and speaks an outdated policy. Investigate three separate mechanisms: prefix/delta handling, cache invalidation and text-to-speech input. One “better prompt” is unlikely to repair all three.
+
+## Read the organisational connection
+
+Streaming and media interfaces change what becomes visible and when it can be examined. The research chapter explains [materiality in digital systems](../../reference/research/06-technology-in-practice.md#materiality-in-digital-systems).

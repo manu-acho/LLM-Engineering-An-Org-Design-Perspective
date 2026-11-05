@@ -67,3 +67,7 @@ Suppose the pilot achieves the effort figures but elapsed resolution stays at tw
 **Practice:** Change one assumption, such as adoption, review effort or eligible volume, and recalculate the case. Then state which organisational arrangement would need to change to make the improved figure plausible. Arithmetic and design must support each other.
 
 **Research foundation:** The [six-stream literature guide](../../reference/literature-guide.md) supplies the dependency, decision-premise, fit, routine and actualisation lenses used throughout this dossier.
+
+## Read the organisational connection
+
+A proposal needs a defined population, comparator, roles and outcome measures. The research chapter explains [the worked implementation choice](../../reference/research/04-implementation.md#a-worked-implementation-choice).

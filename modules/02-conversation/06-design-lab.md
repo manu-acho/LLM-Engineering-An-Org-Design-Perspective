@@ -14,7 +14,7 @@ Simon treats organisational decisions as shaped by premises: the starting points
 
 **Bounded rationality** recognises limits on attention, knowledge and calculation. A reviewer cannot inspect every fact in unlimited detail. **Satisficing** means searching for an acceptable solution under criteria and limits, rather than calculating an all-knowing optimum. A review form can support judgement by showing relevant evidence; it can also narrow attention to whatever the form happens to contain.
 
-The [decision theory review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_03_Decision_Theory_Detailed_Review.md) distinguishes technical permission, responsibility, approval rights and accountability. Simon's acceptance-based authority and formal-versus-real authority are related questions with different theoretical origins. Neither reduces to an access-control flag.
+The [decision theory review](../../reference/research/03-decisions.md) distinguishes technical permission, responsibility, approval rights and accountability. Simon's acceptance-based authority and formal-versus-real authority are related questions with different theoretical origins. Neither reduces to an access-control flag.
 
 ## Compare two coherent arrangements
 
@@ -38,6 +38,10 @@ Harbour chooses frontline resolution for a narrowly defined category with consis
 
 The dispatcher derives scope from trusted identity. Lookup remains read-only. A proposed credit carries a case ID, amount, policy version and proposal version. Execution checks the relevant role and current case state. The interface distinguishes “draft”, “approved” and “acknowledged”. A recurrent exception reaches the policy owner instead of being treated forever as individual error.
 
-The pilot measures correct remedies, specialist waiting, frontline effort and reversals. It also checks whether staff feel able to challenge a suggested category and whether that challenge reaches somebody who can change it. These actor-specific conditions come from the [technology and organisation review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_06_Technology_Materiality_Organisation_Detailed_Review.md).
+The pilot measures correct remedies, specialist waiting, frontline effort and reversals. It also checks whether staff feel able to challenge a suggested category and whether that challenge reaches somebody who can change it. These actor-specific conditions come from the [technology and organisation review](../../reference/research/06-technology-in-practice.md).
 
 **Worked decision:** If finance rejects many apparently eligible cases because shipment scans are unreliable, change the evidence rule and investigate the source. Do not assume that adding another reviewer model repairs the premise. The useful redesign may involve data ownership and frontline authority as much as conversation quality.
+
+## Read the organisational connection
+
+Task framing, rule configuration and exception handling locate judgement at different points. The research chapter explains [where discretion moves](../../reference/research/03-decisions.md#where-discretion-moves).

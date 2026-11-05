@@ -80,3 +80,7 @@ Suppose `json.loads` raises because the argument string is malformed. No lookup 
 **Practice with feedback:** A generated answer says “the lookup succeeded”, but the database returned `not_found`. Which object should determine the factual claim? The tool result is the evidence available from that lookup. Preserve it in the trace and evaluate whether the final message respects it. The assistant's own success sentence is not an independent confirmation.
 
 The [function-calling documentation](https://developers.openai.com/api/docs/guides/function-calling) describes the request/result relationship. Responses uses different item shapes, so do not mix its fields into this Chat Completions example.
+
+## Read the organisational connection
+
+A complete tool exchange still needs a defensible allocation of action rights. The research chapter explains [permission and authority](../../reference/research/03-decisions.md#permission-and-authority).

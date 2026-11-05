@@ -45,3 +45,7 @@ Different interfaces do not imply different organisational outcomes. Hold source
 Use the [six-framework tour](04-framework-tour.md) for Strands, Microsoft Agent Framework, Agno and Mastra. For each, mark agent construction, invocation, tool resources, task identity and returned result. TypeScript's promises and `await` serve a comparable asynchronous role, but its runtime and package environment differ from Python.
 
 **Worked diagnosis:** A worker marks a task done but the file is absent. Do not rewrite every framework adapter first. Check the task's working directory, tool output, board transition and acceptance policy. The shared task contract must distinguish self-reported completion from an inspected and accepted artefact.
+
+## Read the organisational connection
+
+A framework comparison should distinguish an available interface from selected configuration and actual use. The research chapter explains [capability, configuration, practice and outcome](../../reference/research/04-implementation.md#capability-configuration-practice-and-outcome).

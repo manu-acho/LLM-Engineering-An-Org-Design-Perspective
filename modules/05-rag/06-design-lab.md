@@ -42,4 +42,8 @@ Measure retrieval coverage, supported claims and appropriate abstention alongsid
 
 **Worked choice:** Should Harbour fine-tune a model on the 40 conflicting answers? First decide which interpretations should govern and why. Training on unresolved disagreement can reproduce it with greater consistency. A source-governance intervention may be the necessary next step.
 
-**Research basis:** [Coordination](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_02_Coordination_Theory_Detailed_Review.md), [decision theory](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_03_Decision_Theory_Detailed_Review.md) and [routines](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_05_Organisational_Routines_Detailed_Review.md).
+**Research basis:** [Coordination](../../reference/research/02-coordination.md), [decision theory](../../reference/research/03-decisions.md) and [routines](../../reference/research/05-routines.md).
+
+## Read the organisational connection
+
+A knowledge service needs routes for translation and contestation as well as document transfer. The research chapter explains [knowledge boundaries](../../reference/research/02-coordination.md#shared-data-and-shared-meaning).

@@ -57,3 +57,7 @@ If the system lacks current policy, retrieval or a database tool may help more t
 ## Continue the module
 
 The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
+
+## Read the organisational connection
+
+A label supplies a category through which subsequent cases become recognisable. The research chapter explains [decision premises](../../reference/research/03-decisions.md#decision-premises).

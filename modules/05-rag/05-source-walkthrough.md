@@ -90,3 +90,7 @@ Prepare questions requiring a rule, an exception, two documents, an obsolete ver
 **Worked diagnosis:** The answer cites P-3 accurately but misses a policy exception absent from the returned evidence. Changing the answer prompt may help abstention, but cannot supply that missing passage. Investigate chunking and retrieval, then repeat the frozen evaluation.
 
 **Technical reference:** [Chroma query and get](https://docs.trychroma.com/docs/querying-collections/query-and-get). The course source and this independent lab use different embedding arrangements.
+
+## Read the organisational connection
+
+A retrieved contribution needs source identity, uncertainty and acceptance conditions. The research chapter explains [the worked handoff design](../../reference/research/02-coordination.md#a-worked-handoff-design).

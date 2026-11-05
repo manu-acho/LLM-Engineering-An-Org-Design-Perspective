@@ -18,7 +18,7 @@ Do not promise that a local model resolves the organisational problem. Local inf
 
 ## Shared text and shared meaning
 
-Stream 2's knowledge-boundary discussion explains why a common representation can coexist with different meanings. Sales may hear “resolution” as a promise to preserve the customer relationship. Finance may hear it as completion of evidence and authorisation requirements. A summary that says “resolution agreed” can conceal that difference.
+Research chapter 2's knowledge-boundary discussion explains why a common representation can coexist with different meanings. Sales may hear “resolution” as a promise to preserve the customer relationship. Finance may hear it as completion of evidence and authorisation requirements. A summary that says “resolution agreed” can conceal that difference.
 
 Carlile distinguishes three kinds of knowledge boundary. A **syntactic boundary** concerns how information is represented: common fields or formats may help. A **semantic boundary** concerns meaning: teams need to explain what their terms mean. A **pragmatic boundary** involves different interests: teams may need to negotiate what should happen, even when they understand each other. An LLM may assist with identifying and articulating these differences. Generating a smooth paragraph does not establish agreement.
 
@@ -34,19 +34,19 @@ If staff routinely correct an AI note after circulation, the correction task is 
 
 ## Fit includes roles and controls
 
-Stream 4's enterprise-systems review broadens fit beyond functionality. A note generator can perform its technical function while fitting roles or controls poorly. Perhaps the person expected to confirm notes lacks access to the source meeting. Perhaps a team uses discussion as exploration and finds premature action extraction disruptive.
+Research chapter 4 broadens fit beyond functionality. A note generator can perform its technical function while fitting roles or controls poorly. Perhaps the person expected to confirm notes lacks access to the source meeting. Perhaps a team uses discussion as exploration and finds premature action extraction disruptive.
 
 These are design issues to investigate rather than evidence that all automated notes are unsuitable. Options include a draft-only mode, participant confirmation, a separate decision register or limiting extraction to explicitly agreed markers.
 
 ## Editable text and a contestable record are different possibilities
 
-An editable AI note is a feature. The possibility for a participant to correct a commitment depends on more: access, time to review, knowledge that the note exists and a process recognising corrections. Stream 6 calls attention to this relation between an actor, an arrangement and a goal.
+An editable AI note is a feature. The possibility for a participant to correct a commitment depends on more: access, time to review, knowledge that the note exists and a process recognising corrections. Research chapter 6 calls attention to this relation between an actor, an arrangement and a goal.
 
 For the meeting chair, a confirmation field may support maintaining an agreed action record. For a specialist absent when the note circulates, it may not supply a workable opportunity to contest an assigned action. The technical property is the same; the relevant action conditions differ.
 
 Examine the material details too. A label saying “confirmed” and a link to the supporting passage make different claims from an unlabeled generated action. Hosting the model locally changes a data path; it does not establish these review and correction arrangements.
 
-For the exercise below, trace a disputed note from draft through correction to the version another team actually uses. That sequence helps investigate **actualisation**, the process through which a possibility is realised over time. The interpretation draws on [Stream 6](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_06_Technology_Materiality_Organisation_Detailed_Review.md) and remains a fictional teaching application.
+For the exercise below, trace a disputed note from draft through correction to the version another team actually uses. That sequence helps investigate **actualisation**, the process through which a possibility is realised over time. The interpretation draws on [Research chapter 6](../../reference/research/06-technology-in-practice.md) and remains a fictional teaching application.
 
 ## Apply the idea
 
@@ -58,8 +58,12 @@ Return to the conditional credit sentence above. A second person at the meeting 
 
 Measure false commitments, missing conditions, wrong ownership, correction effort and whether participants can contest the record before others act on it. Shorter notes alone do not show improved coordination.
 
-**Research basis:** [Stream 2](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_02_Coordination_Theory_Detailed_Review.md) on knowledge boundaries; [Stream 4](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_04_Enterprise_Systems_Implementation_Transformation_Detailed_Review.md) on multidimensional fit; [Stream 5](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_05_Organisational_Routines_Detailed_Review.md) on artefacts and recurrent work. The applications are illustrative transfers, with the [review access limits](../../reference/literature-guide.md) retained.
+**Research basis:** [Research chapter 2](../../reference/research/02-coordination.md) on knowledge boundaries; [Research chapter 4](../../reference/research/04-implementation.md) on multidimensional fit; [Research chapter 5](../../reference/research/05-routines.md) on artefacts and recurrent work. The applications are illustrative transfers, with the [evidence distinctions](../../reference/literature-guide.md) retained.
 
 ## Continue the module
 
 The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
+
+## Read the organisational connection
+
+A generated meeting record is an artefact, distinct from participants' accounts and actions. The research chapter explains [understandings and performances](../../reference/research/05-routines.md#understandings-and-performances).

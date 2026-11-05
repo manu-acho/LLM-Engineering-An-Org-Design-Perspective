@@ -26,8 +26,14 @@ const readingFiles = [
   'modules/07-fine-tuning-and-qlora.md', 'modules/08-agents-and-operations.md',
   'reference/local-labs.md'
 ];
+const researchFiles = [
+  'reference/research/01-organisation-design.md', 'reference/research/02-coordination.md',
+  'reference/research/03-decisions.md', 'reference/research/04-implementation.md',
+  'reference/research/05-routines.md', 'reference/research/06-technology-in-practice.md'
+];
 
 function sectionFor(relative) {
+  if (relative === 'reference/literature-guide.md' || researchFiles.includes(relative)) return 'Organisation design research';
   if (['README.md', 'START-HERE.md', 'WORKBOOK.md', 'AGENT-ENGINEERING.md'].includes(relative)) return 'Start and study';
   if (relative.startsWith('modules/')) return moduleNames[relative.split('/')[1]] || 'Engineering references';
   return 'Sources and further reading';
@@ -54,7 +60,7 @@ export async function buildReader() {
   // lesson does not require a running server to reload this module.
   const moduleFiles = JSON.parse(await fs.readFile(path.join(readerRoot, 'module-readings.json'), 'utf8'));
   if (!Array.isArray(moduleFiles) || moduleFiles.some(file => typeof file !== 'string' || !/^modules\/[a-z0-9-]+\/(?:README|\d{2}-[a-z0-9-]+)\.md$/.test(file))) throw new Error('Invalid public module reading manifest');
-  const publicFiles = [...readingFiles, ...moduleFiles];
+  const publicFiles = [...readingFiles, ...moduleFiles, ...researchFiles];
   if (new Set(publicFiles).size !== publicFiles.length) throw new Error('Duplicate public reading path');
   const documents = [];
   for (const relative of publicFiles) {
@@ -68,8 +74,8 @@ export async function buildReader() {
     if (/\]\([^)]*(?:\.private\/|FACILITATOR-GUIDE|WRITING-STANDARD|PUBLICATION-PLAN)/i.test(content)) throw new Error(`Private working-document link in ${relative}`);
     documents.push(makeDocument(relative, content, (await fs.stat(full)).mtime.toISOString()));
   }
-  const sectionOrder = ['Start and study', ...Object.values(moduleNames), 'Engineering references', 'Sources and further reading'];
-  const priority = doc => doc.path === 'START-HERE.md' ? 0 : doc.path === 'README.md' ? 1 : doc.path.endsWith('/README.md') ? 0 : 2;
+  const sectionOrder = ['Start and study', ...Object.values(moduleNames), 'Organisation design research', 'Engineering references', 'Sources and further reading'];
+  const priority = doc => doc.path === 'START-HERE.md' || doc.path === 'reference/literature-guide.md' ? 0 : doc.path === 'README.md' ? 1 : doc.path.endsWith('/README.md') ? 0 : 2;
   documents.sort((a, b) => sectionOrder.indexOf(a.section) - sectionOrder.indexOf(b.section) || priority(a) - priority(b) || a.path.localeCompare(b.path));
   const moduleGroups = [
     { title: 'Part I: AI engineering foundations', sections: Object.values(moduleNames).slice(0, 8) },

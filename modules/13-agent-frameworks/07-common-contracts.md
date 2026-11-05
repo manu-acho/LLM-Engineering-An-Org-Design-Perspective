@@ -58,3 +58,7 @@ The SQLite conditional update in Lesson 13.2 demonstrates expected-state checkin
 Test an empty result, explicit error, stale input revision, missing output and an inspected but unaccepted artefact. These cases examine actual boundaries. A test merely repeating the adapter's happy-path field mapping adds little confidence.
 
 **Worked extension:** Add a separate `accepted_by` record with decision, task revision and criteria version. Explain why that record belongs to a receiving actor or service, rather than being filled automatically by whichever worker produced the text. The contract now carries work across an organisational boundary instead of hiding that boundary behind a successful function return.
+
+## Read the organisational connection
+
+An adapter that replaces unknown with a definite value changes the basis of later choices. The research chapter explains [decision premises](../../reference/research/03-decisions.md#decision-premises).

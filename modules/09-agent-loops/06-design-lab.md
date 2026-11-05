@@ -24,7 +24,7 @@ The assistant can support several contributions without becoming an accountable 
 
 Ordinary enquiries need predictable transfer. Harbour standardises minimum fields and acceptance status. Disputed evidence needs reciprocal adjustment. Those cases enter a specialist conversation while one named case owner retains the customer relationship.
 
-This connects Thompson's interdependence with the mechanisms discussed in the [organisation design review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_01_Organisation_Design_Detailed_Review.md). Standardisation helps routine flow; mutual adjustment becomes valuable when participants must revise their contributions together.
+This connects Thompson's interdependence with the mechanisms discussed in the [organisation design review](../../reference/research/01-organisation-design.md). Standardisation helps routine flow; mutual adjustment becomes valuable when participants must revise their contributions together.
 
 ## Work through an operating day
 
@@ -38,6 +38,10 @@ If the assistant increases accepted intake beyond receiving capacity, Harbour li
 
 For a customer with an order reference, the assistant may enable out-of-hours submission. For a customer without one, the same mandatory field may block legitimate access. A documented alternative route preserves the service purpose. For intake staff, a referenced draft may enable preparation only if they can correct it and reach a responsible specialist.
 
-These are actor-specific possibilities to investigate, drawing on the [technology and organisation review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_06_Technology_Materiality_Organisation_Detailed_Review.md). Availability of a chat window is not evidence that these possibilities are realised.
+These are actor-specific possibilities to investigate, drawing on the [technology and organisation review](../../reference/research/06-technology-in-practice.md). Availability of a chat window is not evidence that these possibilities are realised.
 
 **Worked decision:** Harbour should initially measure accepted submission, clarification burden, customer effort and progress after handoff. Conversation volume is a usage measure. The service promise determines which outcomes matter.
+
+## Read the organisational connection
+
+The intake promise depends on what the receiving activity can actually accept and perform. The research chapter explains [the worked handoff design](../../reference/research/02-coordination.md#a-worked-handoff-design).

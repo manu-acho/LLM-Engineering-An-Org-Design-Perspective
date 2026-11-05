@@ -45,3 +45,7 @@ The course wraps a framework worker with a separate evaluator loop. A model-call
 **Worked check:** An evaluator receives a final reply and the names of tools called. Can it verify that a file contains the requested result? Tool names show an attempted route. File content, output identity and an acceptance check provide stronger evidence. The evaluator's schema makes its judgement inspectable, not automatically well-supported.
 
 **Source connection:** [Sidekick](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/4_langchain_langgraph/sidekick.py). [LangGraph persistence](https://docs.langchain.com/oss/python/langgraph/persistence) explains the checkpointer/store distinction.
+
+## Read the organisational connection
+
+Replaying events and repeating organisational action have different consequences to investigate. The research chapter explains [variation in recurrent work](../../reference/research/05-routines.md#variation-is-a-question-not-a-verdict).

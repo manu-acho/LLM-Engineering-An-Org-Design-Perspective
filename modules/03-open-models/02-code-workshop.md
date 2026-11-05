@@ -76,3 +76,7 @@ Change the toy input to `delivery confirmed`. Then try an unknown word. Predict 
 ## Continue the module
 
 The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
+
+## Read the organisational connection
+
+Encoding and decoding are inspectable transformations whose organisational effects need further evidence. The research chapter explains [materiality in digital systems](../../reference/research/06-technology-in-practice.md#materiality-in-digital-systems).

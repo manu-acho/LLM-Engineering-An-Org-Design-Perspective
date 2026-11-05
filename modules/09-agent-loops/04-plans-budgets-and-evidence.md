@@ -43,4 +43,8 @@ If every request contains an order ID and always needs the same two records, a f
 
 **Worked failure:** A model repeatedly requests an unavailable source and exhausts its budget. The application should retain the evidence already gathered, expose the unresolved source and assign a next owner. Increasing the budget is appropriate only if more permitted work could reasonably change the result. Persistence cannot create a source that the organisation has not made available.
 
-The [coordination review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_02_Coordination_Theory_Detailed_Review.md) helps distinguish a missing contribution from a scheduling problem. The loop's next step and the organisation's next responsibility must connect.
+The [coordination review](../../reference/research/02-coordination.md) helps distinguish a missing contribution from a scheduling problem. The loop's next step and the organisation's next responsibility must connect.
+
+## Read the organisational connection
+
+Budgets and stopping rules structure search without proving that the first acceptable answer is adequate. The research chapter explains [bounded rationality](../../reference/research/03-decisions.md#bounded-rationality).

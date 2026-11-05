@@ -42,4 +42,8 @@ Harbour selects a four-week referenced-brief pilot for the 300-case population, 
 
 **Try the decision yourself:** Suppose preparation improves but warehouse waiting does not. Should Harbour grant the assistant more autonomy? A reasoned answer first investigates the missing dependency. More autonomy is justified only if the assistant can perform a specific permitted contribution that addresses it. A faster summary alone does not establish that case.
 
-**Research basis:** The [organisation design](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_01_Organisation_Design_Detailed_Review.md) and [coordination](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_02_Coordination_Theory_Detailed_Review.md) reviews inform this application. The figures and decision are teaching assumptions.
+**Research basis:** The [organisation design](../../reference/research/01-organisation-design.md) and [coordination](../../reference/research/02-coordination.md) reviews inform this application. The figures and decision are teaching assumptions.
+
+## Read the organisational connection
+
+Compare lookup, drafting and specialist conversation against the dependency each addresses. The research chapter explains [the worked organisational comparison](../../reference/research/01-organisation-design.md#a-worked-comparison-at-harbour).

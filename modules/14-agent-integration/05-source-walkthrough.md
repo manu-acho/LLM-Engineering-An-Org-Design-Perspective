@@ -81,3 +81,7 @@ The example changes simulated application accounts, not a demonstrated live brok
 **Worked diagnosis:** Tool discovery works but a resource read fails. Check resource URI, template matching, server operation and content result separately from the tool list. Discovery of one capability type does not establish the existence or correctness of another.
 
 **Technical reference:** [MCP server tutorial](https://modelcontextprotocol.io/docs/develop/build-server). The course and local lab use Python SDK interfaces; verify installed package compatibility before adapting them.
+
+## Read the organisational connection
+
+A successful protocol exchange demonstrates communication within the tested scope. The research chapter explains [the evidence path](../../reference/research/06-technology-in-practice.md#an-evidence-path-without-skipped-steps).

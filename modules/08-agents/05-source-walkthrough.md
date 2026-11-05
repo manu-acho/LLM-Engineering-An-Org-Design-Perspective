@@ -37,3 +37,7 @@ The source [interface](https://github.com/ed-donner/llm_engineering/blob/103f4bf
 For one run, mark candidate identity, retrieved examples, component predictions, selected threshold, attempted notification, acknowledged response and stored opportunity. Identify where the record is missing. The original demonstration is not a production completion ledger.
 
 **Worked diagnosis:** The source log says notification ran, but the user received nothing. Inspect the messenger's HTTP response and any delivery acknowledgement before resending. A function returning normally does not establish delivery, and a blind retry can duplicate a message whose first acknowledgement was lost.
+
+## Read the organisational connection
+
+A service trace reveals contributions whose receipt and acceptance conditions should be explicit. The research chapter explains [dependency management](../../reference/research/02-coordination.md#identify-what-depends-on-what).

@@ -10,7 +10,7 @@ The interface has become part of how work is coordinated. Its meanings, permissi
 
 ## Decide what each capability promises
 
-The [coordination review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_02_Coordination_Theory_Detailed_Review.md) helps specify the dependency. A consumer needs more than a response shaped as JSON. Does `read_case` return the current operational record, a delayed copy or a partial view? Does `prepare_handoff` create a draft or submit work to another team? What does an error mean for the waiting case?
+The [coordination review](../../reference/research/02-coordination.md) helps specify the dependency. A consumer needs more than a response shaped as JSON. Does `read_case` return the current operational record, a delayed copy or a partial view? Does `prepare_handoff` create a draft or submit work to another team? What does an error mean for the waiting case?
 
 Write those semantics into a service contract. Include source status, required inputs, expected result, failure conditions and receiving ownership. A common protocol can carry this contract's data, but it cannot decide the contract for the organisation.
 
@@ -18,7 +18,7 @@ Where meanings or interests differ, negotiation may be necessary. Finance may re
 
 ## Technical access and business authority
 
-The [decision-theory review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_03_Decision_Theory_Detailed_Review.md) directs attention to authority and the premises behind actions. A service account may be authenticated while lacking a mandate to act for a particular customer or department. A transport credential is not a universal business permission.
+The [decision-theory review](../../reference/research/03-decisions.md) directs attention to authority and the premises behind actions. A service account may be authenticated while lacking a mandate to act for a particular customer or department. A transport credential is not a universal business permission.
 
 Separate capability visibility, operation permission, record scope and decision authority. The workshop shows why a discovery filter is insufficient. Enforcement belongs where the action occurs, with trusted evidence about the caller, case and current policy.
 
@@ -26,7 +26,7 @@ Also ask who can redefine the tool. Changing “draft” into “submit” expan
 
 ## Fit includes ownership and maintenance
 
-The [enterprise-systems review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_04_Enterprise_Systems_Implementation_Transformation_Detailed_Review.md) explains why generic capability must be examined in its local setting. A technically available tool may require information frontline staff cannot provide. A default record category may fit one department and misroute another's work.
+The [enterprise-systems review](../../reference/research/04-implementation.md) explains why generic capability must be examined in its local setting. A technically available tool may require information frontline staff cannot provide. A default record category may fit one department and misroute another's work.
 
 Name the business owner of the meaning, the technical owner of the service and the process owner of the end-to-end result. In a small organisation, one person may hold several roles. Keeping the responsibilities distinct still helps when a change or failure needs a decision.
 
@@ -34,7 +34,7 @@ Define a supported change process: announce a schema revision, test consumers, m
 
 ## Memory and records participate in routines
 
-The [routines review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_05_Organisational_Routines_Detailed_Review.md) helps interpret a shared memory or tool log. A stored strategy may represent an intended approach rather than actual practice. A completed transaction record captures selected events while omitting discussion and manual repair.
+The [routines review](../../reference/research/05-routines.md) helps interpret a shared memory or tool log. A stored strategy may represent an intended approach rather than actual practice. A completed transaction record captures selected events while omitting discussion and manual repair.
 
 Decide which information is an authoritative business record and which is a temporary model aid. A remembered interpretation should not silently become policy for later cases. Give staff a route to challenge, correct and trace the source of recurring claims.
 
@@ -42,11 +42,11 @@ The course's separation of researcher tools, account resources and action tools 
 
 ## Integration changes possibilities unevenly
 
-The [technology-and-organisation review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_06_Technology_Materiality_Organisation_Detailed_Review.md) encourages actor-specific analysis. A shared case tool may enable a service adviser to find current status. It may enable a coordinator to compare delays. It may constrain a regional specialist if required fields cannot express a legitimate exception.
+The [technology-and-organisation review](../../reference/research/06-technology-in-practice.md) encourages actor-specific analysis. A shared case tool may enable a service adviser to find current status. It may enable a coordinator to compare delays. It may constrain a regional specialist if required fields cannot express a legitimate exception.
 
 Investigate these relations through actual cases. Availability, use and benefit are different claims. A connector deployed successfully can coexist with duplicated work, unclear ownership or increased review effort.
 
-The [organisation-design review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_01_Organisation_Design_Detailed_Review.md) brings the choices together: work division, information access, coordination mechanisms and authority must fit. Interoperability is useful when it supports that arrangement, not merely when more assistants can connect.
+The [organisation-design review](../../reference/research/01-organisation-design.md) brings the choices together: work division, information access, coordination mechanisms and authority must fit. Interoperability is useful when it supports that arrangement, not merely when more assistants can connect.
 
 ## Apply the idea
 
@@ -59,3 +59,7 @@ Follow a disputed draft back to its sources and transformations. The cause may b
 ## Continue the module
 
 The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
+
+## Read the organisational connection
+
+A reusable service needs ownership for change, support and recovery after launch. The research chapter explains [implementation beyond launch](../../reference/research/04-implementation.md#implementation-extends-beyond-launch).

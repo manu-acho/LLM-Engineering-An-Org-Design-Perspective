@@ -72,3 +72,7 @@ Read the structured output alongside tool events and sources. If the model retur
 **Worked extension:** Add a policy specialist returning policy version and required review status. Require both records in application code before drafting. Then deliberately fail policy lookup. The appropriate terminal state is incomplete evidence, not a generated substitute policy.
 
 **Documentation:** [OpenAI Agents SDK overview](https://developers.openai.com/api/docs/guides/agents/sdk). The pinned course supplies the source orchestration discussed here; the new small example is an independently authored integration.
+
+## Read the organisational connection
+
+An agent's returned result demonstrates a configured path within the tested conditions. The research chapter explains [capability, configuration, practice and outcome](../../reference/research/04-implementation.md#capability-configuration-practice-and-outcome).

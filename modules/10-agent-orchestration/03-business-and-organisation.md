@@ -10,7 +10,7 @@ Both teams can be acting consistently with their own understanding. The problem 
 
 ## Begin with the dependency
 
-The [coordination review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_02_Coordination_Theory_Detailed_Review.md) encourages us to specify what a receiving activity needs. Finance may need an identified order, an evidence comparison, a policy reference and a record of the customer's request. A free-form summary may omit a required condition even when it is easy to read.
+The [coordination review](../../reference/research/02-coordination.md) encourages us to specify what a receiving activity needs. Finance may need an identified order, an evidence comparison, a policy reference and a record of the customer's request. A free-form summary may omit a required condition even when it is easy to read.
 
 Define the handoff as a contract about information and responsibility. State who submits, who accepts, what counts as usable evidence, when a response is due and where rejected cases go. “Sent to finance” and “accepted by finance” need different statuses if acceptance matters.
 
@@ -18,7 +18,7 @@ This makes an engineering decision visible. Does the main assistant call finance
 
 ## A manager name does not confer management authority
 
-In the [decision-theory review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_03_Decision_Theory_Detailed_Review.md), decision premises and authority are different from merely producing a recommendation. A manager agent can select sources, frame alternatives and choose which specialist output to emphasise. Those are influential choices. It still cannot confer legitimate approval on itself by returning a field called `approved`.
+In the [decision-theory review](../../reference/research/03-decisions.md), decision premises and authority are different from merely producing a recommendation. A manager agent can select sources, frame alternatives and choose which specialist output to emphasise. Those are influential choices. It still cannot confer legitimate approval on itself by returning a field called `approved`.
 
 The workshop separates evidence collection from authorisation. In a real organisation, the authorisation rule also has an owner. Who can change the permitted category, the threshold or the list of approvers? Repeated exceptions should reach someone able to revise a bad rule, not only individual reviewers asked to work around it.
 
@@ -26,7 +26,7 @@ Consider a model-based checker that declares an email professional. That may hel
 
 ## Parallelism redistributes work and waiting
 
-The [organisation-design review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_01_Organisation_Design_Detailed_Review.md) asks whether task division and integration fit together. Running evidence searches in parallel can reduce elapsed collection time. It can also produce more drafts than reviewers can inspect, shifting the bottleneck downstream.
+The [organisation-design review](../../reference/research/01-organisation-design.md) asks whether task division and integration fit together. Running evidence searches in parallel can reduce elapsed collection time. It can also produce more drafts than reviewers can inspect, shifting the bottleneck downstream.
 
 Measure role-specific work as well as service speed. A coordinator that returns in seconds may create several minutes of reconciliation for finance. Duplicate requests can make a receiving team do the same investigation twice. More components are useful only where their contributions and integration costs justify them.
 
@@ -34,13 +34,13 @@ A simpler design might gather two records in code and ask one model to draft a c
 
 ## Design for a missing or disputed result
 
-The [enterprise-systems review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_04_Enterprise_Systems_Implementation_Transformation_Detailed_Review.md) broadens fit beyond feature availability. A technically successful handoff can fit local roles poorly. For example, the assigned reviewer may lack warehouse access, or the proposed response deadline may be impossible for the night shift.
+The [enterprise-systems review](../../reference/research/04-implementation.md) broadens fit beyond feature availability. A technically successful handoff can fit local roles poorly. For example, the assigned reviewer may lack warehouse access, or the proposed response deadline may be impossible for the night shift.
 
 Build the exception path alongside the normal one. If policy retrieval fails, who owns the waiting case? If reviewers disagree, who can resolve the category? If an approval expires, who requests a new review? These arrangements are part of implementation, not cleanup work after a demo.
 
 ## Follow use beyond the trace
 
-The [technology-and-organisation review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_06_Technology_Materiality_Organisation_Detailed_Review.md) distinguishes a possible action from its actualisation. A trace showing a finance specialist was called establishes a software event. To investigate whether the new handoff works, follow accepted cases, rejections, informal clarifications and delayed responses over time.
+The [technology-and-organisation review](../../reference/research/06-technology-in-practice.md) distinguishes a possible action from its actualisation. A trace showing a finance specialist was called establishes a software event. To investigate whether the new handoff works, follow accepted cases, rejections, informal clarifications and delayed responses over time.
 
 A reviewer may technically have a challenge button but no time or evidence to use it. The possibility of meaningful review depends on that person's working conditions. Counting approvals without investigating those conditions leaves several explanations open.
 
@@ -55,3 +55,7 @@ A defensible answer first identifies why cases are rejected and whether the comp
 ## Continue the module
 
 The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
+
+## Read the organisational connection
+
+Routing makes assignment visible without establishing accepted ownership. The research chapter explains [mechanisms and conditions](../../reference/research/02-coordination.md#mechanisms-and-conditions).

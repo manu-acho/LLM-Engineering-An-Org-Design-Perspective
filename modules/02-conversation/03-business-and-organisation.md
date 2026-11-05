@@ -10,7 +10,7 @@ Suppose the assistant also selects which records finance sees, assigns the compl
 
 ## Who sets the starting points for a decision?
 
-People cannot inspect every fact or compare every possible action before deciding. Simon calls these limits **bounded rationality**. Organisations help by setting goals, deciding which information matters and defining options and rules. These starting points are **decision premises**. Stream 3 explains why they matter: whoever sets them can shape many later decisions.
+People cannot inspect every fact or compare every possible action before deciding. Simon calls these limits **bounded rationality**. Organisations help by setting goals, deciding which information matters and defining options and rules. These starting points are **decision premises**. Research chapter 3 explains why they matter: whoever sets them can shape many later decisions.
 
 In our case, “short delivery”, “verified shortage” and “goodwill credit” are different categories. A classification can determine which evidence is requested and which response is considered legitimate. Even a screen default can influence which alternatives receive attention.
 
@@ -34,7 +34,7 @@ This transfer is interpretive. We are not claiming that every AI system removes 
 
 ## Coordination depends on more than a shared answer
 
-Stream 2, drawing on Okhuysen and Bechky, separates a mechanism from the conditions it may support: accountability, predictability and common understanding. The assistant's shared case summary is a mechanism. It may clarify responsibility or next steps. Finance and account management may still understand “customer resolved” differently.
+Research chapter 2, drawing on Okhuysen and Bechky, separates a mechanism from the conditions it may support: accountability, predictability and common understanding. The assistant's shared case summary is a mechanism. It may clarify responsibility or next steps. Finance and account management may still understand “customer resolved” differently.
 
 If account management wants to preserve the relationship and finance wants stronger proof before credit, a perfectly readable summary does not remove the conflict. Carlile's knowledge-boundary lens suggests that the problem may involve different meanings and interests, requiring translation and negotiation. Generating a compromise sentence is not the same as reaching an authorised agreement.
 
@@ -42,11 +42,11 @@ If account management wants to preserve the relationship and finance wants stron
 
 The dispatcher in Lesson 2.2 can establish whether an order ID is in a permitted set. That is an inspectable code check. It does not establish that the reviewer understands the order, has time to investigate it or can change a flawed recommendation.
 
-Stream 6 uses **affordance** for something a particular person could do with a system under particular conditions. The same approval screen may enable a trained reviewer to challenge a credit while functioning as a routine confirmation step for someone with no source access. Actual use needs investigation rather than inference from the button.
+Research chapter 6 uses **affordance** for something a particular person could do with a system under particular conditions. The same approval screen may enable a trained reviewer to challenge a credit while functioning as a routine confirmation step for someone with no source access. Actual use needs investigation rather than inference from the button.
 
 A constraint can also serve different goals. Requiring approval blocks rapid execution but may enable an appropriate review boundary. Whether it produces useful control or an unattended queue depends on the working arrangement. Do not equate fewer clicks with better authority design.
 
-Now suppose one reviewer lacks source access and another has only seconds per case. Which changes to the system, staffing or authority would make review workable? [Stream 6](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_06_Technology_Materiality_Organisation_Detailed_Review.md) supports this diagnostic; it does not prove any particular review outcome.
+Now suppose one reviewer lacks source access and another has only seconds per case. Which changes to the system, staffing or authority would make review workable? [Research chapter 6](../../reference/research/06-technology-in-practice.md) supports this diagnostic; it does not prove any particular review outcome.
 
 ## Apply the idea
 
@@ -60,8 +60,12 @@ Assess correct resolution, review effort, disagreement handling and duplicate ef
 
 **Try it:** Create an action/authority table with separate rows for information, calculation, recommendation, authorisation and execution.
 
-**Research basis:** [Stream 3](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_03_Decision_Theory_Detailed_Review.md), particularly premises, authority and discretion; [Stream 2](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_02_Coordination_Theory_Detailed_Review.md), particularly conditions and knowledge boundaries. See [transfer limits](../../reference/literature-guide.md).
+**Research basis:** [Research chapter 3](../../reference/research/03-decisions.md), particularly premises, authority and discretion; [Research chapter 2](../../reference/research/02-coordination.md), particularly conditions and knowledge boundaries. See [transfer limits](../../reference/literature-guide.md).
 
 ## Continue the module
 
 The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
+
+## Read the organisational connection
+
+A technical entitlement does not by itself establish an organisational mandate. The research chapter explains [permission and authority](../../reference/research/03-decisions.md#permission-and-authority).

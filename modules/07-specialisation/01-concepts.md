@@ -51,3 +51,7 @@ The local week 7 notebooks refer to remote training lessons whose cells were una
 ## Continue the module
 
 The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
+
+## Read the organisational connection
+
+Model specialisation cannot by itself settle whether its categories suit the work. The research chapter explains [fit and misfit](../../reference/research/04-implementation.md#six-kinds-of-misfit).

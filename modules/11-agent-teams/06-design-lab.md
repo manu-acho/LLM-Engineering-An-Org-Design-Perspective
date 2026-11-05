@@ -12,7 +12,7 @@ The team writes a contribution table. The researcher locates permitted evidence.
 
 Modularity divides a system into parts with limited interactions. A clear interface can make components easier to replace. But tightly interdependent work can create repeated cross-boundary clarification. More modules can therefore increase integration work.
 
-The [organisation design review](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_01_Organisation_Design_Detailed_Review.md) distinguishes technical decomposition from organisational division. A software boundary is useful here when it creates a real difference in evidence, capability, checking or maintenance. Merely naming the same model four times does not establish those differences.
+The [organisation design review](../../reference/research/01-organisation-design.md) distinguishes technical decomposition from organisational division. A software boundary is useful here when it creates a real difference in evidence, capability, checking or maintenance. Merely naming the same model four times does not establish those differences.
 
 ## Compare two complete arrangements
 
@@ -44,4 +44,8 @@ After the first pilot week, reviewers repeatedly identify missing receipt condit
 
 **Worked decision:** Retain a separate specialist only when its contribution can be stated, evaluated and integrated. If removing an agent loses only another restatement, redesign the division. If it loses access to necessary expertise or an independent checking opportunity, preserve that contribution and improve its interface.
 
-**Research basis:** [Coordination](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_02_Coordination_Theory_Detailed_Review.md) and [decision theory](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_03_Decision_Theory_Detailed_Review.md) complement the division/integration argument.
+**Research basis:** [Coordination](../../reference/research/02-coordination.md) and [decision theory](../../reference/research/03-decisions.md) complement the division/integration argument.
+
+## Read the organisational connection
+
+Compare the benefit of specialisation with handoffs, reconciliation and maintenance. The research chapter explains [decomposition and integration](../../reference/research/01-organisation-design.md#when-more-agents-create-more-integration-work).

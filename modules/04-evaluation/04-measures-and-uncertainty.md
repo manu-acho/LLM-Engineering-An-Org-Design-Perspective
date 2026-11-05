@@ -50,3 +50,7 @@ The length check prevents `zip` from silently ignoring unmatched cases. Explicit
 If one system fails where another succeeds, inspect those paired cases. An average score can hide that one is better on routine work and worse on consequential exceptions. Keep the prompt, source revision, population, abstention rule and reviewer criteria in the experiment record.
 
 **Worked check:** A supplier reports “95% accuracy” after excluding malformed answers. Ask how many answers were excluded and what happens to those cases operationally. Correctness among parseable outputs and coverage across all cases must both be reported. A system does not remove work by returning an unusable answer that disappears from the spreadsheet.
+
+## Read the organisational connection
+
+An aggregate score can conceal differences in case difficulty and work shifted to other roles. The research chapter explains [benefit evidence](../../reference/research/04-implementation.md#benefits-need-a-population-and-a-comparison).

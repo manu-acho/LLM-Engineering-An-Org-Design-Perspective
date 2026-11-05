@@ -41,4 +41,8 @@ If technical handoffs succeed but specialists repeatedly return cases as unusabl
 
 **Worked challenge:** A manager wants to call the coordinator “autonomous operations director”. What evidence would justify greater authority? Define the precise decision opportunity, relevant premises, evidence, acceptance and accountability first. A more senior agent name changes none of them.
 
-**Research basis:** [Coordination](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_02_Coordination_Theory_Detailed_Review.md) and [decision theory](https://github.com/manu-acho/org-design-as-code/blob/4e40b3b65360140d89e9581e4e668ef38ab77482/Enterprise-Software-as-Organisation/literature/Stream_03_Decision_Theory_Detailed_Review.md).
+**Research basis:** [Coordination](../../reference/research/02-coordination.md) and [decision theory](../../reference/research/03-decisions.md).
+
+## Read the organisational connection
+
+Specialist contributions need to justify the coordination work their separation creates. The research chapter explains [decomposition and integration](../../reference/research/01-organisation-design.md#when-more-agents-create-more-integration-work).

@@ -67,3 +67,7 @@ Create one ambiguous request and two defensible category interpretations. Then w
 ## Continue the module
 
 The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
+
+## Read the organisational connection
+
+The separation of question and answer determines which evidence is legitimately available at prediction time. The research chapter explains [decision premises](../../reference/research/03-decisions.md#decision-premises).
