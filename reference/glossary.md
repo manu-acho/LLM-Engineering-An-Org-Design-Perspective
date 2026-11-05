@@ -1,4 +1,4 @@
-# Working glossary
+# Glossary: concepts and examples
 
 [Guide index](../README.md)
 
@@ -42,7 +42,7 @@
 | MAE | Mean absolute error, in target units |
 | Metadata | Descriptive fields such as source, version, date, scope or owner |
 | Materiality | Properties and arrangements, including digital ones, that make actions possible, difficult, visible, durable or unavailable |
-| MRR | Mean reciprocal rank; the course helper uses keyword first-hit ranks |
+| MRR | Mean reciprocal rank; average of the reciprocal position of the first relevant result under stated relevance labels |
 | nDCG | A ranking-quality measure relative to a defined ideal ordering; inspect relevance labels and candidate scope |
 | PEFT | Parameter-efficient fine-tuning |
 | Prompt | Input that frames the task and supplies context |
@@ -112,3 +112,50 @@ These are engineering working definitions. Research constructs such as coordinat
 | Thread identifier | An identity associating state and continuation with a particular interaction or work item |
 | Tool registry | An explicit mapping from permitted operation names to implementations |
 | Trace | Connected runtime events used to inspect execution; not proof of a business outcome alone |
+
+## Worked numerical and systems vocabulary
+
+Short definitions are a starting point. The [technical foundations](technical-foundations.md) works through the examples, and the [further reading guide](further-learning.md) offers selected external explanations.
+
+| Term | Meaning and small example |
+|---|---|
+| Acceptance example | A particular input and expected outcome, such as a wrong-region read returning a refusal |
+| Acceptance owner | The role that decides whether a contribution is usable for the next activity, distinct from network delivery |
+| Architecture | The model's computational arrangement, such as layers and attention heads; it does not specify learned weights by itself |
+| Authentication | Establishing identity under a mechanism, such as a validated token |
+| Authorisation | Checking whether that identity may perform this operation on this resource |
+| Automatic differentiation | Computing gradients through recorded supported operations, as when backward calculates parameter gradients |
+| Backpressure | Slowing or refusing upstream intake when downstream work cannot safely keep up |
+| Configuration hash | A digest of specified configuration bytes; it identifies change but does not certify quality or approval |
+| Concurrency | Overlapping progress, such as two requests waiting for different services |
+| Cosine similarity | Comparing vector direction; it measures representation geometry, not evidence authority |
+| Dense representation | A numerical representation with many populated coordinates, often produced by a neural model |
+| Fencing | Rejecting operations from a former owner after a newer lease or generation takes over |
+| Forward pass | Computing outputs from inputs using current model parameters; the Module 3 pass uses random weights unless the optional pretrained exercise is enabled |
+| Generalisation | Performance on relevant cases beyond those used for fitting; lower training loss alone does not establish it |
+| Harness | The application arrangement around a model: instructions, tools, context, loop, limits and records |
+| HTTP | A request/response protocol; GET reads in the teaching service, while POST submits a decision command |
+| Idempotency key | A stable command identity linked to its content, so an identical retry can retrieve the prior result |
+| Immutable version | An identified artefact that is not edited in place after evaluation or release |
+| Learning rate | An optimiser setting influencing update size; too large a step can overshoot a useful region |
+| Least privilege | Granting only capabilities needed for the task, such as a case read without payment access |
+| Liveness | Whether a process responds under a declared check; it is different from readiness to serve its task |
+| Matrix | A rectangular numerical table, such as two cases by two quantities |
+| Monotonic clock | A clock suitable for measuring elapsed duration without wall-clock adjustments |
+| Optimistic concurrency | Reading a version and accepting an update only if that version is still current |
+| Parallelism | Computation occurring simultaneously on multiple execution resources; not the same as overlapping waiting |
+| Principal | A person or service identity with associated scope; it must come from a trusted identity mechanism |
+| Prompt injection | An attempt to make untrusted content redirect model behaviour beyond its intended role as data |
+| Rank | The number of independent directions in a matrix; a rank-one update constrains the changes it can express |
+| Readiness | Whether a service meets declared conditions to receive work, including necessary dependencies |
+| Reconciliation | Resolving an uncertain or inconsistent outcome by checking authoritative records and correcting it |
+| Rollback | Selecting a previous configuration for new work; it does not automatically undo earlier consequences |
+| Scalar | One number, such as a quantity of twelve |
+| Semaphore | A local mechanism limiting how many tasks enter a region concurrently |
+| Sparse representation | A vector with many zero entries, as in a word-count vocabulary |
+| Tensor | A numerical array; shape [2, 3] can represent two cases with three features each |
+| TF-IDF | A lexical weighting of words within and across documents; it is not a neural embedding model |
+| Threat model | An account of assets, actors, trust boundaries, attacks and consequences used to plan controls |
+| Transaction | A database commit-or-rollback unit; it does not automatically include external side effects |
+| Vector | An ordered collection of numbers, such as [12, 10] for ordered and reported quantities |
+| Vertical slice | One end-to-end contribution through the necessary layers, rather than one disconnected layer |

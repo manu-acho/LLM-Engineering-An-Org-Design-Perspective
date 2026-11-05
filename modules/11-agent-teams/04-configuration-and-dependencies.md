@@ -1,5 +1,7 @@
 # Lesson 11.4: Read configuration as an executable division of work
 
+[Download the matching notebook](/downloads/11-04-configuration-and-dependencies.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next: follow a real crew](05-source-walkthrough.md)
 
 ## Configuration changes behaviour
@@ -41,8 +43,6 @@ Task strings can contain placeholders such as `{requirements}`. Values supplied 
 Likewise, a source project's tool list determines whether an agent can read, write or execute files. A role description saying “researcher” does not reveal those powers. Inspect tool registration and execution paths alongside the configuration.
 
 **Worked check:** The YAML names a `test_task` and asks for a test summary. What establishes that testing occurred? Inspect executed tools, test artefacts, outcomes and scope. A generated summary alone establishes that text was produced. It does not establish backend correctness or frontend behaviour.
-
-**Source connection:** The [engineering task settings](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/3_crewai/reference/engineering_team/src/engineering_team/config/tasks.yaml) make these boundaries especially visible.
 
 ## Read the organisational connection
 

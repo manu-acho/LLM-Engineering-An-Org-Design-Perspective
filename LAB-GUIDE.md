@@ -1,4 +1,4 @@
-# Local lab: complete files, outputs and checks
+# Module 1 lab and the wider code route
 
 [Start here](START-HERE.md) · [Module route](modules/01-standalone-foundations/README.md)
 
@@ -6,7 +6,13 @@
 
 Use the [study workspace guide](STUDY-WORKSPACE.md) for the prepared environment and seven lesson notebooks. They import the complete lab below rather than maintain separate copies. The notebooks need Jupyter packages; the two Python files can also run alone using the standard library.
 
-## Download and run
+## If the course checkout is already present
+
+No download is needed. Open the matching notebook, or run `uv run python examples/01-foundations/foundations_lab.py model` from the project root. The four commands below use two files: three select different operations in foundations_lab.py, and one runs test_foundations.py. The four training sentences are values inside the program, not separate files.
+
+For later modules, follow their own code workshops and notebooks under notebooks. Shared implementations are under src/ai_orgdesign/labs. The [verification guide](reference/verification.md) records their scope.
+
+## Alternative: download the two Module 1 files
 
 Download [the complete lab](/downloads/foundations_lab.py) and [its checks](/downloads/test_foundations.py) into the same folder. The program contains the four training sentences and fictional case. It neither reads confidential files nor contacts a model or external service.
 

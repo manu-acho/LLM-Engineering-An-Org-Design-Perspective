@@ -1,5 +1,7 @@
 # Lesson 7.1: What fine-tuning changes, and what it cannot settle
 
+[Download the matching notebook](/downloads/07-01-concepts.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
 ## When a repeated behaviour remains weak
@@ -44,7 +46,7 @@ Learning rate controls the scale of updates. Batch size controls how many exampl
 
 The output artifact may be an adapter rather than a complete standalone model. To use it later, retain the compatible base, tokenizer, prompt/template and configuration. An adapter trained against one base revision should not be assumed compatible with another just because their names look similar.
 
-The local week 7 notebooks refer to remote training lessons whose cells were unavailable during authoring. The new explanation teaches the mechanism using inspected local preparation/serving code and identified technical references; it does not claim to reproduce unseen training instructions.
+The implementation lesson supplies a complete original training and reload exercise. It uses a small unquantized linear model to make each update visible.
 
 **Check:** Explain why a lower training loss does not settle whether Harbour's routing improved. A strong answer distinguishes the token objective from the operational target, training cases from new cases, and successful imitation from a legitimate category definition.
 

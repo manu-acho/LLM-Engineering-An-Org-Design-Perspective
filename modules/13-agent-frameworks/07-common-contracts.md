@@ -1,12 +1,14 @@
 # Lesson 13.7: Write an adapter that preserves uncertainty
 
+[Download the matching notebook](/downloads/13-07-common-contracts.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next module](../14-agent-integration/README.md)
 
 ## A common shape needs explicit meanings
 
 One runtime returns an object with `output`; another exposes a last message. The application can adapt both into one result record. The dangerous shortcut is to label every non-empty text result `done`. An adapter should preserve what is actually known.
 
-This dependency-free exercise uses invented runtime responses. It tests the application contract, not either framework. The actual source invocation differences are examined in Lesson 13.5.
+This dependency-free exercise uses invented runtime responses. It tests the application contract, not either framework. The local plain-Python and LangGraph invocation paths are examined in Lesson 13.5.
 
 ```python
 from dataclasses import dataclass

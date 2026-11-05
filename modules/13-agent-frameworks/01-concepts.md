@@ -1,5 +1,7 @@
 # Lesson 13.1: Compare frameworks by the work they help you organise
 
+[Download the matching notebook](/downloads/13-01-concepts.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
 ## The same goal, different machinery
@@ -28,7 +30,7 @@ This is the same representation problem encountered in Module 5's retrieval sour
 
 ## A shared board provides a coordination mechanism
 
-The course uses SQLite, a database stored in a local file, for goals and steps. A goal has no parent; a step names a parent goal. Status and result fields make progress visible across processes.
+SQLite is a database stored in a local file. A task board can represent goals and steps with parent identifiers, statuses and results. This module implements a smaller case contribution in plain Python and LangGraph; durable review state is implemented in Module 12.
 
 A database can coordinate access to records, but individual statements still need the right conditions. An unconditional update to `in_progress` records a claim without necessarily preventing another worker from claiming the same task. A stronger claim operation can update only a still-pending record and check whether it succeeded.
 

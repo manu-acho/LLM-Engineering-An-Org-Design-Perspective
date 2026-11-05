@@ -1,5 +1,7 @@
 # Lesson 7.4: Understand an adapter, a training batch and a loss
 
+[Download the matching notebook](/downloads/07-04-adaptation-mechanics.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next: train and reload a tiny adapter](05-source-walkthrough.md)
 
 ## Two smaller tables change a larger transformation
@@ -26,7 +28,7 @@ If the model assigns the correct next token probability 0.5, negative log probab
 
 QLoRA uses a quantized frozen base with trainable adaptation. The original method's NF4 representation, double quantization and memory-management choices address resource constraints. Stored precision, computation precision and adapter precision need not be identical. Quantization does not mean all operations become four-bit arithmetic.
 
-The next lesson deliberately uses a tiny non-quantized model so ordinary local hardware can expose training and reload mechanics. It does not claim to benchmark QLoRA. The original source's later serving code provides a concrete four-bit base plus adapter example; its remote training notebook remains outside inspected coverage.
+The next lesson deliberately uses a tiny non-quantized model so ordinary local hardware can expose training and reload mechanics. It does not claim to benchmark QLoRA. Quantized transformer adaptation would require additional model-specific configuration, hardware checks and evaluation; it is not executed by the linear lab.
 
 **Worked check:** A trained adapter file is small. Can it serve independently? Usually it needs the compatible base, tokenizer or defined token mapping, configuration, input contract and output interpretation. Its size is a property of what was saved, not a complete account of the running system's resource needs.
 

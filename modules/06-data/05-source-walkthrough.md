@@ -1,53 +1,46 @@
-# Lesson 6.5: Follow an example from raw record to evaluated prediction
+# Lesson 6.5: Inspect fitted vocabulary and ambiguous predictions
 
-[Module route](README.md) · [Next: decide what the labels should represent](06-design-lab.md)
+[Download the matching notebook](/downloads/06-05-source-walkthrough.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
 
-## Source preparation is part of the model
+[Module route](README.md) · [Previous workshop](02-code-workshop.md)
 
-In [Week 6 day 1](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week6/day1.ipynb), product records are selected, cleaned, inspected, deduplicated and split. Price range and minimum text length define the population. A model evaluated there has not automatically been assessed for sparse records or prices outside that range.
+## Follow the path in the course checkout
 
-Exact duplicate removal is useful but does not remove every near-identical product family. If variants cross train and test, performance may overstate ability on genuinely new products. Preserve source identifiers and group related records when that matches the intended generalisation question.
+The implementation is included here, so this walkthrough does not require another course, video or repository. Open `src/ai_orgdesign/labs/m06.py`. The lab's public functions expose inputs and return values; supporting service code lives in `src/ai_orgdesign/business.py` where required.
 
-[Day 2](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week6/day2.ipynb) uses model-assisted rewriting and batch jobs. A JSONL line is one request record. A remote batch job can finish after submission and out of order. Join results by stable request ID; do not assume the first output belongs to the first input. Keep failed and missing outputs visible.
+TRAIN contains six invented labelled messages; TEST contains three different messages. make_pipeline joins CountVectorizer and LogisticRegression. During fit, the vectorizer learns its vocabulary from training messages only and the classifier estimates category parameters. predict applies that fitted transformation to the test messages before selecting categories. accuracy_score compares the selected categories with reference labels. random_state fixes the relevant estimator randomness; it does not make the tiny test set representative.
 
-## Move beyond a constant baseline
+Read the function from entry to return. Locate input validation before substantive work, transformations that create a new representation, any call into another component and the point that produces the observable result. A model call, a database commit and constructing a dictionary are different operations. Identify which actually occur in this program.
 
-The source [day 3](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week6/day3.ipynb) compares simpler predictors before neural and model-based methods. The following independent classifier uses words as features. It needs `scikit-learn`, but performs no downloads or remote calls.
+## Work through the contrasting case
+
+Consider a message containing invoice and damaged delivery. Which team should own it? Explain why fitting more accurately to historical single-team labels might worsen the service.
+
+The following variation either checks a failure boundary or exposes another aspect of the same implementation. Catching an expected exception allows the notebook to continue; the `else` branch raises an assertion if the expected boundary fails to appear.
 
 ```python
-from sklearn.pipeline import make_pipeline
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.naive_bayes import MultinomialNB
-
-training_text = [
-    "credit refund approval", "finance credit adjustment",
-    "warehouse delivery recount", "shipment quantity check",
-]
-training_labels = ["finance", "finance", "operations", "operations"]
-pipeline = make_pipeline(CountVectorizer(), MultinomialNB())
-pipeline.fit(training_text, training_labels)
-predictions = pipeline.predict(["credit approval", "warehouse recount"])
-assert predictions.tolist() == ["finance", "operations"]
+from ai_orgdesign.labs.m06 import fit_baseline
+model = fit_baseline()
+print(model.named_steps["countvectorizer"].get_feature_names_out().tolist())
+assert "secretzzzz" not in model.named_steps["countvectorizer"].vocabulary_
 ```
 
-`CountVectorizer.fit` learns a vocabulary and maps each description into word-count columns. `MultinomialNB` learns category-related word statistics, using smoothing to avoid treating every unseen word/category combination as impossible. The pipeline ensures that future text goes through the same feature mapping before prediction.
+**Interpretation.** The case may require joint work or an intake owner rather than one exclusive specialist. Annotation rules must say what the target represents: first reviewer, accountable owner or final resolver. A model cannot resolve that organisational ambiguity merely by imitating past labels. Revise the task definition before treating disagreement as label noise.
 
-Unlike the majority baseline, this predictor uses the description. It still does not understand business authority. “Do not issue a credit; recount first” can contain many finance-associated words while requiring an operations first action. Put that case in evaluation rather than interpreting two successful assertions as broad quality evidence.
+## Inspect the implementation rather than a duplicate
 
-## Follow the neural loop in the original notebook
+The matching notebook can display saved functions using `inspect.getsource`. This shows the implementation currently imported by Python. Reading code is useful, but a displayed function is not proof it executed or that every branch was tested. The behavioural checks deliberately include invalid inputs and contrasting outcomes.
 
-In [day 4](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week6/day4.ipynb), identify feature tensors, targets, model output, loss, gradient clearing, backward differentiation and optimizer step. Clearing gradients matters because many libraries accumulate them. Forgetting to clear when accumulation was not intended changes the update.
+Run the course checks from the root folder with `uv run --locked pytest`. Run the notebook checks with `uv run --locked python scripts/verify_notebooks.py`. The [verification guide](../../reference/verification.md) distinguishes offline execution, real protocol tests, model downloads and paid-provider checks. It records the limits of each claim.
 
-Training mode and evaluation mode can produce different behaviour. Evaluation without gradients reduces bookkeeping but does not make the evaluation independent: independence comes from the data and experiment design. Record preprocessing and target transformations, especially any logarithmic price representation, before interpreting error units.
+## What a result can establish
 
-The [evaluator](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week6/pricer/evaluator.py) accepts a predictor and inspects predictions case by case. In the source workflow, malformed numeric answers can become a default zero. An improved experiment should separately record invalid output, valid predicted zero and task error. Otherwise parsing failures become misleading numerical estimates.
+The test predictions and their score are computed from the fitted pipeline. With the supplied invented messages, the classifier should distinguish finance language from delivery language. Passing the three examples establishes execution of this baseline, not a reliable routing service for ambiguous or new work.
 
-## Keep the full record
+Keep inputs, configuration identity, observed result and interpretation separate in an experiment record. If the program behaves as predicted but the business problem remains, investigate the surrounding evidence, roles and dependencies. A successful run should sharpen that inquiry rather than end it.
 
-For each case, retain source ID, split, available description, preprocessing revision, expected target, prediction, validity and error. Across the experiment, retain the selected population and excluded records. That makes it possible to distinguish a model failure from a changed dataset or parser.
+## Explain the pattern without the library name
 
-**Practice with feedback:** A new model improves average price error, but all missing outputs were dropped. Restore those cases with explicit invalid status, compare coverage and then compare error among valid predictions. A better average on fewer usable cases may be an unsuitable service improvement.
+A useful completion check is to explain the operation in ordinary language, then name the exact implementation. A majority-category baseline establishes whether learned text features add anything. Rules can be clearer when vocabulary and policy are stable. Learned classifiers can generalise across combinations, but confidence calibration, abstention and ambiguous categories need separate design and evaluation.
 
-## Read the organisational connection
-
-A stored record captures selected events rather than every interpretation or repair activity. The research chapter explains [the limits of recorded evidence](../../reference/research/05-routines.md#what-logs-can-show).
+The [research connection](../../reference/research/03-decisions.md) develops the organisational questions. Follow the module's design lesson to turn this technical understanding into a decision with stated conditions and a recovery route.

@@ -21,3 +21,19 @@ The exercises and worked responses are in the lessons. A successful numerical an
 **Problem:** operations needs a usable account of a reported delivery discrepancy. **Evidence:** the order records twelve boxes, the shipment record records twelve, and the customer reports ten. **Unresolved:** actual receipt and cause. **Technical contribution:** a source-labelled brief that preserves the disagreement. **Recipient:** an investigator who can obtain clarification and inspect the records. **Boundary:** the assistant cannot confirm a cause or issue a credit. **Correction route:** the investigator can revise a claim with its source, and the receiving team can return incomplete evidence. **Measures:** unsupported claims, preparation and checking effort, clarification and elapsed resolution time.
 
 This is a proposed arrangement, not evidence that Harbour has implemented it or achieved a saving. The first comparison is structured intake with direct lookup versus the same intake with a draft. That comparison helps separate the contribution of generation from better evidence collection.
+
+## Continue the record across the full course
+
+| Modules | Add to the design record | Worked check |
+|---|---|---|
+| 2–3 | Conversation scope, action boundaries, inference and hosting choices | Explain a denied lookup and distinguish random from pretrained weights |
+| 4–5 | Evaluation population, asymmetric errors, source registry and retrieval contract | Calculate the two equal-accuracy error costs and trace permitted policy P-2 |
+| 6–7 | Label meaning, train/test boundary and adaptation artefacts | Identify an ambiguous routing label and reconstruct the saved low-rank model |
+| 8–9 | Operating owner, current version, retry identity and loop budget | Explain why a repeated command differs from another proposed action |
+| 10–11 | Contribution acceptance and task dependencies | Reject a wrong-case specialist result and repair a task cycle |
+| 12–14 | Durable continuation, framework contract and capability boundary | Reject a stale approval, compare runtimes and follow the actual MCP exchange |
+| 15–16 | Acceptance examples, baseline, trace and cost basis | Distinguish an observed runtime from an assumed token-price calculation |
+| 17–18 | Review capacity, recovery, trusted context and policy lifecycle | Diagnose backlog and prevent an expired owner or obsolete policy from committing |
+| 19–20 | Release conditions, support, evaluation, promotion and rollback | Defend the cumulative service slice and state which deployment claims remain untested |
+
+Each module contains its worked reasoning and contrasting cases. The final [design lab](modules/20-governed-improvement/06-design-lab.md) combines the components and supplies a worked service proposal. A coherent final record should explain why the chosen arrangement fits the work, how actors can challenge unsuitable outputs and what evidence could justify expansion, revision or withdrawal.

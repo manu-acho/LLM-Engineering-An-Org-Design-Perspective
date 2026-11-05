@@ -1,5 +1,7 @@
 # Lesson 9.6: Design the front door and the promise behind it
 
+[Download the matching notebook](/downloads/09-06-design-lab.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next module](../10-agent-orchestration/README.md)
 
 ## The interface creates expectations

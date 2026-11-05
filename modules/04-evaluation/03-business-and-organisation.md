@@ -1,5 +1,7 @@
 # Lesson 4.3: Metrics are part of the design of work
 
+[Download the matching notebook](/downloads/04-03-business-and-organisation.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
 ## Two teams, two successes

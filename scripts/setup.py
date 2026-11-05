@@ -35,4 +35,9 @@ subprocess.run(
     cwd=root,
     check=True,
 )
+subprocess.run(
+    [uv, "run", "--locked", "python", "scripts/configure_local_environment.py"],
+    cwd=root,
+    check=True,
+)
 print("Ready. Open a notebook in VS Code and select this project's .venv Python kernel.")

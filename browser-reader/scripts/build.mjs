@@ -1,17 +1,19 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
+import { buildBundle } from './bundle.mjs';
 import { fileURLToPath } from 'node:url';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 export const readerRoot = path.resolve(here, '..');
 export const projectRoot = path.resolve(readerRoot, '..');
 export const distRoot = path.join(readerRoot, 'dist');
-const moduleNames = { '01-standalone-foundations': '01 · Foundations' };
+const curriculumData = JSON.parse(await fs.readFile(path.join(readerRoot, 'standalone-curriculum.json'), 'utf8'));
+const moduleNames = Object.fromEntries(curriculumData.map(m => [m.path.split('/')[1], `${String(m.number).padStart(2, '0')} · ${m.title}`]));
 // Only completed standalone teaching units enter the published collection.
 const readingFiles = [
   'README.md', 'START-HERE.md', 'CURRICULUM.md', 'WORKBOOK.md', 'SOURCE-MAP.md',
   'LAB-GUIDE.md', 'STUDY-WORKSPACE.md', 'AGENT-ENGINEERING.md', 'reference/glossary.md',
-  'reference/literature-guide.md'
+  'reference/literature-guide.md', 'reference/python-patterns.md', 'reference/technical-foundations.md', 'reference/further-learning.md', 'reference/verification.md'
 ];
 
 const researchFiles = [
@@ -67,11 +69,11 @@ export async function buildReader() {
   documents.sort((a, b) => sectionOrder.indexOf(a.section) - sectionOrder.indexOf(b.section) || priority(a) - priority(b) || a.path.localeCompare(b.path));
   const curriculum = JSON.parse(await fs.readFile(path.join(readerRoot, 'standalone-curriculum.json'), 'utf8'));
   const moduleGroups = [
-    { title: 'Part I: AI engineering foundations', sections: Object.values(moduleNames) },
-    { title: 'Part II: Agent engineering', sections: [] },
-    { title: 'Part III: Business implementation and operations', sections: [] }
+    { title: 'Part I: AI engineering foundations', sections: curriculumData.filter(m => m.part === 1).map(m => moduleNames[m.path.split('/')[1]]) },
+    { title: 'Part II: Agent engineering', sections: curriculumData.filter(m => m.part === 2).map(m => moduleNames[m.path.split('/')[1]]) },
+    { title: 'Part III: Business implementation and operations', sections: curriculumData.filter(m => m.part === 3).map(m => moduleNames[m.path.split('/')[1]]) }
   ];
-  const payload = { generatedAt: new Date().toISOString(), edition: 'standalone-pilot', curriculum,
+  const payload = { generatedAt: new Date().toISOString(), edition: 'course', curriculum,
     repoName: 'AI engineering and organisation design', documents,
     sectionOrder, moduleGroups, warnings: [] };
   await fs.mkdir(distRoot, { recursive: true });
@@ -87,6 +89,7 @@ export async function buildReader() {
     if (!/^notebooks\/[a-z0-9-]+\/\d{2}-[a-z0-9-]+\.ipynb$/.test(lesson.notebook)) throw new Error('Invalid notebook path');
     await fs.copyFile(path.join(projectRoot, lesson.notebook), path.join(distRoot, 'downloads', path.basename(lesson.notebook)));
   }
+  await buildBundle(projectRoot, path.join(distRoot, "downloads/study-workspace.zip"), publicFiles, study.lessons.map(item => item.notebook));
   return { documents: documents.length, lessons: documents.filter(d => /^modules\/[^/]+\/\d{2}-/.test(d.path)).length, warnings: [] };
 }
 

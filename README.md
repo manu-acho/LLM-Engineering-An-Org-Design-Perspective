@@ -1,32 +1,28 @@
 # AI engineering and organisation design
 
-A course about understanding AI technology and integrating it into business through the design of work. Concepts, code and organisational reasoning follow the same practical cases. No other course is required for the completed material.
+Learn how AI systems work and how to integrate their contributions into the design of business work. The course connects technical mechanisms, original runnable examples and organisation design through fictional cases, principally Harbour's delivery investigation service.
 
-## What is available now
+## Begin here
 
-The first module is complete as a pilot: seven lessons, seven runnable notebooks, two downloadable Python files, a worked organisational design and exercises with answers. Six research chapters explain the organisation design literature within the course. Later modules are planned and are not presented as completed teaching material.
+- [Start here](START-HERE.md): choose a learning route and understand the course's boundaries.
+- [Curriculum](CURRICULUM.md): twenty modules across AI foundations, agent engineering and business implementation.
+- [Study workspace](STUDY-WORKSPACE.md): open the notes and notebooks side by side.
+- [Technical foundations](reference/technical-foundations.md): worked introductions to mathematical and systems concepts.
+- [Glossary](reference/glossary.md): definitions and concrete examples.
+- [Further explanations](reference/further-learning.md): selected external tutorials and primary technical resources.
+- [Organisation design research](reference/literature-guide.md): six developed chapters with scholarly references.
+- [What has been verified](reference/verification.md): local tests, protocol exercises and integration limits.
 
-- [Study workspace](STUDY-WORKSPACE.md): VS Code, notebooks, environment and local API-key configuration.
-- [Start here](START-HERE.md): the learning routes and practical setup.
-- [Module 1](modules/01-standalone-foundations/README.md): evidence, language models and work.
-- [Full curriculum](CURRICULUM.md): the three parts and development status of each module.
-- [Organisation design research](reference/literature-guide.md): six self-contained chapters with scholarly references.
-- [Workbook](WORKBOOK.md): the pilot's exercises and completed design output.
+## Two connected routes
 
-## Three connected parts
+Managers and executives can study the concepts, cases and design decisions without running Python. The implementation route adds the code explanations and matching notebooks. Both routes examine the same contribution: what the technology does, what evidence it preserves, what remains uncertain and how people and services should coordinate around it.
 
-**Part I: AI engineering foundations.** Understand representations, generation, retrieval, data, evaluation and adaptation. Connect these mechanisms with the information and judgement required by work.
+No previous course is required. Module 1 introduces the programming vocabulary. Later modules explain new concepts before applying them, with a glossary and worked technical foundations for revision. Exercises include answers or a completed reasoning path, rather than requiring a learner to obtain missing notebooks elsewhere.
 
-**Part II: Agent engineering.** Build bounded loops and specialist contributions, with explicit state, handoffs, human review and business capability interfaces.
+## Read, predict, run and explain
 
-**Part III: Business implementation and operations.** Translate a business problem into a service, inspect its operation, manage security and context, deploy it, and govern subsequent changes. A working program is one contribution to this arrangement; organisational benefit needs its own evidence.
+Each lesson has a notebook with the same learning focus. Shared Python implementations keep the notebooks consistent. The core route runs locally without paid model services after the environment is installed. Optional model downloads and paid-provider cells are clearly disabled until explicitly enabled. Local test success does not imply a production deployment or an organisational benefit.
 
-## Two learning routes
+## Influences and acknowledgement
 
-The business route follows the case, conceptual explanations, organisational design and worked decisions. The implementation route adds every code explanation and local exercise. Neither route requires prior programming knowledge; the setup and first code lesson introduce the vocabulary.
-
-The pilot uses a fictional distributor, Harbour, investigating a delivery discrepancy. It deliberately separates a learned language model from deterministic evidence preparation. No example claims to verify a real delivery or authorise a business action.
-
-## Influences and acknowledgements
-
-Ed Donner's LLM Engineering, Agents and AI FDE courses are acknowledged influences. Their repositories are optional further learning, identified in [Sources and acknowledgements](SOURCE-MAP.md). This edition supplies its own teaching path and pilot implementations. It does not imply affiliation or endorsement.
+Ed Donner's LLM Engineering, Agents and AI FDE courses inspired the topic progression. Credit and optional links are in [Sources and acknowledgements](SOURCE-MAP.md). The included implementations and fictional data are original teaching examples. This course has its own learning path and does not imply affiliation or endorsement.

@@ -1,28 +1,34 @@
-# Module 2: Conversation, memory and tools
+# Module 2: Conversations, tools and action boundaries
 
-[Curriculum index](../../README.md) · [Start here](../../START-HERE.md) · [Local lab guide](../../reference/local-labs.md)
+[Curriculum](../../CURRICULUM.md) · [Setup](../../STUDY-WORKSPACE.md) · [Glossary](../../reference/glossary.md)
 
-Connect conversation history, callbacks, streaming and tool requests. Then allocate discretion and review capacity across a complete service.
+A conversation can appear coherent while the application has lost the selected case or confused two users. Harbour therefore keeps the selected case as explicit state and treats each tool request as a proposal that still needs validation.
 
-## Complete reading route
+## Preparation and route
 
-The early lessons introduce the vocabulary and a small transparent example. Continue through the technical/source walkthrough and completed design case to connect the mechanism with its use in organisational work.
+Complete Module 1 first, or use its worked examples to check the prerequisite concepts. For numerical and systems terms, begin with the [technical foundations](../../reference/technical-foundations.md). Unfamiliar Python syntax is explained in the [programming reference](../../reference/python-patterns.md).
 
 1. [Lesson 2.1: How a conversation becomes a controlled interaction](01-concepts.md)
-2. [Lesson 2.2: A conversation, a dispatcher and a visible result](02-code-workshop.md)
+2. [Lesson 2.2: Follow a conversation through a validated tool](02-code-workshop.md)
 3. [Lesson 2.3: Who decides when the assistant can act?](03-business-and-organisation.md)
 4. [Lesson 2.4: What changes when a conversation streams or uses media?](04-streaming-caching-and-media.md)
-5. [Lesson 2.5: Trace a complete tool call and interface callback](05-source-walkthrough.md)
+5. [Lesson 2.5: Trace call identity, scope and incremental output](05-source-walkthrough.md)
 6. [Lesson 2.6: Allocate discretion across a conversational service](06-design-lab.md)
 
-## Choose how to study
+Read the concepts and business case before the code workshop. Managers can follow the design reasoning without executing Python. The implementation route follows every lesson and its notebook, predicts outputs and compares the failure cases. The organisational contribution remains the same across both routes.
 
-For business and organisation design, read the concept lesson, organisational discussion and completed design case. Inspect the mechanism and source walkthrough as well when evaluating an implementation claim. For technical study, follow the full route, predict intermediate values and try the failure cases. Unfamiliar syntax is introduced in [Start here](../../START-HERE.md) and [Python patterns](../../reference/python-patterns.md).
+## Included code and learning boundary
 
-A source-reading walkthrough explains inspected original code. An independent lab is identified separately. External integrations have additional environment and access requirements; a readable example is not a claim that an untested account, model or deployment will work.
+The original implementation is `src/ai_orgdesign/labs/m02.py`. The notebooks import that code so the explanations and checked behaviour share one implementation. The core route runs locally without paid services. Optional integrations are explicitly gated and described in the [verification guide](../../reference/verification.md).
 
-## Connect the evidence
+The selected case is H-17, its ordered quantity is twelve and its reported quantity is ten. The tool observation has call_id equal to call-1. Joining the stream pieces reconstructs Evidence awaits review, with a trailing space. Nothing approves a remedy.
 
-Use the [literature guide](../../reference/literature-guide.md) for the organisational concepts and the [workbook](../../WORKBOOK.md) for cumulative outputs. The [source map](../../SOURCE-MAP.md) records course versions and coverage limits.
+## Completion exercise
 
-The [compact engineering reference](../02-conversation-and-tools.md) supplies a supplementary source overview.
+Request H-18 while keeping the north scope. Predict whether the record will be returned and whether changing a name inside a model message should alter that decision.
+
+A satisfactory response explains the mechanism, interprets the observed output, identifies the relevant authority and source ownership, compares an alternative and states what additional evidence would support a business claim. The worked answers are included in the workshop and design lessons. Continue with [organisation design research](../../reference/research/03-decisions.md) for the supporting theory and scholarly references.
+
+## Another explanation
+
+[OpenAI function-calling protocol](https://developers.openai.com/api/docs/guides/function-calling) provides a primary technical account alongside the included implementation. Use the [further learning guide](../../reference/further-learning.md) to choose additional explanations. External examples may use another task or version; completing them is not required to follow this module.

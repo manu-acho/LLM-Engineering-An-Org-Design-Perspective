@@ -1,5 +1,7 @@
 # Lesson 10.1: Orchestration decides how pieces of work connect
 
+[Download the matching notebook](/downloads/10-01-concepts.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
 ## Three specialists do not yet make a service
@@ -14,7 +16,7 @@ In the course, `Agent(...)` creates a configuration containing a name, instructi
 
 An **SDK**, or software development kit, is reusable code that helps applications use a platform. It removes repeated implementation work. It does not decide whether a credit should be permitted, which policy version is authoritative or how a reviewer should investigate a disagreement.
 
-The [official SDK overview](https://developers.openai.com/api/docs/guides/agents/sdk) separates the SDK's loop from the application's deployment, tools, state and approval responsibilities. Here we examine the inspected Python course examples rather than treating a framework name as a guarantee of an operating design.
+The [official SDK overview](https://developers.openai.com/api/docs/guides/agents/sdk) separates the SDK's loop from the application's deployment, tools, state and approval responsibilities. Here the typed contribution and acceptance checks make that boundary concrete.
 
 ## Fixed sequence and parallel work
 

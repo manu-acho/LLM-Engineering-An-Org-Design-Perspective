@@ -1,5 +1,7 @@
 # Lesson 12.3: A pause creates work for somebody
 
+[Download the matching notebook](/downloads/12-03-business-and-organisation.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
 ## Human review becomes a queue

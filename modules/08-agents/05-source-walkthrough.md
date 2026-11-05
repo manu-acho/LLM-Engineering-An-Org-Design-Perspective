@@ -1,43 +1,46 @@
-# Lesson 8.5: Trace the capstone across models, services and stored work
+# Lesson 8.5: Trace the decision transaction and command identity
 
-[Module route](README.md) · [Next: complete the operating design](06-design-lab.md)
+[Download the matching notebook](/downloads/08-05-source-walkthrough.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
 
-## Begin where the application begins
+[Module route](README.md) · [Previous workshop](02-code-workshop.md)
 
-The source [DealAgentFramework](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week8/deal_agent_framework.py) opens a vector collection, loads stored opportunities and leaves the planner uninitialised until needed. `run` initialises it, calls `plan`, appends a returned opportunity and writes memory. That stored memory records surfaced opportunities; it is not a complete ledger of every source ever examined.
+## Follow the path in the course checkout
 
-Follow one description through [the fixed planner](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week8/agents/planning_agent.py), scanner, estimator and messenger. The scanner proposes candidate deals. The estimator compares an observed advertised price with a predicted price. The planner applies a threshold and selects an alert. The messenger performs an external notification. These are different claims and side effects.
+The implementation is included here, so this walkthrough does not require another course, video or repository. Open `src/ai_orgdesign/labs/m08.py`. The lab's public functions expose inputs and return values; supporting service code lives in `src/ai_orgdesign/business.py` where required.
 
-## Read the ensemble's executable expression
+CaseStore initialises three operational tables and a job table in SQLite. seed creates a pending review only if the case is absent. read returns a scoped current version. decide requires a manager role, a recognised action, a matching case version and the same policy version before recording a simulated decision. A command key stores a fingerprint and result in the same transaction. Repeating the same key and command returns the prior result; reusing it for a different command fails. These are local transactional controls, not a distributed exactly-once guarantee.
 
-[EnsembleAgent](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week8/agents/ensemble_agent.py) normalises the description and obtains frontier, specialist and neural predictions. Its inspected expression is `0.8 × frontier + 0.1 × specialist + 0.1 × neural`. A comment describing regression does not mean those weights are fitted at that point.
+Read the function from entry to return. Locate input validation before substantive work, transformations that create a new representation, any call into another component and the point that produces the observable result. A model call, a database commit and constructing a dictionary are different operations. Identify which actually occur in this program.
 
-For predictions 100, 80 and 120 in that order, the combination is 100. Agreement in the aggregate does not show that the components are independently correct. If all three rely on a misleading description, their errors can align. Evaluate the ensemble against the best individual component, including cost and missing-component behaviour.
+## Work through the contrasting case
 
-## A familiar method call can cross a remote boundary
+Specify who should investigate a case when the evidence is incomplete, and what should happen if two managers act on version one at the same time.
 
-The specialist uses a deployed service whose [setup](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week8/pricer_service2.py) loads a quantized base and pinned adapter. The method invocation goes across a service boundary. Deployment configuration specifies dependencies, credentials, hardware, timeout and cache. Those concerns are absent from an ordinary in-process subtraction function.
+The following variation either checks a failure boundary or exposes another aspect of the same implementation. Catching an expected exception allows the notebook to continue; the `else` branch raises an assertion if the expected boundary fails to appear.
 
-A cold service may load before answering. Keeping capacity warm can improve responsiveness while adding operating cost. An architecture diagram should identify that service and its ownership rather than suggesting every box is a cheap local function.
+```python
+from ai_orgdesign.labs.m08 import demo
+result = demo()
+print("Read version:", result["pending"]["version"])
+print("Decision version:", result["decision"]["version"])
+```
 
-## Compare the autonomous planner
+**Interpretation.** An explicit case owner should obtain and reconcile evidence before requesting a decision. Two managers may both have read version one, but only one decision should commit. The second must receive a conflict and read the new state. Quietly accepting both would turn a stale view into a new consequential decision.
 
-The [autonomous version](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week8/agents/autonomous_planning_agent.py) exposes operations to model-selected routing. Its tool descriptions define what may be proposed; its handler maps names to functions. A model-supplied estimated value should not automatically become the trusted basis for a notification. A stronger arrangement refers to a stored estimate and checks its threshold at execution.
+## Inspect the implementation rather than a duplicate
 
-The fixed route is easier to inspect when the required sequence is stable. The autonomous route can adapt where evidence gathering genuinely varies. Choose based on that difference, not because one architecture has a more ambitious name.
+The matching notebook can display saved functions using `inspect.getsource`. This shows the implementation currently imported by Python. Reading code is useful, but a displayed function is not proof it executed or that every branch was tested. The behavioural checks deliberately include invalid inputs and contrasting outcomes.
 
-## Persistence and presentation add failure boundaries
+Run the course checks from the root folder with `uv run --locked pytest`. Run the notebook checks with `uv run --locked python scripts/verify_notebooks.py`. The [verification guide](../../reference/verification.md) distinguishes offline execution, real protocol tests, model downloads and paid-provider checks. It records the limits of each claim.
 
-Writing opportunities to a JSON file is a simple teaching memory mechanism. Concurrent writers can overwrite each other; a crash during writing can leave incomplete data. A temporary file and atomic replacement can improve a single-writer pattern, while a transactional store may be appropriate for multiple workers.
+## What a result can establish
 
-The source [interface](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week8/price_is_right.py) uses worker threads and queues to keep the display responsive. A progress log and a final result serve different contracts. If the worker raises without publishing a terminal outcome, a consumer can wait indefinitely. Lesson 8.7 develops that mechanism.
+The pending case starts at version one in review. Approval changes it to version two with status approved_simulation. Retrying the identical command returns the same result without an additional audit event. No money moves and no customer message is sent.
 
-## A complete source-reading record
+Keep inputs, configuration identity, observed result and interpretation separate in an experiment record. If the program behaves as predicted but the business problem remains, investigate the surrounding evidence, roles and dependencies. A successful run should sharpen that inquiry rather than end it.
 
-For one run, mark candidate identity, retrieved examples, component predictions, selected threshold, attempted notification, acknowledged response and stored opportunity. Identify where the record is missing. The original demonstration is not a production completion ledger.
+## Explain the pattern without the library name
 
-**Worked diagnosis:** The source log says notification ran, but the user received nothing. Inspect the messenger's HTTP response and any delivery acknowledgement before resending. A function returning normally does not establish delivery, and a blind retry can duplicate a message whose first acknowledgement was lost.
+A useful completion check is to explain the operation in ordinary language, then name the exact implementation. A human work queue may be sufficient before an autonomous agent is justified. A workflow engine adds state management but needs explicit ownership and recovery rules. A local SQLite transaction provides a useful learning boundary; external payments require an additional protocol and reconciliation arrangements.
 
-## Read the organisational connection
-
-A service trace reveals contributions whose receipt and acceptance conditions should be explicit. The research chapter explains [dependency management](../../reference/research/02-coordination.md#identify-what-depends-on-what).
+The [research connection](../../reference/research/01-organisation-design.md) develops the organisational questions. Follow the module's design lesson to turn this technical understanding into a decision with stated conditions and a recovery route.

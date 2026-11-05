@@ -1,5 +1,7 @@
 # Lesson 14.6: Read a completed AI integration proposal
 
+[Download the matching notebook](/downloads/14-06-design-lab.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next: evaluate the service over time](07-service-evaluation.md)
 
 ## The proposal in one paragraph

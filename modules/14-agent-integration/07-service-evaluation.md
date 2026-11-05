@@ -1,10 +1,12 @@
 # Lesson 14.7: Connect the interface, feedback and ongoing service
 
+[Download the matching notebook](/downloads/14-07-service-evaluation.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Return to the integration plan](04-integration-plan.md)
 
 ## The backend and the screen expose different views
 
-The Agents course's final project separates an operating backend from a frontend. Its [read-only API](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/6_mcp/backend/api.py) returns accounts, holdings, market-source status and logs. The engine changes the example account data elsewhere. A dashboard refresh therefore observes selected state; it is not the action itself.
+A service screen and its backend expose different views. In the local Harbour HTTP application, a case read reports stored state while a separate decision route changes it. Refreshing a screen observes a selected state; it is not the business action itself.
 
 The API also derives values, such as current holdings value, from stored positions and market information. A derived display can change because the source price changes even when no new trade occurs. In a business service, the same issue appears when a case screen combines authoritative records, delayed copies and calculated status.
 

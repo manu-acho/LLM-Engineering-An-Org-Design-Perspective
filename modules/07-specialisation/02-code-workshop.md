@@ -1,73 +1,47 @@
-# Lesson 7.2: Prepare the answer without leaking it into the question
+# Lesson 7.2: Train and reconstruct a low-rank update
 
-[Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
+[Download the matching notebook](/downloads/07-02-code-workshop.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
 
-## A training record has two roles
+[Module route](README.md) · [Workspace setup](../../STUDY-WORKSPACE.md) · [Technical foundations](../../reference/technical-foundations.md)
 
-The course prepares product-price examples. To keep the mechanism visible, our teaching example uses a synthetic category target instead. We will create prompt/completion records and then illustrate loss labels using invented token IDs. No model is trained.
+## The problem this program addresses
 
-```python
-def make_example(description, category):
-    return {
-        "prompt": "Classify this request:\n" + description + "\nCategory: ",
-        "completion": category,
-    }
+Fine-tuning changes numerical parameters, while retrieval changes the supplied evidence. This module exposes a real parameter update on a small enough task that every trained quantity and saved artefact can be inspected.
 
-example = make_example("Warehouse recount needed", "operations")
-inference_prompt = example["prompt"]
-training_text = example["prompt"] + example["completion"]
-```
+The implementation lives in `src/ai_orgdesign/labs/m07.py`. All examples use fictional data. The default exercise needs no provider account or API key. Installing the locked dependencies initially requires network access; running the core exercise does not send a model-provider request.
 
-`example` stores the question and target separately. A training pipeline may combine them to compute a prediction objective. An inference request should receive the prompt without the answer. If you evaluate by supplying `training_text`, a model could appear correct simply because the target is visible.
+## Read the operation before running it
 
-The literal string `Category: ` is part of the contract. Change it unexpectedly between training and serving and you change the input pattern the adapted model sees.
+LowRank keeps a two-by-two identity matrix as a frozen buffer. Two trainable matrices, a and b, produce an additive update b @ a. The @ operator means matrix multiplication, so a two-by-one matrix multiplied by a one-by-two matrix produces a two-by-two update with rank at most one. adapt evaluates an initial mean squared error, performs 120 Adam steps against four supplied input-target pairs, saves the state dictionary, constructs a fresh model and reloads it. The base matrix never enters the optimiser parameters. This is a linear demonstration of low-rank adaptation, not an implementation of full transformer LoRA or QLoRA.
 
-## Illustrate loss masking
+`import` makes the saved implementation available in the notebook. Calling a function supplies its inputs and receives its return value. `assert` checks an expected property and raises an error if that property is false. An assertion is evidence about that specific property, not a certificate that the application is correct in every situation.
+
+## Predict, run and inspect
+
+Run this block in the matching notebook, with the project `.venv` kernel selected. The asynchronous examples use the notebook's supported top-level `await`; ordinary scripts need an event-loop entry point such as `asyncio.run` instead.
 
 ```python
-def labels_for_completion(input_ids, prompt_length):
-    if not 0 <= prompt_length <= len(input_ids):
-        raise ValueError("Prompt boundary is outside the sequence")
-    return [-100] * prompt_length + input_ids[prompt_length:]
-
-input_ids = [10, 11, 12, 20, 21]
-labels = labels_for_completion(input_ids, prompt_length=3)
+from ai_orgdesign.labs.m07 import demo
+result = demo()
+assert result["loss_after"] < result["loss_before"] / 10
+assert result["base_unchanged"] and result["reload_equal"]
+print(result)
 ```
 
-The first three invented IDs represent prompt tokens; the final two represent completion tokens. `[-100] * 3` repeats the ignore marker three times. The slice retains target IDs after the prompt boundary. The result is `[-100, -100, -100, 20, 21]`.
+The final training loss should be substantially below the initial loss. Reloading should reproduce the trained outputs, and the frozen base should equal the identity matrix. The test checks these properties rather than requiring platform-identical final decimal digits. There is no held-out generalisation claim from this four-pair training exercise.
 
-Many relevant training losses use `-100` to mark ignored target positions. The input still contains all five IDs. The model can use prompt information while the training objective grades completion positions. This example explains one convention; a real trainer must use the convention its loss expects.
+If an import fails, run `python3 scripts/setup.py` from the course folder and select the project kernel again. If a shared-code edit appears ignored, restart the kernel so Python loads the new file. Read an exception before changing the code: it may report a deliberate boundary such as forbidden scope or stale state.
 
-Do not calculate boundaries casually by separately encoding text pieces. A tokenizer can treat joined text differently at a boundary. Use a supported preparation/collation path and inspect the actual batch. A **collator** takes examples and constructs batched arrays, often including padding, attention masks and target labels. See [TRL's supervised fine-tuning documentation](https://huggingface.co/docs/trl/en/sft_trainer).
+## Change one condition
 
-## Trace the actual local preparation
+**Exercise.** Explain why matching the saved outputs proves neither successful business adaptation nor the quality of a quantized language model. Identify what additional artefacts would be needed to reproduce a real adapter deployment.
 
-Open [week7/pricer/items.py](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week7/pricer/items.py). `count_tokens` encodes the summary. `make_prompts` limits its length, creates a prompt ending with the fixed price prefix and stores a completion. Training/validation examples can use rounded targets; test examples retain an original price representation.
+Before opening the answer, identify which function owns the relevant check and whether the change should affect data, control flow, authority or evaluation. Keeping these categories distinct helps locate a failure without blaming every unexpected result on a model.
 
-`to_datapoint` converts an object into a two-field dictionary. `push_prompts_to_hub` packages records into dataset splits. The split called `val` there differs from the earlier item dataset's `validation`. Reading the actual keys avoids a misleading “dataset missing” diagnosis.
+**Worked answer.** Reload equality checks artefact reconstruction. A business task also needs representative held-out evaluation, correct labels and a comparison with prompting and retrieval. A real language-model adapter requires the exact base revision, tokenizer, adapter configuration, training data identity, package versions and serving settings. Quantization introduces another numerical approximation that this unquantized lab does not test.
 
-The week 6 and week 7 folders both contain a package named `pricer`, with different `Item` definitions. Python imports the one found through its current import path and may keep it cached. If a method seems absent, inspect the imported module's file and restart the notebook kernel if needed. A changed class file is not automatically re-imported into an existing process.
+## Consider the alternative
 
-## Saving is not the end of the experiment
+Prompt changes are inexpensive to reverse, retrieval can supply current evidence and parameter adaptation can shape repeated behaviour. These mechanisms can be combined, but each creates a different maintenance obligation. Smaller low-rank updates reduce trainable parameter count; they do not by themselves establish lower total service cost.
 
-A training run may save an adapter. The later [pricer_service2.py](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week8/pricer_service2.py) loads a base model and tokenizer, attaches a pinned adapter and reconstructs the price prompt before generation.
-
-The service illustrates a compatibility contract across preparation, training and inference. Retain model IDs and revisions, tokenizer/template, preprocessing, target format and parser. Test reloading in a fresh process so that hidden notebook state cannot supply missing configuration.
-
-A successful save only establishes that files were written. A successful reload establishes more about compatibility. A successful held-out task evaluation is a further step. Keep those claims separate.
-
-## Alternatives and practice
-
-Prompt examples can sometimes establish the desired format without training. A deterministic classifier may suit explicit categories. Retrieval can supply policy facts. Adapt only when comparison shows that the remaining problem justifies it.
-
-Create one ambiguous request and two defensible category interpretations. Then write the rule that would resolve it. If you cannot state that rule or identify an adjudicator, identify the organisational uncertainty before generating more training examples.
-
-**What the example shows:** More examples of inconsistent labels can teach inconsistency. The programming pipeline can validate fields and still carry a conceptually unresolved target. Label validity belongs alongside code correctness in the experiment design.
-
-## Continue the module
-
-The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
-
-## Read the organisational connection
-
-The separation of question and answer determines which evidence is legitimately available at prediction time. The research chapter explains [decision premises](../../reference/research/03-decisions.md#decision-premises).
+The [organisation design reading](../../reference/research/05-routines.md) develops the relevant argument and its scholarly references. The lab demonstrates an implementation pattern; the business and design lessons examine the conditions under which that contribution might be useful.

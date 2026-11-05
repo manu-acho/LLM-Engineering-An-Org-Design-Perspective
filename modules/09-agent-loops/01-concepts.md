@@ -1,5 +1,7 @@
 # Lesson 9.1: An agent chooses steps inside an application
 
+[Download the matching notebook](/downloads/09-01-concepts.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
 ## From answering a question to investigating a case
@@ -44,7 +46,7 @@ A model's own assessment can help decide whether to continue. This is often call
 
 A fixed sequence is easier to inspect when every case needs the same steps. A rule can route a missing order number to clarification without a model. An agent loop becomes attractive when the evidence genuinely changes the useful next action and the flexibility is worth the extra uncertainty.
 
-The original [manual tool loop](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/1_foundations/3_lab3.ipynb), [digital-twin tools](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/1_foundations/4_lab4.ipynb) and [visible checklist](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/1_foundations/5_extra.ipynb) make these parts inspectable. The course's digital-twin application represents a person through supplied information and instructions; it is not a literal duplicate of that person or a transfer of their authority.
+An inspectable loop separates the planner, the tool registry, permission checks, observations and stopping rules. The supplied implementation exposes those components directly, with a scripted planner for repeatable tests and a separately gated live-model adapter.
 
 **Explain it back:** An assistant reports “investigation complete” after three calls. What records would let you distinguish correct investigation from a plausible completion story? Include the original question, actual call results, unresolved evidence and an accountable next step.
 

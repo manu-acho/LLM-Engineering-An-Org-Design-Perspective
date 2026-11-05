@@ -1,5 +1,7 @@
 # Lesson 11.3: An agent team needs integration, not just role names
 
+[Download the matching notebook](/downloads/11-03-business-and-organisation.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
 ## Harbour draws an organisation chart of agents

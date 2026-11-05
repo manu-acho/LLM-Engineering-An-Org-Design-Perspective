@@ -1,12 +1,14 @@
 # Lesson 11.1: Roles, tasks and dependencies in an agent team
 
+[Download the matching notebook](/downloads/11-01-concepts.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
 ## Dividing an investigation
 
 Harbour separates a difficult delivery case into evidence gathering, policy interpretation and response preparation. Instead of writing one large prompt, the team defines a specialist for each contribution. This may make instructions clearer. It also creates a new problem: how do the contributions fit together?
 
-CrewAI offers a way to describe agents, tasks and the process connecting them. The original course uses research, debate, stock-selection and software-building projects to explore these ideas. Here we use them to examine the design of a small team of software components and its relationship to the organisation around it.
+Frameworks can describe agents, tasks and the process connecting them. This module examines the division and integration of specialist contributions through a transparent dependency graph. The local implementation needs no team framework or paid provider; framework choice comes after the work relationships are understood.
 
 ## An agent role is a configuration
 
@@ -47,8 +49,6 @@ The engineering project includes tools for writing and checking generated code i
 ## Compare another division of work
 
 One model with a clear staged prompt may be sufficient for a small evidence-to-brief task. A deterministic program may perform calculations and formatting more reliably. Several agents become useful when specialised instructions, tools or context boundaries improve the task enough to justify coordination overhead.
-
-The original [researcher crew](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/3_crewai/reference/researcher/src/researcher/crew.py), [engineering crew](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/3_crewai/reference/engineering_team/src/engineering_team/crew.py) and [stock-picker crew](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/3_crewai/reference/stock_picker/src/stock_picker/crew.py) make the process differences visible.
 
 **Check:** A diagram has four boxes labelled researcher, analyst, manager and reviewer. What additional information would you need to describe its actual control flow and independence? Include models, task dependencies, evidence access, evaluation and authority.
 

@@ -1,96 +1,46 @@
-# Lesson 9.2: Follow a tool request around a bounded loop
+# Lesson 9.2: Run a bounded investigation loop
 
-[Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
+[Download the matching notebook](/downloads/09-02-code-workshop.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
 
-## Make the moving parts visible
+[Module route](README.md) · [Workspace setup](../../STUDY-WORKSPACE.md) · [Technical foundations](../../reference/technical-foundations.md)
 
-The original course moves from a single model response to a loop over tool requests. We will use a scripted response provider instead of a model, so the sequence is predictable. This example makes no network calls and changes no business records. It demonstrates dispatch and evidence flow, not model competence.
+## The problem this program addresses
+
+An agent loop chooses another step after observing an earlier result. That flexibility can help an investigation, but also creates repeated calls, unexpected branches and uncertain completion. The application must bound the execution independently of the planner.
+
+The implementation lives in `src/ai_orgdesign/labs/m09.py`. All examples use fictional data. The default exercise needs no provider account or API key. Installing the locked dependencies initially requires network access; running the core exercise does not send a model-provider request.
+
+## Read the operation before running it
+
+run receives a planner function instead of constructing a hidden model client. Each iteration supplies accumulated observations and expects either a final answer or a structured tool request. The application validates the decision, rejects repeated call identifiers, invokes the same scoped dispatcher used in Module 2 and records the observation. A positive integer budget bounds iterations. scripted_planner supplies deterministic decisions for reproducible tests; it is not called an LLM. The optional live adapter in ai_orgdesign.live uses the provider protocol while retaining the dispatcher and a separate tool-call limit.
+
+`import` makes the saved implementation available in the notebook. Calling a function supplies its inputs and receives its return value. `assert` checks an expected property and raises an error if that property is false. An assertion is evidence about that specific property, not a certificate that the application is correct in every situation.
+
+## Predict, run and inspect
+
+Run this block in the matching notebook, with the project `.venv` kernel selected. The asynchronous examples use the notebook's supported top-level `await`; ordinary scripts need an event-loop entry point such as `asyncio.run` instead.
 
 ```python
-ORDERS = {"O-17": {"ordered": 12, "reported_received": 10}}
-
-def lookup_order(order_id):
-    return dict(ORDERS[order_id])
-
-TOOLS = {"lookup_order": lookup_order}
-
-def scripted_model(messages):
-    if messages[-1]["role"] == "tool":
-        record = messages[-1]["result"]
-        difference = record["ordered"] - record["reported_received"]
-        return {"kind": "final", "text": f"Reported difference: {difference}"}
-    return {
-        "kind": "tool", "name": "lookup_order",
-        "arguments": {"order_id": "O-17"}, "call_id": "call-1"
-    }
-
-def investigate(question, choose, permitted_ids, max_steps=3):
-    messages = [{"role": "user", "content": question}]
-    for step in range(max_steps):
-        proposal = choose(messages)
-        if proposal["kind"] == "final":
-            return {"status": "draft", "text": proposal["text"], "trace": messages}
-        if proposal["kind"] != "tool" or proposal["name"] not in TOOLS:
-            raise ValueError("Unsupported action")
-        arguments = proposal["arguments"]
-        if set(arguments) != {"order_id"}:
-            raise ValueError("Unexpected argument fields")
-        order_id = arguments["order_id"]
-        if not isinstance(order_id, str) or order_id not in permitted_ids:
-            raise PermissionError("Order is outside the permitted scope")
-        result = TOOLS[proposal["name"]](order_id=order_id)
-        messages.append({"role": "assistant", "proposal": proposal})
-        messages.append({"role": "tool", "call_id": proposal["call_id"], "result": result})
-    return {"status": "needs_review", "reason": "Step budget exhausted", "trace": messages}
-
-answer = investigate("Investigate O-17", scripted_model, {"O-17"})
-print(answer["status"], answer["text"])
+from ai_orgdesign.labs.m09 import run, scripted_planner
+assert run(scripted_planner)["stop"] == "final"
+assert run(scripted_planner, budget=1)["stop"] == "budget"
+print(run(scripted_planner))
 ```
 
-Expected output:
+The supplied planner first reads H-17 and then returns an investigation statement. With a budget of one, the tool can run but the loop stops at budget before a final answer. Repeated call identifiers stop the loop instead of executing indefinitely. Reaching a stop condition does not mean the business case is resolved.
 
-```text
-draft Reported difference: 2
-```
+If an import fails, run `python3 scripts/setup.py` from the course folder and select the project kernel again. If a shared-code edit appears ignored, restart the kernel so Python loads the new file. Read an exception before changing the code: it may report a deliberate boundary such as forbidden scope or stale state.
 
-## Read from the final call
+## Change one condition
 
-`investigate` receives a question, a function that chooses the next response, and a set of permitted order IDs. Passing a function makes it possible to replace a real service with a fake. This is the dependency-injection pattern from Module 1.
+**Exercise.** Supply a planner that always asks for the same call. Then change the call identifier on every step. Which independent bound remains necessary?
 
-The first call to `choose` receives a message list ending in a user question. Our fake returns a dictionary describing a lookup. Nothing has been looked up yet. `proposal` is data about an intended operation.
+Before opening the answer, identify which function owns the relevant check and whether the change should affect data, control flow, authority or evaluation. Keeping these categories distinct helps locate a failure without blaming every unexpected result on a model.
 
-The program checks the proposal before dispatch. A **registry** is the `TOOLS` dictionary: it maps an allowed name to a particular function. It keeps the callable surface explicit. The code does not search all available Python functions for a matching name.
+**Worked answer.** The repeated-identifier check catches the first planner. Unique identifiers evade that check, so the iteration budget remains essential. A live service also needs timeouts, token and cost limits, cancellation and recovery. Tool checks still apply on every execution; a model instruction to behave carefully is not a substitute.
 
-`set(arguments)` collects the dictionary's keys. Comparing that set with `{"order_id"}` rejects missing or additional fields. The next check requires a string and membership in the permitted scope. In a real application, that scope must come from trusted identity and access rules, not a model's request or an editable user field.
+## Consider the alternative
 
-`TOOLS[proposal["name"]](order_id=order_id)` retrieves the function and calls it. Nested brackets select values; the final parentheses perform the operation. `lookup_order` returns a copy of the stored record so this caller cannot change the original dictionary through the returned outer object.
+A fixed workflow is often easier to verify when the route is known. An adaptive loop is justified when observations genuinely determine the next action. Framework runners can implement the loop, but the application still owns permissions, budgets and accepted completion.
 
-## Follow the second iteration
-
-The application appends a proposal record and its result to `messages`. On the next iteration, `scripted_model` sees a tool result, calculates the reported difference and returns a final response. The application labels it `draft`. It has neither verified the delivery nor authorised compensation.
-
-The fake does arithmetic in Python to make the path inspectable. A real model may instead generate the arithmetic and wording. That difference matters: a valid loop does not establish that generated calculations are reliable. Put exact calculations in a trusted function when the business rule permits it.
-
-The `for` loop permits at most three calls to `choose`. A model that repeatedly asks for tools cannot continue forever. With `max_steps=1`, the lookup runs but there is no second turn to compose the draft, so the function returns `needs_review`. Budget design changes what counts as a completed run.
-
-## Connect the example to the course
-
-In [foundations lab 3](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/1_foundations/3_lab3.ipynb), the final `chat` definition loops while the provider reports tool calls. It appends the assistant message, executes each request, appends results with `tool_call_id`, and calls the model again. Reading only the first `chat` definition would miss the more complete version later in the notebook.
-
-[Lab 4](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/1_foundations/4_lab4.ipynb) shows both explicit `if` dispatch and a version using `globals().get`. The latter looks up a name in Python's global namespace. Our explicit registry is an alternative that exposes fewer functions and makes permissions easier to inspect. The course's [application tools](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/1_foundations/twin/tools.py) provide another source-reading anchor. We have not run their notification operations.
-
-## Failure handling and alternatives
-
-A missing stored order raises an error here. A real service also needs to distinguish “not found”, “temporarily unavailable” and “not permitted”. Those should not all become an empty record, because they support different conclusions.
-
-This small loop assumes a correctly shaped proposal and handles one tool request per turn. A provider adapter would need to validate the full response, handle multiple calls, serialize results and preserve matching identifiers. It would also need time and cost limits, appropriate retry rules and a policy for external effects.
-
-**Try it:** Change the permitted set to empty and predict where execution stops. Then use `max_steps=1`. Explain why permission failure and unfinished investigation require different responses. Finally, sketch a fixed two-step lookup-and-format function. When would that be sufficient?
-
-## Continue the module
-
-The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
-
-## Read the organisational connection
-
-A tool request and its execution result should not be treated as the same event. The research chapter explains [distinct acts in a workflow](../../reference/research/03-decisions.md#distinct-acts-in-one-workflow).
+The [organisation design reading](../../reference/research/03-decisions.md) develops the relevant argument and its scholarly references. The lab demonstrates an implementation pattern; the business and design lessons examine the conditions under which that contribution might be useful.

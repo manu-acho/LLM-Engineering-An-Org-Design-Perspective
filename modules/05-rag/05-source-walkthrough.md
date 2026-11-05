@@ -1,96 +1,46 @@
-# Lesson 5.5: Build and trace a complete retrieval-and-answering path
+# Lesson 5.5: Follow filtering, vectorisation and ranking
 
-[Module route](README.md) · [Next: design knowledge ownership](06-design-lab.md)
+[Download the matching notebook](/downloads/05-05-source-walkthrough.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
 
-## Follow the original ingestion path
+[Module route](README.md) · [Previous workshop](02-code-workshop.md)
 
-Open the course's [ingestion implementation](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week5/implementation/ingest.py). `fetch_documents` iterates through folders, loads Markdown and adds a `doc_type` field. The folder structure therefore becomes metadata used to interpret sources.
+## Follow the path in the course checkout
 
-`create_chunks` splits those documents using a 500-character target and 200-character overlap in this implementation. These are characters, not tokens. `create_embeddings` uses the configured embedding service and persists records in Chroma. Its teaching rebuild deletes an existing collection. A maintained service should instead consider versioned builds and an intentional switch between indexes, so readers do not see a partially rebuilt knowledge base.
+The implementation is included here, so this walkthrough does not require another course, video or repository. Open `src/ai_orgdesign/labs/m05.py`. The lab's public functions expose inputs and return values; supporting service code lives in `src/ai_orgdesign/business.py` where required.
 
-The [answer implementation](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week5/implementation/answer.py) combines prior user messages with the current question for retrieval, joins returned passages into context, constructs model messages and returns both answer and documents. Returning documents keeps evidence available to the interface and evaluator.
+retrieve first selects records with the requested tenant and active status. Only those records enter TfidfVectorizer.fit_transform. TF-IDF gives words weights based on their frequency within and across the selected documents; it creates sparse numerical vectors, not neural embeddings. The query uses the fitted vocabulary through transform. Cosine similarity compares vector direction, and ranking uses score followed by document ID to break ties reproducibly. Positive-score results retain document identity and version. grounded_context formats that evidence for a later answer stage, but performs no generation.
 
-## A real vector-store lab without external models
+Read the function from entry to return. Locate input validation before substantive work, transformations that create a new representation, any call into another component and the point that produces the observable result. A model call, a database commit and constructing a dictionary are different operations. Identify which actually occur in this program.
 
-This independent lab needs `chromadb`. It uses explicit invented vectors to expose storage and retrieval. There is no embedding service, model download or network request. The vectors illustrate the interface rather than semantic quality. The temporary index is deleted when the block exits.
+## Work through the contrasting case
 
-```python
-from tempfile import TemporaryDirectory
-import chromadb
-from chromadb.config import Settings
+Ask whether filtering after a global top-two search can lose the best permitted result. Then remove all permitted documents and decide what the service should show.
 
-def prepare_answer(question, collection, embed, generate):
-    found = collection.query(
-        query_embeddings=[embed(question)], n_results=2,
-        where={"current": True}, include=["documents", "metadatas"],
-    )
-    evidence = [
-        {"id": source_id, "text": text, "metadata": metadata}
-        for source_id, text, metadata in zip(
-            found["ids"][0], found["documents"][0], found["metadatas"][0]
-        )
-    ]
-    messages = [
-        {"role": "system", "content": "Use supplied evidence; preserve exceptions."},
-        {"role": "user", "content": question + "\n" + "\n".join(
-            f"[{r['id']}] {r['text']}" for r in evidence
-        )},
-    ]
-    return {"answer": generate(messages), "evidence": evidence}
-
-with TemporaryDirectory() as directory:
-    client = chromadb.PersistentClient(path=directory, settings=Settings(anonymized_telemetry=False))
-    collection = client.create_collection("policies", embedding_function=None)
-    collection.add(
-        ids=["P-3", "P-4", "P-old"],
-        documents=[
-            "Finance reviews disputed credits.",
-            "Operations supplies delivery evidence.",
-            "Account managers approve all credits.",
-        ],
-        metadatas=[{"current": True}, {"current": True}, {"current": False}],
-        embeddings=[[1.0, 0.0], [0.8, 0.2], [1.0, 0.0]],
-    )
-    result = prepare_answer(
-        "Who handles a disputed credit?", collection,
-        embed=lambda question: [1.0, 0.0],
-        generate=lambda messages: "DRAFT: inspect P-3 and P-4 together.",
-    )
-    assert {r["id"] for r in result["evidence"]} == {"P-3", "P-4"}
-    print(result["answer"])
-```
-
-The constant embedding and fake answer are deliberate dependencies. This lab tests an actual vector-store query, metadata exclusion, evidence assembly and generation boundary. It does not test learned retrieval or language synthesis. Replace `embed` with a compatible query embedding function and `generate` with the adapter from Lesson 1.5 to create an external integration. Rebuild document vectors with that same embedding representation first. Matching dimensionality alone is insufficient.
-
-## Inspect every intermediate artefact
-
-To connect an embedding service, keep document and question embedding under the same explicit contract. This optional adapter requires a configured OpenAI client and compatible embedding model, and makes an external request when called. It was not executed against a provider during authoring. It follows the embedding interface used in the original course.
+The following variation either checks a failure boundary or exposes another aspect of the same implementation. Catching an expected exception allows the notebook to continue; the `else` branch raises an assertion if the expected boundary fails to appear.
 
 ```python
-def embed_texts(client, model, texts):
-    response = client.embeddings.create(model=model, input=texts)
-    rows = sorted(response.data, key=lambda item: item.index)
-    if [row.index for row in rows] != list(range(len(texts))):
-        raise ValueError("Embedding results do not match the submitted inputs")
-    return [row.embedding for row in rows]
+from ai_orgdesign.labs.m05 import retrieve
+assert retrieve("unmatchedzzzz") == []
+assert retrieve("delivery", tenant="unknown") == []
+print("No permitted evidence is a visible outcome.")
 ```
 
-Use the returned document vectors during index construction. For a query, supply a single question and use its first returned vector. Store the embedding model/revision with the index, then reject an incompatible query configuration rather than silently comparing unrelated coordinate systems. Replacing only the question's invented vector in the lab would not produce meaningful semantic search.
+**Interpretation.** A global top-two may contain only forbidden or obsolete records. Removing them afterward cannot recover the permitted records that never entered the shortlist. An empty permitted corpus returns an empty list in this lab. The interface should report that evidence was not available and route the question appropriately, rather than invent an answer.
 
-Retain original source, chunk boundaries, metadata, embedding identity, candidate IDs, final selected evidence, messages and output. For a failed answer, ask where the necessary passage disappeared. A correct source can be lost in extraction, chunking, retrieval, reranking or prompt assembly.
+## Inspect the implementation rather than a duplicate
 
-The course's [enhanced answer path](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week5/pro_implementation/answer.py) rewrites the query, retrieves twice, merges by text, reranks IDs and keeps a final subset. Inspect `rerank`: an integer list still needs checks for duplicate, omitted and out-of-range IDs. An ID of zero in code subtracting one can accidentally select the last Python list item.
+The matching notebook can display saved functions using `inspect.getsource`. This shows the implementation currently imported by Python. Reading code is useful, but a displayed function is not proof it executed or that every branch was tested. The behavioural checks deliberately include invalid inputs and contrasting outcomes.
 
-Its retry decorator specifies waiting behaviour without an explicit stopping policy. Waiting longer and stopping eventually are different controls. Define both for a maintained service.
+Run the course checks from the root folder with `uv run --locked pytest`. Run the notebook checks with `uv run --locked python scripts/verify_notebooks.py`. The [verification guide](../../reference/verification.md) distinguishes offline execution, real protocol tests, model downloads and paid-provider checks. It records the limits of each claim.
 
-## Interpret an experiment
+## What a result can establish
 
-Prepare questions requiring a rule, an exception, two documents, an obsolete version and an answer outside the corpus. Label needed evidence first. Compare lexical search, vector retrieval and reranking on those same questions. Retain wrong and empty results. A higher ranking score is useful only if it improves the evidence and answers needed for the application.
+Searching delivery evidence in north returns the active P-2 policy. It excludes the retired P-1 and the south P-3 before fitting or ranking. A query whose words do not occur in the permitted vocabulary returns no hits. Returning no evidence is different from answering that no policy exists.
 
-**Worked diagnosis:** The answer cites P-3 accurately but misses a policy exception absent from the returned evidence. Changing the answer prompt may help abstention, but cannot supply that missing passage. Investigate chunking and retrieval, then repeat the frozen evaluation.
+Keep inputs, configuration identity, observed result and interpretation separate in an experiment record. If the program behaves as predicted but the business problem remains, investigate the surrounding evidence, roles and dependencies. A successful run should sharpen that inquiry rather than end it.
 
-**Technical reference:** [Chroma query and get](https://docs.trychroma.com/docs/querying-collections/query-and-get). The course source and this independent lab use different embedding arrangements.
+## Explain the pattern without the library name
 
-## Read the organisational connection
+A useful completion check is to explain the operation in ordinary language, then name the exact implementation. Keyword search is easy to inspect but can miss paraphrases. Dense embeddings may recover semantic matches but require their own model, index lifecycle and evaluation. Hybrid retrieval combines signals. None reconciles conflicting authority automatically. Chunking and reranking should respond to observed failures, not an assumed need for a more elaborate stack.
 
-A retrieved contribution needs source identity, uncertainty and acceptance conditions. The research chapter explains [the worked handoff design](../../reference/research/02-coordination.md#a-worked-handoff-design).
+The [research connection](../../reference/research/02-coordination.md) develops the organisational questions. Follow the module's design lesson to turn this technical understanding into a decision with stated conditions and a recovery route.

@@ -1,5 +1,7 @@
 # Lesson 6.4: Calculate a training update and a task error
 
+[Download the matching notebook](/downloads/06-04-learning-an-update.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next: follow the data and baseline code](05-source-walkthrough.md)
 
 ## Fit a rule instead of specifying it completely

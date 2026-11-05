@@ -1,7 +1,7 @@
 # Lesson notebooks
 
-Start with `01-foundations/01-model-and-application.ipynb`, then follow the numbered files. Read the matching Markdown lesson in `modules/01-standalone-foundations/` alongside each notebook.
+Begin with `01-foundations/01-model-and-application.ipynb`, then follow the module routes. Every lesson has a mapped notebook; `study-manifest.json` records the pairing. Read the Markdown lesson alongside it for the full conceptual and organisational argument.
 
-Select the project's `.venv` kernel. The full setup and troubleshooting guide is [STUDY-WORKSPACE.md](../STUDY-WORKSPACE.md). Notebooks are saved with empty outputs so no earlier run or local information is mistaken for a new result. Run cells in order to see the outputs on the current machine.
+Select the project `.venv` kernel and run cells from top to bottom. Notebooks are saved without outputs. The shared implementations live under `src/ai_orgdesign/labs` and the pilot's `examples/01-foundations` folder. The default route makes no paid-provider call. Optional cells state their network and cost behaviour and remain disabled until explicitly enabled.
 
-`study-manifest.json` maps completed lessons to their notebooks and records whether they need credentials or network access. The first seven need neither. Later lesson notebooks and their required dependencies will be added as their teaching material is completed.
+See [the workspace guide](../STUDY-WORKSPACE.md), [glossary](../reference/glossary.md), [technical foundations](../reference/technical-foundations.md) and [verification guide](../reference/verification.md).

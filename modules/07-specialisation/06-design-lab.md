@@ -1,5 +1,7 @@
 # Lesson 7.6: Make a specialisation decision and keep categories revisable
 
+[Download the matching notebook](/downloads/07-06-design-lab.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next module](../08-agents/README.md)
 
 ## State the remaining failure

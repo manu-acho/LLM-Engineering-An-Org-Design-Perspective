@@ -1,79 +1,48 @@
-# Lesson 4.2: Build a small correctness check before a performance claim
+# Lesson 4.2: Compare equal accuracy with unequal consequences
 
-[Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
+[Download the matching notebook](/downloads/04-02-code-workshop.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
 
-## A transparent reference calculation
+[Module route](README.md) · [Workspace setup](../../STUDY-WORKSPACE.md) · [Technical foundations](../../reference/technical-foundations.md)
 
-Suppose Harbour wants the total number of reported missing boxes across several synthetic records. We will compare two implementations. The example is intentionally simple enough that you can calculate the expected answer yourself.
+## The problem this program addresses
+
+Two systems can have equal accuracy while imposing very different harms. Harbour needs to distinguish an unnecessary review from clearing a case that still requires investigation, then compare the resulting work with an existing process.
+
+The implementation lives in `src/ai_orgdesign/labs/m04.py`. All examples use fictional data. The default exercise needs no provider account or API key. Installing the locked dependencies initially requires network access; running the core exercise does not send a model-provider request.
+
+## Read the operation before running it
+
+score accepts equally sized, nonempty lists of reference labels and predictions. zip pairs each reference with the prediction for the same position. Boolean comparisons count correct outcomes, unsafe clearances and unnecessary reviews. The illustrative loss multiplies unsafe clearances by a chosen cost and adds unnecessary reviews. This is an explicit preference model, not a discovered financial valuation. demo compares an always-clear rule with a more conservative rule against the same four fictional reference cases.
+
+`import` makes the saved implementation available in the notebook. Calling a function supplies its inputs and receives its return value. `assert` checks an expected property and raises an error if that property is false. An assertion is evidence about that specific property, not a certificate that the application is correct in every situation.
+
+## Predict, run and inspect
+
+Run this block in the matching notebook, with the project `.venv` kernel selected. The asynchronous examples use the notebook's supported top-level `await`; ordinary scripts need an event-loop entry point such as `asyncio.run` instead.
 
 ```python
-def shortage_total_reference(records):
-    total = 0
-    for record in records:
-        difference = record["ordered"] - record["reported_received"]
-        if difference > 0:
-            total = total + difference
-    return total
-
-def shortage_total_candidate(records):
-    return sum(max(0, r["ordered"] - r["reported_received"]) for r in records)
-
-cases = [
-    [],
-    [{"ordered": 12, "reported_received": 10}],
-    [{"ordered": 10, "reported_received": 12}],
-    [{"ordered": 5, "reported_received": 5}, {"ordered": 8, "reported_received": 3}],
-]
-
-results = []
-for case in cases:
-    expected = shortage_total_reference(case)
-    actual = shortage_total_candidate(case)
-    results.append({"expected": expected, "actual": actual, "matches": expected == actual})
+from ai_orgdesign.labs.m04 import score, demo
+print(demo())
+a = score(["review", "clear"], ["clear", "clear"])
+b = score(["review", "clear"], ["review", "review"])
+assert a["accuracy"] == b["accuracy"]
+assert a["illustrative_loss"] > b["illustrative_loss"]
 ```
 
-The reference begins at zero, visits each record, computes a difference and adds only positive differences. The candidate uses `max(0, difference)` to apply the same non-negative rule and `sum` to add the values. The expression inside `sum` produces one value per record.
+The always-clear rule has accuracy one half, two unsafe clearances and illustrative loss forty. The conservative rule has accuracy three quarters, no unsafe clearances and loss one. These are exact calculations on invented cases. A larger evaluation and observations of actual work would be needed for a deployment decision.
 
-We are not claiming that the candidate is faster. More compact source code does not necessarily mean faster execution. This comparison first asks whether the rule was preserved.
+If an import fails, run `python3 scripts/setup.py` from the course folder and select the project kernel again. If a shared-code edit appears ignored, restart the kernel so Python loads the new file. Read an exception before changing the code: it may report a deliberate boundary such as forbidden scope or stale state.
 
-## Trace one case and inspect the policy
+## Change one condition
 
-For the final case, the first record contributes zero and the second contributes five. Both implementations return five. For the overdelivery case, both return zero. That result follows from a rule: overdeliveries do not cancel shortages elsewhere.
+**Exercise.** Construct two predictions with equal accuracy but different unsafe-clearance counts. Then ask whether the chosen twenty-to-one penalty reflects an agreed business preference or only an author assumption.
 
-Another business rule could calculate net difference across all records. It would produce different outputs while still being a coherent calculation. The reference is therefore a statement of intended semantics, not a neutral truth about deliveries.
+Before opening the answer, identify which function owns the relevant check and whether the change should affect data, control flow, authority or evaluation. Keeping these categories distinct helps locate a failure without blaming every unexpected result on a model.
 
-`expected == actual` compares values and returns a Boolean, `True` or `False`. Unlike `=`, which assigns a value, `==` asks whether two values compare equal. `results` retains every outcome for review rather than hiding failures in one aggregate score.
+**Worked answer.** Against [review, clear], predicting [clear, clear] and [review, review] both gives one correct result out of two. The first produces an unsafe clearance; the second produces an unnecessary review. Under the illustrative penalty the losses are twenty and one. The penalty should be agreed and sensitivity-tested rather than presented as an empirical cost.
 
-Expected totals here are `[0, 2, 0, 5]`. Passing these four cases does not prove equivalence for every possible input. Missing keys, text where a number is expected and negative quantities need their own definitions and checks.
+## Consider the alternative
 
-## From local checking to generated code
+A confusion matrix exposes the types of error; a single accuracy number conceals them. A randomised or carefully matched service comparison can examine outcomes more credibly than a before-and-after anecdote. Where harmful decisions are rare, deliberately constructed challenge cases complement, rather than replace, representative cases.
 
-The original [week4/day3.ipynb](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week4/day3.ipynb) prepares a prompt with Python source and asks a model for C++. It writes the returned text to a file, invokes a compiler and runs the executable. Later notebooks add a UI and a Rust option.
-
-Read those as distinct operations. A generated source string is not yet a file. A file is not yet a compiled program. A compiled program is not yet an executed result. A result is not yet an accepted business result.
-
-`subprocess.run` asks the operating system to run another process. A command represented as a list separates the executable name from its arguments. `check=True` makes a non-zero exit status raise an exception. `capture_output=True` retains printed output, including diagnostic error text; `text=True` asks for decoded strings. See [Python's subprocess documentation](https://docs.python.org/3/library/subprocess.html).
-
-A **process** is a running program with operating-system resources. Running code in a process is not automatically a sufficient isolation boundary for untrusted code. File, network and resource access need separate controls. The course's in-process `exec` example is especially important to recognise: it runs Python text and is not made safe by giving it a dictionary of ordinary built-ins.
-
-## Exceptions and cleanup
-
-An **exception** interrupts the normal path when something fails. A `try` block attempts work; `except` handles specified failures; `finally` performs cleanup whether the attempt succeeds or fails. The course uses this to restore output after redirecting `sys.stdout` to an in-memory buffer.
-
-That pattern is useful, but shared process-level output can still interfere with concurrent users. For an operational evaluation service, separate run directories and execution workers give clearer boundaries than a shared `main.cpp` and a shared output stream.
-
-## Alternatives and practice
-
-Before translating an entire application, profile it: measure which operations consume time. A clearer algorithm, a vectorised library or a narrow compiled component may solve the problem with less maintenance work. The original application may remain mostly Python.
-
-Add a case where one shortage of two and one overdelivery of two occur. Calculate both the “sum of shortages” and “net difference” rules. Explain which one your candidate implements and who should approve that choice.
-
-**What the example shows:** Both programs above return two. A net-difference rule returns zero. This is a semantic choice requiring business judgement, not a compiler optimisation. Testing makes that choice visible before a speed claim obscures it.
-
-## Continue the module
-
-The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
-
-## Read the organisational connection
-
-A correctness test is valuable without being evidence of an organisational benefit. The research chapter explains [the evidence path](../../reference/research/06-technology-in-practice.md#an-evidence-path-without-skipped-steps).
+The [organisation design reading](../../reference/research/04-implementation.md) develops the relevant argument and its scholarly references. The lab demonstrates an implementation pattern; the business and design lessons examine the conditions under which that contribution might be useful.

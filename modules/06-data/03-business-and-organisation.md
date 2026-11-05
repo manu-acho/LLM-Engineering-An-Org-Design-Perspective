@@ -1,5 +1,7 @@
 # Lesson 6.3: Historical labels contain an operating model
 
+[Download the matching notebook](/downloads/06-03-business-and-organisation.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
 ## What did the team column record?

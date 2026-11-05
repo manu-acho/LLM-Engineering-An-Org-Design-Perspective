@@ -1,5 +1,7 @@
 # Lesson 8.1: An agent is part of a workflow, not a complete operating model
 
+[Download the matching notebook](/downloads/08-01-concepts.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
 ## The promise of handling the whole request

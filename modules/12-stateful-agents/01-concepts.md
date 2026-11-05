@@ -1,5 +1,7 @@
 # Lesson 12.1: State lets a workflow pause, recover and continue
 
+[Download the matching notebook](/downloads/12-01-concepts.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
 ## A review that takes until tomorrow
@@ -20,7 +22,7 @@ The graph is a program representation. Its arrows say which transitions are poss
 
 Suppose one node returns a new message. Should that message replace the entire conversation or be combined with earlier messages? A **reducer** supplies the update rule for a state field.
 
-The course uses `Annotated` with `add_messages` to associate message state with a reducer. Conceptually, the annotation tells the framework how to apply an update. Plain type hints alone do not perform validation or define all runtime behaviour. The function associated with the field matters.
+A LangGraph message-state definition can use `Annotated` with `add_messages` to associate message state with a reducer. Conceptually, the annotation tells the framework how to apply an update. Plain type hints alone do not perform validation or define all runtime behaviour. The function associated with the field matters.
 
 Combination rules can also create business consequences. Appending every assessment may preserve disagreements but require later reconciliation. Replacing a record may remove useful history. Adding two monetary values is sensible only if they represent distinct contributions rather than duplicate reports of one transaction.
 

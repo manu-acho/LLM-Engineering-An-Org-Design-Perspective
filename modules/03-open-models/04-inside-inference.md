@@ -1,5 +1,7 @@
 # Lesson 3.4: Follow numbers through a small language model
 
+[Download the matching notebook](/downloads/03-04-inside-inference.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next: inspect a real inference interface](05-source-walkthrough.md)
 
 ## Identifiers become representations
@@ -46,7 +48,7 @@ The output shape means one sequence, three positions and sixteen candidate-token
 
 **Worked check:** Why would increasing the vocabulary to 32 change the last output dimension but not make the model twice as knowledgeable? It changes the number of token scores the architecture produces. Knowledge-like behaviour depends on learned parameters, data and use, not the dimension alone.
 
-**Technical reference:** [Transformers GPT-2 model documentation](https://huggingface.co/docs/transformers/model_doc/gpt2). This independent exercise supplements the source course's remotely hosted lessons.
+**Technical reference:** [Transformers GPT-2 model documentation](https://huggingface.co/docs/transformers/model_doc/gpt2). The local neural implementation is explained in the next lesson.
 
 ## Read the organisational connection
 

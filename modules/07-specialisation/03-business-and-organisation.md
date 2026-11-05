@@ -1,5 +1,7 @@
 # Lesson 7.3: A specialised model still needs people to question its categories
 
+[Download the matching notebook](/downloads/07-03-business-and-organisation.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
 ## A specialised model becomes difficult to question

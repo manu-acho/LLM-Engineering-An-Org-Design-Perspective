@@ -1,5 +1,7 @@
 # Lesson 9.4: Turn a plan into a bounded investigation
 
+[Download the matching notebook](/downloads/09-04-plans-budgets-and-evidence.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next: inspect the digital twin](05-source-walkthrough.md)
 
 ## A plan changes the next question

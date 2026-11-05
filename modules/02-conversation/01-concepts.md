@@ -1,5 +1,7 @@
 # Lesson 2.1: How a conversation becomes a controlled interaction
 
+[Download the matching notebook](/downloads/02-01-concepts.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
 ## The user thinks they are having one conversation
@@ -30,7 +32,7 @@ The application sends the conversation and tool descriptions. The model requests
 
 The matching request identifier matters. It connects a tool result to the call that requested it. Without it, several simultaneous requests could have their results confused. Tool calling is therefore a structured protocol around generation, not a model silently operating your computer.
 
-The original course uses this loop for airline prices. The business pattern transfers to order status, but the access rules and consequences must be designed for the new context. See the [official function-calling explanation](https://developers.openai.com/api/docs/guides/function-calling) for the application/model boundary; exact API formats depend on the interface in use.
+The same interaction pattern can serve an order lookup or a delivery investigation, but each task needs explicit access rules and action boundaries. See the [official function-calling explanation](https://developers.openai.com/api/docs/guides/function-calling) for the application/model boundary; exact API formats depend on the interface in use.
 
 ## Reads and writes have different consequences
 

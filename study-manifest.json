@@ -42,6 +42,825 @@
       "notebook": "notebooks/01-foundations/07-assessment.ipynb",
       "requires_api_keys": false,
       "network_calls": false
+    },
+    {
+      "lesson": "modules/02-conversation/01-concepts.md",
+      "notebook": "notebooks/02-conversation/02-01-concepts.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/02-conversation/02-code-workshop.md",
+      "notebook": "notebooks/02-conversation/02-02-code-workshop.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/02-conversation/03-business-and-organisation.md",
+      "notebook": "notebooks/02-conversation/02-03-business-and-organisation.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/02-conversation/04-streaming-caching-and-media.md",
+      "notebook": "notebooks/02-conversation/02-04-streaming-caching-and-media.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/02-conversation/05-source-walkthrough.md",
+      "notebook": "notebooks/02-conversation/02-05-source-walkthrough.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": true
+    },
+    {
+      "lesson": "modules/02-conversation/06-design-lab.md",
+      "notebook": "notebooks/02-conversation/02-06-design-lab.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/03-open-models/01-concepts.md",
+      "notebook": "notebooks/03-open-models/03-01-concepts.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/03-open-models/02-code-workshop.md",
+      "notebook": "notebooks/03-open-models/03-02-code-workshop.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/03-open-models/03-business-and-organisation.md",
+      "notebook": "notebooks/03-open-models/03-03-business-and-organisation.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/03-open-models/04-inside-inference.md",
+      "notebook": "notebooks/03-open-models/03-04-inside-inference.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/03-open-models/05-source-walkthrough.md",
+      "notebook": "notebooks/03-open-models/03-05-source-walkthrough.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": true
+    },
+    {
+      "lesson": "modules/03-open-models/06-design-lab.md",
+      "notebook": "notebooks/03-open-models/03-06-design-lab.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/04-evaluation/01-concepts.md",
+      "notebook": "notebooks/04-evaluation/04-01-concepts.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/04-evaluation/02-code-workshop.md",
+      "notebook": "notebooks/04-evaluation/04-02-code-workshop.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/04-evaluation/03-business-and-organisation.md",
+      "notebook": "notebooks/04-evaluation/04-03-business-and-organisation.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/04-evaluation/04-measures-and-uncertainty.md",
+      "notebook": "notebooks/04-evaluation/04-04-measures-and-uncertainty.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/04-evaluation/05-source-walkthrough.md",
+      "notebook": "notebooks/04-evaluation/04-05-source-walkthrough.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/04-evaluation/06-design-lab.md",
+      "notebook": "notebooks/04-evaluation/04-06-design-lab.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/05-rag/01-concepts.md",
+      "notebook": "notebooks/05-rag/05-01-concepts.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/05-rag/02-code-workshop.md",
+      "notebook": "notebooks/05-rag/05-02-code-workshop.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/05-rag/03-business-and-organisation.md",
+      "notebook": "notebooks/05-rag/05-03-business-and-organisation.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/05-rag/04-vectors-and-ranking.md",
+      "notebook": "notebooks/05-rag/05-04-vectors-and-ranking.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/05-rag/05-source-walkthrough.md",
+      "notebook": "notebooks/05-rag/05-05-source-walkthrough.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/05-rag/06-design-lab.md",
+      "notebook": "notebooks/05-rag/05-06-design-lab.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/06-data/01-concepts.md",
+      "notebook": "notebooks/06-data/06-01-concepts.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/06-data/02-code-workshop.md",
+      "notebook": "notebooks/06-data/06-02-code-workshop.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/06-data/03-business-and-organisation.md",
+      "notebook": "notebooks/06-data/06-03-business-and-organisation.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/06-data/04-learning-an-update.md",
+      "notebook": "notebooks/06-data/06-04-learning-an-update.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/06-data/05-source-walkthrough.md",
+      "notebook": "notebooks/06-data/06-05-source-walkthrough.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/06-data/06-design-lab.md",
+      "notebook": "notebooks/06-data/06-06-design-lab.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/07-specialisation/01-concepts.md",
+      "notebook": "notebooks/07-specialisation/07-01-concepts.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/07-specialisation/02-code-workshop.md",
+      "notebook": "notebooks/07-specialisation/07-02-code-workshop.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/07-specialisation/03-business-and-organisation.md",
+      "notebook": "notebooks/07-specialisation/07-03-business-and-organisation.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/07-specialisation/04-adaptation-mechanics.md",
+      "notebook": "notebooks/07-specialisation/07-04-adaptation-mechanics.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/07-specialisation/05-source-walkthrough.md",
+      "notebook": "notebooks/07-specialisation/07-05-source-walkthrough.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/07-specialisation/06-design-lab.md",
+      "notebook": "notebooks/07-specialisation/07-06-design-lab.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/08-agents/01-concepts.md",
+      "notebook": "notebooks/08-agents/08-01-concepts.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/08-agents/02-code-workshop.md",
+      "notebook": "notebooks/08-agents/08-02-code-workshop.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/08-agents/03-business-and-organisation.md",
+      "notebook": "notebooks/08-agents/08-03-business-and-organisation.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/08-agents/04-technology-in-practice.md",
+      "notebook": "notebooks/08-agents/08-04-technology-in-practice.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/08-agents/05-source-walkthrough.md",
+      "notebook": "notebooks/08-agents/08-05-source-walkthrough.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/08-agents/06-design-lab.md",
+      "notebook": "notebooks/08-agents/08-06-design-lab.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/08-agents/07-failures-and-queues.md",
+      "notebook": "notebooks/08-agents/08-07-failures-and-queues.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/09-agent-loops/01-concepts.md",
+      "notebook": "notebooks/09-agent-loops/09-01-concepts.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/09-agent-loops/02-code-workshop.md",
+      "notebook": "notebooks/09-agent-loops/09-02-code-workshop.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/09-agent-loops/03-business-and-organisation.md",
+      "notebook": "notebooks/09-agent-loops/09-03-business-and-organisation.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/09-agent-loops/04-plans-budgets-and-evidence.md",
+      "notebook": "notebooks/09-agent-loops/09-04-plans-budgets-and-evidence.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/09-agent-loops/05-source-walkthrough.md",
+      "notebook": "notebooks/09-agent-loops/09-05-source-walkthrough.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": true
+    },
+    {
+      "lesson": "modules/09-agent-loops/06-design-lab.md",
+      "notebook": "notebooks/09-agent-loops/09-06-design-lab.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/10-agent-orchestration/01-concepts.md",
+      "notebook": "notebooks/10-agent-orchestration/10-01-concepts.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/10-agent-orchestration/02-code-workshop.md",
+      "notebook": "notebooks/10-agent-orchestration/10-02-code-workshop.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/10-agent-orchestration/03-business-and-organisation.md",
+      "notebook": "notebooks/10-agent-orchestration/10-03-business-and-organisation.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/10-agent-orchestration/04-structured-results-and-traces.md",
+      "notebook": "notebooks/10-agent-orchestration/10-04-structured-results-and-traces.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/10-agent-orchestration/05-source-walkthrough.md",
+      "notebook": "notebooks/10-agent-orchestration/10-05-source-walkthrough.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/10-agent-orchestration/06-design-lab.md",
+      "notebook": "notebooks/10-agent-orchestration/10-06-design-lab.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/11-agent-teams/01-concepts.md",
+      "notebook": "notebooks/11-agent-teams/11-01-concepts.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/11-agent-teams/02-code-workshop.md",
+      "notebook": "notebooks/11-agent-teams/11-02-code-workshop.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/11-agent-teams/03-business-and-organisation.md",
+      "notebook": "notebooks/11-agent-teams/11-03-business-and-organisation.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/11-agent-teams/04-configuration-and-dependencies.md",
+      "notebook": "notebooks/11-agent-teams/11-04-configuration-and-dependencies.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/11-agent-teams/05-source-walkthrough.md",
+      "notebook": "notebooks/11-agent-teams/11-05-source-walkthrough.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/11-agent-teams/06-design-lab.md",
+      "notebook": "notebooks/11-agent-teams/11-06-design-lab.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/12-stateful-agents/01-concepts.md",
+      "notebook": "notebooks/12-stateful-agents/12-01-concepts.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/12-stateful-agents/02-code-workshop.md",
+      "notebook": "notebooks/12-stateful-agents/12-02-code-workshop.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/12-stateful-agents/03-business-and-organisation.md",
+      "notebook": "notebooks/12-stateful-agents/12-03-business-and-organisation.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/12-stateful-agents/04-reducers-replay-and-memory.md",
+      "notebook": "notebooks/12-stateful-agents/12-04-reducers-replay-and-memory.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/12-stateful-agents/05-source-walkthrough.md",
+      "notebook": "notebooks/12-stateful-agents/12-05-source-walkthrough.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/12-stateful-agents/06-design-lab.md",
+      "notebook": "notebooks/12-stateful-agents/12-06-design-lab.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/13-agent-frameworks/01-concepts.md",
+      "notebook": "notebooks/13-agent-frameworks/13-01-concepts.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/13-agent-frameworks/02-code-workshop.md",
+      "notebook": "notebooks/13-agent-frameworks/13-02-code-workshop.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/13-agent-frameworks/03-business-and-organisation.md",
+      "notebook": "notebooks/13-agent-frameworks/13-03-business-and-organisation.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/13-agent-frameworks/04-framework-tour.md",
+      "notebook": "notebooks/13-agent-frameworks/13-04-framework-tour.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/13-agent-frameworks/05-source-walkthrough.md",
+      "notebook": "notebooks/13-agent-frameworks/13-05-source-walkthrough.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/13-agent-frameworks/06-design-lab.md",
+      "notebook": "notebooks/13-agent-frameworks/13-06-design-lab.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/13-agent-frameworks/07-common-contracts.md",
+      "notebook": "notebooks/13-agent-frameworks/13-07-common-contracts.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/14-agent-integration/01-concepts.md",
+      "notebook": "notebooks/14-agent-integration/14-01-concepts.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/14-agent-integration/02-code-workshop.md",
+      "notebook": "notebooks/14-agent-integration/14-02-code-workshop.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/14-agent-integration/03-business-and-organisation.md",
+      "notebook": "notebooks/14-agent-integration/14-03-business-and-organisation.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/14-agent-integration/04-integration-plan.md",
+      "notebook": "notebooks/14-agent-integration/14-04-integration-plan.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/14-agent-integration/05-source-walkthrough.md",
+      "notebook": "notebooks/14-agent-integration/14-05-source-walkthrough.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/14-agent-integration/06-design-lab.md",
+      "notebook": "notebooks/14-agent-integration/14-06-design-lab.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/14-agent-integration/07-service-evaluation.md",
+      "notebook": "notebooks/14-agent-integration/14-07-service-evaluation.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/15-problem-to-pilot/01-concepts.md",
+      "notebook": "notebooks/15-problem-to-pilot/15-01-concepts.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/15-problem-to-pilot/02-code-workshop.md",
+      "notebook": "notebooks/15-problem-to-pilot/15-02-code-workshop.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/15-problem-to-pilot/03-business-and-organisation.md",
+      "notebook": "notebooks/15-problem-to-pilot/15-03-business-and-organisation.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/15-problem-to-pilot/04-operating-contract.md",
+      "notebook": "notebooks/15-problem-to-pilot/15-04-operating-contract.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/15-problem-to-pilot/05-source-walkthrough.md",
+      "notebook": "notebooks/15-problem-to-pilot/15-05-source-walkthrough.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/15-problem-to-pilot/06-design-lab.md",
+      "notebook": "notebooks/15-problem-to-pilot/15-06-design-lab.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/16-harness-and-evidence/01-concepts.md",
+      "notebook": "notebooks/16-harness-and-evidence/16-01-concepts.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/16-harness-and-evidence/02-code-workshop.md",
+      "notebook": "notebooks/16-harness-and-evidence/16-02-code-workshop.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/16-harness-and-evidence/03-business-and-organisation.md",
+      "notebook": "notebooks/16-harness-and-evidence/16-03-business-and-organisation.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/16-harness-and-evidence/04-operating-contract.md",
+      "notebook": "notebooks/16-harness-and-evidence/16-04-operating-contract.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/16-harness-and-evidence/05-source-walkthrough.md",
+      "notebook": "notebooks/16-harness-and-evidence/16-05-source-walkthrough.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/16-harness-and-evidence/06-design-lab.md",
+      "notebook": "notebooks/16-harness-and-evidence/16-06-design-lab.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/17-durable-volume/01-concepts.md",
+      "notebook": "notebooks/17-durable-volume/17-01-concepts.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/17-durable-volume/02-code-workshop.md",
+      "notebook": "notebooks/17-durable-volume/17-02-code-workshop.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/17-durable-volume/03-business-and-organisation.md",
+      "notebook": "notebooks/17-durable-volume/17-03-business-and-organisation.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/17-durable-volume/04-operating-contract.md",
+      "notebook": "notebooks/17-durable-volume/17-04-operating-contract.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/17-durable-volume/05-source-walkthrough.md",
+      "notebook": "notebooks/17-durable-volume/17-05-source-walkthrough.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/17-durable-volume/06-design-lab.md",
+      "notebook": "notebooks/17-durable-volume/17-06-design-lab.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/18-context-security/01-concepts.md",
+      "notebook": "notebooks/18-context-security/18-01-concepts.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/18-context-security/02-code-workshop.md",
+      "notebook": "notebooks/18-context-security/18-02-code-workshop.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/18-context-security/03-business-and-organisation.md",
+      "notebook": "notebooks/18-context-security/18-03-business-and-organisation.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/18-context-security/04-operating-contract.md",
+      "notebook": "notebooks/18-context-security/18-04-operating-contract.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/18-context-security/05-source-walkthrough.md",
+      "notebook": "notebooks/18-context-security/18-05-source-walkthrough.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/18-context-security/06-design-lab.md",
+      "notebook": "notebooks/18-context-security/18-06-design-lab.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/19-deployment-ownership/01-concepts.md",
+      "notebook": "notebooks/19-deployment-ownership/19-01-concepts.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/19-deployment-ownership/02-code-workshop.md",
+      "notebook": "notebooks/19-deployment-ownership/19-02-code-workshop.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/19-deployment-ownership/03-business-and-organisation.md",
+      "notebook": "notebooks/19-deployment-ownership/19-03-business-and-organisation.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/19-deployment-ownership/04-operating-contract.md",
+      "notebook": "notebooks/19-deployment-ownership/19-04-operating-contract.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/19-deployment-ownership/05-source-walkthrough.md",
+      "notebook": "notebooks/19-deployment-ownership/19-05-source-walkthrough.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/19-deployment-ownership/06-design-lab.md",
+      "notebook": "notebooks/19-deployment-ownership/19-06-design-lab.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/20-governed-improvement/01-concepts.md",
+      "notebook": "notebooks/20-governed-improvement/20-01-concepts.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/20-governed-improvement/02-code-workshop.md",
+      "notebook": "notebooks/20-governed-improvement/20-02-code-workshop.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/20-governed-improvement/03-business-and-organisation.md",
+      "notebook": "notebooks/20-governed-improvement/20-03-business-and-organisation.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/20-governed-improvement/04-operating-contract.md",
+      "notebook": "notebooks/20-governed-improvement/20-04-operating-contract.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/20-governed-improvement/05-source-walkthrough.md",
+      "notebook": "notebooks/20-governed-improvement/20-05-source-walkthrough.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
+    },
+    {
+      "lesson": "modules/20-governed-improvement/06-design-lab.md",
+      "notebook": "notebooks/20-governed-improvement/20-06-design-lab.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false,
+      "optional_network_calls": false
     }
   ]
 }

@@ -1,5 +1,7 @@
 # Lesson 2.3: Who decides when the assistant can act?
 
+[Download the matching notebook](/downloads/02-03-business-and-organisation.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
 ## The proposal

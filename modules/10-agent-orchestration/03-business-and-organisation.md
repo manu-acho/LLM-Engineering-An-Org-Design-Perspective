@@ -1,5 +1,7 @@
 # Lesson 10.3: A software handoff is not accepted ownership
 
+[Download the matching notebook](/downloads/10-03-business-and-organisation.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
 ## The manager agent reports success

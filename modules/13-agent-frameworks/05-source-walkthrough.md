@@ -1,51 +1,49 @@
-# Lesson 13.5: Follow the same worker through two real framework implementations
+# Lesson 13.5: Compare runtime outputs and failure boundaries
 
-[Module route](README.md) · [Next: design shared ownership](06-design-lab.md)
+[Download the matching notebook](/downloads/13-05-source-walkthrough.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
 
-## Hold the task constant
+[Module route](README.md) · [Previous workshop](02-code-workshop.md)
 
-The source comparison uses a visible task: read `notes.txt`, translate it into Spanish, write `spanish.txt` and record progress on a board. The task crosses model, storage, filesystem and process boundaries. Following it closely is more informative than comparing framework names in a feature list.
+## Follow the path in the course checkout
 
-This is a source-reading walkthrough, not an instruction to launch the original worker. Its seed path resets the teaching board and removes an earlier output. Model runs can also create paid requests and launch a filesystem server. No original worker is executed by this lesson.
+The implementation is included here, so this walkthrough does not require another course, video or repository. Open `src/ai_orgdesign/labs/m13.py`. The lab's public functions expose inputs and return values; supporting service code lives in `src/ai_orgdesign/business.py` where required.
 
-## Google ADK: find configuration before invocation
+State is a TypedDict describing named fields for tooling; it does not validate them at runtime. inspect_record reads the scoped fictional case and returns only the updated difference and status. plain merges those updates with the input dictionary. graph registers the same function as a LangGraph node, links START to inspect and inspect to END, then compiles the graph. invoke runs the compiled graph. Comparing both results isolates execution packaging while holding the business function constant.
 
-Open [the agent definition](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/5_agent_frameworks/1_google_adk_a2a/task_worker/agent.py). `LlmAgent` receives model, instructions and tools. Board functions list work, add steps and mark tasks complete. `McpToolset` supplies filesystem operations through a subprocess configured with a workspace directory.
+Read the function from entry to return. Locate input validation before substantive work, transformations that create a new representation, any call into another component and the point that produces the observable result. A model call, a database commit and constructing a dictionary are different operations. Identify which actually occur in this program.
 
-The tool connection specifies an executable, arguments and working directory. That is a real process boundary. The agent's instructions describe the desired sequence, but the model chooses particular tool requests within the available surface.
+## Work through the contrasting case
 
-Now read [worker.py](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/5_agent_frameworks/1_google_adk_a2a/worker.py). `seed` prepares the board and returns a goal ID. The entry point marks it in progress, then `asyncio.run` enters a coroutine that creates `InMemoryRunner` and calls `run_debug`. Afterwards, the script displays the board and reads the output file if it exists.
+List three features that would require additional comparison tests before replacing an established runtime. Explain why passing this one equivalence check is useful but insufficient.
 
-The final file-existence branch is an observation after execution. It is not a full translation-quality test. An in-memory runner also does not establish durable recovery after process failure.
+The following variation either checks a failure boundary or exposes another aspect of the same implementation. Catching an expected exception allows the notebook to continue; the `else` branch raises an assertion if the expected boundary fails to appear.
 
-## Pydantic AI: follow startup arguments before imports
+```python
+from ai_orgdesign.labs.m13 import plain
+try:
+    plain({"case_id":"H-18", "tenant":"north"})
+except PermissionError:
+    print("The shared scope rule survives the runtime boundary")
+else:
+    raise AssertionError("Scope check failed")
+```
 
-The [Pydantic worker](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/5_agent_frameworks/2_strands_pydantic/pydantic_worker.py) has two modes. Standalone mode seeds its own task. Orchestrated mode receives a task ID and shared board path from command-line arguments.
+**Interpretation.** Persistence across interruption, treatment of a failed tool and cancellation of concurrent work are three candidates. Authentication propagation, ordering, tracing and nested budgets may also differ. The small equivalence check catches changed task results, but only tests the behaviours actually exercised.
 
-It sets `BOARD_PATH` before importing the board module because that module chooses its path at import time. Reordering imports could silently connect the worker to another board. Configuration timing is part of execution semantics, not cosmetic style.
+## Inspect the implementation rather than a duplicate
 
-The worker creates an `Agent` with board functions and a filesystem toolset. `async with worker` manages resources around `await worker.run(message)`. The application then reads `result.output`. Returning from that call and cleaning up the tool connection are related but different lifecycle events.
+The matching notebook can display saved functions using `inspect.getsource`. This shows the implementation currently imported by Python. Reading code is useful, but a displayed function is not proof it executed or that every branch was tested. The behavioural checks deliberately include invalid inputs and contrasting outcomes.
 
-In orchestrated mode, it works one supplied task rather than resetting the entire board. A task ID therefore carries a coordination contract from caller to worker. The source of that ID matters as much as the framework invocation.
+Run the course checks from the root folder with `uv run --locked pytest`. Run the notebook checks with `uv run --locked python scripts/verify_notebooks.py`. The [verification guide](../../reference/verification.md) distinguishes offline execution, real protocol tests, model downloads and paid-provider checks. It records the limits of each claim.
 
-## Compare the concrete boundaries
+## What a result can establish
 
-| Concern | ADK source path | Pydantic AI source path |
-|---|---|---|
-| Agent definition | `LlmAgent` and tools | `Agent` and tools/toolsets |
-| Run machinery | `InMemoryRunner.run_debug` | `await worker.run` |
-| Tool lifecycle | MCP toolset configuration | Managed worker resource block |
-| Work identity | Seeded goal in the standalone entry point | Seeded goal or caller-supplied task ID |
-| Result observation | Board and file read | Framework output plus board/file observation |
+Both routes return case H-17 in north, difference two and status review. Equality checks observable output for this one contract. It does not establish equivalent persistence, retries, streaming or remote-service behaviour. This is a real framework run with deterministic nodes, not a framework-generated language answer.
 
-Different interfaces do not imply different organisational outcomes. Hold source text, task, model conditions and acceptance criteria as consistent as feasible, then inspect failure and resource behaviour.
+Keep inputs, configuration identity, observed result and interpretation separate in an experiment record. If the program behaves as predicted but the business problem remains, investigate the surrounding evidence, roles and dependencies. A successful run should sharpen that inquiry rather than end it.
 
-## Extend to the remaining frameworks
+## Explain the pattern without the library name
 
-Use the [six-framework tour](04-framework-tour.md) for Strands, Microsoft Agent Framework, Agno and Mastra. For each, mark agent construction, invocation, tool resources, task identity and returned result. TypeScript's promises and `await` serve a comparable asynchronous role, but its runtime and package environment differ from Python.
+A useful completion check is to explain the operation in ordinary language, then name the exact implementation. The course implements one framework and one plain runtime rather than assuming identical behaviour across many SDKs. Other frameworks can be evaluated through the same contract suite. A remote agent interface adds network, identity and partial-failure obligations that a second local function does not have.
 
-**Worked diagnosis:** A worker marks a task done but the file is absent. Do not rewrite every framework adapter first. Check the task's working directory, tool output, board transition and acceptance policy. The shared task contract must distinguish self-reported completion from an inspected and accepted artefact.
-
-## Read the organisational connection
-
-A framework comparison should distinguish an available interface from selected configuration and actual use. The research chapter explains [capability, configuration, practice and outcome](../../reference/research/04-implementation.md#capability-configuration-practice-and-outcome).
+The [research connection](../../reference/research/02-coordination.md) develops the organisational questions. Follow the module's design lesson to turn this technical understanding into a decision with stated conditions and a recovery route.

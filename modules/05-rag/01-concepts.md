@@ -1,5 +1,7 @@
 # Lesson 5.1: How an assistant finds organisational knowledge
 
+[Download the matching notebook](/downloads/05-01-concepts.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
 ## The policy is not automatically inside the model

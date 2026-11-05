@@ -1,5 +1,7 @@
 # Lesson 14.3: A reusable agent capability needs a service owner
 
+[Download the matching notebook](/downloads/14-03-business-and-organisation.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Previous lesson](02-code-workshop.md) · [Module route](README.md) · [Integration plan](04-integration-plan.md)
 
 ## The interface becomes shared infrastructure

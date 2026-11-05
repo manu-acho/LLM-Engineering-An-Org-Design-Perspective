@@ -1,87 +1,46 @@
-# Lesson 14.5: Run a real MCP exchange, then follow the source backend
+# Lesson 14.5: Run the actual MCP client and server exchange
 
-[Module route](README.md) · [Next: a completed integration dossier](06-design-lab.md)
+[Download the matching notebook](/downloads/14-05-source-walkthrough.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
 
-## Start without a model
+[Module route](README.md) · [Previous workshop](02-code-workshop.md)
 
-An MCP client can discover and invoke server capabilities without asking a model to choose them. That is a useful first lab: it exposes transport and service behaviour before introducing generation. The following two scripts need the Python `mcp` package. Save them together as `case_server.py` and `case_client.py`. They use synthetic records, no model, no account credentials and no network server.
+## Follow the path in the course checkout
 
-The server exposes a read tool and a resource. Its standard output belongs to the stdio protocol, so ordinary diagnostic printing should go to standard error instead.
+The implementation is included here, so this walkthrough does not require another course, video or repository. Open `src/ai_orgdesign/labs/m14.py`. The lab's public functions expose inputs and return values; supporting service code lives in `src/ai_orgdesign/business.py` where required.
 
-```python
-# case_server.py
-from mcp.server.fastmcp import FastMCP
+FastMCP registers read_case as a tool with a schema derived from its typed parameter. The direct demo calls the Python function, while exchange launches a real child process over standard input and output, initialises ClientSession, lists tools and calls read_case. Nested async with blocks close the session and process resources on exit. The tool has a fixed north scope in this local server. Error content is checked before returning the result. Protocol messages use stdout, so ordinary debug printing must not corrupt the server stream.
 
-mcp = FastMCP("Harbour teaching cases")
-CASES = {"C-17": {"ordered": 12, "reported_received": 10}}
+Read the function from entry to return. Locate input validation before substantive work, transformations that create a new representation, any call into another component and the point that produces the observable result. A model call, a database commit and constructing a dictionary are different operations. Identify which actually occur in this program.
 
-@mcp.tool()
-def read_case(case_id: str) -> dict:
-    """Read a synthetic case; this is not a verification of delivery."""
-    if case_id not in CASES:
-        raise ValueError("Unknown synthetic case")
-    return {"case_id": case_id, "source": "cases:v1", "record": CASES[case_id]}
+## Work through the contrasting case
 
-@mcp.resource("cases://{case_id}")
-def case_resource(case_id: str) -> str:
-    import json
-    return json.dumps(read_case(case_id))
+Compare calling read_case directly with awaiting exchange. Which additional failure modes does the second path expose, and which security questions remain untested?
 
-if __name__ == "__main__":
-    mcp.run(transport="stdio")
-```
-
-The client starts the server using the same Python interpreter, initialises a session, lists tools, makes a call and reads a resource. It owns the child process lifetime through nested resource blocks.
+The following variation either checks a failure boundary or exposes another aspect of the same implementation. Catching an expected exception allows the notebook to continue; the `else` branch raises an assertion if the expected boundary fails to appear.
 
 ```python
-# case_client.py
-import asyncio
-import json
-import sys
-from pathlib import Path
-from mcp import ClientSession, StdioServerParameters
-from mcp.client.stdio import stdio_client
-
-async def main():
-    parameters = StdioServerParameters(
-        command=sys.executable,
-        args=[str(Path(__file__).with_name("case_server.py"))],
-    )
-    async with stdio_client(parameters) as (read, write):
-        async with ClientSession(read, write) as session:
-            await session.initialize()
-            catalogue = await session.list_tools()
-            assert "read_case" in {tool.name for tool in catalogue.tools}
-            result = await session.call_tool("read_case", {"case_id": "C-17"})
-            assert not result.isError
-            record = json.loads(result.content[0].text)
-            assert record["case_id"] == "C-17"
-            resource = await session.read_resource("cases://C-17")
-            assert json.loads(resource.contents[0].text)["source"] == "cases:v1"
-            print(record["record"])
-
-if __name__ == "__main__":
-    asyncio.run(main())
+from ai_orgdesign.labs.m14 import exchange
+result = await exchange()
+assert "read_case" in result["tools"]
+print(result)
 ```
 
-The expected displayed record contains `ordered: 12` and `reported_received: 10`. The session's structured objects are protocol results. Parsing the text content recovers the application's JSON record. A successful protocol exchange establishes that this server returned that record; it does not establish the truth of the customer's report.
+**Interpretation.** The transport path adds process startup, initialisation, schema discovery, message serialisation and cleanup. It still does not test internet-facing authentication, gateway policy, delegated user identity or a payment integration. A capability catalogue should identify its backing service owner and its authority boundaries.
 
-The lab has no authenticated multi-user boundary. It is a local synthetic example. The scope checks from Lesson 14.2 would have to be connected to trusted identity in a real service rather than accepted from caller-supplied assertions.
+## Inspect the implementation rather than a duplicate
 
-## Follow the original operation into storage
+The matching notebook can display saved functions using `inspect.getsource`. This shows the implementation currently imported by Python. Reading code is useful, but a displayed function is not proof it executed or that every branch was tested. The behavioural checks deliberately include invalid inputs and contrasting outcomes.
 
-The source [accounts server](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/6_mcp/backend/accounts_server.py) decorates operations as tools and reports/strategy as resources. Its [client](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/6_mcp/backend/accounts_client.py) starts the server, initialises a session and reads the resource. Those are the same kinds of boundary made visible in the smaller lab.
+Run the course checks from the root folder with `uv run --locked pytest`. Run the notebook checks with `uv run --locked python scripts/verify_notebooks.py`. The [verification guide](../../reference/verification.md) distinguishes offline execution, real protocol tests, model downloads and paid-provider checks. It records the limits of each claim.
 
-Follow a record-changing tool into [Account](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/6_mcp/backend/accounts.py), then [database.py](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/6_mcp/backend/database.py). The database stores account JSON under a name and writes log records separately. A whole-record read/modify/write lifecycle needs concurrency analysis; a successful individual SQL statement does not automatically prevent lost updates across the whole operation.
+## What a result can establish
 
-The [trader](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/6_mcp/backend/traders.py) manages several server contexts with `AsyncExitStack`, supplies account and strategy context, exposes a researcher as a tool and runs a bounded agent interaction. It catches some outer errors and prints them. Inspect how that error reaches the application before interpreting the next cycle as recovery.
+The actual MCP exchange lists read_case and returns the H-17 fictional record. The direct demo has a clear label stating that it bypasses transport. Neither path authorises a remedy. The fixed scope is appropriate for a narrow local lab, not a substitute for authenticated per-user scope in a shared deployment.
 
-The example changes simulated application accounts, not a demonstrated live brokerage account. The lesson does not execute those operations.
+Keep inputs, configuration identity, observed result and interpretation separate in an experiment record. If the program behaves as predicted but the business problem remains, investigate the surrounding evidence, roles and dependencies. A successful run should sharpen that inquiry rather than end it.
 
-**Worked diagnosis:** Tool discovery works but a resource read fails. Check resource URI, template matching, server operation and content result separately from the tool list. Discovery of one capability type does not establish the existence or correctness of another.
+## Explain the pattern without the library name
 
-**Technical reference:** [MCP server tutorial](https://modelcontextprotocol.io/docs/develop/build-server). The course and local lab use Python SDK interfaces; verify installed package compatibility before adapting them.
+A useful completion check is to explain the operation in ordinary language, then name the exact implementation. A direct application API can be simpler when one client uses one service. MCP helps standardise discovery and invocation across clients. A gateway can centralise some controls while creating another dependency. Transport interoperability should be tested separately from business permission and evidence fidelity.
 
-## Read the organisational connection
-
-A successful protocol exchange demonstrates communication within the tested scope. The research chapter explains [the evidence path](../../reference/research/06-technology-in-practice.md#an-evidence-path-without-skipped-steps).
+The [research connection](../../reference/research/06-technology-in-practice.md) develops the organisational questions. Follow the module's design lesson to turn this technical understanding into a decision with stated conditions and a recovery route.

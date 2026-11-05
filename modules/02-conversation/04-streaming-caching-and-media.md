@@ -1,5 +1,7 @@
 # Lesson 2.4: What changes when a conversation streams or uses media?
 
+[Download the matching notebook](/downloads/02-04-streaming-caching-and-media.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next: the complete tool exchange](05-source-walkthrough.md)
 
 ## A conversation has several kinds of state
@@ -32,11 +34,11 @@ Repeated requests sometimes share a long instruction or evidence prefix. A provi
 
 In an application answer cache, the key must include the information that can change correctness: question, relevant source version, permitted scope and important settings. A cached policy answer for one user must not disclose material to another. An unchanged question can require a changed answer after policy revision.
 
-Provider caching rules vary. The original [week 2 day 1 notebook](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week2/day1.ipynb) explores interfaces and caching. Treat its billing observations as historical results, not guaranteed prices. Inspect actual usage when testing a current integration.
+Provider caching rules vary. Inspect actual usage when testing an integration. A cached input computation, a saved answer and stored conversation history have different freshness and billing implications.
 
 ## Media creates another transformation chain
 
-The source [day 5 project](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week2/day5.ipynb) combines conversation with generated images and speech. A chain of text generation followed by speech generation is different from one model understanding audio directly. In both cases, ask which representations cross the boundary.
+A media application may combine text generation with image or speech generation. A chain that first generates text and then renders it as speech differs from a model that processes audio directly. Inspect which representation and source identity survive each transformation.
 
 For a spoken order enquiry, transcription may turn `O-17` into `017`. The lookup can be correct for its input while referring to the wrong record. An image of a destination can be attractive without improving ticket-price accuracy. Make media optional where it does not contribute to the task.
 

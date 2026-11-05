@@ -1,5 +1,7 @@
 # Lesson 8.6: Complete a pilot operating design
 
+[Download the matching notebook](/downloads/08-06-design-lab.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next: failures and queues](07-failures-and-queues.md)
 
 ## Select a bounded contribution

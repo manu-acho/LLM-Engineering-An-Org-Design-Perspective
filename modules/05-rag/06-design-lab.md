@@ -1,5 +1,7 @@
 # Lesson 5.6: Build an organisational knowledge service
 
+[Download the matching notebook](/downloads/05-06-design-lab.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next module](../06-data/README.md)
 
 ## Resolve what “knowledge” means for this task

@@ -1,101 +1,46 @@
-# Lesson 13.2: A shared task board needs a precise claim rule
+# Lesson 13.2: Run the same task in Python and LangGraph
 
-[Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
+[Download the matching notebook](/downloads/13-02-code-workshop.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
 
-## Stop two workers from both claiming the same task
+[Module route](README.md) · [Workspace setup](../../STUDY-WORKSPACE.md) · [Technical foundations](../../reference/technical-foundations.md)
 
-The source course uses a SQLite board across its framework examples. This small independent example focuses on the claim transition. It uses an in-memory database, so no file survives after the program closes. It calls no agents and writes no external output.
+## The problem this program addresses
+
+Frameworks package execution conventions. A framework change should not silently change what counts as evidence, how errors are represented or who accepts an output. A plain-Python baseline makes those invariants visible.
+
+The implementation lives in `src/ai_orgdesign/labs/m13.py`. All examples use fictional data. The default exercise needs no provider account or API key. Installing the locked dependencies initially requires network access; running the core exercise does not send a model-provider request.
+
+## Read the operation before running it
+
+State is a TypedDict describing named fields for tooling; it does not validate them at runtime. inspect_record reads the scoped fictional case and returns only the updated difference and status. plain merges those updates with the input dictionary. graph registers the same function as a LangGraph node, links START to inspect and inspect to END, then compiles the graph. invoke runs the compiled graph. Comparing both results isolates execution packaging while holding the business function constant.
+
+`import` makes the saved implementation available in the notebook. Calling a function supplies its inputs and receives its return value. `assert` checks an expected property and raises an error if that property is false. An assertion is evidence about that specific property, not a certificate that the application is correct in every situation.
+
+## Predict, run and inspect
+
+Run this block in the matching notebook, with the project `.venv` kernel selected. The asynchronous examples use the notebook's supported top-level `await`; ordinary scripts need an event-loop entry point such as `asyncio.run` instead.
 
 ```python
-import sqlite3
-
-connection = sqlite3.connect(":memory:")
-connection.execute("""CREATE TABLE tasks (
-    id INTEGER PRIMARY KEY,
-    status TEXT NOT NULL,
-    owner TEXT,
-    result TEXT
-)""")
-connection.execute("INSERT INTO tasks (id, status) VALUES (?, ?)", (17, "pending"))
-connection.commit()
-
-def claim(connection, task_id, worker):
-    with connection:
-        changed = connection.execute(
-            "UPDATE tasks SET status = ?, owner = ? WHERE id = ? AND status = ?",
-            ("in_progress", worker, task_id, "pending")
-        ).rowcount
-    return changed == 1
-
-def report(connection, task_id, worker, result):
-    with connection:
-        changed = connection.execute(
-            "UPDATE tasks SET status = ?, result = ? "
-            "WHERE id = ? AND owner = ? AND status = ?",
-            ("reported_done", result, task_id, worker, "in_progress")
-        ).rowcount
-    if changed != 1:
-        raise ValueError("Task is not held by this worker in the expected state")
-
-print(claim(connection, 17, "worker-a"))
-print(claim(connection, 17, "worker-b"))
-report(connection, 17, "worker-a", "Draft prepared for review")
-print(connection.execute("SELECT status, owner FROM tasks WHERE id = 17").fetchone())
-connection.close()
+from ai_orgdesign.labs.m13 import plain, graph
+inputs = {"case_id":"H-17", "tenant":"north"}
+assert plain(inputs) == graph().invoke(inputs)
+print(graph().invoke(inputs))
 ```
 
-Expected output:
+Both routes return case H-17 in north, difference two and status review. Equality checks observable output for this one contract. It does not establish equivalent persistence, retries, streaming or remote-service behaviour. This is a real framework run with deterministic nodes, not a framework-generated language answer.
 
-```text
-True
-False
-('reported_done', 'worker-a')
-```
+If an import fails, run `python3 scripts/setup.py` from the course folder and select the project kernel again. If a shared-code edit appears ignored, restart the kernel so Python loads the new file. Read an exception before changing the code: it may report a deliberate boundary such as forbidden scope or stale state.
 
-## The condition is part of the operation
+## Change one condition
 
-`sqlite3.connect(":memory:")` creates a database for this connection. `execute` sends an SQL statement to it. The question marks are parameter placeholders. Values are supplied separately rather than inserted into SQL text, preventing ordinary values from being interpreted as SQL instructions.
+**Exercise.** List three features that would require additional comparison tests before replacing an established runtime. Explain why passing this one equivalence check is useful but insufficient.
 
-The `claim` function does not first read the task and then unconditionally write a new owner. Its `WHERE` clause makes the expected state part of the update. The second claim finds no pending row because the first has already changed it. `rowcount` tells the caller whether the transition actually took place.
+Before opening the answer, identify which function owns the relevant check and whether the change should affect data, control flow, authority or evaluation. Keeping these categories distinct helps locate a failure without blaming every unexpected result on a model.
 
-This two-call example demonstrates the condition. A real concurrent system must also handle transaction conflicts, locks, timeouts and retries appropriately. It should not infer exclusive ownership merely because an earlier read showed `pending`.
+**Worked answer.** Persistence across interruption, treatment of a failed tool and cancellation of concurrent work are three candidates. Authentication propagation, ordering, tracing and nested budgets may also differ. The small equivalence check catches changed task results, but only tests the behaviours actually exercised.
 
-`with connection` commits or rolls back the relevant transaction; it does not close the connection. The explicit final `close` releases it. Persistence and cleanup are different responsibilities.
+## Consider the alternative
 
-## Reported completion is deliberately separate
+The course implements one framework and one plain runtime rather than assuming identical behaviour across many SDKs. Other frameworks can be evaluated through the same contract suite. A remote agent interface adds network, identity and partial-failure obligations that a second local function does not have.
 
-`report` checks both the worker and the current state. A different worker cannot report this task complete through this function. The status becomes `reported_done`, not `verified` or `accepted`.
-
-This distinction preserves an evidence boundary. A worker report can record its claim. A file validator, a test or a receiving reviewer may be needed before the business accepts it. If the acceptance check fails, define how the task returns for correction and who owns that transition.
-
-The worker name is only a string here. An operating system must bind it to trusted process or service identity rather than accept whichever name a caller chooses.
-
-## Compare the original board
-
-The course's [board implementation](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/5_agent_frameworks/1_google_adk_a2a/board.py) creates goals and steps with `parent_id`, records task status and stores result text. Its `claim_todo` sets `in_progress` by ID. It is intended to show progress for a selected worker; that statement does not implement the conditional exclusive claim demonstrated above.
-
-The source configures SQLite's write-ahead logging mode and a busy timeout. These help manage access by several processes, but they do not invent missing business conditions in an update. Database machinery and the task-ownership rule solve different problems.
-
-The [ADK worker](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/5_agent_frameworks/1_google_adk_a2a/worker.py) seeds a goal, marks it in progress and starts the framework runner. The [Pydantic AI worker](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/5_agent_frameworks/2_strands_pydantic/pydantic_worker.py) can either seed its own task or take a task ID supplied by an orchestrator. Follow the source of the task ID before interpreting a board status as worker discovery or independent allocation.
-
-## The multi-framework orchestrator
-
-The course's [orchestrator](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/5_agent_frameworks/5_agent_loop/orchestrator.py) launches workers, waits for tasks, checks outputs and allows a bounded repair attempt. The [entry point](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/5_agent_frameworks/5_agent_loop/agent_loop.py) sets a common board path and passes runtime configuration to workers.
-
-These are application-level integration choices. The frameworks do not coordinate merely because they all have an `Agent` class. A shared record, agreed interfaces and an explicit orchestrator connect them. The fallback that creates a basic hub when the orchestrator stops early also illustrates a useful recovery design: leave an inspectable partial result rather than pretending the full agent plan succeeded.
-
-## Further operating requirements
-
-If a worker crashes after claiming, someone must reclaim or review the task. A **lease** is ownership that expires unless renewed; it is one possible design. It needs a rule preventing an old worker from later reporting a result after ownership has moved.
-
-If completion depends on a file, retain the output identity and version. If a reviewer accepts the file, record that separate decision. If two systems use different meanings of complete, an adapter must preserve the difference rather than collapse both into `done`.
-
-**Try it:** Attempt to report as `worker-b`, and attempt to report the same task again after `reported_done`. Then describe what the board should show when the worker produced a file but crashed before recording its result. Which evidence would permit safe recovery?
-
-## Continue the module
-
-The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
-
-## Read the organisational connection
-
-Claiming work needs allocation rules when several workers compete for the same task. The research chapter explains [shared-resource dependencies](../../reference/research/02-coordination.md#identify-what-depends-on-what).
+The [organisation design reading](../../reference/research/02-coordination.md) develops the relevant argument and its scholarly references. The lab demonstrates an implementation pattern; the business and design lessons examine the conditions under which that contribution might be useful.

@@ -1,101 +1,46 @@
-# Lesson 10.2: Gather evidence without confusing checks and permission
+# Lesson 10.2: Validate and accept a specialist contribution
 
-[Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
+[Download the matching notebook](/downloads/10-02-code-workshop.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
 
-## A coordinator with two required inputs
+[Module route](README.md) · [Workspace setup](../../STUDY-WORKSPACE.md) · [Technical foundations](../../reference/technical-foundations.md)
 
-This original teaching example models the dependency behind a research manager. It uses Python's standard library and fake evidence functions. It calls no models, sends no messages and uses no external accounts.
+## The problem this program addresses
+
+A specialist can return a well-formed object about the wrong case. Orchestration therefore needs both a structural contract and acceptance rules linking the contribution to the task that requested it.
+
+The implementation lives in `src/ai_orgdesign/labs/m10.py`. All examples use fictional data. The default exercise needs no provider account or API key. Installing the locked dependencies initially requires network access; running the core exercise does not send a model-provider request.
+
+## Read the operation before running it
+
+Contribution is a Pydantic model. Its fields require a case identifier, at least one source, a conclusion and at least one unresolved item; extra fields are forbidden. model_validate checks the payload against that structure. accept then checks that the case identifier is the expected one and every cited source belongs to the allowed set. A successful result is labelled accepted_for_review. That status deliberately stops short of verifying the conclusion or authorising a remedy.
+
+`import` makes the saved implementation available in the notebook. Calling a function supplies its inputs and receives its return value. `assert` checks an expected property and raises an error if that property is false. An assertion is evidence about that specific property, not a certificate that the application is correct in every situation.
+
+## Predict, run and inspect
+
+Run this block in the matching notebook, with the project `.venv` kernel selected. The asynchronous examples use the notebook's supported top-level `await`; ordinary scripts need an event-loop entry point such as `asyncio.run` instead.
 
 ```python
-import asyncio
-
-async def order_evidence(case):
-    await asyncio.sleep(0)
-    return {"source": "order-17", "reported_difference": 2}
-
-async def policy_evidence(case):
-    await asyncio.sleep(0)
-    return {"source": "policy-v3", "requires_review": True}
-
-async def prepare_case(case, fetch_order, fetch_policy):
-    results = await asyncio.gather(
-        fetch_order(case), fetch_policy(case), return_exceptions=True
-    )
-    failures = [type(item).__name__ for item in results if isinstance(item, Exception)]
-    if failures:
-        return {"status": "incomplete", "failures": failures}
-    order, policy = results
-    return {
-        "status": "draft",
-        "case_id": case["id"],
-        "sources": [order["source"], policy["source"]],
-        "reported_difference": order["reported_difference"],
-        "requires_review": policy["requires_review"],
-    }
-
-def authorise_handoff(draft, approval):
-    if draft["status"] != "draft":
-        raise ValueError("Evidence collection is incomplete")
-    if not approval or approval["case_id"] != draft["case_id"]:
-        raise PermissionError("No matching approval")
-    if approval["decision"] != "approve":
-        raise PermissionError("Review did not approve this handoff")
-    return {"status": "ready_for_execution", "case_id": draft["case_id"]}
-
-case = {"id": "C-17"}
-draft = asyncio.run(prepare_case(case, order_evidence, policy_evidence))
-print(draft["status"], draft["sources"])
-try:
-    authorise_handoff(draft, None)
-except PermissionError as error:
-    print(type(error).__name__)
+from ai_orgdesign.labs.m10 import accept
+payload = {"case_id":"H-17", "sources":["order-17"], "conclusion":"Quantities require comparison", "unresolved":["receipt"]}
+assert accept(payload)["state"] == "accepted_for_review"
+print(accept(payload))
 ```
 
-Expected output:
+The supplied H-17 contribution passes the structural and case/source membership checks. An invented source or another case identifier raises ValueError. A conclusion that is false but cites an allowed source may still pass, exposing the distinction between membership validation and factual support.
 
-```text
-draft ['order-17', 'policy-v3']
-PermissionError
-```
+If an import fails, run `python3 scripts/setup.py` from the course folder and select the project kernel again. If a shared-code edit appears ignored, restart the kernel so Python loads the new file. Read an exception before changing the code: it may report a deliberate boundary such as forbidden scope or stale state.
 
-## How to read the asynchronous part
+## Change one condition
 
-Calling an `async def` function creates a coroutine object representing work that can be awaited. It does not by itself run the complete function. `asyncio.run` creates an event loop, runs the top-level coroutine to completion and closes that loop. A notebook with an existing event loop normally uses `await` instead.
+**Exercise.** Write a false conclusion using order-17 as its source and determine whether the current acceptance function detects the falsehood. Propose the next check rather than claiming schema validation solved it.
 
-The two calls inside `gather` are submitted together. `await asyncio.sleep(0)` yields control in this fake; it imitates a point at which real network work would wait. It does not measure real service speed. `gather` returns results in input order, so `order, policy = results` still matches the two supplied operations.
+Before opening the answer, identify which function owns the relevant check and whether the change should affect data, control flow, authority or evaluation. Keeping these categories distinct helps locate a failure without blaming every unexpected result on a model.
 
-`return_exceptions=True` returns ordinary operation exceptions as items rather than immediately propagating them. The list comprehension identifies those failures before unpacking results as evidence dictionaries. This is an explicit **all-required-inputs policy**: either source failure prevents a draft.
+**Worked answer.** The function cannot judge entailment. A deterministic quantity comparison, a reviewer or a separately evaluated evidence-support check must examine whether the source supports the conclusion. Each additional checker has its own error modes. An acceptance contract should state exactly which checks were applied and what remains for review.
 
-That choice is not universally correct. A system could return a partial draft clearly marked with unavailable evidence. The important point is to choose deliberately. Silently omitting the failed policy branch would make incomplete evidence look like a normal answer.
+## Consider the alternative
 
-## A separate boundary for action
+A specialist-as-tool returns a contribution to its coordinator. A handoff transfers the active interaction to another role. Neither pattern should leave ownership implicit. Plain functions are adequate for many fixed routes and make a useful comparison before introducing a model-driven coordinator.
 
-A valid draft is still not an approval. `authorise_handoff` checks both the case identity and the review decision. It returns readiness, not an execution receipt. Nothing has been handed off by this code.
-
-The approval dictionary is a simplified teaching input. A real application must obtain it through an authenticated review process, bind it to the precise proposal version, verify the reviewer's authority and detect changes since approval. Matching `case_id` alone would allow an old approval to be reused for a changed draft. Module 12 develops that version problem.
-
-Likewise, checking that source fields exist does not prove their content. The two fake functions always return the same values. In a real system, source status, scope and meaning still need assessment.
-
-## Read the original orchestration
-
-The course's [orchestration notebook](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/2_openai/2_lab2.ipynb) compares code-controlled parallel drafting with specialist agents exposed through `as_tool` and a handoff. Its examples include sending email. In this guide, read those paths as code rather than assuming that the final send is necessary for learning the pattern.
-
-In [ResearchManager](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/2_openai/deep_research/research_manager.py), `run` plans searches, performs them, writes a report and then sends email. Its `perform_searches` uses `asyncio.gather(*tasks)`. The star expands the list of coroutines into separate arguments. Unlike our example, that call does not set `return_exceptions=True`. The difference matters when a search fails.
-
-`yield` in the manager's asynchronous generator produces progress updates as work proceeds. “Searches complete” is a status message about that stage. The report's claims still depend on the quality of search results, source selection and synthesis. [Planner](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/2_openai/deep_research/planner_agent.py) and [writer](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/2_openai/deep_research/writer_agent.py) definitions show which output structures the manager expects.
-
-## Alternatives worth comparing
-
-A sequential implementation is easier to debug and may suit services with tight rate limits. Parallel reads can reduce waiting when dependencies allow them. A durable job queue is more suitable when work must outlive the web request, recover after a process crash or wait for an approver.
-
-A model-selected manager can adapt its choice of specialists, but it makes the dependency path less fixed. If both evidence sources are mandatory on every case, ordinary Python can enforce that requirement directly. Use model judgement where the task needs interpretation, not to rediscover an invariant rule each time.
-
-**Try it:** Replace `policy_evidence` with an async function that raises `TimeoutError`. Predict the returned status and whether authorisation can proceed. Then explain why returning a model's reassurance would not supply the missing policy evidence.
-
-## Continue the module
-
-The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
-
-## Read the organisational connection
-
-Checking evidence and granting permission answer different questions. The research chapter explains [distinct acts in a workflow](../../reference/research/03-decisions.md#distinct-acts-in-one-workflow).
+The [organisation design reading](../../reference/research/02-coordination.md) develops the relevant argument and its scholarly references. The lab demonstrates an implementation pattern; the business and design lessons examine the conditions under which that contribution might be useful.

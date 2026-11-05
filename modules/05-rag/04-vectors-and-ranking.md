@@ -1,5 +1,7 @@
 # Lesson 5.4: Calculate similarity and inspect what ranking means
 
+[Download the matching notebook](/downloads/05-04-vectors-and-ranking.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next: build the retrieval pipeline](05-source-walkthrough.md)
 
 ## Why turn text into numbers?

@@ -1,53 +1,46 @@
-# Lesson 9.5: Read the digital twin from tool schema to notification
+# Lesson 9.5: Test repeated calls and independent stopping limits
 
-[Module route](README.md) · [Next: design the service promise](06-design-lab.md)
+[Download the matching notebook](/downloads/09-05-source-walkthrough.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
 
-## Find the final implementation
+[Module route](README.md) · [Previous workshop](02-code-workshop.md)
 
-In Ed Donner's [foundations lab 3](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/1_foundations/3_lab3.ipynb), the `chat` function evolves through the notebook. The final version handles successive tool requests. Notebook execution order matters: a later definition replaces an earlier binding, while a running process can retain imported modules. Read the function that the final interface actually calls.
+## Follow the path in the course checkout
 
-The [digital-twin lab](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/1_foundations/4_lab4.ipynb) adds supplied background, notifications and a web interface. This creates a chain from user conversation to a real external effect. The instruction to record interest is part of that source application's behaviour; reading it here does not authorise sending a notification.
+The implementation is included here, so this walkthrough does not require another course, video or repository. Open `src/ai_orgdesign/labs/m09.py`. The lab's public functions expose inputs and return values; supporting service code lives in `src/ai_orgdesign/business.py` where required.
 
-## Walk the tools module in order
+run receives a planner function instead of constructing a hidden model client. Each iteration supplies accumulated observations and expects either a final answer or a structured tool request. The application validates the decision, rejects repeated call identifiers, invokes the same scoped dispatcher used in Module 2 and records the observation. A positive integer budget bounds iterations. scripted_planner supplies deterministic decisions for reproducible tests; it is not called an LLM. The optional live adapter in ai_orgdesign.live uses the provider protocol while retaining the dispatcher and a separate tool-call limit.
 
-The inspected [tools file](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/1_foundations/twin/tools.py) loads configuration, defines `push`, defines record functions, declares schemas and builds `tool_map`. The schemas describe operations to the model. The mapping connects those names to Python callables.
+Read the function from entry to return. Locate input validation before substantive work, transformations that create a new representation, any call into another component and the point that produces the observable result. A model call, a database commit and constructing a dictionary are different operations. Identify which actually occur in this program.
 
-`handle_tool_calls` loops through requests. It reads each function name, parses argument JSON, finds the callable, invokes it with `**arguments`, then returns a tool message containing the same `tool_call_id`. That identifier preserves the link to the request. An unknown name returns an error string in this implementation.
+## Work through the contrasting case
 
-`record_user_details` calls `push` with supplied values and returns `OK`. The name sounds like durable record storage, but the visible effect is a notification request. `requests.post` does not itself prove that a notification was delivered, and the inspected helper does not check the returned status. A consumer should not interpret `OK` as evidence of a completed CRM update.
+Supply a planner that always asks for the same call. Then change the call identifier on every step. Which independent bound remains necessary?
 
-## Connect to the real model loop
-
-Use the complete exchange from [Lesson 2.5](../02-conversation/05-source-walkthrough.md) with an explicit schema for a permitted read-only order lookup. The provider proposes JSON arguments. The dispatcher validates the name, fields, types and scope. The tool result is serialized and returned with the matching identifier before the next model request.
+The following variation either checks a failure boundary or exposes another aspect of the same implementation. Catching an expected exception allows the notebook to continue; the `else` branch raises an assertion if the expected boundary fails to appear.
 
 ```python
-lookup_schema = {
-    "type": "function",
-    "function": {
-        "name": "lookup_order",
-        "description": "Read the quantities recorded for a permitted order",
-        "parameters": {
-            "type": "object",
-            "properties": {"order_id": {"type": "string"}},
-            "required": ["order_id"],
-            "additionalProperties": False,
-        },
-    },
-}
+from ai_orgdesign.labs.m09 import run
+request = {"kind":"tool", "id":"one", "name":"lookup_case", "arguments":{"case_id":"H-17"}}
+assert run(lambda observations: request)["stop"] == "repeated_call"
+print("Repeated call stopped")
 ```
 
-This is a Chat Completions tool description, matching the course's interface family. A Responses tool uses a different shape. The dictionary contains no executable lookup. Its description helps model selection; the application must still supply the corresponding dispatcher and enforce the scope.
+**Interpretation.** The repeated-identifier check catches the first planner. Unique identifiers evade that check, so the iteration budget remains essential. A live service also needs timeouts, token and cost limits, cancellation and recovery. Tool checks still apply on every execution; a model instruction to behave carefully is not a substitute.
 
-The optional real exchange requires a configured provider client and may incur charges. The schema above can be inspected without making requests. No original notification tool is called by the lesson.
+## Inspect the implementation rather than a duplicate
 
-## Improve one boundary at a time
+The matching notebook can display saved functions using `inspect.getsource`. This shows the implementation currently imported by Python. Reading code is useful, but a displayed function is not proof it executed or that every branch was tested. The behavioural checks deliberately include invalid inputs and contrasting outcomes.
 
-The course also illustrates `globals().get`, which looks for a name in the current global namespace. An explicit registry is easier to review because it lists only intentionally exposed operations. Schema validation can reject malformed input. A trusted policy service can determine record scope. A checked response can improve evidence about notification acceptance. These improvements solve different problems.
+Run the course checks from the root folder with `uv run --locked pytest`. Run the notebook checks with `uv run --locked python scripts/verify_notebooks.py`. The [verification guide](../../reference/verification.md) distinguishes offline execution, real protocol tests, model downloads and paid-provider checks. It records the limits of each claim.
 
-Adding all of them does not settle what the public-facing service should promise. If it says “I have recorded your enquiry”, the operating arrangement must define where the record exists, who receives it, how quickly they respond and how a failure becomes visible.
+## What a result can establish
 
-**Worked trace:** A visitor supplies an email, the tool is called, the notification service returns an error page and the helper returns `OK`. The runtime trace can establish that a call occurred. It cannot establish delivery or follow-up. A better result contract returns an explicit accepted/error status tied to a request ID, and the service promise identifies the receiving owner.
+The supplied planner first reads H-17 and then returns an investigation statement. With a budget of one, the tool can run but the loop stops at budget before a final answer. Repeated call identifiers stop the loop instead of executing indefinitely. Reaching a stop condition does not mean the business case is resolved.
 
-## Read the organisational connection
+Keep inputs, configuration identity, observed result and interpretation separate in an experiment record. If the program behaves as predicted but the business problem remains, investigate the surrounding evidence, roles and dependencies. A successful run should sharpen that inquiry rather than end it.
 
-An engineering agent can request actions without thereby acquiring legitimate authority or accountability. The research chapter explains [agency and responsibility](../../reference/research/06-technology-in-practice.md#agency-does-not-imply-responsibility).
+## Explain the pattern without the library name
+
+A useful completion check is to explain the operation in ordinary language, then name the exact implementation. A fixed workflow is often easier to verify when the route is known. An adaptive loop is justified when observations genuinely determine the next action. Framework runners can implement the loop, but the application still owns permissions, budgets and accepted completion.
+
+The [research connection](../../reference/research/03-decisions.md) develops the organisational questions. Follow the module's design lesson to turn this technical understanding into a decision with stated conditions and a recovery route.

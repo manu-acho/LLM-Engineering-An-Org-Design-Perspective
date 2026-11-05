@@ -1,5 +1,7 @@
 # Lesson 11.6: Divide work where specialisation earns its integration cost
 
+[Download the matching notebook](/downloads/11-06-design-lab.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next module](../12-stateful-agents/README.md)
 
 ## Test whether four contributors are needed

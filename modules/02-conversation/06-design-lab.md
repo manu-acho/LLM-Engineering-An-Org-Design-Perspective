@@ -1,5 +1,7 @@
 # Lesson 2.6: Allocate discretion across a conversational service
 
+[Download the matching notebook](/downloads/02-06-design-lab.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next module](../03-open-models/README.md)
 
 ## Put the decision on the table

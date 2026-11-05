@@ -1,5 +1,7 @@
 # Lesson 9.3: Design the work before delegating the next step
 
+[Download the matching notebook](/downloads/09-03-business-and-organisation.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
 ## The assistant starts acting like the front door

@@ -1,7 +1,9 @@
-# Agent engineering within the curriculum
+# Agent engineering within the learning route
 
-[Full curriculum](CURRICULUM.md)
+[Curriculum](CURRICULUM.md) · [Start Module 9](modules/09-agent-loops/README.md)
 
-Part II is planned as Modules 9 to 14. It will build on the foundations to teach bounded loops, accepted handoffs, specialist teams, durable state, framework choices and MCP capability interfaces. Part III then examines how those mechanisms enter business implementation and operations.
+Modules 9–14 develop bounded loops, accepted specialist contributions, dependencies, durable state, framework contracts and MCP. Modules 15–20 carry those mechanisms into requirements, operating evidence, capacity, context, deployment and improvement.
 
-The first available study unit is [Module 1](modules/01-standalone-foundations/README.md). The distinction it introduces between evidence, generated language and permitted action carries through the planned agent material. The later agent modules are still being developed and are not yet available for study.
+An agent is an application arrangement around observations, state and possible actions. The course makes that arrangement inspectable with original local implementations. Scripted planners provide repeatable tests; optional live generation is labelled separately. Framework execution, transport interoperability and organisational acceptance are different claims, each requiring suitable evidence.
+
+The [verification guide](reference/verification.md) states the limits of the local examples. The [research chapters](reference/literature-guide.md) develop the organisational reasoning and scholarly references.

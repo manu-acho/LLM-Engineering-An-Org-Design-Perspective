@@ -1,5 +1,7 @@
 # Lesson 4.6: Decide whether a measured improvement changes the organisation
 
+[Download the matching notebook](/downloads/04-06-design-lab.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next module](../05-rag/README.md)
 
 ## Put the entire case into the measurement

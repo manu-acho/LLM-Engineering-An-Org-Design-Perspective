@@ -1,28 +1,34 @@
 # Module 5: Organisational knowledge and retrieval
 
-[Curriculum index](../../README.md) · [Start here](../../START-HERE.md) · [Local lab guide](../../reference/local-labs.md)
+[Curriculum](../../CURRICULUM.md) · [Setup](../../STUDY-WORKSPACE.md) · [Glossary](../../reference/glossary.md)
 
-Follow knowledge from source through vectors and retrieval to an answer. Build the evidence path and the source-ownership arrangement together.
+A policy assistant needs the current permitted evidence, not simply a plausible paragraph. At Harbour an older policy, another region's policy and a current policy can share many words, making relevance alone an inadequate selection rule.
 
-## Complete reading route
+## Preparation and route
 
-The early lessons introduce the vocabulary and a small transparent example. Continue through the technical/source walkthrough and completed design case to connect the mechanism with its use in organisational work.
+Complete Module 4 first, or use its worked examples to check the prerequisite concepts. For numerical and systems terms, begin with the [technical foundations](../../reference/technical-foundations.md). Unfamiliar Python syntax is explained in the [programming reference](../../reference/python-patterns.md).
 
 1. [Lesson 5.1: How an assistant finds organisational knowledge](01-concepts.md)
-2. [Lesson 5.2: Search, filter and return the evidence](02-code-workshop.md)
+2. [Lesson 5.2: Retrieve current permitted evidence](02-code-workshop.md)
 3. [Lesson 5.3: A knowledge assistant is also a design of authority](03-business-and-organisation.md)
 4. [Lesson 5.4: Calculate similarity and inspect what ranking means](04-vectors-and-ranking.md)
-5. [Lesson 5.5: Build and trace a complete retrieval-and-answering path](05-source-walkthrough.md)
+5. [Lesson 5.5: Follow filtering, vectorisation and ranking](05-source-walkthrough.md)
 6. [Lesson 5.6: Build an organisational knowledge service](06-design-lab.md)
 
-## Choose how to study
+Read the concepts and business case before the code workshop. Managers can follow the design reasoning without executing Python. The implementation route follows every lesson and its notebook, predicts outputs and compares the failure cases. The organisational contribution remains the same across both routes.
 
-For business and organisation design, read the concept lesson, organisational discussion and completed design case. Inspect the mechanism and source walkthrough as well when evaluating an implementation claim. For technical study, follow the full route, predict intermediate values and try the failure cases. Unfamiliar syntax is introduced in [Start here](../../START-HERE.md) and [Python patterns](../../reference/python-patterns.md).
+## Included code and learning boundary
 
-A source-reading walkthrough explains inspected original code. An independent lab is identified separately. External integrations have additional environment and access requirements; a readable example is not a claim that an untested account, model or deployment will work.
+The original implementation is `src/ai_orgdesign/labs/m05.py`. The notebooks import that code so the explanations and checked behaviour share one implementation. The core route runs locally without paid services. Optional integrations are explicitly gated and described in the [verification guide](../../reference/verification.md).
 
-## Connect the evidence
+Searching delivery evidence in north returns the active P-2 policy. It excludes the retired P-1 and the south P-3 before fitting or ranking. A query whose words do not occur in the permitted vocabulary returns no hits. Returning no evidence is different from answering that no policy exists.
 
-Use the [literature guide](../../reference/literature-guide.md) for the organisational concepts and the [workbook](../../WORKBOOK.md) for cumulative outputs. The [source map](../../SOURCE-MAP.md) records course versions and coverage limits.
+## Completion exercise
 
-The [compact engineering reference](../05-knowledge-and-rag.md) supplies a supplementary source overview.
+Ask whether filtering after a global top-two search can lose the best permitted result. Then remove all permitted documents and decide what the service should show.
+
+A satisfactory response explains the mechanism, interprets the observed output, identifies the relevant authority and source ownership, compares an alternative and states what additional evidence would support a business claim. The worked answers are included in the workshop and design lessons. Continue with [organisation design research](../../reference/research/02-coordination.md) for the supporting theory and scholarly references.
+
+## Another explanation
+
+[Sentence Transformers retrieval and reranking](https://www.sbert.net/examples/sentence_transformer/applications/retrieve_rerank/README.html) provides a primary technical account alongside the included implementation. Use the [further learning guide](../../reference/further-learning.md) to choose additional explanations. External examples may use another task or version; completing them is not required to follow this module.

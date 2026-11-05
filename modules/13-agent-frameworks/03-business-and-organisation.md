@@ -1,5 +1,7 @@
 # Lesson 13.3: A common interface does not create a common organisation
 
+[Download the matching notebook](/downloads/13-03-business-and-organisation.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Previous lesson](02-code-workshop.md) · [Module route](README.md) · [Framework tour](04-framework-tour.md)
 
 ## Several teams connect their assistants

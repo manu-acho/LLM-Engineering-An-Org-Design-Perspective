@@ -6,22 +6,23 @@ import { buildReader, distRoot, projectRoot } from './build.mjs';
 const build = await buildReader();
 const payload = JSON.parse(await fs.readFile(path.join(distRoot, 'content-index.json'), 'utf8'));
 const documents = new Map(payload.documents.map(doc => [doc.path, doc]));
-assert.equal(payload.edition, 'standalone-pilot');
+assert.equal(payload.edition, 'course');
 assert.equal(payload.curriculum.length, 20);
 assert.equal(new Set(payload.curriculum.map(module => module.number)).size, 20);
-assert.equal(payload.curriculum.filter(module => module.status === 'pilot').length, 1);
-assert.equal(payload.curriculum.filter(module => module.status === 'planned').length, 19);
-assert.equal(build.lessons, 7);
+assert.equal(payload.curriculum.filter(module => module.status === 'available').length, 20);
+assert.equal(payload.curriculum.filter(module => module.status === 'planned').length, 0);
+const expectedLessons = payload.curriculum.reduce((n, module) => n + module.lessons, 0);
+assert.equal(build.lessons, expectedLessons);
 assert.equal(payload.documents.filter(doc => doc.path.startsWith('reference/research/')).length, 6);
 
 const study = JSON.parse(await fs.readFile(path.join(projectRoot, 'study-manifest.json'), 'utf8'));
-const downloadNames = ['foundations_lab.py', 'test_foundations.py', ...study.lessons.map(item => path.basename(item.notebook))];
+const downloadNames = ['study-workspace.zip', 'foundations_lab.py', 'test_foundations.py', ...study.lessons.map(item => path.basename(item.notebook))];
 assert.equal(new Set(downloadNames).size, downloadNames.length);
 let links = 0;
 for (const document of payload.documents) {
   assert(!document.content.includes('org-design-as-code'), `Original research link in ${document.path}`);
   if (document.path.startsWith('modules/')) {
-    assert(document.path.startsWith('modules/01-standalone-foundations/'), 'Companion lesson published');
+    assert(payload.curriculum.some(module => document.path.startsWith(path.posix.dirname(module.path) + '/')), 'Unlisted module published');
   }
   const prose = document.content.replace(/```[\s\S]*?```|`[^`]+`/g, '');
   for (const match of prose.matchAll(/\[[^\]]+\]\(([^)]+)\)/g)) {
@@ -50,4 +51,4 @@ for (const lesson of study.lessons) {
   const published = await fs.readFile(path.join(distRoot, 'downloads', path.basename(lesson.notebook)));
   assert(source.equals(published), `Changed notebook download: ${lesson.notebook}`);
 }
-console.log({ ...build, internalLinksChecked: links, curriculumModules: 20, completeStandaloneModules: 1, downloadFiles: downloadNames.length });
+console.log({ ...build, internalLinksChecked: links, curriculumModules: 20, availableModules: 20, downloadFiles: downloadNames.length });

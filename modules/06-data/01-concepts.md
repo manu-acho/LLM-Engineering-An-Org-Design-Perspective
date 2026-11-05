@@ -1,5 +1,7 @@
 # Lesson 6.1: How examples become a prediction system
 
+[Download the matching notebook](/downloads/06-01-concepts.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
 ## The task must be defined before the model
@@ -12,7 +14,7 @@ A dataset can contain a clear column called `assigned_team` while leaving that q
 
 An **example** is one case used for learning or evaluation. Its **input features** are the information available for prediction. Its **target**, often called a label, is what the model is supposed to predict.
 
-For routing, the request description is an input and the desired team is a categorical target. This is **classification**, selecting a category. The original course's price estimation is **regression**, predicting a numerical quantity. The difference matters: a price error of £10 and a request assigned to the wrong team require different ways of measuring error.
+For routing, the request description is an input and the desired team is a categorical target. This is **classification**, selecting a category. Predicting an estimated price is **regression**, predicting a numerical quantity. The difference matters: a price error of £10 and a request assigned to the wrong team require different ways of measuring error.
 
 Features must be available at the moment of use. A “final resolution note” may predict the right team very well precisely because it was written after the work was completed. Supplying it during evaluation of initial routing would test a task the operational system cannot perform.
 
@@ -51,8 +53,6 @@ An **epoch** is a pass through the training examples. A **batch** is a group pro
 If the system lacks current policy, retrieval or a database tool may help more than training. If format is inconsistent, improve the output contract. If the category definitions are disputed, clarify them and collect labels before fitting a model. Fine-tuning is one intervention among these.
 
 **Check:** Explain why a model can predict historical team assignments accurately and still route tomorrow's requests badly. Include ambiguity in labels, unavailable features, changing work and the difference between imitation and an appropriate operating rule.
-
-[Engineering reference](../06-data-baselines-and-adaptation.md) connects these ideas to the original curation, batch-processing, regression and neural-network code.
 
 ## Continue the module
 

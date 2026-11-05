@@ -4,6 +4,10 @@
 
 The course combines complete written lessons with runnable Jupyter notebooks. A notebook is a document with explanatory text and code cells. A cell can be run on its own, making it possible to inspect an intermediate result before continuing. The written lessons remain the full teaching route; notebooks add practice rather than replace the explanations.
 
+## Get the complete workspace
+
+If the course folder is already present, use it directly. Otherwise download the [complete study workspace](/downloads/study-workspace.zip), extract it into a folder and run the setup command below. The ZIP contains the notes, notebooks, source code, fictional data, tests and dependency lock. It excludes credentials, virtual environments, private authoring notes and model weights. A downloaded notebook alone still needs these shared files.
+
 ## Open the prepared workspace in VS Code
 
 1. Open the course folder, not an individual notebook from another folder.
@@ -22,7 +26,7 @@ The environment is already prepared on the development machine. A fresh checkout
 python3 scripts/setup.py
 ```
 
-The script runs `uv sync --locked`, creates `.venv`, installs the versions recorded in `uv.lock`, creates a local `.env` if absent, and registers the notebook kernel inside the environment. It preserves an existing `.env`. The first setup needs an internet connection for packages. The pilot then runs without network access.
+The script runs `uv sync --locked`, creates `.venv`, installs the versions recorded in `uv.lock`, creates a local `.env` if absent, registers the notebook kernel inside the environment, adds any missing blank settings and generates a local service token without displaying it. It preserves an existing `.env`. The first setup needs an internet connection for packages. The pilot then runs without network access.
 
 A **virtual environment** is a local directory holding a project's Python interpreter and packages. It keeps course dependencies separate from other projects. `pyproject.toml` declares dependencies; `uv.lock` records their resolved versions. After receiving a course update, run the same setup command to bring the environment into line with that version. Do not copy `.venv` between computers: recreate it from these files.
 
@@ -40,7 +44,7 @@ Keep that Terminal window open while studying. Jupyter prints a local URL and no
 
 ## Match a lesson to a notebook
 
-Each of the seven pilot lessons has a notebook with the same number and filename. The lesson pages offer notebook downloads. A downloaded notebook still needs the course checkout and its shared Python files; it is not an isolated program. In VS Code, open the notebook already present in the checkout to keep the directory structure intact.
+Each of the course lessons has a notebook with the same number and filename. The lesson pages offer notebook downloads. A downloaded notebook still needs the course checkout and its shared Python files; it is not an isolated program. In VS Code, open the notebook already present in the checkout to keep the directory structure intact.
 
 The notebooks import `examples/01-foundations/foundations_lab.py`. Opening that file reveals the complete implementation. Editing it changes the shared code for all notebooks; restart the kernel after such an edit so Python imports the new version. Use copies of case data for experiments so one exercise does not silently alter another.
 
@@ -48,7 +52,7 @@ The notebooks import `examples/01-foundations/foundations_lab.py`. Opening that 
 
 The pilot needs no keys or provider accounts. `.env.example` lists optional key names; `.env` is a local, gitignored configuration file. Add a real key only when an implemented lesson specifies that provider. Never paste keys into notebook cells, saved outputs, screenshots or Git. The shared configuration helper loads this project's `.env` and preserves values already set in the terminal.
 
-No provider is called merely by loading the configuration. Future service lessons must identify required accounts, possible charges and which cell makes a request. Their packages will be added to the locked environment when the lessons are built. The current environment does not pretend to include every SDK or model that a future module may use.
+No provider is called merely by loading the configuration. The disabled service cells identify required configuration, possible charges and the exact request boundary. See the [verification guide](reference/verification.md) for the difference between offline checks and live calls. The locked environment includes the packages used by the implemented local routes. Optional pretrained weights are fetched separately only when enabled.
 
 ## Check readiness
 

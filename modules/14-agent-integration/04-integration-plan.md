@@ -1,5 +1,7 @@
 # Lesson 14.4: Build an AI integration plan around the work
 
+[Download the matching notebook](/downloads/14-04-integration-plan.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Business application](03-business-and-organisation.md) · [Part II route](../../AGENT-ENGINEERING.md)
 
 ## Begin with a service problem

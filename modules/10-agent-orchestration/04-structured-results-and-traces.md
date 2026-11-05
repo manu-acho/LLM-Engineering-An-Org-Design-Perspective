@@ -1,5 +1,7 @@
 # Lesson 10.4: Structure the contribution and read the execution trace
 
+[Download the matching notebook](/downloads/10-04-structured-results-and-traces.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next: run a small SDK application](05-source-walkthrough.md)
 
 ## A paragraph is difficult to combine reliably
@@ -38,8 +40,6 @@ If a branch fails, decide whether the whole group stops, remaining work continue
 For independent reads, an all-required policy can collect results and withhold the draft if any required source fails. For optional enrichment, a partial result may be appropriate. Name that distinction in the task contract before implementing `gather`.
 
 **Worked check:** A trace shows that both specialists returned results, and the final Pydantic object validates. Is the recommendation verified? No. Inspect returned evidence, support and decision conditions. The trace establishes an execution path; the schema establishes representation. Neither alone establishes the truth of the business conclusion.
-
-**Source connection:** The course [structured-output and guardrail lab](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/2_openai/3_lab3.ipynb) supplies concrete implementations for comparison.
 
 ## Read the organisational connection
 

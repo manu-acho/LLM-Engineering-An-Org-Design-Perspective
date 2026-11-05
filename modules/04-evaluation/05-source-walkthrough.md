@@ -1,60 +1,45 @@
-# Lesson 4.5: Inspect a generated program from prompt to timing result
+# Lesson 4.5: Trace error categories and the chosen loss rule
 
-[Module route](README.md) · [Next: decide what the measured gain means](06-design-lab.md)
+[Download the matching notebook](/downloads/04-05-source-walkthrough.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
 
-## Read the course as a sequence of artefacts
+[Module route](README.md) · [Previous workshop](02-code-workshop.md)
 
-In [day 3](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week4/day3.ipynb), find the Python source string, system-information helper, model prompt, returned C++, written file, compiler invocation and executable run. A failure can occur at each boundary. A successful later stage cannot retrospectively establish that an earlier semantic choice was correct.
+## Follow the path in the course checkout
 
-The source program becomes part of a prompt. The model returns text. Removing Markdown fences prepares that text for a source file, but does not parse the language or check the business rule. The compiler checks requirements of the target language. Tests must then examine behaviour.
+The implementation is included here, so this walkthrough does not require another course, video or repository. Open `src/ai_orgdesign/labs/m04.py`. The lab's public functions expose inputs and return values; supporting service code lives in `src/ai_orgdesign/business.py` where required.
 
-The notebook times execution separately from some preparation work. In [day 5](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week4/day5.ipynb), a harder maximum-subarray task also introduces the possibility of algorithmic improvement. A speedup can combine language, algorithm, compilation and measurement effects. Separate them before explaining the result.
+score accepts equally sized, nonempty lists of reference labels and predictions. zip pairs each reference with the prediction for the same position. Boolean comparisons count correct outcomes, unsafe clearances and unnecessary reviews. The illustrative loss multiplies unsafe clearances by a chosen cost and adds unnecessary reviews. This is an explicit preference model, not a discovered financial valuation. demo compares an always-clear rule with a more conservative rule against the same four fictional reference cases.
 
-## Work the algorithm before trusting its translation
+Read the function from entry to return. Locate input validation before substantive work, transformations that create a new representation, any call into another component and the point that produces the observable result. A model call, a database commit and constructing a dictionary are different operations. Identify which actually occur in this program.
 
-For the sequence `[3, -5, 4, 2, -1]`, the best non-empty contiguous section is `[4, 2]`, summing to 6. A simple reference tries every starting point and extends it through every ending point. A linear method retains the best section ending at each position.
+## Work through the contrasting case
+
+Construct two predictions with equal accuracy but different unsafe-clearance counts. Then ask whether the chosen twenty-to-one penalty reflects an agreed business preference or only an author assumption.
+
+The following variation either checks a failure boundary or exposes another aspect of the same implementation. Catching an expected exception allows the notebook to continue; the `else` branch raises an assertion if the expected boundary fails to appear.
 
 ```python
-def reference(values):
-    if not values:
-        raise ValueError("A non-empty sequence is required")
-    best = values[0]
-    for start in range(len(values)):
-        subtotal = 0
-        for end in range(start, len(values)):
-            subtotal += values[end]
-            best = max(best, subtotal)
-    return best
-
-def candidate(values):
-    if not values:
-        raise ValueError("A non-empty sequence is required")
-    ending = best = values[0]
-    for value in values[1:]:
-        ending = max(value, ending + value)
-        best = max(best, ending)
-    return best
-
-for case in [[3, -5, 4, 2, -1], [-4, -2], [0], [2, 2]]:
-    assert reference(case) == candidate(case)
-assert candidate([3, -5, 4, 2, -1]) == 6
-assert candidate([-4, -2]) == -2
+from ai_orgdesign.labs.m04 import score
+for penalty in [1, 5, 20]:
+    print(penalty, score(["review", "clear"], ["clear", "clear"], penalty))
 ```
 
-At each position, `ending` either starts a new section or extends the previous one. Initialising with the first value preserves the non-empty rule. Initialising with zero instead would return zero for all-negative input, changing the problem to one allowing an empty section. That small implementation choice is a semantic decision.
+**Interpretation.** Against [review, clear], predicting [clear, clear] and [review, review] both gives one correct result out of two. The first produces an unsafe clearance; the second produces an unnecessary review. Under the illustrative penalty the losses are twenty and one. The penalty should be agreed and sensitivity-tested rather than presented as an empirical cost.
 
-The nested reference performs many more additions as length grows. The linear method carries two running values. Compare these in the same language first. Then compare equivalent implementations across languages. This makes the contribution of each change interpretable.
+## Inspect the implementation rather than a duplicate
 
-## Build the experiment record
+The matching notebook can display saved functions using `inspect.getsource`. This shows the implementation currently imported by Python. Reading code is useful, but a displayed function is not proof it executed or that every branch was tested. The behavioural checks deliberately include invalid inputs and contrasting outcomes.
 
-Retain test inputs, expected outputs, generated source, compiler command and version, run configuration, timings, failures and any manual edits. Use separate working directories for concurrent runs. A shared `main.cpp` can allow one user's source to overwrite another's.
+Run the course checks from the root folder with `uv run --locked pytest`. Run the notebook checks with `uv run --locked python scripts/verify_notebooks.py`. The [verification guide](../../reference/verification.md) distinguishes offline execution, real protocol tests, model downloads and paid-provider checks. It records the limits of each claim.
 
-Measure at least two questions: how long does the accepted program run, and how much end-to-end effort does producing and maintaining it require? The latter includes generation, compilation, inspection, repairs and future changes. Repeated timing samples should use a declared aggregation rule, such as median and range, rather than selecting the fastest run.
+## What a result can establish
 
-The original [day 4](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week4/day4.ipynb) also runs Python text using `exec` and captures output through `StringIO`. That is useful to read, but ordinary Python execution is not isolation for untrusted generated code. This lesson executes only its own deterministic Python algorithms; it does not execute model-generated programs.
+The always-clear rule has accuracy one half, two unsafe clearances and illustrative loss forty. The conservative rule has accuracy three quarters, no unsafe clearances and loss one. These are exact calculations on invented cases. A larger evaluation and observations of actual work would be needed for a deployment decision.
 
-**Worked diagnosis:** A C++ result differs only for large values. Inspect integer widths and overflow before concluding that sampling made the model unreliable. A source program using arbitrary-precision integers and a translation using fixed-width integers can implement different numerical semantics while looking algorithmically similar.
+Keep inputs, configuration identity, observed result and interpretation separate in an experiment record. If the program behaves as predicted but the business problem remains, investigate the surrounding evidence, roles and dependencies. A successful run should sharpen that inquiry rather than end it.
 
-## Read the organisational connection
+## Explain the pattern without the library name
 
-Timing a generated program answers a narrower question than whether the business process improved. The research chapter explains [the evidence path](../../reference/research/06-technology-in-practice.md#an-evidence-path-without-skipped-steps).
+A useful completion check is to explain the operation in ordinary language, then name the exact implementation. A confusion matrix exposes the types of error; a single accuracy number conceals them. A randomised or carefully matched service comparison can examine outcomes more credibly than a before-and-after anecdote. Where harmful decisions are rare, deliberately constructed challenge cases complement, rather than replace, representative cases.
+
+The [research connection](../../reference/research/04-implementation.md) develops the organisational questions. Follow the module's design lesson to turn this technical understanding into a decision with stated conditions and a recovery route.

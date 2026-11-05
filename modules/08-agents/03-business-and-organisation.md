@@ -1,5 +1,7 @@
 # Lesson 8.3: Designing an operating organisation around the workflow
 
+[Download the matching notebook](/downloads/08-03-business-and-organisation.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Previous lesson](02-code-workshop.md) · [Module route](README.md) · [Curriculum index](../../README.md)
 
 ## The capstone decision

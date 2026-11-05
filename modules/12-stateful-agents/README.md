@@ -1,26 +1,34 @@
-# Module 12: State, memory and human review
+# Module 12: Durable state and human review
 
-[Curriculum index](../../README.md) · [Start here](../../START-HERE.md) · [Local lab guide](../../reference/local-labs.md)
+[Curriculum](../../CURRICULUM.md) · [Setup](../../STUDY-WORKSPACE.md) · [Glossary](../../reference/glossary.md)
 
-Build understanding of reducers, durable state, interrupts and replay. Follow a persistent graph and design review as an operating service.
+A review that waits overnight cannot rely on a notebook variable. Durable state preserves the pending work across sessions, but it must not preserve expired authority or repeat an already committed decision.
 
-## Complete reading route
+## Preparation and route
 
-The early lessons introduce the vocabulary and a small transparent example. Continue through the technical/source walkthrough and completed design case to connect the mechanism with its use in organisational work.
+Complete Module 11 first, or use its worked examples to check the prerequisite concepts. For numerical and systems terms, begin with the [technical foundations](../../reference/technical-foundations.md). Unfamiliar Python syntax is explained in the [programming reference](../../reference/python-patterns.md).
 
 1. [Lesson 12.1: State lets a workflow pause, recover and continue](01-concepts.md)
-2. [Lesson 12.2: Resume a case without reusing a stale approval](02-code-workshop.md)
+2. [Lesson 12.2: Reopen durable work and resume review](02-code-workshop.md)
 3. [Lesson 12.3: A pause creates work for somebody](03-business-and-organisation.md)
 4. [Lesson 12.4: Decide how state changes and what replay repeats](04-reducers-replay-and-memory.md)
-5. [Lesson 12.5: Build a graph that pauses and reopens its saved state](05-source-walkthrough.md)
+5. [Lesson 12.5: Trace current versions through a delayed decision](05-source-walkthrough.md)
 6. [Lesson 12.6: Design review as a service with capacity and discretion](06-design-lab.md)
 
-## Choose how to study
+Read the concepts and business case before the code workshop. Managers can follow the design reasoning without executing Python. The implementation route follows every lesson and its notebook, predicts outputs and compares the failure cases. The organisational contribution remains the same across both routes.
 
-For business and organisation design, read the concept lesson, organisational discussion and completed design case. Inspect the mechanism and source walkthrough as well when evaluating an implementation claim. For technical study, follow the full route, predict intermediate values and try the failure cases. Unfamiliar syntax is introduced in [Start here](../../START-HERE.md) and [Python patterns](../../reference/python-patterns.md).
+## Included code and learning boundary
 
-A source-reading walkthrough explains inspected original code. An independent lab is identified separately. External integrations have additional environment and access requirements; a readable example is not a claim that an untested account, model or deployment will work.
+The original implementation is `src/ai_orgdesign/labs/m12.py`. The notebooks import that code so the explanations and checked behaviour share one implementation. The core route runs locally without paid services. Optional integrations are explicitly gated and described in the [verification guide](../../reference/verification.md).
 
-## Connect the evidence
+Before the reopen, H-17 is in review at version one. The resumed return decision becomes version two with status returned. A later command based on version one is stale. Replaying the exact committed command with its original key retrieves its original result.
 
-Use the [literature guide](../../reference/literature-guide.md) for the organisational concepts and the [workbook](../../WORKBOOK.md) for cumulative outputs. The [source map](../../SOURCE-MAP.md) records course versions and coverage limits.
+## Completion exercise
+
+Distinguish a snapshot used to display a review screen from authority to commit a decision. What should happen after a policy change while the screen remains open?
+
+A satisfactory response explains the mechanism, interprets the observed output, identifies the relevant authority and source ownership, compares an alternative and states what additional evidence would support a business claim. The worked answers are included in the workshop and design lessons. Continue with [organisation design research](../../reference/research/05-routines.md) for the supporting theory and scholarly references.
+
+## Another explanation
+
+[SQLite transaction boundaries](https://www.sqlite.org/lang_transaction.html) provides a primary technical account alongside the included implementation. Use the [further learning guide](../../reference/further-learning.md) to choose additional explanations. External examples may use another task or version; completing them is not required to follow this module.

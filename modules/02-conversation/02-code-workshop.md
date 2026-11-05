@@ -1,102 +1,47 @@
-# Lesson 2.2: A conversation, a dispatcher and a visible result
+# Lesson 2.2: Follow a conversation through a validated tool
 
-[Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
+[Download the matching notebook](/downloads/02-02-code-workshop.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
 
-## Start with two messages
+[Module route](README.md) · [Workspace setup](../../STUDY-WORKSPACE.md) · [Technical foundations](../../reference/technical-foundations.md)
 
-This example uses synthetic data and no model service. We will imitate a tool request so every step remains visible. In a connected application, a model could propose the same request, but the execution boundary remains the application's responsibility.
+## The problem this program addresses
 
-```python
-history = [
-    {"role": "user", "content": "Check order O-17"},
-    {"role": "assistant", "content": "I will retrieve the order record."},
-]
-current_message = {"role": "user", "content": "What quantities are recorded?"}
-messages = history + [current_message]
-```
+A conversation can appear coherent while the application has lost the selected case or confused two users. Harbour therefore keeps the selected case as explicit state and treats each tool request as a proposal that still needs validation.
 
-The last line creates a new list containing the earlier turns and the current one. It does not update `history` in place. The application needs to decide when a successful exchange becomes part of saved history. Adding it repeatedly can duplicate turns.
+The implementation lives in `src/ai_orgdesign/labs/m02.py`. All examples use fictional data. The default exercise needs no provider account or API key. Installing the locked dependencies initially requires network access; running the core exercise does not send a model-provider request.
 
-The content of the assistant's second record is a statement of intended work. It is not evidence that the lookup occurred. The next example actually performs a lookup against a local dictionary.
+## Read the operation before running it
 
-## Define a small tool
+The conversation function creates a fresh history list for each call. A scripted call carries an identifier, a capability name and an arguments dictionary. dispatch permits only lookup_case with exactly one case_id field, then lookup checks the tenant before returning a copy of the record. Serialising that result makes the tool observation inspectable without changing the authoritative record. stream_words yields one word at a time; it demonstrates incremental delivery without pretending that a model produced the words.
 
-```python
-orders = {"O-17": {"ordered": 12, "reported_received": 10}}
+`import` makes the saved implementation available in the notebook. Calling a function supplies its inputs and receives its return value. `assert` checks an expected property and raises an error if that property is false. An assertion is evidence about that specific property, not a certificate that the application is correct in every situation.
 
-def lookup_order(order_id):
-    record = orders.get(order_id)
-    if record is None:
-        return {"status": "not_found", "order_id": order_id}
-    return {"status": "found", "order_id": order_id, "record": record}
+## Predict, run and inspect
 
-def dispatch(tool_name, arguments, permitted_order_ids):
-    tools = {"lookup_order": lookup_order}
-    if tool_name not in tools:
-        raise ValueError("Unknown tool")
-    if set(arguments) != {"order_id"}:
-        raise ValueError("Expected only order_id")
-    order_id = arguments["order_id"]
-    if not isinstance(order_id, str):
-        raise ValueError("order_id must be text")
-    if order_id not in permitted_order_ids:
-        raise PermissionError("Order is outside the permitted scope")
-    return tools[tool_name](order_id)
-
-request = {"name": "lookup_order", "arguments": {"order_id": "O-17"}}
-result = dispatch(request["name"], request["arguments"], {"O-17"})
-```
-
-`orders.get(order_id)` attempts a dictionary lookup but returns `None` for a missing key. `None` is Python's value for an absent result in this example. We return an explicit status, so missing data does not become a plausible empty order.
-
-`tools` maps an allowed name to a function. This is a **dispatch table**. A name received from outside the application can select only entries that were deliberately placed there. The program does not evaluate arbitrary text as Python code.
-
-The first `if` checks whether the requested tool exists. The next compares argument keys with the expected set. A **set** stores unique values; here it lets us reject extra or missing fields. `isinstance` checks the type of the supplied value. Finally, the permission check asks whether the order ID belongs to the provided scope.
-
-In this small example, the caller supplies that scope. In a real service, trusted identity and policy must determine it. It should not be accepted from the model or an untrusted user field.
-
-Only after these checks does `tools[tool_name](order_id)` run the selected function. Reading the nested expression from left to right helps: retrieve the function, then call it with the ID.
-
-## Inspect the result
-
-The expected `result` contains `status: found`, the requested ID and the two quantities. This is an execution result from the local function. A service-backed version would additionally need to handle network and remote-system errors. The model may then turn the record into a sentence, but that sentence is a later transformation.
-
-If the user may access no orders, pass an empty set. The program raises `PermissionError` before reading the record. This demonstrates an authority boundary that exists independently of how politely or confidently the request was phrased.
-
-## A generator makes incremental output understandable
+Run this block in the matching notebook, with the project `.venv` kernel selected. The asynchronous examples use the notebook's supported top-level `await`; ordinary scripts need an event-loop entry point such as `asyncio.run` instead.
 
 ```python
-def render_in_parts(parts):
-    current = ""
-    for part in parts:
-        current = current + part
-        yield current
-
-updates = list(render_in_parts(["Order O-17: ", "12 ordered; ", "10 reported received."]))
+from ai_orgdesign.labs.m02 import conversation, stream_words
+result = conversation()
+assert result["state"]["selected_case"] == "H-17"
+assert "".join(stream_words("Evidence awaits review")).strip() == "Evidence awaits review"
+print(result)
 ```
 
-Calling the generator does not immediately produce one final string. Iterating asks it for values. It returns three successive prefixes. `list(...)` collects those values for inspection. A UI expecting the whole answer so far can replace its display with each prefix. A UI expecting only new text must instead receive individual pieces.
+The selected case is H-17, its ordered quantity is twelve and its reported quantity is ten. The tool observation has call_id equal to call-1. Joining the stream pieces reconstructs Evidence awaits review, with a trailing space. Nothing approves a remedy.
 
-This generator is synchronous: it performs one step at a time. It does not create a background worker merely because `yield` appears.
+If an import fails, run `python3 scripts/setup.py` from the course folder and select the project kernel again. If a shared-code edit appears ignored, restart the kernel so Python loads the new file. Read an exception before changing the code: it may report a deliberate boundary such as forbidden scope or stale state.
 
-## Connect to the original notebooks
+## Change one condition
 
-In [week2/day4.ipynb](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week2/day4.ipynb), `get_ticket_price` uses SQLite rather than our dictionary. A connection opens the database; a cursor executes a query; `fetchone` retrieves a matching row. The `?` placeholder keeps the city value separate from SQL syntax. The model schema names the input `destination_city`, and the dispatcher translates it to the Python function's argument.
+**Exercise.** Request H-18 while keeping the north scope. Predict whether the record will be returned and whether changing a name inside a model message should alter that decision.
 
-The notebook loops through model tool requests, returns matching tool results and asks the model to continue. Its UI registers `chat` as a callback. Look for the same separation we used: prepare conversation, request or imitate a tool call, validate/dispatch, collect evidence, present a result.
+Before opening the answer, identify which function owns the relevant check and whether the change should affect data, control flow, authority or evaluation. Keeping these categories distinct helps locate a failure without blaming every unexpected result on a model.
 
-## Alternatives and an exercise
+**Worked answer.** lookup raises PermissionError because H-18 belongs to south. Identity and scope enter through the application, not the request text. A real authentication system would supply that trusted scope; this local function parameter is a teaching boundary, not authentication.
 
-For a form with a mandatory order ID, the application could call `lookup_order` directly, without asking a model to choose the tool. Use model selection when it helps interpret varied requests, not because every lookup needs generation.
+## Consider the alternative
 
-Add a second tool, `draft_handoff`, which returns a proposed message without sending it. Define permitted arguments and a clear status. Then predict what happens for an unknown tool, an extra argument and an unpermitted order.
+A form with a required case identifier may be more dependable than extracting it from chat. A provider adapter can propose the same tool call, but should not bypass dispatch. Streaming can improve perceived responsiveness while adding partial-output and cancellation problems.
 
-**Worked explanation:** Each invalid request should fail before the business operation. The draft tool should return a draft receipt, not `sent`. The distinction prevents a user or later program from treating prepared text as an acknowledged external action.
-
-## Continue the module
-
-The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
-
-## Read the organisational connection
-
-Dispatching a permitted operation differs from selecting or authorising a business response. The research chapter explains [distinct acts in a workflow](../../reference/research/03-decisions.md#distinct-acts-in-one-workflow).
+The [organisation design reading](../../reference/research/03-decisions.md) develops the relevant argument and its scholarly references. The lab demonstrates an implementation pattern; the business and design lessons examine the conditions under which that contribution might be useful.

@@ -1,5 +1,7 @@
 # Lesson 3.6: Design the meeting record and its correction process
 
+[Download the matching notebook](/downloads/03-06-design-lab.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next module](../04-evaluation/README.md)
 
 ## Begin with the work the record must support

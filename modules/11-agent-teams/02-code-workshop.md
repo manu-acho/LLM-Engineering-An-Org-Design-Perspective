@@ -1,98 +1,45 @@
-# Lesson 11.2: Make task dependencies inspectable
+# Lesson 11.2: Schedule tasks through their dependencies
 
-[Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
+[Download the matching notebook](/downloads/11-02-code-workshop.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
 
-## A tiny configuration-driven workflow
+[Module route](README.md) · [Workspace setup](../../STUDY-WORKSPACE.md) · [Technical foundations](../../reference/technical-foundations.md)
 
-We will represent a staged investigation using dictionaries and functions. This is not a reimplementation of CrewAI. It isolates the idea that a task receives named predecessor results and must return an inspectable output. No model, database or external tool is used.
+## The problem this program addresses
+
+Adding specialists can improve local expertise while increasing integration work. The first design question is what depends on what, not how many named agents can be created.
+
+The implementation lives in `src/ai_orgdesign/labs/m11.py`. All examples use fictional data. The default exercise needs no provider account or API key. Installing the locked dependencies initially requires network access; running the core exercise does not send a model-provider request.
+
+## Read the operation before running it
+
+order_tasks receives a mapping from task names to prerequisite names. It first rejects unknown prerequisites. At each pass it finds tasks whose prerequisites are already done, sorts them to make the displayed order reproducible, and removes them from the remaining graph. If no task is ready while tasks remain, the graph has a cycle. This topological ordering exposes feasible precedence; it does not assign people, schedule elapsed time or create autonomous agents.
+
+`import` makes the saved implementation available in the notebook. Calling a function supplies its inputs and receives its return value. `assert` checks an expected property and raises an error if that property is false. An assertion is evidence about that specific property, not a certificate that the application is correct in every situation.
+
+## Predict, run and inspect
+
+Run this block in the matching notebook, with the project `.venv` kernel selected. The asynchronous examples use the notebook's supported top-level `await`; ordinary scripts need an event-loop entry point such as `asyncio.run` instead.
 
 ```python
-def collect(context):
-    return {"source_ids": ["order-17"], "reported_difference": 2}
-
-def assess(context):
-    evidence = context["collect"]
-    return {
-        "source_ids": evidence["source_ids"],
-        "finding": "Customer and shipment accounts require reconciliation"
-    }
-
-def draft(context):
-    finding = context["assess"]
-    return {"source_ids": finding["source_ids"], "text": finding["finding"]}
-
-TASKS = [
-    {"id": "collect", "needs": [], "run": collect},
-    {"id": "assess", "needs": ["collect"], "run": assess},
-    {"id": "draft", "needs": ["assess"], "run": draft},
-]
-
-def run_tasks(tasks):
-    results = {}
-    for task in tasks:
-        task_id = task["id"]
-        if task_id in results:
-            raise ValueError("Duplicate task ID")
-        missing = [name for name in task["needs"] if name not in results]
-        if missing:
-            raise ValueError(f"Unfinished dependencies: {missing}")
-        context = {name: results[name] for name in task["needs"]}
-        output = task["run"](context)
-        if not isinstance(output, dict) or not output.get("source_ids"):
-            raise ValueError("Task result lacks source references")
-        results[task_id] = output
-    return results
-
-results = run_tasks(TASKS)
-print(results["draft"]["text"])
-print(results["draft"]["source_ids"])
+from ai_orgdesign.labs.m11 import order_tasks, demo
+print(demo())
+assert order_tasks({"a":[], "b":["a"]}) == ["a", "b"]
 ```
 
-Expected output:
+Records and policy preparation precede comparison, which precedes review. Both preparation tasks are independent in this graph, so a runtime could execute them concurrently. The printed sorted sequence is one valid order, not evidence that concurrency occurred.
 
-```text
-Customer and shipment accounts require reconciliation
-['order-17']
-```
+If an import fails, run `python3 scripts/setup.py` from the course folder and select the project kernel again. If a shared-code edit appears ignored, restart the kernel so Python loads the new file. Read an exception before changing the code: it may report a deliberate boundary such as forbidden scope or stale state.
 
-## Read the configuration as a contract
+## Change one condition
 
-`TASKS` is an ordered list of dictionaries. Each dictionary names a task, lists earlier results it requires and supplies a function to run. These are ordinary Python values. A framework can provide richer scheduling and validation, but it still needs equivalent information somewhere.
+**Exercise.** Make policy preparation depend on review while review already depends on compare and compare on policy. Explain why adding a faster worker cannot repair the resulting graph.
 
-The first task has no predecessors. The second requires `collect`; the third requires `assess`. This does not give the third function direct access to `collect` through its context dictionary. It receives the assessment, which has carried forward source identifiers. Choosing that boundary affects what the drafter can check.
+Before opening the answer, identify which function owns the relevant check and whether the change should affect data, control flow, authority or evaluation. Keeping these categories distinct helps locate a failure without blaming every unexpected result on a model.
 
-The `run_tasks` loop stores completed outputs under task IDs. The missing-dependency check runs before invoking the task. Reordering the list to put `draft` first therefore raises an error instead of inventing absent context. The implementation expects an already valid order; it does not calculate an execution order for an arbitrary graph.
+**Worked answer.** The dependencies form a cycle. No task can become ready under the stated rules. The design must change: supply an initial policy, permit an explicit iterative cycle with a stopping rule, or separate preliminary review from final review. Faster execution cannot remove a logical prerequisite contradiction.
 
-The dictionary comprehension builds a smaller context from named predecessors. It creates a new outer dictionary but shares the contained result objects. A task that mutates a nested predecessor result could affect later work. Immutable records or deliberate copies are alternatives when that risk matters.
+## Consider the alternative
 
-## What the output check does and does not establish
+A single generalist may reduce handoffs for small cases. Parallel specialists are useful when inputs are separable and outputs can be integrated. Reciprocal interdependence needs continuing adjustment rather than pretending every task fits a one-pass dependency graph.
 
-The check requires a dictionary with non-empty `source_ids`. That catches an omitted evidence field. It does not prove that the IDs exist, that the sources are permitted or that the finding follows from them. A fabricated reference would pass this small check.
-
-This illustrates a recurring distinction: a **data contract** governs representation; an **evidence contract** governs support. An operating system needs both, plus rules about authority and external effects. Calling a field `verified` would not perform verification.
-
-The fake assessment uses fixed wording to make the mechanics predictable. It does not actually interpret the reported difference. To test judgement, replace the fake with an implementation and evaluate cases where records agree, conflict or are incomplete. Keep the deterministic wiring check separate from that assessment.
-
-## Read the original crew and task files together
-
-Open the original [researcher crew](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/3_crewai/reference/researcher/src/researcher/crew.py) and its [task settings](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/3_crewai/reference/researcher/src/researcher/config/tasks.yaml). Follow a configured task into its Python `Task` object, then into the crew's selected process. The reporting task writes a file; that write is a side effect beyond returning text.
-
-For a larger example, compare the engineering team's [task configuration](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/3_crewai/reference/engineering_team/src/engineering_team/config/tasks.yaml) with its [crew class](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/3_crewai/reference/engineering_team/src/engineering_team/crew.py). `context` names the predecessor outputs. The backend tester is instructed to test backend code, not the frontend. A backend test summary is consequently not a certificate that the whole application works.
-
-The [sandbox tools](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/3_crewai/reference/engineering_team/src/engineering_team/tools/sandbox_tools.py) show how generated programs can be written and executed in a constrained environment. Reading the tool implementation reveals actual capabilities. A role description saying “test engineer” would not reveal those effects by itself.
-
-## Alternatives and extensions
-
-Direct function calls are simpler when the sequence is short and stable. Configuration becomes useful when task definitions are reused, inspected by several people or changed independently of a runner. Its flexibility also makes configuration changes part of the review process.
-
-A graph scheduler could find ready tasks and run independent ones together. It would need cycle detection, failure propagation and a policy for partially completed work. A manager agent could select tasks dynamically, but its choices would need to satisfy any mandatory dependencies enforced by the application.
-
-**Try it:** Put `draft` first, remove `source_ids` from `assess`, and create two tasks with the same ID, one change at a time. Explain the three failures. Then describe a result that passes every code check above but is still unacceptable as evidence for a credit decision.
-
-## Continue the module
-
-The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
-
-## Read the organisational connection
-
-A task graph makes prerequisites visible, but shared-resource and meaning problems can remain. The research chapter explains [dependency management](../../reference/research/02-coordination.md#identify-what-depends-on-what).
+The [organisation design reading](../../reference/research/01-organisation-design.md) develops the relevant argument and its scholarly references. The lab demonstrates an implementation pattern; the business and design lessons examine the conditions under which that contribution might be useful.

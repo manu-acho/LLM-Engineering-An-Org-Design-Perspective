@@ -1,5 +1,7 @@
 # Lesson 12.6: Design review as a service with capacity and discretion
 
+[Download the matching notebook](/downloads/12-06-design-lab.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next module](../13-agent-frameworks/README.md)
 
 ## A pause creates a dependency

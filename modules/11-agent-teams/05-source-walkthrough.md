@@ -1,75 +1,49 @@
-# Lesson 11.5: Follow a CrewAI project from settings to returned artefact
+# Lesson 11.5: Find missing prerequisites and task cycles
 
-[Module route](README.md) · [Next: redesign the division of work](06-design-lab.md)
+[Download the matching notebook](/downloads/11-05-source-walkthrough.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
 
-## Open the files that cooperate
+[Module route](README.md) · [Previous workshop](02-code-workshop.md)
 
-Read the source [researcher crew](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/3_crewai/reference/researcher/src/researcher/crew.py) with its [tasks](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/3_crewai/reference/researcher/src/researcher/config/tasks.yaml). `@CrewBase` supplies project conventions. Methods marked `@agent` construct configured agents; methods marked `@task` construct tasks. `@crew` assembles them with `Process.sequential` in the inspected implementation.
+## Follow the path in the course checkout
 
-The reporting task writes `report.md`. Writing a file is a side effect in addition to returning an object. Its existence does not establish source quality. The file, raw task outputs and run status are different artefacts to inspect.
+The implementation is included here, so this walkthrough does not require another course, video or repository. Open `src/ai_orgdesign/labs/m11.py`. The lab's public functions expose inputs and return values; supporting service code lives in `src/ai_orgdesign/business.py` where required.
 
-## A complete minimal crew
+order_tasks receives a mapping from task names to prerequisite names. It first rejects unknown prerequisites. At each pass it finds tasks whose prerequisites are already done, sorts them to make the displayed order reproducible, and removes them from the remaining graph. If no task is ready while tasks remain, the graph has a cycle. This topological ordering exposes feasible precedence; it does not assign people, schedule elapsed time or create autonomous agents.
 
-This new integration requires `crewai`, configured provider access and an accessible `OPENAI_MODEL`. Running kickoff makes model requests and may incur charges. It uses only supplied fictional evidence, no search or execution tools. It was not run against a model while authoring.
+Read the function from entry to return. Locate input validation before substantive work, transformations that create a new representation, any call into another component and the point that produces the observable result. A model call, a database commit and constructing a dictionary are different operations. Identify which actually occur in this program.
+
+## Work through the contrasting case
+
+Make policy preparation depend on review while review already depends on compare and compare on policy. Explain why adding a faster worker cannot repair the resulting graph.
+
+The following variation either checks a failure boundary or exposes another aspect of the same implementation. Catching an expected exception allows the notebook to continue; the `else` branch raises an assertion if the expected boundary fails to appear.
 
 ```python
-import os
-from crewai import Agent, Crew, Process, Task
-
-def investigate_delivery():
-    researcher = Agent(
-        role="Evidence reader", goal="Preserve supplied facts and uncertainty",
-        backstory="A careful reader of delivery records",
-        llm=os.environ["OPENAI_MODEL"], allow_delegation=False,
-    )
-    analyst = Agent(
-        role="Case analyst", goal="Prepare a bounded review proposal",
-        backstory="An analyst who distinguishes reports from verification",
-        llm=os.environ["OPENAI_MODEL"], allow_delegation=False,
-    )
-    collect = Task(
-        description=(
-            "For {case_id}, read only this supplied evidence: {evidence}. "
-            "Retain source IDs and identify what remains unverified."
-        ),
-        expected_output="A factual evidence record with sources and uncertainty",
-        agent=researcher,
-    )
-    assess = Task(
-        description="Propose the next evidence check. Do not authorise a credit.",
-        expected_output="A draft proposal with its sources and limits",
-        agent=analyst, context=[collect],
-    )
-    crew = Crew(
-        agents=[researcher, analyst], tasks=[collect, assess],
-        process=Process.sequential, verbose=False,
-    )
-    return crew.kickoff(inputs={
-        "case_id": "C-17",
-        "evidence": "[order-17] Ordered 12; customer reports receiving 10; no recount.",
-    })
+from ai_orgdesign.labs.m11 import order_tasks
+try:
+    order_tasks({"a":["b"], "b":["a"]})
+except ValueError:
+    print("Cycle rejected")
+else:
+    raise AssertionError("Cycle not detected")
 ```
 
-The function returns the crew result instead of printing it immediately. Its task outputs can be inspected separately from the final raw response. `context=[collect]` explicitly passes the predecessor contribution. It does not give the analyst independent source verification. `allow_delegation=False` keeps this example's contribution route bounded.
+**Interpretation.** The dependencies form a cycle. No task can become ready under the stated rules. The design must change: supply an initial policy, permit an explicit iterative cycle with a stopping rule, or separate preliminary review from final review. Faster execution cannot remove a logical prerequisite contradiction.
 
-This code uses direct Python construction so the full wiring is visible in one place. The reference project separates similar information into YAML and decorated methods. Compare the two approaches field by field before assuming that one requires different business semantics.
+## Inspect the implementation rather than a duplicate
 
-## Trace the larger engineering crew
+The matching notebook can display saved functions using `inspect.getsource`. This shows the implementation currently imported by Python. Reading code is useful, but a displayed function is not proof it executed or that every branch was tested. The behavioural checks deliberately include invalid inputs and contrasting outcomes.
 
-The source [engineering crew](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/3_crewai/reference/engineering_team/src/engineering_team/crew.py) constructs design, backend, frontend and test tasks. Its selected process is sequential. A hierarchical alternative appears in comments; commented configuration is not active execution.
+Run the course checks from the root folder with `uv run --locked pytest`. Run the notebook checks with `uv run --locked python scripts/verify_notebooks.py`. The [verification guide](../../reference/verification.md) distinguishes offline execution, real protocol tests, model downloads and paid-provider checks. It records the limits of each claim.
 
-The task settings give frontend work both design and code context. The test task receives backend and design context and is instructed to test the backend, not `app.py`. A backend test summary therefore cannot establish complete application quality. The frontend has a separate construction-check instruction.
+## What a result can establish
 
-Inspect the [sandbox tools](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/3_crewai/reference/engineering_team/src/engineering_team/tools/sandbox_tools.py) to understand how file writing and code execution occur. A role label does not show those effects. No original generated program is executed by this lesson.
+Records and policy preparation precede comparison, which precedes review. Both preparation tasks are independent in this graph, so a runtime could execute them concurrently. The printed sorted sequence is one valid order, not evidence that concurrency occurred.
 
-## Compare process behaviour fairly
+Keep inputs, configuration identity, observed result and interpretation separate in an experiment record. If the program behaves as predicted but the business problem remains, investigate the surrounding evidence, roles and dependencies. A successful run should sharpen that inquiry rather than end it.
 
-For a sequential/hierarchical comparison, hold task, source evidence, model access and acceptance criteria stable. Record scheduling, calls, errors, review corrections and cost. A manager producing more messages is not a quality improvement by itself.
+## Explain the pattern without the library name
 
-**Worked diagnosis:** The analyst confidently recommends a credit, although collection only contained a customer report. Inspect whether the expected-output wording encouraged a remedy, whether the evidence qualification survived and whether the final acceptance check catches unsupported authority. Adding another similarly prompted reviewer may preserve the same mistake.
+A useful completion check is to explain the operation in ordinary language, then name the exact implementation. A single generalist may reduce handoffs for small cases. Parallel specialists are useful when inputs are separable and outputs can be integrated. Reciprocal interdependence needs continuing adjustment rather than pretending every task fits a one-pass dependency graph.
 
-**Documentation:** [CrewAI crews](https://docs.crewai.com/en/concepts/crews), alongside the pinned reference project. Current documentation and source dependency versions can differ.
-
-## Read the organisational connection
-
-A configuration and returned artefact do not establish recurrent organisational performance. The research chapter explains [artefacts and patterns of action](../../reference/research/05-routines.md#designing-an-artefact-and-designing-a-pattern).
+The [research connection](../../reference/research/01-organisation-design.md) develops the organisational questions. Follow the module's design lesson to turn this technical understanding into a decision with stated conditions and a recovery route.

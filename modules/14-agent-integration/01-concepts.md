@@ -1,5 +1,7 @@
 # Lesson 14.1: MCP connects capabilities, not business authority
 
+[Download the matching notebook](/downloads/14-01-concepts.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
 ## Connecting an assistant to existing systems
@@ -28,7 +30,7 @@ The course's accounts server exposes tools and account/strategy resources. This 
 
 If a caller can reach an operation by another path, hiding its name in a list does not enforce permission. For a business system, check authorisation at the boundary where the operation executes, using trusted identity and relevant record scope.
 
-The [MCP HTTP authorisation specification](https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization) describes transport-level access. It does not decide Harbour's credit policy or prove that an authenticated service has authority for every record. The inspected course uses particular client/server versions; do not assume all later protocol or SDK versions are interchangeable.
+The [MCP HTTP authorisation specification](https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization) describes transport-level access. It does not decide Harbour's credit policy or prove that an authenticated service has authority for every record. The local exchange uses the SDK versions recorded in uv.lock; do not assume later protocol or SDK versions are interchangeable.
 
 ## Local processes and network services
 

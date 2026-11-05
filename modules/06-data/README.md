@@ -1,28 +1,34 @@
-# Module 6: Data, labels, baselines and adaptation
+# Module 6: Data, categories and baselines
 
-[Curriculum index](../../README.md) · [Start here](../../START-HERE.md) · [Local lab guide](../../reference/local-labs.md)
+[Curriculum](../../CURRICULUM.md) · [Setup](../../STUDY-WORKSPACE.md) · [Glossary](../../reference/glossary.md)
 
-Trace raw records, features, training updates and predictions. Redesign ambiguous routing labels before learning from them.
+Routing labels record a decision about which team should receive work. A clean spreadsheet can therefore encode obsolete ownership rules. Harbour begins with a deliberately small text classifier so the preparation, fitting and evaluation boundary remains visible.
 
-## Complete reading route
+## Preparation and route
 
-The early lessons introduce the vocabulary and a small transparent example. Continue through the technical/source walkthrough and completed design case to connect the mechanism with its use in organisational work.
+Complete Module 5 first, or use its worked examples to check the prerequisite concepts. For numerical and systems terms, begin with the [technical foundations](../../reference/technical-foundations.md). Unfamiliar Python syntax is explained in the [programming reference](../../reference/python-patterns.md).
 
 1. [Lesson 6.1: How examples become a prediction system](01-concepts.md)
-2. [Lesson 6.2: Build and inspect a baseline before training](02-code-workshop.md)
+2. [Lesson 6.2: Fit a text-routing baseline without leakage](02-code-workshop.md)
 3. [Lesson 6.3: Historical labels contain an operating model](03-business-and-organisation.md)
 4. [Lesson 6.4: Calculate a training update and a task error](04-learning-an-update.md)
-5. [Lesson 6.5: Follow an example from raw record to evaluated prediction](05-source-walkthrough.md)
+5. [Lesson 6.5: Inspect fitted vocabulary and ambiguous predictions](05-source-walkthrough.md)
 6. [Lesson 6.6: Redesign a routing task before learning its labels](06-design-lab.md)
 
-## Choose how to study
+Read the concepts and business case before the code workshop. Managers can follow the design reasoning without executing Python. The implementation route follows every lesson and its notebook, predicts outputs and compares the failure cases. The organisational contribution remains the same across both routes.
 
-For business and organisation design, read the concept lesson, organisational discussion and completed design case. Inspect the mechanism and source walkthrough as well when evaluating an implementation claim. For technical study, follow the full route, predict intermediate values and try the failure cases. Unfamiliar syntax is introduced in [Start here](../../START-HERE.md) and [Python patterns](../../reference/python-patterns.md).
+## Included code and learning boundary
 
-A source-reading walkthrough explains inspected original code. An independent lab is identified separately. External integrations have additional environment and access requirements; a readable example is not a claim that an untested account, model or deployment will work.
+The original implementation is `src/ai_orgdesign/labs/m06.py`. The notebooks import that code so the explanations and checked behaviour share one implementation. The core route runs locally without paid services. Optional integrations are explicitly gated and described in the [verification guide](../../reference/verification.md).
 
-## Connect the evidence
+The test predictions and their score are computed from the fitted pipeline. With the supplied invented messages, the classifier should distinguish finance language from delivery language. Passing the three examples establishes execution of this baseline, not a reliable routing service for ambiguous or new work.
 
-Use the [literature guide](../../reference/literature-guide.md) for the organisational concepts and the [workbook](../../WORKBOOK.md) for cumulative outputs. The [source map](../../SOURCE-MAP.md) records course versions and coverage limits.
+## Completion exercise
 
-The [compact engineering reference](../06-data-baselines-and-adaptation.md) supplies a supplementary source overview.
+Consider a message containing invoice and damaged delivery. Which team should own it? Explain why fitting more accurately to historical single-team labels might worsen the service.
+
+A satisfactory response explains the mechanism, interprets the observed output, identifies the relevant authority and source ownership, compares an alternative and states what additional evidence would support a business claim. The worked answers are included in the workshop and design lessons. Continue with [organisation design research](../../reference/research/03-decisions.md) for the supporting theory and scholarly references.
+
+## Another explanation
+
+[scikit-learn preprocessing and leakage](https://scikit-learn.org/stable/common_pitfalls.html) provides a primary technical account alongside the included implementation. Use the [further learning guide](../../reference/further-learning.md) to choose additional explanations. External examples may use another task or version; completing them is not required to follow this module.

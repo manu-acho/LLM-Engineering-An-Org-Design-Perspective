@@ -1,5 +1,7 @@
 # Lesson 10.6: Compare central coordination with specialist ownership
 
+[Download the matching notebook](/downloads/10-06-design-lab.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next module](../11-agent-teams/README.md)
 
 ## Two architectures express different working assumptions

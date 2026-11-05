@@ -1,5 +1,7 @@
 # Lesson 13.6: Design interoperability across teams, meanings and maintenance
 
+[Download the matching notebook](/downloads/13-06-design-lab.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next: implement a common result contract](07-common-contracts.md)
 
 ## Connection solves only part of the boundary

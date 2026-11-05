@@ -6,13 +6,17 @@
 
 A customer reports a shortage. A program can assemble the available records; a model can generate words; someone still needs to determine what happened and what action is justified. Module 1 opens these contributions one at a time.
 
-The completed pilot can be studied without Ed Donner's courses, notebooks or datasets. Its examples are original, use fictional data and make no network calls. The rest of the curriculum is clearly marked as planned.
+The completed pilot can be studied without Ed Donner's courses, notebooks or datasets. Its examples are original, use fictional data and make no network calls. The later modules extend the same reasoning into models, agents and operational services.
+
+## Vocabulary and prerequisites
+
+No prior technical knowledge is assumed. Begin with Module 1, use the [technical foundations](reference/technical-foundations.md) before numerical or systems-heavy lessons, and keep the [glossary](reference/glossary.md) available. Concepts are explained in the lessons; the [selected further explanations](reference/further-learning.md) are optional second accounts, not required missing steps.
 
 ## Choose a route
 
 For concepts and business design, read Lessons 1.1, 1.3, 1.5, 1.6 and 1.7. The examples and worked answers provide the necessary context even without running code. Read Lesson 1.2 to become familiar with what a program is doing, and Lesson 1.4 when examining implementation decisions.
 
-For implementation, follow all seven lessons in order. Predict an output, run the example, compare the result and change one input. The aim is to understand the pattern and its limits, not simply produce a successful run.
+For implementation, begin with all seven Module 1 lessons in order, then follow the remaining module routes. Predict an output, run the example, compare the result and change one input. The aim is to understand the pattern and its limits, not simply produce a successful run.
 
 ## Read and run side by side
 

@@ -1,84 +1,46 @@
-# Lesson 5.2: Search, filter and return the evidence
+# Lesson 5.2: Retrieve current permitted evidence
 
-[Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
+[Download the matching notebook](/downloads/05-02-code-workshop.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
 
-## Build a search you can inspect
+[Module route](README.md) · [Workspace setup](../../STUDY-WORKSPACE.md) · [Technical foundations](../../reference/technical-foundations.md)
 
-We will use keyword overlap rather than embeddings. This makes the retrieval procedure visible without installing libraries. The limitations are part of the lesson, not a claim that this is a complete RAG service.
+## The problem this program addresses
 
-```python
-records = [
-    {"id": "P-1", "scope": "service", "current": True,
-     "text": "Finance reviews disputed delivery credits"},
-    {"id": "P-0", "scope": "service", "current": False,
-     "text": "Account managers approve delivery credits"},
-    {"id": "H-1", "scope": "restricted", "current": True,
-     "text": "Staff credit eligibility depends on employment terms"},
-]
+A policy assistant needs the current permitted evidence, not simply a plausible paragraph. At Harbour an older policy, another region's policy and a current policy can share many words, making relevance alone an inadequate selection rule.
 
-def retrieve(question, records, permitted_scopes, k=2):
-    terms = set(question.lower().split())
-    candidates = []
-    for record in records:
-        if record["scope"] not in permitted_scopes or not record["current"]:
-            continue
-        words = set(record["text"].lower().split())
-        score = len(terms & words)
-        if score > 0:
-            candidates.append((score, record))
-    candidates.sort(key=lambda pair: pair[0], reverse=True)
-    return [record for score, record in candidates[:k]]
+The implementation lives in `src/ai_orgdesign/labs/m05.py`. All examples use fictional data. The default exercise needs no provider account or API key. Installing the locked dependencies initially requires network access; running the core exercise does not send a model-provider request.
 
-evidence = retrieve("Who reviews delivery credits", records, {"service"})
-```
+## Read the operation before running it
 
-## Separate policy filtering from ranking
+retrieve first selects records with the requested tenant and active status. Only those records enter TfidfVectorizer.fit_transform. TF-IDF gives words weights based on their frequency within and across the selected documents; it creates sparse numerical vectors, not neural embeddings. The query uses the fitted vocabulary through transform. Cosine similarity compares vector direction, and ranking uses score followed by document ID to break ties reproducibly. Positive-score results retain document identity and version. grounded_context formats that evidence for a later answer stage, but performs no generation.
 
-Each dictionary has text and metadata. In a real organisation, `current` should follow a version/effective-date policy; here it is a supplied teaching flag. Likewise, `permitted_scopes` is supplied locally so the example is readable. An operational application must derive permissions from trusted identity and authorisation.
+`import` makes the saved implementation available in the notebook. Calling a function supplies its inputs and receives its return value. `assert` checks an expected property and raises an error if that property is false. An assertion is evidence about that specific property, not a certificate that the application is correct in every situation.
 
-The loop first excludes records outside scope or marked non-current. `continue` skips the rest of that loop iteration. Filtering before evidence reaches the model matters: you cannot disclose a restricted passage to the model and assume that a later prompt will undo the disclosure.
+## Predict, run and inspect
 
-`lower()` removes case differences; `split()` makes whitespace-delimited pieces; `set()` keeps unique pieces. `terms & words` calculates the set intersection, the terms present in both. `len` counts them. It is a simple relevance score.
-
-The procedure appends a tuple containing score and record. `sort` orders the list in place. The `key` argument supplies a function telling Python which value to compare. `lambda pair: pair[0]` is a short unnamed function that selects the tuple's score. `reverse=True` puts larger scores first. The final comprehension returns records without the scores, limited by `k`.
-
-Our query retrieves P-1. P-0 is excluded as non-current, even though it matches several terms. H-1 is excluded by scope. The result demonstrates a rule-based retrieval boundary, not the correctness of the policy flags themselves.
-
-## Build context without losing identity
+Run this block in the matching notebook, with the project `.venv` kernel selected. The asynchronous examples use the notebook's supported top-level `await`; ordinary scripts need an event-loop entry point such as `asyncio.run` instead.
 
 ```python
-def make_context(evidence):
-    if not evidence:
-        return "No permitted current evidence was found."
-    return "\n\n".join(f"[{r['id']}] {r['text']}" for r in evidence)
-
-context = make_context(evidence)
+from ai_orgdesign.labs.m05 import retrieve, grounded_context
+hits = retrieve("delivery evidence")
+assert [hit["id"] for hit in hits] == ["P-2"]
+print(grounded_context(hits))
 ```
 
-`join` combines the prepared strings with blank lines. Including the source ID keeps a route back to the record. A generation adapter can receive this context plus the question. Its answer should not exceed what these records support.
+Searching delivery evidence in north returns the active P-2 policy. It excludes the retired P-1 and the south P-3 before fitting or ranking. A query whose words do not occur in the permitted vocabulary returns no hits. Returning no evidence is different from answering that no policy exists.
 
-Returning the evidence separately is often preferable to returning only an answer string. A UI can then show exact passages, and an evaluator can inspect what the model actually received.
+If an import fails, run `python3 scripts/setup.py` from the course folder and select the project kernel again. If a shared-code edit appears ignored, restart the kernel so Python loads the new file. Read an exception before changing the code: it may report a deliberate boundary such as forbidden scope or stale state.
 
-## Connect to the original implementations
+## Change one condition
 
-Week 5 begins with dictionary-based retrieval, then introduces chunking, embeddings and Chroma. In [implementation/ingest.py](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week5/implementation/ingest.py), documents acquire metadata, are split and indexed. In [implementation/answer.py](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week5/implementation/answer.py), the question retrieves documents that are joined into context, and the function returns answer plus documents.
+**Exercise.** Ask whether filtering after a global top-two search can lose the best permitted result. Then remove all permitted documents and decide what the service should show.
 
-The enhanced implementation rewrites queries, searches both forms, merges results and reranks them. Each transformation needs inspection. A rewrite can change intent. Merging by text can confuse versions. A reranker returning an ID list needs checks for missing, duplicate or out-of-range IDs.
+Before opening the answer, identify which function owns the relevant check and whether the change should affect data, control flow, authority or evaluation. Keeping these categories distinct helps locate a failure without blaming every unexpected result on a model.
 
-The source evaluation helper measures keyword hits and ranking positions. Those are useful diagnostics, but keywords can appear in a passage that contradicts the intended answer. The compact [engineering chapter](../05-knowledge-and-rag.md) explains the exact limitations of its metrics and judge prompt.
+**Worked answer.** A global top-two may contain only forbidden or obsolete records. Removing them afterward cannot recover the permitted records that never entered the shortlist. An empty permitted corpus returns an empty list in this lab. The interface should report that evidence was not available and route the question appropriately, rather than invent an answer.
 
-## Alternatives and practice
+## Consider the alternative
 
-Exact lexical search handles order numbers and named codes well. Embeddings help with paraphrases. Hybrid retrieval combines approaches; a reranker can refine candidate order. More stages are worthwhile only when they solve observed failures.
+Keyword search is easy to inspect but can miss paraphrases. Dense embeddings may recover semantic matches but require their own model, index lifecycle and evaluation. Hybrid retrieval combines signals. None reconciles conflicting authority automatically. Chunking and reranking should respond to observed failures, not an assumed need for a more elaborate stack.
 
-Try “Who handles commercial adjustments?” in our toy search. It may return no useful result because the terms do not overlap. That is a representation limitation, not proof that no policy exists. Then mark P-0 current as well and inspect what the program does. It can retrieve conflicting records; it cannot resolve policy authority without an explicit rule.
-
-**What the example shows:** An empty result should become a bounded statement about the search, not a declaration that the organisation has no policy. Conflicting evidence should trigger a version/scope check or a visible uncertainty, not arbitrary selection of the most convenient sentence.
-
-## Continue the module
-
-The [complete module route](README.md) continues into the technical mechanism, [source walkthrough](05-source-walkthrough.md) and [completed organisational design case](06-design-lab.md). Use those lessons to carry this introduction into a fuller implementation and business decision.
-
-## Read the organisational connection
-
-Filtering and ranking select evidence that can shape a later choice. The research chapter explains [decision premises](../../reference/research/03-decisions.md#decision-premises).
+The [organisation design reading](../../reference/research/02-coordination.md) develops the relevant argument and its scholarly references. The lab demonstrates an implementation pattern; the business and design lessons examine the conditions under which that contribution might be useful.

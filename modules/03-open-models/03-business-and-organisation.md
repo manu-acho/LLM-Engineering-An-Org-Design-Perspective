@@ -1,5 +1,7 @@
 # Lesson 3.3: When meeting notes become an organisational record
 
+[Download the matching notebook](/downloads/03-03-business-and-organisation.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
 ## A sentence becomes a commitment

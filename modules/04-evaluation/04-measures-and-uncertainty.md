@@ -1,5 +1,7 @@
 # Lesson 4.4: Calculate what a quality score leaves out
 
+[Download the matching notebook](/downloads/04-04-measures-and-uncertainty.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next: evaluate the generated program](05-source-walkthrough.md)
 
 ## A decision rule creates different errors

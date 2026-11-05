@@ -27,5 +27,5 @@ for lesson in manifest["lessons"]:
             resources={"metadata": {"path": directory}},
         ).execute()
     count = sum(cell.cell_type == "code" for cell in notebook.cells)
-    print(f"PASS {lesson['notebook']} ({count} code cells)")
+    print(f"PASS {lesson['notebook']} ({count} code cells)", flush=True)
 print(f"Executed {len(manifest['lessons'])} notebooks. No source notebooks were overwritten.")

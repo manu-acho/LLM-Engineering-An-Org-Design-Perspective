@@ -1,86 +1,49 @@
-# Lesson 2.5: Trace a complete tool call and interface callback
+# Lesson 2.5: Trace call identity, scope and incremental output
 
-[Module route](README.md) · [Next: decide where discretion belongs](06-design-lab.md)
+[Download the matching notebook](/downloads/02-05-source-walkthrough.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
 
-## Inspect the actual exchange
+[Module route](README.md) · [Previous workshop](02-code-workshop.md)
 
-Open [the airline assistant notebook](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week2/day4.ipynb). Find the tool description, `get_ticket_price`, the tool-call handler and the final `chat` callback. Read them as one route. A tool description alone does not implement an operation.
+## Follow the path in the course checkout
 
-The schema tells the model that a named operation accepts a destination city. The Python function queries a database. The handler translates the schema's argument into the function call. The callback sends conversation messages and available tools to the model, handles returned requests and asks the model to continue with the results.
+The implementation is included here, so this walkthrough does not require another course, video or repository. Open `src/ai_orgdesign/labs/m02.py`. The lab's public functions expose inputs and return values; supporting service code lives in `src/ai_orgdesign/business.py` where required.
 
-The sequence has six observable objects:
+The conversation function creates a fresh history list for each call. A scripted call carries an identifier, a capability name and an arguments dictionary. dispatch permits only lookup_case with exactly one case_id field, then lookup checks the tenant before returning a copy of the record. Serialising that result makes the tool observation inspectable without changing the authoritative record. stream_words yields one word at a time; it demonstrates incremental delivery without pretending that a model produced the words.
 
-| Step | Object | Meaning |
-|---|---|---|
-| 1 | User question and history | What the application supplies now |
-| 2 | Tool schema | Operations the model may propose |
-| 3 | Assistant tool request | A proposed operation and argument text |
-| 4 | Parsed and checked arguments | Values the application may execute |
-| 5 | Tool result with matching call ID | Evidence returned for that particular request |
-| 6 | Final assistant message | Generated interpretation of the evidence |
+Read the function from entry to return. Locate input validation before substantive work, transformations that create a new representation, any call into another component and the point that produces the observable result. A model call, a database commit and constructing a dictionary are different operations. Identify which actually occur in this program.
 
-## Why the call identifier matters
+## Work through the contrasting case
 
-Imagine the model requests two prices, London and Paris. Results can arrive in a different order. A call identifier connects each result with its request. Attaching the Paris result to the London call produces a syntactically plausible but substantively wrong answer. Matching by list position is fragile once concurrency is introduced.
+Request H-18 while keeping the north scope. Predict whether the record will be returned and whether changing a name inside a model message should alter that decision.
 
-The following new fragment shows the central Chat Completions pattern used by the course. It is an integration function requiring a configured client, model, schemas and dispatcher. It makes external requests if called and was not executed here. `dispatch` must enforce the checks introduced in Lesson 2.2.
+The following variation either checks a failure boundary or exposes another aspect of the same implementation. Catching an expected exception allows the notebook to continue; the `else` branch raises an assertion if the expected boundary fails to appear.
 
 ```python
-def complete_with_tools(client, model, messages, tools, dispatch, max_rounds=4):
-    import json
-
-    working = list(messages)
-    for _ in range(max_rounds):
-        response = client.chat.completions.create(
-            model=model, messages=working, tools=tools
-        )
-        message = response.choices[0].message
-        if not message.tool_calls:
-            return message.content
-        working.append(message.model_dump(exclude_none=True))
-        for call in message.tool_calls:
-            arguments = json.loads(call.function.arguments)
-            result = dispatch(call.function.name, arguments)
-            working.append({
-                "role": "tool",
-                "tool_call_id": call.id,
-                "content": json.dumps(result),
-            })
-    raise RuntimeError("Tool round budget exhausted")
+from ai_orgdesign.business import dispatch
+try:
+    dispatch("lookup_case", {"case_id": "H-18"}, "north")
+except PermissionError:
+    print("Expected: cross-scope read denied")
+else:
+    raise AssertionError("Scope boundary failed")
 ```
 
-`working` is a new outer list so the function does not append directly to the caller's history. Its nested dictionaries remain shared. The assistant request must be retained before appending its tool results, because the conversation needs the request/result relationship. `json.loads` converts argument text to values; it does not validate business permission. `json.dumps` converts the result to text the interface can carry.
+**Interpretation.** lookup raises PermissionError because H-18 belongs to south. Identity and scope enter through the application, not the request text. A real authentication system would supply that trusted scope; this local function parameter is a teaching boundary, not authentication.
 
-The next iteration supplies the growing exchange to the model. The model may answer or request another tool. The bound counts model rounds, not individual tool calls, so one round can contain several operations. Time, spending and per-operation limits require additional policy.
+## Inspect the implementation rather than a duplicate
 
-## Database values and interface events
+The matching notebook can display saved functions using `inspect.getsource`. This shows the implementation currently imported by Python. Reading code is useful, but a displayed function is not proof it executed or that every branch was tested. The behavioural checks deliberately include invalid inputs and contrasting outcomes.
 
-The source query uses an SQL placeholder rather than interpolating the destination directly into SQL. Parameters keep ordinary values distinct from query syntax. A missing row needs an explicit unavailable result. It should not silently become a zero price.
+Run the course checks from the root folder with `uv run --locked pytest`. Run the notebook checks with `uv run --locked python scripts/verify_notebooks.py`. The [verification guide](../../reference/verification.md) distinguishes offline execution, real protocol tests, model downloads and paid-provider checks. It records the limits of each claim.
 
-A Gradio chat component invokes the callback when the user submits a message. The callback's signature must match what that configured component supplies. History format can differ by library version, so inspect actual records before adapting them into API messages. Preserve system instructions separately from user-editable conversation.
+## What a result can establish
 
-The following optional adapter needs `gradio`. It constructs an interface only when called. It accepts an application function with a defined `(message, history)` contract; that function can be a local fake or the connected tool-loop application. Creating the interface is separate from calling its `launch` method.
+The selected case is H-17, its ordered quantity is twelve and its reported quantity is ten. The tool observation has call_id equal to call-1. Joining the stream pieces reconstructs Evidence awaits review, with a trailing space. Nothing approves a remedy.
 
-```python
-def build_chat_interface(answer_question):
-    import gradio as gr
+Keep inputs, configuration identity, observed result and interpretation separate in an experiment record. If the program behaves as predicted but the business problem remains, investigate the surrounding evidence, roles and dependencies. A successful run should sharpen that inquiry rather than end it.
 
-    def chat(message, history):
-        return answer_question(message, history)
+## Explain the pattern without the library name
 
-    return gr.ChatInterface(fn=chat)
-```
+A useful completion check is to explain the operation in ordinary language, then name the exact implementation. A form with a required case identifier may be more dependable than extracting it from chat. A provider adapter can propose the same tool call, but should not bypass dispatch. Streaming can improve perceived responsiveness while adding partial-output and cancellation problems.
 
-The nested function keeps access to `answer_question`; this is a closure. Registering it supplies behaviour for a future event. The application can test the answering function without starting the interface. A streaming version returns or yields the format expected by its component, which is why the prefix/delta distinction matters.
-
-## Follow a failure through the route
-
-Suppose `json.loads` raises because the argument string is malformed. No lookup has yet run. The application can expose a structured tool error, request correction or stop with a visible failure. Suppose the lookup instead times out after reaching a remote system. The uncertainty is different: the request may have reached that service. A read can often be retried; a record-changing operation needs duplicate protection and reconciliation.
-
-**Practice with feedback:** A generated answer says “the lookup succeeded”, but the database returned `not_found`. Which object should determine the factual claim? The tool result is the evidence available from that lookup. Preserve it in the trace and evaluate whether the final message respects it. The assistant's own success sentence is not an independent confirmation.
-
-The [function-calling documentation](https://developers.openai.com/api/docs/guides/function-calling) describes the request/result relationship. Responses uses different item shapes, so do not mix its fields into this Chat Completions example.
-
-## Read the organisational connection
-
-A complete tool exchange still needs a defensible allocation of action rights. The research chapter explains [permission and authority](../../reference/research/03-decisions.md#permission-and-authority).
+The [research connection](../../reference/research/03-decisions.md) develops the organisational questions. Follow the module's design lesson to turn this technical understanding into a decision with stated conditions and a recovery route.

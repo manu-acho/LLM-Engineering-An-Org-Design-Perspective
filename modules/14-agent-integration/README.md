@@ -1,27 +1,35 @@
-# Module 14: MCP and business integration
+# Module 14: MCP and business capabilities
 
-[Curriculum index](../../README.md) · [Start here](../../START-HERE.md) · [Local lab guide](../../reference/local-labs.md)
+[Curriculum](../../CURRICULUM.md) · [Setup](../../STUDY-WORKSPACE.md) · [Glossary](../../reference/glossary.md)
 
-Follow an actual MCP exchange into service and storage boundaries. Complete an integration proposal and evaluate its use, costs and outcomes over time.
+MCP gives clients a common way to discover and call capabilities. Discovery tells a client that a tool exists; it does not give the client authority over every case the backing service can see.
 
-## Complete reading route
+## Preparation and route
 
-The early lessons introduce the vocabulary and a small transparent example. Continue through the technical/source walkthrough and completed design case to connect the mechanism with its use in organisational work.
+Complete Module 13 first, or use its worked examples to check the prerequisite concepts. For numerical and systems terms, begin with the [technical foundations](../../reference/technical-foundations.md). Unfamiliar Python syntax is explained in the [programming reference](../../reference/python-patterns.md).
 
 1. [Lesson 14.1: MCP connects capabilities, not business authority](01-concepts.md)
-2. [Lesson 14.2: Separate capability discovery from execution checks](02-code-workshop.md)
+2. [Lesson 14.2: Expose a narrow case-reading capability](02-code-workshop.md)
 3. [Lesson 14.3: A reusable agent capability needs a service owner](03-business-and-organisation.md)
 4. [Lesson 14.4: Build an AI integration plan around the work](04-integration-plan.md)
-5. [Lesson 14.5: Run a real MCP exchange, then follow the source backend](05-source-walkthrough.md)
+5. [Lesson 14.5: Run the actual MCP client and server exchange](05-source-walkthrough.md)
 6. [Lesson 14.6: Read a completed AI integration proposal](06-design-lab.md)
 7. [Lesson 14.7: Connect the interface, feedback and ongoing service](07-service-evaluation.md)
 
-## Choose how to study
+Read the concepts and business case before the code workshop. Managers can follow the design reasoning without executing Python. The implementation route follows every lesson and its notebook, predicts outputs and compares the failure cases. The organisational contribution remains the same across both routes.
 
-For business and organisation design, read the concept lesson, organisational discussion and completed design case. Inspect the mechanism and source walkthrough as well when evaluating an implementation claim. For technical study, follow the full route, predict intermediate values and try the failure cases. Unfamiliar syntax is introduced in [Start here](../../START-HERE.md) and [Python patterns](../../reference/python-patterns.md).
+## Included code and learning boundary
 
-A source-reading walkthrough explains inspected original code. An independent lab is identified separately. External integrations have additional environment and access requirements; a readable example is not a claim that an untested account, model or deployment will work.
+The original implementation is `src/ai_orgdesign/labs/m14.py`. The notebooks import that code so the explanations and checked behaviour share one implementation. The core route runs locally without paid services. Optional integrations are explicitly gated and described in the [verification guide](../../reference/verification.md).
 
-## Connect the evidence
+The actual MCP exchange lists read_case and returns the H-17 fictional record. The direct demo has a clear label stating that it bypasses transport. Neither path authorises a remedy. The fixed scope is appropriate for a narrow local lab, not a substitute for authenticated per-user scope in a shared deployment.
 
-Use the [literature guide](../../reference/literature-guide.md) for the organisational concepts and the [workbook](../../WORKBOOK.md) for cumulative outputs. The [source map](../../SOURCE-MAP.md) records course versions and coverage limits.
+## Completion exercise
+
+Compare calling read_case directly with awaiting exchange. Which additional failure modes does the second path expose, and which security questions remain untested?
+
+A satisfactory response explains the mechanism, interprets the observed output, identifies the relevant authority and source ownership, compares an alternative and states what additional evidence would support a business claim. The worked answers are included in the workshop and design lessons. Continue with [organisation design research](../../reference/research/06-technology-in-practice.md) for the supporting theory and scholarly references.
+
+## Another explanation
+
+[Official MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) provides a primary technical account alongside the included implementation. Use the [further learning guide](../../reference/further-learning.md) to choose additional explanations. External examples may use another task or version; completing them is not required to follow this module.

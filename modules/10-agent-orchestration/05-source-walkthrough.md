@@ -1,78 +1,49 @@
-# Lesson 10.5: Configure an agent, run it and inspect its result
+# Lesson 10.5: Separate schema checks from evidence support
 
-[Module route](README.md) · [Next: compare organising arrangements](06-design-lab.md)
+[Download the matching notebook](/downloads/10-05-source-walkthrough.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
 
-## Read the source's research manager
+[Module route](README.md) · [Previous workshop](02-code-workshop.md)
 
-In [ResearchManager](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/2_openai/deep_research/research_manager.py), `run` creates a trace, asks a planner for searches, awaits concurrent searches, asks a writer for a report and passes that report to an email agent. `yield` produces progress information at successive stages.
+## Follow the path in the course checkout
 
-`plan_searches` reads `result.final_output`, expecting the planner's structured output. `perform_searches` builds coroutine operations and awaits `asyncio.gather`. Results retain input ordering even if search completion times differ. The inspected function does not use `return_exceptions=True`; an exception can propagate rather than become a partial result.
+The implementation is included here, so this walkthrough does not require another course, video or repository. Open `src/ai_orgdesign/labs/m10.py`. The lab's public functions expose inputs and return values; supporting service code lives in `src/ai_orgdesign/business.py` where required.
 
-The final email stage is an external effect. The original workflow is not executed in this lesson. A report written successfully and an email accepted by its provider are separate outcomes.
+Contribution is a Pydantic model. Its fields require a case identifier, at least one source, a conclusion and at least one unresolved item; extra fields are forbidden. model_validate checks the payload against that structure. accept then checks that the case identifier is the expected one and every cited source belongs to the allowed set. A successful result is labelled accepted_for_review. That status deliberately stops short of verifying the conclusion or authorising a remedy.
 
-## A complete small SDK integration
+Read the function from entry to return. Locate input validation before substantive work, transformations that create a new representation, any call into another component and the point that produces the observable result. A model call, a database commit and constructing a dictionary are different operations. Identify which actually occur in this program.
 
-The following new example needs `openai-agents`, `pydantic`, `OPENAI_API_KEY` and an accessible `OPENAI_MODEL`. It performs paid model requests if run. The only local tool reads synthetic data. It was not executed against a model during authoring.
+## Work through the contrasting case
+
+Write a false conclusion using order-17 as its source and determine whether the current acceptance function detects the falsehood. Propose the next check rather than claiming schema validation solved it.
+
+The following variation either checks a failure boundary or exposes another aspect of the same implementation. Catching an expected exception allows the notebook to continue; the `else` branch raises an assertion if the expected boundary fails to appear.
 
 ```python
-import asyncio
-import os
-from pydantic import BaseModel
-from agents import Agent, Runner, function_tool, trace
-
-@function_tool
-def lookup_order(order_id: str) -> dict:
-    """Read synthetic recorded quantities for order O-17."""
-    if order_id != "O-17":
-        raise ValueError("Unknown synthetic order")
-    return {"source_id": "order-17:v1", "ordered": 12, "reported_received": 10}
-
-class CaseDraft(BaseModel):
-    reported_difference: int
-    source_ids: list[str]
-    unresolved: list[str]
-
-async def main():
-    investigator = Agent(
-        name="Evidence investigator",
-        model=os.environ["OPENAI_MODEL"],
-        instructions=(
-            "Read the synthetic order. Report the customer's quantity difference. "
-            "Do not claim the shortage is verified or approve a remedy."
-        ),
-        tools=[lookup_order], output_type=CaseDraft,
-    )
-    with trace("Synthetic disputed delivery"):
-        result = await Runner.run(
-            investigator, "Investigate O-17", max_turns=4
-        )
-    draft = result.final_output
-    if draft.reported_difference != 2 or draft.source_ids != ["order-17:v1"]:
-        raise ValueError("Draft does not match this synthetic source contract")
-    return draft
-
-if __name__ == "__main__":
-    print(asyncio.run(main()).model_dump())
+from ai_orgdesign.labs.m10 import accept
+try:
+    accept({"case_id":"H-17", "sources":["invented"], "conclusion":"ok", "unresolved":["receipt"]})
+except ValueError:
+    print("Unsupported source rejected")
+else:
+    raise AssertionError("Acceptance failed")
 ```
 
-`@function_tool` exposes a function through the SDK's tool machinery. Creating `Agent` defines its configuration. `Runner.run` executes the loop. `output_type` requests an inspectable result structure. The final deterministic check compares two fields with our known synthetic record. It does not establish all claims or prove that a tool was actually consulted; inspect the run items or trace when tool-use evidence matters.
+**Interpretation.** The function cannot judge entailment. A deterministic quantity comparison, a reviewer or a separately evaluated evidence-support check must examine whether the source supports the conclusion. Each additional checker has its own error modes. An acceptance contract should state exactly which checks were applied and what remains for review.
 
-In a notebook with a running event loop, use `await main()` rather than `asyncio.run`. A turn limit does not guarantee a draft: exceeding it is a failure outcome that the application must handle visibly.
+## Inspect the implementation rather than a duplicate
 
-## Add a specialist without confusing the control pattern
+The matching notebook can display saved functions using `inspect.getsource`. This shows the implementation currently imported by Python. Reading code is useful, but a displayed function is not proof it executed or that every branch was tested. The behavioural checks deliberately include invalid inputs and contrasting outcomes.
 
-In the source [orchestration lab](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/2_openai/2_lab2.ipynb), a specialist can be exposed through `as_tool`. The coordinator calls it and receives a contribution. A handoff instead changes the active agent for the conversation branch. Neither creates accepted organisational ownership by itself.
+Run the course checks from the root folder with `uv run --locked pytest`. Run the notebook checks with `uv run --locked python scripts/verify_notebooks.py`. The [verification guide](../../reference/verification.md) distinguishes offline execution, real protocol tests, model downloads and paid-provider checks. It records the limits of each claim.
 
-When both order and policy evidence are always required, ordinary application code can enforce that dependency before invoking a writer. When choosing the next specialist requires interpretation, model routing can be tested against the fixed alternative. Keep evaluation cases and available evidence consistent.
+## What a result can establish
 
-## Interpret the resulting run
+The supplied H-17 contribution passes the structural and case/source membership checks. An invented source or another case identifier raises ValueError. A conclusion that is false but cites an allowed source may still pass, exposing the distinction between membership validation and factual support.
 
-Read the structured output alongside tool events and sources. If the model returns correct arithmetic but claims verification elsewhere, the draft still needs correction. If the tool fails and the model returns a plausible answer, the application should expose the missing evidence rather than treat final-output existence as completion.
+Keep inputs, configuration identity, observed result and interpretation separate in an experiment record. If the program behaves as predicted but the business problem remains, investigate the surrounding evidence, roles and dependencies. A successful run should sharpen that inquiry rather than end it.
 
-**Worked extension:** Add a policy specialist returning policy version and required review status. Require both records in application code before drafting. Then deliberately fail policy lookup. The appropriate terminal state is incomplete evidence, not a generated substitute policy.
+## Explain the pattern without the library name
 
-**Documentation:** [OpenAI Agents SDK overview](https://developers.openai.com/api/docs/guides/agents/sdk). The pinned course supplies the source orchestration discussed here; the new small example is an independently authored integration.
+A useful completion check is to explain the operation in ordinary language, then name the exact implementation. A specialist-as-tool returns a contribution to its coordinator. A handoff transfers the active interaction to another role. Neither pattern should leave ownership implicit. Plain functions are adequate for many fixed routes and make a useful comparison before introducing a model-driven coordinator.
 
-## Read the organisational connection
-
-An agent's returned result demonstrates a configured path within the tested conditions. The research chapter explains [capability, configuration, practice and outcome](../../reference/research/04-implementation.md#capability-configuration-practice-and-outcome).
+The [research connection](../../reference/research/02-coordination.md) develops the organisational questions. Follow the module's design lesson to turn this technical understanding into a decision with stated conditions and a recovery route.

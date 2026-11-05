@@ -1,5 +1,7 @@
 # Lesson 4.1: What would count as evidence that the system is useful?
 
+[Download the matching notebook](/downloads/04-01-concepts.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
 ## Start with two persuasive demonstrations
@@ -18,7 +20,7 @@ An evaluation set should include normal work and consequential boundaries: missi
 
 ## Correctness comes before speed
 
-The course's week 4 project asks models to translate Python into C++ or Rust. **Compilation** turns source code into an executable program for a target environment. A compiler can reject invalid syntax or types. It cannot generally tell whether the generated program preserves the original business meaning.
+A code-generation task might translate Python into C++ or Rust. **Compilation** turns source code into an executable program for a target environment. A compiler can reject invalid syntax or types. It cannot generally tell whether the generated program preserves the original business meaning.
 
 A valid program can still calculate the wrong result. A fast program can skip work. Before reporting a speedup, define what outputs must agree, what differences are acceptable and what happens for unusual inputs.
 
@@ -51,8 +53,6 @@ Similarly, include human review and correction. A technically cheap model that r
 Freeze a set of cases, define criteria before running, keep a baseline, record configuration and inspect failures. A **baseline** is a simpler comparator, such as a rule, an existing process or a deterministic calculation. It tells you whether added complexity earns its place.
 
 **Check:** A founder says, “Our AI reduced drafting time by 70%, so service productivity rose by 70%.” Explain what remains unknown. Your response should identify review effort, the share of work spent drafting, delays elsewhere, quality and whether freed capacity actually changed an outcome.
-
-[Engineering reference](../04-evaluation-and-code-generation.md) links the source code-generation notebooks and their historical results.
 
 ## Continue the module
 

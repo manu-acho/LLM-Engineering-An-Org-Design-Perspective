@@ -1,5 +1,7 @@
 # Lesson 3.1: What changes when you run a model yourself?
 
+[Download the matching notebook](/downloads/03-01-concepts.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
 ## From a service request to visible components

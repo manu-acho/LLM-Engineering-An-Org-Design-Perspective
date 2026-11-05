@@ -1,87 +1,46 @@
-# Lesson 7.5: Train, save and reconstruct a small adapted system
+# Lesson 7.5: Follow gradients, frozen weights and saved state
 
-[Module route](README.md) · [Next: decide whether specialisation is worthwhile](06-design-lab.md)
+[Download the matching notebook](/downloads/07-05-source-walkthrough.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
 
-## Inspect the source contract first
+[Module route](README.md) · [Previous workshop](02-code-workshop.md)
 
-The course's [Week 7 preparation](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week7/pricer/items.py) creates prompts ending in `Price is $` and stores completions separately. Some splits use rounded targets; test examples retain original price representations. Those choices affect what is learned and measured.
+## Follow the path in the course checkout
 
-The [later serving implementation](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week8/pricer_service2.py) reconstructs the base and tokenizer, attaches a pinned adapter, rebuilds the input prefix, generates and parses a number. A changed tokenizer or prompt contract can invalidate the intended comparison even if loading succeeds.
+The implementation is included here, so this walkthrough does not require another course, video or repository. Open `src/ai_orgdesign/labs/m07.py`. The lab's public functions expose inputs and return values; supporting service code lives in `src/ai_orgdesign/business.py` where required.
 
-The remote training lesson could not be inspected. The following is a new, complete local mechanics lab. It requires `torch`, `transformers` and `peft`; it downloads nothing, trains random tiny weights through LoRA and writes only within a temporary directory. Integer tokens are invented symbols. This is not a useful language model or a QLoRA performance experiment.
+LowRank keeps a two-by-two identity matrix as a frozen buffer. Two trainable matrices, a and b, produce an additive update b @ a. The @ operator means matrix multiplication, so a two-by-one matrix multiplied by a one-by-two matrix produces a two-by-two update with rank at most one. adapt evaluates an initial mean squared error, performs 120 Adam steps against four supplied input-target pairs, saves the state dictionary, constructs a fresh model and reloads it. The base matrix never enters the optimiser parameters. This is a linear demonstration of low-rank adaptation, not an implementation of full transformer LoRA or QLoRA.
+
+Read the function from entry to return. Locate input validation before substantive work, transformations that create a new representation, any call into another component and the point that produces the observable result. A model call, a database commit and constructing a dictionary are different operations. Identify which actually occur in this program.
+
+## Work through the contrasting case
+
+Explain why matching the saved outputs proves neither successful business adaptation nor the quality of a quantized language model. Identify what additional artefacts would be needed to reproduce a real adapter deployment.
+
+The following variation either checks a failure boundary or exposes another aspect of the same implementation. Catching an expected exception allows the notebook to continue; the `else` branch raises an assertion if the expected boundary fails to appear.
 
 ```python
-from tempfile import TemporaryDirectory
-from pathlib import Path
-import torch
-from transformers import GPT2Config, GPT2LMHeadModel
-from peft import LoraConfig, PeftModel, get_peft_model
-
-torch.manual_seed(11)
-configuration = GPT2Config(
-    vocab_size=16, n_positions=16, n_embd=16, n_layer=1, n_head=2,
-    bos_token_id=1, eos_token_id=15, pad_token_id=0,
-    resid_pdrop=0.0, embd_pdrop=0.0, attn_pdrop=0.0,
-)
-ids = torch.tensor([[1, 2, 3, 4], [1, 5, 6, 7]])
-labels = torch.tensor([[-100, -100, 3, 4], [-100, -100, 6, 7]])
-mask = torch.ones_like(ids)
-
-with TemporaryDirectory() as directory:
-    base_path = Path(directory) / "base"
-    adapter_path = Path(directory) / "adapter"
-    base = GPT2LMHeadModel(configuration)
-    base.save_pretrained(base_path)
-    adapted = get_peft_model(base, LoraConfig(
-        task_type="CAUSAL_LM", r=2, lora_alpha=4,
-        target_modules=["c_attn"], fan_in_fan_out=True,
-    ))
-    optimizer = torch.optim.AdamW(
-        [p for p in adapted.parameters() if p.requires_grad], lr=0.01
-    )
-    frozen = {name: p.detach().clone() for name, p in adapted.named_parameters() if not p.requires_grad}
-    adapted.train()
-    losses = []
-    for step in range(8):
-        optimizer.zero_grad()
-        loss = adapted(input_ids=ids, attention_mask=mask, labels=labels).loss
-        losses.append(float(loss.detach()))
-        loss.backward()
-        optimizer.step()
-    adapted.eval()
-    assert all(torch.equal(frozen[name], p.detach()) for name, p in adapted.named_parameters() if name in frozen)
-    with torch.no_grad():
-        expected = adapted(input_ids=ids, attention_mask=mask).logits
-    adapted.save_pretrained(adapter_path)
-    restored = PeftModel.from_pretrained(
-        GPT2LMHeadModel.from_pretrained(base_path), adapter_path
-    ).eval()
-    with torch.no_grad():
-        actual = restored(input_ids=ids, attention_mask=mask).logits
-    assert torch.allclose(expected, actual, atol=1e-5)
-    assert len(losses) == 8
+from ai_orgdesign.labs.m07 import LowRank
+model = LowRank()
+print({name: list(value.shape) for name, value in model.named_parameters()})
+print("Frozen base:", model.base.tolist())
 ```
 
-## Read the update lifecycle
+**Interpretation.** Reload equality checks artefact reconstruction. A business task also needs representative held-out evaluation, correct labels and a comparison with prompting and retrieval. A real language-model adapter requires the exact base revision, tokenizer, adapter configuration, training data identity, package versions and serving settings. Quantization introduces another numerical approximation that this unquantized lab does not test.
 
-The base is saved before attaching the adapter so reload uses the same frozen starting system. `get_peft_model` adds the selected adaptation. The optimizer receives trainable parameters only. Each step clears gradients, computes a masked token loss, differentiates and updates. Saving the adapter stores the adaptation, not a complete replacement for the base.
+## Inspect the implementation rather than a duplicate
 
-The `frozen` snapshot lets the lab check that parameters excluded from training remain unchanged. The saved copies cost additional memory, so this is a tiny teaching check, not a suggestion to clone every frozen tensor of a large production model.
+The matching notebook can display saved functions using `inspect.getsource`. This shows the implementation currently imported by Python. Reading code is useful, but a displayed function is not proof it executed or that every branch was tested. The behavioural checks deliberately include invalid inputs and contrasting outcomes.
 
-The final assertion compares logits after reconstruction in evaluation mode. It checks that the saved pieces reconstruct the same numerical behaviour on these inputs. It does not check generalisation. Separate holdout sequences and a meaningful task would be needed for that.
+Run the course checks from the root folder with `uv run --locked pytest`. Run the notebook checks with `uv run --locked python scripts/verify_notebooks.py`. The [verification guide](../../reference/verification.md) distinguishes offline execution, real protocol tests, model downloads and paid-provider checks. It records the limits of each claim.
 
-Eight steps are chosen to keep the exercise small. Do not interpret the last recorded training loss as a business-quality estimate. For real text, a tokenizer, template, completion boundary, padding policy and dataset split must also be retained. The invented mapping in this exercise exists only to expose the mechanics.
+## What a result can establish
 
-## Connect back to four-bit serving
+The final training loss should be substantially below the initial loss. Reloading should reproduce the trained outputs, and the frozen base should equal the identity matrix. The test checks these properties rather than requiring platform-identical final decimal digits. There is no held-out generalisation claim from this four-pair training exercise.
 
-In the source service, `BitsAndBytesConfig` specifies four-bit loading, NF4, double quantization and a compute dtype. `PeftModel.from_pretrained` attaches the selected adapter revision. These settings rely on a compatible hardware/software environment. Adding a quantization configuration to the tiny CPU lab would not establish a valid large-model training environment.
+Keep inputs, configuration identity, observed result and interpretation separate in an experiment record. If the program behaves as predicted but the business problem remains, investigate the surrounding evidence, roles and dependencies. A successful run should sharpen that inquiry rather than end it.
 
-The source parser extracts a number after the price prefix and returns zero if parsing fails. For evaluation, preserve an explicit invalid status instead. A generated zero price and a failed parser should not become the same observation.
+## Explain the pattern without the library name
 
-**Worked exercise:** A saved adapter loads successfully but scores worse after deployment. Compare base revision, tokenizer, prompt prefix, truncation, numerical parser and task population before assuming the adapter weights changed. The running system is a chain of compatible artefacts.
+A useful completion check is to explain the operation in ordinary language, then name the exact implementation. Prompt changes are inexpensive to reverse, retrieval can supply current evidence and parameter adaptation can shape repeated behaviour. These mechanisms can be combined, but each creates a different maintenance obligation. Smaller low-rank updates reduce trainable parameter count; they do not by themselves establish lower total service cost.
 
-**Further reading:** [PEFT quicktour](https://huggingface.co/docs/peft/en/quicktour) and [bitsandbytes integration](https://huggingface.co/docs/transformers/en/quantization/bitsandbytes). The local lab and the source's large-model service have deliberately different resource requirements.
-
-## Read the organisational connection
-
-Saved weights, versions and reconstruction requirements create continuing service responsibilities. The research chapter explains [implementation beyond launch](../../reference/research/04-implementation.md#implementation-extends-beyond-launch).
+The [research connection](../../reference/research/05-routines.md) develops the organisational questions. Follow the module's design lesson to turn this technical understanding into a decision with stated conditions and a recovery route.

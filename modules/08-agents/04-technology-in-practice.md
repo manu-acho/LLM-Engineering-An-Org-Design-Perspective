@@ -1,5 +1,7 @@
 # Lesson 8.4: From an AI feature to a way of working
 
+[Download the matching notebook](/downloads/08-04-technology-in-practice.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Literature foundation](../../reference/literature-guide.md)
 
 ## The approval panel that nobody uses
@@ -14,7 +16,7 @@ The feature exists. Its relation to the work is still a question. Research chapt
 
 **Materiality** concerns the properties and arrangements through which a technology makes actions possible, difficult, visible, durable or unavailable. Digital systems have material consequences even though their records are not sheets of paper. A mandatory field can block submission. A permission check can deny a lookup. A missing source ID can make an answer harder to verify.
 
-Connect this to the code you have read. Module 2's dispatcher checks permitted order IDs before performing a lookup. Module 5's retrieval function excludes records outside scope. Module 8's simulator refuses an unapproved action. These are inspectable technical operations. Describing them does not yet tell us whether people regard the restrictions as legitimate, whether they have alternatives or how work proceeds after a block.
+Connect this to the code you have read. Module 2's dispatcher checks permitted order IDs before performing a lookup. Module 5's retrieval function excludes records outside scope. Module 8's case store refuses an unauthorised or stale decision. These are inspectable technical operations. Describing them does not yet tell us whether people regard the restrictions as legitimate, whether they have alternatives or how work proceeds after a block.
 
 Treating software as consequential does not require treating it as an autonomous organisational cause. A blocked transaction is a technical event; its contribution to delay, better control or off-system work needs further evidence.
 

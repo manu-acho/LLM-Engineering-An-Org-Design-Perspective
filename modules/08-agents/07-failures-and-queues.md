@@ -1,5 +1,7 @@
 # Lesson 8.7: Make failures terminal, visible and recoverable
 
+[Download the matching notebook](/downloads/08-07-failures-and-queues.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next module](../09-agent-loops/README.md)
 
 ## A progress message is not a final result

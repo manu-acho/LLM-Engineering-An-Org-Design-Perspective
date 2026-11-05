@@ -84,7 +84,7 @@ Some consumers expect deltas (`"team"`), others the complete current value (`"He
 
 A class defines behaviour and attributes. An instance is one object with its own state. `self` refers to that instance. In the capstone, the planner holds scanner, estimator and messenger instances; this is **composition**. Shared base-agent logging illustrates **inheritance**.
 
-Class-level mutable objects can be shared across instances or notebook calls. The batch registry is an example worth inspecting. Use instance state when each run needs isolation.
+Class-level mutable objects can be shared across instances or notebook calls. A registry stored on a class is one example to inspect. Use instance state when each run needs isolation.
 
 `@classmethod` receives the class (`cls`) and can construct instances of that class. `@staticmethod` receives no automatic instance/class argument. `@decorator` replaces or wraps a function/class at definition time; retry and remote-service decorators use this mechanism.
 

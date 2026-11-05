@@ -1,5 +1,7 @@
 # Lesson 6.6: Redesign a routing task before learning its labels
 
+[Download the matching notebook](/downloads/06-06-design-lab.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next module](../07-specialisation/README.md)
 
 ## A clear column can contain an unclear task

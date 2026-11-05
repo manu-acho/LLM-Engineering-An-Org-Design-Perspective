@@ -1,5 +1,7 @@
 # Lesson 5.3: A knowledge assistant is also a design of authority
 
+[Download the matching notebook](/downloads/05-03-business-and-organisation.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
+
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
 ## Three sources tell different stories

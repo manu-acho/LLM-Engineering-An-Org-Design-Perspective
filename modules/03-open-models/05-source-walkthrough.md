@@ -1,72 +1,46 @@
-# Lesson 3.5: Load, encode, generate and diagnose
+# Lesson 3.5: Load weights, inspect shapes and diagnose inference
 
-[Module route](README.md) · [Next: design a trustworthy meeting record](06-design-lab.md)
+[Download the matching notebook](/downloads/03-05-source-walkthrough.ipynb) · [Notebook setup](../../STUDY-WORKSPACE.md)
 
-## Separate local and remote source material
+[Module route](README.md) · [Previous workshop](02-code-workshop.md)
 
-Ed Donner's [Week 3 notebooks](https://github.com/ed-donner/llm_engineering/tree/103f4bf045180f3b8b7721fd55b7897305a72672/week3) point to Colab lessons for pipelines, tokenizers, model inference and meeting minutes. The linked Colab contents were not accessible for inspection in preparing this expansion. The walkthrough below is an independent teaching lab, not a reconstruction of unseen cells.
+## Follow the path in the course checkout
 
-The local [visualizer](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week3/visualizer.py) does provide an inspectable source path. It requests token alternatives, converts log probabilities with `math.exp`, constructs prediction records and draws a graph. Those alternatives are conditional on the generated prefix. The picture is not a fully explored tree of alternative answers or a truth-probability map.
+The implementation is included here, so this walkthrough does not require another course, video or repository. Open `src/ai_orgdesign/labs/m03.py`. The lab's public functions expose inputs and return values; supporting service code lives in `src/ai_orgdesign/business.py` where required.
 
-## A complete inference function with visible boundaries
+GPT2Config specifies a tiny decoder architecture: eight vocabulary entries, sixteen positions, sixteen representation dimensions, one layer and two attention heads. GPT2LMHeadModel creates actual neural parameters from that configuration. torch.tensor constructs a batch with three token identifiers. eval disables training-specific behaviour, while no_grad avoids recording gradient calculations. The last-position logits contain one score for each vocabulary entry. softmax turns those eight scores into a distribution. These weights are random; the computation is real inference but the model has not learned language.
 
-This optional integration lab needs `torch`, `transformers` and a compatible pretrained causal language model already stored locally. `local_files_only=True` prevents fetching missing weights. Loading can still require substantial memory. Set the directory in the calling environment and use synthetic input. No pretrained inference was executed while authoring this lesson.
+Read the function from entry to return. Locate input validation before substantive work, transformations that create a new representation, any call into another component and the point that produces the observable result. A model call, a database commit and constructing a dictionary are different operations. Identify which actually occur in this program.
+
+## Work through the contrasting case
+
+Explain why replacing the random model with downloaded pretrained weights changes the source of its behaviour, while leaving the need to inspect context, scope and record ownership.
+
+The following variation either checks a failure boundary or exposes another aspect of the same implementation. Catching an expected exception allows the notebook to continue; the `else` branch raises an assertion if the expected boundary fails to appear.
 
 ```python
-def answer_locally(model_directory, question, max_new_tokens=40):
-    import torch
-    from transformers import AutoModelForCausalLM, AutoTokenizer
-
-    tokenizer = AutoTokenizer.from_pretrained(
-        model_directory, local_files_only=True
-    )
-    model = AutoModelForCausalLM.from_pretrained(
-        model_directory, local_files_only=True
-    ).eval()
-    messages = [{"role": "user", "content": question}]
-    prompt = tokenizer.apply_chat_template(
-        messages, tokenize=False, add_generation_prompt=True
-    )
-    batch = tokenizer(prompt, return_tensors="pt", add_special_tokens=False)
-    prefix_length = batch["input_ids"].shape[1]
-    with torch.no_grad():
-        generated = model.generate(
-            **batch, max_new_tokens=max_new_tokens, do_sample=False
-        )
-    continuation = generated[0, prefix_length:]
-    return {
-        "text": tokenizer.decode(continuation, skip_special_tokens=True),
-        "input_tokens": prefix_length,
-        "output_tokens": len(continuation),
-    }
+from ai_orgdesign.labs.m03 import VOCAB
+assert len(VOCAB) == 8
+print(dict(enumerate(VOCAB)))
+print("These custom token IDs are not a pretrained tokenizer.")
 ```
 
-The function deliberately loads once per call to keep the example self-contained. A service would normally load compatible components during startup and reuse them, while managing concurrent requests. Otherwise repeated loading can dominate latency.
+**Interpretation.** Pretrained weights contain relationships estimated from prior training. Random weights do not. Both produce scores through a forward pass. A pretrained continuation still requires task evaluation and cannot establish who has authority to approve a meeting record. Hosting a model locally also does not confer a licence to redistribute its weights.
 
-`apply_chat_template` turns role-labelled messages into model-specific text. The later tokenizer call creates tensors. Avoid adding a second set of special tokens after applying a template that already includes them. `**batch` expands input IDs and masks into named arguments. Slicing removes the prompt prefix from decoder-only output before decoding the continuation.
+## Inspect the implementation rather than a duplicate
 
-This example stays on the default device. Moving a model to a GPU also requires inputs on a compatible device and adequate memory. Automatically selecting a device is convenient only when the resulting placement is understood. A CPU lab may be slower but easier to diagnose.
+The matching notebook can display saved functions using `inspect.getsource`. This shows the implementation currently imported by Python. Reading code is useful, but a displayed function is not proof it executed or that every branch was tested. The behavioural checks deliberately include invalid inputs and contrasting outcomes.
 
-## Keep an execution record
+Run the course checks from the root folder with `uv run --locked pytest`. Run the notebook checks with `uv run --locked python scripts/verify_notebooks.py`. The [verification guide](../../reference/verification.md) distinguishes offline execution, real protocol tests, model downloads and paid-provider checks. It records the limits of each claim.
 
-Before interpreting quality, record model and tokenizer revisions, template, input length, generation settings, device, output and termination behaviour. The same model name can refer to changing files. A run that stops at its output limit can be incomplete even when returned text is grammatical.
+## What a result can establish
 
-| Observation | First boundary to inspect | Why |
-|---|---|---|
-| Missing-file error | Local model directory | The lab intentionally refuses downloads |
-| Template error | Tokenizer configuration and model type | Not every pretrained model is a chat model |
-| Memory failure | Weights, context, device and batch | A short successful request does not establish long-input capacity |
-| Prompt repeated in answer | Prefix slicing and model architecture | Some interfaces return prompt plus continuation |
-| Fluent invented commitment | Evidence and task evaluation | Correct loading does not establish factual support |
+The logits have shape [1, 8]: one sequence and eight candidate tokens. The eight probabilities sum approximately to one. The notebook reports the parameter count and CPU device from the actual model. Neither a fluent sentence nor business knowledge should be expected.
 
-## Extend the meeting application in stages
+Keep inputs, configuration identity, observed result and interpretation separate in an experiment record. If the program behaves as predicted but the business problem remains, investigate the surrounding evidence, roles and dependencies. A successful run should sharpen that inquiry rather than end it.
 
-First use a short, synthetic transcript. Generate structured notes containing claim, speaker, evidence span, condition and proposed owner. Compare notes with a manually prepared reference. Only after this works should audio transcription be added. Then transcription errors can be assessed separately from summary errors.
+## Explain the pattern without the library name
 
-Speaker attribution, recording permission, storage and access are additional application concerns. Running the final text model locally does not make an upstream transcription service local. Map the entire data path before making a privacy or operating claim.
+A useful completion check is to explain the operation in ordinary language, then name the exact implementation. A hosted API transfers model serving to a provider; local inference retains more operating responsibility. A pretrained open model provides a meaningful language baseline only after its access, licence and hardware requirements have been checked. The optional download exercise uses a tiny test model for loading mechanics, not a recommended business model.
 
-**Worked exercise:** The transcript says “finance could approve after recount”; the note says “finance approved”. Even if every model-loading and tensor-shape check passes, the note fails a claim-preservation test. Add a case specifically checking modality and conditions rather than increasing the hardware allocation.
-
-## Read the organisational connection
-
-A successful load-and-generate path does not establish that the surrounding service works well. The research chapter explains [capability, configuration, practice and outcome](../../reference/research/04-implementation.md#capability-configuration-practice-and-outcome).
+The [research connection](../../reference/research/06-technology-in-practice.md) develops the organisational questions. Follow the module's design lesson to turn this technical understanding into a decision with stated conditions and a recovery route.
