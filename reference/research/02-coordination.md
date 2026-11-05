@@ -95,9 +95,9 @@ A team proposes five agents that all send drafts to one reviewer. Identify two d
 
 **Worked response:** The drafts depend on review, and they compete for the same capacity. They may also need reconciliation if their claims overlap. Alternatives include fewer contributions, explicit acceptance criteria, automated structural checks before review, or separating review by expertise. The choice depends on the source of delay and error; adding reviewers without diagnosing the work is not enough.
 
-## Continue with the lessons
+## Continue with the course
 
-Examine meaning in [Lesson 5.6](../../modules/05-rag/06-design-lab.md), accepted ownership in [Lesson 10.3](../../modules/10-agent-orchestration/03-business-and-organisation.md), and review capacity in [Lesson 12.6](../../modules/12-stateful-agents/06-design-lab.md). [Chapter 3](03-decisions.md) asks who can select and revise the premises behind these arrangements.
+Apply these concepts to [the pilot's worked business design](../../modules/01-standalone-foundations/06-business-design.md) and [the exercises](../../modules/01-standalone-foundations/07-assessment.md). The [standalone curriculum](../../CURRICULUM.md) identifies how later planned modules will develop the technical and organisational questions together.
 
 ## References
 

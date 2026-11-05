@@ -1,0 +1,142 @@
+[
+  {
+    "number": 1,
+    "part": 1,
+    "title": "Foundations: evidence, language models and work",
+    "status": "pilot",
+    "outcome": "Trace a small learned model and prepare a source-labelled investigation brief."
+  },
+  {
+    "number": 2,
+    "part": 1,
+    "title": "Conversations, tools and action boundaries",
+    "status": "planned",
+    "outcome": "Build controlled interaction and distinguish a suggestion from an authorised operation."
+  },
+  {
+    "number": 3,
+    "part": 1,
+    "title": "Open models and inference",
+    "status": "planned",
+    "outcome": "Run and inspect inference, compare hosting choices and design a contestable organisational record."
+  },
+  {
+    "number": 4,
+    "part": 1,
+    "title": "Evaluation and business value",
+    "status": "planned",
+    "outcome": "Compare correctness, effort, waiting and service outcomes against explicit alternatives."
+  },
+  {
+    "number": 5,
+    "part": 1,
+    "title": "Organisational knowledge and retrieval",
+    "status": "planned",
+    "outcome": "Build evidence retrieval with versions, access rules and routes for conflicting knowledge."
+  },
+  {
+    "number": 6,
+    "part": 1,
+    "title": "Data, categories and baselines",
+    "status": "planned",
+    "outcome": "Prepare labels, compare simple baselines and inspect the work categories embedded in data."
+  },
+  {
+    "number": 7,
+    "part": 1,
+    "title": "Model adaptation and specialisation",
+    "status": "planned",
+    "outcome": "Compare prompting, retrieval and adaptation using a reproducible independent example."
+  },
+  {
+    "number": 8,
+    "part": 1,
+    "title": "An AI service within an operating model",
+    "status": "planned",
+    "outcome": "Connect technical contributions with roles, source ownership, review and recovery."
+  },
+  {
+    "number": 9,
+    "part": 2,
+    "title": "Agent loops and bounded autonomy",
+    "status": "planned",
+    "outcome": "Construct a bounded tool loop with explicit evidence, budgets and stopping conditions."
+  },
+  {
+    "number": 10,
+    "part": 2,
+    "title": "Orchestration and accepted handoffs",
+    "status": "planned",
+    "outcome": "Connect specialist contributions through inspectable results and acceptance conditions."
+  },
+  {
+    "number": 11,
+    "part": 2,
+    "title": "Teams and task dependencies",
+    "status": "planned",
+    "outcome": "Compare decomposition choices against specialisation benefits and integration work."
+  },
+  {
+    "number": 12,
+    "part": 2,
+    "title": "Durable state and human review",
+    "status": "planned",
+    "outcome": "Pause and resume work without reusing stale authority or repeating consequential actions."
+  },
+  {
+    "number": 13,
+    "part": 2,
+    "title": "Frameworks and interoperable contributions",
+    "status": "planned",
+    "outcome": "Implement a common task in different frameworks while preserving meaning and uncertainty."
+  },
+  {
+    "number": 14,
+    "part": 2,
+    "title": "MCP and business capabilities",
+    "status": "planned",
+    "outcome": "Expose a bounded service capability and distinguish discovery, identity, scope and authority."
+  },
+  {
+    "number": 15,
+    "part": 3,
+    "title": "From a business problem to a pilot",
+    "status": "planned",
+    "outcome": "Develop requirements, a baseline, acceptance examples and an incremental build with coding agents."
+  },
+  {
+    "number": 16,
+    "part": 3,
+    "title": "Agent harnesses and operational evidence",
+    "status": "planned",
+    "outcome": "Connect tools, instruction versions, evaluation, traces, latency and costs to service investigation."
+  },
+  {
+    "number": 17,
+    "part": 3,
+    "title": "Durable case handling at volume",
+    "status": "planned",
+    "outcome": "Design queues, concurrency, review capacity, idempotency and recovery across people and services."
+  },
+  {
+    "number": 18,
+    "part": 3,
+    "title": "Enterprise context, security and controls",
+    "status": "planned",
+    "outcome": "Connect owned definitions and policy sources with access boundaries, validation and failure handling."
+  },
+  {
+    "number": 19,
+    "part": 3,
+    "title": "Deployment and continuing service ownership",
+    "status": "planned",
+    "outcome": "Move from a local service to optional cloud deployments, with change, support and retirement arrangements."
+  },
+  {
+    "number": 20,
+    "part": 3,
+    "title": "Governed improvement and integration capstone",
+    "status": "planned",
+    "outcome": "Propose, review, evaluate and roll back service changes; defend a complete technical and organisational design."
+  }
+]

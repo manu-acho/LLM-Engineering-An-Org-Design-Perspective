@@ -1,130 +1,56 @@
-# Start here: learning AI engineering without a technical background
+# Start here: a standalone learning route
 
-Imagine that an operations manager receives this message: “The customer says the delivery arrived short, but the warehouse record says complete. Can we issue a credit?” Answering well involves more than writing a courteous sentence. Someone must identify the customer and order, understand what the records mean, reconcile the disagreement, know the rules, and locate a person with authority to act.
+[Course home](README.md) · [Module 1](modules/01-standalone-foundations/README.md)
 
-AI engineering concerns how to build a system that can perform selected parts of that work reliably. Organisation design concerns how those parts connect to other work, who owns them, and what happens when they do not fit the expected pattern. The guide explains the two together and opens up the code so you can see what is being built.
+## Begin with the business question
 
-You do not need to arrive knowing Python, statistics, cloud computing or machine learning. When an unfamiliar term is needed, a lesson introduces it before relying on it. Some concepts take several encounters. Being able to repeat a definition is different from being able to trace an example; the worked lessons are there to support that second step.
+A customer reports a shortage. A program can assemble the available records; a model can generate words; someone still needs to determine what happened and what action is justified. Module 1 opens these contributions one at a time.
 
-## Inspired by Ed Donner's LLM Engineering course
+The completed pilot can be studied without Ed Donner's courses, notebooks or datasets. Its examples are original, use fictional data and make no network calls. The rest of the curriculum is clearly marked as planned.
 
-This guide is inspired by and builds on [Ed Donner's LLM Engineering course](https://github.com/ed-donner/llm_engineering). His course provides the engineering foundation: a practical sequence of notebooks and projects covering model requests, conversation and tools, open models, evaluation, retrieval, training and agents. The first eight modules here follow that broad progression. Credit for the original course, its projects and its implementation examples belongs to Ed and the contributors credited in his repository.
+## Choose a route
 
-This guide develops that foundation in three connected ways:
+For concepts and business design, read Lessons 1.1, 1.3, 1.5, 1.6 and 1.7. The examples and worked answers provide the necessary context even without running code. Read Lesson 1.2 to become familiar with what a program is doing, and Lesson 1.4 when examining implementation decisions.
 
-- **Step-by-step explanations of concepts and code.** Concepts are introduced in ordinary language. Small code examples explain what enters a program, what each important instruction does, what comes back and how it can fail. Alternatives help show why a pattern might be useful and when a simpler approach would do.
-- **A connection from technical behaviour to business decisions.** Each module asks what a mechanism would change in work, how its value could be assessed and what evidence would justify using it. A faster answer, for example, may still leave a delivery dispute unresolved.
-- **An organisation-design perspective throughout.** Literature from organisation design research helps examine handoffs, shared understanding, decision authority, routines and the conditions needed for a feature to become useful. The continuing Harbour Services case connects these questions across the modules.
+For implementation, follow all seven lessons in order. Predict an output, run the example, compare the result and change one input. The aim is to understand the pattern and its limits, not simply produce a successful run.
 
-The purpose of these additions is to help readers move between understanding a mechanism and judging its use at work. Managers and executives can explore the concepts and organisational choices, while readers who want technical depth can follow the code.
+## Files, folders and the terminal
 
-### How the links connect the two
+A **file** contains saved text or code. A **folder** groups files. The **terminal** accepts commands that start programs and reports their output. A **working directory** is the folder from which a command runs. `cd` changes that directory. Paths identify files or folders.
 
-To study the original video courses, visit [Ed Donner's Udemy instructor page](https://www.udemy.com/user/ed-donner-3/), [AI Engineer Core Track: LLM Engineering, RAG, QLoRA, Agents](https://www.udemy.com/course/llm-engineering-master-ai-and-large-language-models/) and [AI Engineer Agentic Track: The Complete Agent & MCP Course](https://www.udemy.com/course/the-complete-agentic-ai-engineering-course/). These are links to the original courses, separate from this independent learning companion.
+A **Python interpreter** reads and executes Python code. A `.py` file is a text file containing that code. The pilot is written for Python 3.10 or later and is checked on the interpreter version recorded in the lab guide. It needs no additional packages. Python can be obtained from the [official Python site](https://www.python.org/downloads/).
 
-The code lessons and compact engineering references link to the relevant notebooks and helper files in Ed's GitHub repository. For example, Module 1 connects its small evidence-to-brief program to [the original first notebook](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week1/day1.ipynb). Follow those links to compare the explanation here with the original implementation. The small worked examples in this guide are identified separately from the original course code.
+On macOS or Linux, check the interpreter with:
 
-Course-file links use the repository version used to prepare these explanations, so a reference stays aligned with the code it discusses. [Ed's current repository](https://github.com/ed-donner/llm_engineering) may include newer material. The [source guide](SOURCE-MAP.md) maps the modules to the original course and explains coverage limits, including remote lessons that were not available for review.
-
-This is an independent companion. It does not reproduce the full course or its videos, and it does not imply Ed's endorsement. It can be read alongside his course, with the original projects providing a route into further practice.
-
-### A second part inspired by Ed's Agents course
-
-[Ed Donner's Agents course](https://github.com/ed-donner/agents) supplies the foundation for [Part II: Agent engineering and business integration](AGENT-ENGINEERING.md), Modules 9 to 14. Its six sections explore manual agent loops, the OpenAI Agents SDK, CrewAI, LangChain and LangGraph, several other frameworks, and MCP.
-
-Part II explains how these implementations connect to organisational work: who chooses a next step, how specialists exchange evidence, what a paused review requires, which meaning a shared task status carries, and who owns a reusable business capability. It includes plain-language concepts, worked code, alternatives, literature-grounded cases and a final integration plan. The code lessons link to the relevant files in the original Agents repository.
-
-Both parts are independent companions to Ed's courses, with credit to Ed and the contributors for the original projects and implementation examples. The [agents source guide](reference/agents-source-guide.md) records the version used and the limits of the inspected material. The new small examples are distinct from the original implementations.
-
-## How to use the guide
-
-Start with the concepts in each module, then follow the code and the business application. Each part answers a different question: How does it work? What do the instructions do? What would this change in an organisation?
-
-If a code passage is unfamiliar, read its explanation and trace a small example before trying to run it. Write down what enters the program, what changes and what comes back. You do not need to memorise every symbol or install every library to understand the pattern.
-
-For an initial overview, you can read the concepts and business applications first. Return to the code when you want to inspect how a claim becomes an actual operation. The [workbook](WORKBOOK.md) helps you connect the three parts through short exercises.
-
-The guide has two parts: [AI engineering foundations](README.md#part-i-ai-engineering-foundations), Modules 1 to 8, and [agent engineering and business integration](AGENT-ENGINEERING.md), Modules 9 to 14. Start with the foundations if the vocabulary is new. If you already understand tools, state and evaluation, the second part offers a route into more detailed agent design.
-
-Harbour Services is a fictional case used throughout the guide. The examples explore possible designs and consequences; they do not report results from a real deployment.
-
-## What is a computer program?
-
-A program is a set of instructions a computer can execute. A person might instruct a colleague to “look up the order, compare the quantities and flag any difference.” A computer needs those operations expressed in a language it can run, with precisely specified inputs and rules. Python is one such programming language.
-
-The following is Python:
-
-```python
-ordered = 12
-received = 10
-difference = ordered - received
+```sh
+python3 --version
 ```
 
-`ordered` is a **variable**, a name associated with a value. The first line associates the name with the number 12. The equals sign assigns a value; it is not asking whether two values are equal. The third line subtracts received from ordered and stores the result under another name. The computer calculates 2. It does not know whether a shortage occurred, whether the records are trustworthy or whether a credit is appropriate.
+On Windows, the Python launcher commonly uses:
 
-That distinction is already organisationally important: a correct calculation can be an input to a disputed business interpretation.
-
-## Files, folders and running code
-
-A **file** stores information, such as text, a photograph or a program. A **folder** groups files. A filename ending in `.md` contains Markdown, ordinary text with conventions for headings, links and code blocks. The files you are reading are Markdown. A `.py` file contains Python code. A `.ipynb` file is a Jupyter notebook, which contains separate cells of explanation and code, sometimes with saved outputs.
-
-To **run** code is to ask an interpreter or runtime to execute it. Reading a `.py` file does not run it. Opening a notebook does not mean that all its cells have executed. Its **kernel** is the running Python process associated with it. A cell can create a variable that a later cell uses. Running later cells first can therefore fail. Restarting the kernel removes that in-memory state, even though the notebook file still exists.
-
-A **terminal** accepts text commands for operating the computer. A **code editor** helps you read and edit program files. A **library** is reusable code written for others to call. `import json` makes Python's JSON library available. Installing a library and importing it are different acts: installation makes its files available in an environment; import makes its functions available to a running program.
-
-An **environment** is a particular collection of Python and installed libraries. Two notebooks can look identical while using different environments. This explains many “it works in one place” problems without implying that the underlying concept is wrong.
-
-## Functions, inputs, outputs and effects
-
-A **function** groups an operation under a name:
-
-```python
-def shortage(ordered, received):
-    return ordered - received
-
-result = shortage(12, 10)
+```powershell
+py -3 --version
 ```
 
-`def` introduces the function. Names inside the parentheses are **parameters**, the placeholders it will use. `shortage(12, 10)` calls the function with **arguments**, actual values. `return` sends a result back to the caller. Indentation indicates which lines belong inside the function.
+If the command is not found, install Python and reopen the terminal. Running the command reports which interpreter is available; it does not install it. The code is intended to be portable, but this pilot's recorded execution check is on macOS, not a claim of a Windows runtime test.
 
-An **input** is information supplied to an operation. An **output** is what it produces. A **side effect** is an interaction beyond producing a value, such as saving a file, sending an email or changing an order. A function that drafts a credit explanation and one that issues the credit have very different effects, even if both accept the same input.
+## Get the two lab files
 
-In every code lesson, ask four questions: What enters? What changes? What comes back? What happens if a step fails?
+Download [foundations_lab.py](/downloads/foundations_lab.py) and [test_foundations.py](/downloads/test_foundations.py) into one folder. Keep the exact filenames, including `.py`. The examples include their own small training sentences and fictional case, so no separate data download is required.
 
-## How programs talk to other systems
+Open a terminal in that folder. On macOS or Linux:
 
-An **interface** is an agreed way to interact. A restaurant order form specifies the information a diner supplies; the kitchen can work behind that interface without exposing every internal action. A software **API**, or application programming interface, serves a related purpose for programs. It specifies operations, inputs and responses. The analogy is limited: APIs also have precise data formats, authentication and error rules.
-
-An **endpoint** is an address for a particular service operation. **HTTP** is a protocol commonly used to send requests and responses over a network. A Python program can request a webpage or ask an inference service to generate text. Those are distinct requests to distinct services.
-
-A **client** is code that makes requests. A **server** receives them and performs or delegates work. “Cloud” means that some computing happens on infrastructure accessed over a network, rather than necessarily on your own laptop. It does not by itself specify who can see the data or how the service is governed.
-
-**Authentication** establishes which identity is making a request. **Authorisation** determines what that identity may do. An API key can identify a program to a service; it is not a substitute for defining the business actions that program should be allowed to perform.
-
-## Structured data and generated language
-
-A **string** is text. A **list** is an ordered collection. A **dictionary** associates keys with values:
-
-```python
-request = {"id": "R-17", "ordered": 12, "received": 10}
+```sh
+python3 foundations_lab.py model
+python3 foundations_lab.py brief
+python3 foundations_lab.py request
+python3 -m unittest -v test_foundations.py
 ```
 
-`request["received"]` retrieves the value associated with that key. The quotation marks distinguish text from variable names. JSON is a text format for exchanging structured values between programs. Python dictionaries and JSON resemble one another, but they are not the same representation: JSON must be parsed before ordinary Python code can use its fields.
+On Windows, replace `python3` with `py -3`. The first three commands print JSON, structured text whose named fields preserve the distinction between quantities, sources and unresolved questions. The last command runs the checks. Detailed outputs and troubleshooting are in [the lab guide](LAB-GUIDE.md).
 
-An LLM can generate text that resembles a record. That text needs checks before it becomes operational input. A correctly shaped record can still contain a wrong order number or an invented approval. The lessons separate checking shape, checking evidence and checking authority.
+## What runs, and what does not
 
-## A model is one component
+The `model` example trains and runs a tiny statistical language model. It is a real count-based model, not a modern neural LLM. The `brief` example is ordinary deterministic code. The `request` example constructs messages but sends nothing to a model provider. It needs no key and cannot incur inference charges.
 
-A **model** is a learned numerical system used to make predictions or generate output. An **application** combines models with user interaction, data preparation, business tools, state and error handling. A **workflow** specifies how activities connect. When a demo fails, the model may not be the failing component. The webpage extractor may have returned nothing, the wrong record may have been retrieved or an execution receipt may have been ignored.
-
-Learning to locate the failure is part of learning the mechanism. Breaking an application into these parts makes its behaviour easier to understand and investigate.
-
-## Learning through one continuing situation
-
-Harbour Services, our fictional organisation, receives delivery complaints and internal service requests. Sales knows the customer relationship; operations sees fulfilment records; finance controls credits; specialists handle exceptions. In later lessons, the short-delivery example becomes a summary, a conversation, an evidence retrieval task, a classification exercise and a proposed workflow.
-
-The continuity is intentional. You can see what each technical addition changes without needing to learn a new business situation every time. Additional short cases show when the same design should not be transferred mechanically.
-
-When you encounter a difficult term, return to an example and explain what the computer or person does. If you can say, “This function turns a question into a search request, but does not decide which policy is legitimate,” you understand more than the acronym alone conveys.
-
-[Begin Module 1](modules/01-foundations/README.md) · [Curriculum index](README.md)
+The distinction matters: correct evidence preparation is not proof of model behaviour, and a fluent continuation is not verification of a business record. The lessons explain both mechanisms before connecting them.

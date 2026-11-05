@@ -109,9 +109,9 @@ An assistant requires a verified customer quantity before allowing submission. S
 
 **Worked response:** Requiring verification before intake could improve downstream certainty but delay cases and shift work to advisers. Allowing an explicitly unverified estimate could preserve early intake but require a later verification state and owner. Neither option is free. The decision depends on service timing, evidence needs and who can perform verification.
 
-## Continue with the lessons
+## Continue with the course
 
-Apply fit and misfit to [Lesson 3.6](../../modules/03-open-models/06-design-lab.md), benefit evidence to [Lesson 4.6](../../modules/04-evaluation/06-design-lab.md), and continuing ownership to [Lesson 14.7](../../modules/14-agent-integration/07-service-evaluation.md).
+Apply these concepts to [the pilot's worked business design](../../modules/01-standalone-foundations/06-business-design.md) and [the exercises](../../modules/01-standalone-foundations/07-assessment.md). The [standalone curriculum](../../CURRICULUM.md) identifies how later planned modules will develop the technical and organisational questions together.
 
 ## References
 

@@ -4,8 +4,8 @@ import path from 'node:path';
 import { networkInterfaces } from 'node:os';
 import { buildReader, distRoot } from './build.mjs';
 
-const host = process.env.READER_HOST || '0.0.0.0';
-const port = Number(process.env.READER_PORT || 4186);
+const host = process.env.READER_HOST || '127.0.0.1';
+const port = Number(process.env.READER_PORT || 4191);
 let pendingBuild;
 function refresh() {
   if (!pendingBuild) pendingBuild = buildReader().finally(() => { pendingBuild = null; });
@@ -17,14 +17,16 @@ const allowed = new Map([
   ['/index.html', ['index.html', 'text/html; charset=utf-8']],
   ['/app.js', ['app.js', 'text/javascript; charset=utf-8']],
   ['/styles.css', ['styles.css', 'text/css; charset=utf-8']],
-  ['/content-index.json', ['content-index.json', 'application/json; charset=utf-8']]
+  ['/content-index.json', ['content-index.json', 'application/json; charset=utf-8']],
+  ['/downloads/foundations_lab.py', ['downloads/foundations_lab.py', 'text/plain; charset=utf-8']],
+  ['/downloads/test_foundations.py', ['downloads/test_foundations.py', 'text/plain; charset=utf-8']]
 ]);
 const server = http.createServer(async (request, response) => {
   try {
     const url = new URL(request.url, `http://${host}:${port}`);
     if (url.pathname === '/health') {
       response.writeHead(200, { 'Content-Type': 'application/json' });
-      response.end(JSON.stringify({ project: 'ai-engineering-learning-reader' })); return;
+      response.end(JSON.stringify({ project: 'ai-standalone-learning-reader' })); return;
     }
     const entry = allowed.get(url.pathname);
     if (!entry || !['GET', 'HEAD'].includes(request.method)) { response.writeHead(404); response.end('Not found'); return; }

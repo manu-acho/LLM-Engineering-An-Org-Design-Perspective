@@ -31,9 +31,9 @@ The perspectives overlap without being interchangeable. An approval can be a coo
 
 ## Follow a lesson into the research
 
-Every module lesson includes a link to a relevant concept in these chapters. The organisational discussions also link directly to the chapter supporting their argument. The chapters link back to selected lessons, so the reading can move from an implementation to its organisational meaning and back.
+The seven pilot lessons connect their technical and business questions to specific concepts in these chapters. The chapters can also be read as a continuous research route without running code.
 
-For an early example, connect [Lesson 1.3](../modules/01-foundations/03-business-and-organisation.md) with [information demand and capacity](research/01-organisation-design.md#information-demand-and-capacity). For agent engineering, connect [Lesson 12.2](../modules/12-stateful-agents/02-code-workshop.md) with [distinct acts in a workflow](research/03-decisions.md#distinct-acts-in-one-workflow).
+Start with [the pilot's model-and-application distinction](../modules/01-standalone-foundations/01-model-and-application.md), follow [evidence through the code](../modules/01-standalone-foundations/04-evidence-pipeline.md), and examine [the worked organisational design](../modules/01-standalone-foundations/06-business-design.md). The later modules in the [curriculum](../CURRICULUM.md) are planned, rather than presented as completed standalone lessons.
 
 ## Concepts, examples and citations
 

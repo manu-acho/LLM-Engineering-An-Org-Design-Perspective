@@ -5,6 +5,7 @@
 [build.environment]
   NODE_VERSION = "24"
 
+# Standalone edition: deploy this branch to a separate Netlify site.
 # The reader uses hash navigation, so lesson links do not need SPA rewrites.
 [[headers]]
   for = "/*"
@@ -16,3 +17,8 @@
   for = "/content-index.json"
   [headers.values]
     Cache-Control = "no-store"
+
+[[headers]]
+  for = "/downloads/*"
+  [headers.values]
+    Content-Disposition = "attachment"

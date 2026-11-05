@@ -106,9 +106,9 @@ An assistant recommends automatic processing below £50. Identify the judgements
 
 **Worked response:** Someone chose the amount, defined the eligible case population, decided which evidence is sufficient, set the exception conditions and accepted the consequences of mistakes. Review should examine those premises as well as whether the comparison in code is correct. The threshold is a teaching assumption, not a recommended policy.
 
-## Continue with the lessons
+## Continue with the course
 
-Use this account in [Lesson 2.3](../../modules/02-conversation/03-business-and-organisation.md), examine learned categories in [Lesson 6.3](../../modules/06-data/03-business-and-organisation.md), and follow versioned approval in [Lesson 12.2](../../modules/12-stateful-agents/02-code-workshop.md).
+Apply these concepts to [the pilot's worked business design](../../modules/01-standalone-foundations/06-business-design.md) and [the exercises](../../modules/01-standalone-foundations/07-assessment.md). The [standalone curriculum](../../CURRICULUM.md) identifies how later planned modules will develop the technical and organisational questions together.
 
 ## References
 

@@ -229,3 +229,6 @@ kbd { padding: 2px 6px; color: var(--ink-soft); background: white; border: 1px s
   .article { font-size: 11pt; }
   .article pre { white-space: pre-wrap; color: black; background: #f5f5f5; }
 }
+
+/* Planned curriculum cards are descriptions, not inactive buttons. */
+article.module-card { cursor: default; }

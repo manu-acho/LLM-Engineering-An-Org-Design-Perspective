@@ -1,8 +1,8 @@
 #!/bin/zsh
 cd "$(dirname "$0")" || exit 1
-reader_port="${READER_PORT:-4186}"
+reader_port="${READER_PORT:-4191}"
 reader_url="http://127.0.0.1:${reader_port}"
-if curl --noproxy '*' --silent --fail --max-time 2 "${reader_url}/health" | /usr/bin/grep -q 'ai-engineering-learning-reader'; then
+if curl --noproxy '*' --silent --fail --max-time 2 "${reader_url}/health" | /usr/bin/grep -q 'ai-standalone-learning-reader'; then
   open "$reader_url"
   exit 0
 fi

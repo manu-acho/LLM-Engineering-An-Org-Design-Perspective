@@ -102,9 +102,9 @@ There is a new prompt, an interview saying “we always verify”, and 200 logge
 
 **Worked response:** The prompt shows a represented instruction. The interview supplies a participant's account of the work. The logs show recorded approval events. None alone establishes that all relevant evidence was checked, what occurred outside the system or a complete shared understanding of the routine.
 
-## Continue with the lessons
+## Continue with the course
 
-Apply artefact-performance distinctions to [Lesson 3.3](../../modules/03-open-models/03-business-and-organisation.md), category revision to [Lesson 7.6](../../modules/07-specialisation/06-design-lab.md), and recovery work to [Lesson 8.7](../../modules/08-agents/07-failures-and-queues.md). [Chapter 6](06-technology-in-practice.md) examines how technical arrangements become consequential for particular actors.
+Apply these concepts to [the pilot's worked business design](../../modules/01-standalone-foundations/06-business-design.md) and [the exercises](../../modules/01-standalone-foundations/07-assessment.md). The [standalone curriculum](../../CURRICULUM.md) identifies how later planned modules will develop the technical and organisational questions together.
 
 ## References
 

@@ -92,9 +92,9 @@ Choose a proposed AI assistant. Write down its output, the recipient, the eviden
 
 **Worked response:** A complaint assistant prepares a brief for operations. Operations needs the current shipment record and a distinction between reports and confirmed facts. It can begin an investigation, but the brief cannot make the warehouse accept ownership of a disputed recount. A response arrangement and escalation route remain necessary.
 
-## Continue with the lessons
+## Continue with the course
 
-Apply information-processing questions to [Lesson 1.3](../../modules/01-foundations/03-business-and-organisation.md), fit to [Lesson 4.6](../../modules/04-evaluation/06-design-lab.md), and decomposition to [Lesson 11.6](../../modules/11-agent-teams/06-design-lab.md). [Chapter 2](02-coordination.md) examines what a receiving contribution actually needs.
+Apply these concepts to [the pilot's worked business design](../../modules/01-standalone-foundations/06-business-design.md) and [the exercises](../../modules/01-standalone-foundations/07-assessment.md). The [standalone curriculum](../../CURRICULUM.md) identifies how later planned modules will develop the technical and organisational questions together.
 
 ## References
 

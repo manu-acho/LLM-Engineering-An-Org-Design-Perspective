@@ -1,14 +1,12 @@
 const storageKeys = {
-  read: "ai-learning-reader:read",
-  bookmarks: "ai-learning-reader:bookmarks",
-  notes: "ai-learning-reader:notes"
+  read: "ai-standalone-reader:read",
+  bookmarks: "ai-standalone-reader:bookmarks",
+  notes: "ai-standalone-reader:notes"
 };
 
 function stored(key, fallback) {
   try {
-    // Preserve existing readers' notes when moving to the neutral storage name.
-    const previous = key.replace('ai-learning-reader:', 'articulate-learning-reader:');
-    return JSON.parse(localStorage.getItem(key) ?? localStorage.getItem(previous)) ?? fallback;
+    return JSON.parse(localStorage.getItem(key)) ?? fallback;
   } catch { return fallback; }
 }
 
@@ -247,26 +245,24 @@ function renderHome(push = false) {
   el.context.classList.remove('mobile-open');
   state.currentId = null;
   const start = state.byPath.get('START-HERE.md');
-  const index = state.byPath.get('README.md');
+  const curriculum = state.byPath.get('CURRICULUM.md');
+  const pilot = state.byPath.get('modules/01-standalone-foundations/README.md');
+  const research = state.byPath.get('reference/literature-guide.md');
+  const sources = state.byPath.get('SOURCE-MAP.md');
+  const modules = state.payload.curriculum;
   const lessons = state.documents.filter(doc => /^modules\/[^/]+\/\d{2}-/.test(doc.path)).length;
-  const groups = state.payload.moduleGroups || [{ title: 'Explore the modules', sections: state.payload.sectionOrder.filter(section => /^\d{2} ·/.test(section)) }];
-  const moduleCount = groups.reduce((total, group) => total + group.sections.length, 0);
   el.main.innerHTML = `<div class="dashboard">
-    <section class="dashboard-hero">
-      <div class="hero-copy"><div class="eyebrow">AI engineering × organisation design</div><h1>Understand AI.<br>Design better ways<br class="desktop-break"> to work.</h1><p>Learn how the technology works, follow the code, and explore how to integrate AI into businesses through the design of work.</p><div class="hero-actions"><button class="primary-button" data-home-doc="${start.id}">Start learning <span aria-hidden="true">→</span></button><button class="secondary-button" data-home-doc="${index.id}">Explore the curriculum</button></div><p class="hero-credit">Inspired by <a href="https://www.udemy.com/user/ed-donner-3/" target="_blank" rel="noopener noreferrer">Ed Donner</a> and his LLM Engineering and Agents courses.</p></div>
-      <aside class="learning-map" aria-label="How the guide connects technology and organisational work"><div class="map-label">A connected way to learn</div><div class="map-step"><span>01</span><div><h2>Understand the mechanism</h2><p>Models, retrieval, learning and agents, explained from first principles.</p></div></div><div class="map-step"><span>02</span><div><h2>Open up the code</h2><p>Trace inputs, decisions and outputs. Compare patterns and alternatives.</p></div></div><div class="map-step"><span>03</span><div><h2>Design the work</h2><p>Connect capabilities with roles, coordination, decisions and business value.</p></div></div><div class="map-note">For curious learners, managers and executives.<br>No programming background required.</div></aside>
-    </section>
-    <section class="stats-grid" aria-label="Inside the guide"><div class="stat-card"><strong>${moduleCount}</strong><span>Connected modules</span></div><div class="stat-card"><strong>${lessons}</strong><span>Step-by-step lessons</span></div><div class="stat-card"><strong>6</strong><span>Research chapters</span></div><div class="stat-card"><strong>2</strong><span>Engineering courses</span></div></section>
-    <section class="course-credit" aria-labelledby="credit-title"><div class="credit-intro"><div class="eyebrow">The engineering foundation</div><h2 id="credit-title">With credit to Ed Donner</h2><p>Ed’s courses and code provide the engineering foundation. This independent companion adds plain-language explanations, business applications and perspectives from organisation design research.</p><a class="text-link" href="https://www.udemy.com/user/ed-donner-3/" target="_blank" rel="noopener noreferrer">Ed’s Udemy instructor page ↗</a></div><div class="course-links"><a href="https://www.udemy.com/course/llm-engineering-master-ai-and-large-language-models/" target="_blank" rel="noopener noreferrer"><span>AI Engineer Core Track</span><strong>LLM Engineering</strong><small>LLMs, RAG, QLoRA and agents <span aria-hidden="true">↗</span></small></a><a href="https://www.udemy.com/course/the-complete-agentic-ai-engineering-course/" target="_blank" rel="noopener noreferrer"><span>AI Engineer Agentic Track</span><strong>Agents & MCP</strong><small>The Complete Agent & MCP Course <span aria-hidden="true">↗</span></small></a></div><p class="credit-boundary">Credit for the original courses and repository examples belongs to Ed Donner and their credited contributors. This guide does not imply affiliation or endorsement.</p></section>
-    <div class="section-heading"><div><div class="eyebrow">Choose your route</div><h2>Make a start</h2></div><p>Build understanding at your own pace.</p></div><section class="route-grid entry-routes"><button class="route-card start-card" data-home-doc="${start.id}"><strong>New to the technology?</strong><span>Begin with files, functions, APIs and a concrete business problem.</span></button><button class="route-card" data-home-doc="${index.id}"><strong>See the whole curriculum</strong><span>Find the technical and organisational routes through both parts.</span></button><button class="route-card" data-home-doc="${state.byPath.get('AGENT-ENGINEERING.md')?.id || index.id}"><strong>Go deeper into agents</strong><span>Explore loops, specialist teams, state and integration into business work.</span></button></section>
-    ${groups.map((group, i) => `<section class="curriculum-section"><div class="section-heading"><div><div class="eyebrow">${i === 0 ? 'Build the foundations' : 'Connect capabilities to work'}</div><h2>${escapeHtml(group.title)}</h2></div><span class="section-count">${group.sections.length} modules</span></div><div class="route-grid">${routeCards(group.sections)}</div></section>`).join('')}
-    <h2>Explore further</h2><section class="route-grid"><button class="route-card" data-home-doc="${state.byPath.get('reference/literature-guide.md').id}"><strong>Organisation design research</strong><span>Six AI-focused chapters on work, coordination, decisions and technology in practice.</span></button><button class="route-card" data-home-doc="${state.byPath.get('SOURCE-MAP.md').id}"><strong>Sources and further reading</strong><span>Original course material, scholarly references and the guide's coverage.</span></button></section>
-    <footer class="landing-footer"><span>AI engineering & organisation design</span><button class="text-button" data-home-doc="${state.byPath.get('SOURCE-MAP.md').id}">Sources, acknowledgements and coverage →</button></footer>
+    <section class="dashboard-hero"><div class="hero-copy"><div class="eyebrow">Standalone edition · First module available</div><h1>Understand AI.<br>Design the work.<br>Build the service.</h1><p>A course connecting technical understanding with business implementation and organisation design. The completed pilot needs no other course, accounts or paid services.</p><div class="hero-actions"><button class="primary-button" data-home-doc="${pilot.id}">Open Module 1 →</button><button class="secondary-button" data-home-doc="${start.id}">Start here</button></div><p class="hero-credit">One complete pilot module. Later standalone modules are planned, not yet published.</p></div>
+    <aside class="learning-map"><div class="map-label">A connected learning path</div><div class="map-step"><span>01</span><div><h2>Foundations</h2><p>Explain the mechanism. Trace the code. Preserve the evidence.</p></div></div><div class="map-step"><span>02</span><div><h2>Agent engineering</h2><p>Connect bounded contributions, state and human review.</p></div></div><div class="map-step"><span>03</span><div><h2>Business operations</h2><p>Design requirements, controls, deployment and continuing ownership.</p></div></div><div class="map-note">For learners, managers and executives.<br>No programming background required.</div></aside></section>
+    <section class="stats-grid"><div class="stat-card"><strong>1</strong><span>Available pilot module</span></div><div class="stat-card"><strong>${lessons}</strong><span>Complete pilot lessons</span></div><div class="stat-card"><strong>6</strong><span>Research chapters</span></div><div class="stat-card"><strong>${modules.length}</strong><span>Modules in the curriculum</span></div></section>
+    <section class="route-grid entry-routes"><button class="route-card" data-home-doc="${pilot.id}"><strong>Learn through one complete case</strong><span>Original examples, worked exercises and a business design.</span></button><button class="route-card" data-home-doc="${research.id}"><strong>Organisation design research</strong><span>Six chapters explain the literature within the course.</span></button><button class="route-card" data-home-doc="${state.byPath.get('LAB-GUIDE.md').id}"><strong>Run the independent lab</strong><span>Two Python files, no extra packages and no network calls.</span></button></section>
+    ${state.payload.moduleGroups.map((group, index) => `<section class="curriculum-section"><div class="section-heading"><h2>${escapeHtml(group.title)}</h2><span>${index === 0 ? 'Pilot available; further modules planned' : 'Planned'}</span></div><div class="route-grid">${modules.filter(module => module.part === index + 1).map(module => module.status === 'pilot' ? `<button class="route-card module-card" data-home-doc="${pilot.id}"><span class="module-number">${String(module.number).padStart(2, '0')}</span><span class="module-copy"><strong>${escapeHtml(module.title)}</strong><span>Available · 7 lessons</span></span></button>` : `<article class="route-card module-card"><span class="module-number">${String(module.number).padStart(2, '0')}</span><span class="module-copy"><strong>${escapeHtml(module.title)}</strong><span>Planned · ${escapeHtml(module.outcome)}</span></span></article>`).join('')}</div></section>`).join('')}
+    <footer class="landing-footer"><button class="text-button" data-home-doc="${curriculum.id}">Full curriculum →</button><button class="text-button" data-home-doc="${sources.id}">Sources and acknowledgements →</button></footer>
   </div>`;
   renderContext(); renderNavigation();
   window.scrollTo({ top: 0, behavior: 'instant' });
   if (push) history.pushState(null, '', location.pathname);
-  document.title = 'AI engineering and organisation design | Learning Reader';
+  document.title = 'AI engineering and organisation design | Standalone edition';
 }
 
 function resolveInternalLink(doc, href) {
@@ -341,6 +337,7 @@ function renderDocument(doc, heading = "") {
     if (!anchor) return;
     const href = anchor.getAttribute("href");
     if (href?.startsWith("#")) { event.preventDefault(); routeTo(doc, href.slice(1)); return; }
+    if (href?.startsWith('/downloads/')) { anchor.download = href.split('/').pop(); return; }
     const target = resolveInternalLink(doc, href);
     if (target) {
       event.preventDefault();

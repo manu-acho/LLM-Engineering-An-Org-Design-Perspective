@@ -113,9 +113,9 @@ Replace “the system affords transparency” with a statement that could be exa
 
 **Worked response:** “For a reviewer with source access and relevant knowledge, the linked claim panel may make it possible to compare a draft with its evidence before approval.” The next questions concern whether reviewers recognise and use that possibility, what happens when they disagree, and what consequences follow.
 
-## Continue with the lessons
+## Continue with the course
 
-Explore the full application in [Lesson 8.4](../../modules/08-agents/04-technology-in-practice.md), examine review in [Lesson 12.3](../../modules/12-stateful-agents/03-business-and-organisation.md), and connect service maintenance to [Lesson 14.7](../../modules/14-agent-integration/07-service-evaluation.md).
+Apply these concepts to [the pilot's worked business design](../../modules/01-standalone-foundations/06-business-design.md) and [the exercises](../../modules/01-standalone-foundations/07-assessment.md). The [standalone curriculum](../../CURRICULUM.md) identifies how later planned modules will develop the technical and organisational questions together.
 
 ## References
 
