@@ -31,15 +31,15 @@ The first setup needs internet access and storage for Python, packages and cache
 
 ## 2. Clone the course branch
 
-At present, this repository contains two editions. The self-contained course is on `codex/standalone-ai-organisation-design`; `main` contains the companion edition. Use the course branch explicitly:
+At present, this repository contains two editions. The self-contained course is on `ai-organisation-design`; `main` contains the companion edition. Use the course branch explicitly:
 
 ```sh
-git clone --branch codex/standalone-ai-organisation-design --single-branch https://github.com/manu-acho/LLM-Engineering-An-Org-Design-Perspective.git ai-orgdesign
+git clone --branch ai-organisation-design --single-branch https://github.com/manu-acho/LLM-Engineering-An-Org-Design-Perspective.git ai-orgdesign
 cd ai-orgdesign
 git branch --show-current
 ```
 
-The final command should print `codex/standalone-ai-organisation-design`. The last argument of `git clone` names the local folder. Run the remaining commands from inside that folder, where `pyproject.toml`, `uv.lock` and `scripts` are present.
+The final command should print `ai-organisation-design`. The last argument of `git clone` names the local folder. Run the remaining commands from inside that folder, where `pyproject.toml`, `uv.lock` and `scripts` are present.
 
 If the remote branch cannot be found, its maintainer needs to publish it before this clone command can work. An unpublished local branch is not available to other learners. If the project later moves to its own repository, use its published clone URL and branch instead.
 
