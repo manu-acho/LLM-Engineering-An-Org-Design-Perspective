@@ -1,8 +1,8 @@
-# Standalone curriculum
+# Course curriculum
 
 [Course home](README.md) · [Start here](START-HERE.md)
 
-The curriculum integrates foundations, agent engineering and business operations. The first module is a completed standalone pilot. The remaining entries define the intended learning path; their complete standalone lessons and code have not yet been written. Existing companion-edition files retained in the development checkout are not part of this published collection.
+The curriculum integrates foundations, agent engineering and business operations. The first module is a completed pilot. The remaining entries define the intended learning path; their complete lessons and code have not yet been written. The reading collection includes completed material only.
 
 ## Part 1: AI engineering foundations
 

@@ -9,3 +9,11 @@ browser-reader/output/
 
 __pycache__/
 *.pyc
+.venv/
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+.pytest_cache/
+.ruff_cache/
+outputs/
+.jupyter/
+*.egg-info/

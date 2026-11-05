@@ -1,5 +1,7 @@
 # Lesson 1.7: Exercises, failure cases and worked answers
 
+[Download the lesson notebook](/downloads/07-assessment.ipynb) · [Notebook setup and study workflow](../../STUDY-WORKSPACE.md)
+
 [Previous lesson](06-business-design.md) · [Module route](README.md) · [Workbook](../../WORKBOOK.md)
 
 ## 1. Follow a learned change

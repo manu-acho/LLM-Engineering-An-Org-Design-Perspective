@@ -1,11 +1,12 @@
 # AI engineering and organisation design
 
-A standalone course about understanding AI technology and integrating it into business through the design of work. Concepts, code and organisational reasoning follow the same practical cases. No other course is required for the completed material.
+A course about understanding AI technology and integrating it into business through the design of work. Concepts, code and organisational reasoning follow the same practical cases. No other course is required for the completed material.
 
 ## What is available now
 
-The first standalone module is complete as a pilot: seven lessons, two downloadable Python files, a worked organisational design and exercises with answers. Six research chapters explain the organisation design literature within the course. Later modules are planned and are not presented as completed standalone teaching material.
+The first module is complete as a pilot: seven lessons, seven runnable notebooks, two downloadable Python files, a worked organisational design and exercises with answers. Six research chapters explain the organisation design literature within the course. Later modules are planned and are not presented as completed teaching material.
 
+- [Study workspace](STUDY-WORKSPACE.md): VS Code, notebooks, environment and local API-key configuration.
 - [Start here](START-HERE.md): the learning routes and practical setup.
 - [Module 1](modules/01-standalone-foundations/README.md): evidence, language models and work.
 - [Full curriculum](CURRICULUM.md): the three parts and development status of each module.

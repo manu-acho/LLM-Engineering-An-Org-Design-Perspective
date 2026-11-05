@@ -2,6 +2,10 @@
 
 [Start here](START-HERE.md) · [Module route](modules/01-standalone-foundations/README.md)
 
+## Notebook route
+
+Use the [study workspace guide](STUDY-WORKSPACE.md) for the prepared environment and seven lesson notebooks. They import the complete lab below rather than maintain separate copies. The notebooks need Jupyter packages; the two Python files can also run alone using the standard library.
+
 ## Download and run
 
 Download [the complete lab](/downloads/foundations_lab.py) and [its checks](/downloads/test_foundations.py) into the same folder. The program contains the four training sentences and fictional case. It neither reads confidential files nor contacts a model or external service.

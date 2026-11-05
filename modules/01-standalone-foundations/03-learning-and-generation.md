@@ -1,5 +1,7 @@
 # Lesson 1.3: Train a tiny language model
 
+[Download the lesson notebook](/downloads/03-learning-and-generation.ipynb) · [Notebook setup and study workflow](../../STUDY-WORKSPACE.md)
+
 [Previous lesson](02-python-first-steps.md) · [Module route](README.md) · [Next: evidence preparation](04-evidence-pipeline.md)
 
 ## A model small enough to inspect

@@ -1,4 +1,4 @@
-# Start here: a standalone learning route
+# Start here: the learning route
 
 [Course home](README.md) · [Module 1](modules/01-standalone-foundations/README.md)
 
@@ -13,6 +13,12 @@ The completed pilot can be studied without Ed Donner's courses, notebooks or dat
 For concepts and business design, read Lessons 1.1, 1.3, 1.5, 1.6 and 1.7. The examples and worked answers provide the necessary context even without running code. Read Lesson 1.2 to become familiar with what a program is doing, and Lesson 1.4 when examining implementation decisions.
 
 For implementation, follow all seven lessons in order. Predict an output, run the example, compare the result and change one input. The aim is to understand the pattern and its limits, not simply produce a successful run.
+
+## Read and run side by side
+
+Each pilot lesson has a matching notebook. The [study workspace guide](STUDY-WORKSPACE.md) explains the prepared Python environment, VS Code kernel selection and Jupyter browser option. Begin with `notebooks/01-foundations/01-model-and-application.ipynb`. Read the lesson, run a cell, inspect its output and try the exercise. No API keys are needed for the pilot.
+
+The two-file download route below remains available for running the underlying Python examples without Jupyter.
 
 ## Files, folders and the terminal
 

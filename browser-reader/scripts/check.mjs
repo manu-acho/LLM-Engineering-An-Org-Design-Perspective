@@ -14,6 +14,9 @@ assert.equal(payload.curriculum.filter(module => module.status === 'planned').le
 assert.equal(build.lessons, 7);
 assert.equal(payload.documents.filter(doc => doc.path.startsWith('reference/research/')).length, 6);
 
+const study = JSON.parse(await fs.readFile(path.join(projectRoot, 'study-manifest.json'), 'utf8'));
+const downloadNames = ['foundations_lab.py', 'test_foundations.py', ...study.lessons.map(item => path.basename(item.notebook))];
+assert.equal(new Set(downloadNames).size, downloadNames.length);
 let links = 0;
 for (const document of payload.documents) {
   assert(!document.content.includes('org-design-as-code'), `Original research link in ${document.path}`);
@@ -26,7 +29,7 @@ for (const document of payload.documents) {
     if (/^(https?:|mailto:)/.test(href)) continue;
     const [file, heading] = href.split('#');
     if (file.startsWith('/downloads/')) {
-      assert(['foundations_lab.py', 'test_foundations.py'].includes(path.posix.basename(file)));
+      assert(downloadNames.includes(path.posix.basename(file)));
       await fs.access(path.join(distRoot, file.slice(1)));
     } else {
       const target = file ? path.posix.normalize(path.posix.join(path.posix.dirname(document.path), file)) : document.path;
@@ -41,4 +44,10 @@ for (const file of ['foundations_lab.py', 'test_foundations.py']) {
   const published = await fs.readFile(path.join(distRoot, 'downloads', file));
   assert(source.equals(published), `Changed download: ${file}`);
 }
-console.log({ ...build, internalLinksChecked: links, curriculumModules: 20, completeStandaloneModules: 1, downloadFiles: 2 });
+for (const lesson of study.lessons) {
+  assert(documents.has(lesson.lesson));
+  const source = await fs.readFile(path.join(projectRoot, lesson.notebook));
+  const published = await fs.readFile(path.join(distRoot, 'downloads', path.basename(lesson.notebook)));
+  assert(source.equals(published), `Changed notebook download: ${lesson.notebook}`);
+}
+console.log({ ...build, internalLinksChecked: links, curriculumModules: 20, completeStandaloneModules: 1, downloadFiles: downloadNames.length });

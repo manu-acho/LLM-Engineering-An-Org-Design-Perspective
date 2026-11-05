@@ -6,11 +6,11 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 export const readerRoot = path.resolve(here, '..');
 export const projectRoot = path.resolve(readerRoot, '..');
 export const distRoot = path.join(readerRoot, 'dist');
-const moduleNames = { '01-standalone-foundations': '01 · Standalone foundations' };
+const moduleNames = { '01-standalone-foundations': '01 · Foundations' };
 // Only completed standalone teaching units enter the published collection.
 const readingFiles = [
   'README.md', 'START-HERE.md', 'CURRICULUM.md', 'WORKBOOK.md', 'SOURCE-MAP.md',
-  'LAB-GUIDE.md', 'AGENT-ENGINEERING.md', 'reference/glossary.md',
+  'LAB-GUIDE.md', 'STUDY-WORKSPACE.md', 'AGENT-ENGINEERING.md', 'reference/glossary.md',
   'reference/literature-guide.md'
 ];
 
@@ -22,7 +22,7 @@ const researchFiles = [
 
 function sectionFor(relative) {
   if (relative === 'reference/literature-guide.md' || researchFiles.includes(relative)) return 'Organisation design research';
-  if (['README.md', 'START-HERE.md', 'WORKBOOK.md', 'AGENT-ENGINEERING.md', 'CURRICULUM.md', 'LAB-GUIDE.md'].includes(relative)) return 'Start and study';
+  if (['README.md', 'START-HERE.md', 'WORKBOOK.md', 'AGENT-ENGINEERING.md', 'CURRICULUM.md', 'LAB-GUIDE.md', 'STUDY-WORKSPACE.md'].includes(relative)) return 'Start and study';
   if (relative.startsWith('modules/')) return moduleNames[relative.split('/')[1]] || 'Engineering references';
   return 'Sources and further reading';
 }
@@ -72,7 +72,7 @@ export async function buildReader() {
     { title: 'Part III: Business implementation and operations', sections: [] }
   ];
   const payload = { generatedAt: new Date().toISOString(), edition: 'standalone-pilot', curriculum,
-    repoName: 'AI engineering and organisation design: standalone edition', documents,
+    repoName: 'AI engineering and organisation design', documents,
     sectionOrder, moduleGroups, warnings: [] };
   await fs.mkdir(distRoot, { recursive: true });
   await fs.writeFile(path.join(distRoot, 'content-index.json.tmp'), JSON.stringify(payload));
@@ -81,6 +81,11 @@ export async function buildReader() {
   await fs.mkdir(path.join(distRoot, 'downloads'), { recursive: true });
   for (const file of ['foundations_lab.py', 'test_foundations.py']) {
     await fs.copyFile(path.join(projectRoot, 'examples/01-foundations', file), path.join(distRoot, 'downloads', file));
+  }
+  const study = JSON.parse(await fs.readFile(path.join(projectRoot, 'study-manifest.json'), 'utf8'));
+  for (const lesson of study.lessons) {
+    if (!/^notebooks\/[a-z0-9-]+\/\d{2}-[a-z0-9-]+\.ipynb$/.test(lesson.notebook)) throw new Error('Invalid notebook path');
+    await fs.copyFile(path.join(projectRoot, lesson.notebook), path.join(distRoot, 'downloads', path.basename(lesson.notebook)));
   }
   return { documents: documents.length, lessons: documents.filter(d => /^modules\/[^/]+\/\d{2}-/.test(d.path)).length, warnings: [] };
 }

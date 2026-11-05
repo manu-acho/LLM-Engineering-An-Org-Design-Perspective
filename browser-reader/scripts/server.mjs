@@ -2,7 +2,7 @@ import http from 'node:http';
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { networkInterfaces } from 'node:os';
-import { buildReader, distRoot } from './build.mjs';
+import { buildReader, distRoot, projectRoot } from './build.mjs';
 
 const host = process.env.READER_HOST || '127.0.0.1';
 const port = Number(process.env.READER_PORT || 4191);
@@ -21,6 +21,11 @@ const allowed = new Map([
   ['/downloads/foundations_lab.py', ['downloads/foundations_lab.py', 'text/plain; charset=utf-8']],
   ['/downloads/test_foundations.py', ['downloads/test_foundations.py', 'text/plain; charset=utf-8']]
 ]);
+const study = JSON.parse(await fs.readFile(path.join(projectRoot, 'study-manifest.json'), 'utf8'));
+for (const lesson of study.lessons) {
+  const name = path.basename(lesson.notebook);
+  allowed.set(`/downloads/${name}`, [`downloads/${name}`, 'application/x-ipynb+json; charset=utf-8']);
+}
 const server = http.createServer(async (request, response) => {
   try {
     const url = new URL(request.url, `http://${host}:${port}`);

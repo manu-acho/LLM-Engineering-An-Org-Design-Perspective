@@ -1,5 +1,7 @@
 # Lesson 1.1: A model, an application and a business problem
 
+[Download the lesson notebook](/downloads/01-model-and-application.ipynb) · [Notebook setup and study workflow](../../STUDY-WORKSPACE.md)
+
 [Module route](README.md) · [Next: first Python steps](02-python-first-steps.md)
 
 ## Begin with the discrepancy

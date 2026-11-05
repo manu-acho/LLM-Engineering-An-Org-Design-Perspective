@@ -1,5 +1,7 @@
 # Lesson 1.2: Reading and running a small Python program
 
+[Download the lesson notebook](/downloads/02-python-first-steps.ipynb) · [Notebook setup and study workflow](../../STUDY-WORKSPACE.md)
+
 [Previous lesson](01-model-and-application.md) · [Module route](README.md) · [Next: learning](03-learning-and-generation.md)
 
 ## A program is a sequence of explicit operations

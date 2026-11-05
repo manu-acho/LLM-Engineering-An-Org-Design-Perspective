@@ -1,5 +1,7 @@
 # Lesson 1.5: From the tiny model to a neural LLM
 
+[Download the lesson notebook](/downloads/05-neural-models.ipynb) · [Notebook setup and study workflow](../../STUDY-WORKSPACE.md)
+
 [Previous lesson](04-evidence-pipeline.md) · [Module route](README.md) · [Next: business design](06-business-design.md)
 
 ## What carries across?

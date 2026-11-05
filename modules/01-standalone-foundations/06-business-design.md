@@ -1,5 +1,7 @@
 # Lesson 1.6: Design the work around the contribution
 
+[Download the lesson notebook](/downloads/06-business-design.ipynb) · [Notebook setup and study workflow](../../STUDY-WORKSPACE.md)
+
 [Previous lesson](05-neural-models.md) · [Module route](README.md) · [Next: exercises](07-assessment.md)
 
 ## The service must do more than prepare text

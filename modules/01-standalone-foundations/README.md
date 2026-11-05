@@ -20,4 +20,6 @@ The business route follows Lessons 1, 3, 5, 6 and 7. The implementation route fo
 
 The module should leave a learner able to distinguish model from application, calculate a small conditional distribution, follow a function through its inputs and outputs, preserve evidence status, explain the difference between count-based and neural models, and propose a bounded service design with a meaningful comparison.
 
+Seven notebooks follow the lessons in order. The [study workspace guide](../../STUDY-WORKSPACE.md) explains how to open them and select the prepared environment. No API keys are needed.
+
 Two downloadable files contain the complete local lab and its checks. They need Python 3.10 or later and no extra packages, model downloads, accounts or network calls. Later modules introduce external integrations separately.

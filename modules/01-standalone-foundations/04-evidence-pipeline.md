@@ -1,5 +1,7 @@
 # Lesson 1.4: Prepare evidence and construct a request
 
+[Download the lesson notebook](/downloads/04-evidence-pipeline.ipynb) · [Notebook setup and study workflow](../../STUDY-WORKSPACE.md)
+
 [Previous lesson](03-learning-and-generation.md) · [Module route](README.md) · [Next: neural models](05-neural-models.md)
 
 ## Follow one case through ordinary code

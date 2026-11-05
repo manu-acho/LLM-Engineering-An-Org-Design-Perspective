@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "lessons": [
+    {
+      "lesson": "modules/01-standalone-foundations/01-model-and-application.md",
+      "notebook": "notebooks/01-foundations/01-model-and-application.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false
+    },
+    {
+      "lesson": "modules/01-standalone-foundations/02-python-first-steps.md",
+      "notebook": "notebooks/01-foundations/02-python-first-steps.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false
+    },
+    {
+      "lesson": "modules/01-standalone-foundations/03-learning-and-generation.md",
+      "notebook": "notebooks/01-foundations/03-learning-and-generation.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false
+    },
+    {
+      "lesson": "modules/01-standalone-foundations/04-evidence-pipeline.md",
+      "notebook": "notebooks/01-foundations/04-evidence-pipeline.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false
+    },
+    {
+      "lesson": "modules/01-standalone-foundations/05-neural-models.md",
+      "notebook": "notebooks/01-foundations/05-neural-models.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false
+    },
+    {
+      "lesson": "modules/01-standalone-foundations/06-business-design.md",
+      "notebook": "notebooks/01-foundations/06-business-design.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false
+    },
+    {
+      "lesson": "modules/01-standalone-foundations/07-assessment.md",
+      "notebook": "notebooks/01-foundations/07-assessment.ipynb",
+      "requires_api_keys": false,
+      "network_calls": false
+    }
+  ]
+}

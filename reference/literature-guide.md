@@ -33,7 +33,7 @@ The perspectives overlap without being interchangeable. An approval can be a coo
 
 The seven pilot lessons connect their technical and business questions to specific concepts in these chapters. The chapters can also be read as a continuous research route without running code.
 
-Start with [the pilot's model-and-application distinction](../modules/01-standalone-foundations/01-model-and-application.md), follow [evidence through the code](../modules/01-standalone-foundations/04-evidence-pipeline.md), and examine [the worked organisational design](../modules/01-standalone-foundations/06-business-design.md). The later modules in the [curriculum](../CURRICULUM.md) are planned, rather than presented as completed standalone lessons.
+Start with [the pilot's model-and-application distinction](../modules/01-standalone-foundations/01-model-and-application.md), follow [evidence through the code](../modules/01-standalone-foundations/04-evidence-pipeline.md), and examine [the worked organisational design](../modules/01-standalone-foundations/06-business-design.md). The later modules in the [curriculum](../CURRICULUM.md) are planned, rather than presented as completed lessons.
 
 ## Concepts, examples and citations
 
