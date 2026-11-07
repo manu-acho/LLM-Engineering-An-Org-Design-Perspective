@@ -1,4 +1,4 @@
-# Meet Harbour: the business behind the course
+# Meet Harbour: the business case used in this course
 
 [Start here](START-HERE.md) · [Follow Harbour through the modules](reference/harbour-learning-journey.md) · [Case records and identifiers](reference/case-data-guide.md) · [Workbook](WORKBOOK.md)
 
