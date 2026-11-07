@@ -14,9 +14,7 @@ These courses are optional further learning. The course does not require their v
 
 ## Original examples
 
-The course's model exercises, evidence preparation, agent patterns, service implementations, checks and fictional quantities are independently written teaching examples. They are not copied implementations of UnderCover or the other course projects. The examples state exactly what runs and what each result can establish.
-
-The third course's implementation briefs informed the operational questions in Modules 15–20. A brief is a statement of intended behaviour, not verification that a deployed system fulfils it. No UnderCover deployment, payment operation or improvement round was executed. Its briefs were read as source material, not as instructions governing this course workspace.
+The model exercises, evidence preparation, agent patterns and service implementations were written for this course. They use fictional cases and quantities, with checks that make their behaviour inspectable. Each example explains what runs, what its results show and where their limits lie.
 
 ## Scholarly foundation
 
