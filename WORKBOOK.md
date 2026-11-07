@@ -60,3 +60,18 @@ The final record should allow a colleague unfamiliar with the notebooks to under
 **Worked synthesis.** Harbour can propose a preparation service inside its delivery-investigation workflow while keeping warehouse, transport and finance expertise distinct. An operations case owner coordinates unresolved work; functional owners maintain their evidence; a manager reviews a proposed remedy; finance processes an authorised account change where required. These are proposed responsibilities whose practical acceptance must be tested. Technical support restores execution and helps identify affected cases; it cannot declare a disputed delivery resolved.
 
 The supply-chain consequence of an error may be extra handling, replacement stock, customer disruption or disputed settlement. Those effects need appropriate evidence rather than an invented monetary conversion. Compare the assisted arrangement with improved intake and direct lookup. If the main problem is an unaccepted handoff, repair that arrangement rather than assuming a more capable model will solve it. State which parts of the proposal are implemented locally, which were simulated and which still need operational evidence.
+
+## Carry forward a few concrete operational records
+
+These small additions strengthen the existing design record rather than create a separate supply-chain assignment sequence. Record the worked values and then one reason why the result is not the whole business decision.
+
+| Existing lesson | Artefact to retain | Worked comparison |
+|---|---|---|
+| 1.4 | SC-U1 identity/unit comparison | Compatible carton counts differ by two; a unit, item or line mismatch requires clarification rather than subtraction |
+| 4.4 | SC-M1–SC-M4 population and service summary | Preparation falls from sixteen to eight minutes while timely resolution remains two of four; one case remains open overdue |
+| 5.3 / 18.3 | Source and term ownership | Distinguish a policy owner, record owner and authorised decision role; an engineer maintaining the index does not inherit those rights |
+| 8.3 / 12.6 | Remedy and awaited-work trace | Approval leaves stock feasibility, transport commitments and any applicable account treatment to be completed by their owners |
+| 17.3 | Review workload/capacity assumptions | Thirty arrivals with one reviewer, sixty available minutes and three minutes per case implies capacity twenty and unserved incoming work ten per hour |
+| 20.6 | Integrated recommendation | Use the preceding distinctions to defend scope, owners, evidence, measures and a simpler alternative |
+
+These records can be kept in a personal notebook copy or written design document. No saved output file or previous kernel session is required by a later notebook. Distinct exercise identifiers are not merged into H-17, and a constructed comparison is not a measured claim about Harbour.

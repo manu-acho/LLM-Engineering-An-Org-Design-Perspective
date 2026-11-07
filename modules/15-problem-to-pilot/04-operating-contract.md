@@ -24,7 +24,7 @@ Open `src/ai_orgdesign/labs/m15.py` and follow each call into its supporting fun
 
 ## Write acceptance and rejection conditions
 
-The three routes are review, deny and needs_evidence. matches is true for the supplied examples. Agreement between quantities produces compare_policy rather than automatic closure. This deliberately avoids using numerical agreement as sufficient evidence that the customer problem is resolved.
+The three demonstrated outcomes are `review`, `deny` and `needs_evidence`; `matches` is true for those supplied examples. The function also returns `compare_policy` when quantities agree, so the demonstration does not exercise every possible output. In this small requirements exercise, `review` means a discrepancy needs human investigation. It is not the narrower damaged-goods label used by the extended four-route task. Agreement between quantities produces `compare_policy` rather than automatic closure. This deliberately avoids using numerical agreement as sufficient evidence that the customer problem is resolved.
 
 Acceptance conditions should be observable. “The system handles errors” is too vague. Specify which input is refused, whether the attempt changes state, what the caller sees and who receives unresolved work. A failed test is useful information about the contract; suppressing an exception merely to obtain a successful notebook run destroys that information.
 
@@ -85,3 +85,7 @@ Write the prediction before consulting the worked answer: Does this restricted e
 The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## Interpret this exercise’s route
+
+The local requirements exercise uses `review` for discrepancy investigation and also has a `compare_policy` outcome for matching quantities. The extended four-route brief uses `investigate` for a discrepancy and a narrower `review` label for qualitative concerns. The [routing crosswalk](../../reference/case-data-guide.md#routing-vocabulary-belongs-to-a-task) keeps these contracts distinct.

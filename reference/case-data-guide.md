@@ -54,3 +54,16 @@ The company introduction explains a three-source H-17 scenario: `order-17` recor
 The database's `proposal` teaching value is not a calculated H-17 credit or evidence of financial loss. A recorded `approved` simulation does not move goods or money. Finance integration in the business design must therefore remain distinct from a completed accounting connection.
 
 Other cases contrast damage, invoice/tax questions, missing reports and regional access. The finance label assigns a defined review route; it does not decide tax treatment. Meetings and historical text-classification examples remain separate illustrations. Experimental volumes, times, prices and queue rates are stated assumptions for their particular exercise, not a cumulative factual history of Harbour.
+
+## Routing vocabulary belongs to a task
+
+| Exercise | Labels and their meaning | Connection to the wider case |
+|---|---|---|
+| Module 6 text classifier | `finance` and `operations` name receiving functions | A broad allocation exercise, not a decision about condition or remedy |
+| Extended structured brief | `needs_evidence`, `investigate`, `review`, `finance` name the four defined case routes | Missing reported quantity, quantity discrepancy, qualitative review and invoice/tax routing remain distinct |
+| Module 15 requirements exercise | `review`, `deny`, `needs_evidence`, `compare_policy` describe that function’s next step | Here `review` includes discrepancy investigation; `deny` is an access result and matching quantities still require policy comparison |
+| Case-store review | `approved` and `returned` describe simulated review state | They are neither classifier labels nor proof that goods or money moved |
+
+Do not pass one exercise’s labels into another interface without an explicit translation and acceptance check. For example, mapping every Module 15 `review` result to the extended damaged-goods route would lose the difference between a quantity discrepancy and a condition report. The narrow lab is intentionally a different task; its output names do not redefine Harbour’s business categories.
+
+The worked physical-evidence, measurement and capacity examples use identifiers beginning `SC-U` and `SC-M`, or an explicit hourly capacity scenario. They are separate fictional exercises. Their fields and outputs are not added to H-17, sent to the provider by existing live cells or treated as observed company performance.

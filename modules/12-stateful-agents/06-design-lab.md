@@ -119,3 +119,9 @@ Write the prediction before consulting the worked answer: Should resuming the re
 The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## Resume the right work after the wait
+
+The [remedy follow-through example](../08-agents/03-business-and-organisation.md#follow-an-authorised-remedy-into-the-remaining-work) separates approval from feasible fulfilment. If a case waits for a carrier check, record the awaited contribution, its owner and the next review point. If stock or the promised timing changes, a stored approval does not recreate the old availability or customer agreement.
+
+**Worked check.** A reviewer resumes a saved proposal after the only available replacement stock was assigned elsewhere. A current case/policy check can reject stale application state, but the system also needs current availability evidence before a new promise. These are distinct controls. The local checkpoint exercise verifies persistence and version checks; it does not fetch live stock or carrier commitments. Name who obtains that evidence and who may revise the remedy.

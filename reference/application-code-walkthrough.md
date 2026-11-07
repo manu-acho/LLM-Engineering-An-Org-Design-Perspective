@@ -30,7 +30,7 @@ The method measures duration, retains returned usage and checks status. A timeou
 
 ## Read text and structured output
 
-`generate` supplies a user message unless a complete message list was provided. It obtains the raw response and record, then extracts answer text. Empty text is rejected. If a schema was requested, it parses the text as JSON and returns both the text and parsed value.
+`generate` appends the new prompt as a user message after any supplied conversation history. Without history, the new prompt is the only input message. It builds a new list so that the saved history is not changed by this operation. It obtains the raw response and record, then extracts answer text. Empty text is rejected. If a schema was requested, it parses the text as JSON and returns both the text and parsed value.
 
 JSON parsing establishes that the text can be represented as structured values. It does not establish a correct customer quantity. The application therefore validates the returned object against the supplied case. Keeping `text`, `value` and `record` separate helps distinguish the language output, its machine-readable structure and the observation that a request executed.
 

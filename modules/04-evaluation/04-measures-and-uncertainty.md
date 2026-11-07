@@ -103,3 +103,66 @@ Write the prediction before consulting the worked answer: What is recall for thi
 The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## Compare drafting effort with timely investigation resolution
+
+Consider four separate fictional investigation cases SC-M1–SC-M4 under two designed scenarios, A and B. Each case has been open for ten business hours at the observation point. The agreed exercise target is resolution within four business hours of opening; all four cases have passed that deadline. `resolved_hours` records the elapsed time to confirmed investigation resolution, or `None` if still open. This is a supplied scenario fact, not a model prediction, a delivery punctuality measure or proof of how Harbour performs.
+
+Scenario B halves preparation time. Does it also improve the proportion resolved within target? `service_summary` uses all four eligible cases as the denominator, keeps open cases visible and separates preparation minutes from elapsed business hours. `<=` includes a resolution at exactly four hours. The function illustrates a declared measure; it is not a general business-calendar or event-validation library. In the counting expressions, `for row in rows` visits each case, and `sum` counts a true condition as one and a false condition as zero. The worked variation uses `dict(row)` to copy each record before changing it, preserving the original scenario.
+
+```python
+scenario_a = [
+    {"id": "SC-M1", "prep_minutes": 4, "resolved_hours": 3},
+    {"id": "SC-M2", "prep_minutes": 4, "resolved_hours": 5},
+    {"id": "SC-M3", "prep_minutes": 4, "resolved_hours": None},
+    {"id": "SC-M4", "prep_minutes": 4, "resolved_hours": 4},
+]
+scenario_b = [
+    {"id": "SC-M1", "prep_minutes": 2, "resolved_hours": 3},
+    {"id": "SC-M2", "prep_minutes": 2, "resolved_hours": 7},
+    {"id": "SC-M3", "prep_minutes": 2, "resolved_hours": None},
+    {"id": "SC-M4", "prep_minutes": 2, "resolved_hours": 4},
+]
+
+def service_summary(rows, target_hours=4):
+    if not rows:
+        raise ValueError("An eligible population is needed")
+    timely = sum(row["resolved_hours"] is not None and row["resolved_hours"] <= target_hours for row in rows)
+    open_cases = sum(row["resolved_hours"] is None for row in rows)
+    return {
+        "eligible": len(rows),
+        "timely": timely,
+        "timely_share": timely / len(rows),
+        "open_overdue": open_cases,
+        "preparation_minutes": sum(row["prep_minutes"] for row in rows),
+    }
+
+a = service_summary(scenario_a)
+b = service_summary(scenario_b)
+assert a["timely_share"] == b["timely_share"] == 0.5
+assert a["preparation_minutes"] == 16 and b["preparation_minutes"] == 8
+assert b["open_overdue"] == 1
+print("Scenario A:", a, "Scenario B:", b)
+
+```
+
+### Independent application
+
+In a copy of scenario B, set SC-M3’s resolution to six hours. Predict timely share, open overdue cases and whether this establishes an improvement in the four-hour measure. Identify what the case owner should investigate rather than attributing all waiting to the model.
+
+### Worked comparison
+
+The open case is now resolved, so open overdue falls from one to zero. Timely share stays at 50% because six hours exceeds the four-hour target. Both observations matter. Preparation is eight minutes in B versus sixteen in A, but this constructed comparison does not establish a causal benefit from AI. Investigate evidence waiting, warehouse/carrier responses, review capacity and accepted ownership.
+
+The measure concerns investigation resolution. It is different from a delivery arriving on time or the customer receiving an agreed replacement. Carry the population, time boundary, numerator, denominator and open-case count forward with the result.
+
+```python
+changed_b = [dict(row) for row in scenario_b]
+changed_b[2]["resolved_hours"] = 6
+changed = service_summary(changed_b)
+assert changed["timely_share"] == 0.5
+assert changed["open_overdue"] == 0
+assert scenario_b[2]["resolved_hours"] is None
+print(changed)
+
+```

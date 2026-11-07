@@ -28,7 +28,7 @@ The registry separates content maintenance from application maintenance. An engi
 
 ## Work a conflict to a decision
 
-The assistant retrieves “finance approves disputed credits” and an interview describing informal account-manager resolution. It returns both with their source types. The frontline user asks for permission to act. The application reports the approved rule, records the conflicting account as a matter for investigation and supplies an escalation route. It does not invent a new exception.
+The assistant retrieves “finance approves disputed credits” and an interview describing informal account-manager resolution. Here the policy refers to an authorised finance manager, rather than every finance user; the remedy decision and processing of an account adjustment remain separate. It returns both with their source types. The frontline user asks for permission to act. The application reports the approved rule, records the conflicting account as a matter for investigation and supplies an escalation route. It does not invent a new exception.
 
 The policy owner then examines repeated cases. Some informal resolutions are legitimate exceptions that were poorly documented; others reflect avoidable waiting. A revised policy defines a narrow frontline category and a pending-evidence state. The new version enters the registry, is indexed, and is tested against old and new cases before switching the service.
 
@@ -97,3 +97,7 @@ Write the prediction before consulting the worked answer: Which status preserves
 The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## Keep the policy and the role separate
+
+The policy vignette places remedy approval with an authorised finance manager. It does not grant all finance users that authority or change the live exercise’s role checks. Describe a different arrangement explicitly before evaluating it.

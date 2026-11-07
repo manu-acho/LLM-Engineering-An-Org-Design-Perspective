@@ -111,3 +111,7 @@ Write the prediction before consulting the worked answer: Does a single correct 
 The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## Interpret the returned label
+
+This activity uses two receiving functions, `finance` and `operations`. Later four-route briefs distinguish investigation and qualitative review as separate case routes. Those outputs answer different questions. See the [routing crosswalk](../../reference/case-data-guide.md#routing-vocabulary-belongs-to-a-task) before translating between them.

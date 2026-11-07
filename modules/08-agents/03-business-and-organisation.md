@@ -136,3 +136,21 @@ Before reading the worked direction, write a short response covering: the affect
 An operations case owner coordinates investigation; functional specialists own their evidence; authorised review precedes a remedy. Technical support owns execution defects. A case is not commercially resolved merely because a draft was produced or a simulated decision was recorded.
 
 Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.
+
+## Follow an authorised remedy into the remaining work
+
+In this separate fictional follow-through, investigation supports a proposed replacement. An authorised manager approves that proposal. No stock availability, shipment or financial event follows automatically from that approval. The table describes work Harbour would still need to organise; it is not a set of integrations implemented by the notebook.
+
+| Step | Accountable contribution | Evidence or decision needed | What remains open |
+|---|---|---|---|
+| Remedy authorisation | Authorised manager selects an appropriate remedy | Current case evidence and applicable policy | Availability, feasible delivery and any account adjustment |
+| Replacement feasibility | Warehouse/planning contact confirms a suitable item and available quantity | Stock identity, unit, availability and competing commitments | A delivery commitment to the customer |
+| Delivery arrangement | Operations and transport coordination arrange the accepted plan | Feasible dispatch/carrier timing and customer needs | Physical fulfilment and evidence of receipt |
+| Account treatment | Finance determines and processes any authorised adjustment required by the selected remedy | Approved instruction and relevant invoice/account records | Confirmation that the recorded account reflects the decision |
+| Customer communication and follow-up | Customer service communicates the accepted plan; the case owner follows unresolved work | Confirmed commitments and actual completion evidence | Any delivery, account or customer issue not yet completed |
+
+A replacement does not automatically imply a refund or credit. The commercial treatment depends on the remedy and policy. Avoid issuing an adjustment merely because the earlier route label says `finance`.
+
+**Independent application.** Suppose replacement stock is unavailable after approval. What should the customer be told, who coordinates the next decision and which state must not be presented as complete?
+
+**Worked direction.** Customer service should communicate the uncertainty and the next confirmed update, rather than promise an unconfirmed dispatch. The case owner coordinates warehouse/planning information and any revised authorised remedy. Approval remains a recorded decision; delivery and any account work remain unfinished. A closed API request must not be labelled “customer resolved”. Carry this trace into the [final workbook](../../WORKBOOK.md#final-harbour-organisation-design-review).

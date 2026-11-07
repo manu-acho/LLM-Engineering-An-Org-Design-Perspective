@@ -12,7 +12,7 @@ Drafting an explanation and authorising a replacement or credit belong to differ
 
 ## The proposal
 
-**Fictional case.** Harbour's assistant can retrieve quantities and draft a response. The founder now proposes “one-click resolution”: the assistant recommends a credit and finance clicks approve. Management calls this human control.
+**Fictional case.** Harbour's assistant can retrieve quantities and draft a response. The proposed “one-click resolution” puts an authorised manager in finance at the approval step: the assistant recommends a credit and that manager clicks approve. This is a proposed placement of the existing manager decision right, not permission for every finance user to approve. Management calls this human control.
 
 Suppose the assistant also selects which records finance sees, assigns the complaint category and calculates an eligibility score. The approver retains the final button, but the system has already shaped what they see and consider. To understand who controls the decision, look at those earlier choices too.
 
@@ -132,3 +132,7 @@ Before reading the worked direction, write a short response covering: the affect
 Keep case selection in explicit state and derive access from the signed-in identity. Permit source reads and drafts separately from decisions. Retain an accepted recipient and return incomplete contributions rather than treating every chat response as completed work.
 
 Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.
+
+## Approval roles in this example
+
+The proposed finance approver is an authorised manager. The `manager` role holds the decision right; other finance staff may process an authorised account change. The placement of a role in finance does not grant the decision right to every finance user.

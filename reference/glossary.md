@@ -213,3 +213,16 @@ These terms are introduced in [Meet Harbour](../HARBOUR.md). They describe the b
 | End-to-end service outcome | What the connected work achieves for the customer; a shorter drafting task alone does not establish an improved resolution |
 
 The course’s north and south scopes demonstrate region-specific access. A permitted regional lookup is an application boundary, rather than a complete design of Harbour’s geographic structure. Ownership of a source, ownership of an unresolved case and authority to approve a remedy remain distinct.
+
+## Comparing operational records
+
+| Term | Meaning in the worked examples |
+|---|---|
+| SKU | A stock-keeping-unit code identifying an item; equal counts for different item codes do not establish the same delivery |
+| Order line | One identified item entry within an order; the comparison must refer to the intended line |
+| Unit of measure | What the number counts, such as each or carton; changing units requires a supported conversion |
+| Timely investigation resolution | Confirmed investigation resolution within the stated elapsed-time target; different from timely delivery or completion of every remedy action |
+| Eligible population | All cases meeting the declared inclusion and observation rules, including cases still open where the measure calls for them |
+| Review capacity | Work that the available review time can support under an explicit effort assumption; distinct from model throughput |
+
+[Compatible quantities](../modules/01-standalone-foundations/04-evidence-pipeline.md#check-what-a-quantity-counts-before-subtracting), [service measures](../modules/04-evaluation/04-measures-and-uncertainty.md#compare-drafting-effort-with-timely-investigation-resolution) and [capacity](../modules/17-durable-volume/03-business-and-organisation.md#calculate-capacity-for-the-receiving-team) include complete inputs, calculations and contrasting exercises.

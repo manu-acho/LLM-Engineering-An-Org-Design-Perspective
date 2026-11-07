@@ -83,3 +83,50 @@ Which output changes if `customer_report.quantity` becomes eleven, and which cla
 ## Try the live model
 
 The [live-model guide](../../reference/live-model-guide.md) prepares the API configuration. The matching notebook adds a real request and records the returned model, status, usage and duration. Inspect every factual claim. In a development run, the model inferred shipped quantity from an order record; the source did not establish that inference. The [worked experiment record](../../reference/worked-model-experiments.md) explains this observed failure and the later corrections.
+
+## Check what a quantity counts before subtracting
+
+The H-17 pilot assumes that the selected records refer to compatible quantities. A real investigation must establish that compatibility. An **order line** identifies one item on an order; an **SKU** is a code used to identify a stock item; a **unit of measure** says what a count represents, such as individual items or cartons.
+
+In the separate fictional exercise SC-U1, the order calls for twelve cartons of packaging item PK-100. One report counts ten cartons of that item. Another counts ten individual items. Comparing twelve with ten is meaningful in the first pair; the second pair needs clarification or an approved pack conversion. This exercise does not invent that conversion.
+
+`compare_counts` first checks that quantities are non-negative whole numbers. It then checks each identity field. A mismatch returns a clarification status and no difference. `None` means the numerical difference is unavailable. A comparable result means the inputs can be compared under these declared fields; it does not verify physical receipt or cause. Missing required fields raise an error rather than becoming zero. The expression `{**order, "quantity": 10}` copies the order fields into a new dictionary and replaces the quantity; the original order stays unchanged.
+
+```python
+def compare_counts(order, report):
+    for record in (order, report):
+        if type(record["quantity"]) is not int or record["quantity"] < 0:
+            raise ValueError("Use non-negative whole counts for this exercise")
+    for field in ("order_id", "line", "sku", "unit"):
+        if order[field] != report[field]:
+            return {"status": "clarify", "field": field, "difference": None}
+    return {"status": "comparable", "difference": order["quantity"] - report["quantity"]}
+
+order = {"order_id": "SC-U1", "line": 1, "sku": "PK-100", "unit": "carton", "quantity": 12}
+report = {**order, "quantity": 10}
+compatible = compare_counts(order, report)
+wrong_unit = compare_counts(order, {**report, "unit": "each"})
+wrong_item = compare_counts(order, {**report, "sku": "PK-200"})
+print(compatible, wrong_unit, wrong_item)
+assert compatible["difference"] == 2
+assert wrong_unit["difference"] is None and wrong_unit["field"] == "unit"
+assert wrong_item["status"] == "clarify"
+
+```
+
+### Independent application
+
+Change only the report’s order line from 1 to 2. Should the application calculate a shortage? Explain which record owner needs to clarify the link. Then explain why two comparable counts still do not establish fault.
+
+### Worked comparison
+
+The line mismatch calls for clarification, not subtraction. Customer service or the order-record owner should establish which item the customer meant; warehouse evidence may then support investigation. Two comparable counts establish a difference between selected inputs, not who caused it. The dictionary expression `{**report, "line": 2}` makes a new record with one changed field, leaving the original report intact.
+
+Carry the identity fields, unit, source and unresolved question into the design record. These are new exercise inputs, not an expanded H-17 provider schema.
+
+```python
+other_line = compare_counts(order, {**report, "line": 2})
+assert other_line == {"status": "clarify", "field": "line", "difference": None}
+print(other_line)
+
+```

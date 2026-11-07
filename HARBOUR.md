@@ -105,6 +105,12 @@ The existing division of functional expertise is the case background. Assigning 
 
 A **decision right** identifies who may make a particular choice. Access to a source, permission to draft, approval of a remedy and execution of an account adjustment are different rights. The [decision chapter](reference/research/03-decisions.md) develops this distinction. A manager label inside model text grants none of them.
 
+## A consistent approval arrangement
+
+Harbour’s default teaching arrangement gives an authorised manager the remedy decision. Finance processes an authorised account change where appropriate, and operations coordinates any agreed physical action. A finance manager may hold the authorised-manager role; membership of the finance team alone does not grant that authority. Some lessons deliberately examine different proposed responsibilities or conflicting sources. They should be read as design alternatives, not silent changes to the implemented permission checks.
+
+The notebook role `manager` expresses the exercise’s technical permission. Whether the person holding it has suitable expertise, time and organisational authority remains a design question. No example connects that permission to real stock, credit or payment execution.
+
 ## Four views of one service
 
 A supply-chain view asks how physical goods, commitments and information connect. A finance view asks what commercial consequences follow and who may authorise an adjustment. A customer view asks whether the response is timely, intelligible and appropriate. A technology view asks whether data access, execution and recovery behave as intended.

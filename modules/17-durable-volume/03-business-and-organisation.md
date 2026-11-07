@@ -80,6 +80,50 @@ The notebook includes a place for an independent attempt. The solution is labell
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
 
+## Calculate capacity for the receiving team
+
+The existing lease example uses thirty arrivals and twenty reviews per hour. Give those numbers an explicit business basis: one reviewer has sixty minutes available in the hour and each case needs three minutes of active review. The implied capacity is `60 / 3 = 20` cases per hour. **Available review minutes** exclude time assigned to other work; they are not automatically the whole shift.
+
+The separate scenario below assumes homogeneous cases, constant arrivals, no rework and independent reviewers whose capacities add. It compares average workload with capacity. It does not predict queue waiting time or guarantee that a backlog disappears. Even where capacity exceeds arrivals, variation, specialist dependencies and an existing backlog can still cause delay.
+
+```python
+def review_capacity(arrivals_per_hour, reviewers, minutes_available_each, minutes_per_case):
+    if arrivals_per_hour < 0 or reviewers < 1 or minutes_available_each < 0 or minutes_per_case <= 0:
+        raise ValueError("Use valid non-negative workload and positive review inputs")
+    capacity = reviewers * minutes_available_each / minutes_per_case
+    return {
+        "capacity_per_hour": capacity,
+        "unserved_growth_per_hour": max(0, arrivals_per_hour - capacity),
+    }
+
+one_reviewer = review_capacity(30, 1, 60, 3)
+two_reviewers = review_capacity(30, 2, 60, 3)
+assert one_reviewer["capacity_per_hour"] == 20
+assert one_reviewer["unserved_growth_per_hour"] == 10
+assert two_reviewers["capacity_per_hour"] == 40
+assert two_reviewers["unserved_growth_per_hour"] == 0
+print(one_reviewer, two_reviewers)
+
+```
+
+### Independent application
+
+Keep one reviewer but reserve only thirty minutes of the hour for review. Calculate capacity and incoming work left unserved. Then compare adding review time with improving evidence completeness; do not assume additional agent concurrency supplies human review capacity.
+
+### Worked comparison
+
+The reviewer can handle ten cases, leaving twenty incoming cases per hour beyond this simplified capacity. Providing a second machine worker does not change those available review minutes. More reviewer time, clearer intake, fewer returns or a narrower pilot may change the workload-capacity relationship in different ways. Each option needs evidence about quality and where work moves.
+
+Record the arrival population, available human time, assumed effort, return/rework treatment and escalation owner. The calculation informs the decision; it does not select staffing or delegated authority automatically.
+
+```python
+half_hour = review_capacity(30, 1, 30, 3)
+assert half_hour["capacity_per_hour"] == 10
+assert half_hour["unserved_growth_per_hour"] == 20
+print(half_hour)
+
+```
+
 ## Independent Harbour design record
 
 Harbour may receive several complaints while investigators and warehouse contacts are already busy. Faster concurrent preparation can increase the queue waiting for acceptance. A worker that finishes late must also be prevented from overwriting work another worker has legitimately taken over.

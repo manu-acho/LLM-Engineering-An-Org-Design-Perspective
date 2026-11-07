@@ -12,7 +12,7 @@ Assign responsibility for correcting a policy source and notifying people whose 
 
 ## Three sources tell different stories
 
-**Fictional case.** Harbour has an approved credit policy, a team procedure and an interview with an experienced account manager. The policy assigns disputed credits to finance. The procedure asks operations to verify delivery first. The account manager says small cases are often resolved informally to preserve customer relationships.
+**Fictional case.** Harbour has an approved credit policy, a team procedure and an interview with an experienced account manager. In this policy-conflict vignette, “finance approves” means an authorised finance manager holds the remedy decision; other finance staff process authorised account changes. This is one possible placement of the manager role, not a change to the executable `manager` permission or a right held by all finance staff. The procedure asks operations to verify delivery first. The account manager says small cases are often resolved informally to preserve customer relationships.
 
 A user asks, “Who approves a small disputed credit?” A single smooth answer could hide three different kinds of source: a formal rule, a prescribed sequence and an account of practice.
 
@@ -58,7 +58,7 @@ Specify what each user can do after finding conflicting passages. Then trace whe
 
 Draft an answer using the three fictional sources. What additional evidence would you need before recommending a change to the process?
 
-**Worked answer:** “The approved policy assigns disputed credits to finance, and the procedure calls for delivery verification by operations first. One account-manager interview describes informal handling of some small cases; this is a reason to investigate practice and authorised exceptions, not evidence that the formal policy has changed.”
+**Worked answer:** “The approved policy in this vignette gives an authorised finance manager the credit decision, and the procedure calls for delivery verification by operations first. One account-manager interview describes informal handling of some small cases; this is a reason to investigate practice and authorised exceptions, not evidence that the formal policy has changed.”
 
 The answer is longer than “finance approves”, but its distinctions are useful. If the task is a frontline instruction, the assistant should foreground the current approved rule. If the task is a research memo, the tension itself is analytically important.
 
@@ -131,3 +131,7 @@ Before reading the worked direction, write a short response covering: the affect
 A source owner maintains approved policy; access checks establish scope; retrieval selects within that scope. The investigator can inspect source identity and refer a conflict. Finance’s need for a valid correction basis cannot be satisfied by a high similarity score alone.
 
 Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.
+
+## Read the policy’s role precisely
+
+In the written policy-conflict vignette, “finance approves” refers to an authorised finance manager. Other finance staff process an authorised adjustment. This leaves the manager permission and the distinction between source authority and informal practice intact.
