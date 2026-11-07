@@ -39,7 +39,7 @@ cd ai-orgdesign
 git branch --show-current
 ```
 
-The final command should print `ai-organisation-design`. The last argument of `git clone` names the local folder. Run the remaining commands from inside that folder, where `pyproject.toml`, `uv.lock` and `scripts` are present.
+The final command should print ai-organisation-design`. The last argument of `git clone` names the local folder. Run the remaining commands from inside that folder, where `pyproject.toml`, `uv.lock` and `scripts` are present.
 
 If the remote branch cannot be found, its maintainer needs to publish it before this clone command can work. An unpublished local branch is not available to other learners. If the project later moves to its own repository, use its published clone URL and branch instead.
 
