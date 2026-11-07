@@ -4,9 +4,17 @@
 
 [Module route](README.md) · [Next: first Python steps](02-python-first-steps.md)
 
-## Begin with the discrepancy
+## Business context: Harbour
 
-**Fictional teaching case.** Harbour distributes packaging materials. Its order record says twelve boxes. The shipment record also says twelve. The customer reports receiving ten. An adviser wants a short investigation brief.
+An adviser needs to distinguish a recorded dispatch quantity from verified receipt before making a promise to the customer.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 1 business situation](../../reference/harbour-learning-journey.md#module-1)
+
+## From the business to the discrepancy
+
+**Fictional teaching case.** Harbour distributes packaging materials to businesses that use them to pack and dispatch their own goods. Its service connects purchasing and inventory with warehouse fulfilment, transport, customer service and finance. Read [Meet Harbour](../../HARBOUR.md) for the company, roles and complete business workflow.
+
+The first task is narrower than that workflow: prepare an investigation brief for case H-17. Its order record says twelve boxes. The shipment record also says twelve. The customer reports receiving ten. An adviser wants a short investigation brief.
 
 Three claims are available. The records state what their systems contain; the customer supplies an account of receipt. The difference between twelve and ten is two. The cause is unknown. A useful brief can preserve those distinctions while making the next investigation easier.
 

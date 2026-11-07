@@ -4,6 +4,12 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+## Business context: Harbour
+
+Assign responsibility when a tool fails or an agent stops without sufficient evidence.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 9 business situation](../../reference/harbour-learning-journey.md#module-9)
+
 ## The assistant starts acting like the front door
 
 **Fictional case.** Harbour puts its new investigating assistant on the customer-service portal. It can ask follow-up questions, collect contact details and record unresolved issues. Managers hope the service team will receive clearer cases. After a month, staff report that customers believe a recorded complaint is already being investigated.
@@ -121,3 +127,17 @@ assert allowed("approve_payment") is False
 ```
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## Independent Harbour design record
+
+An investigator may need several lookups before understanding a complaint. An agent loop could choose which permitted lookup to request next, but repeated requests can consume time and cost while leaving the original delivery unresolved. The company must define both capability and stopping conditions.
+
+**Task:** Write an agent mandate with allowed reads, limits, evidence requirements and an accountable recipient at termination.
+
+Before reading the worked direction, write a short response covering: the affected customer or receiving team; the evidence and work needed across functions; and one condition that would make the proposed arrangement unsuitable. State any additional fictional assumption rather than treating it as a supplied fact. Use the course workbook or a personal copy of this notebook.
+
+### Worked direction for comparison
+
+Allow selected case and policy reads, reject unknown capabilities and stop within the declared budget. Return evidence and unresolved questions to the investigator. Do not grant credit, payment or replacement authority because the model requests it.
+
+Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.

@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next: evaluate the service over time](07-service-evaluation.md)
 
+## Business context: Harbour
+
+Specify a capability boundary and a failure response the receiving investigation can use.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 14 business situation](../../reference/harbour-learning-journey.md#module-14)
+
 ## The proposal in one paragraph
 
 **Entirely fictional worked dossier.** Harbour proposes a referenced drafting service for non-urgent delivery disputes. It will gather permitted order and current policy records, identify missing evidence and prepare a proposal for an accountable reviewer. It will retain case ownership, record acceptance of handoffs and expose recovery work. It will not grant remedies automatically during the pilot.

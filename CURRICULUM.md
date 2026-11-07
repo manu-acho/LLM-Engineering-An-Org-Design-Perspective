@@ -4,6 +4,8 @@
 
 Twenty modules connect technical understanding with the design of work. Read in order for the full implementation route. Business readers can follow concepts, organisational cases and design exercises while using code outputs as evidence about the mechanism.
 
+Before Module 1, read [Meet Harbour](HARBOUR.md). The [Harbour learning journey](reference/harbour-learning-journey.md) connects each module to a specific business situation and design output.
+
 ## Part 1: AI engineering foundations
 
 ### Module 1: Foundations: evidence, language models and work

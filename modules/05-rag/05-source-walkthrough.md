@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/05-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Trace the selected evidence into the actual generated brief and inspect unsupported additions.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 5 business situation](../../reference/harbour-learning-journey.md#module-5)
+
 ## Practical activity: Retrieve evidence, generate a brief and check its structured facts.
 
 

@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next module](../04-evaluation/README.md)
 
+## Business context: Harbour
+
+Choose a hosting arrangement with named support and update responsibilities as well as data-handling requirements.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 3 business situation](../../reference/harbour-learning-journey.md#module-3)
+
 ## Begin with the work the record must support
 
 **Fictional case.** Harbour's weekly meeting produces notes that sales uses for customer communication, finance uses for control and operations uses for follow-up. The teams disagree about what “agreed” means. An automatic note generator could make this disagreement less visible by producing one smooth account.

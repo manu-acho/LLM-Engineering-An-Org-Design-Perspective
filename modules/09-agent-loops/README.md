@@ -4,6 +4,14 @@
 
 An agent loop chooses another step after observing an earlier result. That flexibility can help an investigation, but also creates repeated calls, unexpected branches and uncertain completion. The application must bound the execution independently of the planner.
 
+## Harbour at this point
+
+An investigator may need several lookups before understanding a complaint. An agent loop could choose which permitted lookup to request next, but repeated requests can consume time and cost while leaving the original delivery unresolved. The company must define both capability and stopping conditions.
+
+**Supply-chain and organisation design question:** Write an agent mandate with allowed reads, limits, evidence requirements and an accountable recipient at termination.
+
+Read [Meet Harbour](../../HARBOUR.md) for the company and cross-functional workflow, or revisit [this module’s place in the case](../../reference/harbour-learning-journey.md#module-9). The technical activity examines a selected contribution; it does not establish that the proposed arrangement has been implemented.
+
 ## Preparation and route
 
 Complete Module 8 first, or use its worked examples to check the prerequisite concepts. For numerical and systems terms, begin with the [technical foundations](../../reference/technical-foundations.md). Unfamiliar Python syntax is explained in the [programming reference](../../reference/python-patterns.md).

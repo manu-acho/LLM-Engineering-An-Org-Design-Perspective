@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next module](../05-rag/README.md)
 
+## Business context: Harbour
+
+Decide whether the evidence supports a bounded pilot, further investigation or no change.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 4 business situation](../../reference/harbour-learning-journey.md#module-4)
+
 ## Put the entire case into the measurement
 
 **Fictional comparison.** Harbour evaluates two drafting systems on 100 comparable delivery complaints. Both reduce drafting time. System A is cheaper per request; System B preserves qualifications more consistently. The decision concerns completed work, so the team records effort after generation as well.

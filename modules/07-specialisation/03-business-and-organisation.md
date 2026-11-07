@@ -4,6 +4,12 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+## Business context: Harbour
+
+Identify who approves training examples and the meaning of their categories across finance and operations.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 7 business situation](../../reference/harbour-learning-journey.md#module-7)
+
 ## A specialised model becomes difficult to question
 
 **Fictional case.** Harbour fine-tunes a request classifier. It matches the approved examples well. Six months later a service redesign changes exception ownership, but the classifier continues routing cases according to old labels. Users assume the specialised model “knows our process”.
@@ -107,3 +113,17 @@ Write the prediction before consulting the worked answer: Should an obsolete pol
 The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## Independent Harbour design record
+
+Harbour is exploring whether adapting a model improves the narrow task of distinguishing finance and delivery messages. Changing model parameters can reproduce useful patterns, but it can also preserve obsolete classifications. Current policy and case evidence still need their own owners and update routes.
+
+**Task:** Prepare a model-change record with category owners, training-data boundaries, evaluation and a return-to-baseline plan.
+
+Before reading the worked direction, write a short response covering: the affected customer or receiving team; the evidence and work needed across functions; and one condition that would make the proposed arrangement unsuitable. State any additional fictional assumption rather than treating it as a supplied fact. Use the course workbook or a personal copy of this notebook.
+
+### Worked direction for comparison
+
+Operations and finance agree the categories; a technical owner records model and adapter versions; evaluation uses separate examples. Keep policy retrieval and decision rights outside the learned weights. A perfect four-message score would not justify broader deployment.
+
+Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.

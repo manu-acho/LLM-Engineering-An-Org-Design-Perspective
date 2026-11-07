@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/15-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Write acceptance examples that distinguish a useful contribution from a persuasive but unsupported one.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 15 business situation](../../reference/harbour-learning-journey.md#module-15)
+
 ## Practical activity: Specify acceptance cases before generating implementation code.
 
 

@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next: follow a real crew](05-source-walkthrough.md)
 
+## Business context: Harbour
+
+Diagnose a task cycle or dependency that prevents an apparently parallel plan from completing.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 11 business situation](../../reference/harbour-learning-journey.md#module-11)
+
 ## Configuration changes behaviour
 
 A YAML file is structured text. Indentation groups fields. A key such as `agent` identifies a configured contributor; a `context` list names earlier outputs. A folded block introduced with `>` combines multiple written lines into a text value. The file is not Python, but the program can load it and use its values to construct Python objects.

@@ -4,6 +4,12 @@
 
 [Module route](README.md)
 
+## Business context: Harbour
+
+Assess the effect on coordination, decision rights, routines and customer-facing work.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 20 business situation](../../reference/harbour-learning-journey.md#module-20)
+
 ## A score is evidence for a decision, not the decision itself
 
 Harbour's improvement proposal reduces unsupported conclusions on the development cases. Before promoting it, the service manager asks whether it changes retrieval, drafting, review effort or the population of cases accepted. The same score change can arise from different mechanisms, some of which may be undesirable.
@@ -72,3 +78,17 @@ Write the prediction before consulting the worked answer: Should every failure a
 The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## Independent Harbour design record
+
+Harbour’s final decision concerns a proposed business arrangement as well as a software configuration. A candidate can match more route references while consuming more resources or increasing review work. The company must weigh those trade-offs and retain the option to simplify, defer or withdraw the capability.
+
+**Task:** Produce a final business and organisation design proposal joining customer outcome, goods and information flows, finance authority, service ownership and measured technical evidence.
+
+Before reading the worked direction, write a short response covering: the affected customer or receiving team; the evidence and work needed across functions; and one condition that would make the proposed arrangement unsuitable. State any additional fictional assumption rather than treating it as a supplied fact. Use the course workbook or a personal copy of this notebook.
+
+### Worked direction for comparison
+
+Limit assistance to justified contributions; retain functional source owners and accountable investigation. Explain accepted handoffs, capacity, remedy authority and correction. State what actual checks establish, compare with simpler arrangements, and define conditions for expansion, revision or withdrawal.
+
+Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.

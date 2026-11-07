@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/02-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Inspect whether the returned object is an answer or a request to fetch evidence before treating the lookup as performed.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 2 business situation](../../reference/harbour-learning-journey.md#module-2)
+
 ## Practical activity: Inspect the actual response object before hiding it behind a helper.
 
 The SDK returns an object with named attributes such as status and output. A function_call is an output item requesting an operation; it is not a receipt proving the operation ran.

@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/08-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Inspect the case state and evidence needed before a contribution can enter review.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 8 business situation](../../reference/harbour-learning-journey.md#module-8)
+
 ## Practical activity: Commit a versioned simulated decision exactly once in the local database.
 
 

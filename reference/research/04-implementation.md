@@ -2,6 +2,8 @@
 
 [Research reading guide](../literature-guide.md) · [Previous: decisions](03-decisions.md) · [Next: routines](05-routines.md)
 
+Read [Meet Harbour](../../HARBOUR.md) for the shared fictional company. In this chapter, its delivery-investigation work illustrates the comparison needed to assess an assisted service alongside changes in the surrounding work. The case is an application of the research concepts, not evidence for the original studies.
+
 ## A successful demonstration can still be a poor fit
 
 **Fictional teaching case.** Harbour tests an AI complaint assistant on carefully prepared examples. It reads the records, produces a useful brief and proposes a next step. In the pilot, some advisers cannot access the shipment record. The mandatory form cannot express an uncertain quantity. A reviewer receives work outside their expertise. None of these problems appeared in the demonstration.

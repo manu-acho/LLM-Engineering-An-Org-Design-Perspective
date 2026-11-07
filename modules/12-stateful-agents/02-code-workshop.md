@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/12-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Create an actual durable graph pause after model preparation and inspect the pending review.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 12 business situation](../../reference/harbour-learning-journey.md#module-12)
+
 ## Practical activity: Pause an actual model-backed graph at a human-review boundary.
 
 

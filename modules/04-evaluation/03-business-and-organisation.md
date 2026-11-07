@@ -4,6 +4,12 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+## Business context: Harbour
+
+Identify the work shifted to investigators or finance when preparation becomes faster.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 4 business situation](../../reference/harbour-learning-journey.md#module-4)
+
 ## Two teams, two successes
 
 **Fictional case.** Harbour pilots an assistant. Account management reports faster drafting. Operations reports more incomplete handoffs. Finance reports unchanged resolution time. Each statement can be true.
@@ -106,3 +112,17 @@ Write the prediction before consulting the worked answer: Which route has the lo
 The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## Independent Harbour design record
+
+Harbour wants to know whether assisted preparation improves investigation work. A wrong route may create another handoff; an unsupported “delivery complete” conclusion may delay a valid complaint. Faster drafting matters only in relation to checking, clarification, waiting and the customer-facing outcome.
+
+**Task:** Write a comparison of manual preparation, direct record lookup and assisted preparation, with quality, effort and elapsed-service measures.
+
+Before reading the worked direction, write a short response covering: the affected customer or receiving team; the evidence and work needed across functions; and one condition that would make the proposed arrangement unsuitable. State any additional fictional assumption rather than treating it as a supplied fact. Use the course workbook or a personal copy of this notebook.
+
+### Worked direction for comparison
+
+Use the same eligible case population and record preparation, checking, rework and waiting. Record unsupported claims and unresolved cases separately. A saved preparation minute is not automatically a saved cost or a shorter resolution; investigate who can use the released capacity.
+
+Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.

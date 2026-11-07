@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/03-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Identify the inference path and source of model weights before attributing a result to the company’s evidence.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 3 business situation](../../reference/harbour-learning-journey.md#module-3)
+
 ## Practical activity: Run a small instruction-following open model on CPU.
 
 

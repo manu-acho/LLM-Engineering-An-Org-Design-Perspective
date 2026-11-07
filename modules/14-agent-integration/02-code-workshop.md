@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/14-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Inspect a real local MCP exchange and its returned capability information.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 14 business situation](../../reference/harbour-learning-journey.md#module-14)
+
 ## Practical activity: Inspect the capability's direct Python result before transport.
 
 

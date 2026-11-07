@@ -7,6 +7,8 @@ Learn how AI systems work and how to integrate their contributions into the desi
 **Cloned the repository?** Follow the [setup guide](SETUP.md) to install the complete environment, open the reader and run the notebooks.
 
 - [Start here](START-HERE.md): choose a learning route and understand the course's boundaries.
+- [Meet Harbour](HARBOUR.md): understand the supply-chain business, its customers, teams and delivery-investigation problem.
+- [Harbour learning journey](reference/harbour-learning-journey.md): follow the business situation and design record across all twenty modules.
 - [Curriculum](CURRICULUM.md): twenty modules across AI foundations, agent engineering and business implementation.
 - [Live-model guide](reference/live-model-guide.md): configure a key, make a first call and interpret errors and usage.
 - [Case and data guide](reference/case-data-guide.md): follow the records, routes and example identities.

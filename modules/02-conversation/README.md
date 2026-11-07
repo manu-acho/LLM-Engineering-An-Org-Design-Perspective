@@ -4,6 +4,14 @@
 
 A conversation can appear coherent while the application has lost the selected case or confused two users. Harbour therefore keeps the selected case as explicit state and treats each tool request as a proposal that still needs validation.
 
+## Harbour at this point
+
+A Harbour adviser may discuss several customer deliveries in one session. A follow-up such as “who should review it?” must retain the selected case and the adviser’s actual access scope. A coherent answer about the wrong order can send work to the wrong team or disclose another region’s information.
+
+**Supply-chain and organisation design question:** Specify what a continuing conversation remembers, which lookups it permits and how a proposed action becomes an accepted next step.
+
+Read [Meet Harbour](../../HARBOUR.md) for the company and cross-functional workflow, or revisit [this module’s place in the case](../../reference/harbour-learning-journey.md#module-2). The technical activity examines a selected contribution; it does not establish that the proposed arrangement has been implemented.
+
 ## Preparation and route
 
 Complete Module 1 first, or use its worked examples to check the prerequisite concepts. For numerical and systems terms, begin with the [technical foundations](../../reference/technical-foundations.md). Unfamiliar Python syntax is explained in the [programming reference](../../reference/python-patterns.md).

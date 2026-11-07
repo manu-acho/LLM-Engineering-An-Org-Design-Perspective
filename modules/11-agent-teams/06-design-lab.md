@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next module](../12-stateful-agents/README.md)
 
+## Business context: Harbour
+
+Choose a decomposition that preserves accountability and limits avoidable coordination.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 11 business situation](../../reference/harbour-learning-journey.md#module-11)
+
 ## Test whether four contributors are needed
 
 **Fictional case.** Harbour proposes a researcher, policy analyst, drafter and reviewer agent for every enquiry. Some cases require a single status lookup; others require evidence interpretation and specialist judgement. Uniformly assigning four agents may add reports and delay without adding useful competence.

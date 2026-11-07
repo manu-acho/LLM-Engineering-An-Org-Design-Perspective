@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next module](../11-agent-teams/README.md)
 
+## Business context: Harbour
+
+Compare a specialist workflow with a simpler preparation path and include integration effort.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 10 business situation](../../reference/harbour-learning-journey.md#module-10)
+
 ## Two architectures express different working assumptions
 
 **Fictional case.** Harbour considers a central coordinator that gathers specialist advice and composes the response. A second proposal transfers cases to a specialist service that continues the conversation. The code can implement both. The organisation must decide what responsibility each arrangement expresses.

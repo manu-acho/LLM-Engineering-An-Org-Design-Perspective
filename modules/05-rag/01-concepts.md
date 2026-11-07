@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## Business context: Harbour
+
+Identify what a retrieved policy passage can contribute to an investigation and what case evidence it cannot supply.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 5 business situation](../../reference/harbour-learning-journey.md#module-5)
+
 ## The policy is not automatically inside the model
 
 Harbour's assistant is asked: “Who can authorise a credit when delivery is disputed?” The answer may depend on current policy, the order's region, value and exception category. A language model's general training does not establish the current internal rule.

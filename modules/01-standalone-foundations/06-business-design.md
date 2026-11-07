@@ -4,6 +4,12 @@
 
 [Previous lesson](05-neural-models.md) · [Module route](README.md) · [Next: exercises](07-assessment.md)
 
+## Business context: Harbour
+
+Warehouse, carrier, customer service and finance have different contributions. Identify who accepts the investigation and who may authorise a remedy.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 1 business situation](../../reference/harbour-learning-journey.md#module-1)
+
 ## The service must do more than prepare text
 
 **Fictional worked case.** Harbour wants faster delivery investigations. Preparation is one task. Customer clarification, shipment checking, interpretation, approval and communication are other contributions. A faster brief can leave the overall case waiting if those contributions are poorly connected.
@@ -53,3 +59,17 @@ The same source panel may enable one investigator to challenge a claim while off
 Harbour proposes a bounded comparison for long, non-urgent cases: improved structured intake with direct lookup, versus the same intake with a referenced draft. Source and correction ownership are explicit. Uncertain cases can remain open, and disputed meanings have a conversation route. Expansion depends on observed quality and useful service or capacity consequences.
 
 The design does not yet justify automatic credits, agent teams or cloud deployment. Those are further choices requiring a specific contribution and evidence. The planned operational part of the course develops the requirements, controls and continuing ownership needed as a service becomes more consequential.
+
+## Independent Harbour design record
+
+Harbour supplies packaging that business customers need for their own dispatch work. In H-17, the order and shipment entries each show twelve boxes, while the customer reports ten. Customer service needs an investigation brief that helps operations examine the discrepancy without assigning a cause prematurely.
+
+**Task:** Draw goods, information and remedy-decision paths for H-17. Identify an evidence owner, a case owner and a decision owner; explain why they differ.
+
+Before reading the worked direction, write a short response covering: the affected customer or receiving team; the evidence and work needed across functions; and one condition that would make the proposed arrangement unsuitable. State any additional fictional assumption rather than treating it as a supplied fact. Use the course workbook or a personal copy of this notebook.
+
+### Worked direction for comparison
+
+Customer service records the report; warehouse and transport contacts examine their evidence; an investigator coordinates the unresolved case. A manager considers a remedy and finance handles an authorised account change. These proposed responsibilities need acceptance and time, not merely names on a diagram.
+
+Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.

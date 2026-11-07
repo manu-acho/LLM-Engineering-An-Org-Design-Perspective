@@ -2,6 +2,8 @@
 
 [Research reading guide](../literature-guide.md) · [Previous: coordination](02-coordination.md) · [Next: implementation](04-implementation.md)
 
+Read [Meet Harbour](../../HARBOUR.md) for the shared fictional company. In this chapter, its delivery-investigation work illustrates the difference between evidence access, recommendation, remedy authority and execution. The case is an application of the research concepts, not evidence for the original studies.
+
 ## The final click is only one part of the decision
 
 **Fictional teaching case.** Harbour's assistant proposes a customer credit. A manager clicks approve. The company describes the arrangement as human control. Yet the assistant selected the evidence, classified the case, excluded some alternatives and drafted the recommendation before the manager opened the screen.

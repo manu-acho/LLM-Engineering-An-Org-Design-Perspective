@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Choose the smallest service slice that can test the proposed contribution.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 15 business situation](../../reference/harbour-learning-journey.md#module-15)
+
 ## Start with a concrete contribution
 
 Harbour wants to reduce the effort of investigating delivery discrepancies. That is a business problem, not yet a requirement for an agent. A useful pilot tests a bounded contribution against an explicit alternative and preserves the case owner's ability to investigate exceptions.

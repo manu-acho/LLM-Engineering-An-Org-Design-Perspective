@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/04-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Keep evaluation references out of model inputs and inspect actual generated routes against their defined meanings.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 4 business situation](../../reference/harbour-learning-journey.md#module-4)
+
 ## Practical activity: Measure actual generated routes rather than inventing a score.
 
 A reference label is an agreed target used for scoring. A split reserves different cases for different experiment stages; publicly visible teaching cases are not evidence of enterprise generalisation.

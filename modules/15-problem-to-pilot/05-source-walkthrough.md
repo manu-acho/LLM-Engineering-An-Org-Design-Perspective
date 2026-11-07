@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/15-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Inspect and constrain model-generated routing code before relying on its behaviour.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 15 business situation](../../reference/harbour-learning-journey.md#module-15)
+
 ## Practical activity: Ask a live model for a small function, inspect it and run acceptance cases.
 
 

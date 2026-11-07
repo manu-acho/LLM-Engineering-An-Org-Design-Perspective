@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## Business context: Harbour
+
+Distinguish shared-resource, sequential and reciprocal dependencies in the investigation.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 11 business situation](../../reference/harbour-learning-journey.md#module-11)
+
 ## Dividing an investigation
 
 Harbour separates a difficult delivery case into evidence gathering, policy interpretation and response preparation. Instead of writing one large prompt, the team defines a specialist for each contribution. This may make instructions clearer. It also creates a new problem: how do the contributions fit together?

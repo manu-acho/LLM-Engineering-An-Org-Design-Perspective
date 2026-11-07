@@ -4,6 +4,12 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md) · [Framework tour](04-framework-tour.md)
 
+## Business context: Harbour
+
+Identify the operational work that remains when an implementation changes runtime.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 13 business situation](../../reference/harbour-learning-journey.md#module-13)
+
 ## Several teams connect their assistants
 
 **Fictional case.** Harbour's regional teams have built assistants with different frameworks. Headquarters proposes a shared task board and a common result format. Management expects the assistants to become interchangeable and move cases between regions automatically.
@@ -104,3 +110,17 @@ Write the prediction before consulting the worked answer: Should a missing value
 The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## Independent Harbour design record
+
+Harbour may use different frameworks to execute a preparation task. Changing the framework should not silently change what “reported quantity”, “unverified receipt” or “accepted contribution” means. Those meanings connect the technical interface with operations and finance responsibilities.
+
+**Task:** Write a framework-independent contract and a migration check for facts, source meaning, failures and responsibilities.
+
+Before reading the worked direction, write a short response covering: the affected customer or receiving team; the evidence and work needed across functions; and one condition that would make the proposed arrangement unsuitable. State any additional fictional assumption rather than treating it as a supplied fact. Use the course workbook or a personal copy of this notebook.
+
+### Worked direction for comparison
+
+Compare case identity, supplied quantities and receipt status, then inspect errors and usage separately. Operations retains ownership of investigation and finance retains its decision boundary. Changing a runtime does not establish equivalent business behaviour by itself.
+
+Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.

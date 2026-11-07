@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## Business context: Harbour
+
+Define what a correct contribution means before treating model accuracy as service performance.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 4 business situation](../../reference/harbour-learning-journey.md#module-4)
+
 ## Start with two persuasive demonstrations
 
 One assistant writes a polished response to Harbour's shortage complaint. Another generates a replacement program that runs a calculation much faster. Both demonstrations may be valuable. Neither yet establishes reliable operational performance.

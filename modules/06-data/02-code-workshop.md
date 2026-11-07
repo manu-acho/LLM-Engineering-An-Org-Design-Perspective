@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/06-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Prepare messages and labels without hiding missing information or changing the intended recipient.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 6 business situation](../../reference/harbour-learning-journey.md#module-6)
+
 ## Practical activity: Fit preprocessing on training data and inspect predictions.
 
 

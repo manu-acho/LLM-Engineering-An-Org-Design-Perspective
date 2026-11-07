@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/07-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Trace saved weights, adapter identity and reload behaviour before claiming a trained artefact can be reproduced.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 7 business situation](../../reference/harbour-learning-journey.md#module-7)
+
 ## Practical activity: Train and reload a real text-classification LoRA adapter.
 
 

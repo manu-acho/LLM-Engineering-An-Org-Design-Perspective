@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## Business context: Harbour
+
+Preserve which delivery the adviser is discussing when a short follow-up omits the case identifier.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 2 business situation](../../reference/harbour-learning-journey.md#module-2)
+
 ## The user thinks they are having one conversation
 
 The account manager writes: “Check order O-17.” The assistant replies with the order quantities. The manager then asks: “Who should review it?” To the person, this is one continuous exchange. To the application, it is a sequence of requests, stored messages, data lookups and generated responses.

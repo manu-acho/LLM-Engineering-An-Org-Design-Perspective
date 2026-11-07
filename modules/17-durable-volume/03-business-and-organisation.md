@@ -4,6 +4,12 @@
 
 [Module route](README.md)
 
+## Business context: Harbour
+
+Examine where increased automation shifts waiting or effort to another function.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 17 business situation](../../reference/harbour-learning-journey.md#module-17)
+
 ## More prepared work is not necessarily more completed work
 
 Harbour doubles its preparation capacity and celebrates a larger daily number of briefs. Investigators then face a growing review queue. The activity improved locally while the wider service still waits. The case illustrates a dependency: preparation outputs become useful only when the next contribution can be accepted and acted on.
@@ -73,3 +79,17 @@ Write the prediction before consulting the worked answer: Which case risks remai
 The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## Independent Harbour design record
+
+Harbour may receive several complaints while investigators and warehouse contacts are already busy. Faster concurrent preparation can increase the queue waiting for acceptance. A worker that finishes late must also be prevented from overwriting work another worker has legitimately taken over.
+
+**Task:** Create a capacity and recovery plan with preparation rate, human review limits, queue owner and response to overdue cases.
+
+Before reading the worked direction, write a short response covering: the affected customer or receiving team; the evidence and work needed across functions; and one condition that would make the proposed arrangement unsuitable. State any additional fictional assumption rather than treating it as a supplied fact. Use the course workbook or a personal copy of this notebook.
+
+### Worked direction for comparison
+
+Limit concurrent work and observe receiving-team capacity. Distinguish a queued technical job from ownership of the commercial case. Expired workers must not commit stale results; any external physical or financial action would need its own reconciliation.
+
+Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.

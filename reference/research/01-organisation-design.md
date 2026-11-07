@@ -2,6 +2,8 @@
 
 [Research reading guide](../literature-guide.md) · [Next: coordination](02-coordination.md)
 
+Read [Meet Harbour](../../HARBOUR.md) for the shared fictional company. In this chapter, its delivery-investigation work illustrates the division of work and the integration needed between customer service, warehouse, transport and finance. The case is an application of the research concepts, not evidence for the original studies.
+
 ## A faster answer can leave the work unfinished
 
 **Fictional teaching case.** Harbour distributes packaging materials. A customer reports receiving ten boxes after ordering twelve. An AI assistant collects the complaint and shipment record, then produces a concise brief. Preparation is faster. The case still waits because sales expects the warehouse to investigate, while the warehouse expects sales to obtain a recount.

@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Research chapter](../../reference/research/05-routines.md)
 
+## Business context: Harbour
+
+Defend the end-to-end Harbour design, including supply-chain dependencies, finance boundaries, failure handling and evidence still needed.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 20 business situation](../../reference/harbour-learning-journey.md#module-20)
+
 ## Prepare the decision record
 
 The fictional Harbour case is an opportunity to connect an executable pattern with the organisation around it. The technical walkthrough supplies the mechanism. This exercise asks what contribution should be accepted, by whom and under which conditions.
@@ -114,3 +120,9 @@ Write the prediction before consulting the worked answer: Does this capstone dem
 The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## Bring the whole business back into view
+
+Use the [final Harbour organisation design review](../../WORKBOOK.md#final-harbour-organisation-design-review) to defend the service beyond its API outputs. Explain the customer need, goods and information flows, finance decision boundary, cross-functional dependencies, capacity, source correction and incident ownership. Compare the proposed arrangement with a simpler alternative and identify a condition under which it should be withdrawn.
+
+A completed capstone run establishes selected local execution behaviour. It does not demonstrate a physical delivery, an account adjustment, customer benefit or adoption of the proposed responsibilities. Retain those distinctions in the final recommendation.

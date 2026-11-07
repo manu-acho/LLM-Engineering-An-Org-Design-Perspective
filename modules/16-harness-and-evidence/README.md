@@ -4,6 +4,14 @@
 
 A model result without its inputs, configuration and stopping reason is difficult to investigate. Harbour needs enough execution evidence to diagnose a failed contribution while avoiding a second uncontrolled store of customer information.
 
+## Harbour at this point
+
+When an investigation draft is wrong, Harbour needs to know which evidence and instructions produced it. Operations needs enough information to correct the work; technical support needs enough to diagnose execution. Keeping every customer detail in unrestricted logs would create another problem.
+
+**Supply-chain and organisation design question:** Design an incident record linking execution identity, affected cases, business owner, technical owner and correction status.
+
+Read [Meet Harbour](../../HARBOUR.md) for the company and cross-functional workflow, or revisit [this module’s place in the case](../../reference/harbour-learning-journey.md#module-16). The technical activity examines a selected contribution; it does not establish that the proposed arrangement has been implemented.
+
 ## Preparation and route
 
 Complete Module 15 first, or use its worked examples to check the prerequisite concepts. For numerical and systems terms, begin with the [technical foundations](../../reference/technical-foundations.md). Unfamiliar Python syntax is explained in the [programming reference](../../reference/python-patterns.md).

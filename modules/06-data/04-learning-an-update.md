@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next: follow the data and baseline code](05-source-walkthrough.md)
 
+## Business context: Harbour
+
+A numerical optimisation example explains fitting. Its loss is not a measure of customer resolution.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 6 business situation](../../reference/harbour-learning-journey.md#module-6)
+
 ## Fit a rule instead of specifying it completely
 
 Consider a deliberately tiny numerical task: predict `y` from `x` using `prediction = weight × x`. The training examples are `(1, 2)` and `(2, 4)`. Start with weight zero. Predictions are zero and zero, so squared errors are four and sixteen. Mean squared error is ten.

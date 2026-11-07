@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next module](../10-agent-orchestration/README.md)
 
+## Business context: Harbour
+
+Describe the service honestly to a customer without implying that an agent can approve a remedy.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 9 business situation](../../reference/harbour-learning-journey.md#module-9)
+
 ## The interface creates expectations
 
 **Fictional case.** Harbour's website assistant says “I'll handle your complaint.” Visitors reasonably expect more than a transcript. Internally, the assistant can only collect an order ID, retrieve status and draft a case. The mismatch is organisational: the wording promises a service that the receiving arrangement does not yet supply.

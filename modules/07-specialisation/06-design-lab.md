@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next module](../08-agents/README.md)
 
+## Business context: Harbour
+
+Specify the review and withdrawal conditions for an adapted routing model.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 7 business situation](../../reference/harbour-learning-journey.md#module-7)
+
 ## State the remaining failure
 
 **Fictional case.** Harbour has a stable routing guide and labelled examples. A prompted model handles ordinary requests but repeatedly confuses “delivery evidence needed” with “financial remedy ready”. The team compares better instructions, retrieval of the category guide, a smaller classifier and adaptation. Training is a candidate intervention because a measured behavioural weakness remains.

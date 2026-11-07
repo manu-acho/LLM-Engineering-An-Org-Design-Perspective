@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Study workspace](../../STUDY-WORKSPACE.md)
 
+## Business context: Harbour
+
+Distinguish a running local application from an operated business service.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 19 business situation](../../reference/harbour-learning-journey.md#module-19)
+
 ## A running endpoint is the beginning of operation
 
 An HTTP service receives requests through defined routes and returns responses with status codes and structured bodies. FastAPI supplies routing and input validation; Uvicorn runs the application server. The local service exposes health, scoped case reads and simulated review decisions. The generated API documentation provides a small interface for inspecting the contract without requiring a separate dashboard.

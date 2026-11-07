@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/11-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Run a model-backed specialist team and inspect what the coordinator receives.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 11 business situation](../../reference/harbour-learning-journey.md#module-11)
+
 ## Practical activity: Prepare the sequential comparison before running a team.
 
  An asynchronous operation can suspend while compatible work proceeds. The notebook uses await to obtain its result; this is different from a business acceptance acknowledgement.

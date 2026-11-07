@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/03-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+The local neural example demonstrates computation. Random weights do not supply Harbour’s operating knowledge or a correct customer answer.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 3 business situation](../../reference/harbour-learning-journey.md#module-3)
+
 ## Practical activity: Read dimensions from a real neural forward pass.
 
 A tensor is a numerical array. Its shape identifies the size of each dimension. A logit is a model score before conversion into probabilities.

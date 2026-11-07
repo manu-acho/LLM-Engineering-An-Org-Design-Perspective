@@ -4,6 +4,12 @@
 
 [Previous lesson](01-model-and-application.md) · [Module route](README.md) · [Next: learning](03-learning-and-generation.md)
 
+## Business context: Harbour
+
+The investigator needs to read quantities and source labels reliably; the first Python operations make those distinctions visible.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 1 business situation](../../reference/harbour-learning-journey.md#module-1)
+
 ## A program is a sequence of explicit operations
 
 The pilot lab is a text file, `foundations_lab.py`. A Python interpreter reads the file and executes its statements. Instructions inside a function run when that function is called. A comment begins with `#` and explains the code to a reader; Python does not execute the comment.

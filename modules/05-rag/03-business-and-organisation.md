@@ -4,6 +4,12 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+## Business context: Harbour
+
+Assign responsibility for correcting a policy source and notifying people whose work relied on it.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 5 business situation](../../reference/harbour-learning-journey.md#module-5)
+
 ## Three sources tell different stories
 
 **Fictional case.** Harbour has an approved credit policy, a team procedure and an interview with an experienced account manager. The policy assigns disputed credits to finance. The procedure asks operations to verify delivery first. The account manager says small cases are often resolved informally to preserve customer relationships.
@@ -111,3 +117,17 @@ Write the prediction before consulting the worked answer: Does this declared-val
 The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## Independent Harbour design record
+
+Harbour’s investigator needs the policy relevant to the disputed delivery. An old rule or another region’s rule can sound convincing while being unsuitable. Finance also needs to know which policy governed an account correction. Finding text is therefore part of maintaining a dependable evidence and decision process.
+
+**Task:** Design a policy source register showing owner, region, effective version, correction route and response to conflicting passages.
+
+Before reading the worked direction, write a short response covering: the affected customer or receiving team; the evidence and work needed across functions; and one condition that would make the proposed arrangement unsuitable. State any additional fictional assumption rather than treating it as a supplied fact. Use the course workbook or a personal copy of this notebook.
+
+### Worked direction for comparison
+
+A source owner maintains approved policy; access checks establish scope; retrieval selects within that scope. The investigator can inspect source identity and refer a conflict. Finance’s need for a valid correction basis cannot be satisfied by a high similarity score alone.
+
+Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.

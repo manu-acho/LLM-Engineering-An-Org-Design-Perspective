@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/18-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Trace policy selection, validation and failure handling through the actual implementation.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 18 business situation](../../reference/harbour-learning-journey.md#module-18)
+
 ## Practical activity: Reject a decision made against an obsolete policy version.
 
 

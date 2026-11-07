@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Study workspace](../../STUDY-WORKSPACE.md)
 
+## Business context: Harbour
+
+Turn the customer-service problem into a bounded pilot question with affected roles and excluded cases.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 15 business situation](../../reference/harbour-learning-journey.md#module-15)
+
 ## Start with the work that is failing
 
 Harbour's customer operations team spends time finding order, shipment and customer records before deciding what to investigate. The initial complaint is that cases take too long. That statement does not yet identify the cause. Missing records, unclear ownership, batching, repeated data entry and waiting for a manager could each contribute. An AI assistant affects some of these mechanisms and may leave others unchanged.

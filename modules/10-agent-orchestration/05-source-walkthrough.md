@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/10-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Trace actual sequential specialist calls and the coordinator’s accepted result.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 10 business situation](../../reference/harbour-learning-journey.md#module-10)
+
 ## Practical activity: Integrate sequential evidence and policy specialists into a checked brief.
 
  An asynchronous operation can suspend while compatible work proceeds. The notebook uses await to obtain its result; this is different from a business acceptance acknowledgement.

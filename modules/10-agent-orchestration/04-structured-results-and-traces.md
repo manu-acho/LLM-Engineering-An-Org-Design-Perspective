@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next: run a small SDK application](05-source-walkthrough.md)
 
+## Business context: Harbour
+
+Design a contract that preserves meaning and uncertainty when components exchange data.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 10 business situation](../../reference/harbour-learning-journey.md#module-10)
+
 ## A paragraph is difficult to combine reliably
 
 Two specialists return advice. One writes “probably ready”; the other supplies a long policy explanation. A coordinator cannot safely treat those as equivalent approval records. A structured contract separates contribution, evidence, uncertainty and status.

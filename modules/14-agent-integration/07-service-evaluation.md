@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Return to the integration plan](04-integration-plan.md)
 
+## Business context: Harbour
+
+Check integration claims against the actual local protocol and the enterprise controls still required.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 14 business situation](../../reference/harbour-learning-journey.md#module-14)
+
 ## The backend and the screen expose different views
 
 A service screen and its backend expose different views. In the local Harbour HTTP application, a case read reports stored state while a separate decision route changes it. Refreshing a screen observes a selected state; it is not the business action itself.

@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next: the complete tool exchange](05-source-walkthrough.md)
 
+## Business context: Harbour
+
+Text arriving in pieces can help an adviser read sooner; partial text must not become a completed customer commitment.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 2 business situation](../../reference/harbour-learning-journey.md#module-2)
+
 ## A conversation has several kinds of state
 
 A user sees one continuous exchange. The application may hold a displayed transcript, a shorter model context, a selected customer record and an unfinished tool request. These objects need not contain the same information. Naming them separately helps explain why an earlier order number appears on screen while the next model call does not receive it.

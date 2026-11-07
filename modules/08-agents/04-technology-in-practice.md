@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Literature foundation](../../reference/literature-guide.md)
 
+## Business context: Harbour
+
+Distinguish a technical permission from practical authority and a recipient’s ability to investigate.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 8 business situation](../../reference/harbour-learning-journey.md#module-8)
+
 ## The approval panel that nobody uses
 
 **Fictional continuing case.** Harbour adds an evidence panel to the credit-review screen. It displays the order, complaint and policy extracts beside an AI recommendation. The project team describes this as “transparent AI review”. Three weeks after launch, reviewers still ask account managers to send screenshots by email.

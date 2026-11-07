@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Research chapter](../../reference/research/02-coordination.md)
 
+## Business context: Harbour
+
+Design handling for partial failure, denied regional access and growing review queues.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 17 business situation](../../reference/harbour-learning-journey.md#module-17)
+
 ## Prepare the decision record
 
 The fictional Harbour case is an opportunity to connect an executable pattern with the organisation around it. The technical walkthrough supplies the mechanism. This exercise asks what contribution should be accepted, by whom and under which conditions.

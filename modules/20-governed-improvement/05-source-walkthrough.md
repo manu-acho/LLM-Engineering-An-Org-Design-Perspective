@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/20-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Trace proposal, promotion and rollback without treating a candidate as already in use.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 20 business situation](../../reference/harbour-learning-journey.md#module-20)
+
 ## Practical activity: Keep a rollback target without rewriting immutable versions.
 
 

@@ -2,6 +2,12 @@
 
 [Module route](modules/01-standalone-foundations/README.md)
 
+## Start with the business
+
+Read [Meet Harbour](HARBOUR.md) and keep three maps alongside the technical record: the movement of goods; the movement and interpretation of information; and the authorisation of commercial decisions. Mark the interfaces between customer service, warehouse, transport coordination, planning and finance.
+
+The [Harbour learning journey](reference/harbour-learning-journey.md) supplies a business situation, design task and worked direction for every module. The business lessons and their notebooks include matching independent design activities. Label the current case background, a proposed responsibility and an observed exercise result separately.
+
 ## The cumulative output
 
 The pilot ends with a short design for a delivery-investigation service. It should identify the problem, available evidence, unresolved claims, technical contribution, recipient, permitted next step and outcome measures. The quantities and business conditions are fictional.
@@ -37,3 +43,20 @@ This is a proposed arrangement, not evidence that Harbour has implemented it or 
 | 19–20 | Release conditions, support, evaluation, promotion and rollback | Defend the cumulative service slice and state which deployment claims remain untested |
 
 Each module contains its worked reasoning and contrasting cases. The final [design lab](modules/20-governed-improvement/06-design-lab.md) combines the components and supplies a worked service proposal. A coherent final record should explain why the chosen arrangement fits the work, how actors can challenge unsuitable outputs and what evidence could justify expansion, revision or withdrawal.
+
+## Final Harbour organisation design review
+
+The final record should allow a colleague unfamiliar with the notebooks to understand the company and assess the proposed arrangement. Address the following connected questions:
+
+1. What customer need does Harbour meet, and how do purchasing, stock, fulfilment, transport and settlement contribute?
+2. Where do goods, information and financial decisions follow different paths?
+3. Which interdependencies require a standard handoff, shared evidence or direct discussion?
+4. Who owns the unresolved case, individual source records, remedy approval and technical incidents?
+5. What may the assistant read, prepare or propose? Which actions remain outside its authority and the implemented examples?
+6. What time, access and discretion do recipients need to accept or challenge a contribution?
+7. Which comparison and measures could establish a useful business contribution, including rework, waiting, review capacity and customer consequences?
+8. How will the service pause, recover, correct affected cases and change or withdraw an unsuitable capability?
+
+**Worked synthesis.** Harbour can propose a preparation service inside its delivery-investigation workflow while keeping warehouse, transport and finance expertise distinct. An operations case owner coordinates unresolved work; functional owners maintain their evidence; a manager reviews a proposed remedy; finance processes an authorised account change where required. These are proposed responsibilities whose practical acceptance must be tested. Technical support restores execution and helps identify affected cases; it cannot declare a disputed delivery resolved.
+
+The supply-chain consequence of an error may be extra handling, replacement stock, customer disruption or disputed settlement. Those effects need appropriate evidence rather than an invented monetary conversion. Compare the assisted arrangement with improved intake and direct lookup. If the main problem is an unaccepted handoff, repair that arrangement rather than assuming a more capable model will solve it. State which parts of the proposal are implemented locally, which were simulated and which still need operational evidence.

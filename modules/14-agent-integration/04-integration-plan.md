@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Business application](03-business-and-organisation.md) · [Part II route](../../AGENT-ENGINEERING.md)
 
+## Business context: Harbour
+
+Distinguish discovery, identity, access permission and remedy authority.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 14 business situation](../../reference/harbour-learning-journey.md#module-14)
+
 ## Begin with a service problem
 
 **Fictional case.** Harbour wants faster, more reliable resolution of delivery disputes. Staff collect records from several systems, clarify missing evidence and negotiate who should act. Preparation takes time, but waiting for an accepted response is often the larger delay.

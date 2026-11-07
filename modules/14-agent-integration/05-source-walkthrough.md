@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/14-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Follow a model’s proposed tool use through the actual MCP connection and observations.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 14 business situation](../../reference/harbour-learning-journey.md#module-14)
+
 ## Practical activity: Let a model use tools discovered through a real MCP exchange.
 
  An asynchronous operation can suspend while compatible work proceeds. The notebook uses await to obtain its result; this is different from a business acceptance acknowledgement.

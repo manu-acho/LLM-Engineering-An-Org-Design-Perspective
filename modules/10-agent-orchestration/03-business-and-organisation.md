@@ -4,6 +4,12 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+## Business context: Harbour
+
+Decide who accepts or returns incomplete work at the customer-service-to-investigation boundary.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 10 business situation](../../reference/harbour-learning-journey.md#module-10)
+
 ## The manager agent reports success
 
 **Fictional case.** Harbour's coordinator retrieves evidence and asks a finance specialist to recommend a response. The application records a handoff. Customer service assumes finance now owns the case. Finance regards the specialist as an advisory tool and expects customer service to continue. The customer hears nothing.
@@ -101,3 +107,17 @@ Write the prediction before consulting the worked answer: Has a receiving team a
 The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## Independent Harbour design record
+
+Harbour can separate preparation into an evidence contribution and a policy contribution. The investigator then needs a combined account that preserves both. Sending two fluent outputs to another component does not establish that they refer to the same case or are usable for the next task.
+
+**Task:** Define one handoff contract, its acceptance owner and the route for wrong-case, missing-source or conflicting contributions.
+
+Before reading the worked direction, write a short response covering: the affected customer or receiving team; the evidence and work needed across functions; and one condition that would make the proposed arrangement unsuitable. State any additional fictional assumption rather than treating it as a supplied fact. Use the course workbook or a personal copy of this notebook.
+
+### Worked direction for comparison
+
+The receiver checks case identity and permitted sources before relying on the result. Contradictory accounts remain explicit. Integration work needs an owner and time; creating another specialist does not remove that work.
+
+Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.

@@ -4,6 +4,12 @@
 
 [Previous lesson](04-evidence-pipeline.md) · [Module route](README.md) · [Next: business design](06-business-design.md)
 
+## Business context: Harbour
+
+A larger neural model could write more fluent text without acquiring a missing delivery record. Inspect the mechanism before granting it more authority.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 1 business situation](../../reference/harbour-learning-journey.md#module-1)
+
 ## What carries across?
 
 The tiny model introduced representation, training, conditional probability, token selection and stopping. These ideas also help explain neural language models. The implementation differs substantially. A modern neural LLM does not normally keep only a table of adjacent word counts.

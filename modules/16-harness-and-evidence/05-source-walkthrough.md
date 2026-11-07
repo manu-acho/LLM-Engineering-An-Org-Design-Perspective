@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/16-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Trace an instruction version and distinguish measured usage from assumed prices.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 16 business situation](../../reference/harbour-learning-journey.md#module-16)
+
 ## Practical activity: Inspect an incomplete response without accepting it as an answer.
 
 

@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## Business context: Harbour
+
+Decide whether the problem calls for a clearer rule, retrieval, prompting or model adaptation.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 7 business situation](../../reference/harbour-learning-journey.md#module-7)
+
 ## When a repeated behaviour remains weak
 
 Harbour has clarified a stable set of request categories. A general model still confuses two categories despite clear instructions and sufficient evidence. The team has representative, reviewed examples. This is a plausible reason to investigate fine-tuning, further training intended to adapt behaviour.

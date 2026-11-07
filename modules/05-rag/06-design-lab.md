@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next module](../06-data/README.md)
 
+## Business context: Harbour
+
+Design a route for missing, conflicting or superseded policy evidence.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 5 business situation](../../reference/harbour-learning-journey.md#module-5)
+
 ## Resolve what “knowledge” means for this task
 
 **Fictional case.** Harbour has three documents: a finance policy, an operations procedure and an account-manager interview. The first defines authority, the second describes a prescribed sequence, and the third describes how one person says small complaints are usually handled. A search index can hold all three. It should not turn them into one undifferentiated source of instruction.

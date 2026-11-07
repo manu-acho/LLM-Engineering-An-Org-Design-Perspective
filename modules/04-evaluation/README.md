@@ -4,6 +4,14 @@
 
 Two systems can have equal accuracy while imposing very different harms. Harbour needs to distinguish an unnecessary review from clearing a case that still requires investigation, then compare the resulting work with an existing process.
 
+## Harbour at this point
+
+Harbour wants to know whether assisted preparation improves investigation work. A wrong route may create another handoff; an unsupported “delivery complete” conclusion may delay a valid complaint. Faster drafting matters only in relation to checking, clarification, waiting and the customer-facing outcome.
+
+**Supply-chain and organisation design question:** Write a comparison of manual preparation, direct record lookup and assisted preparation, with quality, effort and elapsed-service measures.
+
+Read [Meet Harbour](../../HARBOUR.md) for the company and cross-functional workflow, or revisit [this module’s place in the case](../../reference/harbour-learning-journey.md#module-4). The technical activity examines a selected contribution; it does not establish that the proposed arrangement has been implemented.
+
 ## Preparation and route
 
 Complete Module 3 first, or use its worked examples to check the prerequisite concepts. For numerical and systems terms, begin with the [technical foundations](../../reference/technical-foundations.md). Unfamiliar Python syntax is explained in the [programming reference](../../reference/python-patterns.md).

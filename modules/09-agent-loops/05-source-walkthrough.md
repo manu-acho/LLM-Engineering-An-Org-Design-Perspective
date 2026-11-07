@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/09-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Follow the trace to distinguish a proposed lookup from evidence actually obtained.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 9 business situation](../../reference/harbour-learning-journey.md#module-9)
+
 ## Practical activity: Inspect bounded model execution through returned observations.
 
 

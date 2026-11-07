@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/17-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Run bounded concurrent preparation and inspect each case’s independent outcome.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 17 business situation](../../reference/harbour-learning-journey.md#module-17)
+
 ## Practical activity: Bound local concurrency before substituting actual model work.
 
 

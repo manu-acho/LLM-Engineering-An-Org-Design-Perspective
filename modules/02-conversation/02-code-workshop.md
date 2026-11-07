@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/02-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+A lookup should expose only the case allowed by the application’s trusted regional scope.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 2 business situation](../../reference/harbour-learning-journey.md#module-2)
+
 ## Practical activity: Trace an allowed lookup through validation before using a model.
 
 A tool is a named application capability. A model can request a tool, but application code checks its name, arguments and scope before execution.

@@ -4,6 +4,14 @@
 
 A policy assistant needs the current permitted evidence, not simply a plausible paragraph. At Harbour an older policy, another region's policy and a current policy can share many words, making relevance alone an inadequate selection rule.
 
+## Harbour at this point
+
+Harbour’s investigator needs the policy relevant to the disputed delivery. An old rule or another region’s rule can sound convincing while being unsuitable. Finance also needs to know which policy governed an account correction. Finding text is therefore part of maintaining a dependable evidence and decision process.
+
+**Supply-chain and organisation design question:** Design a policy source register showing owner, region, effective version, correction route and response to conflicting passages.
+
+Read [Meet Harbour](../../HARBOUR.md) for the company and cross-functional workflow, or revisit [this module’s place in the case](../../reference/harbour-learning-journey.md#module-5). The technical activity examines a selected contribution; it does not establish that the proposed arrangement has been implemented.
+
 ## Preparation and route
 
 Complete Module 4 first, or use its worked examples to check the prerequisite concepts. For numerical and systems terms, begin with the [technical foundations](../../reference/technical-foundations.md). Unfamiliar Python syntax is explained in the [programming reference](../../reference/python-patterns.md).

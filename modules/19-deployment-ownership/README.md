@@ -4,6 +4,14 @@
 
 Deployment exposes a service to more clients, failures and responsibilities. Harbour starts with an authenticated local HTTP application so its identity, state and failure contracts can be exercised before selecting a hosting provider.
 
+## Harbour at this point
+
+An investigation service used beyond one developer needs support, access management, change windows and a way to handle outages. Harbour’s business customers still need a response when the model or application is unavailable. Finance must not lose its review boundary because an endpoint is reachable.
+
+**Supply-chain and organisation design question:** Write a service acceptance record covering users, owner, support hours, access, rollback, fallback and unresolved deployment requirements.
+
+Read [Meet Harbour](../../HARBOUR.md) for the company and cross-functional workflow, or revisit [this module’s place in the case](../../reference/harbour-learning-journey.md#module-19). The technical activity examines a selected contribution; it does not establish that the proposed arrangement has been implemented.
+
 ## Preparation and route
 
 Complete Module 18 first, or use its worked examples to check the prerequisite concepts. For numerical and systems terms, begin with the [technical foundations](../../reference/technical-foundations.md). Unfamiliar Python syntax is explained in the [programming reference](../../reference/python-patterns.md).

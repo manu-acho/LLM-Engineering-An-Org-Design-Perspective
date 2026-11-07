@@ -4,6 +4,14 @@
 
 Harbour wants to reduce the effort of investigating delivery discrepancies. That is a business problem, not yet a requirement for an agent. A useful pilot tests a bounded contribution against an explicit alternative and preserves the case owner's ability to investigate exceptions.
 
+## Harbour at this point
+
+Harbour’s discovery exercise distinguishes two potential causes of delay: locating evidence and obtaining accepted cross-team ownership. A coding project could improve the first while leaving the second untouched. The pilot therefore starts with an operational question and a comparator, not an assumption that agents are required.
+
+**Supply-chain and organisation design question:** Write a pilot charter naming the eligible work, alternatives, participating roles, measures and stop conditions.
+
+Read [Meet Harbour](../../HARBOUR.md) for the company and cross-functional workflow, or revisit [this module’s place in the case](../../reference/harbour-learning-journey.md#module-15). The technical activity examines a selected contribution; it does not establish that the proposed arrangement has been implemented.
+
 ## Preparation and route
 
 Complete Module 14 first, or use its worked examples to check the prerequisite concepts. For numerical and systems terms, begin with the [technical foundations](../../reference/technical-foundations.md). Unfamiliar Python syntax is explained in the [programming reference](../../reference/python-patterns.md).

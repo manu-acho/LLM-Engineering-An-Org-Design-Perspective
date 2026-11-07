@@ -4,6 +4,12 @@
 
 [Previous lesson](02-python-first-steps.md) · [Module route](README.md) · [Next: evidence preparation](04-evidence-pipeline.md)
 
+## Business context: Harbour
+
+Learning likely word sequences and investigating a delivery are different tasks. The small language model demonstrates learning, while the case still needs evidence.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 1 business situation](../../reference/harbour-learning-journey.md#module-1)
+
 ## A model small enough to inspect
 
 The lab learns from four sentences:

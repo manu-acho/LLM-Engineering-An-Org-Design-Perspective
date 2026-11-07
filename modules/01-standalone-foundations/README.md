@@ -4,6 +4,14 @@
 
 A customer reports ten boxes against an order for twelve. The module follows that discrepancy through a small program, a learned language model and a proposed investigation service. Each example supplies its inputs and explains what its result can establish.
 
+## Harbour at this point
+
+Harbour supplies packaging that business customers need for their own dispatch work. In H-17, the order and shipment entries each show twelve boxes, while the customer reports ten. Customer service needs an investigation brief that helps operations examine the discrepancy without assigning a cause prematurely.
+
+**Supply-chain and organisation design question:** Draw goods, information and remedy-decision paths for H-17. Identify an evidence owner, a case owner and a decision owner; explain why they differ.
+
+Read [Meet Harbour](../../HARBOUR.md) for the company and cross-functional workflow, or revisit [this module’s place in the case](../../reference/harbour-learning-journey.md#module-1). The technical activity examines a selected contribution; it does not establish that the proposed arrangement has been implemented.
+
 ## The complete route
 
 1. [A model, an application and a business problem](01-model-and-application.md)

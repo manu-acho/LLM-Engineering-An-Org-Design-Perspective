@@ -4,6 +4,12 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+## Business context: Harbour
+
+A meeting-note example tests whether a proposed follow-up becomes an invented commitment. Apply that distinction to investigation ownership without adding the meeting to H-17.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 3 business situation](../../reference/harbour-learning-journey.md#module-3)
+
 ## A sentence becomes a commitment
 
 **Fictional case.** In Harbour's meeting, an account manager says, “If the recount confirms the shortage, finance could consider a credit.” An AI note says, “Finance will issue a credit.” The note is clear and concise. It also removes a condition, changes a possibility into a commitment and reallocates responsibility.
@@ -123,3 +129,17 @@ Write the prediction before consulting the worked answer: Does this source estab
 The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## Independent Harbour design record
+
+Harbour is considering how to obtain model capability for internal investigation notes. Hosting locally may change where data is processed, but it also creates responsibility for model files, updates and support. A separate meeting-note illustration examines whether a suggestion can be mistaken for an accepted commitment; it is not additional delivery evidence.
+
+**Task:** Compare a local model and a provider service for Harbour’s preparation task, including data access, technical support and fallback.
+
+Before reading the worked direction, write a short response covering: the affected customer or receiving team; the evidence and work needed across functions; and one condition that would make the proposed arrangement unsuitable. State any additional fictional assumption rather than treating it as a supplied fact. Use the course workbook or a personal copy of this notebook.
+
+### Worked direction for comparison
+
+Local execution can give direct control over model files and processing location, but someone must maintain the environment and investigate bad outputs. A provider reduces some hosting work while adding service and data-handling dependencies. Neither supplies record authority or business approval.
+
+Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.

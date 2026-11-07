@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/09-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Trace actual model-proposed lookups through scope checks, tool execution and observations.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 9 business situation](../../reference/harbour-learning-journey.md#module-9)
+
 ## Practical activity: Let a live model choose read-only investigation steps.
 
 

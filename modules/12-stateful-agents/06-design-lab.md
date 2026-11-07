@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next module](../13-agent-frameworks/README.md)
 
+## Business context: Harbour
+
+Resume an explicit simulated review choice without treating persistence as renewed permission.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 12 business situation](../../reference/harbour-learning-journey.md#module-12)
+
 ## A pause creates a dependency
 
 **Fictional case.** Harbour's graph correctly pauses 50 cases a day. Finance has 90 minutes of review capacity. At three minutes per case, it can review 30. The pending queue grows by approximately 20 a day before accounting for variation, absence and rework.

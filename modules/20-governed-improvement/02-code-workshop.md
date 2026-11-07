@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/20-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Compare actual candidate outputs with a baseline on the same teaching cases.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 20 business situation](../../reference/harbour-learning-journey.md#module-20)
+
 ## Practical activity: Measure the current and candidate instruction paths on the same cases.
 
 

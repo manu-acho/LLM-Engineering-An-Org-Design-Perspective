@@ -4,6 +4,14 @@
 
 Preparing more cases per minute can overload the people who accept or investigate them. Harbour therefore examines technical concurrency and human review capacity together, while preserving ownership when workers fail or become slow.
 
+## Harbour at this point
+
+Harbour may receive several complaints while investigators and warehouse contacts are already busy. Faster concurrent preparation can increase the queue waiting for acceptance. A worker that finishes late must also be prevented from overwriting work another worker has legitimately taken over.
+
+**Supply-chain and organisation design question:** Create a capacity and recovery plan with preparation rate, human review limits, queue owner and response to overdue cases.
+
+Read [Meet Harbour](../../HARBOUR.md) for the company and cross-functional workflow, or revisit [this module’s place in the case](../../reference/harbour-learning-journey.md#module-17). The technical activity examines a selected contribution; it does not establish that the proposed arrangement has been implemented.
+
 ## Preparation and route
 
 Complete Module 16 first, or use its worked examples to check the prerequisite concepts. For numerical and systems terms, begin with the [technical foundations](../../reference/technical-foundations.md). Unfamiliar Python syntax is explained in the [programming reference](../../reference/python-patterns.md).

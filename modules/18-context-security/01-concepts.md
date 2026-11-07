@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Study workspace](../../STUDY-WORKSPACE.md)
 
+## Business context: Harbour
+
+Identify the source and authority behind context supplied to the assistant.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 18 business situation](../../reference/harbour-learning-journey.md#module-18)
+
 ## Shared context needs accountable sources
 
 An enterprise context layer supplies definitions, policy, identifiers and operational evidence used by several applications. It can reduce repeated integration work. It can also distribute an obsolete definition widely. Reuse makes source ownership more important because a correction or failure can affect several services at once.

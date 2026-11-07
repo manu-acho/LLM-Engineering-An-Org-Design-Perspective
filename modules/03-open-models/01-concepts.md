@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## Business context: Harbour
+
+Compare the responsibilities and resource needs of running a model locally with using a provider for investigation preparation.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 3 business situation](../../reference/harbour-learning-journey.md#module-3)
+
 ## From a service request to visible components
 
 A hosted model service hides much of the machinery. You send a request and receive a response. Someone else loads the model, operates the computing equipment and handles some capacity problems. Running a model yourself makes those responsibilities visible.

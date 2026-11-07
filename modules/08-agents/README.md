@@ -4,6 +4,14 @@
 
 A technically successful brief is only one contribution to a service. Harbour also needs an accountable investigator, a remedy decision and a route for retries, errors and corrections. These arrangements belong in the operating model.
 
+## Harbour at this point
+
+Harbour now has several possible technical contributions: retrieving records, preparing a draft and proposing a recipient. A customer still needs someone to own the unresolved delivery. The operating-model question is how people and services accept, challenge and complete these contributions together.
+
+**Supply-chain and organisation design question:** Produce an operating model with named contribution owners, acceptance conditions, decision rights and exception routes.
+
+Read [Meet Harbour](../../HARBOUR.md) for the company and cross-functional workflow, or revisit [this module’s place in the case](../../reference/harbour-learning-journey.md#module-8). The technical activity examines a selected contribution; it does not establish that the proposed arrangement has been implemented.
+
 ## Preparation and route
 
 Complete Module 7 first, or use its worked examples to check the prerequisite concepts. For numerical and systems terms, begin with the [technical foundations](../../reference/technical-foundations.md). Unfamiliar Python syntax is explained in the [programming reference](../../reference/python-patterns.md).

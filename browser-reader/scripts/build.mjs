@@ -11,7 +11,7 @@ const curriculumData = JSON.parse(await fs.readFile(path.join(readerRoot, 'stand
 const moduleNames = Object.fromEntries(curriculumData.map(m => [m.path.split('/')[1], `${String(m.number).padStart(2, '0')} · ${m.title}`]));
 // Only completed standalone teaching units enter the published collection.
 const readingFiles = [
-  'README.md', 'START-HERE.md', 'SETUP.md', 'CURRICULUM.md', 'WORKBOOK.md', 'SOURCE-MAP.md',
+  'README.md', 'START-HERE.md', 'HARBOUR.md', 'reference/harbour-learning-journey.md', 'SETUP.md', 'CURRICULUM.md', 'WORKBOOK.md', 'SOURCE-MAP.md',
   'LAB-GUIDE.md', 'STUDY-WORKSPACE.md', 'AGENT-ENGINEERING.md', 'reference/glossary.md',
   'reference/literature-guide.md', 'reference/python-patterns.md', 'reference/technical-foundations.md', 'reference/further-learning.md', 'reference/verification.md', 'reference/live-model-guide.md', 'reference/case-data-guide.md', 'reference/worked-model-experiments.md', 'reference/application-code-walkthrough.md'
 ];
@@ -24,7 +24,7 @@ const researchFiles = [
 
 function sectionFor(relative) {
   if (relative === 'reference/literature-guide.md' || researchFiles.includes(relative)) return 'Organisation design research';
-  if (['README.md', 'START-HERE.md', 'SETUP.md', 'WORKBOOK.md', 'AGENT-ENGINEERING.md', 'CURRICULUM.md', 'LAB-GUIDE.md', 'STUDY-WORKSPACE.md'].includes(relative)) return 'Start and study';
+  if (['README.md', 'START-HERE.md', 'HARBOUR.md', 'reference/harbour-learning-journey.md', 'SETUP.md', 'WORKBOOK.md', 'AGENT-ENGINEERING.md', 'CURRICULUM.md', 'LAB-GUIDE.md', 'STUDY-WORKSPACE.md'].includes(relative)) return 'Start and study';
   if (relative.startsWith('modules/')) return moduleNames[relative.split('/')[1]] || 'Engineering references';
   if (relative === 'SOURCE-MAP.md' || relative === 'reference/further-learning.md') return 'Sources and further reading';
   return 'Engineering references';

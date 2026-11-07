@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## Business context: Harbour
+
+Explain which information must survive a pause and which conditions must be checked again.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 12 business situation](../../reference/harbour-learning-journey.md#module-12)
+
 ## A review that takes until tomorrow
 
 Harbour's assistant has gathered evidence and prepared a proposal. Finance cannot review it until the next morning. The application needs to remember which case is waiting, what version was proposed and what happens after a reviewer responds. Keeping a Python function running overnight is a fragile way to do that.

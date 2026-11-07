@@ -4,6 +4,12 @@
 
 [Module route](README.md)
 
+## Business context: Harbour
+
+Run the Agents SDK path with the same explicit evidence and output requirements.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 13 business situation](../../reference/harbour-learning-journey.md#module-13)
+
 ## Begin with the invariant
 
 A runtime is the software that executes and coordinates operations. Plain Python executes ordinary function calls. LangGraph executes named nodes and transitions over state. Both can implement the same business contribution. Neither makes that contribution autonomous merely by running it.

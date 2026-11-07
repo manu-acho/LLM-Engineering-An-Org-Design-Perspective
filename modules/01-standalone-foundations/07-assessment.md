@@ -4,6 +4,12 @@
 
 [Previous lesson](06-business-design.md) · [Module route](README.md) · [Workbook](../../WORKBOOK.md)
 
+## Business context: Harbour
+
+A complete first proposal must still work when a quantity is unknown or no recipient has accepted the case.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 1 business situation](../../reference/harbour-learning-journey.md#module-1)
+
 ## 1. Follow a learned change
 
 **Exercise:** The original training set contains two `the → order` pairs, one `the → record` pair and one `the → evidence` pair. Add two sentences ending in `record`. Calculate the probabilities after `the` at temperature one.

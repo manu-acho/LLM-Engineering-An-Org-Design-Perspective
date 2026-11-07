@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/17-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Trace queue recovery and retry identity rather than assuming an external action occurs exactly once.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 17 business situation](../../reference/harbour-learning-journey.md#module-17)
+
 ## Practical activity: Reclaim a lease while refusing the former owner's completion.
 
 

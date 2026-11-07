@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/19-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Inspect authentication, scoped reads and versioned simulated decisions.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 19 business situation](../../reference/harbour-learning-journey.md#module-19)
+
 ## Practical activity: Authenticate a local request before reading case state.
 
 

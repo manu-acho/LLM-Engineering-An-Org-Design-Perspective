@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/12-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Reopen saved state from another process and distinguish graph state from the business record.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 12 business situation](../../reference/harbour-learning-journey.md#module-12)
+
 ## Practical activity: Reopen an actual graph checkpoint from a separate process.
 
 

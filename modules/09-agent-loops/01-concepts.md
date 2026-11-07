@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## Business context: Harbour
+
+Explain what the agent may contribute and when it must return control to the investigator.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 9 business situation](../../reference/harbour-learning-journey.md#module-9)
+
 ## From answering a question to investigating a case
 
 Harbour's assistant can summarise a delivery complaint. An account manager now asks it to investigate: find the order, compare the quantities, look for the applicable rule and prepare a response. The necessary next step depends on what the earlier steps reveal. If the order number is missing, searching policy first may accomplish little.

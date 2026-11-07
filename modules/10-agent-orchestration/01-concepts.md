@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## Business context: Harbour
+
+Identify the dependency between obtaining evidence, interpreting policy and accepting a combined brief.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 10 business situation](../../reference/harbour-learning-journey.md#module-10)
+
 ## Three specialists do not yet make a service
 
 Harbour now has an assistant that checks order evidence, another that reads policy and a third that drafts a customer response. The team calls them a multi-agent system. But who combines their answers? Can they run together? What happens when policy lookup fails? Who owns the final response?

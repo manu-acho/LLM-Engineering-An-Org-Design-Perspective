@@ -4,6 +4,12 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+## Business context: Harbour
+
+Examine how departmental priorities and acceptance duties affect team performance.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 11 business situation](../../reference/harbour-learning-journey.md#module-11)
+
 ## Harbour draws an organisation chart of agents
 
 **Fictional case.** Harbour replaces one general assistant with an evidence researcher, policy analyst, service manager and quality reviewer. The diagram resembles a department. Early demonstrations look more thorough because every case produces several reports.
@@ -104,3 +110,17 @@ Write the prediction before consulting the worked answer: How many possible pair
 The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## Independent Harbour design record
+
+Warehouse and policy questions may sometimes proceed independently, while a conclusion depends on both. A finance adjustment may require a manager’s decision first. Harbour needs to understand these task dependencies before expecting a team of agents to make investigations faster.
+
+**Task:** Draw the investigation dependency map and identify which contributions can proceed concurrently and which must wait.
+
+Before reading the worked direction, write a short response covering: the affected customer or receiving team; the evidence and work needed across functions; and one condition that would make the proposed arrangement unsuitable. State any additional fictional assumption rather than treating it as a supplied fact. Use the course workbook or a personal copy of this notebook.
+
+### Worked direction for comparison
+
+Independent source reads may overlap, but a remedy still depends on accepted evidence and authorised review. A disputed count may require discussion rather than another parallel call. Include reviewer and specialist capacity when comparing arrangements.
+
+Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.

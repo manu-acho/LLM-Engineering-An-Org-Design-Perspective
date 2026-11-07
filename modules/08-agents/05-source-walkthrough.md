@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/08-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Trace retry identity and current versions through a simulated business decision.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 8 business situation](../../reference/harbour-learning-journey.md#module-8)
+
 ## Practical activity: Reject a different decision based on a stale case version.
 
 

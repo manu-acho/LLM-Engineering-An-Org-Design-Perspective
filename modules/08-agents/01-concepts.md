@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## Business context: Harbour
+
+Locate the proposed assistant within Harbour’s customer-to-resolution work rather than treating it as the whole service.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 8 business situation](../../reference/harbour-learning-journey.md#module-8)
+
 ## The promise of handling the whole request
 
 Harbour's assistant can gather evidence and suggest a route. The next proposal is to let it select the next step: look up another record, ask for clarification, recommend an outcome and prepare a handoff. This is where people often start speaking about an “agent”.

@@ -194,3 +194,22 @@ The [live-model guide](live-model-guide.md) works through these terms in a reque
 | Decoder, autoregressive | A model component predicting successive output tokens under the permitted context |
 | Traceback | The sequence of calls shown when Python raises an exception; inspect the final category and the relevant course line |
 | Idempotency scope | The boundary within which a repeated command identity has its declared effect, such as one local database |
+
+## Harbour’s supply-chain vocabulary
+
+These terms are introduced in [Meet Harbour](../HARBOUR.md). They describe the business setting; they do not imply that every activity is implemented in the notebooks.
+
+| Term | Meaning and example |
+|---|---|
+| Business-to-business distributor | A business buying goods from producers and supplying other businesses; Harbour supplies packaging |
+| Supply chain | Connected work across suppliers, distributors, delivery partners and customers that makes goods available |
+| Inventory | Stock held for use or sale; Harbour’s available packaging stock |
+| Replenishment | Arranging more stock to meet future needs; distinct from replacing a disputed delivery |
+| Order fulfilment | The work of turning an accepted order into the required supply, including allocation, picking, packing and delivery arrangements |
+| Picking and packing | Selecting items from storage and preparing them for transport |
+| Dispatch | Entry into the delivery process; a dispatch record does not by itself verify customer receipt |
+| Account settlement | Resolving amounts owed and their payment status; different from physically delivering goods |
+| Credit | An authorised reduction of an amount charged to a customer; different from a payment or a replacement shipment |
+| End-to-end service outcome | What the connected work achieves for the customer; a shorter drafting task alone does not establish an improved resolution |
+
+The course’s north and south scopes demonstrate region-specific access. A permitted regional lookup is an application boundary, rather than a complete design of Harbour’s geographic structure. Ownership of a source, ownership of an unresolved case and authority to approve a remedy remain distinct.

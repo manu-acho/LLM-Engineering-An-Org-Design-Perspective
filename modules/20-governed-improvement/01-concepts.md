@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Study workspace](../../STUDY-WORKSPACE.md)
 
+## Business context: Harbour
+
+Explain which changes a governed improvement process may propose and who may approve them.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 20 business situation](../../reference/harbour-learning-journey.md#module-20)
+
 ## Improvement needs a declared object
 
 A service can change its model, prompt, tool schema, source collection, routing rules or review arrangement. These are different interventions. An improvement proposal should identify exactly what changes, which failure it addresses and why the proposed mechanism could address that failure.

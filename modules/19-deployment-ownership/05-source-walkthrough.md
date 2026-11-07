@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/19-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Follow an actual generated draft through local HTTP persistence and later retrieval.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 19 business situation](../../reference/harbour-learning-journey.md#module-19)
+
 ## Practical activity: Run the full authenticated draft-read-review HTTP journey.
 
 

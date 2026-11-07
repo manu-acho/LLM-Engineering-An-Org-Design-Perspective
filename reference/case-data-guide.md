@@ -2,6 +2,8 @@
 
 [Curriculum](../CURRICULUM.md) · [Workbook](../WORKBOOK.md)
 
+Read [Meet Harbour](../HARBOUR.md) for the packaging business, customers, supply-chain workflow and functional responsibilities. The [learning journey](harbour-learning-journey.md) connects that business context to each module.
+
 Harbour is a fictional distributor used to connect technical choices with the organisation of work. An investigation case is not the same object as its order, policy or model run.
 
 | Identifier or artefact | Meaning |
@@ -37,3 +39,18 @@ Development cases support diagnosis and iteration. The teaching confirmation spl
 `needs_evidence` means that the customer-reported quantity itself is missing. `investigate` means that supplied order and reported quantities disagree. `review` covers qualitative conditions such as damaged goods when quantities agree. `finance` routes the invoice/tax issues defined by the supplied policy. All four still involve accountable work; none is a remedy approval.
 
 Actual receipt remains unverified across these fixtures. That common uncertainty must not collapse every category into `needs_evidence`. A development run exposed precisely that ambiguity. The clarified `grounded-v3` instruction profile makes the categories' operational meanings explicit before comparison. In a real service, disagreement about such meanings requires a task and policy decision, not merely another training run.
+
+## The company background is not extra model evidence
+
+The company introduction explains a three-source H-17 scenario: `order-17` records twelve, `shipment-17` records twelve and `customer-17` reports ten. The Module 1 pilot supplies those three sources. The extended `case_data.py` H-17 fixture supplies the order and customer report only. It intentionally does not supply a shipment quantity. A later model must not reconstruct a shipment claim from the company narrative or the earlier notebook.
+
+| Teaching representation | Available evidence | Correct interpretation |
+|---|---|---|
+| Pilot `foundations_lab.CASE` | Order, shipment entry and customer report | Compare all three recorded or reported values; receipt and cause remain unresolved |
+| Extended `case_data.get_case("H-17")` | Order and customer report | Compare those two values; no shipment claim is supported by this input |
+| `business.CASES` | Small region-scoped operational fixture | Demonstrates lookup and access; it is not a complete company record |
+| `CaseStore` database | Versioned simulated review state | Demonstrates local transitions and retry handling; it is not stock, invoicing or payment execution |
+
+The database's `proposal` teaching value is not a calculated H-17 credit or evidence of financial loss. A recorded `approved` simulation does not move goods or money. Finance integration in the business design must therefore remain distinct from a completed accounting connection.
+
+Other cases contrast damage, invoice/tax questions, missing reports and regional access. The finance label assigns a defined review route; it does not decide tax treatment. Meetings and historical text-classification examples remain separate illustrations. Experimental volumes, times, prices and queue rates are stated assumptions for their particular exercise, not a cumulative factual history of Harbour.

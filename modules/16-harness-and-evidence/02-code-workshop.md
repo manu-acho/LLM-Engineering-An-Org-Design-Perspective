@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/16-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Inspect actual response status, model identity, usage and elapsed time.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 16 business situation](../../reference/harbour-learning-journey.md#module-16)
+
 ## Practical activity: Measure actual provider usage for a live contribution.
 
 

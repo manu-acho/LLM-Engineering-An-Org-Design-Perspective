@@ -57,3 +57,11 @@ uv run --locked python scripts/verify_live.py --confirm-live --scenario capstone
 ```
 
 The smoke route uses two requests; the capstone uses five. Both have a six-attempt ceiling and save actual outputs and usage under ignored `outputs/`. The capstone keeps promotion subject to its resource and approval conditions. Inspect the saved answers as well as execution status. Repeating either command incurs new usage.
+
+## Harbour case alignment
+
+The company introduction and module journey develop the fictional supply-chain setting. Each lesson and its notebook carry matching business context, and each module includes an independent business design activity with a worked direction. The cumulative workbook and capstone ask for a company-wide account of goods, information, finance, responsibilities and service evidence.
+
+The case expansion preserves the shared Python implementations, source fixtures and API inputs. Notebook computation is unchanged; two introductory print messages now correctly distinguish local teaching functions from separately enabled live activities. In particular, the expanded company narrative is not injected as additional evidence into a model request. Pilot and extended fixtures deliberately expose different source sets, as the case-data guide explains.
+
+Execution and link checks support consistency and local operation. They do not automatically assess the quality of a learner’s organisational design, verify an unimplemented accounting integration or establish that the fictional company has achieved a business improvement.

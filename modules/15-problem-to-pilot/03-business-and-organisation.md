@@ -4,6 +4,12 @@
 
 [Module route](README.md)
 
+## Business context: Harbour
+
+Separate preferences, observed work and policy obligations when defining requirements.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 15 business situation](../../reference/harbour-learning-journey.md#module-15)
+
 ## The first design decision is what work to support
 
 A fictional discovery exercise at Harbour finds two possible causes of slow resolution. Investigators spend time locating records, but some cases also wait because no team accepts ownership when order and shipment records disagree. These are different problems. Faster drafting may reduce search effort while leaving responsibility unresolved.
@@ -68,3 +74,17 @@ Write the prediction before consulting the worked answer: Which alternative dire
 The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## Independent Harbour design record
+
+Harbour’s discovery exercise distinguishes two potential causes of delay: locating evidence and obtaining accepted cross-team ownership. A coding project could improve the first while leaving the second untouched. The pilot therefore starts with an operational question and a comparator, not an assumption that agents are required.
+
+**Task:** Write a pilot charter naming the eligible work, alternatives, participating roles, measures and stop conditions.
+
+Before reading the worked direction, write a short response covering: the affected customer or receiving team; the evidence and work needed across functions; and one condition that would make the proposed arrangement unsuitable. State any additional fictional assumption rather than treating it as a supplied fact. Use the course workbook or a personal copy of this notebook.
+
+### Worked direction for comparison
+
+Compare manual preparation, direct lookup and assisted preparation under matched inclusion rules. Give cross-team ownership problems their own design response. A restricted generated function can help implement a rule; it cannot decide which organisational rule is appropriate.
+
+Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.

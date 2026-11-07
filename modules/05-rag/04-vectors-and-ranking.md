@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next: build the retrieval pipeline](05-source-walkthrough.md)
 
+## Business context: Harbour
+
+Compare lexical and neural similarity without interpreting either as policy authority.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 5 business situation](../../reference/harbour-learning-journey.md#module-5)
+
 ## Why turn text into numbers?
 
 Keyword search compares visible words. An embedding model maps text into vectors so related expressions can have useful numerical relationships even when their words differ. The embedding is learned; a two-dimensional illustration cannot reproduce that learning. It can make the comparison operation understandable.

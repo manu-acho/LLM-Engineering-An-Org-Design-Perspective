@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/11-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Compare observed parallel execution time with the human work still waiting afterwards.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 11 business situation](../../reference/harbour-learning-journey.md#module-11)
+
 ## Practical activity: Run genuinely overlapping specialist calls and inspect elapsed work.
 
  An asynchronous operation can suspend while compatible work proceeds. The notebook uses await to obtain its result; this is different from a business acceptance acknowledgement.

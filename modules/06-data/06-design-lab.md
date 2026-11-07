@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next module](../07-specialisation/README.md)
 
+## Business context: Harbour
+
+Define invoice and delivery boundaries and a referral route for mixed or unclear requests.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 6 business situation](../../reference/harbour-learning-journey.md#module-6)
+
 ## A clear column can contain an unclear task
 
 **Fictional case.** Harbour exports old complaints with an `assigned_team` column. Staff want a classifier to reproduce it. Examination reveals that the value sometimes means the first contacted team, sometimes the final owner and sometimes the only team available that day.

@@ -4,6 +4,14 @@
 
 An improvement loop can optimise a proxy while degrading the service. Harbour treats a proposed configuration as a candidate that must pass comparable evaluation, explicit safety and cost conditions, and a human promotion decision.
 
+## Harbour at this point
+
+Harbour’s final decision concerns a proposed business arrangement as well as a software configuration. A candidate can match more route references while consuming more resources or increasing review work. The company must weigh those trade-offs and retain the option to simplify, defer or withdraw the capability.
+
+**Supply-chain and organisation design question:** Produce a final business and organisation design proposal joining customer outcome, goods and information flows, finance authority, service ownership and measured technical evidence.
+
+Read [Meet Harbour](../../HARBOUR.md) for the company and cross-functional workflow, or revisit [this module’s place in the case](../../reference/harbour-learning-journey.md#module-20). The technical activity examines a selected contribution; it does not establish that the proposed arrangement has been implemented.
+
 ## Preparation and route
 
 Complete Module 19 first, or use its worked examples to check the prerequisite concepts. For numerical and systems terms, begin with the [technical foundations](../../reference/technical-foundations.md). Unfamiliar Python syntax is explained in the [programming reference](../../reference/python-patterns.md).

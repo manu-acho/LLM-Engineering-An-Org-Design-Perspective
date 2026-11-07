@@ -4,6 +4,14 @@
 
 Frameworks package execution conventions. A framework change should not silently change what counts as evidence, how errors are represented or who accepts an output. A plain-Python baseline makes those invariants visible.
 
+## Harbour at this point
+
+Harbour may use different frameworks to execute a preparation task. Changing the framework should not silently change what “reported quantity”, “unverified receipt” or “accepted contribution” means. Those meanings connect the technical interface with operations and finance responsibilities.
+
+**Supply-chain and organisation design question:** Write a framework-independent contract and a migration check for facts, source meaning, failures and responsibilities.
+
+Read [Meet Harbour](../../HARBOUR.md) for the company and cross-functional workflow, or revisit [this module’s place in the case](../../reference/harbour-learning-journey.md#module-13). The technical activity examines a selected contribution; it does not establish that the proposed arrangement has been implemented.
+
 ## Preparation and route
 
 Complete Module 12 first, or use its worked examples to check the prerequisite concepts. For numerical and systems terms, begin with the [technical foundations](../../reference/technical-foundations.md). Unfamiliar Python syntax is explained in the [programming reference](../../reference/python-patterns.md).

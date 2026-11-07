@@ -4,6 +4,14 @@
 
 Choosing local inference changes who operates the model, where data travels and which resources are needed. It does not settle whether the output is accurate enough to enter a meeting record or resolve a case.
 
+## Harbour at this point
+
+Harbour is considering how to obtain model capability for internal investigation notes. Hosting locally may change where data is processed, but it also creates responsibility for model files, updates and support. A separate meeting-note illustration examines whether a suggestion can be mistaken for an accepted commitment; it is not additional delivery evidence.
+
+**Supply-chain and organisation design question:** Compare a local model and a provider service for Harbour’s preparation task, including data access, technical support and fallback.
+
+Read [Meet Harbour](../../HARBOUR.md) for the company and cross-functional workflow, or revisit [this module’s place in the case](../../reference/harbour-learning-journey.md#module-3). The technical activity examines a selected contribution; it does not establish that the proposed arrangement has been implemented.
+
 ## Preparation and route
 
 Complete Module 2 first, or use its worked examples to check the prerequisite concepts. For numerical and systems terms, begin with the [technical foundations](../../reference/technical-foundations.md). Unfamiliar Python syntax is explained in the [programming reference](../../reference/python-patterns.md).

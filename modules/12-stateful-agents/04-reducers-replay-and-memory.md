@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next: build a persistent graph](05-source-walkthrough.md)
 
+## Business context: Harbour
+
+Reject approval that relies on an obsolete case or policy version.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 12 business situation](../../reference/harbour-learning-journey.md#module-12)
+
 ## State updates are partial contributions
 
 A node can return an update such as `{"stage": "review"}` without recreating every field in the case. The framework combines that update with existing state. For a scalar stage, replacement can be appropriate. For a list of events, replacement might discard history.

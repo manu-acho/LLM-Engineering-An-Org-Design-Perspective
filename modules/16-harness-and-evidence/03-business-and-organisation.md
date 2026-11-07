@@ -4,6 +4,12 @@
 
 [Module route](README.md)
 
+## Business context: Harbour
+
+Balance operational visibility with confidentiality and an investigator’s need to challenge an output.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 16 business situation](../../reference/harbour-learning-journey.md#module-16)
+
 ## A trace is an artefact about work
 
 A run log records selected events. It does not contain the whole activity. Harbour's investigator may telephone a warehouse, interpret an ambiguous note and negotiate an exception without those actions appearing in a model trace. The technical record remains useful, but its scope must be stated.
@@ -72,3 +78,17 @@ Write the prediction before consulting the worked answer: Who investigates the e
 The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## Independent Harbour design record
+
+When an investigation draft is wrong, Harbour needs to know which evidence and instructions produced it. Operations needs enough information to correct the work; technical support needs enough to diagnose execution. Keeping every customer detail in unrestricted logs would create another problem.
+
+**Task:** Design an incident record linking execution identity, affected cases, business owner, technical owner and correction status.
+
+Before reading the worked direction, write a short response covering: the affected customer or receiving team; the evidence and work needed across functions; and one condition that would make the proposed arrangement unsuitable. State any additional fictional assumption rather than treating it as a supplied fact. Use the course workbook or a personal copy of this notebook.
+
+### Worked direction for comparison
+
+Retain permitted source and configuration identities, status and relevant usage, with access and retention rules. Technical repair restores execution; the case owner still checks whether customers received an unsuitable answer or whether work needs to be repeated.
+
+Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.

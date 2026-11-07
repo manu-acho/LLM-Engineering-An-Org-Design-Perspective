@@ -4,6 +4,12 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md) · [Curriculum index](../../README.md)
 
+## Business context: Harbour
+
+Assign case ownership across customer service, warehouse, transport coordination and finance.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 8 business situation](../../reference/harbour-learning-journey.md#module-8)
+
 ## The capstone decision
 
 **Fictional case.** Harbour is ready to pilot an assistant that reads a complaint, gathers order and policy evidence, proposes a route and prepares a handoff. The design team has eight attractive component names and a diagram showing their connections. The operations director asks: “Who owns a case when one of these steps fails?”
@@ -116,3 +122,17 @@ Write the prediction before consulting the worked answer: What is the total illu
 The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## Independent Harbour design record
+
+Harbour now has several possible technical contributions: retrieving records, preparing a draft and proposing a recipient. A customer still needs someone to own the unresolved delivery. The operating-model question is how people and services accept, challenge and complete these contributions together.
+
+**Task:** Produce an operating model with named contribution owners, acceptance conditions, decision rights and exception routes.
+
+Before reading the worked direction, write a short response covering: the affected customer or receiving team; the evidence and work needed across functions; and one condition that would make the proposed arrangement unsuitable. State any additional fictional assumption rather than treating it as a supplied fact. Use the course workbook or a personal copy of this notebook.
+
+### Worked direction for comparison
+
+An operations case owner coordinates investigation; functional specialists own their evidence; authorised review precedes a remedy. Technical support owns execution defects. A case is not commercially resolved merely because a draft was produced or a simulated decision was recorded.
+
+Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.

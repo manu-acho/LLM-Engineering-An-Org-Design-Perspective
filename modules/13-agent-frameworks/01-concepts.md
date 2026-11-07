@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## Business context: Harbour
+
+Separate the framework’s execution facilities from Harbour’s business acceptance contract.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 13 business situation](../../reference/harbour-learning-journey.md#module-13)
+
 ## The same goal, different machinery
 
 Harbour has teams experimenting with different agent frameworks. One prefers Google ADK, another Pydantic AI, and a third wants a TypeScript implementation. They all demonstrate a worker that reads a task, creates steps, writes an output and marks the task complete.

@@ -4,6 +4,12 @@
 
 [Module route](README.md)
 
+## Business context: Harbour
+
+Assign ownership of definitions and corrections across operations, finance and technology.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 18 business situation](../../reference/harbour-learning-journey.md#module-18)
+
 ## A shared definition can distribute authority
 
 Harbour creates a context service so several assistants can use the same policy definitions. This makes maintenance easier, but also makes a central choice consequential. Which document counts as current? Who can correct it? Which region's exceptions remain visible? These are organisational decisions carried by the technical arrangement.
@@ -72,3 +78,17 @@ Write the prediction before consulting the worked answer: Who decides policy app
 The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## Independent Harbour design record
+
+Harbour’s regional records, current policy and finance definitions can be shared selectively to support investigation. A customer message can also contain misleading instructions. Treating every available string as equally authoritative could leak evidence or change the meaning of a commercial decision.
+
+**Task:** Create an evidence-authority map separating customer reports, operational records, policy and authenticated permissions.
+
+Before reading the worked direction, write a short response covering: the affected customer or receiving team; the evidence and work needed across functions; and one condition that would make the proposed arrangement unsuitable. State any additional fictional assumption rather than treating it as a supplied fact. Use the course workbook or a personal copy of this notebook.
+
+### Worked direction for comparison
+
+A customer report can establish what was reported without setting system rules. A policy needs an approved version and owner. Regional scope comes from trusted application identity. Finance and operations should agree the meaning of shared fields and correct them through owned routes.
+
+Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.

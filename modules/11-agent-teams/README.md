@@ -4,6 +4,14 @@
 
 Adding specialists can improve local expertise while increasing integration work. The first design question is what depends on what, not how many named agents can be created.
 
+## Harbour at this point
+
+Warehouse and policy questions may sometimes proceed independently, while a conclusion depends on both. A finance adjustment may require a manager’s decision first. Harbour needs to understand these task dependencies before expecting a team of agents to make investigations faster.
+
+**Supply-chain and organisation design question:** Draw the investigation dependency map and identify which contributions can proceed concurrently and which must wait.
+
+Read [Meet Harbour](../../HARBOUR.md) for the company and cross-functional workflow, or revisit [this module’s place in the case](../../reference/harbour-learning-journey.md#module-11). The technical activity examines a selected contribution; it does not establish that the proposed arrangement has been implemented.
+
 ## Preparation and route
 
 Complete Module 10 first, or use its worked examples to check the prerequisite concepts. For numerical and systems terms, begin with the [technical foundations](../../reference/technical-foundations.md). Unfamiliar Python syntax is explained in the [programming reference](../../reference/python-patterns.md).

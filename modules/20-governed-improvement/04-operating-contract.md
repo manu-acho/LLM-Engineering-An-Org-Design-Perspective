@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Keep evaluation, resource limits and explicit approval distinct in a promotion decision.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 20 business situation](../../reference/harbour-learning-journey.md#module-20)
+
 ## Start with a concrete contribution
 
 An improvement loop can optimise a proxy while degrading the service. Harbour treats a proposed configuration as a candidate that must pass comparable evaluation, explicit safety and cost conditions, and a human promotion decision.

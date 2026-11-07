@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/18-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Inspect trusted regional scope and permitted case reads.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 18 business situation](../../reference/harbour-learning-journey.md#module-18)
+
 ## Practical activity: Deny a wrong-region case before preparing a prompt.
 
 

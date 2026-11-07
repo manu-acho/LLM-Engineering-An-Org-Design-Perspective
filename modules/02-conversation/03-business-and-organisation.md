@@ -4,6 +4,12 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+## Business context: Harbour
+
+Drafting an explanation and authorising a replacement or credit belong to different business decisions.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 2 business situation](../../reference/harbour-learning-journey.md#module-2)
+
 ## The proposal
 
 **Fictional case.** Harbour's assistant can retrieve quantities and draft a response. The founder now proposes “one-click resolution”: the assistant recommends a credit and finance clicks approve. Management calls this human control.
@@ -112,3 +118,17 @@ Write the prediction before consulting the worked answer: Which role in this fic
 The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## Independent Harbour design record
+
+A Harbour adviser may discuss several customer deliveries in one session. A follow-up such as “who should review it?” must retain the selected case and the adviser’s actual access scope. A coherent answer about the wrong order can send work to the wrong team or disclose another region’s information.
+
+**Task:** Specify what a continuing conversation remembers, which lookups it permits and how a proposed action becomes an accepted next step.
+
+Before reading the worked direction, write a short response covering: the affected customer or receiving team; the evidence and work needed across functions; and one condition that would make the proposed arrangement unsuitable. State any additional fictional assumption rather than treating it as a supplied fact. Use the course workbook or a personal copy of this notebook.
+
+### Worked direction for comparison
+
+Keep case selection in explicit state and derive access from the signed-in identity. Permit source reads and drafts separately from decisions. Retain an accepted recipient and return incomplete contributions rather than treating every chat response as completed work.
+
+Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.

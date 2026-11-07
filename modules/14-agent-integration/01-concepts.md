@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## Business context: Harbour
+
+Explain the business capability behind a discoverable case or policy tool.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 14 business situation](../../reference/harbour-learning-journey.md#module-14)
+
 ## Connecting an assistant to existing systems
 
 Harbour's assistant needs order records, policy information and a place to prepare handoffs. Without a common interface, each agent framework may need custom code for every system. MCP, the **Model Context Protocol**, supplies a way for applications and capability servers to exchange defined requests and responses.

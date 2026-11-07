@@ -2,6 +2,10 @@
 
 [Course home](README.md) · [Curriculum](CURRICULUM.md) · [Glossary](reference/glossary.md)
 
+## Meet the business before the technology
+
+Begin with [Meet Harbour](HARBOUR.md), the fictional packaging distributor that connects the course. Follow its goods, information and money flows, then examine how customer service, warehouse operations, transport and finance depend on one another. The [Harbour learning journey](reference/harbour-learning-journey.md) explains the design question carried forward by each module.
+
 ## Begin with one case
 
 An order records twelve boxes. A customer reports ten. The course follows the preparation, investigation and review of that discrepancy while explaining what AI can contribute and how the surrounding work should be designed. Other examples explore meeting records and request routing; the [case guide](reference/case-data-guide.md) explains their relationship.

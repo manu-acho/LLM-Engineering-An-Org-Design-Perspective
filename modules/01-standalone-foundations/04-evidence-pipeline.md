@@ -4,6 +4,12 @@
 
 [Previous lesson](03-learning-and-generation.md) · [Module route](README.md) · [Next: neural models](05-neural-models.md)
 
+## Business context: Harbour
+
+A brief crosses from customer-facing intake to investigation. Its usefulness depends on carrying the source and uncertainty with each claim.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 1 business situation](../../reference/harbour-learning-journey.md#module-1)
+
 ## Follow one case through ordinary code
 
 Run:

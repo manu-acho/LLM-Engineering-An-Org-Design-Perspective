@@ -2,6 +2,8 @@
 
 [Research reading guide](../literature-guide.md) · [Previous: organisation design](01-organisation-design.md) · [Next: decisions](03-decisions.md)
 
+Read [Meet Harbour](../../HARBOUR.md) for the shared fictional company. In this chapter, its delivery-investigation work illustrates the dependencies between source collection, investigation, review and settlement. The case is an application of the research concepts, not evidence for the original studies.
+
 ## A handoff can arrive without becoming usable
 
 **Fictional teaching case.** Harbour's assistant sends a shortage brief to operations. The software records a successful delivery. Operations returns the case: the brief has an order number but no distinction between the customer's report and the warehouse's shipment count. Sales regards the handoff as complete. Operations regards it as unusable.

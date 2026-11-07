@@ -4,6 +4,14 @@
 
 MCP gives clients a common way to discover and call capabilities. Discovery tells a client that a tool exists; it does not give the client authority over every case the backing service can see.
 
+## Harbour at this point
+
+Harbour wants tools that different assistants can discover and use consistently. A case lookup and policy search could be exposed through MCP, but discovering a tool does not grant a regional user new access or authorise a financial action.
+
+**Supply-chain and organisation design question:** Document one capability’s owner, allowed inputs, scope, output meaning, failure contract and support route.
+
+Read [Meet Harbour](../../HARBOUR.md) for the company and cross-functional workflow, or revisit [this module’s place in the case](../../reference/harbour-learning-journey.md#module-14). The technical activity examines a selected contribution; it does not establish that the proposed arrangement has been implemented.
+
 ## Preparation and route
 
 Complete Module 13 first, or use its worked examples to check the prerequisite concepts. For numerical and systems terms, begin with the [technical foundations](../../reference/technical-foundations.md). Unfamiliar Python syntax is explained in the [programming reference](../../reference/python-patterns.md).

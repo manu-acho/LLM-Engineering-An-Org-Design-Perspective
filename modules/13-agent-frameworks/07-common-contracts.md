@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next module](../14-agent-integration/README.md)
 
+## Business context: Harbour
+
+Test a contribution adapter without turning one team’s tentative claim into another team’s confirmed fact.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 13 business situation](../../reference/harbour-learning-journey.md#module-13)
+
 ## A common shape needs explicit meanings
 
 One runtime returns an object with `output`; another exposes a last message. The application can adapt both into one result record. The dangerous shortcut is to label every non-empty text result `done`. An adapter should preserve what is actually known.

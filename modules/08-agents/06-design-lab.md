@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next: failures and queues](07-failures-and-queues.md)
 
+## Business context: Harbour
+
+Include the receiving team’s time, source access and return route in the proposed service.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 8 business situation](../../reference/harbour-learning-journey.md#module-8)
+
 ## Select a bounded contribution
 
 **Fictional pilot.** Harbour chooses long, non-urgent delivery disputes with an identifiable order. The assistant gathers permitted records and prepares a referenced proposal. It does not promise a refund or contact a customer automatically. This is a complete pilot scope, not a description of every future capability.

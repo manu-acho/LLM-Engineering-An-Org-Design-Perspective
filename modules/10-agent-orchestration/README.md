@@ -4,6 +4,14 @@
 
 A specialist can return a well-formed object about the wrong case. Orchestration therefore needs both a structural contract and acceptance rules linking the contribution to the task that requested it.
 
+## Harbour at this point
+
+Harbour can separate preparation into an evidence contribution and a policy contribution. The investigator then needs a combined account that preserves both. Sending two fluent outputs to another component does not establish that they refer to the same case or are usable for the next task.
+
+**Supply-chain and organisation design question:** Define one handoff contract, its acceptance owner and the route for wrong-case, missing-source or conflicting contributions.
+
+Read [Meet Harbour](../../HARBOUR.md) for the company and cross-functional workflow, or revisit [this module’s place in the case](../../reference/harbour-learning-journey.md#module-10). The technical activity examines a selected contribution; it does not establish that the proposed arrangement has been implemented.
+
 ## Preparation and route
 
 Complete Module 9 first, or use its worked examples to check the prerequisite concepts. For numerical and systems terms, begin with the [technical foundations](../../reference/technical-foundations.md). Unfamiliar Python syntax is explained in the [programming reference](../../reference/python-patterns.md).

@@ -4,6 +4,12 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md) · [Integration plan](04-integration-plan.md)
 
+## Business context: Harbour
+
+Assign responsibility for capability scope, source quality and recipients of failed results.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 14 business situation](../../reference/harbour-learning-journey.md#module-14)
+
 ## The interface becomes shared infrastructure
 
 **Fictional case.** Harbour publishes internal tools for case lookup, policy retrieval and handoff preparation. Several departments connect their assistants. The technical team celebrates reuse. A month later, a source field changes, one assistant uses an old interpretation and nobody is sure who owns the resulting customer error.
@@ -104,3 +110,17 @@ Write the prediction before consulting the worked answer: Who maintains the shar
 The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## Independent Harbour design record
+
+Harbour wants tools that different assistants can discover and use consistently. A case lookup and policy search could be exposed through MCP, but discovering a tool does not grant a regional user new access or authorise a financial action.
+
+**Task:** Document one capability’s owner, allowed inputs, scope, output meaning, failure contract and support route.
+
+Before reading the worked direction, write a short response covering: the affected customer or receiving team; the evidence and work needed across functions; and one condition that would make the proposed arrangement unsuitable. State any additional fictional assumption rather than treating it as a supplied fact. Use the course workbook or a personal copy of this notebook.
+
+### Worked direction for comparison
+
+Expose a bounded read with server-side scope and source identity. An unavailable result should remain unavailable rather than becoming invented evidence. The local teaching MCP connection does not establish remote authentication or a production finance integration.
+
+Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.

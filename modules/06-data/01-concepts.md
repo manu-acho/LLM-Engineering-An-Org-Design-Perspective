@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## Business context: Harbour
+
+Explain the work assigned by a routing label before representing it as training data.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 6 business situation](../../reference/harbour-learning-journey.md#module-6)
+
 ## The task must be defined before the model
 
 Harbour has thousands of old requests. A manager asks whether AI can learn which team should receive a new one. Before choosing a model, ask what the old assignment means. Was it the appropriate team, the first team contacted, the team available that day or the team that eventually repaired the problem?

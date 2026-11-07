@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next: inspect a real inference interface](05-source-walkthrough.md)
 
+## Business context: Harbour
+
+An attention calculation helps explain how input representations are combined; its weights are not a ranking of Harbour’s organisational authority.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 3 business situation](../../reference/harbour-learning-journey.md#module-3)
+
 ## Identifiers become representations
 
 A token ID is an address in a vocabulary. Its numerical size does not describe its meaning: token 900 is not necessarily more important than token 90. An **embedding layer** looks up a learned vector, a list of numerical values, for each ID. Position information also enters the computation so that ordering matters.

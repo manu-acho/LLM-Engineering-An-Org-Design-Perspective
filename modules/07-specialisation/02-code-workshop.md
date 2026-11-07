@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/07-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Inspect a low-rank update and distinguish trainable parameters from the fixed base model.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 7 business situation](../../reference/harbour-learning-journey.md#module-7)
+
 ## Practical activity: Train and reconstruct the transparent linear update.
 
 

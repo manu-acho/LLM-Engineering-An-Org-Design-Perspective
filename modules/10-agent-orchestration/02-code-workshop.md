@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/10-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Inspect a specialist contribution with its case identity, sources and unresolved questions.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 10 business situation](../../reference/harbour-learning-journey.md#module-10)
+
 ## Practical activity: Obtain and accept a real specialist contribution.
 
 

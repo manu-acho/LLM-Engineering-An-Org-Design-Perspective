@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Study workspace](../../STUDY-WORKSPACE.md)
 
+## Business context: Harbour
+
+Identify which execution events help explain a failed business contribution.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 16 business situation](../../reference/harbour-learning-journey.md#module-16)
+
 ## The model is only one part of a run
 
 A **harness** is the application arrangement that supplies instructions and context, exposes tools, runs the loop, applies limits and records what happened. A model can be capable while a harness supplies the wrong policy, accepts a malformed tool argument or loses a failure. Conversely, a reliable harness cannot turn an unsuitable model into a competent investigator.

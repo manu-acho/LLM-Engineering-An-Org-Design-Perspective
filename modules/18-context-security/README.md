@@ -4,6 +4,14 @@
 
 An enterprise context layer can make definitions and sources reusable, but can also spread stale policy or expose records across boundaries. Harbour must distinguish authorised access, source relevance and permission to decide.
 
+## Harbour at this point
+
+Harbour’s regional records, current policy and finance definitions can be shared selectively to support investigation. A customer message can also contain misleading instructions. Treating every available string as equally authoritative could leak evidence or change the meaning of a commercial decision.
+
+**Supply-chain and organisation design question:** Create an evidence-authority map separating customer reports, operational records, policy and authenticated permissions.
+
+Read [Meet Harbour](../../HARBOUR.md) for the company and cross-functional workflow, or revisit [this module’s place in the case](../../reference/harbour-learning-journey.md#module-18). The technical activity examines a selected contribution; it does not establish that the proposed arrangement has been implemented.
+
 ## Preparation and route
 
 Complete Module 17 first, or use its worked examples to check the prerequisite concepts. For numerical and systems terms, begin with the [technical foundations](../../reference/technical-foundations.md). Unfamiliar Python syntax is explained in the [programming reference](../../reference/python-patterns.md).

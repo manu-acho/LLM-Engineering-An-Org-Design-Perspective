@@ -4,6 +4,14 @@
 
 Routing labels record a decision about which team should receive work. A clean spreadsheet can therefore encode obsolete ownership rules. Harbour begins with a deliberately small text classifier so the preparation, fitting and evaluation boundary remains visible.
 
+## Harbour at this point
+
+Harbour routes delivery discrepancies to investigation and invoice questions to finance. These categories allocate work, so disagreements about labels can become disagreements about responsibility. Historical examples may preserve an old arrangement even when the file is tidy and the classifier trains successfully.
+
+**Supply-chain and organisation design question:** Write a routing agreement between customer service, operations and finance, including ambiguous and mixed cases.
+
+Read [Meet Harbour](../../HARBOUR.md) for the company and cross-functional workflow, or revisit [this module’s place in the case](../../reference/harbour-learning-journey.md#module-6). The technical activity examines a selected contribution; it does not establish that the proposed arrangement has been implemented.
+
 ## Preparation and route
 
 Complete Module 5 first, or use its worked examples to check the prerequisite concepts. For numerical and systems terms, begin with the [technical foundations](../../reference/technical-foundations.md). Unfamiliar Python syntax is explained in the [programming reference](../../reference/python-patterns.md).

@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Handle instruction-like customer text as evidence to assess, not policy to obey.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 18 business situation](../../reference/harbour-learning-journey.md#module-18)
+
 ## Start with a concrete contribution
 
 An enterprise context layer can make definitions and sources reusable, but can also spread stale policy or expose records across boundaries. Harbour must distinguish authorised access, source relevance and permission to decide.

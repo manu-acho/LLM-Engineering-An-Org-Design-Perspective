@@ -4,6 +4,14 @@
 
 Fine-tuning changes numerical parameters, while retrieval changes the supplied evidence. This module exposes a real parameter update on a small enough task that every trained quantity and saved artefact can be inspected.
 
+## Harbour at this point
+
+Harbour is exploring whether adapting a model improves the narrow task of distinguishing finance and delivery messages. Changing model parameters can reproduce useful patterns, but it can also preserve obsolete classifications. Current policy and case evidence still need their own owners and update routes.
+
+**Supply-chain and organisation design question:** Prepare a model-change record with category owners, training-data boundaries, evaluation and a return-to-baseline plan.
+
+Read [Meet Harbour](../../HARBOUR.md) for the company and cross-functional workflow, or revisit [this module’s place in the case](../../reference/harbour-learning-journey.md#module-7). The technical activity examines a selected contribution; it does not establish that the proposed arrangement has been implemented.
+
 ## Preparation and route
 
 Complete Module 6 first, or use its worked examples to check the prerequisite concepts. For numerical and systems terms, begin with the [technical foundations](../../reference/technical-foundations.md). Unfamiliar Python syntax is explained in the [programming reference](../../reference/python-patterns.md).

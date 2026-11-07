@@ -2,6 +2,8 @@
 
 [Research reading guide](../literature-guide.md) · [Previous: routines](05-routines.md)
 
+Read [Meet Harbour](../../HARBOUR.md) for the shared fictional company. In this chapter, its delivery-investigation work illustrates the conditions under which a source panel or assistant becomes useful to particular staff. The case is an application of the research concepts, not evidence for the original studies.
+
 ## One feature, different possibilities
 
 **Fictional teaching case.** Harbour gives reviewers a panel linking every proposed claim to a source. An experienced investigator can open the documents, compare their meanings and request a correction. A temporary adviser sees the same panel but lacks document access and time to challenge the recommendation.

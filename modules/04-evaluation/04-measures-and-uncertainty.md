@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next: evaluate the generated program](05-source-walkthrough.md)
 
+## Business context: Harbour
+
+Interpret precision and recall using the cases that should have been found, rather than a reassuring overall percentage.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 4 business situation](../../reference/harbour-learning-journey.md#module-4)
+
 ## A decision rule creates different errors
 
 Suppose an assistant flags cases requiring specialist review. In ten fictional cases, seven truly need review. It flags eight: six correctly and two unnecessarily. It misses one true review case. The remaining case correctly proceeds without review.

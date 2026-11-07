@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next: inspect the digital twin](05-source-walkthrough.md)
 
+## Business context: Harbour
+
+Inspect ceilings on rounds and tool calls as local execution boundaries rather than a service guarantee.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 9 business situation](../../reference/harbour-learning-journey.md#module-9)
+
 ## A plan changes the next question
 
 An assistant investigating a disputed delivery might propose: find the order, compare quantities, obtain policy, then draft a response. A fixed application can encode those steps directly. A model-selected loop becomes useful when the next evidence need depends on what was found. A missing receipt might require clarification before policy lookup is meaningful.

@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/06-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Inspect how preparation, fitting and evaluation stay separate in the classifier implementation.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 6 business situation](../../reference/harbour-learning-journey.md#module-6)
+
 ## Practical activity: Keep a test-only word outside the fitted vocabulary.
 
 

@@ -4,6 +4,12 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+## Business context: Harbour
+
+Consider whether the reviewer has the time, evidence and ability to disagree with the proposal.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 12 business situation](../../reference/harbour-learning-journey.md#module-12)
+
 ## Human review becomes a queue
 
 **Fictional case.** Harbour adds approval interrupts before customer commitments. The system pauses correctly, but cases accumulate. Finance receives no protected review time. Some reviewers approve quickly to clear the queue; others ask account managers to investigate outside the system.
@@ -105,3 +111,17 @@ Write the prediction before consulting the worked answer: What is the backlog gr
 The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## Independent Harbour design record
+
+A Harbour case can wait for a recount, carrier information or a reviewer who is unavailable. During that wait, the case or policy may change. Resuming yesterday’s proposed decision against today’s record would confuse durable storage with current authority.
+
+**Task:** Specify a paused case’s owner, awaited contribution, expiry or review conditions and safe resumption checks.
+
+Before reading the worked direction, write a short response covering: the affected customer or receiving team; the evidence and work needed across functions; and one condition that would make the proposed arrangement unsuitable. State any additional fictional assumption rather than treating it as a supplied fact. Use the course workbook or a personal copy of this notebook.
+
+### Worked direction for comparison
+
+Save the contribution and its source/version identity. Keep an owner for waiting work, revisit stale facts and revalidate policy before committing. A stored model draft can be reused where suitable; a changed business situation may need a new investigation.
+
+Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.

@@ -2,6 +2,8 @@
 
 [Research reading guide](../literature-guide.md) · [Previous: implementation](04-implementation.md) · [Next: technology in practice](06-technology-in-practice.md)
 
+Read [Meet Harbour](../../HARBOUR.md) for the shared fictional company. In this chapter, its delivery-investigation work illustrates the difference between a process diagram and the repeated, sometimes informal work of handling exceptions. The case is an application of the research concepts, not evidence for the original studies.
+
 ## The workflow diagram leaves something out
 
 **Fictional teaching case.** Harbour's process diagram shows five steps: receive complaint, collect evidence, draft response, review, close. Staff describe several additional activities. They call familiar warehouse colleagues, check whether the customer is waiting on a second shipment, and sometimes keep a case open after the system records closure.

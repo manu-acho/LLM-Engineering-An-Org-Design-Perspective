@@ -4,6 +4,12 @@
 
 [Module route](README.md)
 
+## Business context: Harbour
+
+Assign continuing service, case and source ownership after a release.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 19 business situation](../../reference/harbour-learning-journey.md#module-19)
+
 ## Operation needs an owner after release
 
 A project team can produce a working service while leaving responsibility after release unclear. Harbour therefore names who handles an unavailable source, an incorrect brief, a pending decision, a database restore and a disputed customer outcome. One person can hold several roles in a small pilot, but the responsibilities should still be visible.
@@ -72,3 +78,17 @@ Write the prediction before consulting the worked answer: Does the responding pr
 The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## Independent Harbour design record
+
+An investigation service used beyond one developer needs support, access management, change windows and a way to handle outages. Harbour’s business customers still need a response when the model or application is unavailable. Finance must not lose its review boundary because an endpoint is reachable.
+
+**Task:** Write a service acceptance record covering users, owner, support hours, access, rollback, fallback and unresolved deployment requirements.
+
+Before reading the worked direction, write a short response covering: the affected customer or receiving team; the evidence and work needed across functions; and one condition that would make the proposed arrangement unsuitable. State any additional fictional assumption rather than treating it as a supplied fact. Use the course workbook or a personal copy of this notebook.
+
+### Worked direction for comparison
+
+Keep a usable manual investigation route and a named business owner alongside technical support. Local HTTP checks demonstrate selected contracts; hosting, real identity integration, backup restoration and load capacity need separate evidence before a live business release.
+
+Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.

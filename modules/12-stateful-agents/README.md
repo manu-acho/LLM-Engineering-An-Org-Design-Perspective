@@ -4,6 +4,14 @@
 
 A review that waits overnight cannot rely on a notebook variable. Durable state preserves the pending work across sessions, but it must not preserve expired authority or repeat an already committed decision.
 
+## Harbour at this point
+
+A Harbour case can wait for a recount, carrier information or a reviewer who is unavailable. During that wait, the case or policy may change. Resuming yesterday’s proposed decision against today’s record would confuse durable storage with current authority.
+
+**Supply-chain and organisation design question:** Specify a paused case’s owner, awaited contribution, expiry or review conditions and safe resumption checks.
+
+Read [Meet Harbour](../../HARBOUR.md) for the company and cross-functional workflow, or revisit [this module’s place in the case](../../reference/harbour-learning-journey.md#module-12). The technical activity examines a selected contribution; it does not establish that the proposed arrangement has been implemented.
+
 ## Preparation and route
 
 Complete Module 11 first, or use its worked examples to check the prerequisite concepts. For numerical and systems terms, begin with the [technical foundations](../../reference/technical-foundations.md). Unfamiliar Python syntax is explained in the [programming reference](../../reference/python-patterns.md).

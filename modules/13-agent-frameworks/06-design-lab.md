@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next: implement a common result contract](07-common-contracts.md)
 
+## Business context: Harbour
+
+Define what interoperability requires beyond two outputs being valid JSON.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 13 business situation](../../reference/harbour-learning-journey.md#module-13)
+
 ## Connection solves only part of the boundary
 
 **Fictional case.** Harbour's regional teams use different agent runtimes. Each can return JSON and write to a common task board. One team marks `done` when a draft exists; another uses it when a reviewer accepts the result. The board appears integrated while its central status has two meanings.

@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Research chapter](../../reference/research/04-implementation.md)
 
+## Business context: Harbour
+
+Defend a pilot plan that includes finance, operations and customer-service acceptance.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 15 business situation](../../reference/harbour-learning-journey.md#module-15)
+
 ## Prepare the decision record
 
 The fictional Harbour case is an opportunity to connect an executable pattern with the organisation around it. The technical walkthrough supplies the mechanism. This exercise asks what contribution should be accepted, by whom and under which conditions.

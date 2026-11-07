@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next module](../03-open-models/README.md)
 
+## Business context: Harbour
+
+A conversation becomes a usable handoff only when an investigator accepts the contribution and next responsibility.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 2 business situation](../../reference/harbour-learning-journey.md#module-2)
+
 ## Put the decision on the table
 
 **Fictional worked case.** Harbour wants its assistant to resolve small disputed credits. The proposal gives the assistant an order lookup and a credit tool. An operations manager argues that anything below £50 should be automatic. Finance argues that every credit needs review. Both positions hide several decisions.

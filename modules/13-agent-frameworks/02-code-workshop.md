@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/13-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Run the model-backed graph path and inspect its contribution.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 13 business situation](../../reference/harbour-learning-journey.md#module-13)
+
 ## Practical activity: Run a model-backed contribution inside LangGraph.
 
 

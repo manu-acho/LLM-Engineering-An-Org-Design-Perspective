@@ -2,6 +2,12 @@
 
 [Download the matching notebook](/downloads/04-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## Business context: Harbour
+
+Compare errors with different business consequences, including unnecessary review and a discrepancy overlooked.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 4 business situation](../../reference/harbour-learning-journey.md#module-4)
+
 ## Practical activity: Compare identical accuracy with different consequences.
 
 

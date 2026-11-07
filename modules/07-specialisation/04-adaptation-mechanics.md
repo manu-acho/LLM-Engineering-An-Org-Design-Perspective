@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next: train and reload a tiny adapter](05-source-walkthrough.md)
 
+## Business context: Harbour
+
+Compare training and held-out behaviour without treating a tiny text split as enterprise evidence.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 7 business situation](../../reference/harbour-learning-journey.md#module-7)
+
 ## Two smaller tables change a larger transformation
 
 LoRA represents an update through two smaller matrices. A matrix is a rectangular table of numbers with defined multiplication rules. Suppose a layer's existing transformation is a two-by-two identity matrix: it preserves a two-value input. Add a rank-one update formed from a column `[1, 2]` and a row `[0.5, -0.5]`. Their product is `[[0.5, -0.5], [1, -1]]`.

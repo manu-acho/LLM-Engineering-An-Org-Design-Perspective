@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Study workspace](../../STUDY-WORKSPACE.md)
 
+## Business context: Harbour
+
+Relate technical throughput to investigator, warehouse and review capacity.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 17 business situation](../../reference/harbour-learning-journey.md#module-17)
+
 ## Work arrives faster than it can be accepted
 
 A queue holds work awaiting a resource. Harbour can prepare briefs much faster than investigators can review them. If thirty cases arrive each hour and twenty leave review, the queue grows by ten per hour under those assumed steady rates. Faster preparation may change where the waiting becomes visible rather than remove it.

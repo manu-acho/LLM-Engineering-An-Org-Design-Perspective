@@ -4,6 +4,12 @@
 
 [Module route](README.md) · [Next module](../09-agent-loops/README.md)
 
+## Business context: Harbour
+
+Defend the operating arrangement against missing evidence, stale state and an unaccepted handoff.
+
+[Company and supply-chain context](../../HARBOUR.md) · [Module 8 business situation](../../reference/harbour-learning-journey.md#module-8)
+
 ## A progress message is not a final result
 
 A web interface starts work in a background thread so it can remain responsive. The worker sends progress events through a queue. If it fails before sending a final event, the interface can wait forever. The failure has happened, but the user-facing state never reaches a conclusion.
