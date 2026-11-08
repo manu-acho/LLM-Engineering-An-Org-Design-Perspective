@@ -226,3 +226,16 @@ The course’s north and south scopes demonstrate region-specific access. A perm
 | Review capacity | Work that the available review time can support under an explicit effort assumption; distinct from model throughput |
 
 [Compatible quantities](../modules/01-standalone-foundations/04-evidence-pipeline.md#check-what-a-quantity-counts-before-subtracting), [service measures](../modules/04-evaluation/04-measures-and-uncertainty.md#compare-drafting-effort-with-timely-investigation-resolution) and [capacity](../modules/17-durable-volume/03-business-and-organisation.md#calculate-capacity-for-the-receiving-team) include complete inputs, calculations and contrasting exercises.
+
+## Research concepts for AI-supported work
+
+| Term | Meaning and example | Research reading |
+|---|---|---|
+| Accountability | An obligation to explain conduct to a forum that can question, judge and attach consequences; a log supplies evidence but does not create the relationship | [Governance](research/08-governance-and-accountability.md) |
+| Classification | A scheme grouping cases into categories; a shortage category can change routing and remedy options | [Infrastructure](research/07-infrastructure-and-standards.md) |
+| Conformance | Correspondence between recorded behaviour and a selected process model; correspondence does not prove the model expresses appropriate policy | [Processes](research/09-process-architecture.md) |
+| Data contract | An agreement about exchanged information, its meaning and responsibilities; a quantity needs a unit, source and correction owner | [Infrastructure](research/07-infrastructure-and-standards.md) |
+| Installed base | Existing systems, standards, skills and practices that a new service encounters and depends on | [Infrastructure](research/07-infrastructure-and-standards.md) |
+| Process architecture | Relationships among multiple processes; a remedy connects fulfilment, inventory, transport and finance | [Processes](research/09-process-architecture.md) |
+| Regime of knowing | An established arrangement for what counts as credible knowledge and how claims are judged in work | [Routines](research/05-routines.md) |
+| Unit of analysis | The entity a study examines, such as a handoff, decision, case or team | [Study pathways](research-study-pathways.md) |

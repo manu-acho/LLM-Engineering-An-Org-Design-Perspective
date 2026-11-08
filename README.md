@@ -18,7 +18,7 @@ Learn how AI systems work and how to integrate their contributions into the desi
 - [Technical foundations](reference/technical-foundations.md): worked introductions to mathematical and systems concepts.
 - [Glossary](reference/glossary.md): definitions and concrete examples.
 - [Further explanations](reference/further-learning.md): selected external tutorials and primary technical resources.
-- [Organisation design research](reference/literature-guide.md): six developed chapters with scholarly references.
+- [Organisation design research](reference/literature-guide.md): nine developed chapters and a project bibliography with scholarly references.
 - [What has been verified](reference/verification.md): local tests, protocol exercises and integration limits.
 
 ## Two connected routes

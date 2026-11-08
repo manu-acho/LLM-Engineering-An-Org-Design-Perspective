@@ -13,10 +13,10 @@ assert.equal(payload.curriculum.filter(module => module.status === 'available').
 assert.equal(payload.curriculum.filter(module => module.status === 'planned').length, 0);
 const expectedLessons = payload.curriculum.reduce((n, module) => n + module.lessons, 0);
 assert.equal(build.lessons, expectedLessons);
-assert.equal(payload.documents.filter(doc => doc.path.startsWith('reference/research/')).length, 6);
+assert.equal(payload.documents.filter(doc => doc.path.startsWith('reference/research/')).length, 9);
 
 const study = JSON.parse(await fs.readFile(path.join(projectRoot, 'study-manifest.json'), 'utf8'));
-const downloadNames = ['study-workspace.zip', 'foundations_lab.py', 'test_foundations.py', ...study.lessons.map(item => path.basename(item.notebook))];
+const downloadNames = ['references.bib', 'study-workspace.zip', 'foundations_lab.py', 'test_foundations.py', ...study.lessons.map(item => path.basename(item.notebook))];
 assert.equal(new Set(downloadNames).size, downloadNames.length);
 let links = 0;
 for (const document of payload.documents) {
@@ -40,6 +40,8 @@ for (const document of payload.documents) {
     links++;
   }
 }
+assert.equal(payload.researchChapters, 9);
+assert((await fs.readFile(path.join(distRoot, 'downloads/references.bib'))).equals(await fs.readFile(path.join(projectRoot, 'references/references.bib'))));
 for (const file of ['foundations_lab.py', 'test_foundations.py']) {
   const source = await fs.readFile(path.join(projectRoot, 'examples/01-foundations', file));
   const published = await fs.readFile(path.join(distRoot, 'downloads', file));

@@ -98,7 +98,23 @@ Choose a proposed AI assistant. Write down its output, the recipient, the eviden
 
 Apply these concepts to [the pilot's worked business design](../../modules/01-standalone-foundations/06-business-design.md) and [the exercises](../../modules/01-standalone-foundations/07-assessment.md). The [standalone curriculum](../../CURRICULUM.md) identifies how later planned modules will develop the technical and organisational questions together.
 
+## AI research extension: automation and augmentation can reshape each other
+
+**Automation** transfers specified work to a machine. **Augmentation** changes what a person can do with assistance. The terms describe an arrangement of work, not a permanent property of a model. The same assistant can automate initial sorting while augmenting investigation of an unusual case.
+
+Raisch and Krakowski (2021) develop a conceptual argument about tensions and connections between automation and augmentation. Their framework challenges the assumption that the two are independent choices with stable consequences. It is a theoretical contribution, not a measured estimate of employment or productivity effects. [Raisch and Krakowski (2021)](../bibliography.md#raisch-and-krakowski-2021)
+
+**Harbour application.** Automating a first evidence brief can change the cases that reach an experienced investigator. The remaining work may become more unusual and demanding. A team that measures only average drafting time can miss this change in task mix. Conversely, the investigator's corrections may help redesign what can later be automated. Neither trajectory follows inevitably from adopting AI.
+
+This sharpens the earlier discussion of interdependence. The unit of design is more than one person's task. It includes how work is allocated, how competence develops and how neighbouring teams absorb changed outputs. Removing routine cases may free attention while also removing opportunities through which new colleagues learn. That is a proposition to investigate, not a universal objection to automation.
+
+**Study exercise.** Draw a before-and-after account of evidence preparation, exception investigation and approval. Identify who encounters ordinary cases, who encounters exceptions and how a new colleague learns each. A worked answer should distinguish a shorter preparation task from a changed learning arrangement. Evidence would include case allocation, observed work and accounts of skill development over time, rather than a single demonstration.
+
+For deeper analysis, compare the design's promised labour saving with its effects on [coordination](02-coordination.md) and [process-wide work](09-process-architecture.md). A design may improve both, worsen both or trade one against the other. The framework supplies questions for that comparison, not its answer.
+
 ## References
+
+The [project bibliography](../bibliography.md) brings together the chapter references and additional AI research, with source-access notes.
 
 ### Burton and Obel (2018)
 

@@ -125,3 +125,7 @@ Before reading the worked direction, write a short response covering: the affect
 Save the contribution and its source/version identity. Keep an owner for waiting work, revisit stale facts and revalidate policy before committing. A stored model draft can be reused where suitable; a changed business situation may need a new investigation.
 
 Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.
+
+## Research extension: examine the wider arrangement
+
+[Governance and accountability](../../reference/research/08-governance-and-accountability.md#worked-arrangement-govern-a-remedy-rather-than-a-button). Link approval to a specified proposal version. Distinguish a technical stale-version refusal from evidence that a reviewer can obtain a timely corrected decision.

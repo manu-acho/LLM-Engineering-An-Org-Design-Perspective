@@ -121,3 +121,7 @@ Before reading the worked direction, write a short response covering: the affect
 The receiver checks case identity and permitted sources before relying on the result. Contradictory accounts remain explicit. Integration work needs an owner and time; creating another specialist does not remove that work.
 
 Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.
+
+## Research extension: examine the wider arrangement
+
+[Process architecture](../../reference/research/09-process-architecture.md#process-model-workflow-and-performed-work). The orchestration graph represents selected implementation steps. State which customer activities and responsibilities remain outside that graph.

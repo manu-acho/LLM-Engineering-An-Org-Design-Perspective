@@ -13,7 +13,7 @@ function crc32(data) {
 }
 export async function buildBundle(root, destination, readings, notebooks) {
   const files = new Set([...readings, ...notebooks, 'README.md', 'STUDY-WORKSPACE.md', 'DEVELOPMENT.md',
-    'BROWSER-READER.md', 'netlify.toml', 'browser-reader/module-readings.json', 'browser-reader/standalone-curriculum.json', 'pyproject.toml', 'uv.lock', '.python-version', '.env.example', '.gitignore',
+    'references/references.bib', 'references/catalog.json', 'BROWSER-READER.md', 'netlify.toml', 'browser-reader/module-readings.json', 'browser-reader/standalone-curriculum.json', 'pyproject.toml', 'uv.lock', '.python-version', '.env.example', '.gitignore',
     '.vscode/settings.json', '.vscode/extensions.json', 'study-manifest.json']);
   async function collect(relative) {
     for (const entry of await fs.readdir(path.join(root, relative), {withFileTypes: true})) {

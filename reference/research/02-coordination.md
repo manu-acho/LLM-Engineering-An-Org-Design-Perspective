@@ -101,7 +101,23 @@ A team proposes five agents that all send drafts to one reviewer. Identify two d
 
 Apply these concepts to [the pilot's worked business design](../../modules/01-standalone-foundations/06-business-design.md) and [the exercises](../../modules/01-standalone-foundations/07-assessment.md). The [standalone curriculum](../../CURRICULUM.md) identifies how later planned modules will develop the technical and organisational questions together.
 
+## AI research extension: coordinating when the basis of an answer changes
+
+A **learning algorithm** derives patterns from data rather than relying only on rules written individually by a programmer. Once deployed, such a system may still require a deliberate update to change. The term does not mean that every model continuously learns from every conversation.
+
+Faraj, Pachidi and Sayegh (2018) examine implications of learning algorithms for working and organising, including the difficulty of inspecting how outputs are produced and the politics of how work is represented. Their contribution is a conceptual research agenda. It does not establish that every deployment will deskill workers or reorganise authority in the same way. [Faraj et al. (2018)](../bibliography.md#faraj-et-al-2018)
+
+The coordination problem is that a handoff can remain formally unchanged while its practical basis changes. A receiving team previously trusted a named specialist's brief because it knew how that specialist checked the evidence. An AI-produced brief may look similar while relying on different source selection and assumptions. A familiar document format does not establish common understanding.
+
+**Harbour application.** Warehouse colleagues receive a request to investigate a shortage. They need to know whether a quantity was copied from a scan, inferred from a customer message or converted using a packaging rule. Those are different grounds for action. A useful handoff preserves that distinction and provides a route for asking questions. A confidence score without a defined meaning does not supply the missing relationship.
+
+This interpretation extends the chapter's discussion of expertise. Knowing where expertise resides includes knowing who can explain a product mapping, revise an evidence rule or recognise an unusual delivery pattern. A model's fluent answer should not cause those relationships to disappear from the operating design.
+
+**Study exercise.** Compare a source-linked brief with a polished summary that omits provenance. Identify what the receiving actor can verify in each. A defensible answer recognises that provenance helps investigation but does not prove the source correct. It also identifies the colleague or role able to repair a disputed meaning. Follow this question into [shared definitions and infrastructure](07-infrastructure-and-standards.md).
+
 ## References
+
+The [project bibliography](../bibliography.md) brings together the chapter references and additional AI research, with source-access notes.
 
 ### Malone and Crowston (1994)
 

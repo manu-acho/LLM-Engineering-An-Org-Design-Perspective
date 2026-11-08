@@ -137,3 +137,7 @@ Before reading the worked direction, write a short response covering: the affect
 Limit concurrent work and observe receiving-team capacity. Distinguish a queued technical job from ownership of the commercial case. Expired workers must not commit stale results; any external physical or financial action would need its own reconciliation.
 
 Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.
+
+## Research extension: examine the wider arrangement
+
+[Process architecture](../../reference/research/09-process-architecture.md#what-event-logs-can-reveal). An event timestamp may record receipt rather than occurrence. Examine delayed records, case correlation and missing work before interpreting queue performance.

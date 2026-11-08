@@ -13,3 +13,7 @@ The learner-facing setup is in `STUDY-WORKSPACE.md`. This file documents the tec
 The setup script recreates the locked environment and kernel registration on another computer. Virtual environments, credentials, caches and generated reader files remain ignored. The existing companion edition is maintained separately on `main`; this checkout stays on the course development branch.
 
 Each lesson needs a distinct activity, an independent attempt and a separate worked answer. Run `uv run --locked python scripts/check_learning_path.py` to check mappings and repeated activities. This structural check supports, but does not replace, human review. Model-facing examples must show usage and failure handling; their deterministic fixtures cannot be reported as model observations.
+
+## Research references
+
+Maintain scholarly records in `references/catalog.json`, retaining stable keys, chapter-use mappings, version information and source-access boundaries. Run `python3 scripts/build_bibliography.py` to regenerate `reference/bibliography.md` and `references/references.bib`, then `python3 scripts/check_bibliography.py` and the reader check. Do not treat metadata retrieval as full-text inspection. Keep internal source assessments and publishing plans under ignored `.private/`; do not bundle publication PDFs.

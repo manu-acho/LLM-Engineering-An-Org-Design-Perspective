@@ -92,3 +92,9 @@ Before reading the worked direction, write a short response covering: the affect
 Limit assistance to justified contributions; retain functional source owners and accountable investigation. Explain accepted handoffs, capacity, remedy authority and correction. State what actual checks establish, compare with simpler arrangements, and define conditions for expansion, revision or withdrawal.
 
 Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.
+
+## Research extension: examine the wider arrangement
+
+[Governance and accountability](../../reference/research/08-governance-and-accountability.md#accountability-can-redistribute-burdens). Improvement decisions should examine whose performance becomes visible and who can contest the measure.
+
+[Process architecture](../../reference/research/09-process-architecture.md#variation-is-not-automatically-a-defect). A frequent variant can be useful repair or avoidable rework. Investigate its purpose before promoting a policy that removes it.

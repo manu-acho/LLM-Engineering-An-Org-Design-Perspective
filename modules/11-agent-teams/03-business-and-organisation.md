@@ -124,3 +124,7 @@ Before reading the worked direction, write a short response covering: the affect
 Independent source reads may overlap, but a remedy still depends on accepted evidence and authorised review. A disputed count may require discussion rather than another parallel call. Include reviewer and specialist capacity when comparing arrangements.
 
 Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.
+
+## Research extension: examine the wider arrangement
+
+[Process architecture](../../reference/research/09-process-architecture.md#process-architecture-connects-the-processes). Several collaborating agents do not automatically represent a complete business process. Trace shared orders, shipments and remedies across the surrounding teams.

@@ -13,17 +13,20 @@ const moduleNames = Object.fromEntries(curriculumData.map(m => [m.path.split('/'
 const readingFiles = [
   'README.md', 'START-HERE.md', 'HARBOUR.md', 'reference/harbour-learning-journey.md', 'SETUP.md', 'CURRICULUM.md', 'WORKBOOK.md', 'SOURCE-MAP.md',
   'LAB-GUIDE.md', 'STUDY-WORKSPACE.md', 'AGENT-ENGINEERING.md', 'reference/glossary.md',
-  'reference/literature-guide.md', 'reference/python-patterns.md', 'reference/technical-foundations.md', 'reference/further-learning.md', 'reference/verification.md', 'reference/live-model-guide.md', 'reference/case-data-guide.md', 'reference/worked-model-experiments.md', 'reference/application-code-walkthrough.md'
+  'reference/literature-guide.md', 'reference/bibliography.md', 'reference/research-study-pathways.md', 'reference/python-patterns.md', 'reference/technical-foundations.md', 'reference/further-learning.md', 'reference/verification.md', 'reference/live-model-guide.md', 'reference/case-data-guide.md', 'reference/worked-model-experiments.md', 'reference/application-code-walkthrough.md'
 ];
 
 const researchFiles = [
   'reference/research/01-organisation-design.md', 'reference/research/02-coordination.md',
   'reference/research/03-decisions.md', 'reference/research/04-implementation.md',
-  'reference/research/05-routines.md', 'reference/research/06-technology-in-practice.md'
+  'reference/research/05-routines.md', 'reference/research/06-technology-in-practice.md',
+  'reference/research/07-infrastructure-and-standards.md',
+  'reference/research/08-governance-and-accountability.md',
+  'reference/research/09-process-architecture.md'
 ];
 
 function sectionFor(relative) {
-  if (relative === 'reference/literature-guide.md' || researchFiles.includes(relative)) return 'Organisation design research';
+  if (['reference/literature-guide.md', 'reference/bibliography.md', 'reference/research-study-pathways.md'].includes(relative) || researchFiles.includes(relative)) return 'Organisation design research';
   if (['README.md', 'START-HERE.md', 'HARBOUR.md', 'reference/harbour-learning-journey.md', 'SETUP.md', 'WORKBOOK.md', 'AGENT-ENGINEERING.md', 'CURRICULUM.md', 'LAB-GUIDE.md', 'STUDY-WORKSPACE.md'].includes(relative)) return 'Start and study';
   if (relative.startsWith('modules/')) return moduleNames[relative.split('/')[1]] || 'Engineering references';
   if (relative === 'SOURCE-MAP.md' || relative === 'reference/further-learning.md') return 'Sources and further reading';
@@ -76,7 +79,7 @@ export async function buildReader() {
   ];
   const study = JSON.parse(await fs.readFile(path.join(projectRoot, "study-manifest.json"), "utf8"));
   const learning = { notebooks: study.lessons.length, liveActivities: study.lessons.filter(item => item.live_recommended).length };
-  const payload = { learning, generatedAt: new Date().toISOString(), edition: 'course', curriculum,
+  const payload = { researchChapters: researchFiles.length, learning, generatedAt: new Date().toISOString(), edition: 'course', curriculum,
     repoName: 'AI engineering and organisation design', documents,
     sectionOrder, moduleGroups, warnings: [] };
   await fs.mkdir(distRoot, { recursive: true });
@@ -91,6 +94,7 @@ export async function buildReader() {
     if (!/^notebooks\/[a-z0-9-]+\/\d{2}-[a-z0-9-]+\.ipynb$/.test(lesson.notebook)) throw new Error('Invalid notebook path');
     await fs.copyFile(path.join(projectRoot, lesson.notebook), path.join(distRoot, 'downloads', path.basename(lesson.notebook)));
   }
+  await fs.copyFile(path.join(projectRoot, 'references/references.bib'), path.join(distRoot, 'downloads/references.bib'));
   await buildBundle(projectRoot, path.join(distRoot, "downloads/study-workspace.zip"), publicFiles, study.lessons.map(item => item.notebook));
   return { documents: documents.length, lessons: documents.filter(d => /^modules\/[^/]+\/\d{2}-/.test(d.path)).length, warnings: [] };
 }

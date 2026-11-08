@@ -1,6 +1,6 @@
 # Research chapter 6: How AI technology becomes consequential
 
-[Research reading guide](../literature-guide.md) · [Previous: routines](05-routines.md)
+[Research reading guide](../literature-guide.md) · [Next: infrastructure](07-infrastructure-and-standards.md) · [Previous: routines](05-routines.md)
 
 Read [Meet Harbour](../../HARBOUR.md) for the shared fictional company. In this chapter, its delivery-investigation work illustrates the conditions under which a source panel or assistant becomes useful to particular staff. The case is an application of the research concepts, not evidence for the original studies.
 
@@ -119,7 +119,23 @@ Replace “the system affords transparency” with a statement that could be exa
 
 Apply these concepts to [the pilot's worked business design](../../modules/01-standalone-foundations/06-business-design.md) and [the exercises](../../modules/01-standalone-foundations/07-assessment.md). The [standalone curriculum](../../CURRICULUM.md) identifies how later planned modules will develop the technical and organisational questions together.
 
+## AI research extension: useful assistance and contested control
+
+**Algorithmic control** concerns how algorithms participate in directing, evaluating or disciplining work. An AI assistant can support an employee's task while also making that task more visible to management. These consequences can coexist, and their distribution needs examination.
+
+Kellogg, Valentine and Christin (2020) review research on algorithmic control and worker responses. Their synthesis distinguishes mechanisms involving restriction and recommendation, recording and rating, and replacement and reward. It is a review across settings, not a claim that any one system necessarily exercises all these mechanisms. [Kellogg et al. (2020)](../bibliography.md#kellogg-et-al-2020)
+
+This lens complements the chapter's discussion of affordances. An **affordance** concerns an action possibility in a relationship between an actor and a technology. The control perspective adds questions about whose goals define useful action, how conduct is evaluated and what happens when someone contests the arrangement. These theoretical perspectives are related but should not be collapsed into one vocabulary.
+
+**Harbour application.** A source-linked brief may help an investigator identify a discrepancy. The same interface may record review speed and generate a ranking. If careful investigation takes longer, the ranking could discourage the very checking the service needs. That is a possible consequence to examine, not an observed Harbour result.
+
+A practical inquiry follows what the ranking measures, how it enters staffing or appraisal decisions, who can correct an incorrect attribution and whether difficult cases receive different treatment. It should also investigate useful outcomes. A record of review effort might reveal understaffing and support a better allocation of work. The technology does not settle which interpretation applies.
+
+**Study exercise.** Describe one capability from the perspectives of a service colleague, a manager and a customer. Name a possible benefit, constraint and source of evidence for each. A worked answer should allow different actors to experience the same feature differently. Connect the resulting questions to [infrastructure and classification](07-infrastructure-and-standards.md) and [accountability](08-governance-and-accountability.md), where categories and review rights become explicit design concerns.
+
 ## References
+
+The [project bibliography](../bibliography.md) brings together the chapter references and additional AI research, with source-access notes.
 
 ### Orlikowski (1992)
 

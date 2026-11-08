@@ -22,4 +22,4 @@ The course explains the concepts needed for its exercises. These selected resour
 | HTTP checks, Module 19 | [FastAPI testing guide](https://fastapi.tiangolo.com/tutorial/testing/) | In-process requests with TestClient; distinguish them from a real network deployment |
 | Learning environment | [uv with Jupyter](https://docs.astral.sh/uv/guides/integration/jupyter/) | Project environments and notebook kernels |
 
-For organisation design, begin with the six [in-course research chapters](literature-guide.md). Each develops an argument, worked case and scholarly references. The business applications are teaching interpretations; the cited publications retain their original empirical settings and evidential limits.
+For organisation design, begin with the nine [in-course research chapters](literature-guide.md). Each develops an argument, worked case and scholarly references. The business applications are teaching interpretations; the cited publications retain their original empirical settings and evidential limits.

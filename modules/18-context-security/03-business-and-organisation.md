@@ -92,3 +92,9 @@ Before reading the worked direction, write a short response covering: the affect
 A customer report can establish what was reported without setting system rules. A policy needs an approved version and owner. Regional scope comes from trusted application identity. Finance and operations should agree the meaning of shared fields and correct them through owned routes.
 
 Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.
+
+## Research extension: examine the wider arrangement
+
+[Governance and accountability](../../reference/research/08-governance-and-accountability.md#four-terms-that-answer-different-questions). Separate access permission, authority to act and an obligation to explain. A logged identity does not establish all three.
+
+[Infrastructure and standards](../../reference/research/07-infrastructure-and-standards.md#classification-changes-what-an-organisation-can-see). Context categories can change who sees evidence. Examine exclusions, ambiguous categories and the route for correcting a classification.

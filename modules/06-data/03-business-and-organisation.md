@@ -127,3 +127,7 @@ Before reading the worked direction, write a short response covering: the affect
 Finance receives the defined invoice/tax issues; operations investigates recorded-versus-reported delivery differences. Missing information stays visible. The teams agree how to accept, return or jointly examine mixed cases rather than forcing every message into a misleading single label.
 
 Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.
+
+## Research extension: examine the wider arrangement
+
+[Infrastructure and standards](../../reference/research/07-infrastructure-and-standards.md#classification-changes-what-an-organisation-can-see). A classifier can match labels while routing work badly. Examine the category scheme, cross-functional cases and ownership of the residual category.

@@ -18,7 +18,7 @@ The model exercises, evidence preparation, agent patterns and service implementa
 
 ## Scholarly foundation
 
-Six [research chapters](reference/literature-guide.md) explain the organisation design concepts within the course and cite the scholarly publications. Their cases are fictional. Concepts from enterprise-system, healthcare and other studies are applied with their original setting boundaries intact.
+Nine [research chapters](reference/literature-guide.md) explain the organisation design concepts within the course and cite the scholarly publications. Their cases are fictional. Concepts from enterprise-system, healthcare and other studies are applied with their original setting boundaries intact.
 
 ## Teaching scope and verification
 

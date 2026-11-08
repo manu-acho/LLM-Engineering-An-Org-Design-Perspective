@@ -124,3 +124,7 @@ Before reading the worked direction, write a short response covering: the affect
 Compare case identity, supplied quantities and receipt status, then inspect errors and usage separately. Operations retains ownership of investigation and finance retains its decision boundary. Changing a runtime does not establish equivalent business behaviour by itself.
 
 Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.
+
+## Research extension: examine the wider arrangement
+
+[Infrastructure and standards](../../reference/research/07-infrastructure-and-standards.md#a-platform-can-invite-development-while-concentrating-control). A framework or platform can permit extensions while retaining important control points. Identify interface, identity and maintenance dependencies before comparing alternatives.

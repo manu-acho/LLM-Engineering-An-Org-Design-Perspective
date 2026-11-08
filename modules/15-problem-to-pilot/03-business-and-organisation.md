@@ -88,3 +88,7 @@ Before reading the worked direction, write a short response covering: the affect
 Compare manual preparation, direct lookup and assisted preparation under matched inclusion rules. Give cross-team ownership problems their own design response. A restricted generated function can help implement a rule; it cannot decide which organisational rule is appropriate.
 
 Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.
+
+## Research extension: examine the wider arrangement
+
+[Process architecture](../../reference/research/09-process-architecture.md#worked-design-extend-the-boundary-of-success). Define the pilot boundary before selecting measures. Evidence readiness, remedy authorisation and completed resolution are distinct outcomes.

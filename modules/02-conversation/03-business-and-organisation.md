@@ -136,3 +136,7 @@ Other arrangements can be defensible. Check that the proposal names who accepts 
 ## Approval roles in this example
 
 The proposed finance approver is an authorised manager. The `manager` role holds the decision right; other finance staff may process an authorised account change. The placement of a role in finance does not grant the decision right to every finance user.
+
+## Research extension: examine the wider arrangement
+
+[Governance and accountability](../../reference/research/08-governance-and-accountability.md#four-terms-that-answer-different-questions). A valid tool permission does not establish business authority. Identify the decision right and the actor who must explain a disputed action.

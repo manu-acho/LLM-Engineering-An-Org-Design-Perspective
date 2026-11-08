@@ -26,6 +26,7 @@ for (const lesson of study.lessons) {
   const name = path.basename(lesson.notebook);
   allowed.set(`/downloads/${name}`, [`downloads/${name}`, 'application/x-ipynb+json; charset=utf-8']);
 }
+allowed.set('/downloads/references.bib', ['downloads/references.bib', 'text/plain; charset=utf-8']);
 allowed.set('/downloads/study-workspace.zip', ['downloads/study-workspace.zip', 'application/zip']);
 const server = http.createServer(async (request, response) => {
   try {

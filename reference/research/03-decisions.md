@@ -112,7 +112,21 @@ An assistant recommends automatic processing below £50. Identify the judgements
 
 Apply these concepts to [the pilot's worked business design](../../modules/01-standalone-foundations/06-business-design.md) and [the exercises](../../modules/01-standalone-foundations/07-assessment.md). The [standalone curriculum](../../CURRICULUM.md) identifies how later planned modules will develop the technical and organisational questions together.
 
+## AI research extension: choose an arrangement of human and AI contributions
+
+Shrestha, Ben-Menahem and von Krogh (2019) distinguish arrangements including delegation to AI, sequential combinations of human and AI contributions, and aggregation of contributions. Their framework connects the arrangement to characteristics of the decision problem. It predates current general-purpose language models, so its discussion should not be treated as a guarantee that an LLM's outputs are replicable or its reasoning inspectable. [Shrestha et al. (2019)](../bibliography.md#shrestha-et-al-2019)
+
+**Delegation** assigns a defined decision task to another actor or system. A **sequential arrangement** makes one contribution an input to another. **Aggregation** combines multiple contributions under a rule. These patterns can coexist within a service. A quantity calculation can be delegated while a remedy remains a sequential review decision.
+
+At Harbour, an AI-first sequence can help a reviewer see relevant evidence quickly. It can also anchor the reviewer on the initial proposal. A human-first sequence might require an initial judgement before revealing the AI recommendation, at the cost of more work. Aggregating two answers requires a defensible combination rule and attention to shared sources; two models repeating the same erroneous record are not independent witnesses.
+
+Buçinca, Malaya and Gajos (2021) investigate **cognitive forcing functions**, interventions that require additional thought before accepting AI advice. Their controlled experiment found reductions in overreliance under some designs, alongside costs in preference and differences in who benefited. It supports testing review arrangements rather than assuming that explanations or extra clicks guarantee good judgement. [Buçinca et al. (2021)](../bibliography.md#bu-inca-et-al-2021)
+
+**Worked design question.** For an ambiguous delivery, compare immediate display of a proposed credit with a requirement to identify conflicting records first. Examine error detection, time, disagreement and unresolved cases. The second design could produce better checking or ritual compliance. Observing the review is necessary to distinguish them. The result should inform [governance and accountability](08-governance-and-accountability.md), including who can change an ineffective review rule.
+
 ## References
+
+The [project bibliography](../bibliography.md) brings together the chapter references and additional AI research, with source-access notes.
 
 ### Simon (1955)
 
@@ -140,7 +154,7 @@ Joseph, J., and Gaba, V. (2020). Organizational structure, information processin
 
 ### Brunsson (1990)
 
-Brunsson, N. (1990). Deciding for responsibility and legitimation: Alternative interpretations of organizational decision-making. *Accounting, Organizations and Society, 15*(1–2), 47–58. [Publication](https://doi.org/10.1016/0361-3682%2890%2990012-J).
+Brunsson, N. (1990). Deciding for responsibility and legitimation: Alternative interpretations of organizational decision-making. *Accounting, Organizations and Society, 15*(1–2), 47–59. [Publication](https://doi.org/10.1016/0361-3682%2890%2990012-J).
 
 ### Feldman and March (1981)
 

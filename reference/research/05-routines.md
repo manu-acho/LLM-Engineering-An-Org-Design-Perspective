@@ -108,7 +108,23 @@ There is a new prompt, an interview saying “we always verify”, and 200 logge
 
 Apply these concepts to [the pilot's worked business design](../../modules/01-standalone-foundations/06-business-design.md) and [the exercises](../../modules/01-standalone-foundations/07-assessment.md). The [standalone curriculum](../../CURRICULUM.md) identifies how later planned modules will develop the technical and organisational questions together.
 
+## AI research extension: visible compliance and changed ways of knowing
+
+A **regime of knowing** is an established arrangement for deciding what counts as relevant knowledge and how claims become credible in work. The term directs attention to expertise, accepted evidence and practical authority, rather than information volume alone.
+
+Pachidi et al. (2021) examine the introduction of an algorithmic technology in a telecommunications organisation. Their study follows symbolic actions and changes in an established regime of knowing. It shows why apparent conformity and advocacy require interpretation through the wider sequence of change. A single organisational study does not establish a universal adoption pattern. [Pachidi et al. (2021)](../bibliography.md#pachidi-et-al-2021)
+
+The link to routines is that using a system and accepting its knowledge claims are different questions. A colleague can complete a required field while still relying on another way of understanding the case. Conversely, an initially symbolic display can help establish practices that later change how knowledge is judged. Neither genuine adoption nor resistance follows directly from login counts.
+
+**Harbour illustration.** Investigators copy the assistant's category into a mandatory field but continue to telephone a transport specialist before acting. The extra contact could be necessary expertise, a response to unreliable classifications or habit persisting after a useful improvement. The routine should be studied before deciding which interpretation fits.
+
+The evidence must connect performances over time. Compare the recorded category, the explanation given in case meetings, actual remedy choices and revisions to the classification scheme. Observe contested cases as well as ordinary ones. A dashboard counting completed categories cannot show whether the category guides the decision.
+
+**Study exercise.** Identify two rival explanations for a rise in recorded use after training. One is increased confidence in the assistant; another is compliance with a reporting requirement. A worked inquiry would look for changed evidence use, corrections, unrecorded checking and participants' explanations. It would avoid equating either the official record or a single interview with the entire routine. [Governance](08-governance-and-accountability.md) then asks who can revise the requirement when the observed pattern undermines useful work.
+
 ## References
+
+The [project bibliography](../bibliography.md) brings together the chapter references and additional AI research, with source-access notes.
 
 ### Pentland and Hærem (2015)
 

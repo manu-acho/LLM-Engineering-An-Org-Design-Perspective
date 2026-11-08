@@ -1,6 +1,6 @@
 # Running and deploying the course reader
 
-The reader publishes twenty modules, their lessons, six research chapters and study references. The landing page and library share the same three course parts. Each module opens its overview and individual lessons. The downloadable workspace includes matching notebooks and shared Python implementations.
+The reader publishes twenty modules, their lessons, nine research chapters and study references. The landing page and library share the same three course parts. Each module opens its overview and individual lessons. The downloadable workspace includes matching notebooks and shared Python implementations.
 
 From this checkout:
 

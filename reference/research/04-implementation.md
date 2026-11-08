@@ -115,7 +115,23 @@ An assistant requires a verified customer quantity before allowing submission. S
 
 Apply these concepts to [the pilot's worked business design](../../modules/01-standalone-foundations/06-business-design.md) and [the exercises](../../modules/01-standalone-foundations/07-assessment.md). The [standalone curriculum](../../CURRICULUM.md) identifies how later planned modules will develop the technical and organisational questions together.
 
+## AI research extension: what a measured productivity result can establish
+
+Brynjolfsson, Li and Raymond (2025) study the introduction of a generative-AI assistant in customer support. The published study covers 5,172 agents and reports an average increase of about 15% in issues resolved per hour, with substantial differences across workers. Less experienced and lower-skilled workers benefited more on the principal productivity measure. This is evidence from a particular work setting, not a general forecast for every AI service. [Brynjolfsson et al. (2025)](../bibliography.md#brynjolfsson-et-al-2025)
+
+**Productivity** relates an output to an input, such as resolved cases per labour hour. Its meaning depends on how output, labour and case quality are defined. A higher rate of drafts per hour is a different outcome from a higher rate of durable resolutions.
+
+**Harbour application.** The study offers a reason to investigate differences by experience and task. It does not justify placing 15% in a Harbour business case as an expected return. Packaging discrepancies involve warehouse evidence, transport dependencies and finance actions that may differ from the studied service.
+
+An implementation evaluation should record which cases enter the comparison, when access changes, what other practices change and whether assistance is actually used. **Selection bias** occurs when compared groups differ in ways relevant to the result. If experienced staff receive the difficult cases after an AI rollout, a simple average can misrepresent both their contribution and the tool's effect.
+
+A useful evaluation therefore combines operational measures with evidence about the work. It might compare evidence-preparation time, total resolution time, remedy errors and investigation effort, while tracking case mix and experience. A short pilot can establish whether a defined arrangement is usable under tested conditions. Claims about durable benefits need a longer and broader comparison.
+
+**Study exercise.** Write two conclusions from a pilot in which briefs become faster but unresolved complaints rise. A weak conclusion says that AI improved productivity. A stronger conclusion specifies the faster activity, reports the adverse service measure and investigates whether missing handoffs, changed case mix or another condition explains the divergence. Connect the investigation to [process architecture](09-process-architecture.md).
+
 ## References
+
+The [project bibliography](../bibliography.md) brings together the chapter references and additional AI research, with source-access notes.
 
 ### Strong and Volkoff (2010)
 

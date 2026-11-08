@@ -74,7 +74,7 @@ Create a pilot operating design containing the dependency map, permitted action 
 
 The result is a practical brief for an AI pilot. Its value is the connection between mechanism and organisational judgement: what the system does, what work remains and what evidence would justify expanding its scope.
 
-**Research basis:** The [six-stream foundation](../../reference/literature-guide.md), especially dependency management, configurational fit, decision premises, implementation over time and the artefact/practice distinction. These concepts guide the fictional design; the curriculum claims no empirical AI implementation outcomes.
+**Research basis:** The [research foundation](../../reference/literature-guide.md), especially dependency management, configurational fit, decision premises, implementation over time and the artefact/practice distinction. These concepts guide the fictional design; the curriculum claims no empirical AI implementation outcomes.
 
 ## Continue the module
 
@@ -154,3 +154,7 @@ A replacement does not automatically imply a refund or credit. The commercial tr
 **Independent application.** Suppose replacement stock is unavailable after approval. What should the customer be told, who coordinates the next decision and which state must not be presented as complete?
 
 **Worked direction.** Customer service should communicate the uncertainty and the next confirmed update, rather than promise an unconfirmed dispatch. The case owner coordinates warehouse/planning information and any revised authorised remedy. Approval remains a recorded decision; delivery and any account work remain unfinished. A closed API request must not be labelled “customer resolved”. Carry this trace into the [final workbook](../../WORKBOOK.md#final-harbour-organisation-design-review).
+
+## Research extension: examine the wider arrangement
+
+[Governance and accountability](../../reference/research/08-governance-and-accountability.md#put-decisions-near-knowledge-while-examining-the-costs). Compare the location of relevant knowledge with the right to decide. An agent summary changes communication but does not remove the cost of transferring meaning.

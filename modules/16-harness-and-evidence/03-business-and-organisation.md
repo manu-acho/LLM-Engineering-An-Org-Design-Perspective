@@ -92,3 +92,7 @@ Before reading the worked direction, write a short response covering: the affect
 Retain permitted source and configuration identities, status and relevant usage, with access and retention rules. Technical repair restores execution; the case owner still checks whether customers received an unsuitable answer or whether work needs to be repeated.
 
 Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.
+
+## Research extension: examine the wider arrangement
+
+[Governance and accountability](../../reference/research/08-governance-and-accountability.md#documentation-and-auditing-support-accountability-but-do-not-replace-it). Test evidence and model documentation support examination. Identify who is obliged to respond to a failed check and who can require a correction.

@@ -135,3 +135,7 @@ Other arrangements can be defensible. Check that the proposal names who accepts 
 ## Read the policy’s role precisely
 
 In the written policy-conflict vignette, “finance approves” refers to an authorised finance manager. Other finance staff process an authorised adjustment. This leaves the manager permission and the distinction between source authority and informal practice intact.
+
+## Research extension: examine the wider arrangement
+
+[Infrastructure and standards](../../reference/research/07-infrastructure-and-standards.md#standards-make-comparison-possible-and-require-continuing-work). Retrieving two quantity records does not make their units comparable. Follow the worked example and identify who maintains the shared meanings.

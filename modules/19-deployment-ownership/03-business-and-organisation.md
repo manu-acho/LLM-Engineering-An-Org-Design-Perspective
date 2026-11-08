@@ -92,3 +92,7 @@ Before reading the worked direction, write a short response covering: the affect
 Keep a usable manual investigation route and a named business owner alongside technical support. Local HTTP checks demonstrate selected contracts; hosting, real identity integration, backup restoration and load capacity need separate evidence before a live business release.
 
 Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.
+
+## Research extension: examine the wider arrangement
+
+[Infrastructure and standards](../../reference/research/07-infrastructure-and-standards.md#growth-requires-more-than-an-open-interface). A release enters an installed base. Track which prompt, schema, source and policy versions coexisted, including maintenance work outside the deployed service.

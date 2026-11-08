@@ -124,3 +124,9 @@ Before reading the worked direction, write a short response covering: the affect
 Expose a bounded read with server-side scope and source identity. An unavailable result should remain unavailable rather than becoming invented evidence. The local teaching MCP connection does not establish remote authentication or a production finance integration.
 
 Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.
+
+## Research extension: examine the wider arrangement
+
+[Process architecture](../../reference/research/09-process-architecture.md#activities-events-roles-and-objects). Separate the agent-run identifier from complaint, order, shipment and invoice identifiers. Explain which relationships are needed to reconstruct a disputed remedy.
+
+[Infrastructure and standards](../../reference/research/07-infrastructure-and-standards.md#worked-design-a-quantity-agreement). A shared schema needs agreed meaning and a correction owner. Use the proposed quantity agreement as a design exercise, without assuming the lab implements every provision.
