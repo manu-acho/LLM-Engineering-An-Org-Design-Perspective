@@ -12,21 +12,21 @@ This chapter follows those shared foundations. It starts with infrastructure and
 
 ## Infrastructure is a relationship with organised work
 
-**Infrastructure** is an arrangement that supports other activities and becomes embedded in how those activities are performed. It includes more than a server, database or network. A stock record becomes useful through definitions, access arrangements, recording practices and people who maintain it.
+**Infrastructure** is the combination of resources, rules and continuing work that other activities rely on. Harbour’s stock records support customer service because people maintain product identifiers, agree what the quantities mean, record changes and give the right staff access. A database stores the entries. The shared definitions and maintenance make them usable in other teams’ work.
 
-Star and Ruhleder (1996) examine infrastructure through its relationship with communities of practice. What operates as a familiar background for one group may remain a difficult object of work for another. Their account directs attention to learning, established practice and breakdown, rather than treating infrastructure simply as a large technical object. [Star and Ruhleder (1996)](#star-and-ruhleder-1996)
+A **community of practice** is a group connected through shared work and the learning that develops around it. Warehouse staff, for example, may learn local scan conventions through recurring work together. Star and Ruhleder (1996) examine infrastructure through its relationship with such communities. What operates as a familiar background for one group may remain a difficult object of work for another. Their account directs attention to learning, established practice and breakdown, rather than treating infrastructure simply as a large technical object. [Star and Ruhleder (1996)](#star-and-ruhleder-1996)
 
 At Harbour, customer service may treat product lookup as an immediate capability. Warehouse staff make that lookup dependable by recording substitutions and damaged stock. The assistant's fast answer rests partly on work that its interface does not display. A failure should therefore be investigated beyond the model prompt.
 
-An **installed base** is the existing combination of systems, standards, skills and practices on which a new arrangement must build. Hanseth and Lyytinen (2010) develop design theory for evolving information infrastructures, where new services encounter an already connected world. Replacing a spreadsheet does not replace the customer definitions, supplier conventions or local expertise that surrounded it. [Hanseth and Lyytinen (2010)](#hanseth-and-lyytinen-2010)
+An **installed base** is the existing combination of systems, standards, skills and practices that a new service inherits and relies on. Hanseth and Lyytinen (2010) develop design theory for evolving information infrastructures, where new services encounter an already connected world. Replacing a spreadsheet does not replace the customer definitions, supplier conventions or local expertise that surrounded it. [Hanseth and Lyytinen (2010)](#hanseth-and-lyytinen-2010)
 
-This creates path dependence: earlier choices shape later options and switching costs. It does not make change impossible. A research study should identify the actual dependencies, who maintains them and which alternatives have been tried before concluding that a system is locked in.
+This creates **path dependence**, where earlier choices shape later options and the effort needed to change. If Harbour has built many services around one product identifier, replacing it requires coordinated changes to those dependent services. It does not make change impossible. A research study should identify the actual dependencies, who maintains them and which alternatives have been tried before concluding that a system is locked in.
 
 ## Standards make comparison possible and require continuing work
 
 A **standard** is an agreed specification or convention that makes activities or objects sufficiently comparable. A common product identifier helps systems refer to the same item. A unit convention helps distinguish a single box from a case containing several boxes. An interface specification defines what a service must send and accept.
 
-These solve different problems. A syntactically valid message can still name the wrong product. Two services can exchange the number `2` successfully while interpreting its unit differently. Technical compatibility therefore needs semantic agreement, meaning agreement about what the exchanged information represents.
+These solve different problems. A **syntactically valid** message follows the agreed format, such as including a product identifier and numerical quantity. It can still name the wrong product. Two services can exchange the number `2` successfully while interpreting its unit differently. Technical compatibility therefore needs semantic agreement, meaning agreement about what the exchanged information represents.
 
 Hanseth, Monteiro and Hatling (1996) examine the tension between standardisation and flexibility. Timmermans and Epstein (2010) show why standards should be studied through their making and use, including the local work they require. These perspectives qualify the promise that one universal definition will remove all coordination problems. [Hanseth et al. (1996)](#hanseth-et-al-1996) · [Timmermans and Epstein (2010)](#timmermans-and-epstein-2010)
 
@@ -38,35 +38,35 @@ A **classification** groups things into categories. “Delivery shortage”, “
 
 Bowker and Star (1999) examine how classification systems organise visibility and carry consequences for people and work. Their argument concerns the choices and exclusions built into categories, not a claim that every classification is intentionally unfair. [Bowker and Star (1999)](#bowker-and-star-1999)
 
-An AI classifier adds another layer: it estimates a category from an input. A technically accurate classifier can reproduce an unsuitable category scheme. Accuracy against historical labels answers whether the model matches those labels, not whether those labels express appropriate policy.
+An **AI classifier** estimates a category from an input, such as assigning a customer's message to “delivery shortage”. A **label** is the category attached to an example in the training or evaluation data. A technically accurate classifier can reproduce an unsuitable category scheme. Accuracy against historical labels answers whether the model matches those labels, not whether those labels express appropriate policy.
 
 **Harbour illustration.** A customer writes, “The courier left the boxes outside and some are wet.” A single-label system forces this into either delivery or damage. The first category reaches transport, the second warehouse quality. The problem crosses both. A multi-label representation or an explicit cross-functional case can preserve that dependency, provided a person or team owns the resulting investigation.
 
-A residual category such as “other” protects unfamiliar cases from forced classification. It also accumulates work. If no one reviews it, the system preserves uncertainty in a field while abandoning the customer in practice. Category maintenance is an operating responsibility, not an occasional model-training task.
+A **residual category**, such as “other”, collects cases that do not fit the named categories. It protects unfamiliar cases from forced classification. It also accumulates work. If no one reviews it, the system preserves uncertainty in a field while abandoning the customer in practice. Category maintenance is an operating responsibility, not an occasional model-training task.
 
 ## AI makes the data work more visible, or hides it again
 
 Sambasivan et al. (2021) use interviews with 53 AI practitioners to examine **data cascades**, compounding downstream difficulties arising from data problems and the organisational conditions surrounding them. The study concerns particular high-stakes settings. It does not estimate the prevalence or cost of such problems in every AI deployment. [Sambasivan et al. (2021)](../bibliography.md#sambasivan-et-al-2021)
 
-The useful Harbour question is where a quantity ambiguity travels. A unit mismatch can enter retrieval, a summary, a remedy proposal and a finance record. Improving the final answer prompt may leave the initiating condition untouched. The research interpretation is to investigate the path and the work arrangements that sustain it, rather than assume that data quality belongs solely to a technical team.
+The quantity problem in the opening case shows how a **data cascade** can spread. A retrieval step returns an order in cases and a warehouse record in boxes. If the assistant treats the units as equivalent, the brief may report an unsupported shortage. A reviewer could then use that figure to propose a credit, which finance might record. The earlier the units are checked, the sooner the service can flag the ambiguity. Harbour still needs to identify who can confirm the product’s packing size and maintain the conversion rule.
 
 Gebru et al. (2021) propose **datasheets for datasets**, structured documentation of matters such as origin, composition, collection, intended uses and maintenance. This is a documentation proposal, not evidence that filling in a form makes data suitable. [Gebru et al. (2021)](../bibliography.md#gebru-et-al-2021)
 
-A Harbour adaptation would document who supplies delivery scans, what a missing scan means, which period is covered and how corrections enter the next version. It would distinguish an absent event from evidence that no delivery occurred. The documentation becomes useful when operating teams can correct it and the service respects its limits.
+A datasheet for Harbour’s delivery scans would name the team that supplies them, the period they cover and how corrections are recorded. It could state that some offline scans arrive late. An assistant using those records would then have a reason to distinguish “no scan is available yet” from “no delivery took place”. The distinction matters to the person deciding whether to investigate further or propose a remedy.
 
 ## A platform can invite development while concentrating control
 
 A **platform** supplies a foundation on which other actors can build services or extensions. Yoo, Henfridsson and Lyytinen (2010) discuss the layered organisation of digital innovation. Plantin et al. (2018) connect platform and infrastructure perspectives, helping explain why a service can be both an innovation foundation and a powerful point of dependence. [Yoo et al. (2010)](#yoo-et-al-2010) · [Plantin et al. (2018)](#plantin-et-al-2018)
 
-For an AI service, extension might mean adding a retrieval connector or an action tool. **Generativity**, the capacity for further development by varied actors, does not imply unrestricted access or distributed authority. A provider may allow many extensions while controlling identity, pricing, model availability or accepted interfaces. Harbour may similarly let teams add assistants while centrally controlling product definitions and finance actions.
+For an AI service, an **extension** adds behaviour to an existing system. A **connector** links the service to another source or application. A retrieval connector could fetch warehouse records, while an action tool could request an approved transaction. An **interface** specifies how a person or another system interacts with the service. **Generativity**, the capacity for further development by varied actors, does not imply unrestricted access or distributed authority. A provider may allow many extensions while controlling identity, pricing, model availability or accepted interfaces. Harbour may similarly let teams add assistants while centrally controlling product definitions and finance actions.
 
-The design inquiry should identify control points and practical exit options. Can data and configuration be exported? Can a replacement preserve essential identifiers? Which local modifications will survive an interface change? These are questions for investigation, not a claim that every central dependency is undesirable.
+A **control point** is a place where someone can govern access or behaviour. For example, a platform operator can decide which connectors may read the warehouse records and which service identities may request a credit. The design inquiry should identify these points and practical exit options. Can data and configuration be exported? Can a replacement preserve essential identifiers? Which local modifications will survive an interface change? These are questions for investigation, not a claim that every central dependency is undesirable.
 
 ## Growth requires more than an open interface
 
 Henfridsson and Bygstad (2013) examine adoption, innovation and scaling as mechanisms in digital-infrastructure evolution. Their account supports investigating combinations of conditions rather than treating extensibility as a direct measure of successful development. [Henfridsson and Bygstad (2013)](../bibliography.md#henfridsson-and-bygstad-2013)
 
-For an AI service, adoption means actual uptake, innovation concerns new arrangements or uses, and scaling concerns expansion. They need not move together. Many staff might adopt the same narrow assistant without developing new uses. A team might invent a valuable connector that cannot be supported across sites. Expansion might amplify an unresolved classification problem. These Harbour possibilities show why a connector count cannot establish organisational adaptability.
+For an AI service, adoption means people start using it, innovation concerns new ways of doing the work, and scaling concerns expansion to more cases, teams or sites. They need not move together. Many staff might adopt the same narrow assistant without developing new uses. A team might invent a valuable connector that cannot be supported across sites. Expansion might amplify an unresolved classification problem. These Harbour possibilities show why a connector count cannot establish organisational adaptability.
 
 Monteiro et al. (2013) and Edwards et al. (2009) direct attention beyond isolated artefacts toward historically accumulated infrastructures. A one-day demonstration misses dependencies acquired over time. An AI inquiry should retain the versions of prompts, category schemes, evidence sources and interfaces that actually coexisted, rather than combine today's policy with last year's model and call that the deployed arrangement. [Monteiro et al. (2013)](../bibliography.md#monteiro-et-al-2013) · [Edwards et al. (2009)](../bibliography.md#edwards-et-al-2009)
 
@@ -74,7 +74,7 @@ It also helps to name the kind of change. A **configuration** selects an availab
 
 ## Worked design: a quantity agreement
 
-Harbour proposes a small agreement for the evidence service. An agreement about exchanged fields and their meaning is often called a **data contract**. This teaching example contains five provisions.
+Harbour proposes a small agreement for the evidence service. An agreement about exchanged fields and their meaning is often called a **data contract**. **Provenance** records where an item came from and how it changed. A **data steward** maintains the agreed definitions and quality of a specified set of records. **Reconciliation** checks related records, explains differences and determines what correction or further investigation is needed. This teaching example contains five provisions.
 
 | Provision | Example | Responsible work |
 |---|---|---|
@@ -88,7 +88,7 @@ Suppose an order records twelve cases and a receipt records ten boxes. No shorta
 
 This is deliberately a proposed design, not an assertion that the existing lab already implements a general unit-conversion service. The lab's simpler quantities make other concepts inspectable. Extending the software would require conversion fixtures, tests and explicit version rules.
 
-The arrangement incurs costs: mapping work, delayed responses for ambiguous cases and maintenance of old versions. The comparison should include these costs, customer outcomes and the risks of forcing incompatible evidence into one number. A faster draft is only one part of the service.
+Maintaining the quantity agreement takes work. The product-data steward must keep conversion rules current, and advisers may need to wait for clarification before proposing a credit. Older orders may still require older packing definitions. Compare those costs with the effects of letting incompatible quantities reach the reviewer, including unnecessary investigation and incorrect credits.
 
 ## Exercise: inspect an invisible dependency
 
@@ -100,7 +100,7 @@ Choose one AI-supported activity and identify three foundations that its users m
 
 Compare two versions of a category scheme, interface or unit convention. Follow a contested change across at least two teams. A proposition worth testing is that central standardisation reduces some reconciliation work while shifting exception work to local teams. The comparison must allow the proposition to fail: local work may fall, persist for unrelated reasons or improve because the standard exposes a previously hidden problem.
 
-Documents show prescribed meaning; configuration shows selected arrangements; observation and correction histories reveal how people sustain or challenge them. No one source establishes all three. Connect this inquiry to [coordination](02-coordination.md), [technology in practice](06-technology-in-practice.md) and [governance](08-governance-and-accountability.md).
+A data dictionary shows what a quantity field is meant to represent. The configured conversion table shows which rules the service uses. Observations and correction histories reveal how staff maintain or challenge those rules. No one source establishes all three. Connect this inquiry to [coordination](02-coordination.md), [technology in practice](06-technology-in-practice.md) and [governance](08-governance-and-accountability.md).
 
 ## References
 

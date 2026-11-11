@@ -12,11 +12,11 @@ Harbour distributes packaging through linked purchasing, inventory, order fulfil
 
 A **business process** connects activities that contribute to an outcome. A delivery-discrepancy process may begin with a reported problem and end with an agreed, completed remedy and reconciled records. Choosing those boundaries is an analytical decision: a narrower study might examine only evidence gathering.
 
-A **process model** represents selected aspects of that process. It may show activities, ordering, roles, decisions or data. It is a representation, not the work itself. A **configured workflow** is a selected arrangement implemented in software. **Performed work** is what people and systems actually do, including clarification, repair and bypasses.
+A **process model** represents selected activities, decisions, roles or data. Harbour’s diagram might show a step called “check for an earlier remedy”. A **configured workflow** consists of steps and rules set up in software. It could require a reviewer to record that check before the credit service accepts a request. **Performed work** is what people and systems actually do. A reviewer might look for the credit in one system and call the warehouse to confirm whether a replacement was sent. The call can be part of the performed process even when the diagram and workflow omit it.
 
-Curtis, Kellner and Over (1992) distinguish perspectives on process modelling, including functional, behavioural, organisational and informational concerns. Dumas et al. (2018) provide a broader business-process-management treatment. Together they help explain why a flow diagram alone is insufficient: it may show order while omitting responsibility or information meaning. [Curtis et al. (1992)](#curtis-et-al-1992) · [Dumas et al. (2018)](#dumas-et-al-2018)
+Curtis, Kellner and Over (1992) distinguish perspectives on process modelling. The **functional** perspective asks what work is done. The **behavioural** perspective asks how activities are ordered and under which conditions. The **organisational** perspective examines who participates and how responsibility is arranged. The **informational** perspective examines the information used and produced. Dumas et al. (2018) provide a broader business-process-management treatment. Together they help explain why a flow diagram alone is insufficient: it may show order while omitting responsibility or information meaning. [Curtis et al. (1992)](#curtis-et-al-1992) · [Dumas et al. (2018)](#dumas-et-al-2018)
 
-The distinctions connect directly to AI engineering. A graph connecting agent nodes describes part of an implementation. A successful path through that graph does not establish that a customer outcome occurred, that another team accepted a handoff or that the deployed organisation follows the intended process.
+An agent workflow can be drawn as a **graph**, with steps shown as nodes and connections shown as edges. Harbour’s graph might run from retrieving records to generating a brief. A successful run shows that the graph reached its specified end. The business process continues if another team must accept the brief, check for an earlier remedy or confirm that the customer received the replacement.
 
 ## Activities, events, roles and objects
 
@@ -44,7 +44,11 @@ A **modelling purpose** states what the representation is intended to help exami
 
 Mendling, Reijers and van der Aalst (2010) propose guidelines for understandable process models. Their contribution concerns model quality; a readable model still requires evaluation of whether it represents the relevant work. [Mendling et al. (2010)](#mendling-et-al-2010)
 
-Three questions help assess a model. **Syntactic quality** concerns compliance with the chosen notation. **Semantic quality** concerns whether it represents the relevant domain adequately. **Pragmatic quality** concerns whether intended readers can understand and use it. A diagram can satisfy its notation while omitting a financially consequential exception.
+A **notation** is a set of symbols and rules for representing something, such as activities and decisions in a process diagram. Three questions help assess a model.
+
+**Syntactic quality** concerns compliance with the chosen notation. **Semantic quality** concerns whether it represents the relevant domain adequately. **Pragmatic quality** concerns whether intended readers can understand and use it.
+
+For Harbour, the diagram may use valid symbols yet omit the second shipment that changes the remedy decision. It then has a semantic problem. A diagram that represents the relevant work but is unintelligible to its intended readers has a pragmatic problem. Here pragmatic concerns usability of the model. Chapter 2 uses pragmatic knowledge boundary to discuss differences in interests across groups.
 
 A model should therefore state its boundary, audience, assumptions and omitted cases. At Harbour, a normal-delivery model must not be presented as a complete remedy process if it excludes damaged goods, split shipments and disputed receipts.
 
@@ -52,7 +56,7 @@ A model should therefore state its boundary, audience, assumptions and omitted c
 
 A **process architecture** describes relationships among multiple processes, rather than the steps of only one. Dijkman, Vanderfeesten and Reijers (2016) review approaches to designing these architectures. The perspective helps connect local improvement to shared objects and responsibilities across the organisation. [Dijkman et al. (2016)](#dijkman-et-al-2016)
 
-Harbour's shortage investigation depends on order fulfilment and delivery evidence. Its remedy may initiate a new shipment, affect inventory and require financial reconciliation. Procurement enters when replacement stock is unavailable. An agent that optimises only complaint drafting may move work into each of these processes.
+Harbour's shortage investigation depends on order fulfilment and delivery evidence. Its remedy may initiate a new shipment, affect inventory and require financial reconciliation. **Procurement**, the work of arranging purchases from suppliers, enters when replacement stock is unavailable. **Financial reconciliation** checks that related delivery, invoice and remedy records agree or that their differences are explained. An agent that optimises only complaint drafting may move work into each of these processes.
 
 This changes evaluation. Draft completion, customer resolution, warehouse rework and financial correction measure different things. A local time saving can coexist with greater total work. Conversely, extra evidence preparation may reduce downstream disputes. A process architecture helps specify what needs comparison; it does not establish the direction of the result.
 
@@ -60,11 +64,11 @@ This changes evaluation. Draft completion, customer resolution, warehouse rework
 
 ## What event logs can reveal
 
-**Process mining** uses recorded events to study processes. Van der Aalst (2013) distinguishes discovering models from event data, checking conformance against a model and enhancing an existing model with event evidence. **Conformance** means correspondence with the selected model, not proof that the model expresses good policy. [Van der Aalst (2013)](#van-der-aalst-2013)
+**Process mining** uses recorded events to study processes. Van der Aalst (2013) distinguishes three uses. **Discovery** builds a process model from recorded events. **Conformance checking** compares recorded behaviour with a selected model. **Enhancement** uses event evidence to add information to, or improve, an existing model, for example by showing where recorded waiting occurs. **Conformance** means correspondence with the selected model, not proof that the model expresses good policy. [Van der Aalst (2013)](#van-der-aalst-2013)
 
-A conventional event log links an activity and timestamp to a **case identifier**, the key used to group events into one instance. Choosing that identifier matters. A complaint can concern several shipments; one shipment can contain items from several orders. An invoice may cover several deliveries. Treating one order as one case can duplicate, fragment or omit important relationships.
+An **event log** is a collection of records of selected events. A conventional log links an activity and a **timestamp**, the recorded date and time, to a **case identifier**, the key used to group events into one process instance. An instance is one occurrence of the process, such as handling a particular complaint. Choosing that identifier matters. A complaint can concern several shipments; one shipment can contain items from several orders. An invoice may cover several deliveries. Treating one order as one case can duplicate, fragment or omit important relationships.
 
-At Harbour, an agent run identifier groups technical operations. It cannot automatically serve as the identifier for the customer problem. Reopening the same complaint may create another run. One run may examine several orders. Interpretation requires an explicit mapping between these objects.
+At Harbour, an agent run identifier groups technical operations. It cannot automatically serve as the identifier for the customer problem. Reopening the same complaint may create another run. One run may examine several orders. Interpretation requires an explicit mapping between these objects. **Case correlation** is the work of linking events to the cases and business objects they concern. It may require complaint, shipment and invoice references together, rather than assuming that one identifier groups all the relevant work.
 
 Logs are selective observations. Offline phone calls, delayed scans and informal clarification may not appear. Timestamps may reflect recording time rather than when work happened. A discovered sequence should therefore be investigated alongside record definitions and accounts of work. Missing events do not prove missing work.
 
@@ -82,19 +86,19 @@ This is where [routines research](05-routines.md) adds something that process co
 
 Vidgof, Bachhofner and Mendling (2023) discuss opportunities and challenges for language models across BPM activities. Their paper is a research agenda, not evidence that an LLM can autonomously redesign a business process reliably. [Vidgof et al. (2023)](../bibliography.md#vidgof-et-al-2023)
 
-An AI application might translate a narrative into a candidate process description, compare documentation or suggest missing exceptions. These are possible uses requiring evaluation. A plausible model can invent a handoff, omit a reversal or assign authority to a role that lacks it. The generated representation should retain its source basis and unresolved questions until process participants and owners examine it.
+For example, Harbour could give a language model its complaint procedure and ask for a draft process description. The output could help staff spot missing questions about split deliveries or credit reversals. It could also invent a handoff, omit a step or assign credit authority to the wrong role. A draft that records its sources and marks unresolved questions gives the warehouse and finance teams specific points to check.
 
-A technical validation can check whether a generated model uses an accepted format. It cannot establish that a warehouse can perform the task, finance accepts the rule or customers experience the promised outcome. The research chapter's distinctions supply separate checks for each claim.
+A format check can show that the generated description uses valid diagram symbols. Comparing the draft with the procedure and records can reveal whether it represents the intended steps and decisions. Observing cases can show whether staff can follow those steps and what they do when the evidence conflicts. These checks address different claims about the same process.
 
 ## Worked design: extend the boundary of success
 
-Harbour proposes a remedy process with three checkpoints: evidence ready, remedy authorised and remedy completed with reconciled records. A technical run can stop at any checkpoint and report its narrower result. It must not rename a draft as a resolved customer case.
+Harbour proposes recording three points in the remedy process. **Evidence ready** means the next team has enough information to investigate. **Remedy authorised** means the designated person approved the specified action. **Remedy completed** means the action occurred and the related operational and financial records were reconciled. The service can report a successful run at the first point while the customer’s case is still open.
 
 Consider a complaint about two missing boxes. The service prepares a brief but finds a possible split shipment. The case remains awaiting clarification. After transport confirms the second shipment, the proposed remedy changes from credit to delivery confirmation. Finance checks that no earlier remedy needs reversal. Customer service closes the case only under an agreed resolution rule.
 
 Measures should reflect those distinctions. Evidence-preparation time excludes later waiting. End-to-end resolution time uses a defined start and end, including unresolved cases rather than dropping them. Duplicate-remedy incidents require a business definition across credits and replacements. Warehouse investigation effort includes work outside the AI interface. These are proposed measures, not reported performance figures.
 
-A meaningful comparison would examine case mix, exception rates, staffing and changes in recording practice. Otherwise a change in what gets logged can look like a change in service performance.
+A meaningful comparison would examine **case mix**, the proportions of different kinds and difficulties of case, alongside exception rates, staffing and changes in recording practice. Ten straightforward delivery queries and ten disputed shortages can require very different amounts of work. When recording practice changes, apparent performance can change even if the underlying work does not.
 
 ## Exercise: draw two boundaries
 

@@ -8,17 +8,17 @@ Read [Meet Harbour](../../HARBOUR.md) for the shared fictional company. In this 
 
 **Fictional teaching case.** Harbour gives reviewers a panel linking every proposed claim to a source. An experienced investigator can open the documents, compare their meanings and request a correction. A temporary adviser sees the same panel but lacks document access and time to challenge the recommendation.
 
-The feature is present in both situations. The possibility of meaningful checking differs. This is the starting point for a relational account of technology: what an arrangement makes possible depends on particular actors, their goals and the conditions of action.
+Both reviewers see the same links. Only the experienced investigator in this example has the access, time and knowledge needed to check the claims. A **relational account** explains what an actor can do with a particular technology under particular conditions. Here the actor is the investigator, the technology is the source panel and the action is comparing a claim with its evidence. Document access, time and knowledge help determine whether the investigator can take that action.
 
 The chapter follows technology from design into practice, explains affordances and constraints, and then examines actualisation: the process through which a possibility is realised. It also introduces a theoretical disagreement that should remain visible rather than be compressed into a slogan about people and technology.
 
 ## Technology is shaped and becomes part of later action
 
-Orlikowski (1992) develops the **duality of technology**: technology is produced through human action and also enters the conditions of later action. The explanation is recursive. Prior design and use create arrangements that later participants encounter, reproduce or change. [Orlikowski (1992)](#orlikowski-1992)
+Orlikowski (1992) develops the **duality of technology**: technology is produced through human action and also enters the conditions of later action. The explanation is **recursive**: what people design and do becomes part of the circumstances of later action, and later action can reinforce or alter those arrangements. At Harbour, a field introduced to help investigation may become a compulsory step that later staff accept, work around or seek to change. [Orlikowski (1992)](#orlikowski-1992)
 
-For an AI service, the recognised case categories, accessible tools and required fields embody prior choices. They are not neutral merely because a model generates flexible text. Nor do they produce a fixed organisational outcome. Participants may configure, interpret, adapt or avoid parts of the arrangement.
+For an AI service, the recognised case categories, accessible tools and required fields embody prior choices. They are not neutral merely because a model generates flexible text. Nor do they produce a fixed organisational outcome. Staff may change permitted settings, interpret fields differently, or use a call to handle a case that the form cannot express.
 
-Orlikowski (2000) develops a practice lens through **technologies-in-practice**, focusing on structures enacted through recurrent interaction with technology. The concept directs attention to what people repeatedly do with an arrangement, rather than reading an organisation's practice from a feature list. A documented prompt alone does not establish a technology-in-practice. [Orlikowski (2000)](#orlikowski-2000)
+Orlikowski (2000) develops a practice lens through **technologies-in-practice**, focusing on structures **enacted**, meaning produced or sustained through what people repeatedly do with technology. Structure here includes recurring rules and resources drawn on in practice. This theoretical use extends the discussion of task, role and authority arrangements in chapter 1. The concept directs attention to what people repeatedly do with an arrangement, rather than reading an organisation's practice from a feature list. A documented prompt alone does not establish a technology-in-practice. [Orlikowski (2000)](#orlikowski-2000)
 
 At Harbour, one team might use the evidence panel as the basis for challenge; another might treat it as a required screen before approval. These are hypothetical differences to investigate. The same software version does not establish the same practice.
 
@@ -38,11 +38,13 @@ The source panel is a feature. For an investigator with access and relevant know
 
 The relational account also prevents one-sided descriptions of constraints. A required evidence label may obstruct rapid intake while supporting later source comparison. This does not establish that the label is good overall or that every user experiences it in the same way. It identifies actor-specific questions for inquiry.
 
-Markus and Silver distinguish technical objects, functional affordances and symbolic expressions. In plain language, an arrangement, an action it makes possible and the meaning it conveys are different analytical objects. A green approval badge may signal reassurance while the underlying checks remain weak. Its symbolism should not substitute for inspection of the operation or the possibility of substantive review. This illustration applies their distinction rather than reporting an original finding about AI interfaces. [Markus and Silver (2008)](#markus-and-silver-2008)
+Markus and Silver distinguish **technical objects**, **functional affordances** and **symbolic expressions**. The approval badge is part of the technical interface. Opening the evidence behind the badge may be a possibility for a reviewer with the necessary access. The green colour can convey reassurance, even when the checks leading to approval are limited. This example separates what the software displays, what a reviewer can do and what the display suggests. [Markus and Silver (2008)](#markus-and-silver-2008)
 
 ## Actualisation: from possibility to action
 
-**Actualisation** is the process through which actors take action to realise an affordance. Volkoff and Strong (2013) develop this argument within a critical-realist account of organisational change. Strong et al. (2014) develop a mid-range theory from a longitudinal electronic-health-record implementation, including organisational affordances and bundles of related possibilities. Their healthcare findings do not establish the effects of an AI assistant. [Volkoff and Strong (2013)](#volkoff-and-strong-2013) · [Strong et al. (2014)](#strong-et-al-2014)
+**Actualisation** is the process through which actors take action to realise an affordance. Volkoff and Strong (2013) develop this argument within a **critical-realist** account of organisational change. For this chapter, the central idea is to distinguish underlying capacities and processes from the events actually observed. An access control can have the capacity to restrict action even when nobody attempts a prohibited action during the observation period. Investigation asks under what conditions such capacities enter the work and help produce an outcome.
+
+Strong et al. (2014) develop a **mid-range theory**, an explanation of a bounded kind of phenomenon, from a **longitudinal** study that follows an electronic-health-record implementation over time. It includes organisational affordances and bundles of related possibilities. Their healthcare findings do not establish the effects of an AI assistant. [Volkoff and Strong (2013)](#volkoff-and-strong-2013) · [Strong et al. (2014)](#strong-et-al-2014)
 
 For Harbour, a plausible process might involve reviewers gaining source access, learning how to compare claims, correcting drafts, receiving responses to challenges and retaining the practice across cases. These are proposed activities to investigate, not an established sequence from the healthcare study. Useful outcomes could include fewer unsupported claims or more effective resolution of evidence conflicts. Neither follows automatically from opening the panel.
 
@@ -52,7 +54,7 @@ Related possibilities may depend on one another. Finding evidence, interpreting 
 
 **Sociomateriality**, in Orlikowski (2007) and Orlikowski and Scott (2008), treats social and material relations as constitutively entangled in practice. This means that an activity may be organised through people, devices, records and categories from the outset, rather than existing as a purely social activity to which a tool is later added. [Orlikowski and Scott (2008)](#orlikowski-and-scott-2008)
 
-That position is not identical to a critical-realist affordance account, which analytically distinguishes actors and arrangements and asks how their relation produces effects. Leonardi's imbrication account also preserves distinctions while examining how human and material agencies become interlocked over time. The theories differ in their underlying assumptions, not merely in preferred terminology.
+That position is not identical to a critical-realist affordance account, which analytically distinguishes actors and arrangements and asks how their relation produces effects. Leonardi's **imbrication** account also preserves distinctions while examining how human and material agencies become interlocked over time. Human agency concerns purposeful action. Material agency concerns how an arrangement enables, limits or otherwise makes a difference to action. For Harbour, reviewers may respond to a restrictive form by adding a checking step, then seek a revised form. Later work takes place within the accumulated combination of the changed practice and technology. The theories differ in their underlying assumptions, not merely in preferred terminology.
 
 Mutch (2013) challenges aspects of sociomaterial reasoning and advances a critical-realist alternative. The disagreement cautions against treating all research involving people and technology as one settled theory. [Mutch (2013)](#mutch-2013)
 
@@ -68,7 +70,7 @@ An execution service can block an action. A model can request a tool call. The o
 
 The disagreement among materiality theories becomes clearer when each is asked how to study the same evidence panel. A practice lens asks how reviewers recurrently use the panel and what structures they reproduce or change through that use. The focus is the activity as it develops, rather than a prediction from the feature alone. [Orlikowski (2000)](#orlikowski-2000)
 
-A critical-realist affordance account distinguishes the reviewer and the arrangement analytically. It asks what possibilities arise through their relation, under which conditions those possibilities are realised and which processes explain the observed effects. The word **mechanism** refers here to how a consequence can be produced under particular conditions, rather than a rule that guarantees the same outcome everywhere. [Volkoff and Strong (2013)](#volkoff-and-strong-2013)
+A critical-realist affordance account examines the reviewer and the source panel as distinct parts of the explanation. It asks what possibilities arise through their relation, under which conditions those possibilities are realised and which processes explain the observed effects. The word **mechanism** refers here to how a consequence can be produced under particular conditions, rather than a rule that guarantees the same outcome everywhere. [Volkoff and Strong (2013)](#volkoff-and-strong-2013)
 
 An imbrication account examines how human and material agencies become interlocked over time. A reviewer encounters a constraint, changes the work or seeks a technical change, and later action takes place within that altered arrangement. The accumulated relation can help explain both persistence and change. The account keeps a distinction between human intentions and the ways material arrangements make a difference. [Leonardi (2011)](#leonardi-2011)
 
@@ -80,7 +82,7 @@ Leonardi (2013) compares theoretical foundations for sociomaterial research and 
 
 Naming the actor prevents a broad claim about transparency or empowerment from concealing differences. An adviser may be able to see that two sources conflict but lack authority to revise either. A policy owner may be able to change a source but lack time to examine case-level consequences. A service manager may see aggregate patterns without being able to reconstruct a particular disputed claim. Each relation contains a different possibility and a different limitation.
 
-**Fictional AI application.** Harbour introduces a challenge button. Advisers use it, but challenges enter an unstaffed queue. The feature affords submitting a challenge under the stated technical conditions. It has not yet established a practical route to correction. That further possibility depends on a recipient, evidence access, time and the authority to change the relevant material. A submission count cannot establish successful contestation.
+Harbour’s challenge button illustrates why the action needs to be specified precisely. An adviser with access can submit a challenge. If the submission enters an unstaffed queue, it may never reach anyone able to check the evidence and correct the brief. To investigate whether staff can obtain corrections, follow challenges to the people who receive them, check what authority they have and see what happens to the disputed claims. Submission counts establish how often the button was used.
 
 Changes can also redistribute constraints. Removing a required field may ease intake while leaving investigators with more uncertainty. Restricting source access may protect confidential material while reducing what some reviewers can verify. The analysis should identify the affected actors and goals rather than assume that a constraint is uniformly harmful or an affordance uniformly beneficial.
 
@@ -107,7 +109,7 @@ Harbour proposes adding source access, protected review time and a visible corre
 
 If performance improves, several explanations remain possible. The panel may make comparison easier. Protected time may permit checks already possible. A clearer policy may reduce ambiguity. Extra pilot attention may influence behaviour. Studying the process and, where feasible, comparing arrangements helps distinguish these contributions.
 
-A reviewer who opens every source is not automatically making a good judgement. A reviewer who opens fewer may use a legitimate risk-based approach. The inquiry needs the substance of the work and its consequences, not a proxy treated as the outcome itself.
+A reviewer who opens every source is not automatically making a good judgement. A reviewer who opens fewer may use a legitimate risk-based approach. The inquiry needs the substance of the work and its consequences, not a **proxy**, an indirect measure, treated as the outcome itself. Counting opened sources may indicate checking activity. It leaves open whether the reviewer understood them and reached a sound judgement.
 
 ## Study pause: name the actor and action
 
@@ -117,7 +119,7 @@ Replace “the system affords transparency” with a statement that could be exa
 
 ## Continue with the course
 
-Apply these concepts to [the pilot's worked business design](../../modules/01-standalone-foundations/06-business-design.md) and [the exercises](../../modules/01-standalone-foundations/07-assessment.md). The [standalone curriculum](../../CURRICULUM.md) identifies how later planned modules will develop the technical and organisational questions together.
+Apply these concepts to [the pilot's worked business design](../../modules/01-standalone-foundations/06-business-design.md) and [the exercises](../../modules/01-standalone-foundations/07-assessment.md). The [course curriculum](../../CURRICULUM.md) connects these questions to the later modules on agents, service operation and business implementation.
 
 ## AI research extension: useful assistance and contested control
 
@@ -125,9 +127,9 @@ Apply these concepts to [the pilot's worked business design](../../modules/01-st
 
 Kellogg, Valentine and Christin (2020) review research on algorithmic control and worker responses. Their synthesis distinguishes mechanisms involving restriction and recommendation, recording and rating, and replacement and reward. It is a review across settings, not a claim that any one system necessarily exercises all these mechanisms. [Kellogg et al. (2020)](../bibliography.md#kellogg-et-al-2020)
 
-This lens complements the chapter's discussion of affordances. An **affordance** concerns an action possibility in a relationship between an actor and a technology. The control perspective adds questions about whose goals define useful action, how conduct is evaluated and what happens when someone contests the arrangement. These theoretical perspectives are related but should not be collapsed into one vocabulary.
+This lens complements the chapter's discussion of affordances. An **affordance** concerns an action possibility in a relationship between an actor and a technology. The control perspective adds questions about whose goals define useful action, how conduct is evaluated and what happens when a reviewer challenges the speed measure. These theoretical perspectives are related but should not be collapsed into one vocabulary.
 
-**Harbour application.** A source-linked brief may help an investigator identify a discrepancy. The same interface may record review speed and generate a ranking. If careful investigation takes longer, the ranking could discourage the very checking the service needs. That is a possible consequence to examine, not an observed Harbour result.
+The same source panel can support checking and shape how managers evaluate reviewers. A reviewer with access can trace a disputed quantity to a shipment record. If the service also ranks reviewers by speed and managers use that ranking in appraisals, time spent checking difficult cases may count against them. The affordance question concerns what the reviewer can do with the panel. The control question concerns what the ranking encourages the reviewer to do. Harbour would need to observe how the measure enters appraisal and how reviewers respond.
 
 A practical inquiry follows what the ranking measures, how it enters staffing or appraisal decisions, who can correct an incorrect attribution and whether difficult cases receive different treatment. It should also investigate useful outcomes. A record of review effort might reveal understaffing and support a better allocation of work. The technology does not settle which interpretation applies.
 

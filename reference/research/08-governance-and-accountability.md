@@ -10,21 +10,21 @@ Harbour's customer service, warehouse, transport and finance activities depend o
 
 ## Four terms that answer different questions
 
-**Governance** concerns how legitimate rights and responsibilities for directing an arrangement are established and exercised. Here it asks who can set the service's scope, change its policy and resolve disputes over those decisions.
+**Governance** concerns how an organisation establishes and exercises the right to direct work. For Harbour, that means deciding who can set the assistant’s scope, change the rules for issuing credits and settle disputes about those rules. A right is legitimate when it is recognised under the relevant organisational rules and obligations.
 
 **Decision rights** specify who may decide particular matters. They need an object and conditions: for example, authority to approve a specified credit for an eligible case, within a stated limit. “Owns AI” leaves too much unspecified.
 
-**Control** concerns efforts to guide conduct or results. It can include a target, observation, comparison and intervention. A system can record a target without anyone being able to intervene when it is missed.
+**Control** concerns efforts to guide conduct or results. A control arrangement links a target or standard to observation, comparison and a response. At Harbour, a duplicate-remedy check compares a proposed credit with earlier remedies and blocks or refers a possible duplicate for investigation. A system can record a target without anyone being able to intervene when it is missed.
 
-**Accountability** concerns an answerability relationship. Bovens (2007) distinguishes an actor required to explain conduct from a forum able to question, judge and attach consequences. Lindberg (2013) clarifies accountability as a concept with multiple forms. A public-sector theory should not be transferred wholesale to a private firm, but it supplies a sharper question than whether logs exist. [Bovens (2007)](#bovens-2007) · [Lindberg (2013)](#lindberg-2013)
+**Accountability** concerns a relationship in which an actor is obliged to explain conduct to someone entitled to question and judge it. Bovens (2007) distinguishes an actor required to explain conduct from a forum able to question, judge and attach consequences. Lindberg (2013) clarifies accountability as a concept with multiple forms. A public-sector theory should not be transferred wholesale to a private firm, but it supplies a sharper question than whether logs exist. [Bovens (2007)](#bovens-2007) · [Lindberg (2013)](#lindberg-2013)
 
-Harbour's transaction log is potentially evidence. A finance review panel with a defined mandate, access to explanations and power to require correction is a possible forum. Its actual operation still needs investigation. Calling a meeting an accountability forum does not establish that it can question anyone or change anything.
+A **forum** in an accountability relationship is the person or body entitled to hear and judge an explanation. **Answerability** is the actor's obligation to provide that explanation. Harbour's transaction log is potentially evidence for this relationship. A finance review panel with a defined mandate, access to explanations and power to require correction is a possible forum. Its actual operation still needs investigation. Calling a meeting an accountability forum does not establish that it can question anyone or change anything.
 
 ## Put decisions near knowledge, while examining the costs
 
 Jensen and Meckling (1995) examine the costs of bringing decision rights and relevant knowledge together. **Specific knowledge** is costly to transfer to another decision-maker. A warehouse colleague may understand why a damaged pallet was recorded under an unusual code, while finance understands the financial consequences of a remedy. [Jensen and Meckling (1995)](#jensen-and-meckling-1995)
 
-Moving all decisions to a central specialist can lose local knowledge or require expensive communication. Delegation can preserve that knowledge while creating coordination and control costs. Neither centralisation nor decentralisation is automatically the answer.
+**Centralisation** concentrates decision rights in a central role or unit. **Decentralisation** distributes them toward other roles or units. **Delegation** assigns a defined scope of decision-making to another actor. Moving all decisions to a central specialist can lose local knowledge or require expensive communication. Delegation can preserve access to that knowledge while creating work to coordinate decisions and check that they remain within their scope. Neither centralisation nor decentralisation is automatically the answer.
 
 An AI summary changes the means of communication, but its completeness cannot be assumed. A concise account may omit the qualification that makes the warehouse code meaningful. The governance design should establish which decisions need direct consultation, which evidence can travel in structured form and how the receiver can challenge that form.
 
@@ -32,19 +32,19 @@ Aghion and Tirole's (1997) distinction between **formal authority**, a right to 
 
 ## Select controls for the work that can actually be assessed
 
-Ouchi (1979) distinguishes markets, bureaucracies and clans as control mechanisms under different conditions. A market coordinates through exchange and prices; bureaucracy relies on rules and authority; clan control draws on shared values and socialisation. These are analytical ideal types, not three software settings. [Ouchi (1979)](#ouchi-1979)
+Ouchi (1979) distinguishes markets, bureaucracies and clans as control mechanisms under different conditions. A market coordinates through exchange and prices; bureaucracy relies on rules and authority; clan control draws on shared values and socialisation. These are **ideal types**, deliberately simplified patterns used to compare arrangements. “Ideal” here does not mean best. **Socialisation** is the process of learning shared expectations through participation, training and interaction. Actual organisations can combine these forms of control. [Ouchi (1979)](#ouchi-1979)
 
-Eisenhardt (1985) examines the relationship between behaviour and outcome control, including the ability to specify conduct and measure outcomes. **Behaviour control** examines how work is performed. **Outcome control** examines its results. Kirsch (1996, 1997) extends attention to portfolios of formal and informal controls in complex systems work. [Eisenhardt (1985)](#eisenhardt-1985) · [Kirsch (1996, 1997)](#kirsch-1996-and-1997)
+Eisenhardt (1985) examines the relationship between behaviour and outcome control, including the ability to specify conduct and measure outcomes. **Behaviour control** examines how work is performed. **Outcome control** examines its results. Kirsch (1996, 1997) extends attention to **portfolios of controls**, combinations of measures used together. **Formal controls** rely on explicit requirements and assessments. **Informal controls** also work through shared expectations, relationships and self-direction in complex systems work. [Eisenhardt (1985)](#eisenhardt-1985) · [Kirsch (1996, 1997)](#kirsch-1996-and-1997)
 
-For Harbour, an approved evidence checklist is a behaviour control. A target for durable resolution is an outcome control. Shared professional expectations about surfacing uncertainty may support both. The checklist can become ritual; the resolution metric can reward premature closure; shared values can exclude dissent. A portfolio must therefore be examined in use.
+At Harbour, **behaviour control** might require reviewers to check for a replacement shipment before approving a credit. **Outcome control** might examine whether customers receive the agreed remedy without a duplicate. Informal expectations can help reviewers feel able to flag missing evidence. Each can fail in use. Reviewers may tick the checklist without opening the shipment record. A closure target may encourage early closure. Team norms can discourage a new colleague from raising a doubt. To assess the controls, examine what reviewers actually check and what happens when they disagree.
 
 A readily counted model output is not necessarily a suitable performance measure. Drafts per hour may increase while warehouse investigation queues grow. A financial control might appropriately block duplicate credits, yet fail to recognise a different form of duplicate remedy. Controls need an explicit scope, operating owner and revision route.
 
 ## Documentation and auditing support accountability but do not replace it
 
-Mitchell et al. (2019) propose **model cards**, reports describing intended uses, evaluation conditions and limitations. Raji et al. (2020) propose an internal auditing framework across AI development. These make questions and artefacts more systematic; neither establishes that a particular organisation has an effective accountability relationship. [Mitchell et al. (2019)](../bibliography.md#mitchell-et-al-2019) · [Raji et al. (2020)](../bibliography.md#raji-et-al-2020)
+Mitchell et al. (2019) propose **model cards**, reports describing intended uses, evaluation conditions and limitations. An **audit** is a structured examination of claims, evidence and practice against specified criteria. Raji et al. (2020) propose an internal auditing framework across AI development. These make questions and artefacts more systematic; neither establishes that a particular organisation has an effective accountability relationship. [Mitchell et al. (2019)](../bibliography.md#mitchell-et-al-2019) · [Raji et al. (2020)](../bibliography.md#raji-et-al-2020)
 
-Harbour could document the assistant's permitted uses, test cases, known failure patterns and change history. An audit could compare those claims with selected cases and deployment records. The governance question remains who must respond when the audit identifies a problem, by when, and with what power to change the service.
+A model card for Harbour’s assistant could say that it drafts evidence briefs and has been tested on complaints involving split shipments. An audit could inspect selected cases and the deployed permissions to check how the service operates. If the audit finds that credit requests were made outside the approved scope, accountability requires a person to explain what happened to a forum that can demand a response. The model card and audit provide material for that inquiry.
 
 **Provenance** is a record of where an item came from and how it changed. It can support investigation of a recommendation. Provenance alone does not establish truth, authorisation or fairness. Likewise, recording a person's name cannot settle whether that person had enough information or freedom to make the decision.
 
@@ -54,11 +54,11 @@ A **human review** is meaningful when the reviewer can evaluate and change the p
 
 Buçinca, Malaya and Gajos (2021) tested interventions intended to reduce overreliance on AI recommendations in a controlled experiment. Some designs requiring additional thought reduced overreliance, while participants' preferences and the distribution of benefits complicated the result. A laboratory result does not show that every extra confirmation screen improves workplace judgement. [Buçinca et al. (2021)](../bibliography.md#bu-inca-et-al-2021)
 
-Harbour might require a reviewer to identify the conflicting quantity before seeing a suggested remedy. That could support checking; it could also create mechanical copying or delay urgent cases. A pilot should assess error detection, review burden, disagreement and customer consequences, including cases where the assistant is wrong. Counting completed review screens is too narrow.
+Harbour could test the experiment’s principle by asking reviewers to identify the conflicting quantity before revealing the suggested remedy. The extra step might prompt a source check. It could also produce mechanical copying or delay urgent cases. A pilot could compare the two review procedures on errors caught, time spent, disagreements raised and customer consequences. Cases where the assistant is wrong are especially informative.
 
 ## Worked arrangement: govern a remedy rather than a button
 
-Harbour separates four objects: the evidence brief, the remedy proposal, approval of a particular proposal version and the transaction resulting from execution. The separation makes responsibility more precise without assuming that each object needs a separate department.
+The duplicate remedy in the opening case involves several decisions and records. The evidence brief describes what happened. The remedy proposal recommends a response. Approval authorises a particular version of that proposal. The transaction records what the service actually did. Harbour can use those distinctions to assign responsibility at each step and to identify which record would help explain a duplicate.
 
 | Decision or obligation | Proposed role | Conditions and evidence |
 |---|---|---|
@@ -81,7 +81,7 @@ Controls can protect customers and workers. They can also shift risk downward. I
 
 Kellogg, Valentine and Christin (2020) review algorithmic control and its contestation. Their synthesis directs attention to how systems direct, evaluate and discipline work, and how workers respond. Applying that lens to Harbour means investigating who is measured, who can challenge a score and who can revise the measurement. It does not imply that every AI assistant exercises all the control mechanisms discussed in the review. [Kellogg et al. (2020)](../bibliography.md#kellogg-et-al-2020)
 
-A further complication is displaced discretion. Bovens and Zouridis (2002) examine how computerisation can shift judgement toward system-level design in public administration. The narrower AI teaching interpretation is to follow choices about categories, evidence and thresholds upstream, rather than attach all responsibility to the final transaction. [Bovens and Zouridis (2002)](../bibliography.md#bovens-and-zouridis-2002)
+**Discretion** is the room to interpret a situation or choose among alternatives. **Displaced discretion** means that some of that judgement moves elsewhere, for example from an adviser handling a complaint to the people setting the system's eligibility rules. Bovens and Zouridis (2002) examine how computerisation can shift judgement toward system-level design in public administration. The narrower AI teaching interpretation is to follow choices about categories, evidence and thresholds upstream, rather than attach all responsibility to the final transaction. [Bovens and Zouridis (2002)](../bibliography.md#bovens-and-zouridis-2002)
 
 ## Exercise: what would make this answerable?
 

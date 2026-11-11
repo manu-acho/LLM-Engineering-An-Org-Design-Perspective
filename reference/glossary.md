@@ -231,6 +231,15 @@ The course’s north and south scopes demonstrate region-specific access. A perm
 
 | Term | Meaning and example | Research reading |
 |---|---|---|
+| Arrangement for doing work | How tasks, roles, information, tools, decision rights and handoffs are organised for a particular piece of work. A proposed arrangement describes how the work would be organised if the design were adopted. | [Organisation design](research/01-organisation-design.md#division-creates-a-need-for-integration) |
+| Differentiation | Dividing work into specialised tasks, roles or units | [Organisation design](research/01-organisation-design.md#division-creates-a-need-for-integration) |
+| Structure | The relatively enduring arrangement of task groups, role and unit assignments, authority and reporting relationships | [Organisation design](research/01-organisation-design.md#division-creates-a-need-for-integration) |
+| Coordination | Managing dependencies among activities, including what contributors need from one another and how handoffs are accepted | [Coordination](research/02-coordination.md#identify-what-depends-on-what) |
+| Integration, organisational | Bringing divided contributions together toward a shared organisational purpose | [Organisation design](research/01-organisation-design.md#division-creates-a-need-for-integration) |
+| Integration, technical | Connecting data, applications or processes so they can work together; its organisational effects also depend on coordination | [Implementation](research/04-implementation.md#generic-software-carries-assumptions) |
+| Configuration, organisational | A combination of design choices whose effects depend on one another, such as task division, source access, review rights and incentives | [Organisation design](research/01-organisation-design.md#fit-is-a-relationship-among-choices) |
+| Configuration, software | Selecting available software settings, fields and rules for an implementation | [Implementation](research/04-implementation.md#responses-to-misfit) |
+| Handoff, business work | Passing work or information between contributors, with attention to content, meaning, timing and responsibility | [Coordination](research/02-coordination.md#a-handoff-can-arrive-without-becoming-usable) |
 | Accountability | An obligation to explain conduct to a forum that can question, judge and attach consequences; a log supplies evidence but does not create the relationship | [Governance](research/08-governance-and-accountability.md) |
 | Classification | A scheme grouping cases into categories; a shortage category can change routing and remedy options | [Infrastructure](research/07-infrastructure-and-standards.md) |
 | Conformance | Correspondence between recorded behaviour and a selected process model; correspondence does not prove the model expresses appropriate policy | [Processes](research/09-process-architecture.md) |
