@@ -21,6 +21,7 @@ const state = {
   read: new Set(stored(storageKeys.read, [])),
   bookmarks: new Set(stored(storageKeys.bookmarks, [])),
   notes: stored(storageKeys.notes, {}),
+  readingMode: false,
   collapsed: new Set()
 };
 
@@ -36,6 +37,7 @@ const el = {
   notes: document.querySelector("#personalNotes"),
   context: document.querySelector("#contextPanel"),
   toast: document.querySelector("#toast"),
+  readingModeButton: document.querySelector("#readingModeButton"),
   sidebar: document.querySelector("#sidebar")
 };
 
@@ -250,6 +252,8 @@ function routeCards(sections) {
 }
 
 function renderHome(push = false) {
+  el.readingModeButton.hidden = true;
+  el.app.classList.remove("reading-mode");
   el.app.classList.add('home-view');
   el.sidebar.classList.remove('open');
   el.context.classList.remove('mobile-open');
@@ -294,7 +298,18 @@ function routeTo(doc, heading = '') {
   renderDocument(doc, heading);
 }
 
+function setReadingMode(enabled) {
+  state.readingMode = enabled;
+  el.app.classList.toggle("reading-mode", enabled);
+  el.readingModeButton.setAttribute("aria-pressed", String(enabled));
+  el.readingModeButton.textContent = enabled ? "Exit reading mode" : "Reading mode";
+  el.sidebar.classList.remove("open");
+  el.context.classList.remove("mobile-open");
+}
+
 function renderDocument(doc, heading = "") {
+  el.readingModeButton.hidden = false;
+  el.app.classList.toggle("reading-mode", state.readingMode);
   el.app.classList.remove('home-view');
   state.currentId = doc.id;
   state.collapsed.delete(doc.section);
@@ -341,6 +356,7 @@ function renderDocument(doc, heading = "") {
     showToast(state.bookmarks.has(doc.id) ? "Saved" : "Removed from saved items");
   });
   document.querySelector("#notesButton").addEventListener("click", () => {
+    if (state.readingMode) setReadingMode(false);
     el.context.classList.add("mobile-open");
     el.notes.focus();
     el.context.scrollTo({ top: el.context.scrollHeight, behavior: "smooth" });
@@ -388,6 +404,8 @@ function excerpt(doc, query) {
 }
 
 function renderSearch(query) {
+  el.readingModeButton.hidden = true;
+  el.app.classList.remove("reading-mode");
   el.app.classList.remove('home-view');
   state.query = query;
   const results = searchDocuments(query);
@@ -414,7 +432,11 @@ function bindGlobalEvents() {
     el.main.scrollIntoView({ block: 'start', behavior: 'instant' });
   });
   document.querySelector("#homeButton").addEventListener("click", () => renderHome(true));
-  document.querySelector("#menuButton").addEventListener("click", () => el.sidebar.classList.toggle("open"));
+  el.readingModeButton.addEventListener("click", () => setReadingMode(!state.readingMode));
+  document.querySelector("#menuButton").addEventListener("click", () => {
+    if (state.readingMode) setReadingMode(false);
+    el.sidebar.classList.toggle("open");
+  });
   document.querySelector("#searchButton").addEventListener("click", () => {
     el.search.closest(".search-box").classList.toggle("open");
     if (el.search.closest(".search-box").classList.contains("open")) el.search.focus();
@@ -470,6 +492,7 @@ function bindGlobalEvents() {
       el.search.focus();
     }
     if (event.key === "Escape") {
+      if (state.readingMode) setReadingMode(false);
       el.search.blur();
       el.search.closest(".search-box").classList.remove("open");
       el.sidebar.classList.remove("open");

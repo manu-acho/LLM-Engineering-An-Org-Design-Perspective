@@ -221,6 +221,17 @@ kbd { padding: 2px 6px; color: var(--ink-soft); background: white; border: 1px s
   .article pre { padding: 17px; }
   .search-results h1 { font-size: 29px; }
 }
+/* Reading pages can use the full viewport without the two side panels. */
+.app-shell.reading-mode { grid-template-columns: minmax(0, 1fr); }
+.reading-mode .sidebar, .reading-mode .context-panel { display: none; }
+.reading-mode #menuButton { display: block; }
+.reading-mode .reading-column { max-width: 960px; }
+#readingModeButton { flex-shrink: 0; }
+#readingModeButton[hidden] { display: none; }
+#readingModeButton[aria-pressed="true"] { color: white; background: var(--forest); border-color: var(--forest); }
+@media (max-width: 760px) {
+  .reading-mode .main { padding-inline: 20px; }
+}
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
 @media print {
   .topbar, .sidebar, .context-panel, .document-actions, .skip-link { display: none !important; }

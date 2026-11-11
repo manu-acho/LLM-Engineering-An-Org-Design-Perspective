@@ -20,3 +20,5 @@ node browser-reader/scripts/check.mjs
 Netlify can deploy this branch as a separate site using the included configuration: build with Node, publish `browser-reader/dist`. Python is used by learners for the downloadable lab; the static website does not execute Python or require a Python build dependency. The files under `downloads/` are part of the published build.
 
 Selecting this branch for a second site is a separate deployment action. Nothing in the build creates a Netlify site, changes the companion deployment, creates cloud resources or provisions a model account.
+
+On any reading page, select **Reading mode** in the top bar to hide the library and chapter side panels and widen the reading area. Select **Exit reading mode** or press **Escape** to restore the panels. The preference follows links between reading pages during the session. **Menu** restores navigation, and **Notes** opens the note panel.
