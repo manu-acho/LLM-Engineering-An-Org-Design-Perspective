@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+If a customer asks which returns rule applies, Harbour needs to find the right policy before drafting a reply. Retrieval is the step that finds material for the request. Searching for matching words is one method; an embedding represents text as numbers so a search can also compare patterns of meaning. Finding a similar passage does not establish that it applies to the customer's region or date.
+
 Identify what a retrieved policy passage can contribute to an investigation and what case evidence it cannot supply.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 5 business situation](../../reference/harbour-learning-journey.md#module-5)
@@ -19,6 +21,8 @@ One solution is to retrieve relevant records and provide them to the model befor
 ## Begin with ordinary search
 
 Suppose a small folder contains three policies. A keyword search can find documents containing “credit”. This approach is easy to inspect but may miss a policy that calls the same action a “commercial adjustment”. It may also retrieve an irrelevant discussion of credit cards.
+
+Imagine three search results for a question about approving a credit: a current policy that says “commercial adjustment”, a credit card guide and an expired policy that says “approve credit”. A keyword search may rank the last two above the current policy. Searching for similar meaning can help with the wording difference. A separate date and access check must still determine whether a result can be used.
 
 Search therefore needs a representation of the question, a way of comparing it with records and a rule for selecting candidates. Different approaches solve those problems differently. Exact search is useful for IDs and precise phrases. Semantic search can help with paraphrases. Neither alone establishes which policy is authoritative.
 
@@ -73,21 +77,6 @@ Finding passages does not settle what different groups understand them to mean. 
 ## Practical activity: Inspect the source registry before searching it.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Should a relevant but retired policy enter the current context?
@@ -99,14 +88,10 @@ for document in POLICIES:
 assert any(not document["active"] for document in POLICIES)
 ```
 
-No. Relevance and current applicability are separate conditions.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Should a relevant but retired policy enter the current context?
 
 **Worked answer.** No. Relevance and current applicability are separate conditions.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

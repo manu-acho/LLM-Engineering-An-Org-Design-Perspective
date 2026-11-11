@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+If automation prepares more briefs per hour than advisers can review, work piles up after drafting. Trace arrivals and completions at the review stage, then compare adding review capacity, limiting arrivals or narrowing scope. The best response depends on where the waiting occurs.
+
 Examine where increased automation shifts waiting or effort to another function.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 17 business situation](../../reference/harbour-learning-journey.md#module-17)
@@ -43,21 +45,6 @@ The [organisation design chapter](../../reference/research/01-organisation-desig
 ## Practical activity: Distinguish priority policy from average throughput.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Which case risks remaining hidden if only easy completions are celebrated?
@@ -68,15 +55,11 @@ oldest=max(queue,key=lambda row:row["age_hours"])
 print("Oldest case:",oldest)
 ```
 
-difficult. A queue policy should state how ageing and unresolved cases are handled.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Which case risks remaining hidden if only easy completions are celebrated?
 
 **Worked answer.** difficult. A queue policy should state how ageing and unresolved cases are handled.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
 

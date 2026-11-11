@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+Harbour can decide to proceed with a narrow pilot, ask for changes or stop. Work through a case likely to expose the weak point before writing that decision down. Separate evidence that the code prepares a correct brief from evidence that advisers can use it to resolve cases more effectively.
+
 Defend a pilot plan that includes finance, operations and customer-service acceptance.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 15 business situation](../../reference/harbour-learning-journey.md#module-15)
@@ -43,21 +45,6 @@ A strong response defines unfamiliar terms, names the relevant owner rather than
 ## Practical activity: Define a pilot comparison with exclusions and receiving capacity.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Should excluded cases disappear from the service assessment?
@@ -67,14 +54,10 @@ pilot={"included":"north quantity cases","excluded":["unverified identity","mixe
 print(pilot)
 ```
 
-No. Their frequency and handling burden remain part of the operating picture.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Should excluded cases disappear from the service assessment?
 
 **Worked answer.** No. Their frequency and handling burden remain part of the operating picture.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

@@ -4,27 +4,14 @@
 
 ## Business context: Harbour
 
+Follow a case first claimed by one worker and then reclaimed by another after the lease expires. Identify the evidence that lets the second worker finish and makes the first worker's later result unacceptable. The case number has not changed, but permission to complete that attempt has.
+
 Trace queue recovery and retry identity rather than assuming an external action occurs exactly once.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 17 business situation](../../reference/harbour-learning-journey.md#module-17)
 
 ## Practical activity: Reclaim a lease while refusing the former owner's completion.
 
-
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
 
 ### Predict and follow the values
 
@@ -44,15 +31,11 @@ with TemporaryDirectory() as directory:
 print("Completed jobs are not reclaimed")
 ```
 
-No. Expiration allows recovery of running work, not repetition of completed work.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: May attempt-3 reclaim this completed job?
 
 **Worked answer.** No. Expiration allows recovery of running work, not repetition of completed work.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.

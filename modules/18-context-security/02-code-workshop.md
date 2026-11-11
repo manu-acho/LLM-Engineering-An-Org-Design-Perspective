@@ -4,27 +4,14 @@
 
 ## Business context: Harbour
 
+The safest point to protect a record the model does not need is before building the request. In the lab, inspect how the application rejects a case outside the caller's region before it gathers material for the prompt. Compare a permitted request and a denied request at that boundary rather than looking only at the reply.
+
 Inspect trusted regional scope and permitted case reads.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 18 business situation](../../reference/harbour-learning-journey.md#module-18)
 
 ## Practical activity: Deny a wrong-region case before preparing a prompt.
 
-
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
 
 ### Predict and follow the values
 
@@ -40,15 +27,11 @@ else:
     raise AssertionError("Scope failed")
 ```
 
-No. Authentication and resource-specific authorisation are different checks.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Does an authenticated north identity imply access to south?
 
 **Worked answer.** No. Authentication and resource-specific authorisation are different checks.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.

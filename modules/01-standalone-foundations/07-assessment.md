@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+Start by keeping two pieces of work apart: adding a sentence to the toy model's training set and changing a record in Harbour's case. The first can change which word comes next; the second can change what the brief is entitled to say. Write a prediction for each exercise before reading its answer. If it differs, check which input changed and whether the code counts examples, selects text or prepares evidence.
+
 A complete first proposal must still work when a quantity is unknown or no recipient has accepted the case.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 1 business situation](../../reference/harbour-learning-journey.md#module-1)

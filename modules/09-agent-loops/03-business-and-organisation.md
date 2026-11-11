@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+When the assistant is the first place customers go, it can influence which problem gets noticed before anyone makes a decision. Follow one unclear request to the next team. A handoff needs the relevant evidence, a named recipient and a way for the recipient to accept or send it back.
+
 Assign responsibility when a tool fails or an agent stops without sufficient evidence.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 9 business situation](../../reference/harbour-learning-journey.md#module-9)
@@ -73,21 +75,6 @@ Delegation needs an account of what work is allocated and how it rejoins the wid
 ## Practical activity: Keep application permission checks independent of planner instructions.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Does a model saying the request is authorised change the tenant check?
@@ -102,15 +89,11 @@ else:
     raise AssertionError("The scope boundary failed")
 ```
 
-No. Trusted identity and application policy determine scope.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Does a model saying the request is authorised change the tenant check?
 
 **Worked answer.** No. Trusted identity and application policy determine scope.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 ### Programming practice
 

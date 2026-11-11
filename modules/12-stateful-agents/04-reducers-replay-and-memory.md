@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+If warehouse and carrier each add a note, state must preserve both without duplicating them on replay. A reducer is a rule for combining an update with what is already stored. Replay runs work again from a chosen boundary; it can repeat an operation that had an outside effect. Follow one update and identify what could happen twice.
+
 Reject approval that relies on an obsolete case or policy version.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 12 business situation](../../reference/harbour-learning-journey.md#module-12)
@@ -59,21 +61,6 @@ Replaying events and repeating organisational action have different consequences
 ## Practical activity: Compare replacing a state field with appending an update.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 How many messages remain under the append rule?
@@ -87,15 +74,11 @@ print("Replace:",replace,"Append:",append)
 assert len(replace["messages"])==1 and len(append["messages"])==2
 ```
 
-Two. A reducer specifies how updates combine; a type hint alone does not choose that behaviour.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: How many messages remain under the append rule?
 
 **Worked answer.** Two. A reducer specifies how updates combine; a type hint alone does not choose that behaviour.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 ### Programming practice
 

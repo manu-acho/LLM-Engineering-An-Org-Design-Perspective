@@ -6,15 +6,19 @@
 
 ## Business context: Harbour
 
+Start with the subtraction on paper: twelve boxes recorded, ten reported, a difference of two. Python is a language for writing instructions a computer can follow. The first example gives a name to each number before asking Python to subtract them. Read the right side of each line first and then see where the result is kept. The program can find the difference; only the names explain what was compared.
+
 The investigator needs to read quantities and source labels reliably; the first Python operations make those distinctions visible.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 1 business situation](../../reference/harbour-learning-journey.md#module-1)
 
 ## A program is a sequence of explicit operations
 
-The pilot lab is a text file, `foundations_lab.py`. A Python interpreter reads the file and executes its statements. Instructions inside a function run when that function is called. A comment begins with `#` and explains the code to a reader; Python does not execute the comment.
+Begin with the three lines under “Names and values”. The Python **interpreter** is the program that reads the instructions and carries them out. In a notebook, each **cell** holds a block of instructions or an explanation. Run one code cell at a time in the matching notebook, or read the lines on the page and predict the result. A line beginning with `#` is a comment for the reader.
 
-The [setup page](../../START-HERE.md) explains how to obtain Python and download both lab files. In the folder containing them, the command below starts the model example:
+The complete lab lives in `foundations_lab.py`. Running a file from the terminal is another way to ask Python to carry out instructions. It is useful after the first example, but is optional for reading the lesson.
+
+The [setup guide](../../SETUP.md) prepares the checkout. In the checkout’s `examples/01-foundations` folder, the command below starts the word prediction example. The terminal is where this command goes; the three-line subtraction belongs in a Python cell.
 
 ```sh
 python3 foundations_lab.py model
@@ -30,7 +34,10 @@ An assignment gives a value a name:
 ordered = 12
 reported_received = 10
 difference = ordered - reported_received
+print(difference)
 ```
+
+The first line stores twelve under the name `ordered`. The second stores ten under `reported_received`. The third reads those two values, subtracts ten from twelve and stores two under `difference`. The final line displays `2`. Change just the second line to `reported_received = 11` and the displayed value becomes `1`. This change alters the calculation's input; it does not verify a delivery.
 
 `=` assigns a value; it is not a mathematical claim that two expressions are always equal. `12` is an integer, a whole number. `"reported"` is a string, text between quotation marks. Clear names communicate the meaning of the values. Calling the second value `actual_received` would hide a qualification before any model was involved.
 
@@ -68,7 +75,7 @@ if type(quantity) is not int or quantity < 0:
     raise ValueError("Expected a nonnegative whole quantity")
 ```
 
-The check prevents missing quantities from becoming zero. It also rejects `True`: Python booleans are related to integers, so the example deliberately checks the exact type. This strict rule suits the toy input contract. A different application might accept decimal weights, but it would need to state the unit and validation rules explicitly.
+Read the check as “If the value is not a whole number or is below zero, stop and report that it was invalid.” The colon opens the block that runs if the check finds a problem. The check keeps missing quantities from becoming zero. It also rejects `True`, a **boolean** or yes/no value, so it cannot be counted as one box. This strict rule suits the toy input contract. A different application might accept decimal weights, but it would need to state the unit and validation rules explicitly.
 
 ## Modules and the entry point
 

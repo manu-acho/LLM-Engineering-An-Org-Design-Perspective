@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+A service that drafts replies can give advisers freedom to reword a message while keeping the rules for credit approval fixed. Discretion is the room someone has to choose how to act within their role. Compare who can change a draft, choose evidence and approve a credit. Those choices do not have to be assigned to the same person or program.
+
 A conversation becomes a usable handoff only when an investigator accepts the contribution and next responsibility.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 2 business situation](../../reference/harbour-learning-journey.md#module-2)
@@ -57,20 +59,7 @@ Task framing, rule configuration and exception handling locate judgement at diff
 ## Practical activity: Write an acceptance contract that assigns the next step.
 
 
-
 `None` means an absent value. It is different from zero, an empty string and `False`. Keeping that distinction prevents missing evidence from becoming an invented quantity.
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
 
 ### Predict and follow the values
 
@@ -83,14 +72,10 @@ contract["next_owner"] = "investigator"
 print(contract)
 ```
 
-The investigator owns it. A delivered chat message does not automatically establish that acceptance.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: After acceptance, which role owns further investigation in this case?
 
 **Worked answer.** The investigator owns it. A delivered chat message does not automatically establish that acceptance.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

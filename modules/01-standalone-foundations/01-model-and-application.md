@@ -6,52 +6,64 @@
 
 ## Business context: Harbour
 
-An adviser needs to distinguish a recorded dispatch quantity from verified receipt before making a promise to the customer.
+This lesson begins with a next-word suggestion and ends with a real question about work: what can an adviser tell a customer when two records disagree? The example and study questions can be followed without a notebook or API key.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 1 business situation](../../reference/harbour-learning-journey.md#module-1)
 
 ## From the business to the discrepancy
 
-**Fictional teaching case.** Harbour distributes packaging materials to businesses that use them to pack and dispatch their own goods. Its service connects purchasing and inventory with warehouse fulfilment, transport, customer service and finance. Read [Meet Harbour](../../HARBOUR.md) for the company, roles and complete business workflow.
+Harbour sells and delivers packaging to other businesses. One customer ordered twelve boxes so it could pack its own goods. The order says twelve, the dispatch record says twelve went out, and the customer says ten arrived. A customer service adviser has to tell the customer what Harbour knows and what it will investigate. The fictional case is called H-17.
 
-The first task is narrower than that workflow: prepare an investigation brief for case H-17. Its order record says twelve boxes. The shipment record also says twelve. The customer reports receiving ten. An adviser wants a short investigation brief.
-
-Three claims are available. The records state what their systems contain; the customer supplies an account of receipt. The difference between twelve and ten is two. The cause is unknown. A useful brief can preserve those distinctions while making the next investigation easier.
-
-An AI demonstration might instead produce: “The warehouse failed to send two boxes.” That sentence adds both a confirmed shortage and a cause. Neither follows from the available information. A convincing sentence and a supported claim are different properties.
+The adviser can report a difference of two between the dispatch record and the customer's account. The adviser cannot yet say where two boxes went, or even confirm how many arrived. The warehouse record could be wrong, something might have happened during delivery, or the customer could have counted before all the boxes were unpacked. Checking the records with the people who handled the delivery is a separate step from writing a clear account of it. [The Harbour case](../../HARBOUR.md) describes the wider business; these are all the facts needed for this lesson.
 
 ## The application around the model
 
-A **model** is a learned system used to produce an output from an input. A **language model** estimates probabilities over language sequences or continuations. A modern language model may be one component within a larger **application**, the program that gathers information, prepares a task, calls services, checks results and presents them.
+### Start with a suggestion on a phone
 
-The application can retrieve an order record if a developer supplies that connection and access permits it. The language model does not automatically know the current order merely because the application has a screen labelled Orders. The record must reach the model through input or an available tool path.
+Imagine typing `the parcel is` and seeing a phone suggest `delayed`. The text already typed is a **sequence**: pieces of text in a particular order. A **continuation** is whatever gets added next. If the suggestion is accepted, the sequence becomes `the parcel is delayed`. The phone could then suggest another piece, such as a full stop. Each accepted piece becomes part of what comes before the next suggestion.
 
-The distinction also identifies failures. A wrong brief can originate in a missing source, an incorrect transformation, an unsuitable instruction, generation, an inadequate check or misleading display. Replacing the model addresses only some of these possibilities.
+Where could the first suggestion come from? Suppose a very simple program has seen ten examples that begin with `the parcel is`. In six, the next word was `delayed`; in three it was `ready`; in one it was `missing`.
+
+| Possible next word | Count out of ten examples | Estimated probability in this example |
+| --- | ---: | ---: |
+| delayed | 6 | 60% |
+| ready | 3 | 30% |
+| missing | 1 | 10% |
+
+A **probability** expresses how likely a particular possibility is under a stated assumption or model. In this counting example, the estimate for `ready` is three out of ten, or 30%. It applies when the preceding words are `the parcel is`. A different beginning could give very different estimates. Crucially, 60% is an estimate about the next word in text. It is not a 60% chance that a real parcel is delayed.
+
+A **language model** learns patterns in text that it can use to give possible next pieces different chances. A piece of text used by the model is called a **token**. It can be a word, part of a word, punctuation or another piece. The phone example uses whole words and simple counting so the arithmetic is visible. Large language models (LLMs) learn much richer numerical patterns; they do not have to find ten identical openings and count the following words. A model can build a longer answer by selecting a piece, adding it to the text and repeating the process. Different ways of selecting pieces can produce different answers. [Lesson 1.3](03-learning-and-generation.md) runs a small version of that process.
+
+### Now return to Harbour
+
+“Two boxes were lost in the warehouse” sounds like a natural continuation of a report about a discrepancy. The available records do not support that claim. The skill of producing a plausible sentence differs from the work of checking what happened.
+
+An **application** is the software that helps someone do a job. In this case it can collect the order and dispatch records, include the customer's account, calculate the recorded difference and show where each number came from. It may ask a language model to draft a sentence using those details. The model sees only the material the software supplies or lets it request. It does not gain access to the current order merely because the application has a screen labelled Orders.
+
+That separation also helps Harbour find faults. If the dispatch record never reached the draft, inspect how the software gathered the records. If the draft says the warehouse caused the shortage despite being given the right records, inspect how the draft was produced and checked. These failures call for different fixes.
 
 ## What is learned and what is written as a rule?
 
-In ordinary deterministic code, a developer specifies operations such as subtracting one quantity from another. Given the same valid inputs and implementation, the calculation returns the same result. A learned model acquires parameters or statistical counts from examples. Its output depends on what was learned and how inference selects a result.
+To subtract ten from twelve, a developer can write an explicit rule. With the same numbers, the same subtraction gives two every time. Such an operation is **deterministic**. It does not need to learn anything from examples. To make suggestions based on previous text, the simple program above instead has to collect examples and count what follows what.
 
-The pilot includes both. `build_brief` is deterministic evidence preparation. `train` estimates word-transition counts from four supplied sentences. `generate` uses those learned counts to select a continuation. The brief builder is not a pretend LLM, and the tiny model is not a pretend order-verification system.
+**Training** is the step in which examples change what the model stores or learns, such as the counts in the table. **Inference** is the step in which a trained model is used on an input, such as when the phone sees the three words and makes a suggestion. Giving a model today's order record supplies material for this request. That alone does not retrain the model. A correction in a conversation can help with the next reply if included in that conversation; this does not show the model itself has permanently changed.
 
-**Training** changes the learned representation using examples. **Inference** uses that representation for an input. Supplying an order record as context ordinarily changes the current input, not the model's learned parameters. Correcting an answer in a conversation does not by itself demonstrate a persistent training update.
+The lab separates the two jobs. `train` learns from four short sentences and `generate` uses the counts to continue a phrase. `build_brief` takes the supplied case records and prepares the facts under written rules. These are names for parts of the program. There is no need to run or read Python yet; [Lesson 1.2](02-python-first-steps.md) starts with three lines and explains them one by one.
 
 ## Input, output and action
 
-A **prompt** supplies a task and relevant material. A **response** is the returned output. An **action** changes something, such as creating a case assignment or issuing a credit. These operations may be connected in an application, but generating a response is not permission to execute an action.
+A **prompt** is the material sent to ask the model to do something. It might say, “Draft a brief for the adviser. Keep the recorded dispatch quantity separate from the customer's report,” followed by the three records. A **response** is what the model sends back. An **action** changes something outside the response, such as assigning a case or issuing a credit.
 
-At Harbour, the first permitted contribution is an investigation brief. The recipient can inspect sources and request clarification. The prototype neither confirms a cause nor changes a customer account. That bounded scope makes the output assessable before adding more responsibility.
-
-The application can help preserve the boundary by carrying source identifiers, labelling reported and recorded quantities, retaining unresolved questions and restricting available operations. Those mechanisms do not prove that a future generated answer is correct. They make particular assumptions and checks inspectable.
+For H-17, the application can prepare a brief for an adviser, who can check the sources and ask the warehouse and carrier what happened. The brief is not an authorisation to credit the account. The software can reinforce that boundary by showing where the figures came from, flagging open questions and leaving credit controls out of the drafting tool.
 
 ## Study pause
 
-Which part of the system should calculate twelve minus ten, and what would that calculation establish?
+1. In the phone example, what is estimated at 30%? Is this about a real delivery?
+2. Harbour adds a new note about H-17 to the prompt. What has changed, and what has not necessarily changed?
+3. What can Harbour say about H-17 after subtracting ten from twelve? What still needs checking?
 
-**Worked response:** ordinary code can calculate the difference as two. It establishes the difference between the selected inputs under their stated meanings. It does not independently verify receipt or identify the cause. A model can help express the comparison, but no generation is required for the subtraction.
-
-The [decision research chapter](../../reference/research/03-decisions.md#distinct-acts-in-one-workflow) explains why calculation, recommendation, authorisation and execution need separate examination. The next lesson makes these distinctions visible in a small program.
+**Worked response.** The 30% refers to `ready` as the next word after `the parcel is` in the toy model. The note changes what the model has for this request; adding the note does not by itself train the model. The subtraction finds a difference of two between the dispatch figure and the customer's report. It does not verify receipt or establish a cause. The [chapter on decisions](../../reference/research/03-decisions.md#distinct-acts-in-one-workflow) develops this distinction between calculating, recommending, authorising and acting.
 
 ## Try the live model
 
-The [live-model guide](../../reference/live-model-guide.md) prepares the API configuration. The matching notebook adds a real request and records the returned model, status, usage and duration. Inspect every factual claim. In a development run, the model inferred shipped quantity from an order record; the source did not establish that inference. The [worked experiment record](../../reference/worked-model-experiments.md) explains this observed failure and the later corrections.
+This experiment can wait until after the first Python lesson. The [live-model guide](../../reference/live-model-guide.md) prepares the API configuration. The matching notebook adds a real request and records the returned model, status, usage and duration. Inspect every factual claim. In a development run, the model inferred shipped quantity from an order record; the source did not establish that inference. The [worked experiment record](../../reference/worked-model-experiments.md) explains this observed failure and the later corrections.

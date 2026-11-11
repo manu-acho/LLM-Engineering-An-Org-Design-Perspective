@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+Imagine copying the customer's account into a form and accidentally labelling it “confirmed receipt”. The number would survive the copy, but its meaning would change. An evidence pipeline is a sequence of steps that takes the original records to a form the adviser or model can use. At each step, follow the ten boxes and check that “reported” and the source are still attached. A missing number must stay missing.
+
 A brief crosses from customer-facing intake to investigation. Its usefulness depends on carrying the source and uncertainty with each claim.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 1 business situation](../../reference/harbour-learning-journey.md#module-1)
@@ -62,7 +64,7 @@ The instructions ask a future model to preserve sources and uncertainty, avoid i
 
 ## Where a real model would connect
 
-A provider adapter could accept the prepared messages, send an authenticated request, check transport and response status, extract output and return a result for further checking. A local model adapter could perform the inference on suitable hardware. Either path adds dependencies, failure modes and operating decisions.
+A **provider adapter** is code that translates the application's request into the form a model service expects and translates the reply back. For example, it can send the prepared messages with a credential the service checks, report a connection or reply failure and extract the model's answer for the application's own checks. A local model adapter could perform the inference on suitable hardware. Either path adds dependencies, failure modes and operating decisions.
 
 The surrounding application would need timeouts, explicit failures, handling of incomplete results and checks appropriate to the task. It should not treat every successful HTTP response as a valid brief. The ability to send a request and the ability to support a business claim are different tests.
 

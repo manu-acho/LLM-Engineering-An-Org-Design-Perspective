@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+When a customer writes “What about the other order?”, the missing order number may be clear to a person who remembers the previous turn. A model request needs enough of that earlier exchange supplied again to make sense of it. History is the exchange so far; state is the information the application currently relies on, such as the selected case. The application must decide what to carry into the next request and when to ask which order the customer intends.
+
 Preserve which delivery the adviser is discussing when a short follow-up omits the case identifier.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 2 business situation](../../reference/harbour-learning-journey.md#module-2)
@@ -19,6 +21,8 @@ If the program sends only “Who should review it?”, the meaning of “it” m
 ## History, state and memory
 
 **History** is a record of earlier turns. **State** is the information the application retains to continue its work. It can include history, a selected order ID, whether a lookup completed and whether an action is awaiting approval. “Memory” is often used for all of these, so ask what is actually stored and where.
+
+Suppose the saved messages say “Inspect order O-17” and “Who should review it?” The first message gives the second its meaning. The application can separately store H-17 as the case currently open. The order and case have different identifiers because they are different records. If the adviser switches to another case, updating the selected case does not erase the messages. The application has to decide which information the next answer should rely on.
 
 A list of messages is a simple history representation. A database record is more suitable for durable work across sessions. A summary can compress older turns, but it is another generated representation that can omit a qualification. None of these operations changes the model's weights by itself.
 
@@ -77,8 +81,7 @@ Conversation state and rules structure the situations the service can recognise.
 History is the saved sequence of turns. State is the information the application retains to continue its task. A role labels who supplied a message.
 
 
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+The notebook is the easiest way to run this activity. Its first cell loads the course settings. `ROOT` records where the course files are, and `RUN_LIVE` records whether the optional provider call is enabled. The local steps can be read with live mode off. When running the snippets outside the notebook, use this setup once from a prepared checkout:
 
 ```python
 from ai_orgdesign.workspace import project_root, live_mode
@@ -102,11 +105,9 @@ print(history)
 print(state)
 ```
 
-H-17 identifies the investigation case; O-17 is its order. Neither storing a message nor selecting a case trains the model.
-
 ### Use the live model
 
-Live mode is the recommended implementation route after [API setup](../../reference/live-model-guide.md). The following operation uses the fictional evidence shown here, returns an actual result and retains usage. Named arguments label a function's inputs; a returned object provides fields such as text, value and record. Read those fields independently instead of treating fluent text as a success certificate.
+After [API setup](../../reference/live-model-guide.md), live mode sends an actual request with the exercise’s fictional data. With live mode off, this block reports that it skipped the request. When a result is returned, read its status and any facts separately from the wording.
 
 ```python
 if RUN_LIVE:
@@ -121,10 +122,8 @@ A failed or incomplete result must remain visible. The [live-model guide](../../
 
 ### Complete the exercise
 
-Write the prediction before consulting the worked answer: Which case identifier should be retained across the follow-up?
-
 **Worked answer.** H-17 identifies the investigation case; O-17 is its order. Neither storing a message nor selecting a case trains the model.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

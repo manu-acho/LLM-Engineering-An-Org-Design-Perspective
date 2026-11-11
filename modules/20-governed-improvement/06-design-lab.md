@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+The final decision brings together three questions: did the program perform the agreed task, can Harbour operate it when things go wrong, and does it help the customer get a better resolution? Use a difficult case to test each claim. Record what the available evidence supports and what still needs checking before a wider release.
+
 Defend the end-to-end Harbour design, including supply-chain dependencies, finance boundaries, failure handling and evidence still needed.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 20 business situation](../../reference/harbour-learning-journey.md#module-20)
@@ -65,10 +67,7 @@ Read the boundary field in the result before interpreting it. The integrated loc
 ## Practical activity: Join actual model drafting, HTTP review, retries and measured evaluation.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+The notebook is the easiest way to run this activity. Its first cell loads the course settings. `ROOT` records where the course files are, and `RUN_LIVE` records whether the optional provider call is enabled. The local steps can be read with live mode off. When running the snippets outside the notebook, use this setup once from a prepared checkout:
 
 ```python
 from ai_orgdesign.workspace import project_root, live_mode
@@ -89,11 +88,9 @@ print("The live capstone uses fictional evidence, a simulated reviewer and actua
 print("The reviewer returns the case for further evidence; no payment capability exists.")
 ```
 
-No. It verifies an integrated local learning path. The service proposal must identify the additional operating and outcome evidence needed.
-
 ### Use the live model
 
-Live mode is the recommended implementation route after [API setup](../../reference/live-model-guide.md). The following operation uses the fictional evidence shown here, returns an actual result and retains usage. Named arguments label a function's inputs; a returned object provides fields such as text, value and record. Read those fields independently instead of treating fluent text as a success certificate.
+After [API setup](../../reference/live-model-guide.md), live mode sends an actual request with the exercise’s fictional data. With live mode off, this block reports that it skipped the request. When a result is returned, read its status and any facts separately from the wording.
 
 ```python
 if RUN_LIVE:
@@ -113,11 +110,9 @@ A failed or incomplete result must remain visible. The [live-model guide](../../
 
 ### Complete the exercise
 
-Write the prediction before consulting the worked answer: Does this capstone demonstrate cloud operation or real organisational benefit?
-
 **Worked answer.** No. It verifies an integrated local learning path. The service proposal must identify the additional operating and outcome evidence needed.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
 

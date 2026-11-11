@@ -4,6 +4,8 @@
 
 ## Business context: Harbour
 
+A gradient indicates how a small change to a learned number would affect the loss. The trainer uses that information to update the adapter, while the frozen base values stay fixed. Locate the adapter in the saved material and the step that reloads it. This distinguishes keeping the training result from doing the training again.
+
 Trace saved weights, adapter identity and reload behaviour before claiming a trained artefact can be reproduced.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 7 business situation](../../reference/harbour-learning-journey.md#module-7)
@@ -11,10 +13,7 @@ Trace saved weights, adapter identity and reload behaviour before claiming a tra
 ## Practical activity: Train and reload a real text-classification LoRA adapter.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+The notebook is the easiest way to run this activity. Its first cell loads the course settings. `ROOT` records where the course files are, and `RUN_LIVE` records whether the optional provider call is enabled. The local steps can be read with live mode off. When running the snippets outside the notebook, use this setup once from a prepared checkout:
 
 ```python
 from ai_orgdesign.workspace import project_root, live_mode
@@ -37,8 +36,6 @@ assert not set(text for text,label in TRAIN) & set(text for text,label in TEST)
 print("Train examples:",len(TRAIN),"Test examples:",len(TEST),"Revision:",BERT_REVISION)
 ```
 
-No. The adapter depends on the base architecture and parameters; retain its exact revision and tokenizer.
-
 ### Run the pinned local model
 
 This is a text classifier, not a chat model. Label 0 means finance and label 1 means delivery operations. The pretrained encoder provides representations; a newly initialised classification head learns the two outputs. LoRA updates selected attention transformations while the head is trained and saved with the adapter. The warning about newly initialised classifier weights is expected before task training.
@@ -59,11 +56,9 @@ For model provenance and the observed development runs, see [Worked model experi
 
 ### Complete the exercise
 
-Write the prediction before consulting the worked answer: May the saved adapter be paired with an arbitrary base-model revision?
-
 **Worked answer.** No. The adapter depends on the base architecture and parameters; retain its exact revision and tokenizer.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.

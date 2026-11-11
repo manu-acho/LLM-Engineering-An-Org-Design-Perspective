@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+A shared folder does not tell an adviser which policy is current or who can correct it. A source registry is a list that names the records a service may use and identifies who owns them, when they apply and what they establish. Make one entry for a policy and one for a dispatch record. They are useful for different reasons and should not settle the same questions.
+
 Design a route for missing, conflicting or superseded policy evidence.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 5 business situation](../../reference/harbour-learning-journey.md#module-5)
@@ -59,21 +61,6 @@ A knowledge service needs routes for translation and contestation as well as doc
 ## Practical activity: Design what happens when no permitted evidence is found.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Which status preserves the missing-evidence condition?
@@ -86,15 +73,11 @@ response = {"status":"needs_evidence","next_owner":"knowledge service owner"} if
 print(response)
 ```
 
-needs_evidence. It does not assert that no relevant policy exists anywhere.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Which status preserves the missing-evidence condition?
 
 **Worked answer.** needs_evidence. It does not assert that no relevant policy exists anywhere.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
 

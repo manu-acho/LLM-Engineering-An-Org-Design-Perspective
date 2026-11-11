@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+A job can be waiting, claimed or finished; those states have different consequences for the next worker. An operating contract specifies who can change a state and under what conditions. Read the example for when work can be claimed again and what prevents two results being accepted for one claim.
+
 Use a job lease to inspect temporary ownership and reject an expired worker.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 17 business situation](../../reference/harbour-learning-journey.md#module-17)
@@ -18,7 +20,9 @@ An operating contract states what information is required, what contribution is 
 
 ## Follow the included implementation
 
-bounded_work uses an asyncio semaphore to limit the number of active coroutines. Each coroutine enters the semaphore, increments a counter, awaits a short artificial delay and decrements the counter in finally. gather collects results in input order. The separate SQLite job exercise gives a worker a time-limited lease through one conditional UPDATE. Another worker may reclaim an expired lease, but finish accepts only the current owner with an unexpired lease. The supplied clock values make expiration tests deterministic.
+Imagine two places at a workbench. If both are occupied, the next job waits for a place. In Python, a **semaphore** provides those places. The lab function `bounded_work` runs tasks that can pause while another task proceeds. Each task takes a place, adds one to the active count and waits briefly to imitate work. A `finally` block subtracts one even if the task encounters a problem. `gather` returns the results in the order the tasks were supplied, which may differ from the order in which they finished.
+
+The separate exercise records jobs in a local SQLite database. A worker claims a job by changing its record, but the database applies the change only if the job is still available. Another worker can reclaim it when the lease runs out. The `finish` operation checks both the current owner and the expiry time before accepting a result. The test supplies the clock values so the same example can be repeated without waiting.
 
 Open `src/ai_orgdesign/labs/m17.py` and follow each call into its supporting function. Ordinary Python functions receive values and return values; a class groups state and operations; a context manager controls a resource's lifetime. The [programming reference](../../reference/python-patterns.md) explains these patterns with small examples, and the [technical foundations](../../reference/technical-foundations.md) introduces transactions, concurrency and neural calculations before their use.
 
@@ -40,25 +44,10 @@ Assume thirty cases per hour enter review and reviewers can finish twenty per ho
 
 **Worked answer.** The review backlog grows by ten cases each hour under the stated steady rates. Faster preparation does not increase review capacity and may expose the bottleneck sooner. A lease alone cannot establish whether an external action happened. Use a stable command identity, the external service's idempotency facilities where available, and reconciliation before retrying an uncertain action.
 
-Carry that answer into the design record: required input, permitted contribution, acceptance owner, escalation trigger, recovery route and evidence for any benefit claim. A design record describes the proposed arrangement. Repeated observation and outcome comparisons are needed to examine what it becomes in practice.
+Carry that answer into the design record: required input, permitted contribution, acceptance owner, escalation trigger, recovery route and evidence for any benefit claim. The design record describes who will do the work and what rules they will follow. Observing actual cases shows whether those roles and rules work as planned.
 
 ## Practical activity: Check whether a stable-flow calculation is applicable.
 
-
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
 
 ### Predict and follow the values
 
@@ -71,15 +60,11 @@ average_work=throughput_per_hour*average_hours
 print("Stable-flow illustrative work:",average_work)
 ```
 
-Ten cases. This calculation does not describe the separate example with a continually growing backlog.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: What is average work under these declared stable-flow assumptions?
 
 **Worked answer.** Ten cases. This calculation does not describe the separate example with a continually growing backlog.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 ### Programming practice
 

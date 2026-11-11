@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+In the four-sentence model, “the” is always treated alike. In “check the delivery” and “check the invoice”, words elsewhere in the request can help predict what should come next. A neural language model processes text through layers of numerical operations, using values learned in training. First follow the scores it gives two possible next pieces, then see how a mistake during training can change the values that produced those scores. None of those scores verifies a shipment.
+
 A larger neural model could write more fluent text without acquiring a missing delivery record. Inspect the mechanism before granting it more authority.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 1 business situation](../../reference/harbour-learning-journey.md#module-1)
@@ -18,7 +20,9 @@ A **parameter** is a numerical value adjusted during learning. Neural models con
 
 ## Scores and probabilities
 
-At a generation step, the model produces scores over possible next tokens. These scores are often called **logits**. `softmax` converts a vector of scores into probabilities that sum to one. Mathematically these are positive for finite scores; floating-point computation can round extremely small values to zero. `exp(x)` means raising the constant e, approximately 2.718, to the power x. For scores 1, 0 and minus 1 at temperature one:
+Return to the phone example. Suppose the possible next pieces are `delayed`, `ready` and `missing`. At one step a model might give them scores of 1, 0 and minus 1. The scores, often called **logits**, express a preference. They are not probabilities: minus 1 is not a negative chance, and 0 does not rule out `ready`.
+
+**Softmax** turns those scores into a set of probabilities. It first turns each score into a positive number, then divides each by their total. That is like dividing each word's count by the total in Lesson 1.3, except the starting numbers now come from scores rather than from counted sentences. Mathematically these are positive for finite scores; floating-point computation can round extremely small values to zero. `exp(x)` means raising the constant e, approximately 2.718, to the power x. For scores 1, 0 and minus 1 at temperature one:
 
 ```text
 exp(1) ≈ 2.718
@@ -34,7 +38,7 @@ To avoid overflow for large scores, the implementation subtracts the largest sco
 
 ## Learning from prediction error
 
-A common language-model training objective rewards assigning higher probability to an observed next token. The **loss** is a numerical measure used to evaluate the current prediction during learning. For a target with probability `p`, a negative-log-probability loss is `-log(p)`. A target assigned probability 0.5 has a loss of about 0.693; at 0.25, about 1.386. Lower loss under that objective means more probability was assigned to the target.
+Suppose the training text says `the parcel is ready`. The exercise hides the final word, asks the model for its next-piece probabilities and then compares them with the observed word, `ready`. A common language-model training objective favours assigning a higher probability to that observed piece. The **loss** is a numerical measure used to evaluate the current prediction during learning. For a target with probability `p`, a negative-log-probability loss is `-log(p)`. A target assigned probability 0.5 has a loss of about 0.693; at 0.25, about 1.386. Lower loss under that objective means more probability was assigned to the target.
 
 **Gradient-based optimisation** adjusts selected parameters using information about how the loss changes with them. This is different from the pilot's counting procedure. Later training modules will implement that process directly; this pilot does not claim to train a neural LLM.
 

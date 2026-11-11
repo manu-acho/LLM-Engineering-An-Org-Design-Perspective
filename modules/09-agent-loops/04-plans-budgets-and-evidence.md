@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+A plan might say to check dispatch, then ask the carrier if the first check leaves a gap. Define the evidence required to finish, as well as limits on attempts, time or spending. A budget is a limit on one of those resources. The application can stop the loop because a limit was reached while the investigation itself remains incomplete.
+
 Inspect ceilings on rounds and tool calls as local execution boundaries rather than a service guarantee.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 9 business situation](../../reference/harbour-learning-journey.md#module-9)
@@ -60,21 +62,6 @@ Budgets and stopping rules structure search without proving that the first accep
 ## Practical activity: Track the difference between a planned and completed step.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 How many steps have completion evidence here?
@@ -85,14 +72,10 @@ completed = [step["activity"] for step in steps if step["state"] == "completed"]
 print(completed)
 ```
 
-One. A written plan for receipt verification is not a verified delivery.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: How many steps have completion evidence here?
 
 **Worked answer.** One. A written plan for receipt verification is not a verified delivery.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

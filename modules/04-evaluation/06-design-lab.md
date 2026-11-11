@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+An assistant can reduce the time to draft a note without reducing the time to resolve a claim. Measure from the customer's first report through the actual resolution and see where the saved time went. A before-and-after comparison can also reflect changes in case mix or staffing. Use those possibilities to decide what evidence a pilot would need.
+
 Decide whether the evidence supports a bounded pilot, further investigation or no change.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 4 business situation](../../reference/harbour-learning-journey.md#module-4)
@@ -56,21 +58,6 @@ The effect of a measured improvement depends on information, capacity, roles and
 ## Practical activity: Make a release decision conditional on more than a mean score.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Does passing the three local cases establish a real business benefit?
@@ -81,14 +68,10 @@ print(decision)
 assert not decision["business_outcome_observed"]
 ```
 
-No. An outcome comparison needs observations of the complete work, including failures and review effort.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Does passing the three local cases establish a real business benefit?
 
 **Worked answer.** No. An outcome comparison needs observations of the complete work, including failures and review effort.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

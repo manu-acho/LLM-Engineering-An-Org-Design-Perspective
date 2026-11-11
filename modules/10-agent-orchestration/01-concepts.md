@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+One worker can read dispatch and another can read policy, but a brief still needs both contributions brought together. Orchestration is the application logic that orders, starts and combines work. The two reads can run at the same time if neither needs the other's result. Combining them requires rules for missing or incompatible answers.
+
 Identify the dependency between obtaining evidence, interpreting policy and accepting a combined brief.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 10 business situation](../../reference/harbour-learning-journey.md#module-10)
@@ -19,6 +21,8 @@ Harbour now has an assistant that checks order evidence, another that reads poli
 ## Defining an agent and running it are different acts
 
 In the course, `Agent(...)` creates a configuration containing a name, instructions, a model and optional tools or other settings. `Runner.run(...)` starts a run. The runner manages the repeated model/tool interaction introduced in Module 9. A final result contains an output and other run information; it is more than a bare text string.
+
+Compare writing a job description with asking someone to handle a specific case. The configuration is like the job description: it defines what the specialist should do and what it can use. Running it supplies the case and starts the work. Inspect the returned evidence and any checks before treating the job as complete.
 
 An **SDK**, or software development kit, is reusable code that helps applications use a platform. It removes repeated implementation work. It does not decide whether a credit should be permitted, which policy version is authoritative or how a reviewer should investigate a disagreement.
 
@@ -67,21 +71,6 @@ Orchestration is assessable when the connected contributions and their dependenc
 ## Practical activity: Define the receiving contract before naming a specialist.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Which required field identifies the evidential basis?
@@ -92,14 +81,10 @@ print(Specialist.model_json_schema()["required"])
 assert "sources" in Specialist.model_json_schema()["required"]
 ```
 
-sources identifies the returned basis, whose membership and meaning still need checking.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Which required field identifies the evidential basis?
 
 **Worked answer.** sources identifies the returned basis, whose membership and meaning still need checking.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

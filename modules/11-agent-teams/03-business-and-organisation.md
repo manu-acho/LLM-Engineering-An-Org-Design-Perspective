@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+Giving agents titles such as “warehouse specialist” and “manager” divides work on paper. Integration is the work of bringing their separate results together so Harbour can resolve a case. Follow a disagreement from the two reports to the person who can settle it. The software's reporting line does not grant that person or agent authority on its own.
+
 Examine how departmental priorities and acceptance duties affect team performance.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 11 business situation](../../reference/harbour-learning-journey.md#module-11)
@@ -73,21 +75,6 @@ Separating contributions creates a need for reintegration even when all roles us
 ## Practical activity: Inspect the integration relationships created by more specialists.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 How many possible pairwise relationships are there among six participants?
@@ -99,15 +86,11 @@ print("Two participants:",possible_pairs(2))
 print("Six participants:",possible_pairs(6))
 ```
 
-Fifteen. This counts possible relationships, not measured coordination cost or a prescription that every pair must communicate.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: How many possible pairwise relationships are there among six participants?
 
 **Worked answer.** Fifteen. This counts possible relationships, not measured coordination cost or a prescription that every pair must communicate.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
 

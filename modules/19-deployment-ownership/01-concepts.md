@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+A notebook can run on demand. Deployment makes software available for other people or programs to use repeatedly. An endpoint is an address where a program accepts a particular kind of request. Follow what happens to settings and case records when the service restarts, and identify who keeps the service working.
+
 Distinguish a running local application from an operated business service.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 19 business situation](../../reference/harbour-learning-journey.md#module-19)
@@ -19,6 +21,8 @@ A request crosses several boundaries: network transport, identity resolution, in
 ## Configuration belongs outside the source code
 
 The service entry point loads COURSE_SERVICE_TOKEN from the local .env file and maps it to a fixed fictional manager principal. This is a local teaching arrangement. Generate a long random token locally, keep it out of notebooks and use it only for this application. The test suite uses clearly labelled dummy tokens and never reads a real credential.
+
+Consider moving the service from one computer to another. The programme still needs to know which credential it accepts and where it keeps case records. Keeping those settings outside the source code lets each installation supply its own values. The credential helps the service check requests. It does not preserve the database or decide who responds to a failure.
 
 A production service normally needs a managed identity and secret lifecycle, including revocation, rotation and auditable access. Environment variables are a delivery mechanism, not a complete secret-management programme. A token should not be logged simply because a request failed.
 
@@ -43,21 +47,6 @@ Use a small initial population and retain a route back to a known working config
 ## Practical activity: Read an HTTP contract before starting the server.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Which method submits a draft-preparation request?
@@ -67,14 +56,10 @@ routes=[("GET","/health","public liveness"),("GET","/cases/H-17","scoped read"),
 for route in routes:print(route)
 ```
 
-POST. A read and a command have different contracts even when both return JSON.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Which method submits a draft-preparation request?
 
 **Worked answer.** POST. A read and a command have different contracts even when both return JSON.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

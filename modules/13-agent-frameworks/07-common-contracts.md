@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+A lease gives a worker a temporary claim to a job. If the claim expires, another worker can take it. An adapter must translate that status without giving the old worker a new right to finish, just as it must preserve the difference between an unknown and a confirmed quantity. Check both meanings at the boundary.
+
 Test a contribution adapter without turning one team’s tentative claim into another team’s confirmed fact.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 13 business situation](../../reference/harbour-learning-journey.md#module-13)
@@ -74,21 +76,6 @@ An adapter that replaces unknown with a definite value changes the basis of late
 ## Practical activity: Build a small adapter that refuses an unknown status.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 What value should remain when a pending payload has no result?
@@ -102,15 +89,11 @@ print(normalise({"state":"pending"}))
 assert normalise({"state":"pending"})["value"] is None
 ```
 
-None preserves absence. It should not become an invented success or a zero-valued result.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: What value should remain when a pending payload has no result?
 
 **Worked answer.** None preserves absence. It should not become an invented success or a zero-valued result.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 ### Programming practice
 

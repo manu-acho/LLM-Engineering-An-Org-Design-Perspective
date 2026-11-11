@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+An assistant can prepare briefs faster and still leave cases unresolved if no adviser is available to accept them. Compare the drafting step, the work of reviewing evidence and the authority to resolve a claim. Fit concerns whether these parts can work together under the conditions Harbour actually faces, including queues and missing records.
+
 Assign case ownership across customer service, warehouse, transport coordination and finance.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 8 business situation](../../reference/harbour-learning-journey.md#module-8)
@@ -87,21 +89,6 @@ Workflow, roles, evidence, capacity and incentives need to be considered togethe
 ## Practical activity: Include the receiving team's work in the operating model.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 What is the total illustrative work here?
@@ -111,15 +98,11 @@ responsibilities = [{"stage":"draft","minutes":3,"owner":"application support"},
 print("Illustrative work minutes:",sum(row["minutes"] for row in responsibilities))
 ```
 
-Twenty-three minutes. This does not include waiting and is not measured operating evidence.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: What is the total illustrative work here?
 
 **Worked answer.** Twenty-three minutes. This does not include waiting and is not measured operating evidence.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
 

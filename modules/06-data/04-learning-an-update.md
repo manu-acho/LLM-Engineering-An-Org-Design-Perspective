@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+Think of a rule that initially gives the word “invoice” little influence on a routing decision. If it makes a mistake on an example with that word, a training update can change a numerical value so the word has more influence next time. Follow one update before comparing errors. Improving an example used for training does not show the same improvement on new cases.
+
 A numerical optimisation example explains fitting. Its loss is not a measure of customer resolution.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 6 business situation](../../reference/harbour-learning-journey.md#module-6)
@@ -61,18 +63,6 @@ A gradient describes how the loss changes locally with a parameter. A learning r
 
 `**` raises a number to a power in arithmetic. In a function call or dictionary expression the same characters can unpack named values; their meaning depends on the surrounding syntax.
 
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 What is the weight after the first update?
@@ -91,15 +81,11 @@ assert history[0]["gradient"] == -10.0
 assert weight == 1.875
 ```
 
-One. The initial gradient is minus ten, and subtracting 0.1 times that gradient increases the weight from zero to one.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: What is the weight after the first update?
 
 **Worked answer.** One. The initial gradient is minus ten, and subtracting 0.1 times that gradient increases the weight from zero to one.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 ### Programming practice
 

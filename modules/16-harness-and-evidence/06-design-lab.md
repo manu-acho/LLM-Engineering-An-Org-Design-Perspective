@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+Suppose Harbour can see a slow run but cannot tell which instruction produced it or whether it finished. Decide what evidence is missing before recommending a change to the service. Recording run details is useful only if someone can interpret them and act on the result.
+
 Connect a technical incident to affected cases without declaring every case resolved when the service recovers.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 16 business situation](../../reference/harbour-learning-journey.md#module-16)
@@ -43,21 +45,6 @@ A strong response defines unfamiliar terms, names the relevant owner rather than
 ## Practical activity: Define an operational review from recorded failures and work outcomes.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Does an execution trace alone show why the whole organisation improved?
@@ -67,14 +54,10 @@ review={"execution":["stop reason","duration","source version"],"work":["rework"
 print(review)
 ```
 
-No. It records selected operations; organisational consequences require observations at the appropriate task boundary.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Does an execution trace alone show why the whole organisation improved?
 
 **Worked answer.** No. It records selected operations; organisational consequences require observations at the appropriate task boundary.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+Two versions of the same brief can use the same model while organising their steps differently. A framework supplies reusable ways to run application work; a protocol sets rules for systems to communicate; an adapter translates between interfaces. Follow one input and output through each version so the comparison is about what the software actually does.
+
 Separate the framework’s execution facilities from Harbour’s business acceptance contract.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 13 business situation](../../reference/harbour-learning-journey.md#module-13)
@@ -21,6 +23,8 @@ The course's fifth week deliberately repeats a small board-and-file task across 
 ## Separate model, framework, protocol and application
 
 A **model** generates predictions or text. A **framework** supplies reusable machinery for tools, loops, messages and other runtime behaviour. A **protocol** defines how components exchange particular kinds of requests and responses. An **application** combines those parts with a user-facing purpose and operating controls.
+
+In a draft-brief service, the model writes text. The framework can run a lookup and then pass its result to the next step. A protocol can define how the lookup request and response are exchanged. Harbour's application decides which case the caller may see and shows the answer to the adviser. Changing how requests travel should not change the case access rule.
 
 Changing the framework does not necessarily change the model. Two frameworks can call the same model with different prompts or tool descriptions, producing different results for reasons unrelated to the framework's scheduler. Likewise, a protocol can connect components built with different frameworks without making their business meanings agree.
 
@@ -81,21 +85,6 @@ Framework selection should consider local data, roles, controls and maintenance 
 ## Practical activity: State invariants independently of a framework name.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Should changing the runtime silently change remedy authority?
@@ -105,14 +94,10 @@ contract={"same_case":True,"source_ids_retained":True,"uncertainty_retained":Tru
 print(contract)
 ```
 
-No. The business contract should remain explicit across implementations.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Should changing the runtime silently change remedy authority?
 
 **Worked answer.** No. The business contract should remain explicit across implementations.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+Start by watching a disputed delivery move between customer service, warehouse and finance. An integration plan explains which step the application will help with and how the result reaches the next person. Choose one contribution, such as a draft with source labels, before choosing the technology or promising faster resolution.
+
 Distinguish discovery, identity, access permission and remedy authority.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 14 business situation](../../reference/harbour-learning-journey.md#module-14)
@@ -97,21 +99,6 @@ Integration planning should connect task scope, information, roles, rights and c
 ## Practical activity: Preserve source and status in an integration contract.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Which output supports tracing a returned claim?
@@ -122,14 +109,10 @@ assert "source_ids" in contract["outputs"]
 print(contract)
 ```
 
-source_ids preserves its origin, though provenance alone does not establish truth.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Which output supports tracing a returned claim?
 
 **Worked answer.** source_ids preserves its origin, though provenance alone does not establish truth.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

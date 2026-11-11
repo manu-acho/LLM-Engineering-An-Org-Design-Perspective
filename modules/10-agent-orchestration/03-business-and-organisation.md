@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+A manager agent can finish sending a referral while the receiving team has not agreed to take it. Distinguish sending a message from accepting ownership. Identify what the receiving team needs, how it indicates acceptance and who follows up if no one accepts.
+
 Decide who accepts or returns incomplete work at the customer-service-to-investigation boundary.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 10 business situation](../../reference/harbour-learning-journey.md#module-10)
@@ -71,21 +73,6 @@ Routing makes assignment visible without establishing accepted ownership. The re
 ## Practical activity: Require acceptance by a receiving role, not just successful delivery.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Has a receiving team accepted this contribution?
@@ -96,15 +83,11 @@ print(handoff)
 assert handoff["accepted_by"] is None
 ```
 
-No. Delivery and accepted ownership are separate events.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Has a receiving team accepted this contribution?
 
 **Worked answer.** No. Delivery and accepted ownership are separate events.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
 

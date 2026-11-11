@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+Imagine the service stops returning cases on Monday morning. The support team needs to know where to check, who can restore it and who tells advisers what to do meanwhile. Work through those decisions as part of the handover rather than assuming that releasing the software settles them.
+
 Assign continuing service, case and source ownership after a release.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 19 business situation](../../reference/harbour-learning-journey.md#module-19)
@@ -43,21 +45,6 @@ The decision also specifies retirement. When a source or model becomes unsupport
 ## Practical activity: Distinguish a process health response from a service outcome.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Does the responding process establish readiness for policy-supported work?
@@ -67,15 +54,11 @@ evidence={"process_responds":True,"policy_source_available":False,"customer_reso
 print(evidence)
 ```
 
-No. Readiness must account for the dependencies required by the declared task.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Does the responding process establish readiness for policy-supported work?
 
 **Worked answer.** No. Readiness must account for the dependencies required by the declared task.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
 

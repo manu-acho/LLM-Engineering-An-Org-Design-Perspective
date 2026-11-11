@@ -4,6 +4,8 @@
 
 ## Business context: Harbour
 
+If an adviser clicks twice after a slow response, Harbour should not record two decisions. A retry is a repeated attempt after an uncertain result. In the local simulation, follow the identifier that tells the program it has already handled that command, and distinguish it from the version number used to tell whether the case has changed.
+
 Inspect the case state and evidence needed before a contribution can enter review.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 8 business situation](../../reference/harbour-learning-journey.md#module-8)
@@ -11,20 +13,7 @@ Inspect the case state and evidence needed before a contribution can enter revie
 ## Practical activity: Commit a versioned simulated decision exactly once in the local database.
 
 
-
 A `with` block manages a resource lifetime. The indented operations run while the resource is open; cleanup follows when the block exits.
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
 
 ### Predict and follow the values
 
@@ -43,15 +32,11 @@ with TemporaryDirectory() as directory:
     print(first)
 ```
 
-Version two. The identical retry retrieves the first result rather than adding another decision.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Which version should the committed result contain?
 
 **Worked answer.** Version two. The identical retry retrieves the first result rather than adding another decision.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.

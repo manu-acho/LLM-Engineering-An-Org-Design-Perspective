@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+Imagine one specialist checking dispatch and another checking the delivery report. A role specifies the kind of contribution expected; a task asks for a particular piece of work. A dependency appears if one task needs another task's result. Draw those relationships for the case before deciding who or what should coordinate the work.
+
 Distinguish shared-resource, sequential and reciprocal dependencies in the investigation.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 11 business situation](../../reference/harbour-learning-journey.md#module-11)
@@ -19,6 +21,8 @@ Frameworks can describe agents, tasks and the process connecting them. This modu
 ## An agent role is a configuration
 
 An agent configuration can describe a role, goal, background instructions, model and tools. “Researcher” helps express the intended contribution. The name does not supply expertise or independent knowledge by itself. Two differently named agents can use the same model and repeat the same misconception.
+
+The warehouse specialist can read the dispatch record without waiting for the policy specialist. A third task that combines both reports must wait for both. That is the division of work. The next design question is what the combined report should do if one specialist returns nothing or the two reports use “received” differently.
 
 A **task** describes work to be done and the output expected. The task may specify which agent handles it, which earlier results it needs and where the result should be written. Separating agent and task lets a reusable capability serve several activities without making every activity a new software persona.
 
@@ -69,21 +73,6 @@ Agent role names do not establish independence among the tasks they perform. The
 ## Practical activity: Read a dependency graph as a proposed division of work.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Which two contributions must precede compare?
@@ -94,14 +83,10 @@ tasks={"records":[],"policy":[],"compare":["records","policy"],"review":["compar
 print(order_tasks(tasks))
 ```
 
-records and policy must both be available. The graph does not establish that people accepted those responsibilities.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Which two contributions must precede compare?
 
 **Worked answer.** records and policy must both be available. The graph does not establish that people accepted those responsibilities.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+A model may return a useful draft while the surrounding software takes three attempts or exceeds the agreed cost. The harness is the code that runs the task and records what happened around the model. Follow one run from start to outcome and separate model time from the time the service took overall.
+
 Identify which execution events help explain a failed business contribution.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 16 business situation](../../reference/harbour-learning-journey.md#module-16)
@@ -19,6 +21,8 @@ At Harbour, a run begins with a case and a permitted scope. It may retrieve poli
 ## Give operational evidence a structure
 
 A **trace** connects observations about steps within an execution. A run identifier groups events; a parent-child relationship can connect a model request to a tool call; a timestamp locates them in time. A **span** usually describes one bounded operation. These are useful representations, but they must be interpreted according to what was actually instrumented.
+
+Imagine one run starts at 10:00:00, calls the lookup and finishes at 10:00:03. The run identifier ties the events together. A span for the lookup describes just that operation, so its duration is not automatically the duration of the whole run. If no span was recorded for review, the trace cannot tell how long a person spent reviewing the draft.
 
 Record the configuration identity, case reference, step category, duration, result category and stopping reason. Configuration identity should cover the instructions, tool schema, model revision and relevant policy or index version. A hash detects whether supplied bytes changed; it does not explain their meaning or certify that the configuration was approved.
 
@@ -45,21 +49,6 @@ Logs describe the instrumented path. A missing event could mean a path was not t
 ## Practical activity: Give a run a stable identity and retain its instruction version.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Does the hash certify the instruction is appropriate?
@@ -71,14 +60,10 @@ record={"run":"learning-run","instruction_hash":fingerprint(instructions),"case"
 print(record)
 ```
 
-No. It identifies the supplied bytes; quality and approval need other evidence.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Does the hash certify the instruction is appropriate?
 
 **Worked answer.** No. It identifies the supplied bytes; quality and approval need other evidence.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

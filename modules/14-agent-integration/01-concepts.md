@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+An assistant needs a way to discover how to read Harbour's case records. Model Context Protocol (MCP) gives connected software common rules for describing and requesting capabilities. The host is the application using the connection; its client exchanges messages with the server that offers the capability. Harbour still decides who may read or change a case.
+
 Explain the business capability behind a discoverable case or policy tool.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 14 business situation](../../reference/harbour-learning-journey.md#module-14)
@@ -19,6 +21,8 @@ The organisational opportunity is reuse: a maintained interface can serve severa
 ## Host, client and server
 
 An MCP **host** is the AI application managing the interaction. A **client** handles communication with a particular server. A **server** exposes capabilities such as tools or resources. The model may propose using a capability, but the surrounding runtime and service perform the actual operation.
+
+In a case lookup, the host is the assistant application. Its client asks a server what operations are available. The server describes a lookup and, when a permitted request arrives, returns the record. This shows the purpose of the connection. It does not give the assistant a right to see another region or grant a credit.
 
 The [architecture overview](https://modelcontextprotocol.io/docs/learn/architecture) explains these roles. The course shows concrete SDK connections rather than requiring us to implement protocol messages by hand. When diagnosing a failure, distinguish the model's choice, the client's request, the server's operation and the underlying business system's response.
 
@@ -71,20 +75,7 @@ Discovering an available capability does not establish a mandate for its busines
 ## Practical activity: Discover actual MCP tools before invoking one.
 
 
-
 `await` waits for an asynchronous operation. In these notebooks it can appear at the top level; an ordinary script needs an asynchronous entry point. It does not mean the business task has been accepted or resolved.
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
 
 ### Predict and follow the values
 
@@ -97,14 +88,10 @@ print("Discovered:",result["tools"])
 assert "read_case" in result["tools"]
 ```
 
-No. The backing service still enforces its scope.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Does discovery itself grant access to every region?
 
 **Worked answer.** No. The backing service still enforces its scope.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

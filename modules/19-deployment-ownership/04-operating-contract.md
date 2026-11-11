@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+An operating contract for a deployed service describes which requests it accepts, what each response promises and what happens to stored work after a restart. Trace a case read or review through that contract. A successful response is useful only if the caller can tell what has actually happened.
+
 Define fallback, incident escalation and retirement before expanding access.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 19 business situation](../../reference/harbour-learning-journey.md#module-19)
@@ -40,25 +42,10 @@ Identify what must be added before the local token-based teaching application ca
 
 **Worked answer.** The deployment needs an appropriate identity provider and credential lifecycle, HTTPS termination, persistent storage with backup and restore tests, least-privilege networking, secret management, monitoring, quotas, updates and accountable support. Multi-tenant isolation needs broader tests than these two fictional scopes. A successful local request proves only the exercised route, not the full deployment design.
 
-Carry that answer into the design record: required input, permitted contribution, acceptance owner, escalation trigger, recovery route and evidence for any benefit claim. A design record describes the proposed arrangement. Repeated observation and outcome comparisons are needed to examine what it becomes in practice.
+Carry that answer into the design record: required input, permitted contribution, acceptance owner, escalation trigger, recovery route and evidence for any benefit claim. The design record describes who will do the work and what rules they will follow. Observing actual cases shows whether those roles and rules work as planned.
 
 ## Practical activity: Inspect a release record for data compatibility and recovery.
 
-
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
 
 ### Predict and follow the values
 
@@ -69,14 +56,10 @@ release={"code_version":"learning-release","dependency_lock":"uv.lock","database
 print(release)
 ```
 
-No. Data compatibility and recovery must be planned and tested separately.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Does a code rollback automatically undo an incompatible data migration?
 
 **Worked answer.** No. Data compatibility and recovery must be planned and tested separately.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

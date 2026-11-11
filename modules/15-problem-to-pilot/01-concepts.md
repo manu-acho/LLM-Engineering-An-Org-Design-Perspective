@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+If advisers spend time hunting for dispatch and carrier records, start with that delay rather than deciding in advance to deploy an agent. A pilot tries a limited change under conditions that can be studied. A vertical slice connects a small example from start to finish, including the handoff and review, so it can reveal where the proposed service still fails.
+
 Turn the customer-service problem into a bounded pilot question with affected roles and excluded cases.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 15 business situation](../../reference/harbour-learning-journey.md#module-15)
@@ -21,6 +23,8 @@ A **requirement** states a behaviour or condition the service must satisfy. “U
 ## Make success concrete before writing the implementation
 
 An **acceptance example** supplies a particular input, expected result and reason. It translates a general requirement into something that can be checked. The local lab includes a discrepancy, a forbidden scope and a missing source. These examples are deliberately small enough to inspect by hand. They are not a representative evaluation population.
+
+“Handle delivery discrepancies” is too broad to check. Give the first prototype H-17 and ask for both source-labelled quantities and an unresolved receipt status. Then give it a case with no dispatch number. Decide in advance how missing evidence should appear. Passing both checks helps Harbour decide whether the proposed contribution is worth trying with advisers.
 
 Requirements also need negative examples. If the expected result is only a polished brief, a system can appear successful while inventing a source or failing to deny access. Negative cases state what the service must refuse, preserve or leave unresolved. Acceptance examples should record the agreed response to ambiguity, not silently turn ambiguity into a convenient label.
 
@@ -43,21 +47,6 @@ The supplied implementation is already written and can be studied without purcha
 ## Practical activity: Turn an observed delay into a bounded problem statement.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Does the problem statement require an autonomous remedy decision?
@@ -67,14 +56,10 @@ problem={"work":"delivery investigation","difficulty":"records are scattered","p
 print(problem)
 ```
 
-No. It specifies a bounded contribution and an exclusion.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Does the problem statement require an autonomous remedy decision?
 
 **Worked answer.** No. It specifies a bounded contribution and an exclusion.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+A brief can put warehouse, carrier and customer evidence side by side. Someone still has to ask for missing information and decide when the evidence is sufficient. A dependency arises when one person's work needs a contribution from someone else. Here, the adviser needs the carrier's account before promising a resolution. Compare who requests that contribution, who receives it and who acts if it never arrives.
+
 Warehouse, carrier, customer service and finance have different contributions. Identify who accepts the investigation and who may authorise a remedy.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 1 business situation](../../reference/harbour-learning-journey.md#module-1)

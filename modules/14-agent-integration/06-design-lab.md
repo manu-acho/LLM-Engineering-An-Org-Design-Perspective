@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+The proposal is a worked decision. Read it first for which cases are in scope and what Harbour does about them today. Then compare the chosen design with the alternatives and ask what result would justify changing course. A working prototype is one piece of the argument.
+
 Specify a capability boundary and a failure response the receiving investigation can use.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 14 business situation](../../reference/harbour-learning-journey.md#module-14)
@@ -83,21 +85,6 @@ A proposal needs a defined population, comparator, roles and outcome measures. T
 ## Practical activity: Make acceptance and escalation part of the integration proposal.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Does a transport success decide the customer outcome?
@@ -107,14 +94,10 @@ proposal={"accepted_by":"investigator","review_limit":"requires current case and
 print(proposal)
 ```
 
-No. Acceptance, investigation and remedy authority remain explicit work.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Does a transport success decide the customer outcome?
 
 **Worked answer.** No. Acceptance, investigation and remedy authority remain explicit work.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

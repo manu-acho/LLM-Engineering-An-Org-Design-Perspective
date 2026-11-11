@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+Harbour can show the model one example of a good brief in each request, find the current policy for that request, or train it further on examples of the desired brief. Fine-tuning is the third option: it changes learned values in the model or adds trainable values used alongside it. First diagnose whether the failure is a missing fact or a repeated behaviour before choosing what to change.
+
 Decide whether the problem calls for a clearer rule, retrieval, prompting or model adaptation.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 7 business situation](../../reference/harbour-learning-journey.md#module-7)
@@ -19,6 +21,8 @@ It is not evidence that fine-tuning will help. Compare it with simpler intervent
 ## Prompting, retrieval and fine-tuning
 
 Prompting changes instructions or examples supplied at inference time. Retrieval changes which evidence is supplied. Fine-tuning changes learned parameters in the model or an attached adaptation.
+
+Three failures suggest different repairs. If the brief has the right facts but omits the requested headings, try making the instruction clearer. If it uses an expired rule, fix which policy is supplied. If the desired writing behaviour remains unreliable across many correctly supplied examples, further training may be worth comparing. In all three cases, reuse the same test cases so the comparison shows which failure changed.
 
 If the current credit threshold changes every month, retrieval or a business tool usually gives a clearer evidence/update route than trying to encode each value in parameters. If the model repeatedly struggles to apply a stable classification scheme, adaptation may be worth testing. These are diagnostic tendencies, not universal rules.
 
@@ -67,21 +71,6 @@ Model specialisation cannot by itself settle whether its categories suit the wor
 ## Practical activity: Compare the parameter count of full and low-rank changes.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 How many trainable entries are in the two low-rank tables?
@@ -94,14 +83,10 @@ print({"full_update":full,"low_rank_update":low_rank})
 assert low_rank < full
 ```
 
-1024. The saving depends on dimensions; the two-by-two toy does not itself demonstrate a storage saving.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: How many trainable entries are in the two low-rank tables?
 
 **Worked answer.** 1024. The saving depends on dimensions; the two-by-two toy does not itself demonstrate a storage saving.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

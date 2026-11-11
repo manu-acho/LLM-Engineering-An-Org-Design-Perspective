@@ -6,6 +6,12 @@
 
 Begin with [Meet Harbour](HARBOUR.md), the fictional packaging distributor that connects the course. Follow its goods, information and money flows, then examine how customer service, warehouse operations, transport and finance depend on one another. The [Harbour learning journey](reference/harbour-learning-journey.md) explains the design question carried forward by each module.
 
+## Start without running any code
+
+Read [Lesson 1.1](modules/01-standalone-foundations/01-model-and-application.md) first. It explains how a next-word suggestion works and why the same skill does not tell Harbour whether a shipment arrived. The worked questions are on the page. No account, API key or software installation is needed to answer them.
+
+The first programming lesson starts with a subtraction and explains each line. Open its notebook when ready to run it; there is no need to understand the setup cell before starting. In a later workshop, read the example, predict one result, then use the code to check the prediction. Live calls add evidence about an actual model once the local setup is ready.
+
 ## Begin with one case
 
 An order records twelve boxes. A customer reports ten. The course follows the preparation, investigation and review of that discrepancy while explaining what AI can contribute and how the surrounding work should be designed. Other examples explore meeting records and request routing; the [case guide](reference/case-data-guide.md) explains their relationship.

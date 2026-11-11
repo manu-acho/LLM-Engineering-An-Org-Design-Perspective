@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+A fixed workflow can always look up an order before preparing a note. An agent can select the next permitted step based on the information returned so far. If the agent can ask for a carrier record, that does not entitle it to issue a credit. List which steps the software can take and which decisions Harbour still assigns to a person.
+
 Locate the proposed assistant within Harbour’s customer-to-resolution work rather than treating it as the whole service.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 8 business situation](../../reference/harbour-learning-journey.md#module-8)
@@ -19,6 +21,8 @@ The term is used broadly. In this curriculum, inspect the actual control: what o
 ## Fixed workflows and model-selected steps
 
 A **fixed workflow** might always gather an order, retrieve policy, check required evidence and draft a handoff. Python specifies the order. A model can still interpret text at a bounded stage.
+
+Suppose dispatch has a record but the carrier does not. One fixed design can always check both sources. An agent can choose whether the second lookup is useful after seeing the first result, subject to the application's rules. Both designs must stop short of a credit when Harbour has only granted permission to read. The difference is who chooses the next step, not who owns the final decision.
 
 An **agent loop** can ask a model to choose among permitted tools repeatedly. Its next action depends on what it has observed. That flexibility may be useful when requests genuinely require different paths. It also expands the possible sequences you must test and supervise.
 
@@ -73,21 +77,6 @@ The agent's contribution must be connected to the other contributions needed for
 ## Practical activity: Map a technical contribution to an operating responsibility.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Who corrects the authoritative source in this proposal?
@@ -98,14 +87,10 @@ for activity, owner in activities.items():
     print(activity, "->", owner)
 ```
 
-The record owner. A fluent application response is not a source correction.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Who corrects the authoritative source in this proposal?
 
 **Worked answer.** The record owner. A fluent application response is not a source correction.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

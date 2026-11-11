@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+To teach a program to send complaints to the right team, start with examples of complaints and the destinations they should go to. A feature is a piece of information the program can use, such as whether a message contains “invoice”. The target is what it is trying to predict, such as “Finance”. Before fitting anything, check who chose those destinations and whether they describe the future task.
+
 Explain the work assigned by a routing label before representing it as training data.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 6 business situation](../../reference/harbour-learning-journey.md#module-6)
@@ -19,6 +21,8 @@ A dataset can contain a clear column called `assigned_team` while leaving that q
 ## Examples, features and targets
 
 An **example** is one case used for learning or evaluation. Its **input features** are the information available for prediction. Its **target**, often called a label, is what the model is supposed to predict.
+
+For “My invoice lists two extra boxes”, the message is the example's input. The presence of “invoice” is one possible feature. If the agreed route is Finance, “Finance” is the target for this example. For a new message the program has the features, but it does not yet have the target. The predicted team is its attempt to supply that missing answer.
 
 For routing, the request description is an input and the desired team is a categorical target. This is **classification**, selecting a category. Predicting an estimated price is **regression**, predicting a numerical quantity. The difference matters: a price error of £10 and a request assigned to the wrong team require different ways of measuring error.
 
@@ -71,21 +75,6 @@ A label supplies a category through which subsequent cases become recognisable. 
 ## Practical activity: Separate a message, its historical label and the meaning of that label.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Are first_team and final_owner necessarily the same target?
@@ -96,14 +85,10 @@ print(rows[0])
 assert rows[0]["first_team"] != rows[0]["final_owner"]
 ```
 
-No. Their operational meanings must be decided before fitting a predictor.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Are first_team and final_owner necessarily the same target?
 
 **Worked answer.** No. Their operational meanings must be decided before fitting a predictor.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

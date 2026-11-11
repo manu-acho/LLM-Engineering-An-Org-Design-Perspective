@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+An adviser might check dispatch first, then look for carrier evidence if it is missing. An agent loop repeats a similar cycle: choose a permitted step, check and run it, inspect what came back, then decide whether to stop or continue. The tool's result becomes part of the information used for the next choice.
+
 Explain what the agent may contribute and when it must return control to the investigator.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 9 business situation](../../reference/harbour-learning-journey.md#module-9)
@@ -21,6 +23,8 @@ Module 8 introduced bounded workflows. Here we open the loop itself and examine 
 ## Four parts of the loop
 
 A **goal** states what is being attempted. **Context** supplies the information available now. A **tool** exposes a particular operation, such as retrieving an order. **Control flow** determines what happens after a model response.
+
+For H-17, the goal might be “prepare a brief with sources”. The initial context contains the question and case identifier. The model requests a lookup. The application checks the request and runs the lookup if permitted. The record comes back as new context. If it lacks proof of delivery, the next decision is whether another allowed lookup would help or the brief should say that the proof is missing.
 
 Suppose the model requests `lookup_order` with order ID `O-17`. The application checks that the name is permitted, the argument has the expected form and the current user may read that record. It calls the function and returns the result as a tool message. The model can then use that evidence in its next response.
 
@@ -67,21 +71,6 @@ The application bounds available steps while organisational authority remains a 
 ## Practical activity: Observe the difference between a scripted planner and a model proposal.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Was scripted_planner a live language model?
@@ -93,14 +82,10 @@ print(result)
 assert result["stop"] == "final"
 ```
 
-No. It is controlled code that makes the loop repeatable for tests. The live activity replaces the planner, not the application checks.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Was scripted_planner a live language model?
 
 **Worked answer.** No. It is controlled code that makes the loop repeatable for tests. The live activity replaces the planner, not the application checks.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

@@ -4,27 +4,14 @@
 
 ## Business context: Harbour
 
+If a release turns out to be worse, rollback restores a previously selected version. It should not rewrite what that version was or erase the record of the release. Follow what was measured before promotion and what remains available to restore the service.
+
 Trace proposal, promotion and rollback without treating a candidate as already in use.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 20 business situation](../../reference/harbour-learning-journey.md#module-20)
 
 ## Practical activity: Keep a rollback target without rewriting immutable versions.
 
-
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
 
 ### Predict and follow the values
 
@@ -42,15 +29,11 @@ with TemporaryDirectory() as directory:
     print("Rollback target selected:",registry.rollback(human_approved=True))
 ```
 
-No. It changes the selected configuration; external consequences require reconciliation.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Does rollback unsend a customer message already delivered?
 
 **Worked answer.** No. It changes the selected configuration; external consequences require reconciliation.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.

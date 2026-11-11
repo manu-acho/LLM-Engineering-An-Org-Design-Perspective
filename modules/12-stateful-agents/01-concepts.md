@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+A claim may wait overnight for a human decision. The next day, the program needs a saved account of what it knows and where the work stopped. That account is state. A graph describes the steps and paths between them; a checkpoint saves state at a boundary where work can later continue. Follow the case from drafting to the point it waits for review.
+
 Explain which information must survive a pause and which conditions must be checked again.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 12 business situation](../../reference/harbour-learning-journey.md#module-12)
@@ -19,6 +21,8 @@ Harbour's assistant has gathered evidence and prepared a proposal. Finance canno
 ## Graphs connect functions and decisions
 
 LangGraph represents work through nodes and edges. A **node** performs a step and returns state updates. An **edge** connects steps. A **conditional edge** chooses a route based on the current result, such as returning from a tool to the model or sending an incomplete case for clarification.
+
+On paper the path could be “prepare brief → check evidence → request review”. A failed evidence check could instead take the case to “ask for clarification”. Those steps are nodes; the arrows are edges. At review, record the case identifier and draft in saved state. The next day's run needs both the stored facts and the point where work stopped.
 
 A node need not call a model. The course begins with a graph producing a simple sentence, then adds model calls, tools and memory. This order exposes the underlying scheduling pattern before introducing probabilistic behaviour.
 
@@ -71,21 +75,6 @@ Saved state preserves selected information rather than the entire situation in w
 ## Practical activity: Distinguish a current in-memory view from durable state.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Does reopening this database require keeping the first Python object alive?
@@ -101,14 +90,10 @@ with TemporaryDirectory() as directory:
     print(reopened.read("H-17","north"))
 ```
 
-No. The file persists the case independently of that object.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Does reopening this database require keeping the first Python object alive?
 
 **Worked answer.** No. The file persists the case independently of that object.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+Suppose Harbour changes an instruction to preserve the word “reported” in more briefs. The candidate is the proposed version; promotion makes it the version the service uses. Evaluate the candidate on cases that did not guide its design and decide beforehand what it must improve without making other outcomes worse.
+
 Explain which changes a governed improvement process may propose and who may approve them.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 20 business situation](../../reference/harbour-learning-journey.md#module-20)
@@ -19,6 +21,8 @@ Harbour's candidate might preserve source labels more consistently. That is a te
 ## Separate proposal from promotion
 
 A model or coding agent can propose a change without holding the authority to release it. A proposal may include a diff, rationale, expected effect and a test plan. Promotion is the decision to make a candidate the active configuration for a defined population. That decision should identify who accepts the risks and how operation will be monitored.
+
+A new instruction is tested because the old one sometimes turns “reported” into “confirmed”. The proposed instruction remains a candidate while the tests run. Even if it improves that result, Harbour should check what happened to other required behaviours. Only after the stated checks and an authorised decision does it become the active version.
 
 The gate function embodies a small declared policy: comparable cases, no increase in unsafe outcomes, no accuracy decrease, cost within an agreed tolerance and explicit human approval. These thresholds are teaching choices. They are not universal business rules or a substitute for an appropriate statistical analysis.
 
@@ -43,21 +47,6 @@ The capstone therefore joins the technical service and its operating model. A de
 ## Practical activity: Separate a configuration proposal from the active version.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Which version remains active after a proposal is recorded?
@@ -73,14 +62,10 @@ with TemporaryDirectory() as directory:
     assert registry.read()["current"]=="baseline"
 ```
 
-baseline. Recording a proposed change does not release it.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Which version remains active after a proposal is recorded?
 
 **Worked answer.** baseline. Recording a proposed change does not release it.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

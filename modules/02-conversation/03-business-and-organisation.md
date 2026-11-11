@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+There are three different acts when a customer asks for credit: suggesting it, approving it and changing the account. A decision premise is a starting point for a decision, such as the policy that says which claims require proof of delivery. Identify who sets that policy before assigning any of the three acts to the assistant or a person.
+
 Drafting an explanation and authorising a replacement or credit belong to different business decisions.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 2 business situation](../../reference/harbour-learning-journey.md#module-2)
@@ -81,21 +83,6 @@ A technical entitlement does not by itself establish an organisational mandate. 
 ## Practical activity: Distinguish a read, a proposed remedy and permission to decide.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Which role in this fictional arrangement holds the decide right?
@@ -107,15 +94,11 @@ assert "decide" in rights["manager"]
 print(rights)
 ```
 
-The manager holds the stated right. A model writing manager in its output does not acquire that role.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Which role in this fictional arrangement holds the decide right?
 
 **Worked answer.** The manager holds the stated right. A model writing manager in its output does not acquire that role.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
 

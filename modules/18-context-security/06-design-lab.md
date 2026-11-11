@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+Work through a case where a reviewer has the right regional access but is about to apply yesterday's policy. Decide what evidence should block the decision, who maintains the current policy and what the adviser should do next. A successful access check alone does not justify the decision.
+
 Design controlled context reuse without turning stale information into shared certainty.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 18 business situation](../../reference/harbour-learning-journey.md#module-18)
@@ -43,21 +45,6 @@ A strong response defines unfamiliar terms, names the relevant owner rather than
 ## Practical activity: Match a threat to a concrete boundary and responsible owner.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Does any single listed check establish comprehensive security?
@@ -67,14 +54,10 @@ controls={"wrong region":"scope check","invented source":"evidence contract","st
 print(controls)
 ```
 
-No. Each has a stated scope, and deployment, credentials, operations and untested attacks need additional controls.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Does any single listed check establish comprehensive security?
 
 **Worked answer.** No. Each has a stated scope, and deployment, credentials, operations and untested attacks need additional controls.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

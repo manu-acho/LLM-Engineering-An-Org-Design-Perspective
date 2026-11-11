@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+A record that only says “failed” gives Harbour little idea who should investigate. A trace is a record of steps and results. Decide which fields would let support distinguish a missing carrier record from a provider failure and how that evidence should reach the team able to fix it.
+
 Balance operational visibility with confidentiality and an investigator’s need to challenge an output.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 16 business situation](../../reference/harbour-learning-journey.md#module-16)
@@ -43,21 +45,6 @@ The judgement asks whether a specific correction is warranted and who can carry 
 ## Practical activity: Route feedback to the intervention it actually requires.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Who investigates the execution failure in this proposal?
@@ -67,15 +54,11 @@ feedback={"wrong source":"record owner","execution failure":"engineering owner",
 print(feedback)
 ```
 
-engineering owner. A prompt edit should not be the automatic response to every kind of feedback.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Who investigates the execution failure in this proposal?
 
 **Worked answer.** engineering owner. A prompt edit should not be the automatic response to every kind of feedback.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
 

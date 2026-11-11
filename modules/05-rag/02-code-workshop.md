@@ -4,27 +4,14 @@
 
 ## Business context: Harbour
 
+An old policy can contain exactly the right search words and still be the wrong policy to use. Filtering removes candidates that fail rules such as access or date. Ranking orders the candidates that remain by relevance. In the lab, track one excluded document and one returned document; the best match among eligible records may differ from the best match before filtering.
+
 Filter for permitted region and current policy before using textual similarity to select passages.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 5 business situation](../../reference/harbour-learning-journey.md#module-5)
 
 ## Practical activity: Follow filtering and lexical ranking into the returned evidence.
 
-
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
 
 ### Predict and follow the values
 
@@ -38,15 +25,11 @@ print([(hit["id"], hit["score"]) for hit in hits])
 assert all(hit["active"] and hit["tenant"] == "north" for hit in hits)
 ```
 
-north. Filtering after a global shortlist could discard forbidden hits without recovering the best permitted evidence.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Which tenant should every result belong to?
 
 **Worked answer.** north. Filtering after a global shortlist could discard forbidden hits without recovering the best permitted evidence.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 ### Programming practice
 

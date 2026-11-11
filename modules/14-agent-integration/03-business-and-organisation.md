@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+Several assistants might rely on the same case lookup. When a field changes, those teams need someone to explain the change and respond if their work breaks. Name the service owner and describe what the lookup promises, who may use it and how that promise is maintained.
+
 Assign responsibility for capability scope, source quality and recipients of failed results.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 14 business situation](../../reference/harbour-learning-journey.md#module-14)
@@ -75,21 +77,6 @@ A reusable service needs ownership for change, support and recovery after launch
 ## Practical activity: Identify who owns a failed or disputed shared capability.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Who maintains the shared capability in this proposal?
@@ -99,15 +86,11 @@ service={"capability":"read_case","service_owner":"case platform","data_owner":"
 print(service)
 ```
 
-case platform is the named service owner; source corrections remain a separate responsibility.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Who maintains the shared capability in this proposal?
 
 **Worked answer.** case platform is the named service owner; source corrections remain a separate responsibility.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
 

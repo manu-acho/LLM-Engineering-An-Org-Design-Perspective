@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+Two teams can both return a field named “received” while one uses a customer's report and the other uses a verified count. An interface standard can align the field names. The teams still need an agreement about what goes into the field and who maintains that agreement.
+
 Identify the operational work that remains when an implementation changes runtime.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 13 business situation](../../reference/harbour-learning-journey.md#module-13)
@@ -73,21 +75,6 @@ A common interface can transfer values while leaving their meaning or ownership 
 ## Practical activity: Preserve unknowns when normalising results across teams.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Should a missing value be converted to zero to fit a common interface?
@@ -99,15 +86,11 @@ print(normalised)
 assert normalised["value"] is None
 ```
 
-No. That would create a factual claim and lose the missing-evidence condition.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Should a missing value be converted to zero to fit a common interface?
 
 **Worked answer.** No. That would create a factual claim and lose the missing-evidence condition.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
 

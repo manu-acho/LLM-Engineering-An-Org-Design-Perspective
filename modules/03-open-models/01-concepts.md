@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+With a hosted model, the application sends a request to a service that runs the model elsewhere. To run a model locally, the computer needs a way to turn text into numbers, the learned numbers that define the model, and software to carry out the calculations. The lesson calls these the tokenizer, weights and runtime. Follow the same short input through each before comparing computer memory requirements.
+
 Compare the responsibilities and resource needs of running a model locally with using a provider for investigation preparation.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 3 business situation](../../reference/harbour-learning-journey.md#module-3)
@@ -19,6 +21,8 @@ For Harbour's meeting-note application, the distinction is practical. A founder 
 ## Weights, tokenizer and runtime
 
 **Weights** are learned numerical parameters. A model's architecture specifies how operations connect; the weights specify learned values used in those operations. A saved model is not simply a document of facts. Its parameters support distributed learned behaviour.
+
+Consider a much smaller calculation: a programme that takes a quantity and doubles it. The instruction to multiply specifies the operation; the number two is a value used in the operation. This is an analogy for the difference between a model's design and its weights. In a language model there are many operations and learned values. The tokenizer first represents the input as identifiers, and the runtime carries out those operations. Loading the weights supplies the values; it does not itself answer a question.
 
 A **tokenizer** turns text into token IDs and back. Those IDs must match the model's learned vocabulary. The numerical ID 42 means whatever that tokenizer assigns to it; a different tokenizer can assign 42 to another unit. This is why the tokenizer is not an interchangeable cosmetic accessory.
 
@@ -65,21 +69,6 @@ Running the model locally creates continuing maintenance and support work. The r
 ## Practical activity: Estimate weight storage separately from context and other runtime memory.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 How many decimal megabytes do these illustrative FP32 weights occupy?
@@ -92,14 +81,10 @@ print("Illustrative FP32 weight MB:", weight_bytes / 1_000_000)
 assert weight_bytes == 540_000_000
 ```
 
-540 MB for weights alone. Actual checkpoint precision, activations, caches and runtime overhead change the memory requirement.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: How many decimal megabytes do these illustrative FP32 weights occupy?
 
 **Worked answer.** 540 MB for weights alone. Actual checkpoint precision, activations, caches and runtime overhead change the memory requirement.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

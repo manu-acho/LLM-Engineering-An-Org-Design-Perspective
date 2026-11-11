@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+A separate agent may help if one task needs different evidence or a different skill. It also creates another result to check and combine. Compare a single worker with the smaller independent parts of a divided workflow. Identify which division helps enough to pay for the extra handoffs in this case.
+
 Choose a decomposition that preserves accountability and limits avoidable coordination.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 11 business situation](../../reference/harbour-learning-journey.md#module-11)
@@ -61,21 +63,6 @@ Compare the benefit of specialisation with handoffs, reconciliation and maintena
 ## Practical activity: Challenge a result using original facts rather than consensus.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 Does the three-way agreement establish that reported receipt was twelve?
@@ -87,14 +74,10 @@ assert len(set(claims)) == 1
 print("Generated agreement:",claims,"Source report:",source["reported"])
 ```
 
-No. Agreement can repeat a shared error. Check the original record.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Does the three-way agreement establish that reported receipt was twelve?
 
 **Worked answer.** No. Agreement can repeat a shared error. Check the original record.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

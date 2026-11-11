@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+Imagine two polished replies shown in a demonstration, both for easy cases. They show what the system can do in those cases. An evaluation asks a question about performance and collects examples chosen to answer it. A benchmark is a defined set of tasks and scoring rules for comparison. Start with a case where a plausible answer would send work to the wrong team.
+
 Define what a correct contribution means before treating model accuracy as service performance.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 4 business situation](../../reference/harbour-learning-journey.md#module-4)
@@ -19,6 +21,8 @@ An **evaluation** is an organised way to assess behaviour against stated criteri
 ## Examples, cases and benchmarks
 
 A **test case** combines an input with an expected behaviour. For the shortage assistant, a case could supply contradictory delivery records and require it to preserve the disagreement. The expected behaviour need not be one exact sentence; it can be a set of required and prohibited claims.
+
+Write the test in ordinary language first. Give the assistant a dispatch record for twelve and a customer report of ten. A passing result must keep both figures and their sources distinct and leave receipt unresolved. “The warehouse lost two boxes” fails, even if the answer is short and reads well. That test can grade many wordings without requiring one exact phrase.
 
 A **benchmark** is a specified collection of tasks and scoring rules. Its value depends on whether the cases represent the intended use. A model ranking on unrelated puzzles cannot settle which system will handle your client's order exceptions.
 
@@ -71,21 +75,6 @@ Usefulness requires a defined population, consequence and comparison. The resear
 ## Practical activity: Define the evaluation unit and denominator before calculating accuracy.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 What is this rule's accuracy on these four cases?
@@ -97,14 +86,10 @@ correct = sum(a == b for a, b in zip(truth, predictions))
 print("Correct:", correct, "Cases:", len(truth), "Accuracy:", correct / len(truth))
 ```
 
-0.5. The score describes these cases and does not show that the population is representative.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: What is this rule's accuracy on these four cases?
 
 **Worked answer.** 0.5. The score describes these cases and does not show that the population is representative.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

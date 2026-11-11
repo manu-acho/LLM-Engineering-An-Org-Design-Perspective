@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+A model cannot calculate directly with a phrase as printed. It starts by looking up a number for each piece of text, then uses a list of numbers to represent that piece. Attention lets the representation for one piece draw on information at other positions the model is allowed to use. Trace one piece through those changes before looking at the final scores for what could come next.
+
 An attention calculation helps explain how input representations are combined; its weights are not a ranking of Harbour’s organisational authority.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 3 business situation](../../reference/harbour-learning-journey.md#module-3)
@@ -63,20 +65,7 @@ A numerical inference trace supports a technical claim within its tested scope. 
 ## Practical activity: Calculate a small attention-weighted combination by hand and in code.
 
 
-
 A comprehension constructs a new collection from an existing one. Read `[expression for item in items if condition]` as: visit each item, keep those meeting the condition, and calculate the expression. `zip` pairs corresponding items from sequences. It stops at the shortest input, so paired evaluation needs an explicit equal-length condition.
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
 
 ### Predict and follow the values
 
@@ -92,14 +81,10 @@ print("Weights:", weights, "Weighted value:", combined)
 assert weights[0] > weights[1]
 ```
 
-Ten receives the larger weight because its score is larger. This arithmetic illustrates attention weighting, not how the full transformer learns its scores.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Which source value receives the larger weight?
 
 **Worked answer.** Ten receives the larger weight because its score is larger. This arithmetic illustrates attention weighting, not how the full transformer learns its scores.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

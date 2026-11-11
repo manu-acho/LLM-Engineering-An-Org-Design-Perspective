@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+Suppose extra training produces a better-looking complaint brief but still treats “reported” as “confirmed”. That is the failure the decision needs to address. Compare a revised instruction, better evidence and further training on the same cases. Include who will maintain the examples and what happens when a case no longer fits an approved category.
+
 Specify the review and withdrawal conditions for an adapted routing model.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 7 business situation](../../reference/harbour-learning-journey.md#module-7)
@@ -58,10 +60,7 @@ Corrections need interpretation before they become durable training or procedure
 ## Practical activity: Compare a simple text baseline with the saved adaptation evidence.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
+The notebook is the easiest way to run this activity. Its first cell loads the course settings. `ROOT` records where the course files are, and `RUN_LIVE` records whether the optional provider call is enabled. The local steps can be read with live mode off. When running the snippets outside the notebook, use this setup once from a prepared checkout:
 
 ```python
 from ai_orgdesign.workspace import project_root, live_mode
@@ -90,14 +89,10 @@ else:
     print("Run the preceding download-and-training exercise to obtain an actual adaptation record.")
 ```
 
-No. It demonstrates the experiment mechanics on the declared tiny invented split.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: Should a four-case test score be reported as enterprise routing accuracy?
 
 **Worked answer.** No. It demonstrates the experiment mechanics on the declared tiny invented split.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.

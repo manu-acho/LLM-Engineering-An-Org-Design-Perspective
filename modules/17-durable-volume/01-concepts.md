@@ -6,6 +6,8 @@
 
 ## Business context: Harbour
 
+When many requests arrive together, one worker can start a case that another worker finishes. Concurrency allows work on more than one case during the same period. A lease gives one worker a temporary right to act on a job. Follow how that right changes if a worker stops responding, and distinguish which job started first from which finished first.
+
 Relate technical throughput to investigator, warehouse and review capacity.
 
 [Company and supply-chain context](../../HARBOUR.md) · [Module 17 business situation](../../reference/harbour-learning-journey.md#module-17)
@@ -21,6 +23,8 @@ The asynchronous lab uses a semaphore, a counter-like permission mechanism, to p
 ## Completion order and business order differ
 
 A runtime can return results in input order even if operations finish in a different order. asyncio.gather uses this behaviour in the exercise. A business process may instead need events processed according to a case version or dependency. Do not infer business ordering from the shape of a returned Python list.
+
+Suppose H-17 begins first but waits for a record, while H-18 starts later and finishes quickly. The list returned to the caller can still put H-17 first. To tell which finished first, inspect the completion events. To know which can be acted on, check the case's dependencies and current version. These are separate notions of order.
 
 A faster worker can overtake an earlier slow worker. If both update the same case, an optimistic version check or another concurrency control must prevent a stale result from overwriting current state. More workers make this boundary more consequential; they do not eliminate it.
 
@@ -53,21 +57,6 @@ This is not the earlier example with arrivals of thirty and capacity of twenty, 
 ## Practical activity: Identify where an arrival rate exceeds completion capacity.
 
 
-
-
-
-The exercise code below runs from a prepared course checkout. In the matching notebook, the setup cell already supplies ROOT and RUN_LIVE. If following the code here, run this setup first:
-
-```python
-from ai_orgdesign.workspace import project_root, live_mode
-ROOT = project_root()
-RUN_LIVE = live_mode()
-if RUN_LIVE:
-    from ai_orgdesign.provider import Gateway
-    gateway = Gateway(max_requests=12, max_output_tokens=1000)
-print("Live mode:", RUN_LIVE)
-```
-
 ### Predict and follow the values
 
 How many additional cases accumulate after three hours under these assumptions?
@@ -78,14 +67,10 @@ backlog_growth=(arrivals-capacity)*hours
 print("Illustrative additional queued cases:",backlog_growth)
 ```
 
-Thirty. Variability and exceptions need separate evidence in a real queue.
-
 ### Complete the exercise
-
-Write the prediction before consulting the worked answer: How many additional cases accumulate after three hours under these assumptions?
 
 **Worked answer.** Thirty. Variability and exceptions need separate evidence in a real queue.
 
-The notebook includes a place for an independent attempt. The solution is labelled separately. A successful assertion checks its stated example; it does not grade the whole business design. Complete the module's organisational case with a named recipient, acceptance conditions, authority, correction and a comparison with another arrangement.
+The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
