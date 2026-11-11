@@ -20,7 +20,7 @@ This is more useful than saying that people make mistakes. It changes the design
 
 AI can alter those limits by preparing information or suggesting alternatives. It can also introduce new limits: a selected set of retrieved passages, a compressed account or an apparently complete answer may narrow what receives attention. The sensible question is which parts of the decision environment have changed, not whether human limits have disappeared.
 
-**Satisficing** means searching for an acceptable option rather than demonstrating that it is the best of all possible options. In a fictional service case, a team may seek a response that meets evidence, fairness and timing requirements. Those requirements must be defensible. An easy-to-meet threshold does not become appropriate merely because it makes search shorter. A satisfactory response is defined by the criteria used in the search, so those criteria belong in the analysis.
+**Satisficing** is the practice of searching for an option that meets specified criteria. The search can end once an acceptable option is found. In a fictional service case, a team may seek a response that meets evidence, fairness and timing requirements. Those requirements must be defensible. An easy-to-meet threshold does not become appropriate merely because it makes search shorter. A satisfactory response is defined by the criteria used in the search, so those criteria belong in the analysis.
 
 ## Decision premises
 

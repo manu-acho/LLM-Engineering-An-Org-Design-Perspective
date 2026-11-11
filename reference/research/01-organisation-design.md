@@ -14,7 +14,7 @@ The chapter moves from division of work to dependencies, then to information req
 
 ## Division creates a need for integration
 
-**Differentiation** means dividing work into specialised tasks, roles or units. **Integration** means bringing those contributions together so that the organisation can accomplish a shared purpose. Once customer service, warehouse and finance each handle part of a complaint, their separate contributions must become a coherent response to the customer.
+**Differentiation** refers to the division of work into specialised tasks, roles or units. **Integration** is the bringing together of contributions from the division such that the organisation can accomplish a shared purpose. Once customer service, warehouse and finance each handle part of a complaint, their separate contributions must become a coherent response to the customer.
 
 An **arrangement** is a way of organising a particular piece of work. It includes who does each task, what information and tools they use, who can make decisions and how the work passes between people or teams. A **proposed arrangement** describes how those pieces would work together if the organisation adopted the design. For example, Harbour could ask an AI assistant to prepare a brief, assign the warehouse to check shipment evidence and give finance the authority to approve a credit. This describes a plan. To assess how it works in practice, Harbour would need to see how staff handle actual complaints under that plan.
 
@@ -24,7 +24,7 @@ An **arrangement** is a way of organising a particular piece of work. It include
 
 These concepts connect two questions. How is work divided and allocated? How are the resulting contributions made to work together? Structural choices help answer the first, while coordination arrangements help answer the second. They overlap in practice. Assigning a case coordinator, for example, creates a role in the structure specifically to connect other people's work.
 
-Burton and Obel (2018) explain organisation design through the **fit** between structure and coordination, meaning how well the division of work and the means of connecting it suit one another and the task. Their argument also includes information, decisions and **incentives**, the rewards or pressures that influence what contributors prioritise. Rewarding speed while expecting careful investigation can pull the same role in different directions. If specialised teams often receive conflicting evidence, they need time and a clear route to resolve disputes before passing a case on. [Burton and Obel (2018)](#burton-and-obel-2018)
+Burton and Obel (2018) explain organisation design through the **fit** between structure and coordination. Fit refers to how well the division of work and the ways of coordinating it suit one another and the task. Their argument also includes information, decisions and **incentives**, the rewards or pressures that influence what contributors prioritise. Rewarding speed while expecting careful investigation can pull the same role in different directions. If specialised teams often receive conflicting evidence, they need time and a clear route to resolve disputes before passing a case on. [Burton and Obel (2018)](#burton-and-obel-2018)
 
 To assess fit in Harbour's complaint process, first identify which part of the work an AI tool would change. Puranam, Alexy and Reitzig (2014) distinguish four organising problems. **Task division** asks what pieces of work need doing. **Task allocation** asks who or what should do each piece. **Information provision** asks what each contributor needs to know to do the work. **Reward provision** asks what encourages people to make the desired contributions. Their framework helps explain which organising problems a design addresses. Its application to Harbour is a teaching example. Assessing an AI team in practice would require evidence of how it works. [Puranam et al. (2014)](#puranam-alexy-and-reitzig-2014)
 
@@ -38,7 +38,7 @@ The summariser and routing tool could use the same language model. Each creates 
 
 ## Dependencies before departments
 
-**Interdependence** means that activities rely on one another. Thompson's distinction among pooled, sequential and reciprocal interdependence helps identify the pattern of reliance. The distinction concerns the relationship among activities, rather than the department names on an organisation chart. [Thompson (1967)](#thompson-1967)
+**Interdependence** is the reliance of activities on one another. Thompson's distinction among pooled, sequential and reciprocal interdependence helps identify the pattern of reliance. The distinction concerns the relationship among activities, rather than the department names on an organisation chart. [Thompson (1967)](#thompson-1967)
 
 | Pattern | Plain-language explanation | AI-related illustration |
 |---|---|---|
@@ -52,7 +52,7 @@ Mintzberg's **coordinating mechanisms** are ways of managing those dependencies.
 
 ## Information demand and capacity
 
-**Uncertainty** arises when the information needed to perform the work exceeds what is already available. **Information processing** here means obtaining, interpreting and exchanging information so that connected activities can proceed. It includes people discussing a case as well as software handling records. Galbraith's information-processing view asks how an organisation responds to that gap. Two broad responses are to reduce information requirements and to increase the capacity to process information. Requirements concern the information and clarification the work calls for. Capacity concerns the time, expertise, relationships and technical means available to handle that demand. [Galbraith (1973, 1977)](#galbraith-1973-and-1977)
+**Uncertainty** arises when the information needed to perform the work exceeds what is already available. **Information processing** involves obtaining, interpreting and exchanging information so that connected activities can proceed. It includes people discussing a case as well as software handling records. Galbraith's information-processing view asks how an organisation responds to that gap. Two broad responses are to reduce information requirements and to increase the capacity to process information. Requirements concern the information and clarification the work calls for. Capacity concerns the time, expertise, relationships and technical means available to handle that demand. [Galbraith (1973, 1977)](#galbraith-1973-and-1977)
 
 At Harbour, requiring an order identifier when an adviser first logs the complaint, a step called **intake**, can reduce repeated clarification. Giving one team responsibility for an entire bounded case can reduce some cross-team exchanges. Shared evidence and a well-prepared brief can increase the capacity to handle information that still needs to travel. Reducing demand and increasing capacity may therefore complement each other.
 
@@ -72,7 +72,7 @@ An architecture diagram can support the first inquiry. Local requirements, confi
 
 ## When more agents create more integration work
 
-**Modularity** means dividing a system into parts with relatively limited interaction across their boundaries. **Decomposition** is the act of breaking a larger task or system into smaller parts. Ethiraj and Levinthal (2004) examine the trade-offs of decomposition in a simulation model. Their contribution is a warning against treating ever finer division as automatically beneficial. Both excessive integration and excessive fragmentation can create difficulties. [Ethiraj and Levinthal (2004)](#ethiraj-and-levinthal-2004)
+**Modularity** refers to the extent to which a system consists of parts with limited dependencies across their boundaries. **Decomposition** is the act of breaking a larger task or system into smaller parts. Ethiraj and Levinthal (2004) examine the trade-offs of decomposition in a simulation model. Their contribution is a warning against treating ever finer division as automatically beneficial. Both excessive integration and excessive fragmentation can create difficulties. [Ethiraj and Levinthal (2004)](#ethiraj-and-levinthal-2004)
 
 **AI application, not a finding from that study:** a researcher agent, writer agent and reviewer agent may create useful separation when they bring different evidence, capabilities or checks. If all three repeatedly reinterpret the same ambiguous case, decomposition may instead multiply handoffs and reconciliation. A technical boundary is not evidence that the work is organisationally independent.
 

@@ -37,7 +37,7 @@ At Harbour, naming an investigator makes responsibility visible, which supports 
 
 Chapter 8 asks a further question about accountability. If a case stalls, who has to explain what happened, who can question the explanation, and who can require a response? A named investigator gives the inquiry somewhere to start.
 
-The software can make the handoff visible by recording three distinct events. **Routed** means the application placed the case in the warehouse’s queue. **Received** means the case arrived. **Accepted** means the receiving team or service agreed to take on the investigation under specified conditions. For Harbour, acceptance might require a current shipment reference and separate fields for reported and confirmed quantities. An acceptance record gives the next team evidence that the case can proceed under those rules. Understanding the evidence and resolving the complaint require further work.
+The software can make the handoff visible by recording three distinct events. **Routed** records placement in the warehouse’s queue. **Received** records arrival. **Accepted** records the receiving team’s or service’s agreement to take on the investigation under specified conditions. For Harbour, acceptance might require a current shipment reference and separate fields for reported and confirmed quantities. An acceptance record gives the next team evidence that the case can proceed under those rules. Understanding the evidence and resolving the complaint require further work.
 
 ## Shared data and shared meaning
 
@@ -61,7 +61,7 @@ Gittell (2002) adds relationships and communication: shared goals, shared knowle
 
 ## Coordination continues after configuration
 
-**Configuration** in this section means selecting software settings, fields and rules. **Practice** means what people and systems actually do in their working circumstances. Practice research treats coordination as work that participants keep accomplishing and modifying after those settings have been selected. Jarzabkowski, Lê and Feldman (2012) examine how coordination mechanisms emerge and change through disruption and stabilisation. [Jarzabkowski et al. (2012)](#jarzabkowski-l-and-feldman-2012)
+**Configuration** is the selection of software settings, fields and rules. **Practice** concerns what people and systems actually do in their working circumstances. Practice research treats coordination as work that participants keep accomplishing and modifying after those settings have been selected. Jarzabkowski, Lê and Feldman (2012) examine how coordination mechanisms emerge and change through disruption and stabilisation. [Jarzabkowski et al. (2012)](#jarzabkowski-l-and-feldman-2012)
 
 **Illustrative application:** a new complaint type arrives with photographs that the brief cannot represent. Staff telephone the warehouse and add a note outside the usual form. This could be useful repair, an unsafe workaround or a symptom of unsuitable intake. The deviation alone does not decide which explanation is right. Observation should establish what problem staff encountered, what they changed and what happened downstream.
 
@@ -87,7 +87,7 @@ The distinction also improves evaluation. A delivery receipt tests transport. A 
 
 ## A worked handoff design
 
-Harbour's proposed handoff contract includes a case identifier, source identifiers and versions, reported versus confirmed quantities, unresolved questions, proposed recipient and requested response. “Accepted” means operations has enough information to begin the named investigation. It does not mean the shortage is confirmed.
+Harbour's proposed handoff contract includes a case identifier, source identifiers and versions, reported versus confirmed quantities, unresolved questions, proposed recipient and requested response. Operations marks a case **accepted** once it has enough information to begin the named investigation. Confirming the shortage is part of that investigation.
 
 The receiver can accept, return for a specified missing item, or redirect with a reason. A named service owner investigates cases that remain unaccepted. The design also reserves a conversation route for conflicts that cannot be reduced to missing fields. These are proposed mechanisms and responsibilities, not established benefits.
 

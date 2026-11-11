@@ -64,7 +64,7 @@ This changes evaluation. Draft completion, customer resolution, warehouse rework
 
 ## What event logs can reveal
 
-**Process mining** uses recorded events to study processes. Van der Aalst (2013) distinguishes three uses. **Discovery** builds a process model from recorded events. **Conformance checking** compares recorded behaviour with a selected model. **Enhancement** uses event evidence to add information to, or improve, an existing model, for example by showing where recorded waiting occurs. **Conformance** means correspondence with the selected model, not proof that the model expresses good policy. [Van der Aalst (2013)](#van-der-aalst-2013)
+**Process mining** uses recorded events to study processes. Van der Aalst (2013) distinguishes three uses. **Discovery** builds a process model from recorded events. **Conformance checking** compares recorded behaviour with a selected model. **Enhancement** uses event evidence to add information to, or improve, an existing model, for example by showing where recorded waiting occurs. **Conformance** refers to the correspondence between recorded behaviour and the selected model. Whether that model expresses good policy is a separate question. [Van der Aalst (2013)](#van-der-aalst-2013)
 
 An **event log** is a collection of records of selected events. A conventional log links an activity and a **timestamp**, the recorded date and time, to a **case identifier**, the key used to group events into one process instance. An instance is one occurrence of the process, such as handling a particular complaint. Choosing that identifier matters. A complaint can concern several shipments; one shipment can contain items from several orders. An invoice may cover several deliveries. Treating one order as one case can duplicate, fragment or omit important relationships.
 
@@ -92,7 +92,7 @@ A format check can show that the generated description uses valid diagram symbol
 
 ## Worked design: extend the boundary of success
 
-Harbour proposes recording three points in the remedy process. **Evidence ready** means the next team has enough information to investigate. **Remedy authorised** means the designated person approved the specified action. **Remedy completed** means the action occurred and the related operational and financial records were reconciled. The service can report a successful run at the first point while the customer’s case is still open.
+Harbour proposes recording three points in the remedy process. The service marks a case **evidence ready** once the next team has enough information to investigate. It records **remedy authorised** when the designated person approves the specified action. It records **remedy completed** after the action occurs and the related operational and financial records are reconciled. The service can report a successful run at the first point while the customer’s case is still open.
 
 Consider a complaint about two missing boxes. The service prepares a brief but finds a possible split shipment. The case remains awaiting clarification. After transport confirms the second shipment, the proposed remedy changes from credit to delivery confirmation. Finance checks that no earlier remedy needs reversal. Customer service closes the case only under an agreed resolution rule.
 
