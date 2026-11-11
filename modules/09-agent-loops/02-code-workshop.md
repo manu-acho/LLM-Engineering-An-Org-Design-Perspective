@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+## What you'll learn and why it matters
+
+Trace a scripted lookup around the bounded investigation loop. Learn to tell when the application proposed an action, ran it and used its result.
+
 An investigation might look up an order, then decide whether the result is enough for a draft. The scripted responder below gives the same lookup request each time it sees the opening question. Follow the request, the access check and the record that returns to the loop before the final draft appears.
 
 [Open the companion workshop notebook](../../notebooks/09-agent-loops.ipynb).
@@ -98,3 +102,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 A tool request and its execution result should not be treated as the same event. The research chapter explains [distinct acts in a workflow](../../reference/research/03-decisions.md#distinct-acts-in-one-workflow).
+
+## What to remember
+
+The scripted responder proposes an allowed read, gets the returned record and then drafts from it. The step limit can stop before a final draft.
+
+## What this means for the business process
+
+Give the case owner the lookup result and the stop reason when the limit is reached. The business process needs someone to carry unfinished work forward even when the loop behaved as designed.
+
+For the research behind this design choice, read [Four questions for a usable contribution](../../reference/research/02-coordination.md#four-questions-for-a-usable-contribution).
+
+## Next lesson
+
+Next decide what work the agent should be allowed to take on at the service's first point of contact. [Lesson 9.3: Design the work before delegating the next step](03-business-and-organisation.md).

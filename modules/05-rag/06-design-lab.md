@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next module](../06-data/README.md)
 
+## What you'll learn and why it matters
+
+Design a knowledge service around a source registry, an owner and a route for resolving conflicts. These arrangements let Harbour keep search useful after the first demonstration.
+
 A shared folder does not tell an adviser which policy is current or who can correct it. A source registry is a list that names the records a service may use and identifies who owns them, when they apply and what they establish. Make one entry for a policy and one for a dispatch record. They are useful for different reasons and should not settle the same questions.
 
 ## Resolve what “knowledge” means for this task
@@ -51,3 +55,17 @@ Measure retrieval coverage, supported claims and appropriate abstention alongsid
 A knowledge service needs routes for translation and contestation as well as document transfer. The research chapter explains [knowledge boundaries](../../reference/research/02-coordination.md#shared-data-and-shared-meaning).
 
 The research chapter also explains [who maintains the meaning of a shared record](../../reference/research/07-infrastructure-and-standards.md#worked-design-a-quantity-agreement).
+
+## What to remember
+
+Sources differ in purpose, owner and period of validity. Conflicts need a person or process that can resolve the underlying issue.
+
+## What this means for the business process
+
+Assign ownership for each source and for changing its definition or status. Agree how advisers report a conflict and how a correction reaches dependent applications. Keeping standards useful is continuing work across teams.
+
+For the research behind this design choice, read [Standards make comparison possible and require continuing work](../../reference/research/07-infrastructure-and-standards.md#standards-make-comparison-possible-and-require-continuing-work).
+
+## Next lesson
+
+Module 6 follows another kind of source material: historical examples and the labels used to teach a prediction system. [Lesson 6.1: How examples become a prediction system](../06-data/01-concepts.md).

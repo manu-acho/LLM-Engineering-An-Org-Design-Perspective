@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: redesign the division of work](06-design-lab.md)
 
+## What you'll learn and why it matters
+
+Follow one CrewAI task from settings to the worker and the returned artefact. Learn to compare a division of work by following an actual contribution.
+
 The CrewAI project describes agents and tasks in settings and connects them in code. Find the instructions for one task, identify the agent assigned to it and follow the returned artefact. Reading the files together shows which dependencies exist in the running programme rather than in the names alone.
 
 [Open the companion workshop notebook](../../notebooks/11-agent-teams.ipynb).
@@ -77,3 +81,17 @@ For a sequential/hierarchical comparison, hold task, source evidence, model acce
 ## Read the organisational connection
 
 A configuration and returned artefact do not establish recurrent organisational performance. The research chapter explains [artefacts and patterns of action](../../reference/research/05-routines.md#designing-an-artefact-and-designing-a-pattern).
+
+## What to remember
+
+The settings describe roles, tasks and dependencies. The returned artefact shows what the selected process delivered. The receiving step still needs to interpret it.
+
+## What this means for the business process
+
+Ask whether each separate role adds useful expertise or evidence, then check the cost of combining its output. A role name alone cannot remove the need for integration.
+
+For the research behind this design choice, read [When more agents create more integration work](../../reference/research/01-organisation-design.md#when-more-agents-create-more-integration-work).
+
+## Next lesson
+
+Next compare the work saved by specialist roles with the added cost of getting their results to fit together. [Lesson 11.6: Divide work where specialisation earns its integration cost](06-design-lab.md).

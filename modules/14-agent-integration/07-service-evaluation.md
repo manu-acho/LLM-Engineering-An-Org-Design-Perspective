@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Return to the integration plan](04-integration-plan.md)
 
+## What you'll learn and why it matters
+
+Connect visible status, stored work and feedback to the decisions Harbour makes after rollout. Use that distinction to judge whether a service is ready to expand.
+
 “Submitted” on a screen might mean the request was received, while “accepted” should tell the adviser a reviewer has taken responsibility. The backend is the software behind the screen that stores and processes the work. Match each visible status to what the backend knows and give staff a way to report a misleading status.
 
 ## The backend and the screen expose different views
@@ -45,3 +49,17 @@ The [technology and organisation review](../../reference/research/06-technology-
 ## Read the organisational connection
 
 Continuing evaluation should examine which changes actually account for a service improvement. The research chapter explains [redesign and rival explanations](../../reference/research/06-technology-in-practice.md#a-worked-redesign-and-its-rival-explanations).
+
+## What to remember
+
+A read-only dashboard observes selected records. Draft, acknowledgement, acceptance and resolution each represent different events. Feedback and comparison over time show where the work needs repair.
+
+## What this means for the business process
+
+Tie each customer-facing status to its source event and give advisers a route to challenge stale or misleading states. Before expanding, examine acceptance, review work and customer resolution as well as uptime.
+
+For the research behind this design choice, read [Worked design: extend the boundary of success](../../reference/research/09-process-architecture.md#worked-design-extend-the-boundary-of-success).
+
+## Put it to work
+
+Take the companion workbook into a process of your own. Define what the AI contribution should produce, who accepts it and how you will measure what happens after the handoff. [Companion workbook](../../WORKBOOK.md).

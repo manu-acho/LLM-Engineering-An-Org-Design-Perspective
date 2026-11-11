@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next module](../10-agent-orchestration/README.md)
 
+## What you'll learn and why it matters
+
+Design what the assistant promises at intake and who takes over after it reaches its limit. This helps Harbour avoid implying ownership before someone accepts the case.
+
 A screen that says “I am handling this” can sound like someone has accepted responsibility. Decide what happens after the assistant reaches its limit. Name the person who receives the case, the information they need and the message the customer sees while responsibility is being transferred.
 
 ## The interface creates expectations
@@ -49,3 +53,17 @@ These are actor-specific possibilities to investigate, drawing on the [technolog
 The intake promise depends on what the receiving activity can actually accept and perform. The research chapter explains [the worked handoff design](../../reference/research/02-coordination.md#a-worked-handoff-design).
 
 The research chapter also explains [how an agent run fits the wider process](../../reference/research/09-process-architecture.md#a-good-agent-run-can-end-before-the-business-problem-does).
+
+## What to remember
+
+The interface shapes expectations. Automation scope and case ownership are separate choices. The customer needs to know what is happening while a transfer is pending.
+
+## What this means for the business process
+
+Make the status distinguish a received request from a case accepted by a named team. Give that team an explicit way to acknowledge or return the referral, with a route for cases that are left waiting.
+
+For the research behind this design choice, read [A worked handoff design](../../reference/research/02-coordination.md#a-worked-handoff-design).
+
+## Next lesson
+
+Module 10 extends a single bounded investigation into several contributions that must be checked and brought together. [Lesson 10.1: Orchestration decides how pieces of work connect](../10-agent-orchestration/01-concepts.md).

@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+## What you'll learn and why it matters
+
+Trace a search from eligibility checks to ranking and source-labelled context. This helps Harbour preserve which policy supported a draft.
+
 If a withdrawn policy contains the best search terms, Harbour still should not use it. First identify which records the rules allow, then see how word matches rank those records. Follow the source identifier into the text the assistant would receive so the evidence can be checked later.
 
 [Open the companion workshop notebook](../../notebooks/05-rag.ipynb).
@@ -86,3 +90,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Filtering and ranking select evidence that can shape a later choice. The research chapter explains [decision premises](../../reference/research/03-decisions.md#decision-premises).
+
+## What to remember
+
+The search removes restricted and outdated records, ranks the remaining matches and keeps their identifiers. An empty result leaves an evidence gap.
+
+## What this means for the business process
+
+Show an adviser when no permitted current source is available, and name who can help obtain one. Keep policy authority separate from similarity so the search cannot substitute an expired rule.
+
+For the research behind this design choice, read [Standards make comparison possible and require continuing work](../../reference/research/07-infrastructure-and-standards.md#standards-make-comparison-possible-and-require-continuing-work).
+
+## Next lesson
+
+The next lesson asks how to judge different sources when all of them are eligible but they answer different questions. [Lesson 5.3: A knowledge assistant is also a design of authority](03-business-and-organisation.md).

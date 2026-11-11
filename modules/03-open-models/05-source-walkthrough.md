@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: design a trustworthy meeting record](06-design-lab.md)
 
+## What you'll learn and why it matters
+
+Trace model loading, encoding, generation and decoding through the inference function. Use its execution record to distinguish a load failure from an unsuitable meeting note.
+
 A local inference program loads a tokenizer and the learned model, converts the question into identifiers, then asks the model to extend that sequence. Trace where the program removes the original question before displaying the new text. A failed load and an unhelpful answer occur at different stages and need different checks.
 
 [Open the companion workshop notebook](../../notebooks/03-open-models.ipynb).
@@ -74,3 +78,17 @@ Speaker attribution, recording permission, storage and access are additional app
 ## Read the organisational connection
 
 A successful load-and-generate path does not establish that the surrounding service works well. The research chapter explains [capability, configuration, practice and outcome](../../reference/research/04-implementation.md#capability-configuration-practice-and-outcome).
+
+## What to remember
+
+The tokenizer represents the question numerically. The model generates new identifiers and the application decodes them after the input. Local and remote source material have different setup boundaries.
+
+## What this means for the business process
+
+Record the model revision and the stage that failed. Assign loading and compatibility problems to technical support, and give the meeting owner a separate route to correct an unsupported assignment.
+
+For the research behind this design choice, read [Six kinds of misfit](../../reference/research/04-implementation.md#six-kinds-of-misfit).
+
+## Next lesson
+
+You can now distinguish model operation from evidence quality. Next design who reviews the generated meeting record and how colleagues correct it. [Lesson 3.6: Design the meeting record and its correction process](06-design-lab.md).

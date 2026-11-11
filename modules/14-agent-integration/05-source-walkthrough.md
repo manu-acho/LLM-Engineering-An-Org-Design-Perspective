@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: a completed integration dossier](06-design-lab.md)
 
+## What you'll learn and why it matters
+
+Run the small MCP exchange and trace an original backend operation into storage. This helps Harbour distinguish a connection that works from a business service that respects its rules.
+
 The client first asks the server which operations it offers, then makes a specific request and reads the reply. Follow those messages in the small MCP exchange before looking at the original backend. Keep the rules for business access separate from the rules for sending a valid message.
 
 [Open the companion workshop notebook](../../notebooks/14-agent-integration.ipynb).
@@ -89,3 +93,17 @@ The example changes simulated application accounts, not a demonstrated live brok
 ## Read the organisational connection
 
 A successful protocol exchange demonstrates communication within the tested scope. The research chapter explains [the evidence path](../../reference/research/06-technology-in-practice.md#an-evidence-path-without-skipped-steps).
+
+## What to remember
+
+A client can discover a capability and call it without a model. The original backend connects capabilities to stored work and imposes a separate operating boundary.
+
+## What this means for the business process
+
+Check a permitted and a denied operation before connecting the assistant. Assign an owner to the capability's access rules and the stored records it reads or changes.
+
+For the research behind this design choice, read [Permission and authority](../../reference/research/03-decisions.md#permission-and-authority).
+
+## Next lesson
+
+Next read a completed proposal that brings this evidence together with scope, ownership and the comparison Harbour should run. [Lesson 14.6: Read a completed AI integration proposal](06-design-lab.md).

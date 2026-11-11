@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+## What you'll learn and why it matters
+
+Follow two competing claims on a shared task board. Learn why Harbour needs to check the current state at the point where a worker takes ownership.
+
 Two workers can see the same waiting task. Only one should gain ownership. Follow the database condition that checks whether the task is still free at the moment the claim is recorded. Then distinguish a worker's report of completion from acceptance of the work by a receiving team.
 
 [Open the companion workshop notebook](../../notebooks/13-agent-frameworks.ipynb).
@@ -103,3 +107,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Claiming work needs allocation rules when several workers compete for the same task. The research chapter explains [shared-resource dependencies](../../reference/research/02-coordination.md#identify-what-depends-on-what).
+
+## What to remember
+
+The database applies the claim only if the task is still pending. The worker's report records a separate transition from business acceptance.
+
+## What this means for the business process
+
+Keep technical ownership and receiving-team acceptance as different events. Define who can reclaim abandoned work and who decides whether the delivered draft is usable.
+
+For the research behind this design choice, read [A worked handoff design](../../reference/research/02-coordination.md#a-worked-handoff-design).
+
+## Next lesson
+
+The board gave worker ownership an explicit rule. Next ask what agreement teams need about the meaning of the records they exchange. [Lesson 13.3: A common interface does not create a common organisation](03-business-and-organisation.md).

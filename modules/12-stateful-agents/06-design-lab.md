@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next module](../13-agent-frameworks/README.md)
 
+## What you'll learn and why it matters
+
+Compare ways to staff review and preserve real discretion. Recommend a design that works under Harbour's expected demand, including difficult cases.
+
 Imagine twenty cases waiting for one reviewer. More drafts will not create more reviewing time. Compare a dedicated reviewer, shared coverage, escalation or a narrower scope in terms of who receives each case and what they can decide. Choose a design that makes sense when the queue is busy, not just in a demonstration.
 
 ## A pause creates a dependency
@@ -54,3 +58,17 @@ The pilot can expand when supported review decisions, waiting, effort and custom
 Meaningful review depends on access, expertise, time and a practical route to respond. The research chapter explains [actualisation](../../reference/research/06-technology-in-practice.md#actualisation-from-possibility-to-action).
 
 The research chapter also explains [what a reviewer needs beyond an approval button](../../reference/research/08-governance-and-accountability.md#meaningful-review-needs-resources-and-a-practical-alternative).
+
+## What to remember
+
+A pause creates a queue. Capacity determines how long it waits, while discretion determines whether reviewers can return or challenge work.
+
+## What this means for the business process
+
+Match intake to review capacity and reserve a way to handle cases requiring specialist judgement. Monitor waiting and returned cases, so apparent success in drafting does not hide a growing review problem.
+
+For the research behind this design choice, read [Information demand and capacity](../../reference/research/01-organisation-design.md#information-demand-and-capacity).
+
+## Next lesson
+
+Module 13 keeps the service requirement fixed while comparing different frameworks that could implement it. [Lesson 13.1: Compare frameworks by the work they help you organise](../13-agent-frameworks/01-concepts.md).

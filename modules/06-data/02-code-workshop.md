@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+## What you'll learn and why it matters
+
+Fit a simple majority baseline and evaluate it on examples set aside for checking. This gives Harbour a reference point for judging whether a learned routing rule adds value.
+
 A simple starting rule can send every request to the most common team in the examples. This is a baseline, a reference result for judging whether more complicated methods help. Count the training labels, make one prediction for the held-out examples, then compare the prediction with what those examples actually say.
 
 [Open the companion workshop notebook](../../notebooks/06-data.ipynb).
@@ -90,3 +94,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 A baseline creates a comparison before investment in a more complex model. The research chapter explains [benefit evidence](../../reference/research/04-implementation.md#benefits-need-a-population-and-a-comparison).
+
+## What to remember
+
+The fitted rule picks the most common training label and makes the same prediction on each held-out case. The evaluation depends on the mix of those cases.
+
+## What this means for the business process
+
+Agree a baseline and case population with the routing owner. Count what the constant rule misses, especially rare cases needing a specialist, before adopting a more elaborate classifier.
+
+For the research behind this design choice, read [Benefits need a population and a comparison](../../reference/research/04-implementation.md#benefits-need-a-population-and-a-comparison).
+
+## Next lesson
+
+Next inspect the meaning of the labels themselves and ask whether past routing reflects the work Harbour wants today. [Lesson 6.3: Historical labels contain an operating model](03-business-and-organisation.md).

@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## What you'll learn and why it matters
+
+Compare changing the prompt, supplying better evidence and adapting the model through training. Harbour needs to match the intervention to the cause of the failure.
+
 Harbour can show the model one example of a good brief in each request, find the current policy for that request, or train it further on examples of the desired brief. Fine-tuning is the third option: it changes learned values in the model or adds trainable values used alongside it. First diagnose whether the failure is a missing fact or a repeated behaviour before choosing what to change.
 
 ## When a repeated behaviour remains weak
@@ -59,3 +63,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Model specialisation cannot by itself settle whether its categories suit the work. The research chapter explains [fit and misfit](../../reference/research/04-implementation.md#six-kinds-of-misfit).
+
+## What to remember
+
+Prompting changes instructions at use time. Retrieval changes the evidence available. Fine-tuning changes learned values in the model or an attached adaptation.
+
+## What this means for the business process
+
+Diagnose the failure before funding training. An obsolete policy calls for a source fix. A recurring failure to follow a well-specified format on correctly supplied cases may warrant comparing an adaptation with a simpler prompt change.
+
+For the research behind this design choice, read [Six kinds of misfit](../../reference/research/04-implementation.md#six-kinds-of-misfit).
+
+## Next lesson
+
+Next look at the training record itself. You will separate the answer used in training from the input supplied when asking the model to predict. [Lesson 7.2: Prepare the answer without leaking it into the question](02-code-workshop.md).

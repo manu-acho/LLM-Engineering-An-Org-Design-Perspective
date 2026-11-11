@@ -2,6 +2,10 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+## What you'll learn and why it matters
+
+Trace how spoken words become an organisational record. Identify where a suggestion can turn into an apparent assignment and who needs to correct it.
+
 “We could review the backlog on Friday” is a suggestion in a meeting. In notes, “Warehouse will review the backlog on Friday” gives a team an apparent commitment. Follow who said the original words, how the draft changed them and who can accept or correct the final record. A shorter sentence can assign work that nobody agreed to take.
 
 ## A sentence becomes a commitment
@@ -71,3 +75,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 A generated meeting record is an artefact, distinct from participants' accounts and actions. The research chapter explains [understandings and performances](../../reference/research/05-routines.md#understandings-and-performances).
 
 The research chapter also explains [how shared records acquire consistent meanings](../../reference/research/07-infrastructure-and-standards.md#standards-make-comparison-possible-and-require-continuing-work).
+
+## What to remember
+
+A recording, transcript, draft summary and accepted record serve different purposes. Compressing a tentative statement can make it sound like a commitment.
+
+## What this means for the business process
+
+Have the meeting owner confirm assignments with the people who will carry them out and provide a correction route. A shared note helps coordination when readers can tell what was agreed, by whom and with what authority.
+
+For the research behind this design choice, read [Shared data and shared meaning](../../reference/research/02-coordination.md#shared-data-and-shared-meaning).
+
+## Next lesson
+
+Having seen what a fluent summary can change, next trace how a model's numerical representations produce that text. [Lesson 3.4: Follow numbers through a small language model](04-inside-inference.md).

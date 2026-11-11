@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+## What you'll learn and why it matters
+
+Separate the question supplied at use time from the answer supplied during training. Trace which pieces count towards loss so Harbour can tell what behaviour the training rewards.
+
 A training example can contain a question and the answer the model is supposed to learn to give. When the system later asks for an answer, it supplies only the question. In the workshop, follow which pieces are used as context and which pieces the training calculation counts when it judges a prediction.
 
 [Open the companion workshop notebook](../../notebooks/07-specialisation.ipynb).
@@ -75,3 +79,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 The separation of question and answer determines which evidence is legitimately available at prediction time. The research chapter explains [decision premises](../../reference/research/03-decisions.md#decision-premises).
+
+## What to remember
+
+The training example contains a prompt and a completion. The inference prompt leaves out the answer. Loss masking can exclude prompt positions from the training score.
+
+## What this means for the business process
+
+Ask the routing or drafting owner to inspect representative completions before training. A wrong boundary can change what the model learns, while a wrong target can teach behaviour Harbour did not intend.
+
+For the research behind this design choice, read [Select controls for the work that can actually be assessed](../../reference/research/08-governance-and-accountability.md#select-controls-for-the-work-that-can-actually-be-assessed).
+
+## Next lesson
+
+Next examine who can question the categories that an adaptation has learned, even when its saved state is sound. [Lesson 7.3: A specialised model still needs people to question its categories](03-business-and-organisation.md).

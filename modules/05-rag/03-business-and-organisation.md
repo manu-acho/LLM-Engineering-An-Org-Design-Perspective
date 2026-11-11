@@ -2,6 +2,10 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+## What you'll learn and why it matters
+
+Explain what policy, dispatch records and customer reports can each establish. The goal is to give the assistant an evidence role without letting search results settle disputed authority.
+
 A policy says when credit is allowed, a warehouse note says what was dispatched, and a customer email says what arrived according to the customer. A search can bring up all three. Ask what question each source can answer and who can resolve a conflict. The position of a search result cannot grant the author of an email authority over credit policy.
 
 ## Three sources tell different stories
@@ -71,3 +75,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 Access to a policy passage does not confer authority to settle a disputed interpretation. The research chapter explains [permission and authority](../../reference/research/03-decisions.md#permission-and-authority).
 
 The research chapter also explains [who maintains the meaning of a shared record](../../reference/research/07-infrastructure-and-standards.md#worked-design-a-quantity-agreement).
+
+## What to remember
+
+A policy governs a remedy, a dispatch record describes a system entry, and a customer report describes the customer's account. Finding them together does not reconcile their claims.
+
+## What this means for the business process
+
+Assign an owner to each kind of evidence and name who resolves disagreements. Show conflicting claims with their sources so the receiving investigator can ask the right people rather than accepting the highest-ranked answer.
+
+For the research behind this design choice, read [Shared data and shared meaning](../../reference/research/02-coordination.md#shared-data-and-shared-meaning).
+
+## Next lesson
+
+Next look at how document boundaries and numerical ranking change which pieces of evidence are visible in the first place. [Lesson 5.4: Calculate similarity and inspect what ranking means](04-vectors-and-ranking.md).

@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next module](../07-specialisation/README.md)
 
+## What you'll learn and why it matters
+
+Write a routing and labelling rule for cases that need contributions from several teams. Test whether it answers the question Harbour actually needs to ask.
+
 A complaint about a damaged box may need photographs from the warehouse and a reply from customer service. A rule for labelling training examples must say whether it asks for the next useful contribution or the owner of the whole case. Write the rule so two colleagues can apply it to that same example and explain why their answers agree or differ.
 
 ## A clear column can contain an unclear task
@@ -51,3 +55,17 @@ The [routines review](../../reference/research/05-routines.md) helps explain why
 A routing category can create role or data mismatches even when prediction accuracy is high. The research chapter explains [six kinds of misfit](../../reference/research/04-implementation.md#six-kinds-of-misfit).
 
 The research chapter also explains [how classification changes which work becomes visible](../../reference/research/07-infrastructure-and-standards.md#classification-changes-what-an-organisation-can-see).
+
+## What to remember
+
+The next source of evidence and the owner of the whole investigation can be different roles. A useful annotation rule names which of them the model should predict.
+
+## What this means for the business process
+
+Give the design a separate field or workflow step for the next contributor and for case ownership if both are needed. Let advisers challenge routes that repeatedly delay work, so the category design can improve with practice.
+
+For the research behind this design choice, read [Identify what depends on what](../../reference/research/02-coordination.md#identify-what-depends-on-what).
+
+## Next lesson
+
+Module 7 considers what to do when a clearly specified behaviour remains unreliable even after the task and evidence have been improved. [Lesson 7.1: What fine-tuning changes, and what it cannot settle](../07-specialisation/01-concepts.md).

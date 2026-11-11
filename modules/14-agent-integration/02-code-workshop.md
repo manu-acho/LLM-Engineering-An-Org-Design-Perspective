@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+## What you'll learn and why it matters
+
+Distinguish discovering a tool from being permitted to run it on a case. Trace a permitted read and a refused handoff through the local example.
+
 Discovery is finding out which operations a service offers. Execution is asking it to perform a particular operation with particular arguments. In the workshop, follow a permitted read and a refused handoff. Discovering a name does not confer the right to use it.
 
 [Open the companion workshop notebook](../../notebooks/14-agent-integration.ipynb).
@@ -95,3 +99,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Discovery, permission checks and execution are different operations. The research chapter explains [distinct acts in a workflow](../../reference/research/03-decisions.md#distinct-acts-in-one-workflow).
+
+## What to remember
+
+Discovery advertises a capability. Execution checks the name, arguments, caller's scope and case. Permission for one operation does not grant permission for another.
+
+## What this means for the business process
+
+Expose only the fields the receiving task needs and make the service enforce scope even when a caller already knows the tool name. Test a denied handoff alongside the permitted read.
+
+For the research behind this design choice, read [Permission and authority](../../reference/research/03-decisions.md#permission-and-authority).
+
+## Next lesson
+
+Next decide who will own that capability as several applications start to depend on it. [Lesson 14.3: A reusable agent capability needs a service owner](03-business-and-organisation.md).

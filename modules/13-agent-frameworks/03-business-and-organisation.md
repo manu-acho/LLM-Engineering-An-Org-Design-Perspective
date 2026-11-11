@@ -2,6 +2,10 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md) · [Framework tour](04-framework-tour.md)
 
+## What you'll learn and why it matters
+
+Explain how teams can share an interface while disagreeing about its meaning. Identify the people and maintenance needed to make a shared field usable.
+
 Two teams can both return a field named “received” while one uses a customer's report and the other uses a verified count. An interface standard can align the field names. The teams still need an agreement about what goes into the field and who maintains that agreement.
 
 ## Several teams connect their assistants
@@ -65,3 +69,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 A common interface can transfer values while leaving their meaning or ownership disputed. The research chapter explains [knowledge boundaries](../../reference/research/02-coordination.md#shared-data-and-shared-meaning).
 
 The research chapter also explains [what teams must maintain across a shared interface](../../reference/research/07-infrastructure-and-standards.md#growth-requires-more-than-an-open-interface).
+
+## What to remember
+
+A standard can align field names and formats. Teams still need agreement about what a value represents, who can change it and how others find out.
+
+## What this means for the business process
+
+Publish the difference between reported and confirmed receipt in the shared definition, with an owner and correction path. Agree how teams update their integrations when that definition changes.
+
+For the research behind this design choice, read [Standards make comparison possible and require continuing work](../../reference/research/07-infrastructure-and-standards.md#standards-make-comparison-possible-and-require-continuing-work).
+
+## Next lesson
+
+Next hold one work request fixed while comparing what six frameworks do to start, track and report it. [Lesson 13.4: Read six frameworks through one repeated task](04-framework-tour.md).

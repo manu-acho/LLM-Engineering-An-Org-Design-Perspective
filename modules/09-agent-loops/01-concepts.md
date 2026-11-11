@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## What you'll learn and why it matters
+
+Trace an agent's cycle of choosing, checking, acting and using a returned result. This helps Harbour decide where letting the model choose a step adds value.
+
 An adviser might check dispatch first, then look for carrier evidence if it is missing. An agent loop repeats a similar cycle: choose a permitted step, check and run it, inspect what came back, then decide whether to stop or continue. The tool's result becomes part of the information used for the next choice.
 
 ## From answering a question to investigating a case
@@ -59,3 +63,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 The application bounds available steps while organisational authority remains a separate question. The research chapter explains [permission and authority](../../reference/research/03-decisions.md#permission-and-authority).
+
+## What to remember
+
+The goal states the task, context supplies the available information, tools expose operations and the application decides which requests can run and when to stop.
+
+## What this means for the business process
+
+Give the agent only the reads needed for its investigation, and let the application check each request. The power to select a lookup within a loop gives the agent a limited contribution while the case owner retains responsibility for the result.
+
+For the research behind this design choice, read [Permission and authority](../../reference/research/03-decisions.md#permission-and-authority).
+
+## Next lesson
+
+Next use a scripted responder to inspect every step of a bounded investigation without relying on a live model response. [Lesson 9.2: Follow a tool request around a bounded loop](02-code-workshop.md).

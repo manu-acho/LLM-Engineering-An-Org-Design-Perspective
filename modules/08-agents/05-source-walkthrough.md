@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: complete the operating design](06-design-lab.md)
 
+## What you'll learn and why it matters
+
+Trace the original capstone across model calls, remote services, stored work and presentation. This helps Harbour identify which step failed and who can resolve it.
+
 The capstone spans an adviser interface, model requests, services and saved records. Pick one action and follow where it is proposed, where permission is checked and what record shows its outcome. This separates generating words about an action from carrying it out and knowing it happened.
 
 [Open the companion workshop notebook](../../notebooks/08-agents.ipynb).
@@ -45,3 +49,17 @@ For one run, mark candidate identity, retrieved examples, component predictions,
 ## Read the organisational connection
 
 A service trace reveals contributions whose receipt and acceptance conditions should be explicit. The research chapter explains [dependency management](../../reference/research/02-coordination.md#identify-what-depends-on-what).
+
+## What to remember
+
+A method call can cross a service boundary. The displayed status, model output and stored state each show different parts of what happened.
+
+## What this means for the business process
+
+Assign a repair route for each failure boundary and preserve the last confirmed state. A displayed success should depend on evidence that the receiving operation actually occurred.
+
+For the research behind this design choice, read [What logs can show](../../reference/research/05-routines.md#what-logs-can-show).
+
+## Next lesson
+
+Next put the approval and refusal paths into a complete pilot operating design with clear receiving responsibilities. [Lesson 8.6: Complete a pilot operating design](06-design-lab.md).

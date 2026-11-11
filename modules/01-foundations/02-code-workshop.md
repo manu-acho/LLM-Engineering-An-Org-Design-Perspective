@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+## What you'll learn and why it matters
+
+Trace an order record through evidence preparation, message construction and a scripted draft. This helps Harbour see where the meaning of a quantity could change before a model is called.
+
 Twelve ordered minus ten reported gives a difference of two. The code below keeps the two source figures, calculates their difference and then hands the evidence to a function that writes a draft. Follow the value two through those steps. The example uses a fixed function for the writing so the calculation and the evidence are easy to inspect.
 
 [Open the companion workshop notebook](../../notebooks/01-foundations.ipynb).
@@ -106,3 +110,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 A transformation can preserve a reported fact or silently turn it into a stronger claim. The research chapter explains [decision premises](../../reference/research/03-decisions.md#decision-premises).
+
+## What to remember
+
+The program subtracts the reported count from the order quantity, labels both inputs, and hands two messages to a fixed drafting function. The example demonstrates the flow of evidence through the program.
+
+## What this means for the business process
+
+Keep the source labels in the evidence text and test the arithmetic before substituting a model for the scripted writer. The adviser who receives the draft needs to know what each value represents and what still needs checking.
+
+For the research behind this design choice, read [Shared data and shared meaning](../../reference/research/02-coordination.md#shared-data-and-shared-meaning).
+
+## Next lesson
+
+The draft now has a traceable basis. Next ask who receives it and what further work is needed before the customer gets a decision. [Lesson 1.3: A better brief does not automatically produce a better decision](03-business-and-organisation.md).

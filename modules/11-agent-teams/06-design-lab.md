@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next module](../12-stateful-agents/README.md)
 
+## What you'll learn and why it matters
+
+Decide where specialisation is worth an extra handoff. Compare complete designs for the same Harbour investigation.
+
 A separate agent may help if one task needs different evidence or a different skill. It also creates another result to check and combine. Compare a single worker with the smaller independent parts of a divided workflow. Identify which division helps enough to pay for the extra handoffs in this case.
 
 ## Test whether four contributors are needed
@@ -53,3 +57,17 @@ After the first pilot week, reviewers repeatedly identify missing receipt condit
 Compare the benefit of specialisation with handoffs, reconciliation and maintenance. The research chapter explains [decomposition and integration](../../reference/research/01-organisation-design.md#when-more-agents-create-more-integration-work).
 
 The research chapter also explains [how specialist processes connect](../../reference/research/09-process-architecture.md#process-architecture-connects-the-processes).
+
+## What to remember
+
+A separate contributor can bring expertise or evidence. Each extra boundary needs a result to be checked, combined and maintained.
+
+## What this means for the business process
+
+Keep the investigation together where knowledge and work are tightly linked. Separate a contribution where its boundary can be stated clearly and the receiving team can check it without duplicating the work.
+
+For the research behind this design choice, read [When more agents create more integration work](../../reference/research/01-organisation-design.md#when-more-agents-create-more-integration-work).
+
+## Next lesson
+
+Module 12 follows a different dependency: work that must wait for an authorised decision and then continue later. [Lesson 12.1: State lets a workflow pause, recover and continue](../12-stateful-agents/01-concepts.md).

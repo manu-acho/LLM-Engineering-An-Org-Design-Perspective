@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: the complete tool exchange](05-source-walkthrough.md)
 
+## What you'll learn and why it matters
+
+Distinguish a growing display, stored conversation information and media passed to the model. Learn why an adviser needs to know whether what appears on screen is provisional or complete.
+
 A browser can show “Checking” and then append “ case H-17”, or it can receive the whole phrase again and replace the display. Streaming delivers output in parts. Appending a piece that already includes the earlier text would display it twice. The same separation matters when a photo is added: what the user sees is one part of the system; what the application has received, stored and sent to the model must be checked separately.
 
 ## A conversation has several kinds of state
@@ -47,3 +51,17 @@ For a spoken order enquiry, transcription may turn `O-17` into `017`. The lookup
 ## Read the organisational connection
 
 Streaming and media interfaces change what becomes visible and when it can be examined. The research chapter explains [materiality in digital systems](../../reference/research/06-technology-in-practice.md#materiality-in-digital-systems).
+
+## What to remember
+
+The application can append a new fragment or replace the display with the full text so far. Stored information, reused computation and visible output are distinct.
+
+## What this means for the business process
+
+Mark streamed text as a draft until the application has a final outcome. If a delivery photo matters, show whether it reached the step that checks evidence. What the interface lets an adviser see shapes what they can reasonably do next.
+
+For the research behind this design choice, read [Feature, affordance and constraint](../../reference/research/06-technology-in-practice.md#feature-affordance-and-constraint).
+
+## Next lesson
+
+Next use the original tool call and interface callback to trace a result all the way back to the right request and display. [Lesson 2.5: Trace a complete tool call and interface callback](05-source-walkthrough.md).

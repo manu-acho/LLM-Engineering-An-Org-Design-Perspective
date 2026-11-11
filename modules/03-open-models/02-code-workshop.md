@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+## What you'll learn and why it matters
+
+Encode a short phrase as numbers and decode only the newly supplied piece. This makes the boundary between input and generated text visible before running an open model.
+
 The miniature vocabulary below gives a number to each word. Encode “delivery was”, add one supplied number, then decode only the added piece. A real model chooses the new numbers itself. Keep the miniature exercise separate from the later code that shows how to load and use a real model.
 
 [Open the companion workshop notebook](../../notebooks/03-open-models.ipynb).
@@ -84,3 +88,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Encoding and decoding are inspectable transformations whose organisational effects need further evidence. The research chapter explains [materiality in digital systems](../../reference/research/06-technology-in-practice.md#materiality-in-digital-systems).
+
+## What to remember
+
+The miniature vocabulary maps text to identifiers, and the example supplies a new identifier by hand. A real model selects new identifiers itself.
+
+## What this means for the business process
+
+Test the display with a known input and continuation so the adviser can distinguish supplied text from generated claims. Check factual support separately when the model produces an actual answer.
+
+For the research behind this design choice, read [An evidence path without skipped steps](../../reference/research/06-technology-in-practice.md#an-evidence-path-without-skipped-steps).
+
+## Next lesson
+
+The next lesson applies that distinction to meeting notes, where a technically successful run can still change the meaning of a commitment. [Lesson 3.3: When meeting notes become an organisational record](03-business-and-organisation.md).

@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: failures and queues](07-failures-and-queues.md)
 
+## What you'll learn and why it matters
+
+Specify the contribution, roles and fallback for a bounded Harbour pilot. Use an alternative design to test whether the proposal fits the work.
+
 If the screen says “waiting for carrier”, someone needs to know whose job it is to ask, when to follow up and what to do if no answer arrives. Describe what each case status tells the next person to do. Then test whether the roles and capacity in the pilot support the promised response.
 
 ## Select a bounded contribution
@@ -54,3 +58,17 @@ Harbour approves a read-only drafting pilot with a structured-intake comparator,
 A bounded pilot connects scope, roles, evidence and measures before claiming improvement. The research chapter explains [the worked implementation choice](../../reference/research/04-implementation.md#a-worked-implementation-choice).
 
 The research chapter also explains [who can authorise and carry out a remedy](../../reference/research/08-governance-and-accountability.md#worked-arrangement-govern-a-remedy-rather-than-a-button).
+
+## What to remember
+
+Each case status should tell someone what to do next. Acceptance, escalation and recovery need named owners and capacity to act.
+
+## What this means for the business process
+
+Set a pilot intake limit the review team can handle and retain a route for work outside scope. Compare actual queues and follow-up with the current process before claiming the design improved resolution.
+
+For the research behind this design choice, read [A worked implementation choice](../../reference/research/04-implementation.md#a-worked-implementation-choice).
+
+## Next lesson
+
+The next lesson makes the fallback concrete by examining what to do when a run stops and its effects are uncertain. [Lesson 8.7: Make failures terminal, visible and recoverable](07-failures-and-queues.md).

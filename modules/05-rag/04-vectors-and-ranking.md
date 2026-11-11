@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: build the retrieval pipeline](05-source-walkthrough.md)
 
+## What you'll learn and why it matters
+
+Calculate or interpret a similarity ranking and check whether it retrieves the pieces a task needs. This helps Harbour detect when a search finds the rule but misses its exception.
+
 A long policy might put an exception in the paragraph after a general rule. A chunk is a piece of text prepared for search. If the two paragraphs are split, the search might find the rule and miss the exception. Compare what the system ranks with what the adviser actually needs, then count how many required pieces made it into the returned list.
 
 ## Why turn text into numbers?
@@ -50,3 +54,17 @@ A query rewrite may resolve “Who handles it?” using earlier context. Retaini
 ## Read the organisational connection
 
 Similarity measures compare representations without resolving differences in meaning or interest. The research chapter explains [knowledge boundaries](../../reference/research/02-coordination.md#shared-data-and-shared-meaning).
+
+## What to remember
+
+A chunk is the unit being compared. Splitting a document changes what can be returned. Retrieval measures test which required pieces reached the shortlist.
+
+## What this means for the business process
+
+Build retrieval tests around decisions that need both a rule and its exception. If they are often separated, change the document grouping or ask the search to return related passages. A relevance score alone cannot establish that the adviser has usable evidence.
+
+For the research behind this design choice, read [Four questions for a usable contribution](../../reference/research/02-coordination.md#four-questions-for-a-usable-contribution).
+
+## Next lesson
+
+Next follow the original ingestion path and a small vector-store lab to see how prepared documents reach a request. [Lesson 5.5: Build and trace a complete retrieval-and-answering path](05-source-walkthrough.md).

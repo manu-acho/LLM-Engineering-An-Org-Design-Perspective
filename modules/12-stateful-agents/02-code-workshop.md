@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+## What you'll learn and why it matters
+
+Resume a saved proposal and test a decision for an older version. This helps Harbour continue work after a pause without acting on evidence that has changed.
+
 A case may change while an approval is waiting. The saved state records which version was reviewed. Follow the approval from the saved draft into the resume operation. Then compare it with an approval for a version that has been superseded.
 
 [Open the companion workshop notebook](../../notebooks/12-stateful-agents.ipynb).
@@ -105,3 +109,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 An approval should refer to the proposal that was actually reviewed. The research chapter explains [distinct acts in a workflow](../../reference/research/03-decisions.md#distinct-acts-in-one-workflow).
+
+## What to remember
+
+The saved state describes the proposal under review. A decision identifies that proposal's revision, and a mismatched revision is refused.
+
+## What this means for the business process
+
+Show the reviewer what changed and give them a way to reconsider the current proposal. A fresh decision should rest on current evidence and the applicable rule.
+
+For the research behind this design choice, read [Decision premises](../../reference/research/03-decisions.md#decision-premises).
+
+## Next lesson
+
+Next examine what it takes to staff that queue and give reviewers the ability to act. [Lesson 12.3: A pause creates work for somebody](03-business-and-organisation.md).

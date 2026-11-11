@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## What you'll learn and why it matters
+
+Distinguish a model, framework, protocol and application. This gives Harbour a way to compare frameworks by the work each one takes on.
+
 Two versions of the same brief can use the same model while organising their steps differently. A framework supplies reusable ways to run application work; a protocol sets rules for systems to communicate; an adapter translates between interfaces. Follow one input and output through each version so the comparison is about what the software actually does.
 
 ## The same goal, different machinery
@@ -73,3 +77,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Framework selection should consider local data, roles, controls and maintenance requirements. The research chapter explains [fit and misfit](../../reference/research/04-implementation.md#six-kinds-of-misfit).
+
+## What to remember
+
+The model supplies generated output. Frameworks help run the work, protocols connect components, and the application defines the service and its controls.
+
+## What this means for the business process
+
+Choose a framework against actual requirements such as persisted review or failure recovery. Consider who will maintain the added machinery and which conditions a simpler application could already meet.
+
+For the research behind this design choice, read [Six kinds of misfit](../../reference/research/04-implementation.md#six-kinds-of-misfit).
+
+## Next lesson
+
+Next use a shared task board to make one requirement concrete: who can claim and report a particular piece of work. [Lesson 13.2: A shared task board needs a precise claim rule](02-code-workshop.md).

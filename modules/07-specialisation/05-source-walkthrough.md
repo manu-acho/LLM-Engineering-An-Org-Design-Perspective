@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: decide whether specialisation is worthwhile](06-design-lab.md)
 
+## What you'll learn and why it matters
+
+Trace adaptation from the source contract through training, saving and reloading. Learn which pieces Harbour needs to retain to check a reconstructed result.
+
 Training produces values that can be saved. A reconstruction check asks whether a new session can load those values and make the same kind of prediction. Follow the training step, the saved material and the reloaded prediction in order. This is narrower than demonstrating a useful change in Harbour's work.
 
 [Open the companion workshop notebook](../../notebooks/07-specialisation.ipynb).
@@ -89,3 +93,17 @@ The source parser extracts a number after the price prefix and returns zero if p
 ## Read the organisational connection
 
 Saved weights, versions and reconstruction requirements create continuing service responsibilities. The research chapter explains [implementation beyond launch](../../reference/research/04-implementation.md#implementation-extends-beyond-launch).
+
+## What to remember
+
+The adapted behaviour depends on the saved changes and the matching base and input representation. A reload check tests reconstruction under stated conditions.
+
+## What this means for the business process
+
+Assign an owner to retain the versions needed for serving and retest them after a change. Compare the reconstructed component on real task cases before relying on it in the workflow.
+
+For the research behind this design choice, read [Infrastructure is a relationship with organised work](../../reference/research/07-infrastructure-and-standards.md#infrastructure-is-a-relationship-with-organised-work).
+
+## Next lesson
+
+The next lesson turns these technical and maintenance costs into a decision about whether specialisation is worth adopting. [Lesson 7.6: Make a specialisation decision and keep categories revisable](06-design-lab.md).

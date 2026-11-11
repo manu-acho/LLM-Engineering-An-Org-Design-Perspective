@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+## What you'll learn and why it matters
+
+Trace a follow-up message, a checked lookup and the incremental display in the small program. This helps Harbour keep the conversation useful without exposing another case.
+
 Read the follow-up in the first block against the two earlier messages. Then find the separate operation that looks up the order. The program checks the operation name, order identifier and caller's permitted orders before it retrieves anything. The last block shows how successive pieces of text build the display.
 
 [Open the companion workshop notebook](../../notebooks/02-conversation.ipynb).
@@ -104,3 +108,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Dispatching a permitted operation differs from selecting or authorising a business response. The research chapter explains [distinct acts in a workflow](../../reference/research/03-decisions.md#distinct-acts-in-one-workflow).
+
+## What to remember
+
+Earlier messages clarify the request. The dispatcher checks the operation, arguments and permitted orders. The display can then assemble text in parts.
+
+## What this means for the business process
+
+Derive the permitted orders from trusted identity and keep the lookup result distinct from what appears as it streams. An adviser should be able to tell which record was read and whether the reply is still provisional.
+
+For the research behind this design choice, read [Permission and authority](../../reference/research/03-decisions.md#permission-and-authority).
+
+## Next lesson
+
+With an allowed read in hand, the next lesson asks who can suggest, approve and carry out a remedy. [Lesson 2.3: Who decides when the assistant can act?](03-business-and-organisation.md).

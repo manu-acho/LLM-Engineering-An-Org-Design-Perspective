@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## What you'll learn and why it matters
+
+Explain how search supplies evidence for an answer, and distinguish finding a similar passage from finding an applicable rule. This helps Harbour avoid answering from the wrong policy.
+
 If a customer asks which returns rule applies, Harbour needs to find the right policy before drafting a reply. Retrieval is the step that finds material for the request. Searching for matching words is one method; an embedding represents text as numbers so a search can also compare patterns of meaning. Finding a similar passage does not establish that it applies to the customer's region or date.
 
 ## The policy is not automatically inside the model
@@ -65,3 +69,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Finding passages does not settle what different groups understand them to mean. The research chapter explains [shared data and shared meaning](../../reference/research/02-coordination.md#shared-data-and-shared-meaning).
+
+## What to remember
+
+Keyword search and numerical similarity can find different passages. Relevance, access, effective dates and policy authority still need separate checks.
+
+## What this means for the business process
+
+Give the knowledge service explicit rules for current and permitted sources. Ask the policy owner what each document can establish, so a strong match cannot quietly replace an applicable rule.
+
+For the research behind this design choice, read [Standards make comparison possible and require continuing work](../../reference/research/07-infrastructure-and-standards.md#standards-make-comparison-possible-and-require-continuing-work).
+
+## Next lesson
+
+Next run a small retrieval example and inspect how access and currency checks change the candidates that can be ranked. [Lesson 5.2: Search, filter and return the evidence](02-code-workshop.md).

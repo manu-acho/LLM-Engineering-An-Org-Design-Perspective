@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next module](../02-conversation/README.md)
 
+## What you'll learn and why it matters
+
+Compare three ways of connecting evidence, drafting and investigation. Choose a design by tracing Harbour's actual dependency, cost and authority constraints.
+
 Consider two ways of preparing a delivery brief. One adviser might obtain all the records directly, or a central team might gather them for several advisers. Compare where each approach puts the work of requesting evidence, correcting mistakes and deciding whether a case can proceed.
 
 ## Three plausible designs
@@ -51,3 +55,17 @@ Harbour selects a four-week referenced-brief pilot for the 300-case population, 
 Compare lookup, drafting and specialist conversation against the dependency each addresses. The research chapter explains [the worked organisational comparison](../../reference/research/01-organisation-design.md#a-worked-comparison-at-harbour).
 
 The research chapter also explains [how the complete process extends beyond drafting](../../reference/research/09-process-architecture.md#process-architecture-connects-the-processes).
+
+## What to remember
+
+The preferred design depends on where work gets stuck, who can repair missing evidence and how much review it creates. A simpler workflow can address the same need.
+
+## What this means for the business process
+
+If obtaining the carrier record is the delay, assign and test that work before investing in drafting. Include the adviser and receiving team in the comparison so local time savings do not hide transferred effort.
+
+For the research behind this design choice, read [A worked implementation choice](../../reference/research/04-implementation.md#a-worked-implementation-choice).
+
+## Next lesson
+
+Module 2 carries those evidence and responsibility boundaries into a conversation, where an adviser can ask a follow-up without repeating the case number. [Lesson 2.1: How a conversation becomes a controlled interaction](../02-conversation/01-concepts.md).

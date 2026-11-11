@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## What you'll learn and why it matters
+
+Distinguish a fixed sequence of work from an agent that selects its next step. Use that distinction to decide what Harbour should delegate.
+
 A fixed workflow can always look up an order before preparing a note. An agent can select the next permitted step based on the information returned so far. If the agent can ask for a carrier record, that does not entitle it to issue a credit. List which steps the software can take and which decisions Harbour still assigns to a person.
 
 ## The promise of handling the whole request
@@ -65,3 +69,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 The agent's contribution must be connected to the other contributions needed for the service. The research chapter explains [division and integration](../../reference/research/01-organisation-design.md#division-creates-a-need-for-integration).
+
+## What to remember
+
+The application can set a fixed order or let the model choose among allowed operations. Choosing a permitted step is separate from authorising a business action.
+
+## What this means for the business process
+
+Let an agent choose among evidence lookups only where that flexibility helps the investigation. Keep remedy authority with the relevant role and document what evidence that role requires.
+
+For the research behind this design choice, read [Permission and authority](../../reference/research/03-decisions.md#permission-and-authority).
+
+## Next lesson
+
+Next run a simulated handoff and see how the application records its result and handles a repeated request. [Lesson 8.2: Follow state before performing an action](02-code-workshop.md).

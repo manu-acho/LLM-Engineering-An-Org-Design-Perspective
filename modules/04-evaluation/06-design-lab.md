@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next module](../05-rag/README.md)
 
+## What you'll learn and why it matters
+
+Judge whether a measured gain changes the complete service. Account for work moved to another team and for other changes that could explain the result.
+
 An assistant can reduce the time to draft a note without reducing the time to resolve a claim. Measure from the customer's first report through the actual resolution and see where the saved time went. A before-and-after comparison can also reflect changes in case mix or staffing. Use those possibilities to decide what evidence a pilot would need.
 
 ## Put the entire case into the measurement
@@ -48,3 +52,17 @@ A scale decision requires both technical quality and an operating arrangement. I
 The effect of a measured improvement depends on information, capacity, roles and incentives around it. The research chapter explains [fit among design choices](../../reference/research/01-organisation-design.md#fit-is-a-relationship-among-choices).
 
 The research chapter also explains [where to start and stop measuring success](../../reference/research/09-process-architecture.md#worked-design-extend-the-boundary-of-success).
+
+## What to remember
+
+Faster drafting can coexist with unchanged or slower resolution. A before-and-after difference can also reflect staffing or a different mix of cases.
+
+## What this means for the business process
+
+Follow the same types of dispute from report to resolution, including referrals and rework. Compare against the current process and record other changes during the pilot before attributing a gain to AI.
+
+For the research behind this design choice, read [Capability, configuration, practice and outcome](../../reference/research/04-implementation.md#capability-configuration-practice-and-outcome).
+
+## Next lesson
+
+Module 5 asks how the assistant finds the evidence it needs. That makes source selection another part of the service you can evaluate. [Lesson 5.1: How an assistant finds organisational knowledge](../05-rag/01-concepts.md).

@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: redesign the information work](06-design-lab.md)
 
+## What you'll learn and why it matters
+
+Trace the original summariser from a web address to a model request, then explain what the multi-page version adds. This lets Harbour see where material can be lost before drafting.
+
 Imagine giving someone a web address and asking for a summary. Before any words can be drafted, the software has to open the page and extract material to pass to the model. Follow one page from address to extracted text to request. This reveals which parts of the source can be lost before the model sees it.
 
 [Open the companion workshop notebook](../../notebooks/01-foundations.ipynb).
@@ -58,3 +62,17 @@ Streaming changes presentation timing. Accumulating text deltas and replacing a 
 ## Read the organisational connection
 
 Scraping, selecting and compressing text change what the receiving activity can consider. The research chapter explains [information demand and capacity](../../reference/research/01-organisation-design.md#information-demand-and-capacity).
+
+## What to remember
+
+The summariser fetches and extracts text before calling a provider. The multi-page example adds a step that selects links to follow, which affects the material sent for summarising.
+
+## What this means for the business process
+
+Check whether extraction preserves the information the receiving team needs, and show which pages the application selected. If an important qualification disappears during extraction or selection, repair that step before changing the model.
+
+For the research behind this design choice, read [Four questions for a usable contribution](../../reference/research/02-coordination.md#four-questions-for-a-usable-contribution).
+
+## Next lesson
+
+You have seen where a summariser can lose source material. Next compare designs for getting the right evidence to the adviser and deciding what to do with it. [Lesson 1.6: Choose how information and work should be connected](06-design-lab.md).

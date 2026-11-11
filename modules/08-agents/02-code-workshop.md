@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+## What you'll learn and why it matters
+
+Follow a proposed handoff through approval and evidence checks, then repeat the request. This shows Harbour why it needs to record an outcome before deciding what to retry.
+
 An approved handoff might be requested twice if the first reply is slow. Give the same simulated request to the program twice and follow the identifier it uses to find the earlier result. The receipt describes a local simulation. It does not show that any outside team received the work.
 
 [Open the companion workshop notebook](../../notebooks/08-agents.ipynb).
@@ -85,3 +89,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 State should distinguish proposals, authorisation, execution and recorded results. The research chapter explains [distinct acts in a workflow](../../reference/research/03-decisions.md#distinct-acts-in-one-workflow).
+
+## What to remember
+
+The simulation records a receipt for one action identifier and returns it on an identical retry. A missing approval or source blocks a new action.
+
+## What this means for the business process
+
+Give the handoff a stable identity and keep the receipt visible to the case owner. If an external system might already have acted, agree how to reconcile its record before repeating the request.
+
+For the research behind this design choice, read [Documentation and auditing support accountability but do not replace it](../../reference/research/08-governance-and-accountability.md#documentation-and-auditing-support-accountability-but-do-not-replace-it).
+
+## Next lesson
+
+Next put that recording mechanism beside the people, dependencies and acceptance rules needed to operate the workflow. [Lesson 8.3: Designing an operating organisation around the workflow](03-business-and-organisation.md).

@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: decide where discretion belongs](06-design-lab.md)
 
+## What you'll learn and why it matters
+
+Follow a tool request, its identifier and the interface callback through the original implementation. Learn to locate a failure between lookup, response and display.
+
 A model might ask for a lookup and wait for the result before it answers. A call identifier lets the application match that result to the particular request. Follow it back into the conversation, then read how a callback, a function run in response to an interface event, lets the screen use the resulting answer.
 
 [Open the companion workshop notebook](../../notebooks/02-conversation.ipynb).
@@ -88,3 +92,17 @@ The [function-calling documentation](https://developers.openai.com/api/docs/guid
 ## Read the organisational connection
 
 A complete tool exchange still needs a defensible allocation of action rights. The research chapter explains [permission and authority](../../reference/research/03-decisions.md#permission-and-authority).
+
+## What to remember
+
+The identifier matches a result to a request. The application returns that result to the conversation, then a callback lets the interface display an outcome.
+
+## What this means for the business process
+
+Retain the case and call identifiers through the callback and expose a lookup failure to the adviser. The next person needs to know whether a record was unavailable or the interface failed to show it.
+
+For the research behind this design choice, read [Four questions for a usable contribution](../../reference/research/02-coordination.md#four-questions-for-a-usable-contribution).
+
+## Next lesson
+
+The next lesson turns these checks into a design choice about how much freedom the assistant and advisers should have. [Lesson 2.6: Allocate discretion across a conversational service](06-design-lab.md).

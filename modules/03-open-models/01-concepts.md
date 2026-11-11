@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## What you'll learn and why it matters
+
+Identify what a hosted service handles and what Harbour would need to handle to run a model itself. This makes the hosting choice a question of capability and support as well as computing.
+
 With a hosted model, the application sends a request to a service that runs the model elsewhere. To run a model locally, the computer needs a way to turn text into numbers, the learned numbers that define the model, and software to carry out the calculations. The lesson calls these the tokenizer, weights and runtime. Follow the same short input through each before comparing computer memory requirements.
 
 ## From a service request to visible components
@@ -57,3 +61,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Running the model locally creates continuing maintenance and support work. The research chapter explains [implementation beyond launch](../../reference/research/04-implementation.md#implementation-extends-beyond-launch).
+
+## What to remember
+
+Local inference needs a tokenizer, learned weights, software to run the operations and suitable hardware. Those parts have to work together before a model can answer.
+
+## What this means for the business process
+
+Before choosing local hosting, name who owns model updates, compatibility checks and recovery when the machine cannot run the model. Include those continuing responsibilities in the comparison with hosted service.
+
+For the research behind this design choice, read [Implementation extends beyond launch](../../reference/research/04-implementation.md#implementation-extends-beyond-launch).
+
+## Next lesson
+
+Next encode and decode a tiny example by hand so you can identify what the tokenizer and model would each supply in a real run. [Lesson 3.2: Encode, generate, decode](02-code-workshop.md).

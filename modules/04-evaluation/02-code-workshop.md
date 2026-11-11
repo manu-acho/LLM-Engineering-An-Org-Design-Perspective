@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+## What you'll learn and why it matters
+
+Compare a candidate shortage calculation with a transparent reference on contrasting cases. Learn why Harbour needs to agree what the result counts before timing the code.
+
 Suppose a candidate program agrees with a trusted calculation when fewer boxes arrive, but disagrees when more arrive. A test case supplies particular records and asks for a result that can be checked. Follow the cases before thinking about speed. The surprising case exposes a business rule the happy path leaves hidden.
 
 [Open the companion workshop notebook](../../notebooks/04-evaluation.ipynb).
@@ -81,3 +85,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 A correctness test is valuable without being evidence of an organisational benefit. The research chapter explains [the evidence path](../../reference/research/06-technology-in-practice.md#an-evidence-path-without-skipped-steps).
+
+## What to remember
+
+The reference counts positive shortages. A case with more boxes reported than ordered tests that rule. Matching a few cases supports a limited correctness claim.
+
+## What this means for the business process
+
+Ask the process owner whether overdeliveries need their own measure and turn that choice into a test. Compare speed only after the candidate satisfies the intended rule.
+
+For the research behind this design choice, read [Decision premises](../../reference/research/03-decisions.md#decision-premises).
+
+## Next lesson
+
+The next lesson considers what happens when such a measure is used to manage people's work. [Lesson 4.3: Metrics are part of the design of work](03-business-and-organisation.md).

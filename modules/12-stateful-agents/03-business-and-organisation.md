@@ -2,6 +2,10 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+## What you'll learn and why it matters
+
+Identify the work a pause creates for a human reviewer. Explain why access, capacity and practical discretion determine whether the control will work.
+
 Pausing a run can prevent an unauthorised action. It also creates a queue of cases somebody has to check. Estimate what the reviewer needs to see, how quickly they must respond and who covers an absence. A button giving formal approval rights does not supply evidence, time or a backup.
 
 ## Human review becomes a queue
@@ -67,3 +71,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 A pause creates a dependency on reviewer attention and capacity. The research chapter explains [shared-resource dependencies](../../reference/research/02-coordination.md#identify-what-depends-on-what).
 
 The research chapter also explains [what a reviewer needs beyond an approval button](../../reference/research/08-governance-and-accountability.md#meaningful-review-needs-resources-and-a-practical-alternative).
+
+## What to remember
+
+A review gate creates waiting and an assignment. Formal approval rights need time, evidence and a way to disagree in practice.
+
+## What this means for the business process
+
+Name who covers the review queue, how long cases can wait and how to return or escalate them. Test the arrangement on a busy day, when reviewers may otherwise clear work without enough evidence.
+
+For the research behind this design choice, read [Meaningful review needs resources and a practical alternative](../../reference/research/08-governance-and-accountability.md#meaningful-review-needs-resources-and-a-practical-alternative).
+
+## Next lesson
+
+The next lesson returns to the software to examine which saved updates replay will repeat and which effects need protection. [Lesson 12.4: Decide how state changes and what replay repeats](04-reducers-replay-and-memory.md).

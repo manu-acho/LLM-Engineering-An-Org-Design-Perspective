@@ -2,6 +2,10 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+## What you'll learn and why it matters
+
+Distinguish suggesting a credit, approving it and changing the account. The distinction helps Harbour assign each act to a role or service with the right authority.
+
 There are three different acts when a customer asks for credit: suggesting it, approving it and changing the account. A decision premise is a starting point for a decision, such as the policy that says which claims require proof of delivery. Identify who sets that policy before assigning any of the three acts to the assistant or a person.
 
 ## The proposal
@@ -73,3 +77,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 A technical entitlement does not by itself establish an organisational mandate. The research chapter explains [permission and authority](../../reference/research/03-decisions.md#permission-and-authority).
 
 The research chapter also explains [what makes review practical](../../reference/research/08-governance-and-accountability.md#meaningful-review-needs-resources-and-a-practical-alternative).
+
+## What to remember
+
+Policies and evidence shape the decision before the final click. The assistant can contribute a proposal, while approval and execution remain separate responsibilities.
+
+## What this means for the business process
+
+Give the policy owner control of the eligibility rules and the authorised manager control of the remedy decision. Make Finance's execution step depend on a valid approval. That design keeps the decision premises and decision rights visible when the assistant drafts a recommendation.
+
+For the research behind this design choice, read [Distinct acts in one workflow](../../reference/research/03-decisions.md#distinct-acts-in-one-workflow).
+
+## Next lesson
+
+Next you will look at how streaming text and media change what the adviser can see while those responsibilities stay in force. [Lesson 2.4: What changes when a conversation streams or uses media?](04-streaming-caching-and-media.md).

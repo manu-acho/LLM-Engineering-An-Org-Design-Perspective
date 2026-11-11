@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: design the service promise](06-design-lab.md)
 
+## What you'll learn and why it matters
+
+Follow the original digital twin from tool description to invocation and notification. Identify the point where a generated proposal can have an outside effect.
+
 Read the digital twin as a series of boundaries. A tool description tells the model how to request an operation. The application decides whether it can run that request, then hands back a result or reports a failure. Follow which step can send a notification and which one only proposes it.
 
 [Open the companion workshop notebook](../../notebooks/09-agent-loops.ipynb).
@@ -55,3 +59,17 @@ Adding all of them does not settle what the public-facing service should promise
 ## Read the organisational connection
 
 An engineering agent can request actions without thereby acquiring legitimate authority or accountability. The research chapter explains [agency and responsibility](../../reference/research/06-technology-in-practice.md#agency-does-not-imply-responsibility).
+
+## What to remember
+
+The tool schema describes how to request an operation. Application code dispatches it and can call a notification service. Those are different steps with different failure conditions.
+
+## What this means for the business process
+
+Keep notification behind a separate permission check and record whether it was actually sent. Give Harbour a route to investigate uncertain effects before sending again.
+
+For the research behind this design choice, read [Distinct acts in one workflow](../../reference/research/03-decisions.md#distinct-acts-in-one-workflow).
+
+## Next lesson
+
+The next lesson uses the stop reason and handoff to design the promise Harbour makes to customers at intake. [Lesson 9.6: Design the front door and the promise behind it](06-design-lab.md).

@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: evaluate the generated program](05-source-walkthrough.md)
 
+## What you'll learn and why it matters
+
+Calculate how a decision rule changes different kinds of error. Explain what the result depends on before using it to recommend an operating threshold.
+
 A rule that sends every uncertain case to a specialist catches more risky complaints and creates more unnecessary reviews. One kind of error misses a case that needs review; the other sends a case that did not need it. Follow the counts first. The loss rule then attaches explicit consequences to those counts so readers can question what the comparison values.
 
 ## A decision rule creates different errors
@@ -56,3 +60,17 @@ If one system fails where another succeeds, inspect those paired cases. An avera
 ## Read the organisational connection
 
 An aggregate score can conceal differences in case difficulty and work shifted to other roles. The research chapter explains [benefit evidence](../../reference/research/04-implementation.md#benefits-need-a-population-and-a-comparison).
+
+## What to remember
+
+Missing a needed review and triggering an unnecessary review are different errors. The comparison depends on the selected cases and the costs assigned to those errors.
+
+## What this means for the business process
+
+Test proposed thresholds on the same case population and vary uncertain penalty assumptions. Check whether the preferred rule still holds when the review burden or cost of a missed case changes.
+
+For the research behind this design choice, read [Benefits need a population and a comparison](../../reference/research/04-implementation.md#benefits-need-a-population-and-a-comparison).
+
+## Next lesson
+
+Next inspect a generated program from instruction to correctness check to timing result, so a speed comparison has a defined basis. [Lesson 4.5: Inspect a generated program from prompt to timing result](05-source-walkthrough.md).

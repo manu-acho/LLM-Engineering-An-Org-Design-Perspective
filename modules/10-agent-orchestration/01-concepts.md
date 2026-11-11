@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## What you'll learn and why it matters
+
+Compare sequential and parallel work and explain what a coordinator must bring together. Harbour needs those choices to reflect which evidence depends on other evidence.
+
 One worker can read dispatch and another can read policy, but a brief still needs both contributions brought together. Orchestration is the application logic that orders, starts and combines work. The two reads can run at the same time if neither needs the other's result. Combining them requires rules for missing or incompatible answers.
 
 ## Three specialists do not yet make a service
@@ -59,3 +63,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Orchestration is assessable when the connected contributions and their dependencies are explicit. The research chapter explains [dependency management](../../reference/research/02-coordination.md#identify-what-depends-on-what).
+
+## What to remember
+
+Orchestration starts, orders and combines work. Independent reads can overlap, but their results still need to be checked and combined.
+
+## What this means for the business process
+
+Run independent reads together where delay matters, and set a receiving condition that states which results must be present. Design a route for an absent or conflicting contribution before the coordinator claims success.
+
+For the research behind this design choice, read [Identify what depends on what](../../reference/research/02-coordination.md#identify-what-depends-on-what).
+
+## Next lesson
+
+Next follow two independent evidence reads into a combined draft, then inspect the separate check for authority to hand it over. [Lesson 10.2: Gather evidence without confusing checks and permission](02-code-workshop.md).

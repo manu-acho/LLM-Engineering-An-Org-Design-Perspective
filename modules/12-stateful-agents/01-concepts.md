@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## What you'll learn and why it matters
+
+Explain what a workflow must save to pause and resume a case. Harbour needs to retain the draft and its review position when the program stops.
+
 A claim may wait overnight for a human decision. The next day, the program needs a saved account of what it knows and where the work stopped. That account is state. A graph describes the steps and paths between them; a checkpoint saves state at a boundary where work can later continue. Follow the case from drafting to the point it waits for review.
 
 ## A review that takes until tomorrow
@@ -63,3 +67,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Saved state preserves selected information rather than the entire situation in which work occurred. The research chapter explains [the limits of recorded evidence](../../reference/research/05-routines.md#what-logs-can-show).
+
+## What to remember
+
+State holds the information the next step needs. A graph describes allowed routes. A checkpoint saves state at a point where work can continue.
+
+## What this means for the business process
+
+Save the reason a case is waiting alongside the version of its draft, then connect that waiting state to a review queue. A saved state becomes useful to the organisation when someone can find it and take the next step.
+
+For the research behind this design choice, read [Designing an artefact and designing a pattern](../../reference/research/05-routines.md#designing-an-artefact-and-designing-a-pattern).
+
+## Next lesson
+
+Next follow a saved proposal through a simulated review and see how the application refuses an older decision after the proposal changes. [Lesson 12.2: Resume a case without reusing a stale approval](02-code-workshop.md).

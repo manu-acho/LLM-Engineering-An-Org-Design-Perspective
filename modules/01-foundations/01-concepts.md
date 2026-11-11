@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## What you'll learn and why it matters
+
+Explain how a model builds a reply one piece at a time, and distinguish drafting text from checking a delivery. This distinction helps Harbour decide which parts of an investigation to assign to AI.
+
 ## Begin with the short delivery
 
 Harbour sells packaging to other businesses. A customer says ten of the twelve boxes it ordered arrived, and an adviser asks an assistant to draft an investigation brief. Before asking how the assistant knows what to write, start with a simpler question: how does a phone suggest the next word?
@@ -93,3 +97,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Input selection changes which evidence is available for later work. The research chapter explains [information demand and capacity](../../reference/research/01-organisation-design.md#information-demand-and-capacity).
+
+## What to remember
+
+The phone example estimates which word follows a phrase. At Harbour, ordinary code can calculate a difference, and a language model can put that calculation into words. The records still determine which claims the adviser can support.
+
+## What this means for the business process
+
+Let the application collect and label the records, use an explicit rule for the subtraction, and give the model the drafting step. The adviser should check the sources and decide what to investigate. Keep credit under its own approval process. The decisions chapter explains why preparing information, recommending a remedy and authorising it are separate acts.
+
+For the research behind this design choice, read [Distinct acts in one workflow](../../reference/research/03-decisions.md#distinct-acts-in-one-workflow).
+
+## Next lesson
+
+Next follow the same distinction in Python as the application compares two quantities and hands source-labelled evidence to a small drafting function. [Lesson 1.2: Follow a piece of information through a program](02-code-workshop.md).

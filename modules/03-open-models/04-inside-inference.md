@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: inspect a real inference interface](05-source-walkthrough.md)
 
+## What you'll learn and why it matters
+
+Follow text identifiers, numerical representations, attention and output scores through a small model. This explains why changing the surrounding text can change the draft Harbour receives.
+
 A model cannot calculate directly with a phrase as printed. It starts by looking up a number for each piece of text, then uses a list of numbers to represent that piece. Attention lets the representation for one piece draw on information at other positions the model is allowed to use. Trace one piece through those changes before looking at the final scores for what could come next.
 
 ## Identifiers become representations
@@ -53,3 +57,17 @@ The output shape means one sequence, three positions and sixteen candidate-token
 ## Read the organisational connection
 
 A numerical inference trace supports a technical claim within its tested scope. The research chapter explains [the evidence path](../../reference/research/06-technology-in-practice.md#an-evidence-path-without-skipped-steps).
+
+## What to remember
+
+Attention lets the representation at one position draw on other available positions. Scores guide the next choice, and the chosen piece becomes part of the next input.
+
+## What this means for the business process
+
+Test drafts with qualifications and tentative language still present, then check whether the result preserves them. The ability to use surrounding text is a technical possibility. Whether that produces a usable note depends on the supplied text and the acceptance check.
+
+For the research behind this design choice, read [Feature, affordance and constraint](../../reference/research/06-technology-in-practice.md#feature-affordance-and-constraint).
+
+## Next lesson
+
+Next trace those operations through a local inference function and learn to distinguish model loading, generation and display failures. [Lesson 3.5: Load, encode, generate and diagnose](05-source-walkthrough.md).

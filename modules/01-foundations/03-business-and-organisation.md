@@ -2,6 +2,10 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+## What you'll learn and why it matters
+
+Explain why a better brief can leave the investigation and remedy unchanged. Map the contributions that must come together before Harbour can make a better decision.
+
 A draft can save an adviser time and still leave the customer waiting. The next step may need a warehouse count or a carrier record. Compare the work of making the brief with the work of investigating the discrepancy. If the person receiving the brief cannot get the missing record, faster writing does not remove the wait.
 
 ## The case
@@ -77,3 +81,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 A useful brief needs source access, a recipient and a correction route. The research chapter explains [fit among design choices](../../reference/research/01-organisation-design.md#fit-is-a-relationship-among-choices).
 
 The research chapter also explains [how the complete process extends beyond drafting](../../reference/research/09-process-architecture.md#process-architecture-connects-the-processes).
+
+## What to remember
+
+The brief represents some of the work. Advisers still depend on investigators, source owners and authorised decision makers. A benefit claim needs a test that includes those activities.
+
+## What this means for the business process
+
+Identify who takes the brief, who gets missing evidence and who decides the remedy. Compare clarification and total resolution with the current process before crediting the drafting step with a better decision.
+
+For the research behind this design choice, read [Division creates a need for integration](../../reference/research/01-organisation-design.md#division-creates-a-need-for-integration).
+
+## Next lesson
+
+Having separated the brief from the decision, follow the model request itself and learn what the returned status establishes. [Lesson 1.4: From a probability to a service response](04-generation-and-requests.md).

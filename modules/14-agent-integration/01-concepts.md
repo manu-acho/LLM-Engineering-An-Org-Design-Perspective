@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## What you'll learn and why it matters
+
+Identify the host, client and server in a Model Context Protocol connection. Explain what the protocol makes possible and where Harbour still decides access and authority.
+
 An assistant needs a way to discover how to read Harbour's case records. Model Context Protocol (MCP) gives connected software common rules for describing and requesting capabilities. The host is the application using the connection; its client exchanges messages with the server that offers the capability. Harbour still decides who may read or change a case.
 
 ## Connecting an assistant to existing systems
@@ -63,3 +67,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Discovering an available capability does not establish a mandate for its business use. The research chapter explains [permission and authority](../../reference/research/03-decisions.md#permission-and-authority).
+
+## What to remember
+
+The connection lets software describe and request capabilities. A capability's existence does not determine whether the caller may see or change a given case.
+
+## What this means for the business process
+
+Expose a narrow read and check the caller's case access in the service. Define any authority to approve or execute an action separately from the fact that a client can connect.
+
+For the research behind this design choice, read [Permission and authority](../../reference/research/03-decisions.md#permission-and-authority).
+
+## Next lesson
+
+Next separate discovery from execution in a local example that permits a case read while refusing a handoff. [Lesson 14.2: Separate capability discovery from execution checks](02-code-workshop.md).

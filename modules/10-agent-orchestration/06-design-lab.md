@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next module](../11-agent-teams/README.md)
 
+## What you'll learn and why it matters
+
+Compare who should combine specialist contributions and deal with conflicts. Evaluate time saved against the coordination effort each design creates.
+
 A central coordinator can request and combine contributions, or the specialists can take more responsibility for what they hand over. In either design, specify what each specialist must return, how a missing answer is shown and who resolves conflict. Consider whether running two reads at once saves enough time to justify the work of combining them.
 
 ## Two architectures express different working assumptions
@@ -50,3 +54,17 @@ If technical handoffs succeed but specialists repeatedly return cases as unusabl
 Specialist contributions need to justify the coordination work their separation creates. The research chapter explains [decomposition and integration](../../reference/research/01-organisation-design.md#when-more-agents-create-more-integration-work).
 
 The research chapter also explains [the roles and events behind a handoff](../../reference/research/09-process-architecture.md#activities-events-roles-and-objects).
+
+## What to remember
+
+Central coordination concentrates integration work. Specialist ownership can preserve local knowledge but still needs a shared receiving rule and an owner for disagreements.
+
+## What this means for the business process
+
+Consider central coordination where routine contributions can be combined under clear acceptance rules. For disputed cases that require local expertise, specify how specialists and the case owner resolve conflicting claims.
+
+For the research behind this design choice, read [Mechanisms and conditions](../../reference/research/02-coordination.md#mechanisms-and-conditions).
+
+## Next lesson
+
+Module 11 extends the comparison into teams, starting with which tasks depend on which results. [Lesson 11.1: Roles, tasks and dependencies in an agent team](../11-agent-teams/01-concepts.md).

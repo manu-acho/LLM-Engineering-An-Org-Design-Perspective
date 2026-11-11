@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+## What you'll learn and why it matters
+
+Trace two evidence reads into a combined draft and see why the draft needs a separate approval. This lets Harbour gain time from independent reads while keeping authority explicit.
+
 A coordinator can collect order and policy evidence together because neither read requires the other. It still needs both before it can prepare the draft. Follow the source identifiers in the returned result and then check why permission for an actual handoff requires another step.
 
 [Open the companion workshop notebook](../../notebooks/10-agent-orchestration.ipynb).
@@ -103,3 +107,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Checking evidence and granting permission answer different questions. The research chapter explains [distinct acts in a workflow](../../reference/research/03-decisions.md#distinct-acts-in-one-workflow).
+
+## What to remember
+
+The reads can overlap because neither needs the other. The draft needs both sources, and authorising a handoff is a different operation.
+
+## What this means for the business process
+
+Define the evidence the coordinator must receive and who handles an absent contribution. Keep the remedy or handoff approval with the authorised role, even when the draft is complete.
+
+For the research behind this design choice, read [Identify what depends on what](../../reference/research/02-coordination.md#identify-what-depends-on-what).
+
+## Next lesson
+
+Next take that distinction outside the software and ask what it takes for a person or team to accept responsibility for a case. [Lesson 10.3: A software handoff is not accepted ownership](03-business-and-organisation.md).

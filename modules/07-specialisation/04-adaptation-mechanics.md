@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: train and reload a tiny adapter](05-source-walkthrough.md)
 
+## What you'll learn and why it matters
+
+Explain how an adapter, a group of training examples and a loss calculation work together. Use this to distinguish improvement on the selected scoring rule from improvement in the work.
+
 A training batch is a group of examples used together for one training step. Loss is a number that measures how poorly predictions fit the expected answers under a chosen rule. Trace one prediction for an expected answer: the lesson's rule penalises it more when the model gives that answer a lower probability. Then see which values an adapter is allowed to change.
 
 ## Two smaller tables change a larger transformation
@@ -37,3 +41,17 @@ The next lesson deliberately uses a tiny non-quantized model so ordinary local h
 ## Read the organisational connection
 
 An adapter changes a technical arrangement; consequences for work require a further account. The research chapter explains [materiality in digital systems](../../reference/research/06-technology-in-practice.md#materiality-in-digital-systems).
+
+## What to remember
+
+A batch groups examples for an update. The loss grades predictions against chosen answers. The adapter changes some values while the base can stay fixed.
+
+## What this means for the business process
+
+Ask which cases and mistakes the objective rewards before adopting the adapter. If it improves common categories while obscuring urgent exceptions, change the evaluation and operating route rather than relying on average loss.
+
+For the research behind this design choice, read [Select controls for the work that can actually be assessed](../../reference/research/08-governance-and-accountability.md#select-controls-for-the-work-that-can-actually-be-assessed).
+
+## Next lesson
+
+Next follow the original adaptation lifecycle to see which values and inputs must be preserved when a trained component is saved and reloaded. [Lesson 7.5: Train, save and reconstruct a small adapted system](05-source-walkthrough.md).

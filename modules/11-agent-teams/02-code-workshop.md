@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+## What you'll learn and why it matters
+
+Trace a small workflow through declared prerequisites and identify which result the draft needs. This helps Harbour distinguish dependencies from labels in a configuration.
+
 One task collects a source and a later one drafts from it. The draft depends on that earlier result, so its instructions alone are insufficient. Trace the order in which the tasks run and what the program checks before it accepts each result into the next task.
 
 [Open the companion workshop notebook](../../notebooks/11-agent-teams.ipynb).
@@ -100,3 +104,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 A task graph makes prerequisites visible, but shared-resource and meaning problems can remain. The research chapter explains [dependency management](../../reference/research/02-coordination.md#identify-what-depends-on-what).
+
+## What to remember
+
+The assessment waits for collection, and the draft waits for assessment. Each task must return the information its successor needs.
+
+## What this means for the business process
+
+Reject a configuration that starts a draft before its evidence is ready. Show why a case is waiting, so the owner can tell a missing source from a stalled worker.
+
+For the research behind this design choice, read [Identify what depends on what](../../reference/research/02-coordination.md#identify-what-depends-on-what).
+
+## Next lesson
+
+Next examine why correct software sequencing still leaves questions about how people integrate the results. [Lesson 11.3: An agent team needs integration, not just role names](03-business-and-organisation.md).

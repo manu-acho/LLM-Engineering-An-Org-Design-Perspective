@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: design the review service](06-design-lab.md)
 
+## What you'll learn and why it matters
+
+Trace a saved graph from its pause to a later run that uses the same thread identifier. Identify what the programme can restore and what Harbour must check again.
+
 The first run saves information at a point where a human decision is needed. A later run uses the same thread identifier to find the saved information. Trace what gets restored and what must be checked again before any action can proceed.
 
 [Open the companion workshop notebook](../../notebooks/12-stateful-agents.ipynb).
@@ -94,3 +98,17 @@ The evaluator receives the task, criteria, latest reply and tool names. That evi
 ## Read the organisational connection
 
 A checkpoint and resume operation have inspectable effects without proving recovery of the wider service. The research chapter explains [materiality in digital systems](../../reference/research/06-technology-in-practice.md#materiality-in-digital-systems).
+
+## What to remember
+
+A thread identifier locates the stored graph state. The checkpoint preserves the draft and continuation boundary. It does not keep later evidence or authority current.
+
+## What this means for the business process
+
+Give reviewers the saved draft and the current case or policy version. When they differ, require a renewed review with the reason visible to the case owner.
+
+For the research behind this design choice, read [Meaningful review needs resources and a practical alternative](../../reference/research/08-governance-and-accountability.md#meaningful-review-needs-resources-and-a-practical-alternative).
+
+## Next lesson
+
+The next lesson uses these checks to design a review service that can handle ordinary workload and exceptions. [Lesson 12.6: Design review as a service with capacity and discretion](06-design-lab.md).

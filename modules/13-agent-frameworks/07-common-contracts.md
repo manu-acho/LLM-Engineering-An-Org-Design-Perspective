@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next module](../14-agent-integration/README.md)
 
+## What you'll learn and why it matters
+
+Check whether an adapter preserves both a record's uncertainty and the current worker's right to finish. This shows what can be lost when systems translate state.
+
 A lease gives a worker a temporary claim to a job. If the claim expires, another worker can take it. An adapter must translate that status without giving the old worker a new right to finish, just as it must preserve the difference between an unknown and a confirmed quantity. Check both meanings at the boundary.
 
 ## A common shape needs explicit meanings
@@ -64,3 +68,17 @@ Test an empty result, explicit error, stale input revision, missing output and a
 ## Read the organisational connection
 
 An adapter that replaces unknown with a definite value changes the basis of later choices. The research chapter explains [decision premises](../../reference/research/03-decisions.md#decision-premises).
+
+## What to remember
+
+A common shape can hide a difference in meaning. A reported quantity remains a report, and an expired claim no longer gives its former worker permission to complete the job.
+
+## What this means for the business process
+
+Put both rules in the agreement between systems and test them at the boundary. A translation that drops either can change the premise for a remedy or create conflicting claims to the same work.
+
+For the research behind this design choice, read [Worked design: a quantity agreement](../../reference/research/07-infrastructure-and-standards.md#worked-design-a-quantity-agreement).
+
+## Next lesson
+
+Module 14 adds a standard way to discover and request a capability. You will carry forward the distinction between connecting to it and being allowed to use it. [Lesson 14.1: MCP connects capabilities, not business authority](../14-agent-integration/01-concepts.md).

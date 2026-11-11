@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Code workshop](02-code-workshop.md) · [Next module](../14-agent-integration/README.md)
 
+## What you'll learn and why it matters
+
+Compare six frameworks against the same work request. Identify where each one starts a worker, carries state and records a result.
+
 Start with one task and keep its required contribution fixed while comparing frameworks. For each version, find which part runs the worker, stores or passes state and records the result. The names of framework features are easier to understand once the job they perform is visible.
 
 ## Keep the task in view
@@ -65,3 +69,17 @@ The most useful comparison may end with one shared runtime, a mix behind stable 
 ## Read the organisational connection
 
 Different technical arrangements can distribute and reconnect contributions in different ways. The research chapter explains [division and integration](../../reference/research/01-organisation-design.md#division-creates-a-need-for-integration).
+
+## What to remember
+
+The frameworks use different interfaces and session or tool patterns. A fixed task makes those responsibilities comparable.
+
+## What this means for the business process
+
+Compare what each runtime requires the service team to maintain and how it reports unfinished work. Keep the expected contribution and acceptance checks fixed across the comparison.
+
+For the research behind this design choice, read [Six kinds of misfit](../../reference/research/04-implementation.md#six-kinds-of-misfit).
+
+## Next lesson
+
+Next follow two concrete implementations in more detail and compare the boundaries that matter for operating the same worker. [Lesson 13.5: Follow the same worker through two real framework implementations](05-source-walkthrough.md).

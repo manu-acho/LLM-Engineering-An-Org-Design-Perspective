@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## What you'll learn and why it matters
+
+Distinguish a demonstration from a fair evaluation and state what would count as improvement. Harbour needs to know whether the service helps across the cases it intends to handle.
+
 Imagine two polished replies shown in a demonstration, both for easy cases. They show what the system can do in those cases. An evaluation asks a question about performance and collects examples chosen to answer it. A benchmark is a defined set of tasks and scoring rules for comparison. Start with a case where a plausible answer would send work to the wrong team.
 
 ## Start with two persuasive demonstrations
@@ -65,3 +69,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Usefulness requires a defined population, consequence and comparison. The research chapter explains [benefit evidence](../../reference/research/04-implementation.md#benefits-need-a-population-and-a-comparison).
+
+## What to remember
+
+A polished example shows one possibility. A benchmark supplies cases and scoring rules. An evaluation needs a stated comparison and a question the cases can answer.
+
+## What this means for the business process
+
+Choose a defined group of deliveries and a baseline before judging the assistant. Include disputes that are difficult to route, and measure unsupported claims and follow-up effort alongside speed.
+
+For the research behind this design choice, read [Benefits need a population and a comparison](../../reference/research/04-implementation.md#benefits-need-a-population-and-a-comparison).
+
+## Next lesson
+
+Next test a candidate calculation against a transparent reference and see why a surprising case can change what counts as correct. [Lesson 4.2: Build a small correctness check before a performance claim](02-code-workshop.md).

@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: compare organising arrangements](06-design-lab.md)
 
+## What you'll learn and why it matters
+
+Distinguish an agent configuration from the run it performs on a particular case. Use the returned result to identify what Harbour can verify before relying on the contribution.
+
 An agent's settings name the model, instructions and tools it can use. They describe possible work. A runner starts that work for a particular request and returns information about the run. Locate where the settings end, where the case is supplied and where the outcome can be checked.
 
 [Open the companion workshop notebook](../../notebooks/10-agent-orchestration.ipynb).
@@ -80,3 +84,17 @@ Read the structured output alongside tool events and sources. If the model retur
 ## Read the organisational connection
 
 An agent's returned result demonstrates a configured path within the tested conditions. The research chapter explains [capability, configuration, practice and outcome](../../reference/research/04-implementation.md#capability-configuration-practice-and-outcome).
+
+## What to remember
+
+The configuration supplies instructions, model and tools. The runner starts work and returns information about what happened. The application still has to check the result.
+
+## What this means for the business process
+
+Define the result the receiving team needs and what it should do if the run produces unsupported claims. The model's final output is a contribution that the application can inspect before accepting.
+
+For the research behind this design choice, read [Four questions for a usable contribution](../../reference/research/02-coordination.md#four-questions-for-a-usable-contribution).
+
+## Next lesson
+
+Next compare a central coordinator with a design where specialists keep more ownership of the work they hand over. [Lesson 10.6: Compare central coordination with specialist ownership](06-design-lab.md).

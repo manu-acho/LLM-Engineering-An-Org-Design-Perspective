@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## What you'll learn and why it matters
+
+Identify the example, features and target in a routing task. Harbour needs to agree what answer the model should learn before treating any historical column as correct.
+
 To teach a program to send complaints to the right team, start with examples of complaints and the destinations they should go to. A feature is a piece of information the program can use, such as whether a message contains “invoice”. The target is what it is trying to predict, such as “Finance”. Before fitting anything, check who chose those destinations and whether they describe the future task.
 
 ## The task must be defined before the model
@@ -65,3 +69,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 A label supplies a category through which subsequent cases become recognisable. The research chapter explains [decision premises](../../reference/research/03-decisions.md#decision-premises).
+
+## What to remember
+
+Features supply information the predictor can use. The target is the answer used for learning or evaluation. The model can only learn the task expressed by the examples and labels it gets.
+
+## What this means for the business process
+
+Decide whether the target should identify the next contributor or the owner who resolves the case. Record that choice as part of the routing rule, because it shapes whose queue receives work.
+
+For the research behind this design choice, read [Decision premises](../../reference/research/03-decisions.md#decision-premises).
+
+## Next lesson
+
+Next fit the simplest reference rule using only the training examples, and measure what it misses on the cases set aside for checking. [Lesson 6.2: Build and inspect a baseline before training](02-code-workshop.md).

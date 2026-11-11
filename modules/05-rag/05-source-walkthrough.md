@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: design knowledge ownership](06-design-lab.md)
 
+## What you'll learn and why it matters
+
+Follow documents through ingestion, storage, retrieval and context preparation. This helps Harbour locate where an applicable record disappeared from an answer.
+
 Follow a small set of documents into storage, through search and into the supplied context. Embeddings are lists of numbers that allow text to be compared; the local example makes the representation visible. Finding a passage supplies material for a response, while the source and its limits still need to travel with it.
 
 [Open the companion workshop notebook](../../notebooks/05-rag.ipynb).
@@ -98,3 +102,17 @@ Prepare questions requiring a rule, an exception, two documents, an obsolete ver
 ## Read the organisational connection
 
 A retrieved contribution needs source identity, uncertainty and acceptance conditions. The research chapter explains [the worked handoff design](../../reference/research/02-coordination.md#a-worked-handoff-design).
+
+## What to remember
+
+The vector-store lab makes the stored representation and returned evidence inspectable. The returned material can support generation only if it reaches the request with its source intact.
+
+## What this means for the business process
+
+Retain document identity and version through the retrieval path. When the answer is unsupported, check whether the source was missing, ranked out or misused before assigning a fix.
+
+For the research behind this design choice, read [Worked design: a quantity agreement](../../reference/research/07-infrastructure-and-standards.md#worked-design-a-quantity-agreement).
+
+## Next lesson
+
+Next design the source registry and correction process that keep those checks reliable as records and policies change. [Lesson 5.6: Build an organisational knowledge service](06-design-lab.md).

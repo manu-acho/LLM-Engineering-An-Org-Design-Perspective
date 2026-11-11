@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: decide what the labels should represent](06-design-lab.md)
 
+## What you'll learn and why it matters
+
+Follow one record from its raw fields through preparation, prediction and evaluation. Learn where the expected answer belongs and how a preparation rule can change the task.
+
 Start with the fields of one raw example. The programme turns those fields into input for a fitted predictor and then compares the prediction with an expected value. Follow those steps separately. Inspect where the expected answer is used so it does not silently become part of the input.
 
 [Open the companion workshop notebook](../../notebooks/06-data.ipynb).
@@ -55,3 +59,17 @@ For each case, retain source ID, split, available description, preprocessing rev
 ## Read the organisational connection
 
 A stored record captures selected events rather than every interpretation or repair activity. The research chapter explains [the limits of recorded evidence](../../reference/research/05-routines.md#what-logs-can-show).
+
+## What to remember
+
+Preparation determines what a predictor sees. The original neural loop fits parameters and the evaluation compares predictions with reference values. Keep those roles distinct in the experiment record.
+
+## What this means for the business process
+
+Version the preparation and label rules alongside the predictor. If a route is disputed, let the receiving team inspect how the example was prepared and what the reference was intended to represent.
+
+For the research behind this design choice, read [Decision premises](../../reference/research/03-decisions.md#decision-premises).
+
+## Next lesson
+
+Next define that allocation rule clearly enough for two people to label the same difficult request consistently. [Lesson 6.6: Redesign a routing task before learning its labels](06-design-lab.md).

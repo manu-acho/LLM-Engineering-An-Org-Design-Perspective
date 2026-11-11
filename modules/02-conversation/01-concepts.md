@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## What you'll learn and why it matters
+
+Explain what an application must retain for a follow-up to refer to the right case. This helps Harbour handle short questions without silently switching orders.
+
 When a customer writes “What about the other order?”, the missing order number may be clear to a person who remembers the previous turn. A model request needs enough of that earlier exchange supplied again to make sense of it. History is the exchange so far; state is the information the application currently relies on, such as the selected case. The application must decide what to carry into the next request and when to ask which order the customer intends.
 
 ## The user thinks they are having one conversation
@@ -67,3 +71,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Conversation state and rules structure the situations the service can recognise. The research chapter explains [programmes and exceptions](../../reference/research/03-decisions.md#programmes-and-exceptions).
+
+## What to remember
+
+Conversation history is the record of earlier turns. Application state can also record the case currently selected. Each new request depends on the information the application makes available.
+
+## What this means for the business process
+
+Show the active case to the adviser and ask for clarification when the earlier conversation and the selected case point to different orders. A default can support routine work, but the service needs an exception path when that default no longer fits.
+
+For the research behind this design choice, read [Programmes and exceptions](../../reference/research/03-decisions.md#programmes-and-exceptions).
+
+## Next lesson
+
+Next trace a follow-up into a checked lookup, then see how the interface builds the reply in parts. [Lesson 2.2: A conversation, a dispatcher and a visible result](02-code-workshop.md).

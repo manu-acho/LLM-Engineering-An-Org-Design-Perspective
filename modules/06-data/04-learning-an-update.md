@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: follow the data and baseline code](05-source-walkthrough.md)
 
+## What you'll learn and why it matters
+
+Follow one training update and distinguish improvement on a training case from performance on new work. This helps Harbour choose a measure that reflects the routing task.
+
 Think of a rule that initially gives the word “invoice” little influence on a routing decision. If it makes a mistake on an example with that word, a training update can change a numerical value so the word has more influence next time. Follow one update before comparing errors. Improving an example used for training does not show the same improvement on new cases.
 
 ## Fit a rule instead of specifying it completely
@@ -48,3 +52,17 @@ A word-vector vocabulary fitted on training descriptions maps words to columns. 
 ## Read the organisational connection
 
 The selected error measure defines which differences the training procedure treats as costly. The research chapter explains [decision premises](../../reference/research/03-decisions.md#decision-premises).
+
+## What to remember
+
+An update changes the influence of a feature. Settings affect how learning proceeds. A lower training error does not establish a better route for future cases.
+
+## What this means for the business process
+
+Choose and document a task error with the routing owner, then check it on separate cases. Include mistakes that send work away from the only team able to act, even when those cases are uncommon.
+
+For the research behind this design choice, read [Select controls for the work that can actually be assessed](../../reference/research/08-governance-and-accountability.md#select-controls-for-the-work-that-can-actually-be-assessed).
+
+## Next lesson
+
+Next follow a record from preparation through a fitted predictor to evaluation and locate where the expected answer is used. [Lesson 6.5: Follow an example from raw record to evaluated prediction](05-source-walkthrough.md).

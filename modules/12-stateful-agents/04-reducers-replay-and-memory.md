@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: build a persistent graph](05-source-walkthrough.md)
 
+## What you'll learn and why it matters
+
+Explain how state updates combine and what can happen again when a run replays. This helps Harbour avoid repeating consequential work after interruption.
+
 If warehouse and carrier each add a note, state must preserve both without duplicating them on replay. A reducer is a rule for combining an update with what is already stored. Replay runs work again from a chosen boundary; it can repeat an operation that had an outside effect. Follow one update and identify what could happen twice.
 
 ## State updates are partial contributions
@@ -51,3 +55,17 @@ The course wraps a framework worker with a separate evaluator loop. A model-call
 ## Read the organisational connection
 
 Replaying events and repeating organisational action have different consequences to investigate. The research chapter explains [variation in recurrent work](../../reference/research/05-routines.md#variation-is-a-question-not-a-verdict).
+
+## What to remember
+
+A reducer combines updates. A checkpoint supplies a restart boundary. Replay may repeat operations performed after that boundary.
+
+## What this means for the business process
+
+Separate replayable preparation from actions that affect another system. Before retrying a possible credit, check its authoritative receipt and keep the decision identity, so recovery accounts for work that may already have happened.
+
+For the research behind this design choice, read [Documentation and auditing support accountability but do not replace it](../../reference/research/08-governance-and-accountability.md#documentation-and-auditing-support-accountability-but-do-not-replace-it).
+
+## Next lesson
+
+Next follow the same idea into a graph that can pause and reopen its saved state using a thread identifier. [Lesson 12.5: Build a graph that pauses and reopens its saved state](05-source-walkthrough.md).

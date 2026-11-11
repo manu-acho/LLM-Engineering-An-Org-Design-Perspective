@@ -2,6 +2,10 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+## What you'll learn and why it matters
+
+Explain why a specialised model still needs a route for challenging its categories. Harbour needs to recognise cases that no approved label describes well.
+
 If Harbour teaches a model to classify “late” and “missing”, a new kind of partly delivered order may fit neither label. Specialisation improves performance for the chosen task and examples; it does not settle how the business should classify cases. Look for who can flag a bad category, revise the examples and change the routing practice.
 
 ## A specialised model becomes difficult to question
@@ -69,3 +73,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 The right to revise a category matters alongside the right to override one prediction. The research chapter explains [where discretion moves](../../reference/research/03-decisions.md#where-discretion-moves).
 
 The research chapter also explains [the organisational effects of categories](../../reference/research/07-infrastructure-and-standards.md#classification-changes-what-an-organisation-can-see).
+
+## What to remember
+
+Training can make an existing classification more consistent. New or disputed work can still expose a problem with the categories themselves.
+
+## What this means for the business process
+
+Have advisers log cases that do not fit and let the routing owner decide whether to revise categories and examples. Keep the reason for the change, because changing a category can redistribute attention and work.
+
+For the research behind this design choice, read [Classification changes what an organisation can see](../../reference/research/07-infrastructure-and-standards.md#classification-changes-what-an-organisation-can-see).
+
+## Next lesson
+
+The next lesson shows how chosen examples and scoring rules turn that category design into a numerical training task. [Lesson 7.4: Understand an adapter, a training batch and a loss](04-adaptation-mechanics.md).

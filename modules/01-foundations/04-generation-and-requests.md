@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: follow the full pipeline](05-source-walkthrough.md)
 
+## What you'll learn and why it matters
+
+Trace a model request across preparation, generation and response handling. Learn to tell which failures come from the service exchange and which come from the claims in the answer.
+
 When a model suggests the next piece of text, several pieces could fit. A probability gives each possible piece a share of the chance of being selected under the model's calculation. Follow one choice, add it to the text and see how it affects the next choice. Then follow the same reply through the application that presents it.
 
 ## What is being selected?
@@ -44,3 +48,17 @@ If all ten outputs invent a warehouse failure, investigate the question and evid
 ## Read the organisational connection
 
 Generating a response and verifying a business fact are different operations. The research chapter explains [distinct acts in a workflow](../../reference/research/03-decisions.md#distinct-acts-in-one-workflow).
+
+## What to remember
+
+Next-token probabilities guide text selection. The service response also carries information about how the request ended. Extracting text alone can hide an incomplete run.
+
+## What this means for the business process
+
+Keep the completion status with the draft and show when an adviser needs to check or repeat the request. Assess the claims against evidence separately from whether the service returned a usable response.
+
+For the research behind this design choice, read [An evidence path without skipped steps](../../reference/research/06-technology-in-practice.md#an-evidence-path-without-skipped-steps).
+
+## Next lesson
+
+Next follow a real example from Ed Donner's course, starting where the summariser obtains its evidence and prepares a request. [Lesson 1.5: Walk the original summariser and multi-page builder](05-source-walkthrough.md).

@@ -2,6 +2,10 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+## What you'll learn and why it matters
+
+Explain how a metric directs attention and where a local gain can shift work to another team. This helps Harbour choose a measure of improvement it can act on.
+
 The warehouse might clear its own queue by sending ambiguous cases to customer service. Its completion number improves, while the total time to resolve a complaint can get worse. A metric is a measured quantity used to judge performance. Ask where it starts and stops counting, and what work it leaves to another team.
 
 ## Two teams, two successes
@@ -67,3 +71,17 @@ The [complete module route](README.md) continues into the technical mechanism, [
 The metric selects properties to reward and can redirect attention. The research chapter explains [decision premises](../../reference/research/03-decisions.md#decision-premises).
 
 The research chapter also explains [where to start and stop measuring success](../../reference/research/09-process-architecture.md#worked-design-extend-the-boundary-of-success).
+
+## What to remember
+
+A team can close more items in its own queue while unresolved cases accumulate elsewhere. The process boundary determines which work the metric includes.
+
+## What this means for the business process
+
+Measure case resolution across the teams that contribute to it. Keep local queue measures for diagnosis, and check whether apparent improvement transfers clarification or review to another team.
+
+For the research behind this design choice, read [Process architecture connects the processes](../../reference/research/09-process-architecture.md#process-architecture-connects-the-processes).
+
+## Next lesson
+
+Next calculate what a single score leaves out by separating error types and applying an explicit consequence rule. [Lesson 4.4: Calculate what a quality score leaves out](04-measures-and-uncertainty.md).

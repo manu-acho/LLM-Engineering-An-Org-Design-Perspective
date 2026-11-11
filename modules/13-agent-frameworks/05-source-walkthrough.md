@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: design shared ownership](06-design-lab.md)
 
+## What you'll learn and why it matters
+
+Follow the same worker in the Google ADK and Pydantic AI examples. Identify the setup, call and result boundaries that matter if Harbour changes frameworks.
+
 Follow the same worker from a task claim to a returned result in each framework. Use the same expected facts to compare them. Then look for who records a failure or hands back unfinished work, since similar outputs on a successful run do not establish similar recovery.
 
 [Open the companion workshop notebook](../../notebooks/13-agent-frameworks.ipynb).
@@ -53,3 +57,17 @@ Use the [six-framework tour](04-framework-tour.md) for Strands, Microsoft Agent 
 ## Read the organisational connection
 
 A framework comparison should distinguish an available interface from selected configuration and actual use. The research chapter explains [capability, configuration, practice and outcome](../../reference/research/04-implementation.md#capability-configuration-practice-and-outcome).
+
+## What to remember
+
+The two implementations organise configuration and execution differently. The common task gives a basis for comparing what they hand back.
+
+## What this means for the business process
+
+Test that either implementation preserves the same evidence status and recovery signal. Give the receiving team a shared contract so it can use the result without knowing which framework ran it.
+
+For the research behind this design choice, read [Standards make comparison possible and require continuing work](../../reference/research/07-infrastructure-and-standards.md#standards-make-comparison-possible-and-require-continuing-work).
+
+## Next lesson
+
+Next specify who owns the shared meanings and how several teams can maintain them together. [Lesson 13.6: Design interoperability across teams, meanings and maintenance](06-design-lab.md).

@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: decide what the measured gain means](06-design-lab.md)
 
+## What you'll learn and why it matters
+
+Trace generated code from the prompt through reference checks to the timing result. Identify what the timer measures and what the correctness comparison establishes.
+
 Generated code should be judged on cases with known answers before it is timed. Follow the instruction given to the model, then compare what its proposed program does with the reference calculation. Locate which work the timer includes so the speed claim is about a defined operation.
 
 [Open the companion workshop notebook](../../notebooks/04-evaluation.ipynb).
@@ -62,3 +66,17 @@ The original [day 4](https://github.com/ed-donner/llm_engineering/blob/103f4bf04
 ## Read the organisational connection
 
 Timing a generated program answers a narrower question than whether the business process improved. The research chapter explains [the evidence path](../../reference/research/06-technology-in-practice.md#an-evidence-path-without-skipped-steps).
+
+## What to remember
+
+The reference defines the expected behaviour. The candidate can be tested before timing. A duration describes only the work included in the measurement.
+
+## What this means for the business process
+
+Publish the cases and timing boundary together. If faster execution leaves preparation or manual review unchanged, measure that remaining work before claiming a service gain.
+
+For the research behind this design choice, read [Process architecture connects the processes](../../reference/research/09-process-architecture.md#process-architecture-connects-the-processes).
+
+## Next lesson
+
+The next lesson takes the evaluation beyond routing scores to examine total resolution and alternative explanations. [Lesson 4.6: Decide whether a measured improvement changes the organisation](06-design-lab.md).
