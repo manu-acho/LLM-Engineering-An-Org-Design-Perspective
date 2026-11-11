@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Study workspace](../../STUDY-WORKSPACE.md)
 
+## What you'll learn and why it matters
+
+Distinguish identity, permission and evidence checks. Use those checks to decide which material can reach a model and which text should be treated as a customer's account.
+
 ## Business context: Harbour
 
 Knowing who made a request is authentication. Deciding whether that person may see this case is authorisation. Determining whether a statement in the case is supported requires evidence. Follow a request from a different region and a message that contains an instruction addressed to the assistant. Neither text nor identity alone should bypass the access check.
@@ -67,3 +71,17 @@ assert "P-old" not in [p["id"] for p in context]
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+Authentication establishes identity. Authorisation decides access to a particular operation or record. Evidence and currency require their own checks.
+
+## What this means for the business process
+
+Apply scope and freshness before assembling context. Keep customer text in the role of evidence, and derive authority from the service's trusted rules, so material in a record cannot give itself permission.
+
+For the research behind this design choice, read [Permission and authority](../../reference/research/03-decisions.md#permission-and-authority).
+
+## Next lesson
+
+The next workshop follows one permitted request and one cross-region denial to the point where context would be assembled. [Lesson 18.2: Assemble context inside an access boundary](02-code-workshop.md).

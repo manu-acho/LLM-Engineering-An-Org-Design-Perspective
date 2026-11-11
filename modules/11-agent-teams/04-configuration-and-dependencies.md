@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next: follow a real crew](05-source-walkthrough.md)
 
+## What you'll learn and why it matters
+
+Read settings as instructions about which tasks run and what their results supply to later work. This makes changes to the division of work reviewable.
+
 ## Business context: Harbour
 
 A configuration is a set of settings that tells software what to run and how. A task listed below another one is not necessarily dependent on it; the dependency exists when it requires the earlier result. Read the settings as instructions for an actual case and identify where the result passes from one task to the next.
@@ -92,3 +96,17 @@ assert ready({"a":[],"b":["a"]},["a"]) == ["b"]
 ```
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A setting can change which input reaches a task. Listing a task earlier differs from declaring its result as a prerequisite. Configuration changes can therefore change behaviour.
+
+## What this means for the business process
+
+Review task settings with the people who own the process. A change that makes a source optional can change what the adviser is offered and should be evaluated as a change in the basis of the decision.
+
+For the research behind this design choice, read [Decision premises](../../reference/research/03-decisions.md#decision-premises).
+
+## Next lesson
+
+The next workshop tests missing and circular prerequisites, then checks whether independent calls actually overlap. [Lesson 11.5: Find missing prerequisites and task cycles](05-source-walkthrough.md).

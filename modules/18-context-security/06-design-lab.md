@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Research chapter](../../reference/research/03-decisions.md)
 
+## What you'll learn and why it matters
+
+Match a threat to a specific control, test and responsible owner. Explain which claims Harbour can make from the tested cases.
+
 ## Business context: Harbour
 
 Work through a case where a reviewer has the right regional access but is about to apply yesterday's policy. Decide what evidence should block the decision, who maintains the current policy and what the adviser should do next. A successful access check alone does not justify the decision.
@@ -61,3 +65,17 @@ print(controls)
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A successful control test supports the tested boundary. The service still needs operating responsibilities for managing exceptions and changing policy.
+
+## What this means for the business process
+
+Give each boundary a responsible owner and a path for reported failures. Carry unresolved deployment and credential issues into the release decision rather than treating local tests as evidence that those tasks are complete.
+
+For the research behind this design choice, read [Documentation and auditing support accountability but do not replace it](../../reference/research/08-governance-and-accountability.md#documentation-and-auditing-support-accountability-but-do-not-replace-it).
+
+## Next lesson
+
+Module 19 puts those controls into a service that can be started, reached, monitored and supported after release. [Lesson 19.1: Deployment and continuing service ownership](../19-deployment-ownership/01-concepts.md).

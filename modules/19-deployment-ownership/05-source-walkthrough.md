@@ -2,6 +2,10 @@
 
 [Download the matching notebook](/downloads/19-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Follow an authenticated case through draft, read and review requests. Learn to identify which response shows saved information and which one records a decision.
+
 ## Business context: Harbour
 
 Start the local service and follow a case through three distinct requests: draft, read and review. Inspect the response at each stage and locate where it checks identity. Reading the draft confirms what is stored; reviewing is a separate request with a different effect.
@@ -70,3 +74,17 @@ The notebook has a cell for checking an independent answer. For the business dec
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+The requests have distinct purposes and checks. A successful read reports what was stored. A review has its own conditions and changes a different part of the case.
+
+## What this means for the business process
+
+Use the full request journey as a release check and keep the adviser-facing status aligned with recorded case events. A working browser page on its own cannot establish what the case service has done.
+
+For the research behind this design choice, read [Activities, events, roles and objects](../../reference/research/09-process-architecture.md#activities-events-roles-and-objects).
+
+## Next lesson
+
+Next use that evidence to define an incident handover and judge what else Harbour needs before relying on the service. [Lesson 19.6: Complete a defensible service decision](06-design-lab.md).

@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Research chapter](../../reference/research/02-coordination.md)
 
+## What you'll learn and why it matters
+
+Decide whether a pilot can recover failed jobs while keeping up with receiving demand. Explain what one successful recovery test can establish.
+
 ## Business context: Harbour
 
 Test Harbour's design with a worker that stops and a queue that keeps growing. Decide who notices, who can recover the waiting work and what the customer should be told. A result showing successful recovery for one job does not measure whether Harbour has enough capacity for sustained demand.
@@ -91,3 +95,17 @@ A failed or incomplete result must remain visible. The [live-model guide](../../
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A local reclaim shows a mechanism works for the tested job. Service capacity depends on arrivals, completions and how failed cases are handled.
+
+## What this means for the business process
+
+Count failed, referred and reclaimed cases in the workload. Name who notices ageing work and who can resolve it, so recovery effort is included in the decision about service capacity.
+
+For the research behind this design choice, read [Process architecture connects the processes](../../reference/research/09-process-architecture.md#process-architecture-connects-the-processes).
+
+## Next lesson
+
+Module 18 examines which evidence workers can use and which policies still apply as cases move across business boundaries. [Lesson 18.1: Enterprise context, security and controls](../18-context-security/01-concepts.md).

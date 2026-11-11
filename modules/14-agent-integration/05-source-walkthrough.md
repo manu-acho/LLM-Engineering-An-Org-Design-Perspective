@@ -2,6 +2,10 @@
 
 [Download the matching notebook](/downloads/14-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Follow tool discovery and a real client/server request. Verify what the model can request and what the service actually permits.
+
 ## Business context: Harbour
 
 The client asks the server what tools it offers, then requests a particular operation. Follow what was discovered and what was actually called; they are separate events. A model selecting a discovered tool does not bypass the server's checks on the request.
@@ -61,3 +65,17 @@ The notebook has a cell for checking an independent answer. For the business dec
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+Discovery advertises operations. A later request names one operation and supplies arguments. The exercise exposes narrow reads.
+
+## What this means for the business process
+
+Keep discovery and case access as distinct checks. Test a request outside the caller's scope and assign an owner for refusals that block legitimate work, so integration has a route for correction.
+
+For the research behind this design choice, read [Permission and authority](../../reference/research/03-decisions.md#permission-and-authority).
+
+## Next lesson
+
+Next read a completed proposal that brings this evidence together with scope, ownership and the comparison Harbour should run. [Lesson 14.6: Read a completed AI integration proposal](06-design-lab.md).

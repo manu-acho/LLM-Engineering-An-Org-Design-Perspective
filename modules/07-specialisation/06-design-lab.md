@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next module](../08-agents/README.md)
 
+## What you'll learn and why it matters
+
+Recommend whether to specialise a model after comparing results, costs and who can revise the task. Explain what evidence would change the decision.
+
 ## Business context: Harbour
 
 Suppose extra training produces a better-looking complaint brief but still treats “reported” as “confirmed”. That is the failure the decision needs to address. Compare a revised instruction, better evidence and further training on the same cases. Include who will maintain the examples and what happens when a case no longer fits an approved category.
@@ -96,3 +100,17 @@ else:
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+The useful comparison starts with a specific failure and tests realistic alternatives. Categories remain open to challenge even when a specialised model handles the current examples well.
+
+## What this means for the business process
+
+Specify who can propose a label change, how it is tested, and how advisers handle unfamiliar cases in the meantime. Evaluate maintenance and review effort along with model quality before selecting a design.
+
+For the research behind this design choice, read [Repeated action and learning](../../reference/research/05-routines.md#repeated-action-and-learning).
+
+## Next lesson
+
+Module 8 puts an AI contribution inside a whole operating workflow, where a stronger component still needs controls, owners and recovery. [Lesson 8.1: An agent is part of a workflow, not a complete operating model](../08-agents/01-concepts.md).

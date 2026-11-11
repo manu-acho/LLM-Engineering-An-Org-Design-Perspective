@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Trace how trusted settings, source text and policy versions are handled at different boundaries. Test that text resembling an instruction cannot gain authority over an action.
+
 ## Business context: Harbour
 
 The caller's region and the current policy version are part of the service's rules, not things the model should guess. Follow which records may enter a request and which conditions block a later action. Keep the access decision separate from the check that the policy is still current.
@@ -93,3 +97,17 @@ A failed or incomplete result must remain visible. The [live-model guide](../../
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+The application derives scope from trusted identity, treats report text as data and checks policy at the decision step. Each rule addresses a different failure.
+
+## What this means for the business process
+
+Give source and security owners explicit refusal cases to review. If a customer message attempts to direct tool use, keep the claim available as evidence where permitted while denying the unauthorised operation.
+
+For the research behind this design choice, read [Select controls for the work that can actually be assessed](../../reference/research/08-governance-and-accountability.md#select-controls-for-the-work-that-can-actually-be-assessed).
+
+## Next lesson
+
+The next workshop tests both a scope denial and a decision based on an outdated policy. [Lesson 18.5: Test scope denial and policy freshness](05-source-walkthrough.md).

@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## What you'll learn and why it matters
+
+Distinguish a fixed sequence of work from an agent that selects its next step. Use that distinction to decide what Harbour should delegate.
+
 ## Business context: Harbour
 
 A fixed workflow can always look up an order before preparing a note. An agent can select the next permitted step based on the information returned so far. If the agent can ask for a carrier record, that does not entitle it to issue a credit. List which steps the software can take and which decisions Harbour still assigns to a person.
@@ -94,3 +98,17 @@ for activity, owner in activities.items():
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+The application can set a fixed order or let the model choose among allowed operations. Choosing a permitted step is separate from authorising a business action.
+
+## What this means for the business process
+
+Let an agent choose among evidence lookups only where that flexibility helps the investigation. Keep remedy authority with the relevant role and document what evidence that role requires.
+
+For the research behind this design choice, read [Permission and authority](../../reference/research/03-decisions.md#permission-and-authority).
+
+## Next lesson
+
+The next workshop shows how the application records an authorised simulated decision and recognises a repeat request. [Lesson 8.2: Record a simulated decision and safe retry](02-code-workshop.md).

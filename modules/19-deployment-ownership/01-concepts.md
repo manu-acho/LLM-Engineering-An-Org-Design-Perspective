@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Study workspace](../../STUDY-WORKSPACE.md)
 
+## What you'll learn and why it matters
+
+Read an HTTP service contract and identify what must persist after a restart. This helps Harbour plan for continuing use and support.
+
 ## Business context: Harbour
 
 A notebook can run on demand. Deployment makes software available for other people or programs to use repeatedly. An endpoint is an address where a program accepts a particular kind of request. Follow what happens to settings and case records when the service restarts, and identify who keeps the service working.
@@ -63,3 +67,17 @@ for route in routes:print(route)
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+An endpoint receives a particular request. Reading a record differs from issuing a command. Configuration and stored case state have different jobs.
+
+## What this means for the business process
+
+Assign someone to manage credentials and someone to restore case data, with a clear handover if roles differ. Verify that the deployed service can support the intended case journey after a restart.
+
+For the research behind this design choice, read [Implementation extends beyond launch](../../reference/research/04-implementation.md#implementation-extends-beyond-launch).
+
+## Next lesson
+
+The next workshop sends authenticated requests and checks what the service returns before allowing a case read. [Lesson 19.2: Exercise authenticated HTTP routes](02-code-workshop.md).

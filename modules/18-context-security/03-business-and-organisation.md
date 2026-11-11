@@ -4,6 +4,10 @@
 
 [Module route](README.md)
 
+## What you'll learn and why it matters
+
+Allocate rights to change shared definitions and policies. This helps Harbour keep teams aligned when the meaning of a field changes.
+
 ## Business context: Harbour
 
 If all teams use a field named “delivery date”, they still need to agree whether it is the promised, recorded or confirmed date. Shared context gives the system common material to work from. Decide who can change that definition, how changes are communicated and what happens to decisions already in progress.
@@ -81,3 +85,17 @@ Other arrangements can be defensible. Check that the proposal names who accepts 
 [Governance and accountability](../../reference/research/08-governance-and-accountability.md#four-terms-that-answer-different-questions). Separate access permission, authority to act and an obligation to explain. A logged identity does not establish all three.
 
 [Infrastructure and standards](../../reference/research/07-infrastructure-and-standards.md#classification-changes-what-an-organisation-can-see). Context categories can change who sees evidence. Examine exclusions, ambiguous categories and the route for correcting a classification.
+
+## What to remember
+
+A common field name can carry different interpretations. An editor's ability to prepare context does not grant authority to change a policy.
+
+## What this means for the business process
+
+Name an owner for a field's definition and for policy approval. Communicate revisions to dependent teams and say what happens to cases already in review.
+
+For the research behind this design choice, read [Standards make comparison possible and require continuing work](../../reference/research/07-infrastructure-and-standards.md#standards-make-comparison-possible-and-require-continuing-work).
+
+## Next lesson
+
+Next turn those responsibilities into testable conditions on what can enter a request and what can support a decision. [Lesson 18.4: Make the operating contract inspectable](04-operating-contract.md).

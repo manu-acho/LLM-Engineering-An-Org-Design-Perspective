@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next module](../13-agent-frameworks/README.md)
 
+## What you'll learn and why it matters
+
+Compare ways to staff review and preserve real discretion. Recommend a design that works under Harbour's expected demand, including difficult cases.
+
 ## Business context: Harbour
 
 Imagine twenty cases waiting for one reviewer. More drafts will not create more reviewing time. Compare a dedicated reviewer, shared coverage, escalation or a narrower scope in terms of who receives each case and what they can decide. Choose a design that makes sense when the queue is busy, not just in a demonstration.
@@ -120,3 +124,17 @@ For a step-by-step explanation of the included helpers, see [Read the applicatio
 The [remedy follow-through example](../08-agents/03-business-and-organisation.md#follow-an-authorised-remedy-into-the-remaining-work) separates approval from feasible fulfilment. If a case waits for a carrier check, record the awaited contribution, its owner and the next review point. If stock or the promised timing changes, a stored approval does not recreate the old availability or customer agreement.
 
 **Worked check.** A reviewer resumes a saved proposal after the only available replacement stock was assigned elsewhere. A current case/policy check can reject stale application state, but the system also needs current availability evidence before a new promise. These are distinct controls. The local checkpoint exercise verifies persistence and version checks; it does not fetch live stock or carrier commitments. Name who obtains that evidence and who may revise the remedy.
+
+## What to remember
+
+A pause creates a queue. Capacity determines how long it waits, while discretion determines whether reviewers can return or challenge work.
+
+## What this means for the business process
+
+Match intake to review capacity and reserve a way to handle cases requiring specialist judgement. Monitor waiting and returned cases, so apparent success in drafting does not hide a growing review problem.
+
+For the research behind this design choice, read [Information demand and capacity](../../reference/research/01-organisation-design.md#information-demand-and-capacity).
+
+## Next lesson
+
+Module 13 keeps the service requirement fixed while comparing different frameworks that could implement it. [Lesson 13.1: Compare frameworks by the work they help you organise](../13-agent-frameworks/01-concepts.md).

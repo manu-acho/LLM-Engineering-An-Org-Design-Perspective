@@ -2,6 +2,10 @@
 
 [Download the matching notebook](/downloads/12-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Trace saved state and current versions through a delayed review. Learn which checks must be run again before Harbour can rely on a previous decision.
+
 ## Business context: Harbour
 
 The policy or case may change while a draft waits for review. Follow the checkpoint loaded by the second process and distinguish what it restores from what must be checked again. A saved draft shows what was proposed earlier; it does not guarantee that the proposal is still valid.
@@ -65,3 +69,17 @@ The notebook has a cell for checking an independent answer. For the business dec
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A separate process can read a checkpoint without repeating preparation. Restored information describes the earlier proposal and may need renewed validation.
+
+## What this means for the business process
+
+At review, compare the saved proposal with current case and policy information. Send material changes back for review with the reason visible, so the authorised decision rests on current premises.
+
+For the research behind this design choice, read [Decision premises](../../reference/research/03-decisions.md#decision-premises).
+
+## Next lesson
+
+The next lesson uses these checks to design a review service that can handle ordinary workload and exceptions. [Lesson 12.6: Design review as a service with capacity and discretion](06-design-lab.md).

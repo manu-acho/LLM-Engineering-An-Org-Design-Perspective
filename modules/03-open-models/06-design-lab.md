@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next module](../04-evaluation/README.md)
 
+## What you'll learn and why it matters
+
+Choose what a meeting record should show and how people can correct it. The goal is a record that supports follow-up work without creating commitments by accident.
+
 ## Business context: Harbour
 
 Consider a meeting note that says “Finance to follow up”. The people who were present might understand it, but a colleague needs an owner, a next step and the expected timing. Compare notes that record what was said with records that confirm an assignment. Decide who can challenge a mistaken assignment and where the correction must appear.
@@ -110,3 +114,17 @@ A failed or incomplete result must remain visible. The [live-model guide](../../
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A transcript, draft and accepted assignment carry different weight. Useful assignments name an owner and a next step, and corrections have to reach the people relying on them.
+
+## What this means for the business process
+
+Keep draft and accepted assignments distinguishable. Give people whose work is recorded a way to challenge an assignment and ensure corrections reach their working queues. The record is one artefact in an ongoing routine.
+
+For the research behind this design choice, read [Designing an artefact and designing a pattern](../../reference/research/05-routines.md#designing-an-artefact-and-designing-a-pattern).
+
+## Next lesson
+
+Module 4 asks how to compare such a design with the current way of working, using evidence about correctness and what happens after the draft. [Lesson 4.1: What would count as evidence that the system is useful?](../04-evaluation/01-concepts.md).

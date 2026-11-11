@@ -2,6 +2,10 @@
 
 [Download the matching notebook](/downloads/16-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Read duration and provider-reported usage separately, and state the assumptions in a cost estimate. This lets Harbour assess spending without inventing missing measurements.
+
 ## Business context: Harbour
 
 A stopwatch can measure elapsed time. It cannot tell how many tokens the provider counted. In the live lab, read usage from the provider's returned information and preserve any missing value as unknown. Then distinguish what was measured from any cost estimated by applying a price.
@@ -59,3 +63,17 @@ The notebook has a cell for checking an independent answer. For the business dec
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+Time can be measured locally. Usage comes from the provider when available. An estimate depends on stated prices and describes only the included resources.
+
+## What this means for the business process
+
+Set a spend limit for the model contribution and keep missing usage visible. Include review, storage and correction work in the service comparison so a lower inference cost does not hide effort elsewhere.
+
+For the research behind this design choice, read [Whose benefit, and at which point in time?](../../reference/research/04-implementation.md#whose-benefit-and-at-which-point-in-time).
+
+## Next lesson
+
+The next lesson asks who receives this evidence and how to direct feedback to the cause of a problem. [Lesson 16.3: Design the work, responsibility and learning](03-business-and-organisation.md).

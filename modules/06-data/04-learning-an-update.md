@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next: follow the data and baseline code](05-source-walkthrough.md)
 
+## What you'll learn and why it matters
+
+Follow one training update and distinguish improvement on a training case from performance on new work. This helps Harbour choose a measure that reflects the routing task.
+
 ## Business context: Harbour
 
 Think of a rule that initially gives the word “invoice” little influence on a routing decision. If it makes a mistake on an example with that word, a training update can change a numerical value so the word has more influence next time. Follow one update before comparing errors. Improving an example used for training does not show the same improvement on new cases.
@@ -102,3 +106,17 @@ assert update(2.,0.,.1) == 2.
 ```
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+An update changes the influence of a feature. Settings affect how learning proceeds. A lower training error does not establish a better route for future cases.
+
+## What this means for the business process
+
+Choose and document a task error with the routing owner, then check it on separate cases. Include mistakes that send work away from the only team able to act, even when those cases are uncommon.
+
+For the research behind this design choice, read [Select controls for the work that can actually be assessed](../../reference/research/08-governance-and-accountability.md#select-controls-for-the-work-that-can-actually-be-assessed).
+
+## Next lesson
+
+The next workshop makes the fitted vocabulary visible and examines an ambiguous case the baseline must handle with that fixed vocabulary. [Lesson 6.5: Inspect fitted vocabulary and ambiguous predictions](05-source-walkthrough.md).

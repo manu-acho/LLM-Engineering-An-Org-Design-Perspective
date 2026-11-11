@@ -4,6 +4,10 @@
 
 [Module route](README.md)
 
+## What you'll learn and why it matters
+
+Prepare an operating handover and trace an incident from symptom to recovery. Harbour needs a named service owner and a way to keep case work moving during a fault.
+
 ## Business context: Harbour
 
 Imagine the service stops returning cases on Monday morning. The support team needs to know where to check, who can restore it and who tells advisers what to do meanwhile. Work through those decisions as part of the handover rather than assuming that releasing the software settles them.
@@ -79,3 +83,17 @@ Other arrangements can be defensible. Check that the proposal names who accepts 
 ## Research extension: examine the wider arrangement
 
 [Infrastructure and standards](../../reference/research/07-infrastructure-and-standards.md#growth-requires-more-than-an-open-interface). A release enters an installed base. Track which prompt, schema, source and policy versions coexisted, including maintenance work outside the deployed service.
+
+## What to remember
+
+A health response may only show that a process is running. Readiness depends on the services and records required to do the declared work.
+
+## What this means for the business process
+
+Define what support should check when case retrieval fails, who can restore it and who tells advisers how to handle cases meanwhile. Include that manual path in the handover.
+
+For the research behind this design choice, read [Implementation extends beyond launch](../../reference/research/04-implementation.md#implementation-extends-beyond-launch).
+
+## Next lesson
+
+The next lesson writes these expectations into an operating and release contract that can be tested. [Lesson 19.4: Make the operating contract inspectable](04-operating-contract.md).

@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Study workspace](../../STUDY-WORKSPACE.md)
 
+## What you'll learn and why it matters
+
+Explain why faster preparation can still produce a growing queue. Use arrivals, completions and temporary ownership to distinguish volume problems from worker failures.
+
 ## Business context: Harbour
 
 When many requests arrive together, one worker can start a case that another worker finishes. Concurrency allows work on more than one case during the same period. A lease gives one worker a temporary right to act on a job. Follow how that right changes if a worker stops responding, and distinguish which job started first from which finished first.
@@ -74,3 +78,17 @@ print("Illustrative additional queued cases:",backlog_growth)
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+Concurrency lets work overlap. Completion order can differ from arrival order. A lease gives a worker a temporary claim that can expire.
+
+## What this means for the business process
+
+Measure arrivals and completions at the receiving stage before adding more concurrent drafting. Decide who handles work after a lease expires so greater volume does not leave cases without a current owner.
+
+For the research behind this design choice, read [Information demand and capacity](../../reference/research/01-organisation-design.md#information-demand-and-capacity).
+
+## Next lesson
+
+The next workshop puts a limit on simultaneous work and shows how an expired claim can be recovered. [Lesson 17.2: Limit concurrent work and recover an expired lease](02-code-workshop.md).

@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Study workspace](../../STUDY-WORKSPACE.md)
 
+## What you'll learn and why it matters
+
+Identify what the code around a model run should record, including which instructions it used. Harbour needs that record to investigate a failure or compare versions.
+
 ## Business context: Harbour
 
 A model may return a useful draft while the surrounding software takes three attempts or exceeds the agreed cost. The harness is the code that runs the task and records what happened around the model. Follow one run from start to outcome and separate model time from the time the service took overall.
@@ -67,3 +71,17 @@ print(record)
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+The harness runs and observes the work around the model. An instruction identifier helps identify the version. It does not establish quality or approval.
+
+## What this means for the business process
+
+Give service support a way to find the case, run and instruction version together. Record outcomes in terms of what was actually observed so the record can support investigation and accountability.
+
+For the research behind this design choice, read [Documentation and auditing support accountability but do not replace it](../../reference/research/08-governance-and-accountability.md#documentation-and-auditing-support-accountability-but-do-not-replace-it).
+
+## Next lesson
+
+Next measure a bounded run and distinguish provider-reported usage from timing and assumed prices. [Lesson 16.2: Measure a bounded run without inventing usage](02-code-workshop.md).

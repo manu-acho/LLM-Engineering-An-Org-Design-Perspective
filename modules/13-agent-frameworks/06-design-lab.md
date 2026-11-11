@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next: implement a common result contract](07-common-contracts.md)
 
+## What you'll learn and why it matters
+
+Write an agreement for exchanging contributions across teams. Include the meaning of fields, acceptance conditions and maintenance responsibilities.
+
 ## Business context: Harbour
 
 For another team to use a service, it needs to know what to send, what a response establishes and who will fix it when it breaks. An acceptance contract describes what the receiver can rely on. Write those conditions before choosing whether a central team or individual teams maintain the shared service.
@@ -78,3 +82,17 @@ assert requirements["remote_worker"]=="not required"
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A connection transfers data. Interoperability also requires a shared interpretation and someone to handle changes or refusals.
+
+## What this means for the business process
+
+Name an owner for each shared definition and a recipient for disputes. Agree how changes are announced and tested with dependent teams, because an interface becomes part of their work.
+
+For the research behind this design choice, read [Standards make comparison possible and require continuing work](../../reference/research/07-infrastructure-and-standards.md#standards-make-comparison-possible-and-require-continuing-work).
+
+## Next lesson
+
+The next lesson builds a small adapter and checks that it preserves uncertainty and worker ownership across a boundary. [Lesson 13.7: Write an adapter that preserves uncertainty](07-common-contracts.md).

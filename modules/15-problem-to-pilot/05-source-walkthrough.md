@@ -2,6 +2,10 @@
 
 [Download the matching notebook](/downloads/15-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Inspect code proposed by a model and run the acceptance cases. Learn why understanding the code's allowed operations and checking its behaviour are separate tasks.
+
 ## Business context: Harbour
 
 A model can propose code that subtracts two quantities. The application still needs to establish that both are present and preserve where each came from. In the lab, compare the proposed code with each acceptance case before running it. A function that handles twelve and ten can still fail when one number is missing.
@@ -61,3 +65,17 @@ The notebook has a cell for checking an independent answer. For the business dec
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+Code can be readable and still fail on a missing value. Parsing the proposal, restricting what it may do and testing the result each check something different.
+
+## What this means for the business process
+
+Assign engineering the execution checks and give the process owner responsibility for approving the expected cases. A generated change should pass both before it can affect the work.
+
+For the research behind this design choice, read [Select controls for the work that can actually be assessed](../../reference/research/08-governance-and-accountability.md#select-controls-for-the-work-that-can-actually-be-assessed).
+
+## Next lesson
+
+Next combine those technical checks with evidence about receiving capacity and business outcomes to make a pilot decision. [Lesson 15.6: Complete a defensible service decision](06-design-lab.md).

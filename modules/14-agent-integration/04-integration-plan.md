@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Business application](03-business-and-organisation.md) · [Part II route](../../AGENT-ENGINEERING.md)
 
+## What you'll learn and why it matters
+
+Write an integration plan that states the work problem, the intended contribution and who receives it. This keeps the technology choice tied to something Harbour can evaluate.
+
 ## Business context: Harbour
 
 Start by watching a disputed delivery move between customer service, warehouse and finance. An integration plan explains which step the application will help with and how the result reaches the next person. Choose one contribution, such as a draft with source labels, before choosing the technology or promising faster resolution.
@@ -116,3 +120,17 @@ print(contract)
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A plan should describe the current path and the proposed change. A useful scope names the evidence, acceptance rule, owner and route for exceptions.
+
+## What this means for the business process
+
+Map the current warehouse, carrier and customer-service handoffs before selecting a capability. Keep a comparison with simpler changes, such as clearer intake, so the pilot tests a contribution rather than assuming the tool is the remedy.
+
+For the research behind this design choice, read [A worked implementation choice](../../reference/research/04-implementation.md#a-worked-implementation-choice).
+
+## Next lesson
+
+The next workshop runs an actual client and server exchange and checks what the model discovers and calls. [Lesson 14.5: Run the actual MCP client and server exchange](05-source-walkthrough.md).

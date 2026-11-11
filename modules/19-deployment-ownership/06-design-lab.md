@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Research chapter](../../reference/research/04-implementation.md)
 
+## What you'll learn and why it matters
+
+Write a service decision and an incident handover that another person can act on. Explain who owns customer recovery while technical support restores the service.
+
 ## Business context: Harbour
 
 A successful local run shows that Harbour can exercise a path through the service. Decide what else is needed before relying on it during ordinary work: an owner, a way to detect failures and a route for recovery or manual work. Work through the difficult case before recommending a release.
@@ -61,3 +65,17 @@ print(handover)
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A local run demonstrates a tested path. An incident involves detecting the fault, restoring capability and dealing with the cases affected.
+
+## What this means for the business process
+
+Assign engineering the technical recovery and operations the review of unresolved cases. Require a handover with affected cases and next actions so restoring the process does not leave customer work unassigned.
+
+For the research behind this design choice, read [Connected routines and hidden work](../../reference/research/05-routines.md#connected-routines-and-hidden-work).
+
+## Next lesson
+
+Module 20 asks how Harbour can change the live service deliberately, test the change and restore an earlier version if needed. [Lesson 20.1: Governed improvement and integration capstone](../20-governed-improvement/01-concepts.md).

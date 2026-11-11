@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next: evaluate the service over time](07-service-evaluation.md)
 
+## What you'll learn and why it matters
+
+Assess a completed integration proposal and identify evidence that would justify proceeding or changing course. Use the example to distinguish what has been built from what has been shown in use.
+
 ## Business context: Harbour
 
 The proposal is a worked decision. Read it first for which cases are in scope and what Harbour does about them today. Then compare the chosen design with the alternatives and ask what result would justify changing course. A working prototype is one piece of the argument.
@@ -101,3 +105,17 @@ print(proposal)
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A proposal names the case population, alternatives, contribution and measures. Working software supports a narrower claim than observed improvement in the process.
+
+## What this means for the business process
+
+Require a baseline, a named service owner and conditions for narrowing or stopping the pilot. Have the receiving team report clarification and rework as well as successes, so the decision reflects the actual burden.
+
+For the research behind this design choice, read [Benefits need a population and a comparison](../../reference/research/04-implementation.md#benefits-need-a-population-and-a-comparison).
+
+## Next lesson
+
+The next lesson carries those conditions to the interface and the feedback that supports a continuing service. [Lesson 14.7: Connect the interface, feedback and ongoing service](07-service-evaluation.md).

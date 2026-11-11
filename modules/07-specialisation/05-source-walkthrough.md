@@ -2,6 +2,10 @@
 
 [Download the matching notebook](/downloads/07-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Trace gradients, frozen base values and saved adapter state through training and reload. This helps Harbour define what must be retained to reproduce a release.
+
 ## Business context: Harbour
 
 A gradient indicates how a small change to a learned number would affect the loss. The trainer uses that information to update the adapter, while the frozen base values stay fixed. Locate the adapter in the saved material and the step that reloads it. This distinguishes keeping the training result from doing the training again.
@@ -64,3 +68,17 @@ The notebook has a cell for checking an independent answer. For the business dec
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+Gradients guide updates to trainable values. The adapter relies on the matching base revision and tokenizer, so its saved state is only one part of reconstruction.
+
+## What this means for the business process
+
+Record the base revision, tokenizer, adapter and evaluation together, and assign someone to test the bundle after a change. That makes the capability maintainable when shared dependencies evolve.
+
+For the research behind this design choice, read [Infrastructure is a relationship with organised work](../../reference/research/07-infrastructure-and-standards.md#infrastructure-is-a-relationship-with-organised-work).
+
+## Next lesson
+
+The next lesson turns these technical and maintenance costs into a decision about whether specialisation is worth adopting. [Lesson 7.6: Make a specialisation decision and keep categories revisable](06-design-lab.md).

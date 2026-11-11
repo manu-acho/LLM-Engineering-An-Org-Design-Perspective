@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next: train and reload a tiny adapter](05-source-walkthrough.md)
 
+## What you'll learn and why it matters
+
+Explain how an adapter, a group of training examples and a loss calculation work together. Use this to distinguish improvement on the selected scoring rule from improvement in the work.
+
 ## Business context: Harbour
 
 A training batch is a group of examples used together for one training step. Loss is a number that measures how poorly predictions fit the expected answers under a chosen rule. Trace one prediction for an expected answer: the lesson's rule penalises it more when the model gives that answer a lower probability. Then see which values an adapter is allowed to change.
@@ -85,3 +89,17 @@ assert masked_mean([10.,2.],[1,1]) == 6.
 ```
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A batch groups examples for an update. The loss grades predictions against chosen answers. The adapter changes some values while the base can stay fixed.
+
+## What this means for the business process
+
+Ask which cases and mistakes the objective rewards before adopting the adapter. If it improves common categories while obscuring urgent exceptions, change the evaluation and operating route rather than relying on average loss.
+
+For the research behind this design choice, read [Select controls for the work that can actually be assessed](../../reference/research/08-governance-and-accountability.md#select-controls-for-the-work-that-can-actually-be-assessed).
+
+## Next lesson
+
+The next workshop follows those updates in a real adapter and checks which files are needed to reload it. [Lesson 7.5: Follow gradients, frozen weights and saved state](05-source-walkthrough.md).

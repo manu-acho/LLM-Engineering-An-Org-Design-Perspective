@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next: failures and queues](07-failures-and-queues.md)
 
+## What you'll learn and why it matters
+
+Specify the contribution, roles and fallback for a bounded Harbour pilot. Use an alternative design to test whether the proposal fits the work.
+
 ## Business context: Harbour
 
 If the screen says “waiting for carrier”, someone needs to know whose job it is to ask, when to follow up and what to do if no answer arrives. Describe what each case status tells the next person to do. Then test whether the roles and capacity in the pilot support the promised response.
@@ -108,3 +112,17 @@ A failed or incomplete result must remain visible. The [live-model guide](../../
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+Each case status should tell someone what to do next. Acceptance, escalation and recovery need named owners and capacity to act.
+
+## What this means for the business process
+
+Set a pilot intake limit the review team can handle and retain a route for work outside scope. Compare actual queues and follow-up with the current process before claiming the design improved resolution.
+
+For the research behind this design choice, read [A worked implementation choice](../../reference/research/04-implementation.md#a-worked-implementation-choice).
+
+## Next lesson
+
+The next lesson makes the fallback concrete by examining what to do when a run stops and its effects are uncertain. [Lesson 8.7: Make failures terminal, visible and recoverable](07-failures-and-queues.md).

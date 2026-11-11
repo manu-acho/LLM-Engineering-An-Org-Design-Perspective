@@ -4,6 +4,10 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+## What you'll learn and why it matters
+
+Map what happens when the assistant becomes the first point of contact. Explain what the next team needs before it can accept a referred case.
+
 ## Business context: Harbour
 
 When the assistant is the first place customers go, it can influence which problem gets noticed before anyone makes a decision. Follow one unclear request to the next team. A handoff needs the relevant evidence, a named recipient and a way for the recipient to accept or send it back.
@@ -124,3 +128,17 @@ Before reading the worked direction, write a short response covering: the affect
 Allow selected case and policy reads, reject unknown capabilities and stop within the declared budget. Return evidence and unresolved questions to the investigator. Do not grant credit, payment or replacement authority because the model requests it.
 
 Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.
+
+## What to remember
+
+Early classifications and defaults shape which cases reach people. A transfer needs evidence, a receiver and a way to accept or return the work.
+
+## What this means for the business process
+
+Test the intake design with a complaint that does not fit the offered categories. Give it a route to an adviser and require the receiving team to acknowledge responsibility, so the customer can tell the difference between a referral and active investigation.
+
+For the research behind this design choice, read [A worked handoff design](../../reference/research/02-coordination.md#a-worked-handoff-design).
+
+## Next lesson
+
+The next lesson turns that intake design into a plan with specific completion conditions and limits. [Lesson 9.4: Turn a plan into a bounded investigation](04-plans-budgets-and-evidence.md).

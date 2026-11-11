@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Study workspace](../../STUDY-WORKSPACE.md)
 
+## What you'll learn and why it matters
+
+Turn a service delay into a bounded problem statement and trace one case through a small pilot. This gives Harbour a way to learn before committing to an agent or a wider build.
+
 ## Business context: Harbour
 
 If advisers spend time hunting for dispatch and carrier records, start with that delay rather than deciding in advance to deploy an agent. A pilot tries a limited change under conditions that can be studied. A vertical slice connects a small example from start to finish, including the handoff and review, so it can reveal where the proposed service still fails.
@@ -63,3 +67,17 @@ print(problem)
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A pilot starts with the work that is failing. A small example that runs from intake to review can expose missing steps and exclusions.
+
+## What this means for the business process
+
+Observe where advisers lose time before choosing a tool. If the delay is waiting for an inaccessible record, compare a change to access or ownership with a drafting pilot on the same cases.
+
+For the research behind this design choice, read [A worked implementation choice](../../reference/research/04-implementation.md#a-worked-implementation-choice).
+
+## Next lesson
+
+The next lesson turns this problem statement into acceptance examples the implementation can check. [Lesson 15.2: Turn requirements into executable acceptance cases](02-code-workshop.md).

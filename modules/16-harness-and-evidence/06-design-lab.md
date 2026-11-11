@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Research chapter](../../reference/research/05-routines.md)
 
+## What you'll learn and why it matters
+
+Build an operational review that combines execution evidence and evidence about the work people do. Use the comparison to choose an intervention.
+
 ## Business context: Harbour
 
 Suppose Harbour can see a slow run but cannot tell which instruction produced it or whether it finished. Decide what evidence is missing before recommending a change to the service. Recording run details is useful only if someone can interpret them and act on the result.
@@ -61,3 +65,17 @@ print(review)
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A trace can show that a step started or stopped. Waiting, rework and unsupported closure require information about the process around that step.
+
+## What this means for the business process
+
+Review failures with the owners of the affected tools and the teams receiving the work. Add observations of queueing and correction, because a successful trace can coexist with an unresolved customer case.
+
+For the research behind this design choice, read [Connected routines and hidden work](../../reference/research/05-routines.md#connected-routines-and-hidden-work).
+
+## Next lesson
+
+Module 17 asks what changes when cases arrive together and waiting, ownership and recovery become regular operating concerns. [Lesson 17.1: Durable case handling at volume](../17-durable-volume/01-concepts.md).

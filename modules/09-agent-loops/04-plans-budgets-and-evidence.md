@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next: inspect the digital twin](05-source-walkthrough.md)
 
+## What you'll learn and why it matters
+
+Define when an investigation has enough evidence and set limits on how long it can continue. This helps Harbour bound cost without hiding incomplete work.
+
 ## Business context: Harbour
 
 A plan might say to check dispatch, then ask the carrier if the first check leaves a gap. Define the evidence required to finish, as well as limits on attempts, time or spending. A budget is a limit on one of those resources. The application can stop the loop because a limit was reached while the investigation itself remains incomplete.
@@ -79,3 +83,17 @@ print(completed)
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A plan chooses what to check next. A completion condition says what must be known. A budget limits steps, time or cost and can end a run that remains unresolved.
+
+## What this means for the business process
+
+Put a service limit beside an evidence requirement, and send unresolved cases to a named owner when the limit is reached. This preserves the agent's usefulness under limited time and information without promising a conclusion it cannot support.
+
+For the research behind this design choice, read [Bounded rationality](../../reference/research/03-decisions.md#bounded-rationality).
+
+## Next lesson
+
+Next test those limits against repeated calls that can evade a simple duplicate check. [Lesson 9.5: Test repeated calls and independent stopping limits](05-source-walkthrough.md).

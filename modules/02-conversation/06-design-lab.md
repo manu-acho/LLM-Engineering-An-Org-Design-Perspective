@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next module](../03-open-models/README.md)
 
+## What you'll learn and why it matters
+
+Compare ways of assigning discretion across a conversational service. Explain who should be able to change wording, select evidence or approve a credit, and why.
+
 ## Business context: Harbour
 
 A service that drafts replies can give advisers freedom to reword a message while keeping the rules for credit approval fixed. Discretion is the room someone has to choose how to act within their role. Compare who can change a draft, choose evidence and approve a credit. Those choices do not have to be assigned to the same person or program.
@@ -79,3 +83,17 @@ print(contract)
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A service can give advisers room to tailor wording while requiring the same approval conditions. Rules and defaults shape choices before a person sees the result.
+
+## What this means for the business process
+
+Set the allowed evidence and approval conditions explicitly, and leave room for advisers to challenge an unsuitable draft. A standard path changes where judgement happens. Give the person who sees an exception a practical way to raise it.
+
+For the research behind this design choice, read [Where discretion moves](../../reference/research/03-decisions.md#where-discretion-moves).
+
+## Next lesson
+
+Module 3 changes where the model runs. You will compare that technical choice with the work of maintaining the model and its surrounding service. [Lesson 3.1: What changes when you run a model yourself?](../03-open-models/01-concepts.md).

@@ -4,6 +4,10 @@
 
 [Module route](README.md)
 
+## What you'll learn and why it matters
+
+Compare what different runtimes supply for the same task. State a condition that must stay true when the implementation changes.
+
 ## Business context: Harbour
 
 An invariant is a condition that should remain true when the implementation changes. For example, the brief must keep the customer's report separate from confirmed receipt. Write down that expectation, then compare which part of each runtime checks it and what happens when a result breaks it.
@@ -87,3 +91,17 @@ A failed or incomplete result must remain visible. The [live-model guide](../../
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A stable condition such as keeping reported and confirmed quantities separate gives the comparison a basis. State and failure handling can vary even when successful outputs look alike.
+
+## What this means for the business process
+
+Test the shared condition in each runtime, including missing and conflicting evidence. Require a useful refusal that reaches the case owner, so a framework substitution does not quietly change what the service promises.
+
+For the research behind this design choice, read [Four questions for a usable contribution](../../reference/research/02-coordination.md#four-questions-for-a-usable-contribution).
+
+## Next lesson
+
+The next workshop compares returned factual fields and failures from actual runtime paths. [Lesson 13.5: Compare runtime outputs and failure boundaries](05-source-walkthrough.md).

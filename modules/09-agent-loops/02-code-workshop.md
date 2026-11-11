@@ -2,6 +2,10 @@
 
 [Download the matching notebook](/downloads/09-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Follow a model-selected read through an investigation loop and identify what can make it stop. Learn to recognise the difference between a proposed tool and an available operation.
+
 ## Business context: Harbour
 
 Start with the question about H-17 and write down what counts as enough evidence for a brief. In a bounded loop, the application limits what the model may do and how long it can keep trying. Follow one request from the model to a read-only lookup and back. Read-only access allows inspection of a record without changing it.
@@ -61,3 +65,17 @@ The notebook has a cell for checking an independent answer. For the business dec
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A requested tool name has to match an exposed capability. The application checks the request, returns the result as context and can stop before an investigation is complete.
+
+## What this means for the business process
+
+Agree the evidence that makes a draft usable and name who receives the case if the agent cannot obtain it. A short allowed run can produce useful information while leaving the investigation with someone to continue it.
+
+For the research behind this design choice, read [Four questions for a usable contribution](../../reference/research/02-coordination.md#four-questions-for-a-usable-contribution).
+
+## Next lesson
+
+Next decide what work the agent should be allowed to take on at the service's first point of contact. [Lesson 9.3: Design the work before delegating the next step](03-business-and-organisation.md).

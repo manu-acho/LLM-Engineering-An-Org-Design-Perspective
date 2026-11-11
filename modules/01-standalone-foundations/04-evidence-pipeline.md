@@ -4,6 +4,10 @@
 
 [Previous lesson](03-learning-and-generation.md) · [Module route](README.md) · [Next: neural models](05-neural-models.md)
 
+## What you'll learn and why it matters
+
+Trace a case from its original records to the messages sent to a model. Learn to preserve source and status so a reader can tell a recorded figure from a customer's account.
+
 ## Business context: Harbour
 
 Imagine copying the customer's account into a form and accidentally labelling it “confirmed receipt”. The number would survive the copy, but its meaning would change. An evidence pipeline is a sequence of steps that takes the original records to a form the adviser or model can use. At each step, follow the ten boxes and check that “reported” and the source are still attached. A missing number must stay missing.
@@ -132,3 +136,17 @@ assert other_line == {"status": "clarify", "field": "line", "difference": None}
 print(other_line)
 
 ```
+
+## What to remember
+
+The evidence pipeline checks the records, computes the difference and converts the prepared evidence into request text. Constructing the request does not send it.
+
+## What this means for the business process
+
+Require the warehouse and customer-service records to carry both a source identifier and a label that describes what was observed or reported. The receiving adviser needs those meanings to compare accounts, even when the application has converted all the fields into text.
+
+For the research behind this design choice, read [Shared data and shared meaning](../../reference/research/02-coordination.md#shared-data-and-shared-meaning).
+
+## Next lesson
+
+Now that the model's input is visible, the next lesson looks inside a neural model to explain how it scores possible continuations. [Lesson 1.5: From the tiny model to a neural LLM](05-neural-models.md).

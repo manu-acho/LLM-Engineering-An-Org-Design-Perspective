@@ -4,6 +4,10 @@
 
 [Previous lesson](02-python-first-steps.md) · [Module route](README.md) · [Next: evidence preparation](04-evidence-pipeline.md)
 
+## What you'll learn and why it matters
+
+Train the tiny model on four sentences and predict its next word. The exercise shows how choosing examples can change model behaviour without changing any business records.
+
 ## Business context: Harbour
 
 Suppose someone has written “check the” on a note. In the four lines below, count only the words that come immediately after “the”. “Order” appears twice out of four, so it gets half the available chance. That is a probability given a particular preceding word. The lesson follows how the program counts those pairs, then how it uses the counts when it needs to add one more word.
@@ -90,3 +94,17 @@ Add four copies of `check the evidence` to the training list. Predict the new pr
 **Worked response:** the counts become five for `evidence`, two for `order` and one for `record`, totalling eight. At temperature one, the probability of `evidence` is 5/8, or 0.625. Greedy generation now selects that continuation. A change in training examples has changed the model; it has not verified anything about the delivery case.
 
 The [organisational data discussion](../../reference/research/03-decisions.md#facts-values-and-the-alternatives-that-disappear) explains why the selection and interpretation of examples matter beyond numerical accuracy.
+
+## What to remember
+
+The model counts token pairs, divides by the total for the current token, then selects and appends one piece at a time. Changing the examples changes the probabilities.
+
+## What this means for the business process
+
+When a draft repeatedly suggests the same explanation, inspect the examples and the rule for choosing outputs. Keep the source checks separate. A familiar explanation can be favoured by the material used for training even when today's evidence does not support it.
+
+For the research behind this design choice, read [Facts, values and the alternatives that disappear](../../reference/research/03-decisions.md#facts-values-and-the-alternatives-that-disappear).
+
+## Next lesson
+
+The counting example shows how a model generates language. Next you will prepare the records that constrain what a Harbour draft can reasonably say. [Lesson 1.4: Prepare evidence and construct a request](04-evidence-pipeline.md).

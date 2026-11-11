@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## What you'll learn and why it matters
+
+Distinguish a demonstration from a fair evaluation and state what would count as improvement. Harbour needs to know whether the service helps across the cases it intends to handle.
+
 ## Business context: Harbour
 
 Imagine two polished replies shown in a demonstration, both for easy cases. They show what the system can do in those cases. An evaluation asks a question about performance and collects examples chosen to answer it. A benchmark is a defined set of tasks and scoring rules for comparison. Start with a case where a plausible answer would send work to the wrong team.
@@ -93,3 +97,17 @@ print("Correct:", correct, "Cases:", len(truth), "Accuracy:", correct / len(trut
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A polished example shows one possibility. A benchmark supplies cases and scoring rules. An evaluation needs a stated comparison and a question the cases can answer.
+
+## What this means for the business process
+
+Choose a defined group of deliveries and a baseline before judging the assistant. Include disputes that are difficult to route, and measure unsupported claims and follow-up effort alongside speed.
+
+For the research behind this design choice, read [Benefits need a population and a comparison](../../reference/research/04-implementation.md#benefits-need-a-population-and-a-comparison).
+
+## Next lesson
+
+The next workshop shows why equal accuracy can hide a difference that matters to the receiving team. [Lesson 4.2: Compare equal accuracy with unequal consequences](02-code-workshop.md).

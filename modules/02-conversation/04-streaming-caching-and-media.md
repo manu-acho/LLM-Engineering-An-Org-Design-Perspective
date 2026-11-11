@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next: the complete tool exchange](05-source-walkthrough.md)
 
+## What you'll learn and why it matters
+
+Distinguish a growing display, stored conversation information and media passed to the model. Learn why an adviser needs to know whether what appears on screen is provisional or complete.
+
 ## Business context: Harbour
 
 A browser can show “Checking” and then append “ case H-17”, or it can receive the whole phrase again and replace the display. Streaming delivers output in parts. Appending a piece that already includes the earlier text would display it twice. The same separation matters when a photo is added: what the user sees is one part of the system; what the application has received, stored and sent to the model must be checked separately.
@@ -127,3 +131,17 @@ assert join_deltas([]) == ""
 ```
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+The application can append a new fragment or replace the display with the full text so far. Stored information, reused computation and visible output are distinct.
+
+## What this means for the business process
+
+Mark streamed text as a draft until the application has a final outcome. If a delivery photo matters, show whether it reached the step that checks evidence. What the interface lets an adviser see shapes what they can reasonably do next.
+
+For the research behind this design choice, read [Feature, affordance and constraint](../../reference/research/06-technology-in-practice.md#feature-affordance-and-constraint).
+
+## Next lesson
+
+You will now trace call identity and the authorised case alongside partial output, so those signals can be checked independently. [Lesson 2.5: Trace call identity, scope and incremental output](05-source-walkthrough.md).

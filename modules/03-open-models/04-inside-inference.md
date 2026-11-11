@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next: inspect a real inference interface](05-source-walkthrough.md)
 
+## What you'll learn and why it matters
+
+Follow text identifiers, numerical representations, attention and output scores through a small model. This explains why changing the surrounding text can change the draft Harbour receives.
+
 ## Business context: Harbour
 
 A model cannot calculate directly with a phrase as printed. It starts by looking up a number for each piece of text, then uses a list of numbers to represent that piece. Attention lets the representation for one piece draw on information at other positions the model is allowed to use. Trace one piece through those changes before looking at the final scores for what could come next.
@@ -88,3 +92,17 @@ assert weights[0] > weights[1]
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+Attention lets the representation at one position draw on other available positions. Scores guide the next choice, and the chosen piece becomes part of the next input.
+
+## What this means for the business process
+
+Test drafts with qualifications and tentative language still present, then check whether the result preserves them. The ability to use surrounding text is a technical possibility. Whether that produces a usable note depends on the supplied text and the acceptance check.
+
+For the research behind this design choice, read [Feature, affordance and constraint](../../reference/research/06-technology-in-practice.md#feature-affordance-and-constraint).
+
+## Next lesson
+
+The next workshop takes this account of inference to an actual local model and separates loading failures from generation problems. [Lesson 3.5: Load weights, inspect shapes and diagnose inference](05-source-walkthrough.md).

@@ -4,6 +4,10 @@
 
 [Previous lesson](01-model-and-application.md) · [Module route](README.md) · [Next: learning](03-learning-and-generation.md)
 
+## What you'll learn and why it matters
+
+Read a short Python program and explain what each line stores, calculates or displays. Harbour needs these rules to keep a missing number or a customer report from turning into a confirmed figure.
+
 ## Business context: Harbour
 
 Start with the subtraction on paper: twelve boxes recorded, ten reported, a difference of two. Python is a language for writing instructions a computer can follow. The first example gives a name to each number before asking Python to subtract them. Read the right side of each line first and then see where the result is kept. The program can find the difference; only the names explain what was compared.
@@ -97,3 +101,17 @@ Predict what `order.get("missing")` returns and why the lab should not treat it 
 **Worked response:** it returns `None`. The missing field supplies no quantity. Substituting zero would create a factual claim not contained in the record. The [decision-premises discussion](../../reference/research/03-decisions.md#decision-premises) explains why such defaults can matter to subsequent choices.
 
 The [official Python introduction](https://docs.python.org/3/tutorial/introduction.html) provides further explanation of assignments, numbers and strings. The runnable lab and subsequent lessons supply the patterns needed for this module.
+
+## What to remember
+
+A variable gives a value a name, a function groups operations, and a check can refuse unsuitable input. A missing quantity carries different information from zero.
+
+## What this means for the business process
+
+Agree the meaning of each quantity with the people who supply and use it before writing the check. For H-17, a missing receipt count should send the adviser to the source, because substituting zero silently supplies a premise for a later remedy decision.
+
+For the research behind this design choice, read [Decision premises](../../reference/research/03-decisions.md#decision-premises).
+
+## Next lesson
+
+Having traced a rule written by a programmer, you can now trace a rule the program derives from examples by counting what follows each word. [Lesson 1.3: Train a tiny language model](03-learning-and-generation.md).

@@ -2,6 +2,10 @@
 
 [Download the matching notebook](/downloads/05-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Follow the route from allowed documents to a generated brief, then check the source and quantity fields. This gives Harbour a way to see where a claim changed.
+
 ## Business context: Harbour
 
 A draft that sounds right may still turn a reported quantity into a verified fact. Follow the exercise from the set of documents it may search, to the pieces it finds, to the brief it returns. Check the actual fields for quantities and source labels, even if the prose sounds natural. Matching the expected fields in this example is one check on the draft.
@@ -64,3 +68,17 @@ The notebook has a cell for checking an independent answer. For the business dec
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+Finding and supplying evidence are different from checking the resulting draft. A field can hold the right number but assign it the wrong status.
+
+## What this means for the business process
+
+Before displaying a generated brief as usable, check that each key claim points to a permitted source and preserves whether it was recorded or reported. Route unsupported fields back for investigation instead of making the adviser reverse-engineer the draft.
+
+For the research behind this design choice, read [Worked design: a quantity agreement](../../reference/research/07-infrastructure-and-standards.md#worked-design-a-quantity-agreement).
+
+## Next lesson
+
+Next design the source registry and correction process that keep those checks reliable as records and policies change. [Lesson 5.6: Build an organisational knowledge service](06-design-lab.md).

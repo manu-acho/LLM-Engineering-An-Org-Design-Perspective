@@ -4,6 +4,10 @@
 
 [Module route](README.md)
 
+## What you'll learn and why it matters
+
+Follow a real type of case with the people who do the work and compare an AI proposal with a simpler intervention. This helps Harbour avoid treating the initial problem description as settled.
+
 ## Business context: Harbour
 
 Follow one case with the people who actually do the work. The team's description of “handling a discrepancy” may include chasing evidence or negotiating a promise that never appears in the form. Discovery is the work of learning those steps and constraints before committing to a design. Decide what is in scope and who can challenge that choice.
@@ -75,3 +79,17 @@ Other arrangements can be defensible. Check that the proposal names who accepts 
 ## Research extension: examine the wider arrangement
 
 [Process architecture](../../reference/research/09-process-architecture.md#worked-design-extend-the-boundary-of-success). Define the pilot boundary before selecting measures. Evidence readiness, remedy authorisation and completed resolution are distinct outcomes.
+
+## What to remember
+
+Discovery can reveal hidden work such as chasing a record. A proposed scope needs owners and a way for staff to challenge it.
+
+## What this means for the business process
+
+If the delay comes from nobody owning intake, test an intake owner alongside any drafting proposal. Ask the people who supply and receive the work whether that intervention addresses what they encounter.
+
+For the research behind this design choice, read [Implementation as learning across boundaries](../../reference/research/04-implementation.md#implementation-as-learning-across-boundaries).
+
+## Next lesson
+
+Next express the chosen contribution as an operating contract with explicit inputs, acceptance and refusal. [Lesson 15.4: Make the operating contract inspectable](04-operating-contract.md).

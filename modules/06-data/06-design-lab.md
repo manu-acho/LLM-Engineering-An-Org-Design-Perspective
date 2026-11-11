@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next module](../07-specialisation/README.md)
 
+## What you'll learn and why it matters
+
+Write a routing and labelling rule for cases that need contributions from several teams. Test whether it answers the question Harbour actually needs to ask.
+
 ## Business context: Harbour
 
 A complaint about a damaged box may need photographs from the warehouse and a reply from customer service. A rule for labelling training examples must say whether it asks for the next useful contribution or the owner of the whole case. Write the rule so two colleagues can apply it to that same example and explain why their answers agree or differ.
@@ -110,3 +114,17 @@ For a step-by-step explanation of the included helpers, see [Read the applicatio
 ## Interpret the returned label
 
 This activity uses two receiving functions, `finance` and `operations`. Later four-route briefs distinguish investigation and qualitative review as separate case routes. Those outputs answer different questions. See the [routing crosswalk](../../reference/case-data-guide.md#routing-vocabulary-belongs-to-a-task) before translating between them.
+
+## What to remember
+
+The next source of evidence and the owner of the whole investigation can be different roles. A useful annotation rule names which of them the model should predict.
+
+## What this means for the business process
+
+Give the design a separate field or workflow step for the next contributor and for case ownership if both are needed. Let advisers challenge routes that repeatedly delay work, so the category design can improve with practice.
+
+For the research behind this design choice, read [Identify what depends on what](../../reference/research/02-coordination.md#identify-what-depends-on-what).
+
+## Next lesson
+
+Module 7 considers what to do when a clearly specified behaviour remains unreliable even after the task and evidence have been improved. [Lesson 7.1: What fine-tuning changes, and what it cannot settle](../07-specialisation/01-concepts.md).

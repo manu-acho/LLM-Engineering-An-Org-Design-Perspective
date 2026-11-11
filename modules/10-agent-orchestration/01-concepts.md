@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## What you'll learn and why it matters
+
+Compare sequential and parallel work and explain what a coordinator must bring together. Harbour needs those choices to reflect which evidence depends on other evidence.
+
 ## Business context: Harbour
 
 One worker can read dispatch and another can read policy, but a brief still needs both contributions brought together. Orchestration is the application logic that orders, starts and combines work. The two reads can run at the same time if neither needs the other's result. Combining them requires rules for missing or incompatible answers.
@@ -88,3 +92,17 @@ assert "sources" in Specialist.model_json_schema()["required"]
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+Orchestration starts, orders and combines work. Independent reads can overlap, but their results still need to be checked and combined.
+
+## What this means for the business process
+
+Run independent reads together where delay matters, and set a receiving condition that states which results must be present. Design a route for an absent or conflicting contribution before the coordinator claims success.
+
+For the research behind this design choice, read [Identify what depends on what](../../reference/research/02-coordination.md#identify-what-depends-on-what).
+
+## Next lesson
+
+The next workshop follows one specialist's result through the checks that let the coordinator use it. [Lesson 10.2: Validate and accept a specialist contribution](02-code-workshop.md).

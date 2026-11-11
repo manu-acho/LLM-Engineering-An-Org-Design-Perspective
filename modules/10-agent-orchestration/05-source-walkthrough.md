@@ -2,6 +2,10 @@
 
 [Download the matching notebook](/downloads/10-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Compare a format check with a check against source evidence. This helps Harbour decide whether a combined brief is usable even when several model outputs agree.
+
 ## Business context: Harbour
 
 A schema describes the expected form, such as requiring a source identifier and a quantity. The fields can all be present while the quantity disagrees with the record. In the lab, inspect the shape check and the evidence check separately before combining what the two specialists returned.
@@ -62,3 +66,17 @@ The notebook has a cell for checking an independent answer. For the business dec
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A schema describes the shape of an answer. Each claim still needs support. Multiple generated contributions can agree while sharing the same unsupported premise.
+
+## What this means for the business process
+
+Give the coordinator a rule that checks claims against their supplied sources and retains disagreement for review. Do not treat agreement between agents as evidence independent of those sources.
+
+For the research behind this design choice, read [Shared data and shared meaning](../../reference/research/02-coordination.md#shared-data-and-shared-meaning).
+
+## Next lesson
+
+Next compare a central coordinator with a design where specialists keep more ownership of the work they hand over. [Lesson 10.6: Compare central coordination with specialist ownership](06-design-lab.md).

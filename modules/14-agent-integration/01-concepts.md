@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## What you'll learn and why it matters
+
+Identify the host, client and server in a Model Context Protocol connection. Explain what the protocol makes possible and where Harbour still decides access and authority.
+
 ## Business context: Harbour
 
 An assistant needs a way to discover how to read Harbour's case records. Model Context Protocol (MCP) gives connected software common rules for describing and requesting capabilities. The host is the application using the connection; its client exchanges messages with the server that offers the capability. Harbour still decides who may read or change a case.
@@ -95,3 +99,17 @@ assert "read_case" in result["tools"]
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+The connection lets software describe and request capabilities. A capability's existence does not determine whether the caller may see or change a given case.
+
+## What this means for the business process
+
+Expose a narrow read and check the caller's case access in the service. Define any authority to approve or execute an action separately from the fact that a client can connect.
+
+For the research behind this design choice, read [Permission and authority](../../reference/research/03-decisions.md#permission-and-authority).
+
+## Next lesson
+
+The next workshop inspects a case-reading function directly so you can see its boundary before adding the connection. [Lesson 14.2: Expose a narrow case-reading capability](02-code-workshop.md).

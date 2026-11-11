@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## What you'll learn and why it matters
+
+Trace an agent's cycle of choosing, checking, acting and using a returned result. This helps Harbour decide where letting the model choose a step adds value.
+
 ## Business context: Harbour
 
 An adviser might check dispatch first, then look for carrier evidence if it is missing. An agent loop repeats a similar cycle: choose a permitted step, check and run it, inspect what came back, then decide whether to stop or continue. The tool's result becomes part of the information used for the next choice.
@@ -89,3 +93,17 @@ assert result["stop"] == "final"
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+The goal states the task, context supplies the available information, tools expose operations and the application decides which requests can run and when to stop.
+
+## What this means for the business process
+
+Give the agent only the reads needed for its investigation, and let the application check each request. The power to select a lookup within a loop gives the agent a limited contribution while the case owner retains responsibility for the result.
+
+For the research behind this design choice, read [Permission and authority](../../reference/research/03-decisions.md#permission-and-authority).
+
+## Next lesson
+
+The next workshop runs a bounded investigation and lets you see what happens when a proposed step falls outside that boundary. [Lesson 9.2: Run a bounded investigation loop](02-code-workshop.md).

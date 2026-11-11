@@ -2,6 +2,10 @@
 
 [Download the matching notebook](/downloads/06-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Check that a word found only in test data stays outside the fitted vocabulary. Use an uncertain prediction to identify where Harbour needs an exception path.
+
 ## Business context: Harbour
 
 Imagine a held-out message contains a word the training messages never used. A fitted vocabulary is the list of words the program learned to represent from its training examples. In the lab, check that the new word stays outside that list. Then compare the uncertain prediction with the original message instead of treating the selected queue as self-explanatory.
@@ -36,3 +40,17 @@ The notebook has a cell for checking an independent answer. For the business dec
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+Transforming text applies the existing vocabulary. Refitting would change the comparison. A selected label may still hide ambiguity in the source message.
+
+## What this means for the business process
+
+Keep a route for cases the fitted categories handle poorly. Let the receiving team flag recurring exceptions and review whether they need new examples, a revised label or a different allocation rule.
+
+For the research behind this design choice, read [Variation is a question, not a verdict](../../reference/research/05-routines.md#variation-is-a-question-not-a-verdict).
+
+## Next lesson
+
+Next define that allocation rule clearly enough for two people to label the same difficult request consistently. [Lesson 6.6: Redesign a routing task before learning its labels](06-design-lab.md).

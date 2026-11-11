@@ -2,6 +2,10 @@
 
 [Download the matching notebook](/downloads/02-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Follow a tool call identifier, its allowed inputs and the pieces of its response. This helps Harbour avoid attaching a reply to the wrong request or confusing a match with permission.
+
 ## Business context: Harbour
 
 Suppose two requests ask for the same case at the same time. The case number identifies the subject of both requests; a call identifier tells the application which request a result belongs to. Inspect that identifier separately from the region and the partial text. A correct identifier does not make a cross-region lookup permissible.
@@ -64,3 +68,17 @@ The notebook has a cell for checking an independent answer. For the business dec
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A call identifier matches a result to its request. The tool schema describes inputs, and application checks still establish access. A fragment can arrive before a final response.
+
+## What this means for the business process
+
+Retain both the case and call identifiers on lookup results, and check scope separately. The receiving step needs enough information to attach the result to the right work and to distinguish an incomplete run from an accepted result.
+
+For the research behind this design choice, read [Four questions for a usable contribution](../../reference/research/02-coordination.md#four-questions-for-a-usable-contribution).
+
+## Next lesson
+
+The next lesson turns these checks into a design choice about how much freedom the assistant and advisers should have. [Lesson 2.6: Allocate discretion across a conversational service](06-design-lab.md).

@@ -4,6 +4,10 @@
 
 [Previous lesson](06-business-design.md) · [Module route](README.md) · [Workbook](../../WORKBOOK.md)
 
+## What you'll learn and why it matters
+
+Use the exercises to diagnose a change in model behaviour, a reply cut short and an unsupported claim. Each needs a different response when a service is in use.
+
 ## Business context: Harbour
 
 Start by keeping two pieces of work apart: adding a sentence to the toy model's training set and changing a record in Harbour's case. The first can change which word comes next; the second can change what the brief is entitled to say. Write a prediction for each exercise before reading its answer. If it differs, check which input changed and whether the code counts examples, selects text or prepares evidence.
@@ -67,3 +71,17 @@ Run `python3 -m unittest -v test_foundations.py` beside the lab file. The checks
 They do not establish model truthfulness, a secure external integration or business improvement. The distinction between a configured operation and an organisational consequence is developed in [the research evidence path](../../reference/research/06-technology-in-practice.md#an-evidence-path-without-skipped-steps).
 
 The pilot is complete when the learner can explain the outputs and the design, including what each cannot establish. The next standalone modules are identified as planned in [the curriculum](../../CURRICULUM.md).
+
+## What to remember
+
+A change in examples can change word choice. A length limit can end generation early. A difference between records can remain unresolved after both steps run successfully.
+
+## What this means for the business process
+
+Give Harbour's reviewer separate routes for an incomplete reply, a missing source and a disputed business claim. Each signals a different intervention. Keep each technical result at the level of evidence it can support when judging the service.
+
+For the research behind this design choice, read [An evidence path without skipped steps](../../reference/research/06-technology-in-practice.md#an-evidence-path-without-skipped-steps).
+
+## Next lesson
+
+Module 2 carries the same evidence distinctions into a conversation, where an adviser can ask a follow-up that leaves the case number unstated. [Lesson 2.1: How a conversation becomes a controlled interaction](../02-conversation/01-concepts.md).

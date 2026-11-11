@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## What you'll learn and why it matters
+
+Explain what a workflow must save to pause and resume a case. Harbour needs to retain the draft and its review position when the program stops.
+
 ## Business context: Harbour
 
 A claim may wait overnight for a human decision. The next day, the program needs a saved account of what it knows and where the work stopped. That account is state. A graph describes the steps and paths between them; a checkpoint saves state at a boundary where work can later continue. Follow the case from drafting to the point it waits for review.
@@ -97,3 +101,17 @@ with TemporaryDirectory() as directory:
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+State holds the information the next step needs. A graph describes allowed routes. A checkpoint saves state at a point where work can continue.
+
+## What this means for the business process
+
+Save the reason a case is waiting alongside the version of its draft, then connect that waiting state to a review queue. A saved state becomes useful to the organisation when someone can find it and take the next step.
+
+For the research behind this design choice, read [Designing an artefact and designing a pattern](../../reference/research/05-routines.md#designing-an-artefact-and-designing-a-pattern).
+
+## Next lesson
+
+The next workshop pauses a model-backed workflow at the review boundary and examines what the checkpoint preserves. [Lesson 12.2: Reopen durable work and resume review](02-code-workshop.md).

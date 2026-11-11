@@ -4,6 +4,10 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+## What you'll learn and why it matters
+
+Distinguish sending a handoff from having someone accept it. The goal is to design a transfer that leaves a clear owner even when the receiving team is busy.
+
 ## Business context: Harbour
 
 A manager agent can finish sending a referral while the receiving team has not agreed to take it. Distinguish sending a message from accepting ownership. Identify what the receiving team needs, how it indicates acceptance and who follows up if no one accepts.
@@ -108,3 +112,17 @@ Other arrangements can be defensible. Check that the proposal names who accepts 
 ## Research extension: examine the wider arrangement
 
 [Process architecture](../../reference/research/09-process-architecture.md#process-model-workflow-and-performed-work). The orchestration graph represents selected implementation steps. State which customer activities and responsibilities remain outside that graph.
+
+## What to remember
+
+A message can arrive without the recipient agreeing to act. An agent named manager has only the authority the service has assigned it.
+
+## What this means for the business process
+
+Keep a named owner while a referral is pending. Let the receiving team accept it or return it with a reason, and set an escalation for overdue transfers. A delivery event alone cannot tell Harbour who is doing the work.
+
+For the research behind this design choice, read [A worked handoff design](../../reference/research/02-coordination.md#a-worked-handoff-design).
+
+## Next lesson
+
+The next lesson gives the handoff named fields and shows how to use a trace to find which checks took place. [Lesson 10.4: Structure the contribution and read the execution trace](04-structured-results-and-traces.md).

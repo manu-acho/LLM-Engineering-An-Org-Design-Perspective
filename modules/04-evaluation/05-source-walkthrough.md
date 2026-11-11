@@ -2,6 +2,10 @@
 
 [Download the matching notebook](/downloads/04-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Trace a generated route into its error category and loss calculation. Learn to keep the expected route separate from the information the model receives.
+
 ## Business context: Harbour
 
 A generated route is the queue the model actually proposes for a case. An expected route is the reference choice the exercise uses to score it. First inspect one pair and name the error, if any. Then see how the chosen loss rule changes the result when an expensive mistake replaces a minor one. Live output must come from the run rather than a guessed answer.
@@ -63,3 +67,17 @@ The notebook has a cell for checking an independent answer. For the business dec
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+The model receives case evidence and policy. The evaluator later compares the proposed route with the reference label and applies the declared penalties.
+
+## What this means for the business process
+
+Keep evaluation labels out of model input and let the process owner review disputed reference labels. Otherwise an apparent failure or gain can reflect a contested routing policy rather than the model's performance.
+
+For the research behind this design choice, read [Decision premises](../../reference/research/03-decisions.md#decision-premises).
+
+## Next lesson
+
+The next lesson takes the evaluation beyond routing scores to examine total resolution and alternative explanations. [Lesson 4.6: Decide whether a measured improvement changes the organisation](06-design-lab.md).

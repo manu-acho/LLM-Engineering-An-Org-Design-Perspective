@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Return to the integration plan](04-integration-plan.md)
 
+## What you'll learn and why it matters
+
+Connect visible status, backend state and feedback to the work that follows. Harbour needs an interface that tells people who is acting and how to raise a problem.
+
 ## Business context: Harbour
 
 “Submitted” on a screen might mean the request was received, while “accepted” should tell the adviser a reviewer has taken responsibility. The backend is the software behind the screen that stores and processes the work. Match each visible status to what the backend knows and give staff a way to report a misleading status.
@@ -80,3 +84,17 @@ with TemporaryDirectory() as directory:
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A displayed status should correspond to something the service knows. Feedback is more useful when it identifies the affected case, claim or step.
+
+## What this means for the business process
+
+Define which event justifies showing that a case was accepted, and give advisers a route for reporting a misleading status. Examine actual use after release to see whether the intended feedback path is usable.
+
+For the research behind this design choice, read [Actualisation: from possibility to action](../../reference/research/06-technology-in-practice.md#actualisation-from-possibility-to-action).
+
+## Next lesson
+
+Part 3 begins by taking an observed problem and turning it into a bounded pilot with explicit acceptance conditions. [Lesson 15.1: From a business problem to a pilot](../15-problem-to-pilot/01-concepts.md).

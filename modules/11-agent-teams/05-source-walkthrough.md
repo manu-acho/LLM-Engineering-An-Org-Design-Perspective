@@ -2,6 +2,10 @@
 
 [Download the matching notebook](/downloads/11-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Detect missing prerequisites and task cycles, and inspect actual overlap between independent calls. This helps Harbour separate scheduling errors from necessary waits.
+
 ## Business context: Harbour
 
 A cycle occurs if task A waits for B and B waits for A. Neither can begin. First check that all named prerequisites exist and can be completed in some order. Then compare independent calls in a live run and see whether their work overlaps in time. Being allowed to overlap and actually overlapping are different claims.
@@ -63,3 +67,17 @@ The notebook has a cell for checking an independent answer. For the business dec
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A cycle prevents the affected tasks from starting. Independent calls can overlap, while the combined result still waits for its required inputs.
+
+## What this means for the business process
+
+Check configurations before assigning work, then compare elapsed time with the time spent integrating results. Parallel work can shorten independent reads while leaving the receiving bottleneck intact.
+
+For the research behind this design choice, read [Identify what depends on what](../../reference/research/02-coordination.md#identify-what-depends-on-what).
+
+## Next lesson
+
+Next compare the work saved by specialist roles with the added cost of getting their results to fit together. [Lesson 11.6: Divide work where specialisation earns its integration cost](06-design-lab.md).

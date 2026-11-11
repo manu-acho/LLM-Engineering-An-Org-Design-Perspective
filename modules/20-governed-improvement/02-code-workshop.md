@@ -2,6 +2,10 @@
 
 [Download the matching notebook](/downloads/20-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Compare two versions on the same cases and interpret the promotion gate. Learn how an apparently better average can coexist with an unacceptable failure.
+
 ## Business context: Harbour
 
 Run the current and proposed instructions on the same cases. A promotion gate is a set of conditions the candidate must meet before it can be selected. Compare the measured results with those conditions and identify any case that should block release even if the average improves.
@@ -62,3 +66,17 @@ The notebook has a cell for checking an independent answer. For the business dec
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+The comparison needs the same cases, expected behaviour and resource units. A gate can require a particular safety or quality condition alongside an average improvement.
+
+## What this means for the business process
+
+Agree with the receiving team which failures block a release, such as turning an unverified report into a confirmed claim. Keep the evidence and the decision rule visible to the release owner.
+
+For the research behind this design choice, read [Select controls for the work that can actually be assessed](../../reference/research/08-governance-and-accountability.md#select-controls-for-the-work-that-can-actually-be-assessed).
+
+## Next lesson
+
+Next decide who may challenge the comparison and how a problem should reach the owner who can fix it. [Lesson 20.3: Design the work, responsibility and learning](03-business-and-organisation.md).

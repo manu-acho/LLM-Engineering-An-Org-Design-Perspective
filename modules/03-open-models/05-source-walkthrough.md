@@ -2,6 +2,10 @@
 
 [Download the matching notebook](/downloads/03-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Load a small open model and trace how it produces text from an input. Learn to tell a loading or input-shape problem from a factual error in the answer.
+
 ## Business context: Harbour
 
 Loading a model means bringing its learned numbers into memory so the computer can use them. Generation then repeats the calculation for possible next pieces as the reply grows. In the lab, separate a failure to load the model from an unhelpful answer after it has loaded. Changing the instruction cannot fix a missing file or a model too large to load.
@@ -46,3 +50,17 @@ The notebook has a cell for checking an independent answer. For the business dec
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A successful run confirms the model could load and generate in the tested setup. It does not verify a delivery claim or show that the setup can serve many users.
+
+## What this means for the business process
+
+For a local Harbour pilot, assign setup and loading failures to the technical owner and unsupported notes to the people checking the evidence and wording. Record both so a service failure reaches the person able to correct its cause.
+
+For the research behind this design choice, read [Six kinds of misfit](../../reference/research/04-implementation.md#six-kinds-of-misfit).
+
+## Next lesson
+
+You can now distinguish model operation from evidence quality. Next design who reviews the generated meeting record and how colleagues correct it. [Lesson 3.6: Design the meeting record and its correction process](06-design-lab.md).

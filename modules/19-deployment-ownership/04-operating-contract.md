@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Read a release record for request rules, data compatibility and recovery. Explain what the service promises after a restart or failed deployment.
+
 ## Business context: Harbour
 
 An operating contract for a deployed service describes which requests it accepts, what each response promises and what happens to stored work after a restart. Trace a case read or review through that contract. A successful response is useful only if the caller can tell what has actually happened.
@@ -63,3 +67,17 @@ print(release)
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A response describes an outcome under its contract. Persistent state, compatible changes and a verified restore path are separate requirements.
+
+## What this means for the business process
+
+Have the service owner agree what can be restored, who makes a recovery decision and how advisers learn which work remains open. Test the recovery path before making a wider service commitment.
+
+For the research behind this design choice, read [Implementation extends beyond launch](../../reference/research/04-implementation.md#implementation-extends-beyond-launch).
+
+## Next lesson
+
+Next run the draft, read and review journey against the local service and inspect the response at each step. [Lesson 19.5: Start and inspect the local case service](05-source-walkthrough.md).

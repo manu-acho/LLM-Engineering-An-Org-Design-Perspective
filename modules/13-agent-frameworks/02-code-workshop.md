@@ -2,6 +2,10 @@
 
 [Download the matching notebook](/downloads/13-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Run or read the same contribution in Python and LangGraph. Identify which part of each version controls the work and which facts should stay stable.
+
 ## Business context: Harbour
 
 In one version ordinary Python code controls the sequence. In the other, LangGraph runs steps connected in a graph. Identify where the same case enters and where the result leaves each version. Keep the purpose and expected facts fixed so differences in the two runs can be interpreted.
@@ -60,3 +64,17 @@ The notebook has a cell for checking an independent answer. For the business dec
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+Python and LangGraph can organise the same task differently. The local activity and the live model-backed investigation show different things.
+
+## What this means for the business process
+
+Keep the case and required factual fields fixed when comparing frameworks. Decide whether a graph adds a capability Harbour needs, and validate that the receiving work still gets the same meaning.
+
+For the research behind this design choice, read [An evidence path without skipped steps](../../reference/research/06-technology-in-practice.md#an-evidence-path-without-skipped-steps).
+
+## Next lesson
+
+Next ask why a common technical interface can still leave teams using the same field to mean different things. [Lesson 13.3: A common interface does not create a common organisation](03-business-and-organisation.md).

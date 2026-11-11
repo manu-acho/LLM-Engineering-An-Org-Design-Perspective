@@ -2,6 +2,10 @@
 
 [Download the matching notebook](/downloads/11-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Follow a task schedule and identify which work must wait for a prerequisite. This helps Harbour distinguish avoidable waiting from necessary sequencing.
+
 ## Business context: Harbour
 
 A task that needs two records cannot be completed before both records are available. A scheduler chooses which work can start based on dependencies and available capacity. In the lab, identify the tasks that can start immediately and the result that has to wait. Compare the planned order with what the run actually does.
@@ -62,3 +66,17 @@ The notebook has a cell for checking an independent answer. For the business dec
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+The scheduler uses declared dependencies to decide when a task can start. A dependent draft must wait for its inputs even when other work can overlap.
+
+## What this means for the business process
+
+Make the waiting reason visible to the person handling the case. If a prerequisite repeatedly blocks a draft, investigate the source or receiving capacity before adding more workers to prepare drafts.
+
+For the research behind this design choice, read [Information demand and capacity](../../reference/research/01-organisation-design.md#information-demand-and-capacity).
+
+## Next lesson
+
+Next examine why correct software sequencing still leaves questions about how people integrate the results. [Lesson 11.3: An agent team needs integration, not just role names](03-business-and-organisation.md).

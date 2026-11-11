@@ -4,6 +4,10 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+## What you'll learn and why it matters
+
+Explain why naming specialist roles creates an integration problem. Identify who can resolve conflicting contributions and what gives them that authority.
+
 ## Business context: Harbour
 
 Giving agents titles such as “warehouse specialist” and “manager” divides work on paper. Integration is the work of bringing their separate results together so Harbour can resolve a case. Follow a disagreement from the two reports to the person who can settle it. The software's reporting line does not grant that person or agent authority on its own.
@@ -111,3 +115,17 @@ Other arrangements can be defensible. Check that the proposal names who accepts 
 ## Research extension: examine the wider arrangement
 
 [Process architecture](../../reference/research/09-process-architecture.md#process-architecture-connects-the-processes). Several collaborating agents do not automatically represent a complete business process. Trace shared orders, shipments and remedies across the surrounding teams.
+
+## What to remember
+
+Differentiation divides work. Integration combines the contributions into something usable. A software hierarchy does not determine who is authorised to decide.
+
+## What this means for the business process
+
+Name who can reconcile warehouse and policy claims or refer the conflict. Give that person both sources and a way to ask for correction, rather than allowing a manager-labelled agent to settle the case.
+
+For the research behind this design choice, read [Division creates a need for integration](../../reference/research/01-organisation-design.md#division-creates-a-need-for-integration).
+
+## Next lesson
+
+The next lesson reads a task configuration to see exactly which pieces of that division become rules the software can follow. [Lesson 11.4: Read configuration as an executable division of work](04-configuration-and-dependencies.md).

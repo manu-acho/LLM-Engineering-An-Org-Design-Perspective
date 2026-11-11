@@ -2,6 +2,10 @@
 
 [Download the matching notebook](/downloads/03-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Read the dimensions printed by one neural forward pass. This helps Harbour distinguish a check that the model ran from evidence that it handled a business case correctly.
+
 ## Business context: Harbour
 
 A forward pass takes one input through a model to calculate an output without training it. Think of a row of tokens, or pieces of text, where each position gets scores for possible next pieces. A shape lists the sizes of the axes in that table. In the lab, match each printed size to what it counts before trying to interpret the values.
@@ -63,3 +67,17 @@ The notebook has a cell for checking an independent answer. For the business dec
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A forward pass calculates scores for token positions and vocabulary entries. An axis of eight vocabulary entries does not represent eight evaluated deliveries.
+
+## What this means for the business process
+
+Use output dimensions to diagnose an integration problem such as an unexpected model result. Keep a separate test that checks the claims in a Harbour brief against its sources. The two tests support different conclusions.
+
+For the research behind this design choice, read [An evidence path without skipped steps](../../reference/research/06-technology-in-practice.md#an-evidence-path-without-skipped-steps).
+
+## Next lesson
+
+The next lesson applies that distinction to meeting notes, where a technically successful run can still change the meaning of a commitment. [Lesson 3.3: When meeting notes become an organisational record](03-business-and-organisation.md).

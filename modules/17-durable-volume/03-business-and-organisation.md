@@ -4,6 +4,10 @@
 
 [Module route](README.md)
 
+## What you'll learn and why it matters
+
+Identify the receiving bottleneck and compare ways to handle priority, ageing and capacity. Harbour needs a policy for difficult cases as well as a target for average throughput.
+
 ## Business context: Harbour
 
 If automation prepares more briefs per hour than advisers can review, work piles up after drafting. Trace arrivals and completions at the review stage, then compare adding review capacity, limiting arrivals or narrowing scope. The best response depends on where the waiting occurs.
@@ -124,3 +128,17 @@ Other arrangements can be defensible. Check that the proposal names who accepts 
 ## Research extension: examine the wider arrangement
 
 [Process architecture](../../reference/research/09-process-architecture.md#what-event-logs-can-reveal). An event timestamp may record receipt rather than occurrence. Examine delayed records, case correlation and missing work before interpreting queue performance.
+
+## What to remember
+
+Preparing more work can grow a review queue. A priority policy changes whose cases wait, even if overall throughput stays the same.
+
+## What this means for the business process
+
+Give the review owner a way to identify long-waiting and difficult cases. Compare adding capacity, narrowing scope and changing intake against both waiting and completion, rather than increasing draft volume by default.
+
+For the research behind this design choice, read [Information demand and capacity](../../reference/research/01-organisation-design.md#information-demand-and-capacity).
+
+## Next lesson
+
+The next lesson turns that policy into observable rules for claiming, reclaiming and completing jobs. [Lesson 17.4: Make the operating contract inspectable](04-operating-contract.md).

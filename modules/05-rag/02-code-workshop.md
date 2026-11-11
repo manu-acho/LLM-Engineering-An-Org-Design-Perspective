@@ -2,6 +2,10 @@
 
 [Download the matching notebook](/downloads/05-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Trace a search through access and date checks into a returned list of evidence. See why Harbour needs to filter before filling the shortlist.
+
 ## Business context: Harbour
 
 An old policy can contain exactly the right search words and still be the wrong policy to use. Filtering removes candidates that fail rules such as access or date. Ranking orders the candidates that remain by relevance. In the lab, track one excluded document and one returned document; the best match among eligible records may differ from the best match before filtering.
@@ -50,3 +54,17 @@ assert permitted(rows,"missing") == []
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+Filtering removes ineligible material. Ranking orders the remaining evidence. The returned source identifies which material was used.
+
+## What this means for the business process
+
+Apply scope and currency checks before selecting the top results. If nothing eligible remains, show the gap to the adviser and give them an authorised route to the source rather than letting the tool guess.
+
+For the research behind this design choice, read [Permission and authority](../../reference/research/03-decisions.md#permission-and-authority).
+
+## Next lesson
+
+The next lesson asks how to judge different sources when all of them are eligible but they answer different questions. [Lesson 5.3: A knowledge assistant is also a design of authority](03-business-and-organisation.md).

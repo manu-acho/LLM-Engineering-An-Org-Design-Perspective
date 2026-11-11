@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next: first Python steps](02-python-first-steps.md)
 
+## What you'll learn and why it matters
+
+Explain how a model builds a reply one piece at a time, and distinguish drafting text from checking a delivery. This distinction helps Harbour decide which parts of an investigation to assign to AI.
+
 ## Business context: Harbour
 
 This lesson begins with a next-word suggestion and ends with a real question about work: what can an adviser tell a customer when two records disagree? The example and study questions can be followed without a notebook or API key.
@@ -67,3 +71,17 @@ For H-17, the application can prepare a brief for an adviser, who can check the 
 ## Try the live model
 
 This experiment can wait until after the first Python lesson. The [live-model guide](../../reference/live-model-guide.md) prepares the API configuration. The matching notebook adds a real request and records the returned model, status, usage and duration. Inspect every factual claim. In a development run, the model inferred shipped quantity from an order record; the source did not establish that inference. The [worked experiment record](../../reference/worked-model-experiments.md) explains this observed failure and the later corrections.
+
+## What to remember
+
+The phone example estimates which word follows a phrase. At Harbour, ordinary code can calculate a difference, and a language model can put that calculation into words. The records still determine which claims the adviser can support.
+
+## What this means for the business process
+
+Let the application collect and label the records, use an explicit rule for the subtraction, and give the model the drafting step. The adviser should check the sources and decide what to investigate. Keep credit under its own approval process. The decisions chapter explains why preparing information, recommending a remedy and authorising it are separate acts.
+
+For the research behind this design choice, read [Distinct acts in one workflow](../../reference/research/03-decisions.md#distinct-acts-in-one-workflow).
+
+## Next lesson
+
+You have separated writing a brief from establishing a fact. Next you will use Python to calculate the difference and give the quantities names that tell a reader what was compared. [Lesson 1.2: Reading and running a small Python program](02-python-first-steps.md).

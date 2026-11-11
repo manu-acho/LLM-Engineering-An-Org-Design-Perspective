@@ -2,6 +2,10 @@
 
 [Download the matching notebook](/downloads/02-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Trace a case lookup from its requested operation and arguments to the returned record. The exercise shows how Harbour can offer a useful lookup within a regional access boundary.
+
 ## Business context: Harbour
 
 Think of a tool as a named operation the application can perform, such as looking up case H-17. The request names the operation and its input, the case identifier. The application also checks which region the caller may access. In the first code block that reads the case, follow those three inputs to the returned record. Ten is the quantity the customer reported. A successful lookup confirms what the record contains, not how many boxes arrived.
@@ -65,3 +69,17 @@ The notebook has a cell for checking an independent answer. For the business dec
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+Application code checks the tool name, input and permitted scope. The returned quantity of ten is a customer report.
+
+## What this means for the business process
+
+Derive the allowed region from the caller's verified identity, and keep the source status on the returned number. These checks answer two different questions: who can see the record and what the record supports.
+
+For the research behind this design choice, read [Permission and authority](../../reference/research/03-decisions.md#permission-and-authority).
+
+## Next lesson
+
+With an allowed read in hand, the next lesson asks who can suggest, approve and carry out a remedy. [Lesson 2.3: Who decides when the assistant can act?](03-business-and-organisation.md).

@@ -4,6 +4,10 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md) · [Integration plan](04-integration-plan.md)
 
+## What you'll learn and why it matters
+
+Define the promise and owner of a reusable business capability. Learn what consuming teams need if a response changes or the service fails.
+
 ## Business context: Harbour
 
 Several assistants might rely on the same case lookup. When a field changes, those teams need someone to explain the change and respond if their work breaks. Name the service owner and describe what the lookup promises, who may use it and how that promise is maintained.
@@ -113,3 +117,17 @@ Other arrangements can be defensible. Check that the proposal names who accepts 
 [Process architecture](../../reference/research/09-process-architecture.md#activities-events-roles-and-objects). Separate the agent-run identifier from complaint, order, shipment and invoice identifiers. Explain which relationships are needed to reconstruct a disputed remedy.
 
 [Infrastructure and standards](../../reference/research/07-infrastructure-and-standards.md#worked-design-a-quantity-agreement). A shared schema needs agreed meaning and a correction owner. Use the proposed quantity agreement as a design exercise, without assuming the lab implements every provision.
+
+## What to remember
+
+An interface becomes shared infrastructure when other teams rely on it. Its owner needs to maintain field meanings, access rules and change notices.
+
+## What this means for the business process
+
+Give consuming teams a known support route and a way to test proposed changes against their tasks. When the case lookup changes a field, its owner must account for downstream decisions that use it.
+
+For the research behind this design choice, read [Infrastructure is a relationship with organised work](../../reference/research/07-infrastructure-and-standards.md#infrastructure-is-a-relationship-with-organised-work).
+
+## Next lesson
+
+Next put the capability and its owners into a plan that starts with a specific problem in Harbour's work. [Lesson 14.4: Build an AI integration plan around the work](04-integration-plan.md).

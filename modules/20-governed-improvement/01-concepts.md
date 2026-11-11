@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Study workspace](../../STUDY-WORKSPACE.md)
 
+## What you'll learn and why it matters
+
+Distinguish a proposed configuration from the active one and explain what should justify a release. Harbour needs to improve the service without judging candidates on the same cases used to design them.
+
 ## Business context: Harbour
 
 Suppose Harbour changes an instruction to preserve the word “reported” in more briefs. The candidate is the proposed version; promotion makes it the version the service uses. Evaluate the candidate on cases that did not guide its design and decide beforehand what it must improve without making other outcomes worse.
@@ -69,3 +73,17 @@ with TemporaryDirectory() as directory:
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A candidate is a proposed version. Promotion selects what the service will use. Development and confirmation answer different questions about its performance.
+
+## What this means for the business process
+
+Assign release authority and agree the checks before tuning the candidate. Hold some cases for confirmation so a promising development result does not silently become the basis of approval.
+
+For the research behind this design choice, read [Select controls for the work that can actually be assessed](../../reference/research/08-governance-and-accountability.md#select-controls-for-the-work-that-can-actually-be-assessed).
+
+## Next lesson
+
+The next workshop compares the current and proposed instructions on the same declared cases against those checks. [Lesson 20.2: Evaluate a candidate against a promotion gate](02-code-workshop.md).

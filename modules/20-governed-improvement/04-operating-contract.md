@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Trace the checks that make a proposed version eligible for release. Explain how to keep the approval and evidence tied to the version actually selected.
+
 ## Business context: Harbour
 
 The service must be able to say which instruction produced an outcome. Keep each saved version stable and change which one is selected only under stated conditions. Trace how the operating rules distinguish a promising result from evidence sufficient to put a version into use.
@@ -66,3 +70,17 @@ print(gate(baseline,candidate,human_approved=True))
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+Saved versions stay stable. Promotion changes which version is active and needs the specified evaluation and approval. Repeated selection on one test set can undermine its value.
+
+## What this means for the business process
+
+Record the candidate, comparison and authorised decision together. Keep a separate confirmation set when Harbour repeatedly adjusts the service, so reviewers can judge whether gains extend beyond the cases that guided selection.
+
+For the research behind this design choice, read [Documentation and auditing support accountability but do not replace it](../../reference/research/08-governance-and-accountability.md#documentation-and-auditing-support-accountability-but-do-not-replace-it).
+
+## Next lesson
+
+Next trace the evidence through release and rollback, including what a version change can and cannot repair. [Lesson 20.5: Trace comparable evidence and release conditions](05-source-walkthrough.md).

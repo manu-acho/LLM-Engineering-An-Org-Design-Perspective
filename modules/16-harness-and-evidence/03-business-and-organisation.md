@@ -4,6 +4,10 @@
 
 [Module route](README.md)
 
+## What you'll learn and why it matters
+
+Use a trace to decide where an operating problem should be investigated. Explain how feedback about a source, a tool or an instruction should reach different owners.
+
 ## Business context: Harbour
 
 A record that only says “failed” gives Harbour little idea who should investigate. A trace is a record of steps and results. Decide which fields would let support distinguish a missing carrier record from a provider failure and how that evidence should reach the team able to fix it.
@@ -79,3 +83,17 @@ Other arrangements can be defensible. Check that the proposal names who accepts 
 ## Research extension: examine the wider arrangement
 
 [Governance and accountability](../../reference/research/08-governance-and-accountability.md#documentation-and-auditing-support-accountability-but-do-not-replace-it). Test evidence and model documentation support examination. Identify who is obliged to respond to a failed check and who can require a correction.
+
+## What to remember
+
+A trace records selected events in a run. An observation is useful when someone can connect it to an affected step and a possible intervention.
+
+## What this means for the business process
+
+Route missing source evidence to its owner and repeated execution failures to engineering. Let advisers describe what happened after the draft, because the trace may not capture the follow-up work.
+
+For the research behind this design choice, read [What logs can show](../../reference/research/05-routines.md#what-logs-can-show).
+
+## Next lesson
+
+Next specify what a run record must contain before Harbour can use it as evidence about duration, outcomes or cost. [Lesson 16.4: Make the operating contract inspectable](04-operating-contract.md).

@@ -4,6 +4,10 @@
 
 [Previous lesson](05-neural-models.md) · [Module route](README.md) · [Next: exercises](07-assessment.md)
 
+## What you'll learn and why it matters
+
+Map who prepares, receives and investigates a discrepancy brief, then compare ways of dividing that work. A draft only helps when the next person can act on it.
+
 ## Business context: Harbour
 
 A brief can put warehouse, carrier and customer evidence side by side. Someone still has to ask for missing information and decide when the evidence is sufficient. A dependency arises when one person's work needs a contribution from someone else. Here, the adviser needs the carrier's account before promising a resolution. Compare who requests that contribution, who receives it and who acts if it never arrives.
@@ -75,3 +79,17 @@ Before reading the worked direction, write a short response covering: the affect
 Customer service records the report; warehouse and transport contacts examine their evidence; an investigator coordinates the unresolved case. A manager considers a remedy and finance handles an authorised account change. These proposed responsibilities need acceptance and time, not merely names on a diagram.
 
 Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.
+
+## What to remember
+
+An adviser needs contributions from the warehouse, carrier and other roles. Splitting the work creates a need to reconnect those contributions around the case.
+
+## What this means for the business process
+
+Before introducing drafting, name who obtains the carrier's account and who keeps the case moving if it never arrives. Integrate the new drafting step with that dependency so the application does not simply pass the wait to another team.
+
+For the research behind this design choice, read [Division creates a need for integration](../../reference/research/01-organisation-design.md#division-creates-a-need-for-integration).
+
+## Next lesson
+
+The next lesson tests the design against changes in training data, short outputs and missing evidence so you can explain what each result establishes. [Lesson 1.7: Exercises, failure cases and worked answers](07-assessment.md).

@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Research chapter](../../reference/research/05-routines.md)
 
+## What you'll learn and why it matters
+
+Use the capstone to defend a decision about Harbour's service. Explain what the integrated run shows, how people would operate it and which outcomes still need evidence.
+
 ## Business context: Harbour
 
 The final decision brings together three questions: did the program perform the agreed task, can Harbour operate it when things go wrong, and does it help the customer get a better resolution? Use a difficult case to test each claim. Record what the available evidence supports and what still needs checking before a wider release.
@@ -129,3 +133,17 @@ Bring three separate teaching artefacts into the proposal: the SC-U1 compatible-
 **Worked synthesis.** Refuse to calculate a discrepancy when units or item identity conflict. The constructed service comparison halves preparation effort from sixteen to eight minutes while timely investigation resolution stays at two of four cases. At thirty arrivals and twenty reviews per hour, the simplified review workload still exceeds capacity by ten cases. These observations support investigating evidence compatibility and receiving-team work alongside generation; they do not establish that more agents or more reviewers are necessarily the answer.
 
 Connect that argument to the [remedy follow-through](../08-agents/03-business-and-organisation.md#follow-an-authorised-remedy-into-the-remaining-work). Describe what an accepted draft, a review decision, physical fulfilment and an account adjustment each establish. A candidate with a better model score may still be unsuitable if it creates unmanageable review work or a promise unsupported by stock and transport information.
+
+## What to remember
+
+The local exercise connects drafting, review, retry and evaluation. In the constructed comparison, preparation fell from sixteen to eight minutes while timely resolution stayed at two of four cases. Preparation and resolution therefore need separate measures.
+
+## What this means for the business process
+
+Before widening the service, agree who checks item identity and units, who resolves disputed evidence and who owns the remedy through fulfilment or account adjustment. Follow difficult cases from intake to resolution against the current process, and set a stop rule for unsupported conclusions or a growing review backlog.
+
+For the research behind this design choice, read [Worked design: extend the boundary of success](../../reference/research/09-process-architecture.md#worked-design-extend-the-boundary-of-success).
+
+## Put it to work
+
+Use the workbook to document one process of your own. Map the current work and its dependencies, choose a bounded AI contribution, and state what evidence would support keeping, changing or stopping it. [Course workbook](../../WORKBOOK.md).

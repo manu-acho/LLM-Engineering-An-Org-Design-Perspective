@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## What you'll learn and why it matters
+
+Describe roles, tasks and dependencies in an agent team. Learn to draw the division of work around evidence needs before choosing how to organise it.
+
 ## Business context: Harbour
 
 Imagine one specialist checking dispatch and another checking the delivery report. A role specifies the kind of contribution expected; a task asks for a particular piece of work. A dependency appears if one task needs another task's result. Draw those relationships for the case before deciding who or what should coordinate the work.
@@ -90,3 +94,17 @@ print(order_tasks(tasks))
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A role describes a type of contribution. A task specifies a piece of work. A dependency says which result another task needs before it can proceed.
+
+## What this means for the business process
+
+Start with the actual evidence requirements for the brief. Give a specialist a separate task where it adds a distinct contribution, and budget time to integrate its output.
+
+For the research behind this design choice, read [Identify what depends on what](../../reference/research/02-coordination.md#identify-what-depends-on-what).
+
+## Next lesson
+
+The next workshop turns the dependency map into a schedule and checks what can start immediately. [Lesson 11.2: Schedule tasks through their dependencies](02-code-workshop.md).

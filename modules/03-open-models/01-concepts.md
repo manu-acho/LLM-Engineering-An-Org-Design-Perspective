@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## What you'll learn and why it matters
+
+Identify what a hosted service handles and what Harbour would need to handle to run a model itself. This makes the hosting choice a question of capability and support as well as computing.
+
 ## Business context: Harbour
 
 With a hosted model, the application sends a request to a service that runs the model elsewhere. To run a model locally, the computer needs a way to turn text into numbers, the learned numbers that define the model, and software to carry out the calculations. The lesson calls these the tokenizer, weights and runtime. Follow the same short input through each before comparing computer memory requirements.
@@ -88,3 +92,17 @@ assert weight_bytes == 540_000_000
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+Local inference needs a tokenizer, learned weights, software to run the operations and suitable hardware. Those parts have to work together before a model can answer.
+
+## What this means for the business process
+
+Before choosing local hosting, name who owns model updates, compatibility checks and recovery when the machine cannot run the model. Include those continuing responsibilities in the comparison with hosted service.
+
+For the research behind this design choice, read [Implementation extends beyond launch](../../reference/research/04-implementation.md#implementation-extends-beyond-launch).
+
+## Next lesson
+
+Next you will inspect one local inference calculation so the sizes and components you have just identified have something concrete to refer to. [Lesson 3.2: Inspect a real neural forward pass](02-code-workshop.md).

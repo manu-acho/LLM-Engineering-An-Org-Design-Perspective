@@ -4,6 +4,10 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+## What you'll learn and why it matters
+
+Trace how spoken words become an organisational record. Identify where a suggestion can turn into an apparent assignment and who needs to correct it.
+
 ## Business context: Harbour
 
 “We could review the backlog on Friday” is a suggestion in a meeting. In notes, “Warehouse will review the backlog on Friday” gives a team an apparent commitment. Follow who said the original words, how the draft changed them and who can accept or correct the final record. A shorter sentence can assign work that nobody agreed to take.
@@ -138,3 +142,17 @@ Before reading the worked direction, write a short response covering: the affect
 Local execution can give direct control over model files and processing location, but someone must maintain the environment and investigate bad outputs. A provider reduces some hosting work while adding service and data-handling dependencies. Neither supplies record authority or business approval.
 
 Other arrangements can be defensible. Check that the proposal names who accepts the work, preserves unavailable evidence and distinguishes technical execution from a business outcome.
+
+## What to remember
+
+A recording, transcript, draft summary and accepted record serve different purposes. Compressing a tentative statement can make it sound like a commitment.
+
+## What this means for the business process
+
+Have the meeting owner confirm assignments with the people who will carry them out and provide a correction route. A shared note helps coordination when readers can tell what was agreed, by whom and with what authority.
+
+For the research behind this design choice, read [Shared data and shared meaning](../../reference/research/02-coordination.md#shared-data-and-shared-meaning).
+
+## Next lesson
+
+Having seen what a fluent summary can change, next trace how a model's numerical representations produce that text. [Lesson 3.4: Follow numbers through a small language model](04-inside-inference.md).

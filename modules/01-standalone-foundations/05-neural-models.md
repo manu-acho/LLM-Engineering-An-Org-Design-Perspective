@@ -4,6 +4,10 @@
 
 [Previous lesson](04-evidence-pipeline.md) · [Module route](README.md) · [Next: business design](06-business-design.md)
 
+## What you'll learn and why it matters
+
+Describe how a neural model uses learned numbers and context to score possible next pieces. Use that explanation to judge what a more capable model could change in Harbour's drafting step.
+
 ## Business context: Harbour
 
 In the four-sentence model, “the” is always treated alike. In “check the delivery” and “check the invoice”, words elsewhere in the request can help predict what should come next. A neural language model processes text through layers of numerical operations, using values learned in training. First follow the scores it gives two possible next pieces, then see how a mistake during training can change the values that produced those scores. None of those scores verifies a shipment.
@@ -65,3 +69,17 @@ Why is the word-count lab a legitimate learning example, and what would be misle
 **Worked response:** it actually estimates a small language model and performs inference, making probability and decoding inspectable. It would be misleading to claim that it has neural embeddings, attention, broad language competence, reliable reasoning about deliveries or the capabilities of a production LLM.
 
 The [technology chapter](../../reference/research/06-technology-in-practice.md#an-evidence-path-without-skipped-steps) connects this discipline to organisational claims: demonstrate the operation that was tested, then identify the further evidence needed for a broader conclusion.
+
+## What to remember
+
+The toy count table makes the next-token calculation easy to see. Neural models learn numerical values and use context to produce scores. Converting scores to probabilities still measures choices of text.
+
+## What this means for the business process
+
+Compare model options on the same source-labelled cases. Test whether the draft preserves uncertainty, then separately observe whether advisers can use it. A stronger numerical prediction or a more fluent draft establishes only part of the path to a service outcome.
+
+For the research behind this design choice, read [An evidence path without skipped steps](../../reference/research/06-technology-in-practice.md#an-evidence-path-without-skipped-steps).
+
+## Next lesson
+
+You can now explain what generation contributes. The next lesson asks who supplies the evidence, accepts the brief and follows up when a source is missing. [Lesson 1.6: Design the work around the contribution](06-business-design.md).

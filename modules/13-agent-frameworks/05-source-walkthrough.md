@@ -2,6 +2,10 @@
 
 [Download the matching notebook](/downloads/13-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Compare two runtime outputs on stable facts and inspect where each can fail. This helps Harbour judge whether implementations can substitute for one another.
+
 ## Business context: Harbour
 
 Run the two versions on the same facts. Compare the recorded and reported quantities separately from wording, then see what each version returns if an input is missing. A runtime is the machinery that carries out the defined work; similar successful output does not show that the runtimes handle failure the same way.
@@ -63,3 +67,17 @@ The notebook has a cell for checking an independent answer. For the business dec
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+Wording can differ while required facts agree. The comparison still needs declared rules for missing inputs, incomplete results and invalid facts.
+
+## What this means for the business process
+
+Accept a replacement only after testing both the factual contribution and the way failure reaches its receiver. A common success response does not establish that both services support the same recovery work.
+
+For the research behind this design choice, read [Infrastructure is a relationship with organised work](../../reference/research/07-infrastructure-and-standards.md#infrastructure-is-a-relationship-with-organised-work).
+
+## Next lesson
+
+Next specify who owns the shared meanings and how several teams can maintain them together. [Lesson 13.6: Design interoperability across teams, meanings and maintenance](06-design-lab.md).

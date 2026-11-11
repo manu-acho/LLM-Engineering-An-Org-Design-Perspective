@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Research chapter](../../reference/research/04-implementation.md)
 
+## What you'll learn and why it matters
+
+Make a reasoned decision to proceed, narrow or stop the pilot. Use the difficult cases and an explicit comparison to explain what the available evidence supports.
+
 ## Business context: Harbour
 
 Harbour can decide to proceed with a narrow pilot, ask for changes or stop. Work through a case likely to expose the weak point before writing that decision down. Separate evidence that the code prepares a correct brief from evidence that advisers can use it to resolve cases more effectively.
@@ -61,3 +65,17 @@ print(pilot)
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+The code can prepare a valid brief on selected cases while leaving the value of the operating design open. Excluded and referred work still creates demand.
+
+## What this means for the business process
+
+Agree when the review team can accept the proposed volume, and record excluded cases and where they go. Compare resolution and rework with the current process before extending the pilot.
+
+For the research behind this design choice, read [Benefits need a population and a comparison](../../reference/research/04-implementation.md#benefits-need-a-population-and-a-comparison).
+
+## Next lesson
+
+Module 16 gives the pilot an operating record, starting with how to identify a run and the instructions it used. [Lesson 16.1: Agent harnesses and operational evidence](../16-harness-and-evidence/01-concepts.md).

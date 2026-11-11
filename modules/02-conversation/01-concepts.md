@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## What you'll learn and why it matters
+
+Explain what an application must retain for a follow-up to refer to the right case. This helps Harbour handle short questions without silently switching orders.
+
 ## Business context: Harbour
 
 When a customer writes “What about the other order?”, the missing order number may be clear to a person who remembers the previous turn. A model request needs enough of that earlier exchange supplied again to make sense of it. History is the exchange so far; state is the information the application currently relies on, such as the selected case. The application must decide what to carry into the next request and when to ask which order the customer intends.
@@ -127,3 +131,17 @@ A failed or incomplete result must remain visible. The [live-model guide](../../
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+Conversation history is the record of earlier turns. Application state can also record the case currently selected. Each new request depends on the information the application makes available.
+
+## What this means for the business process
+
+Show the active case to the adviser and ask for clarification when the earlier conversation and the selected case point to different orders. A default can support routine work, but the service needs an exception path when that default no longer fits.
+
+For the research behind this design choice, read [Programmes and exceptions](../../reference/research/03-decisions.md#programmes-and-exceptions).
+
+## Next lesson
+
+Once the application knows which case is in view, the next lesson shows how it can look up that case through a checked operation. [Lesson 2.2: Follow a conversation through a validated tool](02-code-workshop.md).

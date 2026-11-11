@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Literature foundation](../../reference/literature-guide.md)
 
+## What you'll learn and why it matters
+
+Explain how a feature becomes usable for a particular person in practice. Use the approval panel to identify what an adviser or reviewer can actually do.
+
 ## Business context: Harbour
 
 The approval screen may exist, but if staff cannot see the carrier record there, they may approve from email instead. An affordance is a possibility for action in relation to a person and their circumstances. Ask who can actually inspect the record or correct the status on this screen. The feature list alone does not answer that question.
@@ -111,3 +115,17 @@ assert evidence["outcome_improved"] is None
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+The same panel offers different possibilities depending on access, information and working conditions. Observed use is a further step beyond the feature's existence.
+
+## What this means for the business process
+
+Observe a real review task during the pilot. If reviewers still switch to email because carrier evidence is missing from the panel, address access and the correction route before interpreting button use as meaningful review.
+
+For the research behind this design choice, read [Actualisation: from possibility to action](../../reference/research/06-technology-in-practice.md#actualisation-from-possibility-to-action).
+
+## Next lesson
+
+The next lesson inspects a concrete control behind that panel: how a current decision is committed while an older view is refused. [Lesson 8.5: Trace the decision transaction and command identity](05-source-walkthrough.md).

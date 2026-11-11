@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next module](../09-agent-loops/README.md)
 
+## What you'll learn and why it matters
+
+Distinguish a final failure, work still in progress and a result whose effect is unknown. Harbour needs different recovery steps for each.
+
 ## Business context: Harbour
 
 If a program reports “sending” and then stops, Harbour needs to know whether anything was sent. A terminal outcome marks the end of a run, such as completion or failure. Use the case record to distinguish a confirmed result from an unknown result. Recovery may require checking what happened before trying again.
@@ -95,3 +99,17 @@ with TemporaryDirectory() as directory:
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A progress message does not establish completion. A crash can leave a gap between doing something and recording that it happened. Recovery can require a check before any retry.
+
+## What this means for the business process
+
+Assign someone to reconcile uncertain effects with the system that records them, and show the adviser whether to wait, investigate or retry. Include that often invisible recovery work when assessing the service.
+
+For the research behind this design choice, read [Connected routines and hidden work](../../reference/research/05-routines.md#connected-routines-and-hidden-work).
+
+## Next lesson
+
+Part 2 begins with agents that can choose more than one step. You will carry forward explicit outcomes and limits into the first investigation loop. [Lesson 9.1: An agent chooses steps inside an application](../09-agent-loops/01-concepts.md).

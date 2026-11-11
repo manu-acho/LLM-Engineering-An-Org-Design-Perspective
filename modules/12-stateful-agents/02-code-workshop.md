@@ -2,6 +2,10 @@
 
 [Download the matching notebook](/downloads/12-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Identify what an actual checkpoint saves and distinguish waiting from approval. This shows how Harbour can carry a draft across a pause while keeping decision authority explicit.
+
 ## Business context: Harbour
 
 When a reviewer goes home, the program should not need to stay open with the case on screen. Durable storage keeps information after a process stops. In the lab, look for the case identifier, the saved information and the point at which the graph pauses. Those are what connect tomorrow's review to today's draft.
@@ -63,3 +67,17 @@ The notebook has a cell for checking an independent answer. For the business dec
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A checkpoint preserves a contribution and the point where work stopped. A waiting draft still needs an explicit review decision.
+
+## What this means for the business process
+
+Show waiting drafts to an authorised reviewer with their evidence and version. Give the reviewer a practical way to return work for correction, so the checkpoint supports a decision rather than becoming a queue with no owner.
+
+For the research behind this design choice, read [Meaningful review needs resources and a practical alternative](../../reference/research/08-governance-and-accountability.md#meaningful-review-needs-resources-and-a-practical-alternative).
+
+## Next lesson
+
+Next examine what it takes to staff that queue and give reviewers the ability to act. [Lesson 12.3: A pause creates work for somebody](03-business-and-organisation.md).

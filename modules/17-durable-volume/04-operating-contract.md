@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Specify when a worker may claim or finish a job and when a queue estimate is appropriate. This lets Harbour check how the service behaves under load and interruption.
+
 ## Business context: Harbour
 
 A job can be waiting, claimed or finished; those states have different consequences for the next worker. An operating contract specifies who can change a state and under what conditions. Read the example for when work can be claimed again and what prevents two results being accepted for one claim.
@@ -81,3 +85,17 @@ assert growth(20,20,3) == 0
 ```
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A concurrency limit controls active tasks. A lease protects temporary ownership. Stable-flow calculations require conditions that a growing backlog does not meet.
+
+## What this means for the business process
+
+Write acceptance conditions for a busy queue and a stalled worker. Require the service to show waiting and claim state so the receiving team can distinguish ordinary delay from work needing intervention.
+
+For the research behind this design choice, read [Mechanisms and conditions](../../reference/research/02-coordination.md#mechanisms-and-conditions).
+
+## Next lesson
+
+Next exercise the former owner's late completion and inspect how the current claim protects the recorded result. [Lesson 17.5: Inspect ownership, waiting and completion](05-source-walkthrough.md).

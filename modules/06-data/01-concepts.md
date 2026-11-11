@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## What you'll learn and why it matters
+
+Identify the example, features and target in a routing task. Harbour needs to agree what answer the model should learn before treating any historical column as correct.
+
 ## Business context: Harbour
 
 To teach a program to send complaints to the right team, start with examples of complaints and the destinations they should go to. A feature is a piece of information the program can use, such as whether a message contains “invoice”. The target is what it is trying to predict, such as “Finance”. Before fitting anything, check who chose those destinations and whether they describe the future task.
@@ -92,3 +96,17 @@ assert rows[0]["first_team"] != rows[0]["final_owner"]
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+Features supply information the predictor can use. The target is the answer used for learning or evaluation. The model can only learn the task expressed by the examples and labels it gets.
+
+## What this means for the business process
+
+Decide whether the target should identify the next contributor or the owner who resolves the case. Record that choice as part of the routing rule, because it shapes whose queue receives work.
+
+For the research behind this design choice, read [Decision premises](../../reference/research/03-decisions.md#decision-premises).
+
+## Next lesson
+
+The next lesson fits a first reference model and shows how to keep its check cases separate from learning. [Lesson 6.2: Fit a text-routing baseline without leakage](02-code-workshop.md).

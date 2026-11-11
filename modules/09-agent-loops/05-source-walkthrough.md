@@ -2,6 +2,10 @@
 
 [Download the matching notebook](/downloads/09-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Test repeated tool requests and explain why independent stopping limits still matter. Harbour needs a predictable way to recover if the agent keeps doing work with little value.
+
 ## Business context: Harbour
 
 If the model asks for the same record again, compare what the second request adds. An observation is the result returned after a tool runs. Follow the observations and the stop reason separately. The loop must be able to stop even when the model keeps proposing another step.
@@ -66,3 +70,17 @@ The notebook has a cell for checking an independent answer. For the business dec
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+Call identity can detect certain repeats. New identifiers can still accompany the same work. Separate iteration and request limits bound the run regardless.
+
+## What this means for the business process
+
+Show the adviser what was already checked and the reason the loop stopped. For repeated reads, route the case to someone who can request new evidence rather than paying for another cycle that adds no information.
+
+For the research behind this design choice, read [Information demand and capacity](../../reference/research/01-organisation-design.md#information-demand-and-capacity).
+
+## Next lesson
+
+The next lesson uses the stop reason and handoff to design the promise Harbour makes to customers at intake. [Lesson 9.6: Design the front door and the promise behind it](06-design-lab.md).

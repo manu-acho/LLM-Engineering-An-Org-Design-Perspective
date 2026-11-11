@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Read an operating record and calculate a cost under explicit price assumptions. Learn to distinguish a complete run from one with insufficient evidence for comparison.
+
 ## Business context: Harbour
 
 To compare two runs, Harbour needs to know what instructions were used and whether each run actually finished. Follow the supplied example from the request to its recorded outcome. Specify which details are required before treating a run as evidence about speed, quality or cost.
@@ -69,3 +73,17 @@ except ValueError:
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A run record needs a stable identity, timing and an outcome. The cost calculation depends on valid counts and assumed prices. A failed run can still use resources.
+
+## What this means for the business process
+
+Agree which run outcomes count in the comparison and preserve missing fields. Have the service owner separate measured usage, price assumptions and the work that continues outside the model call.
+
+For the research behind this design choice, read [An evidence path without skipped steps](../../reference/research/06-technology-in-practice.md#an-evidence-path-without-skipped-steps).
+
+## Next lesson
+
+Next inspect an incomplete reply and see why its usage may belong in the record even when the answer is refused. [Lesson 16.5: Trace instruction identity, time and assumed cost](05-source-walkthrough.md).

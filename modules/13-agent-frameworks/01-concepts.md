@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+## What you'll learn and why it matters
+
+Distinguish a model, framework, protocol and application. This gives Harbour a way to compare frameworks by the work each one takes on.
+
 ## Business context: Harbour
 
 Two versions of the same brief can use the same model while organising their steps differently. A framework supplies reusable ways to run application work; a protocol sets rules for systems to communicate; an adapter translates between interfaces. Follow one input and output through each version so the comparison is about what the software actually does.
@@ -101,3 +105,17 @@ print(contract)
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+The model supplies generated output. Frameworks help run the work, protocols connect components, and the application defines the service and its controls.
+
+## What this means for the business process
+
+Choose a framework against actual requirements such as persisted review or failure recovery. Consider who will maintain the added machinery and which conditions a simpler application could already meet.
+
+For the research behind this design choice, read [Six kinds of misfit](../../reference/research/04-implementation.md#six-kinds-of-misfit).
+
+## Next lesson
+
+The next workshop runs a common contribution in ordinary Python and LangGraph so the comparison has concrete results. [Lesson 13.2: Run the same task in Python and LangGraph](02-code-workshop.md).

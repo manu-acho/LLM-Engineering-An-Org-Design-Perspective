@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next module](../10-agent-orchestration/README.md)
 
+## What you'll learn and why it matters
+
+Design what the assistant promises at intake and who takes over after it reaches its limit. This helps Harbour avoid implying ownership before someone accepts the case.
+
 ## Business context: Harbour
 
 A screen that says “I am handling this” can sound like someone has accepted responsibility. Decide what happens after the assistant reaches its limit. Name the person who receives the case, the information they need and the message the customer sees while responsibility is being transferred.
@@ -102,3 +106,17 @@ A failed or incomplete result must remain visible. The [live-model guide](../../
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+The interface shapes expectations. Automation scope and case ownership are separate choices. The customer needs to know what is happening while a transfer is pending.
+
+## What this means for the business process
+
+Make the status distinguish a received request from a case accepted by a named team. Give that team an explicit way to acknowledge or return the referral, with a route for cases that are left waiting.
+
+For the research behind this design choice, read [A worked handoff design](../../reference/research/02-coordination.md#a-worked-handoff-design).
+
+## Next lesson
+
+Module 10 extends a single bounded investigation into several contributions that must be checked and brought together. [Lesson 10.1: Orchestration decides how pieces of work connect](../10-agent-orchestration/01-concepts.md).

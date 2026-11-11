@@ -4,6 +4,10 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md) · [Curriculum index](../../README.md)
 
+## What you'll learn and why it matters
+
+Design who prepares, reviews and accepts work around the AI contribution. This helps Harbour judge whether the workflow fits the organisation's capacity and authority.
+
 ## Business context: Harbour
 
 An assistant can prepare briefs faster and still leave cases unresolved if no adviser is available to accept them. Compare the drafting step, the work of reviewing evidence and the authority to resolve a claim. Fit concerns whether these parts can work together under the conditions Harbour actually faces, including queues and missing records.
@@ -141,3 +145,17 @@ A replacement does not automatically imply a refund or credit. The commercial tr
 ## Research extension: examine the wider arrangement
 
 [Governance and accountability](../../reference/research/08-governance-and-accountability.md#put-decisions-near-knowledge-while-examining-the-costs). Compare the location of relevant knowledge with the right to decide. An agent summary changes communication but does not remove the cost of transferring meaning.
+
+## What to remember
+
+Faster preparation can move the queue to review. Even after a remedy is approved, warehouse availability, transport and any account adjustment determine what Harbour can promise and complete.
+
+## What this means for the business process
+
+Choose the pilot scope alongside review capacity and authority. After approval, keep the case owner responsible for checking stock and transport and coordinating any account adjustment. A customer update should reflect the confirmed fulfilment status rather than the approval alone.
+
+For the research behind this design choice, read [Fit is a relationship among choices](../../reference/research/01-organisation-design.md#fit-is-a-relationship-among-choices).
+
+## Next lesson
+
+The next lesson asks whether people can actually use the controls that look adequate on the workflow diagram. [Lesson 8.4: From an AI feature to a way of working](04-technology-in-practice.md).

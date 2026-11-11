@@ -2,6 +2,10 @@
 
 [Download the matching notebook](/downloads/10-02-code-workshop.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Check a specialist's result for the requested case, supporting evidence and usability. This shows Harbour how to accept a contribution into a brief.
+
 ## Business context: Harbour
 
 A specialist's contribution can arrive in the right form and still be unusable. In the lab, inspect the returned fields, compare the claim with the supplied source, then decide if it can enter the combined brief. Validation checks particular requirements; name the check that passed before calling the contribution accepted.
@@ -60,3 +64,17 @@ The notebook has a cell for checking an independent answer. For the business dec
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+An output can have the expected fields and still describe the wrong case. Acceptance depends on the contribution satisfying the receiving step's requirements.
+
+## What this means for the business process
+
+Have the coordinator check the case and evidence against the request before accepting the result. Report a rejected contribution to its owner with the failed condition so it can be repaired.
+
+For the research behind this design choice, read [Four questions for a usable contribution](../../reference/research/02-coordination.md#four-questions-for-a-usable-contribution).
+
+## Next lesson
+
+Next take that distinction outside the software and ask what it takes for a person or team to accept responsibility for a case. [Lesson 10.3: A software handoff is not accepted ownership](03-business-and-organisation.md).

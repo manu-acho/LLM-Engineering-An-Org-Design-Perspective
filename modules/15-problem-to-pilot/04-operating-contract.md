@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Read what a pilot accepts, returns and refuses, and trace a difficult input through those rules. This gives Harbour a concrete agreement for using generated code in the service.
+
 ## Business context: Harbour
 
 An operating contract sets out what the service accepts, what it returns and who acts on it. Read the example for the rules that separate a usable brief from one that must be returned for correction. Trace a discrepancy case with a missing source through the rules instead of relying on the draft's fluency.
@@ -72,3 +76,17 @@ For a step-by-step explanation of the included helpers, see [Read the applicatio
 ## Interpret this exercise’s route
 
 The local requirements exercise uses `review` for discrepancy investigation and also has a `compare_policy` outcome for matching quantities. The extended four-route brief uses `investigate` for a discrepancy and a narrower `review` label for qualitative concerns. The [routing crosswalk](../../reference/case-data-guide.md#routing-vocabulary-belongs-to-a-task) keeps these contracts distinct.
+
+## What to remember
+
+A quantity rule cannot resolve a damage report on its own. The contract specifies the evidence, the response and what the next person must do.
+
+## What this means for the business process
+
+Put missing evidence and damaged deliveries into the acceptance examples, and send them to an investigator with a clear reason. Have that receiving role check the criteria before treating the contract as ready.
+
+For the research behind this design choice, read [Four questions for a usable contribution](../../reference/research/02-coordination.md#four-questions-for-a-usable-contribution).
+
+## Next lesson
+
+The next workshop inspects model-proposed code and uses those acceptance cases to decide whether it behaves as required. [Lesson 15.5: Trace scope, evidence and discrepancy rules](05-source-walkthrough.md).

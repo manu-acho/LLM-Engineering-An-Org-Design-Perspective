@@ -4,6 +4,10 @@
 
 [Module route](README.md) · [Next: run a small SDK application](05-source-walkthrough.md)
 
+## What you'll learn and why it matters
+
+Read the structure of a specialist result and follow it through an execution trace. Learn which events show that it was returned, checked or accepted.
+
 ## Business context: Harbour
 
 A free-text specialist report may hide the source number inside a sentence. A structured result gives the source and the claim named places. A trace records events such as a call, a returned result and a check. Follow one contribution through the trace to see whether it was returned, checked and accepted.
@@ -79,3 +83,17 @@ else:
 The notebook has a cell for checking an independent answer. For the business decision, also identify who receives the work, how they decide whether to accept it and what they do if it needs correction.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+Named fields make a contribution easier to combine. A trace records selected events. Field shape, evidence support and authority remain separate checks.
+
+## What this means for the business process
+
+Record each status with a case identifier, and expose the gap between a returned output and an accepted handoff. Check the receiver's record before using the trace to claim that business ownership changed.
+
+For the research behind this design choice, read [What logs can show](../../reference/research/05-routines.md#what-logs-can-show).
+
+## Next lesson
+
+The next workshop applies the shape and evidence checks to two actual specialist contributions before accepting the combined brief. [Lesson 10.5: Separate schema checks from evidence support](05-source-walkthrough.md).

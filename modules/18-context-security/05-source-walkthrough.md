@@ -2,6 +2,10 @@
 
 [Download the matching notebook](/downloads/18-05-source-walkthrough.ipynb) · [Module route](README.md) · [Glossary](../../reference/glossary.md)
 
+## What you'll learn and why it matters
+
+Distinguish a refused read from a decision rejected because policy has changed. This helps Harbour route each refusal to the right person.
+
 ## Business context: Harbour
 
 A case can be accessible while the policy used to draft a decision has since changed. Follow one denied lookup and one decision refused for using an older policy. Both checks can prevent action, but they answer different questions and may need different remedies.
@@ -55,3 +59,17 @@ assert current(1,2) is False
 The [further learning guide](../../reference/further-learning.md) offers optional alternative explanations. The full shared implementation is included in the checkout; no source course is needed to run this lesson.
 
 For a step-by-step explanation of the included helpers, see [Read the application code](../../reference/application-code-walkthrough.md). It follows the inputs, representations, provider calls, application checks and persisted work without requiring another course.
+
+## What to remember
+
+A scope check decides whether the caller may see the case. A version check detects a changed policy. Neither by itself decides how to treat cases caught in transition.
+
+## What this means for the business process
+
+Let the access owner handle legitimate access problems and the policy owner set transition rules. Require a fresh review when the previous policy no longer supports the decision.
+
+For the research behind this design choice, read [Decision premises](../../reference/research/03-decisions.md#decision-premises).
+
+## Next lesson
+
+The next lesson uses these different failures to write a security and ownership decision for the service. [Lesson 18.6: Complete a defensible service decision](06-design-lab.md).

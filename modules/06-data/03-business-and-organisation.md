@@ -4,6 +4,10 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+## What you'll learn and why it matters
+
+Explain how a historical routing label can encode a past division of work. Use that distinction to identify which labels Harbour should revisit.
+
 ## Business context: Harbour
 
 Suppose an old spreadsheet shows “Warehouse” because someone forwarded a complaint there, even though customer service eventually owned it. A label is the answer attached to an example for learning. Decide whether the label should record the first stop, the team with the next useful evidence or the owner responsible for resolution.
@@ -114,3 +118,17 @@ Other arrangements can be defensible. Check that the proposal names who accepts 
 ## Research extension: examine the wider arrangement
 
 [Infrastructure and standards](../../reference/research/07-infrastructure-and-standards.md#classification-changes-what-an-organisation-can-see). A classifier can match labels while routing work badly. Examine the category scheme, cross-functional cases and ownership of the residual category.
+
+## What to remember
+
+A recorded destination can describe where a message went first, where evidence was found or who eventually owned the case. Those are different targets.
+
+## What this means for the business process
+
+Review ambiguous cases with the teams that receive and resolve them. If the current label reflects an informal workaround, decide whether to retain that practice or change the target before fitting the model.
+
+For the research behind this design choice, read [Classification changes what an organisation can see](../../reference/research/07-infrastructure-and-standards.md#classification-changes-what-an-organisation-can-see).
+
+## Next lesson
+
+Once the intended target is clear, the next lesson follows one numerical update and asks what kind of error it reduces. [Lesson 6.4: Calculate a training update and a task error](04-learning-an-update.md).

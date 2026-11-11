@@ -4,6 +4,10 @@
 
 [Module route](README.md)
 
+## What you'll learn and why it matters
+
+Identify who owns an improvement decision and match a discovered problem to a plausible intervention. Explain why staff observations still matter alongside evaluation results.
+
 ## Business context: Harbour
 
 An evaluation can show that a candidate makes fewer errors of one kind. Someone must decide whether that improvement justifies release and whether any new errors are acceptable. Identify who has the evidence, who can challenge the comparison and who owns the decision.
@@ -81,3 +85,17 @@ Other arrangements can be defensible. Check that the proposal names who accepts 
 [Governance and accountability](../../reference/research/08-governance-and-accountability.md#accountability-can-redistribute-burdens). Improvement decisions should examine whose performance becomes visible and who can contest the measure.
 
 [Process architecture](../../reference/research/09-process-architecture.md#variation-is-not-automatically-a-defect). A frequent variant can be useful repair or avoidable rework. Investigate its purpose before promoting a policy that removes it.
+
+## What to remember
+
+A score supports a decision without making it. A failure can come from sources, software rules or the way work is organised.
+
+## What this means for the business process
+
+Let advisers flag recurring errors in actual work and give the relevant owner responsibility for examining the cause. Compare changes to evidence, instructions and responsibilities before choosing the next release.
+
+For the research behind this design choice, read [Repeated action and learning](../../reference/research/05-routines.md#repeated-action-and-learning).
+
+## Next lesson
+
+The next lesson converts those responsibilities into rules for recording, approving and selecting a version. [Lesson 20.4: Make the operating contract inspectable](04-operating-contract.md).
