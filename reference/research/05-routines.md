@@ -26,7 +26,7 @@ Feldman and Pentland (2003) distinguish **ostensive** and **performative** aspec
 
 At Harbour, “a complaint is complete only when the customer has an answer” is one account of the work. A particular adviser checking a second shipment before responding is an action in a particular performance. Several participants may hold different understandings of completion. One manager's interview cannot establish a single shared understanding.
 
-The term **artefact** refers here to an object associated with the work: a form, prompt, rule, interface, diagram or record. An official procedure is an artefact. It can influence participants' understandings and actions, but it should not be substituted for either routine aspect. Pentland and Feldman (2005, 2008) distinguish artefacts from the routines in which they participate. [Pentland and Feldman (2005)](#pentland-and-feldman-2005) · [Pentland and Feldman (2008)](#pentland-and-feldman-2008)
+An **artefact** is an object associated with the work, such as a form, prompt, rule, interface, diagram, record or official procedure. It can influence participants' understandings and actions, but it should not be substituted for either routine aspect. Pentland and Feldman (2005, 2008) distinguish artefacts from the routines in which they participate. [Pentland and Feldman (2005)](#pentland-and-feldman-2005) · [Pentland and Feldman (2008)](#pentland-and-feldman-2008)
 
 For an AI application, a prompt template is an artefact; a generated brief is another. Neither is an organisational routine. A model may reproduce the wording of a standard response without reproducing the work through which staff established that the response was suitable.
 
@@ -50,7 +50,7 @@ A useful inquiry distinguishes authorised exceptions, local adaptations, workaro
 
 ## Repeated action and learning
 
-**Routine dynamics** concerns how recurring patterns are sustained and changed through the relationship between participants' understandings, actions and associated artefacts. It explains change through repeated performance as well as formal redesign. Feldman (2000) examines how participants respond to outcomes of earlier performances. A participant encounters a consequence, adjusts the next performance and may help retain a new pattern. The explanation does not reduce learning to accumulating records. It concerns how differences are noticed, interpreted and retained in work, rather than claiming that one feedback button establishes learning. [Feldman (2000)](#feldman-2000)
+**Routine dynamics** concerns how participants sustain or change recurring patterns through their understandings, actions and use of artefacts, both as they repeat the work and when they formally redesign it. Feldman (2000) examines how participants respond to outcomes of earlier performances. A participant encounters a consequence, adjusts the next performance and may help retain a new pattern. The explanation does not reduce learning to accumulating records. It concerns how differences are noticed, interpreted and retained in work, rather than claiming that one feedback button establishes learning. [Feldman (2000)](#feldman-2000)
 
 **AI application:** collecting corrections can supply useful material for revising a prompt, training data or procedure. The organisation still needs to interpret those corrections. A correction might address a factual error, an inappropriate category or a legitimate disagreement about the response. Training on every accepted edit without examining its basis can preserve a temporary workaround as a general rule.
 

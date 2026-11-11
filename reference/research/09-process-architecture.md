@@ -12,7 +12,7 @@ Harbour distributes packaging through linked purchasing, inventory, order fulfil
 
 A **business process** connects activities that contribute to an outcome. A delivery-discrepancy process may begin with a reported problem and end with an agreed, completed remedy and reconciled records. Choosing those boundaries is an analytical decision: a narrower study might examine only evidence gathering.
 
-A **process model** represents selected activities, decisions, roles or data. Harbour’s diagram might show a step called “check for an earlier remedy”. A **configured workflow** consists of steps and rules set up in software. It could require a reviewer to record that check before the credit service accepts a request. **Performed work** is what people and systems actually do. A reviewer might look for the credit in one system and call the warehouse to confirm whether a replacement was sent. The call can be part of the performed process even when the diagram and workflow omit it.
+A **process model** represents selected activities, decisions, roles or data. Harbour’s diagram might show a step called “check for an earlier remedy”. A **configured workflow** consists of steps and rules set up in software, such as a rule requiring a reviewer to record that check before the credit service accepts a request. **Performed work** is what people and systems actually do. A reviewer might look for the credit in one system and call the warehouse to confirm whether a replacement was sent. The call can be part of the performed process even when the diagram and workflow omit it.
 
 Curtis, Kellner and Over (1992) distinguish perspectives on process modelling. The **functional** perspective asks what work is done. The **behavioural** perspective asks how activities are ordered and under which conditions. The **organisational** perspective examines who participates and how responsibility is arranged. The **informational** perspective examines the information used and produced. Dumas et al. (2018) provide a broader business-process-management treatment. Together they help explain why a flow diagram alone is insufficient: it may show order while omitting responsibility or information meaning. [Curtis et al. (1992)](#curtis-et-al-1992) · [Dumas et al. (2018)](#dumas-et-al-2018)
 
@@ -40,7 +40,7 @@ These are illustrative states, not a claim that the existing lab implements ever
 
 A **modelling purpose** states what the representation is intended to help examine. A high-level customer journey can orient managers. It cannot specify every execution condition. A detailed tool-call flow can support testing while obscuring the full service outcome.
 
-**Granularity** is the level of detail. “Resolve complaint” is coarse. “Read scan”, “compare quantity” and “request recount” are finer. Combining both levels without indicating the distinction can make a diagram misleading.
+**Granularity** is the level of detail at which a model describes work, from a broad step such as “resolve complaint” to finer steps such as “read scan”, “compare quantity” and “request recount”. Combining both levels without indicating the distinction can make a diagram misleading.
 
 Mendling, Reijers and van der Aalst (2010) propose guidelines for understandable process models. Their contribution concerns model quality; a readable model still requires evaluation of whether it represents the relevant work. [Mendling et al. (2010)](#mendling-et-al-2010)
 

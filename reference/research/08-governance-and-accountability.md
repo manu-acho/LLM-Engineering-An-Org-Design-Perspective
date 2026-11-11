@@ -12,9 +12,9 @@ Harbour's customer service, warehouse, transport and finance activities depend o
 
 **Governance** concerns how an organisation establishes and exercises the right to direct work. For Harbour, that means deciding who can set the assistant’s scope, change the rules for issuing credits and settle disputes about those rules. A right is legitimate when it is recognised under the relevant organisational rules and obligations.
 
-**Decision rights** specify who may decide particular matters. They need an object and conditions: for example, authority to approve a specified credit for an eligible case, within a stated limit. “Owns AI” leaves too much unspecified.
+**Decision rights** specify who may decide a particular matter and under what conditions, such as who may approve a specified credit for an eligible case within a stated limit. “Owns AI” leaves too much unspecified.
 
-**Control** concerns efforts to guide conduct or results. A control arrangement links a target or standard to observation, comparison and a response. At Harbour, a duplicate-remedy check compares a proposed credit with earlier remedies and blocks or refers a possible duplicate for investigation. A system can record a target without anyone being able to intervene when it is missed.
+**Control** concerns efforts to guide conduct or results, for example by observing what happens, comparing it with a target or standard and responding to any discrepancy. At Harbour, a duplicate-remedy check compares a proposed credit with earlier remedies and blocks or refers a possible duplicate for investigation. A system can record a target without anyone being able to intervene when it is missed.
 
 **Accountability** concerns a relationship in which an actor is obliged to explain conduct to someone entitled to question and judge it. Bovens (2007) distinguishes an actor required to explain conduct from a forum able to question, judge and attach consequences. Lindberg (2013) clarifies accountability as a concept with multiple forms. A public-sector theory should not be transferred wholesale to a private firm, but it supplies a sharper question than whether logs exist. [Bovens (2007)](#bovens-2007) · [Lindberg (2013)](#lindberg-2013)
 
@@ -50,7 +50,7 @@ A model card for Harbour’s assistant could say that it drafts evidence briefs 
 
 ## Meaningful review needs resources and a practical alternative
 
-A **human review** is meaningful when the reviewer can evaluate and change the proposal under the actual conditions of work. That includes time, relevant knowledge, access to evidence, practical permission to disagree and an alternative route when evidence is insufficient.
+A **human review** is meaningful when the reviewer has the time, relevant knowledge, evidence access and practical permission to evaluate and change a proposal, along with a way to proceed when the evidence is insufficient.
 
 Buçinca, Malaya and Gajos (2021) tested interventions intended to reduce overreliance on AI recommendations in a controlled experiment. Some designs requiring additional thought reduced overreliance, while participants' preferences and the distribution of benefits complicated the result. A laboratory result does not show that every extra confirmation screen improves workplace judgement. [Buçinca et al. (2021)](../bibliography.md#bu-inca-et-al-2021)
 

@@ -60,7 +60,7 @@ A **platform** supplies a foundation on which other actors can build services or
 
 For an AI service, an **extension** adds behaviour to an existing system. A **connector** links the service to another source or application. A retrieval connector could fetch warehouse records, while an action tool could request an approved transaction. An **interface** specifies how a person or another system interacts with the service. **Generativity**, the capacity for further development by varied actors, does not imply unrestricted access or distributed authority. A provider may allow many extensions while controlling identity, pricing, model availability or accepted interfaces. Harbour may similarly let teams add assistants while centrally controlling product definitions and finance actions.
 
-A **control point** is a place where someone can govern access or behaviour. For example, a platform operator can decide which connectors may read the warehouse records and which service identities may request a credit. The design inquiry should identify these points and practical exit options. Can data and configuration be exported? Can a replacement preserve essential identifiers? Which local modifications will survive an interface change? These are questions for investigation, not a claim that every central dependency is undesirable.
+A **control point** is a place where someone can govern access or behaviour, such as where a platform operator decides which connectors may read warehouse records and which service identities may request a credit. The design inquiry should identify these points and practical exit options. Can data and configuration be exported? Can a replacement preserve essential identifiers? Which local modifications will survive an interface change? These are questions for investigation, not a claim that every central dependency is undesirable.
 
 ## Growth requires more than an open interface
 
@@ -74,7 +74,7 @@ It also helps to name the kind of change. A **configuration** selects an availab
 
 ## Worked design: a quantity agreement
 
-Harbour proposes a small agreement for the evidence service. An agreement about exchanged fields and their meaning is often called a **data contract**. **Provenance** records where an item came from and how it changed. A **data steward** maintains the agreed definitions and quality of a specified set of records. **Reconciliation** checks related records, explains differences and determines what correction or further investigation is needed. This teaching example contains five provisions.
+Harbour proposes a **data contract** for the evidence service, an agreement about which fields the service exchanges and what those fields represent. **Provenance** records where an item came from and how it changed. A **data steward** maintains the agreed definitions and quality of a specified set of records. **Reconciliation** checks related records, explains differences and determines what correction or further investigation is needed. This teaching example contains five provisions.
 
 | Provision | Example | Responsible work |
 |---|---|---|

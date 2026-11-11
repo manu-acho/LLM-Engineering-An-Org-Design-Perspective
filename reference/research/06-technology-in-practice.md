@@ -24,7 +24,7 @@ At Harbour, one team might use the evidence panel as the basis for challenge; an
 
 ## Materiality in digital systems
 
-**Materiality** concerns properties and arrangements that make a practical difference to action. Digital software has such properties: it can require data, restrict access, retain versions, order a queue, block a transition or execute an operation. Calling software digital does not make those effects imaginary.
+**Materiality** concerns properties and arrangements that make a practical difference to action, such as software rules that require data, restrict access, retain versions, order a queue, block a transition or execute an operation. Calling software digital does not make those effects imaginary.
 
 The point is to specify the operation. A mandatory field blocks submission without a value. That is a testable technical statement. “The field improves organisational control” is a stronger claim requiring evidence about use, interpretation and consequences. Markus and Silver (2008) and Leonardi (2011) offer concepts for keeping these technical and organisational questions distinct. [Markus and Silver (2008)](#markus-and-silver-2008) · [Leonardi (2011)](#leonardi-2011)
 
@@ -70,7 +70,7 @@ An execution service can block an action. A model can request a tool call. The o
 
 The disagreement among materiality theories becomes clearer when each is asked how to study the same evidence panel. A practice lens asks how reviewers recurrently use the panel and what structures they reproduce or change through that use. The focus is the activity as it develops, rather than a prediction from the feature alone. [Orlikowski (2000)](#orlikowski-2000)
 
-A critical-realist affordance account examines the reviewer and the source panel as distinct parts of the explanation. It asks what possibilities arise through their relation, under which conditions those possibilities are realised and which processes explain the observed effects. The word **mechanism** refers here to how a consequence can be produced under particular conditions, rather than a rule that guarantees the same outcome everywhere. [Volkoff and Strong (2013)](#volkoff-and-strong-2013)
+A critical-realist affordance account treats the reviewer and the source panel as distinct parts of the explanation while examining what possibilities arise through their relation, under which conditions they are realised and which processes explain the observed effects. The word **mechanism** refers here to how a consequence can be produced under particular conditions, rather than a rule that guarantees the same outcome everywhere. [Volkoff and Strong (2013)](#volkoff-and-strong-2013)
 
 An imbrication account examines how human and material agencies become interlocked over time. A reviewer encounters a constraint, changes the work or seeks a technical change, and later action takes place within that altered arrangement. The accumulated relation can help explain both persistence and change. The account keeps a distinction between human intentions and the ways material arrangements make a difference. [Leonardi (2011)](#leonardi-2011)
 

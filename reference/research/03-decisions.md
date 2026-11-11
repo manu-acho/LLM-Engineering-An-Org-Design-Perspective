@@ -14,17 +14,17 @@ The discussion begins with limits on attention and calculation, then follows the
 
 ## Bounded rationality
 
-**Bounded rationality** concerns choice under limits of information, time and the ability to consider alternatives. Computational capacity here includes a person's capacity to work through a problem, alongside any calculations that software performs. Simon (1955) challenges models that require a decision-maker to know and evaluate everything relevant. His behavioural approach examines simpler procedures compatible with actual limits. The resulting design question concerns the procedures that make choice possible under those limits. [Simon (1955)](#simon-1955)
+**Bounded rationality** concerns choice under limits on available information, time and computational capacity, including how many alternatives a person can work through and what software can calculate. Simon (1955) challenges models that require a decision-maker to know and evaluate everything relevant. His behavioural approach examines simpler procedures compatible with actual limits. The resulting design question concerns the procedures that make choice possible under those limits. [Simon (1955)](#simon-1955)
 
 This is more useful than saying that people make mistakes. It changes the design question: how does the organisation make a problem manageable? A service team cannot reconsider every policy, source and possible action from first principles for every complaint. Categories, procedures, expertise and information channels help narrow the task.
 
 AI can alter those limits by preparing information or suggesting alternatives. It can also introduce new limits: a selected set of retrieved passages, a compressed account or an apparently complete answer may narrow what receives attention. The sensible question is which parts of the decision environment have changed, not whether human limits have disappeared.
 
-**Satisficing** is the practice of searching for an option that meets specified criteria. The search can end once an acceptable option is found. In a fictional service case, a team may seek a response that meets evidence, fairness and timing requirements. Those requirements must be defensible. An easy-to-meet threshold does not become appropriate merely because it makes search shorter. A satisfactory response is defined by the criteria used in the search, so those criteria belong in the analysis.
+**Satisficing** is the practice of searching for an option against specified criteria and stopping once an acceptable option is found. In a fictional service case, a team may seek a response that meets evidence, fairness and timing requirements. Those requirements must be defensible. An easy-to-meet threshold does not become appropriate merely because it makes search shorter. A satisfactory response is defined by the criteria used in the search, so those criteria belong in the analysis.
 
 ## Decision premises
 
-A **decision premise** is part of the basis that guides a choice: a fact, goal, category, value, expectation or rule. Simon's organisational account explains how influence can operate through these premises without a senior actor deciding every individual case. [Simon (1997)](#simon-1997)
+A **decision premise** is a fact, goal, category, value, expectation or rule that helps guide a choice. Simon's organisational account explains how influence can operate through these premises without a senior actor deciding every individual case. [Simon (1997)](#simon-1997)
 
 At Harbour, “customer reports ten boxes” is a factual input with a source and qualification. “Preserve customer trust” is a goal. “Approve only after confirming the discrepancy” is a rule. “Small shortage” is a classification whose boundaries someone selected. These do different work in the decision.
 
