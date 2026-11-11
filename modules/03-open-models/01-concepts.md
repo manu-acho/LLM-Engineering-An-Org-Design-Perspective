@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+With a hosted model, the application sends a request to a service that runs the model elsewhere. To run a model locally, the computer needs a way to turn text into numbers, the learned numbers that define the model, and software to carry out the calculations. The lesson calls these the tokenizer, weights and runtime. Follow the same short input through each before comparing computer memory requirements.
+
 ## From a service request to visible components
 
 A hosted model service hides much of the machinery. You send a request and receive a response. Someone else loads the model, operates the computing equipment and handles some capacity problems. Running a model yourself makes those responsibilities visible.
@@ -11,6 +13,8 @@ For Harbour's meeting-note application, the distinction is practical. A founder 
 ## Weights, tokenizer and runtime
 
 **Weights** are learned numerical parameters. A model's architecture specifies how operations connect; the weights specify learned values used in those operations. A saved model is not simply a document of facts. Its parameters support distributed learned behaviour.
+
+Consider a much smaller calculation: a programme that takes a quantity and doubles it. The instruction to multiply specifies the operation; the number two is a value used in the operation. This is an analogy for the difference between a model's design and its weights. In a language model there are many operations and learned values. The tokenizer first represents the input as identifiers, and the runtime carries out those operations. Loading the weights supplies the values; it does not itself answer a question.
 
 A **tokenizer** turns text into token IDs and back. Those IDs must match the model's learned vocabulary. The numerical ID 42 means whatever that tokenizer assigns to it; a different tokenizer can assign 42 to another unit. This is why the tokenizer is not an interchangeable cosmetic accessory.
 

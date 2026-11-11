@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+One task collects a source and a later one drafts from it. The draft depends on that earlier result, so its instructions alone are insufficient. Trace the order in which the tasks run and what the program checks before it accepts each result into the next task.
+
+[Open the companion workshop notebook](../../notebooks/11-agent-teams.ipynb).
+
 ## A tiny configuration-driven workflow
 
 We will represent a staged investigation using dictionaries and functions. This is not a reimplementation of CrewAI. It isolates the idea that a task receives named predecessor results and must return an inspectable output. No model, database or external tool is used.

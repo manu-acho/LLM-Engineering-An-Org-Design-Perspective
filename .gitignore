@@ -6,3 +6,6 @@ browser-reader/output/
 .env.*
 !.env.example
 *.log
+.venv/
+.ipynb_checkpoints/
+__pycache__/

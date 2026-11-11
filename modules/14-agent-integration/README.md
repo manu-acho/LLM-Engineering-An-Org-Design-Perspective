@@ -1,5 +1,7 @@
 # Module 14: MCP and business integration
 
+[Meet Harbour](../../HARBOUR.md) · [Run the workshop notebook](../../notebooks/14-agent-integration.ipynb)
+
 [Curriculum index](../../README.md) · [Start here](../../START-HERE.md) · [Local lab guide](../../reference/local-labs.md)
 
 Follow an actual MCP exchange into service and storage boundaries. Complete an integration proposal and evaluate its use, costs and outcomes over time.

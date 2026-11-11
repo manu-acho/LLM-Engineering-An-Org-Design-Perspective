@@ -1,5 +1,7 @@
 # Module 7: Fine-tuning and organisational categories
 
+[Meet Harbour](../../HARBOUR.md) · [Run the workshop notebook](../../notebooks/07-specialisation.ipynb)
+
 [Curriculum index](../../README.md) · [Start here](../../START-HERE.md) · [Local lab guide](../../reference/local-labs.md)
 
 Understand low-rank updates, masking, training and reconstruction. Compare specialisation with simpler alternatives and keep categories open to legitimate revision.

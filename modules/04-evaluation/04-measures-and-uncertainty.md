@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next: evaluate the generated program](05-source-walkthrough.md)
 
+A rule that sends every uncertain case to a specialist catches more risky complaints and creates more unnecessary reviews. One kind of error misses a case that needs review; the other sends a case that did not need it. Follow the counts first. The loss rule then attaches explicit consequences to those counts so readers can question what the comparison values.
+
 ## A decision rule creates different errors
 
 Suppose an assistant flags cases requiring specialist review. In ten fictional cases, seven truly need review. It flags eight: six correctly and two unnecessarily. It misses one true review case. The remaining case correctly proceeds without review.

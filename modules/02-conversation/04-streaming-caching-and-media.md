@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next: the complete tool exchange](05-source-walkthrough.md)
 
+A browser can show “Checking” and then append “ case H-17”, or it can receive the whole phrase again and replace the display. Streaming delivers output in parts. Appending a piece that already includes the earlier text would display it twice. The same separation matters when a photo is added: what the user sees is one part of the system; what the application has received, stored and sent to the model must be checked separately.
+
 ## A conversation has several kinds of state
 
 A user sees one continuous exchange. The application may hold a displayed transcript, a shorter model context, a selected customer record and an unfinished tool request. These objects need not contain the same information. Naming them separately helps explain why an earlier order number appears on screen while the next model call does not receive it.

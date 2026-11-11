@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: compare organising arrangements](06-design-lab.md)
 
+An agent's settings name the model, instructions and tools it can use. They describe possible work. A runner starts that work for a particular request and returns information about the run. Locate where the settings end, where the case is supplied and where the outcome can be checked.
+
+[Open the companion workshop notebook](../../notebooks/10-agent-orchestration.ipynb).
+
 ## Read the source's research manager
 
 In [ResearchManager](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/2_openai/deep_research/research_manager.py), `run` creates a trace, asks a planner for searches, awaits concurrent searches, asks a writer for a report and passes that report to an email agent. `yield` produces progress information at successive stages.

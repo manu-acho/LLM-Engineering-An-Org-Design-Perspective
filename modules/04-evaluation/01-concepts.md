@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+Imagine two polished replies shown in a demonstration, both for easy cases. They show what the system can do in those cases. An evaluation asks a question about performance and collects examples chosen to answer it. A benchmark is a defined set of tasks and scoring rules for comparison. Start with a case where a plausible answer would send work to the wrong team.
+
 ## Start with two persuasive demonstrations
 
 One assistant writes a polished response to Harbour's shortage complaint. Another generates a replacement program that runs a calculation much faster. Both demonstrations may be valuable. Neither yet establishes reliable operational performance.
@@ -11,6 +13,8 @@ An **evaluation** is an organised way to assess behaviour against stated criteri
 ## Examples, cases and benchmarks
 
 A **test case** combines an input with an expected behaviour. For the shortage assistant, a case could supply contradictory delivery records and require it to preserve the disagreement. The expected behaviour need not be one exact sentence; it can be a set of required and prohibited claims.
+
+Write the test in ordinary language first. Give the assistant a dispatch record for twelve and a customer report of ten. A passing result must keep both figures and their sources distinct and leave receipt unresolved. “The warehouse lost two boxes” fails, even if the answer is short and reads well. That test can grade many wordings without requiring one exact phrase.
 
 A **benchmark** is a specified collection of tasks and scoring rules. Its value depends on whether the cases represent the intended use. A model ranking on unrelated puzzles cannot settle which system will handle your client's order exceptions.
 

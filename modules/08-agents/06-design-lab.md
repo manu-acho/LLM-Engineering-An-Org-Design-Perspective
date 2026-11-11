@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next: failures and queues](07-failures-and-queues.md)
 
+If the screen says “waiting for carrier”, someone needs to know whose job it is to ask, when to follow up and what to do if no answer arrives. Describe what each case status tells the next person to do. Then test whether the roles and capacity in the pilot support the promised response.
+
 ## Select a bounded contribution
 
 **Fictional pilot.** Harbour chooses long, non-urgent delivery disputes with an identifiable order. The assistant gathers permitted records and prepares a referenced proposal. It does not promise a refund or contact a customer automatically. This is a complete pilot scope, not a description of every future capability.
@@ -50,3 +52,5 @@ Harbour approves a read-only drafting pilot with a structured-intake comparator,
 ## Read the organisational connection
 
 A bounded pilot connects scope, roles, evidence and measures before claiming improvement. The research chapter explains [the worked implementation choice](../../reference/research/04-implementation.md#a-worked-implementation-choice).
+
+The research chapter also explains [who can authorise and carry out a remedy](../../reference/research/08-governance-and-accountability.md#worked-arrangement-govern-a-remedy-rather-than-a-button).

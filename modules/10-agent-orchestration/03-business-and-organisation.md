@@ -2,6 +2,8 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+A manager agent can finish sending a referral while the receiving team has not agreed to take it. Distinguish sending a message from accepting ownership. Identify what the receiving team needs, how it indicates acceptance and who follows up if no one accepts.
+
 ## The manager agent reports success
 
 **Fictional case.** Harbour's coordinator retrieves evidence and asks a finance specialist to recommend a response. The application records a handoff. Customer service assumes finance now owns the case. Finance regards the specialist as an advisory tool and expects customer service to continue. The customer hears nothing.
@@ -59,3 +61,5 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Routing makes assignment visible without establishing accepted ownership. The research chapter explains [mechanisms and conditions](../../reference/research/02-coordination.md#mechanisms-and-conditions).
+
+The research chapter also explains [the roles and events behind a handoff](../../reference/research/09-process-architecture.md#activities-events-roles-and-objects).

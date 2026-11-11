@@ -2,6 +2,8 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+If Harbour teaches a model to classify “late” and “missing”, a new kind of partly delivered order may fit neither label. Specialisation improves performance for the chosen task and examples; it does not settle how the business should classify cases. Look for who can flag a bad category, revise the examples and change the routing practice.
+
 ## A specialised model becomes difficult to question
 
 **Fictional case.** Harbour fine-tunes a request classifier. It matches the approved examples well. Six months later a service redesign changes exception ownership, but the classifier continues routing cases according to old labels. Users assume the specialised model “knows our process”.
@@ -65,3 +67,5 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 The right to revise a category matters alongside the right to override one prediction. The research chapter explains [where discretion moves](../../reference/research/03-decisions.md#where-discretion-moves).
+
+The research chapter also explains [the organisational effects of categories](../../reference/research/07-infrastructure-and-standards.md#classification-changes-what-an-organisation-can-see).

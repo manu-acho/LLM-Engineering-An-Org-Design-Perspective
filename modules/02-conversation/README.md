@@ -1,5 +1,7 @@
 # Module 2: Conversation, memory and tools
 
+[Meet Harbour](../../HARBOUR.md) · [Run the workshop notebook](../../notebooks/02-conversation.ipynb)
+
 [Curriculum index](../../README.md) · [Start here](../../START-HERE.md) · [Local lab guide](../../reference/local-labs.md)
 
 Connect conversation history, callbacks, streaming and tool requests. Then allocate discretion and review capacity across a complete service.

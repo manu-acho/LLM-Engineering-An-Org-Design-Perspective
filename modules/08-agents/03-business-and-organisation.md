@@ -2,6 +2,8 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md) · [Curriculum index](../../README.md)
 
+An assistant can prepare briefs faster and still leave cases unresolved if no adviser is available to accept them. Compare the drafting step, the work of reviewing evidence and the authority to resolve a claim. Fit concerns whether these parts can work together under the conditions Harbour actually faces, including queues and missing records.
+
 ## The capstone decision
 
 **Fictional case.** Harbour is ready to pilot an assistant that reads a complaint, gathers order and policy evidence, proposes a route and prepares a handoff. The design team has eight attractive component names and a diagram showing their connections. The operations director asks: “Who owns a case when one of these steps fails?”
@@ -75,3 +77,5 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Workflow, roles, evidence, capacity and incentives need to be considered together. The research chapter explains [fit among design choices](../../reference/research/01-organisation-design.md#fit-is-a-relationship-among-choices).
+
+The research chapter also explains [who can authorise and carry out a remedy](../../reference/research/08-governance-and-accountability.md#worked-arrangement-govern-a-remedy-rather-than-a-button).

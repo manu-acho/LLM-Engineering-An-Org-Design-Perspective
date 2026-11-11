@@ -269,7 +269,7 @@ function renderHome(push = false) {
   document.title = 'AI engineering and organisation design | Learning Reader';
 }
 
-function resolveInternalLink(doc, href) {
+function resolveInternalPath(doc, href) {
   if (!href || /^(https?:|mailto:|#)/i.test(href)) return null;
   let clean;
   try { clean = decodeURIComponent(href.split('#')[0]); } catch { return null; }
@@ -280,7 +280,7 @@ function resolveInternalLink(doc, href) {
     if (part === '..') { if (!normal.length) return null; normal.pop(); }
     else normal.push(part);
   }
-  return state.byPath.get(normal.join('/')) || null;
+  return normal.join('/');
 }
 
 function routeTo(doc, heading = '') {
@@ -336,12 +336,21 @@ function renderDocument(doc, heading = "") {
     el.context.scrollTo({ top: el.context.scrollHeight, behavior: "smooth" });
   });
   document.querySelector("#printButton").addEventListener("click", () => window.print());
-  document.querySelector("#articleBody").addEventListener("click", (event) => {
+  const article = document.querySelector("#articleBody");
+  for (const anchor of article.querySelectorAll("a")) {
+    const source = resolveInternalPath(doc, anchor.getAttribute("href"));
+    const download = state.payload.downloads?.[source];
+    if (download) {
+      anchor.href = download.url;
+      anchor.download = source.split('/').at(-1);
+    }
+  }
+  article.addEventListener("click", (event) => {
     const anchor = event.target.closest("a");
-    if (!anchor) return;
+    if (!anchor || anchor.hasAttribute("download")) return;
     const href = anchor.getAttribute("href");
     if (href?.startsWith("#")) { event.preventDefault(); routeTo(doc, href.slice(1)); return; }
-    const target = resolveInternalLink(doc, href);
+    const target = state.byPath.get(resolveInternalPath(doc, href));
     if (target) {
       event.preventDefault();
       routeTo(target, href.includes("#") ? href.split("#")[1] : "");

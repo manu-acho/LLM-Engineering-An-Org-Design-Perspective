@@ -6,11 +6,11 @@
 
 An AI assistant can prepare a better answer while leaving the business problem unresolved. Someone still supplies evidence, interprets a recommendation, accepts a handoff and deals with exceptions. Literature from organisation design research helps explain those connections.
 
-The six chapters below teach that literature in the context of AI integration. They can be read here, without a separate course or a visit to a research repository. Each develops a practical problem, explains concepts before using them, connects the arguments of different authors, and returns to a worked business case.
+The nine chapters below teach that literature in the context of AI integration. They can be read here, without a separate course or a visit to a research repository. Each develops a practical problem, explains concepts before using them, connects the arguments of different authors, and returns to a worked business case.
 
 Harbour, the packaging distributor used throughout, is fictional. Its cases illustrate reasoning. They do not report observed deployments or measured benefits.
 
-## The six chapters
+## The nine chapters
 
 | Chapter | Starting question | What the chapter develops |
 |---|---|---|
@@ -20,6 +20,9 @@ Harbour, the packaging distributor used throughout, is fictional. Its cases illu
 | [4. Making AI fit the organisation](research/04-implementation.md) | Why can a successful demonstration be a poor local fit? | Generic assumptions, misfit, adaptation, implementation lifecycle and benefit evidence |
 | [5. AI in the work people actually repeat](research/05-routines.md) | What does the workflow diagram leave out? | Routines, understandings, performances, artefacts, variation, learning and event-log limits |
 | [6. How AI technology becomes consequential](research/06-technology-in-practice.md) | For whom does a feature make useful action possible? | Materiality, affordances, constraints, actualisation, theoretical disagreement and outcome evidence |
+| [7. The shared foundations beneath an AI service](research/07-infrastructure-and-standards.md) | What makes evidence comparable and dependable? | Installed bases, standards, classification, data work, platforms and evolution |
+| [8. Governing AI decisions and making them answerable](research/08-governance-and-accountability.md) | Who can decide, question and require correction? | Governance, decision rights, control portfolios, review, auditing and accountability |
+| [9. AI within the business process](research/09-process-architecture.md) | Where does an agent run end and business resolution begin? | Processes, models, architecture, event logs, conformance, exceptions and outcome boundaries |
 
 ## How the argument develops
 
@@ -27,13 +30,15 @@ Organisation design first identifies the division of work and the need to reconn
 
 Implementation research asks how a generic capability meets local requirements. Routines research examines the difference between a represented process and recurrent work. Technology and materiality research explains why a feature's consequences depend on actors, goals and processes of use.
 
+Infrastructure research then follows the shared definitions and maintenance on which services depend. Governance research asks who may direct, question and change the arrangement. Process research reconnects local AI activity to business outcomes across teams.
+
 The perspectives overlap without being interchangeable. An approval can be a coordination gate, an allocated decision opportunity and an artefact in recurrent work. Each interpretation answers a different question. None, alone, proves meaningful review or a better business outcome.
 
 ## Follow a lesson into the research
 
-Every module lesson includes a link to a relevant concept in these chapters. The organisational discussions also link directly to the chapter supporting their argument. The chapters link back to selected lessons, so the reading can move from an implementation to its organisational meaning and back.
+The course lessons connect their technical and business questions to specific concepts in these chapters. The chapters can also be read as a continuous research route without running code.
 
-For an early example, connect [Lesson 1.3](../modules/01-foundations/03-business-and-organisation.md) with [information demand and capacity](research/01-organisation-design.md#information-demand-and-capacity). For agent engineering, connect [Lesson 12.2](../modules/12-stateful-agents/02-code-workshop.md) with [distinct acts in a workflow](research/03-decisions.md#distinct-acts-in-one-workflow).
+Start with [the distinction between the model and its application](../modules/01-foundations/01-concepts.md), follow [evidence through the code](../modules/01-foundations/02-code-workshop.md), and examine [the worked organisational design](../modules/01-foundations/06-design-lab.md). The later modules in the [companion curriculum](../README.md) extend these concepts into agents, service operation and integration.
 
 ## Concepts, examples and citations
 
@@ -57,3 +62,9 @@ The following path is a teaching synthesis across the reviews, not a single mode
 | Comparative or longitudinal outcome evidence | Defined consequences for a population and period | An automatic effect of the technology in other settings |
 
 A technical test can be valuable within its scope. A version check can demonstrate that an old proposal is blocked under tested conditions. Evidence of organisational benefit requires a further account of how the arrangement enters work, what changes and how those changes are assessed.
+
+## A foundation route and an advanced route
+
+The [research study pathways](research-study-pathways.md) provide prerequisite explanations, learning outcomes and a cumulative Harbour assignment. The foundation route introduces scholarly reasoning without assuming prior organisation theory. The advanced route adds comparison of theories, research design and critique of evidence. These are study routes, not accredited degree awards.
+
+The [project bibliography](bibliography.md) brings together the scholarly references, selected AI studies and reading-access notes. A downloadable BibTeX file supports reference management. Chapters remain readable here without following an external research stream or taking another course.

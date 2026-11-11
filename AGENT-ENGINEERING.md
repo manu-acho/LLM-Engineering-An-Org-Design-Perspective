@@ -6,6 +6,8 @@ An assistant that answers questions is different from a system that selects step
 
 Part II develops those questions through six modules inspired by [Ed Donner's Agents course](https://github.com/ed-donner/agents). It builds on the first part of this guide and keeps the same connection between concepts, code and business application. Frameworks are studied as ways to implement work, not as substitutes for designing the work itself.
 
+Each agent module includes a [local workshop notebook](notebooks/README.md) and a separate walkthrough of Ed Donner’s original source. Start with the workshop to trace the mechanism without configuring a model provider.
+
 ## Choose a route
 
 | Module | Understand | Inspect | Apply |

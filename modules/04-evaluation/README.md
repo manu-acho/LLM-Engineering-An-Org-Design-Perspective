@@ -1,5 +1,7 @@
 # Module 4: Evaluation, generated code and business value
 
+[Meet Harbour](../../HARBOUR.md) · [Run the workshop notebook](../../notebooks/04-evaluation.ipynb)
+
 [Curriculum index](../../README.md) · [Start here](../../START-HERE.md) · [Local lab guide](../../reference/local-labs.md)
 
 Calculate task errors and compare generated programs fairly. Use the resulting evidence to distinguish a local speed or quality gain from an organisational improvement.

@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+An approved handoff might be requested twice if the first reply is slow. Give the same simulated request to the program twice and follow the identifier it uses to find the earlier result. The receipt describes a local simulation. It does not show that any outside team received the work.
+
+[Open the companion workshop notebook](../../notebooks/08-agents.ipynb).
+
 ## A dry-run action service
 
 We will simulate an approved handoff without sending anything. The code stores synthetic execution receipts in memory. It demonstrates sequential state checks and a local duplicate guard. It is not a durable, concurrent or external transaction system.

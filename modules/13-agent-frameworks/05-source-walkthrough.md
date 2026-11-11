@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: design shared ownership](06-design-lab.md)
 
+Follow the same worker from a task claim to a returned result in each framework. Use the same expected facts to compare them. Then look for who records a failure or hands back unfinished work, since similar outputs on a successful run do not establish similar recovery.
+
+[Open the companion workshop notebook](../../notebooks/13-agent-frameworks.ipynb).
+
 ## Hold the task constant
 
 The source comparison uses a visible task: read `notes.txt`, translate it into Spanish, write `spanish.txt` and record progress on a board. The task crosses model, storage, filesystem and process boundaries. Following it closely is more informative than comparing framework names in a feature list.

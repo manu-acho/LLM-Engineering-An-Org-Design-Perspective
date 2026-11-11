@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next: inspect the digital twin](05-source-walkthrough.md)
 
+A plan might say to check dispatch, then ask the carrier if the first check leaves a gap. Define the evidence required to finish, as well as limits on attempts, time or spending. A budget is a limit on one of those resources. The application can stop the loop because a limit was reached while the investigation itself remains incomplete.
+
 ## A plan changes the next question
 
 An assistant investigating a disputed delivery might propose: find the order, compare quantities, obtain policy, then draft a response. A fixed application can encode those steps directly. A model-selected loop becomes useful when the next evidence need depends on what was found. A missing receipt might require clarification before policy lookup is meaningful.

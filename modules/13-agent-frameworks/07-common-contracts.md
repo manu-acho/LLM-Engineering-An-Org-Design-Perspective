@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next module](../14-agent-integration/README.md)
 
+A lease gives a worker a temporary claim to a job. If the claim expires, another worker can take it. An adapter must translate that status without giving the old worker a new right to finish, just as it must preserve the difference between an unknown and a confirmed quantity. Check both meanings at the boundary.
+
 ## A common shape needs explicit meanings
 
 One runtime returns an object with `output`; another exposes a last message. The application can adapt both into one result record. The dangerous shortcut is to label every non-empty text result `done`. An adapter should preserve what is actually known.

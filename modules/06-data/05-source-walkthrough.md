@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: decide what the labels should represent](06-design-lab.md)
 
+Start with the fields of one raw example. The programme turns those fields into input for a fitted predictor and then compares the prediction with an expected value. Follow those steps separately. Inspect where the expected answer is used so it does not silently become part of the input.
+
+[Open the companion workshop notebook](../../notebooks/06-data.ipynb).
+
 ## Source preparation is part of the model
 
 In [Week 6 day 1](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week6/day1.ipynb), product records are selected, cleaned, inspected, deduplicated and split. Price range and minimum text length define the population. A model evaluated there has not automatically been assessed for sparse records or prices outside that range.

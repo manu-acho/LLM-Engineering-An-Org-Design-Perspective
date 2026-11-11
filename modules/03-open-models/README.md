@@ -1,5 +1,7 @@
 # Module 3: Open models, inference and meeting evidence
 
+[Meet Harbour](../../HARBOUR.md) · [Run the workshop notebook](../../notebooks/03-open-models.ipynb)
+
 [Curriculum index](../../README.md) · [Start here](../../START-HERE.md) · [Local lab guide](../../reference/local-labs.md)
 
 Understand the numerical representations inside inference, inspect a real loading path, and design a meeting record that people can correct and use.

@@ -2,6 +2,8 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+When the assistant is the first place customers go, it can influence which problem gets noticed before anyone makes a decision. Follow one unclear request to the next team. A handoff needs the relevant evidence, a named recipient and a way for the recipient to accept or send it back.
+
 ## The assistant starts acting like the front door
 
 **Fictional case.** Harbour puts its new investigating assistant on the customer-service portal. It can ask follow-up questions, collect contact details and record unresolved issues. Managers hope the service team will receive clearer cases. After a month, staff report that customers believe a recorded complaint is already being investigated.
@@ -61,3 +63,5 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Delegation needs an account of what work is allocated and how it rejoins the wider service. The research chapter explains [division and integration](../../reference/research/01-organisation-design.md#division-creates-a-need-for-integration).
+
+The research chapter also explains [how an agent run fits the wider process](../../reference/research/09-process-architecture.md#a-good-agent-run-can-end-before-the-business-problem-does).

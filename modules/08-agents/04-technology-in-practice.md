@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Literature foundation](../../reference/literature-guide.md)
 
+The approval screen may exist, but if staff cannot see the carrier record there, they may approve from email instead. An affordance is a possibility for action in relation to a person and their circumstances. Ask who can actually inspect the record or correct the status on this screen. The feature list alone does not answer that question.
+
 ## The approval panel that nobody uses
 
 **Fictional continuing case.** Harbour adds an evidence panel to the credit-review screen. It displays the order, complaint and policy extracts beside an AI recommendation. The project team describes this as “transparent AI review”. Three weeks after launch, reviewers still ask account managers to send screenshots by email.

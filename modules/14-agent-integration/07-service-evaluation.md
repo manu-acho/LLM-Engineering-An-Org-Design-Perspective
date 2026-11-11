@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Return to the integration plan](04-integration-plan.md)
 
+“Submitted” on a screen might mean the request was received, while “accepted” should tell the adviser a reviewer has taken responsibility. The backend is the software behind the screen that stores and processes the work. Match each visible status to what the backend knows and give staff a way to report a misleading status.
+
 ## The backend and the screen expose different views
 
 The Agents course's final project separates an operating backend from a frontend. Its [read-only API](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/6_mcp/backend/api.py) returns accounts, holdings, market-source status and logs. The engine changes the example account data elsewhere. A dashboard refresh therefore observes selected state; it is not the action itself.

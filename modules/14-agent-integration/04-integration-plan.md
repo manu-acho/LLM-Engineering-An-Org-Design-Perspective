@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Business application](03-business-and-organisation.md) · [Part II route](../../AGENT-ENGINEERING.md)
 
+Start by watching a disputed delivery move between customer service, warehouse and finance. An integration plan explains which step the application will help with and how the result reaches the next person. Choose one contribution, such as a draft with source labels, before choosing the technology or promising faster resolution.
+
 ## Begin with a service problem
 
 **Fictional case.** Harbour wants faster, more reliable resolution of delivery disputes. Staff collect records from several systems, clarify missing evidence and negotiate who should act. Preparation takes time, but waiting for an accepted response is often the larger delay.

@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: a completed integration dossier](06-design-lab.md)
 
+The client first asks the server which operations it offers, then makes a specific request and reads the reply. Follow those messages in the small MCP exchange before looking at the original backend. Keep the rules for business access separate from the rules for sending a valid message.
+
+[Open the companion workshop notebook](../../notebooks/14-agent-integration.ipynb).
+
 ## Start without a model
 
 An MCP client can discover and invoke server capabilities without asking a model to choose them. That is a useful first lab: it exposes transport and service behaviour before introducing generation. The following two scripts need the Python `mcp` package. Save them together as `case_server.py` and `case_client.py`. They use synthetic records, no model, no account credentials and no network server.

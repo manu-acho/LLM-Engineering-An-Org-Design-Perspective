@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next module](../12-stateful-agents/README.md)
 
+A separate agent may help if one task needs different evidence or a different skill. It also creates another result to check and combine. Compare a single worker with the smaller independent parts of a divided workflow. Identify which division helps enough to pay for the extra handoffs in this case.
+
 ## Test whether four contributors are needed
 
 **Fictional case.** Harbour proposes a researcher, policy analyst, drafter and reviewer agent for every enquiry. Some cases require a single status lookup; others require evidence interpretation and specialist judgement. Uniformly assigning four agents may add reports and delay without adding useful competence.
@@ -49,3 +51,5 @@ After the first pilot week, reviewers repeatedly identify missing receipt condit
 ## Read the organisational connection
 
 Compare the benefit of specialisation with handoffs, reconciliation and maintenance. The research chapter explains [decomposition and integration](../../reference/research/01-organisation-design.md#when-more-agents-create-more-integration-work).
+
+The research chapter also explains [how specialist processes connect](../../reference/research/09-process-architecture.md#process-architecture-connects-the-processes).

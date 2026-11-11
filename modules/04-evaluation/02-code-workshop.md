@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+Suppose a candidate program agrees with a trusted calculation when fewer boxes arrive, but disagrees when more arrive. A test case supplies particular records and asks for a result that can be checked. Follow the cases before thinking about speed. The surprising case exposes a business rule the happy path leaves hidden.
+
+[Open the companion workshop notebook](../../notebooks/04-evaluation.ipynb).
+
 ## A transparent reference calculation
 
 Suppose Harbour wants the total number of reported missing boxes across several synthetic records. We will compare two implementations. The example is intentionally simple enough that you can calculate the expected answer yourself.

@@ -1,0 +1,1668 @@
+[
+  {
+    "author": "Malone, Thomas W. and Crowston, Kevin",
+    "title": "The Interdisciplinary Study of Coordination",
+    "journal": "ACM Computing Surveys",
+    "year": "1994",
+    "volume": "26",
+    "number": "1",
+    "pages": "87--119",
+    "doi": "10.1145/174666.174668",
+    "key": "malonecrowston1994",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "02-coordination.md"
+    ],
+    "heading": "Malone and Crowston (1994)",
+    "anchor": "malone-and-crowston-1994"
+  },
+  {
+    "author": "Simon, Herbert A.",
+    "title": "A Behavioral Model of Rational Choice",
+    "journal": "The Quarterly Journal of Economics",
+    "year": "1955",
+    "volume": "69",
+    "number": "1",
+    "pages": "99--118",
+    "doi": "10.2307/1884852",
+    "key": "simon1955",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "03-decisions.md"
+    ],
+    "heading": "Simon (1955)",
+    "anchor": "simon-1955"
+  },
+  {
+    "author": "Feldman, Martha S. and March, James G.",
+    "title": "Information in Organizations as Signal and Symbol",
+    "journal": "Administrative Science Quarterly",
+    "year": "1981",
+    "volume": "26",
+    "number": "2",
+    "pages": "171--186",
+    "doi": "10.2307/2392467",
+    "key": "feldmanmarch1981",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "03-decisions.md"
+    ],
+    "heading": "Feldman and March (1981)",
+    "anchor": "feldman-and-march-1981"
+  },
+  {
+    "author": "Brunsson, Nils",
+    "title": "Deciding for Responsibility and Legitimation: Alternative Interpretations of Organizational Decision-Making",
+    "journal": "Accounting, Organizations and Society",
+    "year": "1990",
+    "volume": "15",
+    "number": "1--2",
+    "pages": "47--59",
+    "doi": "10.1016/0361-3682(90)90012-J",
+    "key": "brunsson1990",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "Publisher abstract consulted; no new full-text inspection recorded.",
+    "chapters": [
+      "03-decisions.md"
+    ],
+    "heading": "Brunsson (1990)",
+    "anchor": "brunsson-1990"
+  },
+  {
+    "author": "Bovens, Mark and Zouridis, Stavros",
+    "title": "From Street-Level to System-Level Bureaucracies: How Information and Communication Technology Is Transforming Administrative Discretion and Constitutional Control",
+    "journal": "Public Administration Review",
+    "year": "2002",
+    "volume": "62",
+    "number": "2",
+    "pages": "174--184",
+    "doi": "10.1111/0033-3352.00168",
+    "key": "bovenszouridis2002",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "03-decisions.md",
+      "08-governance-and-accountability.md"
+    ],
+    "heading": "Bovens and Zouridis (2002)",
+    "anchor": "bovens-and-zouridis-2002"
+  },
+  {
+    "author": "Aghion, Philippe and Tirole, Jean",
+    "title": "Formal and Real Authority in Organizations",
+    "journal": "Journal of Political Economy",
+    "year": "1997",
+    "volume": "105",
+    "number": "1",
+    "pages": "1--29",
+    "doi": "10.1086/262063",
+    "key": "aghiontirole1997",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "03-decisions.md",
+      "08-governance-and-accountability.md"
+    ],
+    "heading": "Aghion and Tirole (1997)",
+    "anchor": "aghion-and-tirole-1997"
+  },
+  {
+    "author": "Joseph, John and Gaba, Vibha",
+    "title": "Organizational Structure, Information Processing, and Decision-Making: A Retrospective and Road Map for Research",
+    "journal": "Academy of Management Annals",
+    "year": "2020",
+    "volume": "14",
+    "number": "1",
+    "pages": "267--302",
+    "doi": "10.5465/annals.2017.0103",
+    "key": "josephgaba2020",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "03-decisions.md"
+    ],
+    "heading": "Joseph and Gaba (2020)",
+    "anchor": "joseph-and-gaba-2020"
+  },
+  {
+    "author": "Boudreau, Marie-Claude and Robey, Daniel",
+    "title": "Enacting Integrated Information Technology: A Human Agency Perspective",
+    "journal": "Organization Science",
+    "year": "2005",
+    "volume": "16",
+    "number": "1",
+    "pages": "3--18",
+    "doi": "10.1287/orsc.1040.0103",
+    "key": "boudreaurobey2005",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "04-implementation.md"
+    ],
+    "heading": "Boudreau and Robey (2005)",
+    "anchor": "boudreau-and-robey-2005"
+  },
+  {
+    "author": "Robey, Daniel and Ross, Jeanne W. and Boudreau, Marie-Claude",
+    "title": "Learning to Implement Enterprise Systems: An Exploratory Study of the Dialectics of Change",
+    "journal": "Journal of Management Information Systems",
+    "year": "2002",
+    "volume": "19",
+    "number": "1",
+    "pages": "17--46",
+    "doi": "10.1080/07421222.2002.11045713",
+    "key": "robeyrossboudreau2002",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "04-implementation.md"
+    ],
+    "heading": "Robey et al. (2002)",
+    "anchor": "robey-et-al-2002"
+  },
+  {
+    "author": "Volkoff, Olga and Strong, Diane M. and Elmes, Michael B.",
+    "title": "Understanding Enterprise Systems-Enabled Integration",
+    "journal": "European Journal of Information Systems",
+    "year": "2005",
+    "volume": "14",
+    "number": "2",
+    "pages": "110--120",
+    "doi": "10.1057/palgrave.ejis.3000528",
+    "key": "volkoffstrongelemes2005",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "04-implementation.md"
+    ],
+    "heading": "Volkoff et al. (2005)",
+    "anchor": "volkoff-et-al-2005"
+  },
+  {
+    "author": "Shang, Shari and Seddon, Peter B.",
+    "title": "Assessing and Managing the Benefits of Enterprise Systems: The Business Manager's Perspective",
+    "journal": "Information Systems Journal",
+    "year": "2002",
+    "volume": "12",
+    "number": "4",
+    "pages": "271--299",
+    "doi": "10.1046/j.1365-2575.2002.00132.x",
+    "key": "shangseddon2002",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "04-implementation.md"
+    ],
+    "heading": "Shang and Seddon (2002)",
+    "anchor": "shang-and-seddon-2002"
+  },
+  {
+    "author": "Brehm, Lars and Heinzl, Armin and Markus, M. Lynne",
+    "title": "Tailoring ERP Systems: A Spectrum of Choices and Their Implications",
+    "booktitle": "Proceedings of the 34th Annual Hawaii International Conference on System Sciences",
+    "year": "2001",
+    "doi": "10.1109/HICSS.2001.927130",
+    "key": "brehmheinzlmarkus2001",
+    "type": "inproceedings",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "04-implementation.md"
+    ],
+    "heading": "Brehm et al. (2001)",
+    "anchor": "brehm-et-al-2001"
+  },
+  {
+    "author": "Orlikowski, Wanda J.",
+    "title": "The Duality of Technology: Rethinking the Concept of Technology in Organizations",
+    "journal": "Organization Science",
+    "year": "1992",
+    "volume": "3",
+    "number": "3",
+    "pages": "398--427",
+    "doi": "10.1287/orsc.3.3.398",
+    "key": "orlikowski1992",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "06-technology-in-practice.md"
+    ],
+    "heading": "Orlikowski (1992)",
+    "anchor": "orlikowski-1992"
+  },
+  {
+    "author": "Orlikowski, Wanda J.",
+    "title": "Using Technology and Constituting Structures: A Practice Lens for Studying Technology in Organizations",
+    "journal": "Organization Science",
+    "year": "2000",
+    "volume": "11",
+    "number": "4",
+    "pages": "404--428",
+    "doi": "10.1287/orsc.11.4.404.14600",
+    "key": "orlikowski2000",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "06-technology-in-practice.md"
+    ],
+    "heading": "Orlikowski (2000)",
+    "anchor": "orlikowski-2000"
+  },
+  {
+    "author": "Orlikowski, Wanda J.",
+    "title": "Sociomaterial Practices: Exploring Technology at Work",
+    "journal": "Organization Studies",
+    "year": "2007",
+    "volume": "28",
+    "number": "9",
+    "pages": "1435--1448",
+    "doi": "10.1177/0170840607081138",
+    "key": "orlikowski2007",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "06-technology-in-practice.md"
+    ],
+    "heading": "Orlikowski (2007)",
+    "anchor": "orlikowski-2007"
+  },
+  {
+    "author": "Orlikowski, Wanda J. and Scott, Susan V.",
+    "title": "Sociomateriality: Challenging the Separation of Technology, Work and Organization",
+    "journal": "Academy of Management Annals",
+    "year": "2008",
+    "volume": "2",
+    "number": "1",
+    "pages": "433--474",
+    "doi": "10.1080/19416520802211644",
+    "key": "orlikowskiscott2008",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "06-technology-in-practice.md"
+    ],
+    "heading": "Orlikowski and Scott (2008)",
+    "anchor": "orlikowski-and-scott-2008"
+  },
+  {
+    "author": "Markus, M. Lynne and Silver, Mark S.",
+    "title": "A Foundation for the Study of IT Effects: A New Look at DeSanctis and Poole's Concepts of Structural Features and Spirit",
+    "journal": "Journal of the Association for Information Systems",
+    "year": "2008",
+    "volume": "9",
+    "number": "10",
+    "doi": "10.17705/1jais.00176",
+    "key": "markussilver2008",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "06-technology-in-practice.md"
+    ],
+    "heading": "Markus and Silver (2008)",
+    "anchor": "markus-and-silver-2008"
+  },
+  {
+    "author": "Feldman, Martha S. and Pentland, Brian T.",
+    "title": "Reconceptualizing Organizational Routines as a Source of Flexibility and Change",
+    "journal": "Administrative Science Quarterly",
+    "year": "2003",
+    "volume": "48",
+    "number": "1",
+    "pages": "94--118",
+    "doi": "10.2307/3556620",
+    "key": "feldmanpentland2003",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "05-routines.md"
+    ],
+    "heading": "Feldman and Pentland (2003)",
+    "anchor": "feldman-and-pentland-2003"
+  },
+  {
+    "author": "Leonardi, Paul M.",
+    "title": "When Flexible Routines Meet Flexible Technologies: Affordance, Constraint, and the Imbrication of Human and Material Agencies",
+    "journal": "MIS Quarterly",
+    "year": "2011",
+    "volume": "35",
+    "number": "1",
+    "pages": "147--167",
+    "doi": "10.2307/23043493",
+    "key": "leonardi2011",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "06-technology-in-practice.md"
+    ],
+    "heading": "Leonardi (2011)",
+    "anchor": "leonardi-2011"
+  },
+  {
+    "author": "Volkoff, Olga and Strong, Diane M.",
+    "title": "Critical Realism and Affordances: Theorizing IT-Associated Organizational Change Processes",
+    "journal": "MIS Quarterly",
+    "year": "2013",
+    "volume": "37",
+    "number": "3",
+    "pages": "819--834",
+    "doi": "10.25300/MISQ/2013/37.3.07",
+    "key": "volkoffstrong2013",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "06-technology-in-practice.md"
+    ],
+    "heading": "Volkoff and Strong (2013)",
+    "anchor": "volkoff-and-strong-2013"
+  },
+  {
+    "author": "Strong, Diane M. and Volkoff, Olga and Johnson, Sharon A. and Pelletier, Lori R. and Tulu, Bengisu and Bar-On, Isa and Trudel, John and Garber, Lawrence",
+    "title": "A Theory of Organization-EHR Affordance Actualization",
+    "journal": "Journal of the Association for Information Systems",
+    "year": "2014",
+    "volume": "15",
+    "number": "2",
+    "doi": "10.17705/1jais.00353",
+    "key": "strongetal2014",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "06-technology-in-practice.md"
+    ],
+    "heading": "Strong et al. (2014)",
+    "anchor": "strong-et-al-2014"
+  },
+  {
+    "author": "Mutch, Alistair",
+    "title": "Sociomateriality: Taking the Wrong Turning?",
+    "journal": "Information and Organization",
+    "year": "2013",
+    "volume": "23",
+    "number": "1",
+    "pages": "28--40",
+    "doi": "10.1016/j.infoandorg.2013.02.001",
+    "key": "mutch2013",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "06-technology-in-practice.md"
+    ],
+    "heading": "Mutch (2013)",
+    "anchor": "mutch-2013"
+  },
+  {
+    "author": "Leonardi, Paul M.",
+    "title": "Theoretical Foundations for the Study of Sociomateriality",
+    "journal": "Information and Organization",
+    "year": "2013",
+    "volume": "23",
+    "number": "2",
+    "pages": "59--76",
+    "doi": "10.1016/j.infoandorg.2013.02.002",
+    "key": "leonardi2013",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "06-technology-in-practice.md"
+    ],
+    "heading": "Leonardi (2013)",
+    "anchor": "leonardi-2013"
+  },
+  {
+    "author": "Rivkin, Jan W. and Siggelkow, Nicolaj",
+    "title": "Balancing Search and Stability: Interdependencies Among Elements of Organizational Design",
+    "journal": "Management Science",
+    "year": "2003",
+    "volume": "49",
+    "number": "3",
+    "pages": "290--311",
+    "doi": "10.1287/mnsc.49.3.290.12740",
+    "key": "rivkinsiggelkow2003",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "01-organisation-design.md"
+    ],
+    "heading": "Rivkin and Siggelkow (2003)",
+    "anchor": "rivkin-and-siggelkow-2003"
+  },
+  {
+    "author": "Ethiraj, Sendil K. and Levinthal, Daniel",
+    "title": "Modularity and Innovation in Complex Systems",
+    "journal": "Management Science",
+    "year": "2004",
+    "volume": "50",
+    "number": "2",
+    "pages": "159--173",
+    "doi": "10.1287/mnsc.1030.0145",
+    "key": "ethirajlevinthal2004",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "01-organisation-design.md"
+    ],
+    "heading": "Ethiraj and Levinthal (2004)",
+    "anchor": "ethiraj-and-levinthal-2004"
+  },
+  {
+    "author": "Gittell, Jody Hoffer",
+    "title": "Coordinating Mechanisms in Care Provider Groups: Relational Coordination as a Mediator and Input Uncertainty as a Moderator of Performance Effects",
+    "journal": "Management Science",
+    "year": "2002",
+    "volume": "48",
+    "number": "11",
+    "pages": "1408--1426",
+    "doi": "10.1287/mnsc.48.11.1408.268",
+    "key": "gittell2002",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "02-coordination.md"
+    ],
+    "heading": "Gittell (2002)",
+    "anchor": "gittell-2002"
+  },
+  {
+    "author": "Faraj, Samer and Xiao, Yan",
+    "title": "Coordination in Fast-Response Organizations",
+    "journal": "Management Science",
+    "year": "2006",
+    "volume": "52",
+    "number": "8",
+    "pages": "1155--1169",
+    "doi": "10.1287/mnsc.1060.0526",
+    "key": "farajxiao2006",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "02-coordination.md"
+    ],
+    "heading": "Faraj and Xiao (2006)",
+    "anchor": "faraj-and-xiao-2006"
+  },
+  {
+    "author": "Gulati, Ranjay and Puranam, Phanish",
+    "title": "Renewal Through Reorganization: The Value of Inconsistencies Between Formal and Informal Organization",
+    "journal": "Organization Science",
+    "year": "2009",
+    "volume": "20",
+    "number": "2",
+    "pages": "422--440",
+    "doi": "10.1287/orsc.1090.0421",
+    "key": "gulatipuranam2009",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "01-organisation-design.md"
+    ],
+    "heading": "Gulati and Puranam (2009)",
+    "anchor": "gulati-and-puranam-2009"
+  },
+  {
+    "author": "Puranam, Phanish and Alexy, Oliver and Reitzig, Markus",
+    "title": "What's ``New'' About New Forms of Organizing?",
+    "journal": "Academy of Management Review",
+    "year": "2014",
+    "volume": "39",
+    "number": "2",
+    "pages": "162--180",
+    "doi": "10.5465/amr.2011.0436",
+    "key": "puranam2014",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "01-organisation-design.md"
+    ],
+    "heading": "Puranam et al. (2014)",
+    "anchor": "puranam-et-al-2014"
+  },
+  {
+    "author": "Burton, Richard M. and Obel, Børge",
+    "title": "The Science of Organizational Design: Fit between Structure and Coordination",
+    "journal": "Journal of Organization Design",
+    "year": "2018",
+    "volume": "7",
+    "number": "1",
+    "pages": "5",
+    "doi": "10.1186/s41469-018-0029-2",
+    "key": "burtonobel2018",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "01-organisation-design.md"
+    ],
+    "heading": "Burton and Obel (2018)",
+    "anchor": "burton-and-obel-2018"
+  },
+  {
+    "author": "Faraj, Samer and Sproull, Lee",
+    "title": "Coordinating Expertise in Software Development Teams",
+    "journal": "Management Science",
+    "year": "2000",
+    "volume": "46",
+    "number": "12",
+    "pages": "1554--1568",
+    "doi": "10.1287/mnsc.46.12.1554.12072",
+    "key": "farajsproull2000",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "02-coordination.md"
+    ],
+    "heading": "Faraj and Sproull (2000)",
+    "anchor": "faraj-and-sproull-2000"
+  },
+  {
+    "author": "Carlile, Paul R.",
+    "title": "Transferring, Translating, and Transforming: An Integrative Framework for Managing Knowledge Across Boundaries",
+    "journal": "Organization Science",
+    "year": "2004",
+    "volume": "15",
+    "number": "5",
+    "pages": "555--568",
+    "doi": "10.1287/orsc.1040.0094",
+    "key": "carlile2004",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "02-coordination.md"
+    ],
+    "heading": "Carlile (2004)",
+    "anchor": "carlile-2004"
+  },
+  {
+    "author": "Jarzabkowski, Paula A. and Lê, Jane K. and Feldman, Martha S.",
+    "title": "Toward a Theory of Coordinating: Creating Coordinating Mechanisms in Practice",
+    "journal": "Organization Science",
+    "year": "2012",
+    "volume": "23",
+    "number": "4",
+    "pages": "907--927",
+    "doi": "10.1287/orsc.1110.0693",
+    "key": "jarzabkowskilefeldman2012",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "02-coordination.md"
+    ],
+    "heading": "Jarzabkowski et al. (2012)",
+    "anchor": "jarzabkowski-et-al-2012"
+  },
+  {
+    "author": "Feldman, Martha S.",
+    "title": "Organizational Routines as a Source of Continuous Change",
+    "journal": "Organization Science",
+    "year": "2000",
+    "volume": "11",
+    "number": "6",
+    "pages": "611--629",
+    "doi": "10.1287/orsc.11.6.611.12529",
+    "key": "feldman2000",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "05-routines.md"
+    ],
+    "heading": "Feldman (2000)",
+    "anchor": "feldman-2000"
+  },
+  {
+    "author": "Pentland, Brian T. and Feldman, Martha S.",
+    "title": "Organizational Routines as a Unit of Analysis",
+    "journal": "Industrial and Corporate Change",
+    "year": "2005",
+    "volume": "14",
+    "number": "5",
+    "pages": "793--815",
+    "doi": "10.1093/icc/dth070",
+    "key": "pentlandfeldman2005",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "05-routines.md"
+    ],
+    "heading": "Pentland and Feldman (2005)",
+    "anchor": "pentland-and-feldman-2005"
+  },
+  {
+    "author": "Howard-Grenville, Jennifer A.",
+    "title": "The Persistence of Flexible Organizational Routines: The Role of Agency and Organizational Context",
+    "journal": "Organization Science",
+    "year": "2005",
+    "volume": "16",
+    "number": "6",
+    "pages": "618--636",
+    "doi": "10.1287/orsc.1050.0150",
+    "key": "howardgrenville2005",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "05-routines.md"
+    ],
+    "heading": "Howard-Grenville (2005)",
+    "anchor": "howard-grenville-2005"
+  },
+  {
+    "author": "D'Adderio, Luciana",
+    "title": "The Performativity of Routines: Theorising the Influence of Artefacts and Distributed Agencies on Routines Dynamics",
+    "journal": "Research Policy",
+    "year": "2008",
+    "volume": "37",
+    "number": "5",
+    "pages": "769--789",
+    "doi": "10.1016/j.respol.2007.12.012",
+    "key": "dadderio2008",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "05-routines.md"
+    ],
+    "heading": "D'Adderio (2008)",
+    "anchor": "d-adderio-2008"
+  },
+  {
+    "author": "Pentland, Brian T. and Feldman, Martha S.",
+    "title": "Designing Routines: On the Folly of Designing Artifacts, while Hoping for Patterns of Action",
+    "journal": "Information and Organization",
+    "year": "2008",
+    "volume": "18",
+    "number": "4",
+    "pages": "235--250",
+    "doi": "10.1016/j.infoandorg.2008.08.001",
+    "key": "pentlandfeldman2008",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "05-routines.md"
+    ],
+    "heading": "Pentland and Feldman (2008)",
+    "anchor": "pentland-and-feldman-2008"
+  },
+  {
+    "author": "D'Adderio, Luciana",
+    "title": "Artifacts at the Centre of Routines: Performing the Material Turn in Routines Theory",
+    "journal": "Journal of Institutional Economics",
+    "year": "2011",
+    "volume": "7",
+    "number": "2",
+    "pages": "197--230",
+    "doi": "10.1017/S174413741000024X",
+    "key": "dadderio2011",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "05-routines.md"
+    ],
+    "heading": "D'Adderio (2011)",
+    "anchor": "d-adderio-2011"
+  },
+  {
+    "author": "Parmigiani, Anne and Howard-Grenville, Jennifer",
+    "title": "Routines Revisited: Exploring the Capabilities and Practice Perspectives",
+    "journal": "Academy of Management Annals",
+    "year": "2011",
+    "volume": "5",
+    "number": "1",
+    "pages": "413--453",
+    "doi": "10.1080/19416520.2011.589143",
+    "key": "parmigianihowardgrenville2011",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "05-routines.md"
+    ],
+    "heading": "Parmigiani and Howard-Grenville (2011)",
+    "anchor": "parmigiani-and-howard-grenville-2011"
+  },
+  {
+    "author": "Cacciatori, Eugenia",
+    "title": "Resolving Conflict in Problem-Solving: Systems of Artefacts in the Development of New Routines",
+    "journal": "Journal of Management Studies",
+    "year": "2012",
+    "volume": "49",
+    "number": "8",
+    "pages": "1559--1585",
+    "doi": "10.1111/j.1467-6486.2012.01065.x",
+    "key": "cacciatori2012",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "05-routines.md"
+    ],
+    "heading": "Cacciatori (2012)",
+    "anchor": "cacciatori-2012"
+  },
+  {
+    "author": "Sele, Kathrin and Grand, Simon",
+    "title": "Unpacking the Dynamics of Ecologies of Routines: Mediators and Their Generative Effects in Routine Interactions",
+    "journal": "Organization Science",
+    "year": "2016",
+    "volume": "27",
+    "number": "3",
+    "pages": "722--738",
+    "doi": "10.1287/orsc.2015.1031",
+    "key": "selegrand2016",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "05-routines.md"
+    ],
+    "heading": "Sele and Grand (2016)",
+    "anchor": "sele-and-grand-2016"
+  },
+  {
+    "author": "Pentland, Brian T. and Hærem, Thorvald",
+    "title": "Organizational Routines as Patterns of Action: Implications for Organizational Behavior",
+    "journal": "Annual Review of Organizational Psychology and Organizational Behavior",
+    "year": "2015",
+    "volume": "2",
+    "pages": "465--487",
+    "doi": "10.1146/annurev-orgpsych-032414-111412",
+    "key": "pentlandhaerem2015",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "05-routines.md"
+    ],
+    "heading": "Pentland and Hærem (2015)",
+    "anchor": "pentland-and-h-rem-2015"
+  },
+  {
+    "author": "Thompson, James D.",
+    "title": "Organizations in Action: Social Science Bases of Administrative Theory",
+    "year": "1967",
+    "publisher": "McGraw-Hill",
+    "address": "New York",
+    "key": "thompson1967",
+    "type": "book",
+    "metadata_status": "Edition details carried forward; not independently verified in this update",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "01-organisation-design.md"
+    ],
+    "heading": "Thompson (1967)",
+    "anchor": "thompson-1967"
+  },
+  {
+    "author": "Galbraith, Jay R.",
+    "title": "Designing Complex Organizations",
+    "year": "1973",
+    "publisher": "Addison-Wesley",
+    "address": "Reading, MA",
+    "key": "galbraith1973",
+    "type": "book",
+    "metadata_status": "Edition details carried forward; not independently verified in this update",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "01-organisation-design.md"
+    ],
+    "heading": "Galbraith (1973)",
+    "anchor": "galbraith-1973"
+  },
+  {
+    "author": "Galbraith, Jay R.",
+    "title": "Organization Design",
+    "year": "1977",
+    "publisher": "Addison-Wesley",
+    "address": "Reading, MA",
+    "key": "galbraith1977",
+    "type": "book",
+    "metadata_status": "Edition details carried forward; not independently verified in this update",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "01-organisation-design.md"
+    ],
+    "heading": "Galbraith (1977)",
+    "anchor": "galbraith-1977"
+  },
+  {
+    "author": "Mintzberg, Henry",
+    "title": "The Structuring of Organizations: A Synthesis of the Research",
+    "year": "1979",
+    "publisher": "Prentice-Hall",
+    "address": "Englewood Cliffs, NJ",
+    "key": "mintzberg1979",
+    "type": "book",
+    "metadata_status": "Edition details carried forward; not independently verified in this update",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "01-organisation-design.md"
+    ],
+    "heading": "Mintzberg (1979)",
+    "anchor": "mintzberg-1979"
+  },
+  {
+    "author": "Simon, Herbert A.",
+    "title": "Administrative Behavior: A Study of Decision-Making Processes in Administrative Organizations",
+    "edition": "4",
+    "year": "1997",
+    "publisher": "Free Press",
+    "address": "New York",
+    "key": "simon1997",
+    "type": "book",
+    "metadata_status": "Edition details carried forward; not independently verified in this update",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "03-decisions.md"
+    ],
+    "heading": "Simon (1997)",
+    "anchor": "simon-1997"
+  },
+  {
+    "author": "March, James G. and Simon, Herbert A.",
+    "title": "Organizations",
+    "edition": "2",
+    "year": "1993",
+    "publisher": "Blackwell",
+    "address": "Cambridge, MA",
+    "key": "marchsimon1993",
+    "type": "book",
+    "metadata_status": "Edition details carried forward; not independently verified in this update",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "03-decisions.md"
+    ],
+    "heading": "March and Simon (1993)",
+    "anchor": "march-and-simon-1993"
+  },
+  {
+    "author": "Nelson, Richard R. and Winter, Sidney G.",
+    "title": "An Evolutionary Theory of Economic Change",
+    "publisher": "Harvard University Press",
+    "address": "Cambridge, MA",
+    "year": "1982",
+    "key": "nelsonwinter1982",
+    "type": "book",
+    "metadata_status": "Edition details carried forward; not independently verified in this update",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "05-routines.md"
+    ],
+    "heading": "Nelson and Winter (1982)",
+    "anchor": "nelson-and-winter-1982"
+  },
+  {
+    "author": "Markus, M. Lynne and Tanis, Cornelis",
+    "title": "The Enterprise Systems Experience: From Adoption to Success",
+    "booktitle": "Framing the Domains of IT Management: Projecting the Future Through the Past",
+    "editor": "Zmud, Robert W.",
+    "year": "2000",
+    "publisher": "Pinnaflex Educational Resources",
+    "address": "Cincinnati, OH",
+    "pages": "173--207",
+    "key": "markustanis2000",
+    "type": "incollection",
+    "metadata_status": "Edition details carried forward; not independently verified in this update",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "04-implementation.md"
+    ],
+    "heading": "Markus and Tanis (2000)",
+    "anchor": "markus-and-tanis-2000"
+  },
+  {
+    "author": "Star, Susan Leigh and Ruhleder, Karen",
+    "title": "Steps Toward an Ecology of Infrastructure: Design and Access for Large Information Spaces",
+    "journal": "Information Systems Research",
+    "year": "1996",
+    "volume": "7",
+    "number": "1",
+    "pages": "111--134",
+    "doi": "10.1287/isre.7.1.111",
+    "key": "starruhleder1996",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "Publisher abstract consulted; no new full-text inspection recorded.",
+    "chapters": [
+      "07-infrastructure-and-standards.md"
+    ],
+    "heading": "Star and Ruhleder (1996)",
+    "anchor": "star-and-ruhleder-1996"
+  },
+  {
+    "author": "Bowker, Geoffrey C. and Star, Susan Leigh",
+    "title": "Sorting Things Out: Classification and Its Consequences",
+    "year": "1999",
+    "publisher": "MIT Press",
+    "address": "Cambridge, MA",
+    "key": "bowkerstar1999",
+    "type": "book",
+    "metadata_status": "Edition details carried forward; not independently verified in this update",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "07-infrastructure-and-standards.md"
+    ],
+    "heading": "Bowker and Star (1999)",
+    "anchor": "bowker-and-star-1999"
+  },
+  {
+    "author": "Hanseth, Ole and Lyytinen, Kalle",
+    "title": "Design Theory for Dynamic Complexity in Information Infrastructures: The Case of Building Internet",
+    "journal": "Journal of Information Technology",
+    "year": "2010",
+    "volume": "25",
+    "number": "1",
+    "pages": "1--19",
+    "doi": "10.1057/jit.2009.19",
+    "key": "hansethlyytinen2010",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "07-infrastructure-and-standards.md"
+    ],
+    "heading": "Hanseth and Lyytinen (2010)",
+    "anchor": "hanseth-and-lyytinen-2010"
+  },
+  {
+    "author": "Hanseth, Ole and Monteiro, Eric and Hatling, Morten",
+    "title": "Developing Information Infrastructure: The Tension Between Standardization and Flexibility",
+    "journal": "Science, Technology, & Human Values",
+    "year": "1996",
+    "volume": "21",
+    "number": "4",
+    "pages": "407--426",
+    "doi": "10.1177/016224399602100402",
+    "key": "hansethmonteirohatling1996",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "07-infrastructure-and-standards.md"
+    ],
+    "heading": "Hanseth et al. (1996)",
+    "anchor": "hanseth-et-al-1996"
+  },
+  {
+    "author": "Tilson, David and Lyytinen, Kalle and Sørensen, Carsten",
+    "title": "Digital Infrastructures: The Missing IS Research Agenda",
+    "journal": "Information Systems Research",
+    "year": "2010",
+    "volume": "21",
+    "number": "4",
+    "pages": "748--759",
+    "doi": "10.1287/isre.1100.0318",
+    "key": "tilson2010",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [],
+    "heading": "Tilson et al. (2010)",
+    "anchor": "tilson-et-al-2010"
+  },
+  {
+    "author": "Edwards, Paul N. and Bowker, Geoffrey C. and Jackson, Steven J. and Williams, Robin",
+    "title": "Introduction: An Agenda for Infrastructure Studies",
+    "journal": "Journal of the Association for Information Systems",
+    "year": "2009",
+    "volume": "10",
+    "number": "5",
+    "pages": "364--374",
+    "doi": "10.17705/1jais.00200",
+    "key": "edwardsetal2009",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "07-infrastructure-and-standards.md"
+    ],
+    "heading": "Edwards et al. (2009)",
+    "anchor": "edwards-et-al-2009"
+  },
+  {
+    "author": "Yoo, Youngjin and Henfridsson, Ola and Lyytinen, Kalle",
+    "title": "The New Organizing Logic of Digital Innovation: An Agenda for Information Systems Research",
+    "journal": "Information Systems Research",
+    "year": "2010",
+    "volume": "21",
+    "number": "4",
+    "pages": "724--735",
+    "doi": "10.1287/isre.1100.0322",
+    "key": "yooetal2010",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "07-infrastructure-and-standards.md"
+    ],
+    "heading": "Yoo et al. (2010)",
+    "anchor": "yoo-et-al-2010"
+  },
+  {
+    "author": "Timmermans, Stefan and Epstein, Steven",
+    "title": "A World of Standards but Not a Standard World: Toward a Sociology of Standards and Standardization",
+    "journal": "Annual Review of Sociology",
+    "year": "2010",
+    "volume": "36",
+    "pages": "69--89",
+    "doi": "10.1146/annurev.soc.012809.102629",
+    "key": "timmermansepstein2010",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "07-infrastructure-and-standards.md"
+    ],
+    "heading": "Timmermans and Epstein (2010)",
+    "anchor": "timmermans-and-epstein-2010"
+  },
+  {
+    "author": "Monteiro, Eric and Pollock, Neil and Hanseth, Ole and Williams, Robin",
+    "title": "From Artefacts to Infrastructures",
+    "journal": "Computer Supported Cooperative Work",
+    "year": "2013",
+    "volume": "22",
+    "number": "4--6",
+    "pages": "575--607",
+    "doi": "10.1007/s10606-012-9167-1",
+    "key": "monteiroetal2013",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "07-infrastructure-and-standards.md"
+    ],
+    "heading": "Monteiro et al. (2013)",
+    "anchor": "monteiro-et-al-2013"
+  },
+  {
+    "author": "Henfridsson, Ola and Bygstad, Bendik",
+    "title": "The Generative Mechanisms of Digital Infrastructure Evolution",
+    "journal": "MIS Quarterly",
+    "year": "2013",
+    "volume": "37",
+    "number": "3",
+    "pages": "907--931",
+    "doi": "10.25300/MISQ/2013/37.3.11",
+    "key": "henfridssonbygstad2013",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "07-infrastructure-and-standards.md"
+    ],
+    "heading": "Henfridsson and Bygstad (2013)",
+    "anchor": "henfridsson-and-bygstad-2013"
+  },
+  {
+    "author": "Plantin, Jean-Christophe and Lagoze, Carl and Edwards, Paul N. and Sandvig, Christian",
+    "title": "Infrastructure Studies Meet Platform Studies in the Age of Google and Facebook",
+    "journal": "New Media & Society",
+    "year": "2018",
+    "volume": "20",
+    "number": "1",
+    "pages": "293--310",
+    "doi": "10.1177/1461444816661553",
+    "key": "plantinetal2018",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "07-infrastructure-and-standards.md"
+    ],
+    "heading": "Plantin et al. (2018)",
+    "anchor": "plantin-et-al-2018"
+  },
+  {
+    "author": "Ouchi, William G.",
+    "title": "A Conceptual Framework for the Design of Organizational Control Mechanisms",
+    "journal": "Management Science",
+    "year": "1979",
+    "volume": "25",
+    "number": "9",
+    "pages": "833--848",
+    "doi": "10.1287/mnsc.25.9.833",
+    "key": "ouchi1979",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "08-governance-and-accountability.md"
+    ],
+    "heading": "Ouchi (1979)",
+    "anchor": "ouchi-1979"
+  },
+  {
+    "author": "Eisenhardt, Kathleen M.",
+    "title": "Control: Organizational and Economic Approaches",
+    "journal": "Management Science",
+    "year": "1985",
+    "volume": "31",
+    "number": "2",
+    "pages": "134--149",
+    "doi": "10.1287/mnsc.31.2.134",
+    "key": "eisenhardt1985",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "08-governance-and-accountability.md"
+    ],
+    "heading": "Eisenhardt (1985)",
+    "anchor": "eisenhardt-1985"
+  },
+  {
+    "author": "Kirsch, Laurie J.",
+    "title": "The Management of Complex Tasks in Organizations: Controlling the Systems Development Process",
+    "journal": "Organization Science",
+    "year": "1996",
+    "volume": "7",
+    "number": "1",
+    "pages": "1--21",
+    "doi": "10.1287/orsc.7.1.1",
+    "key": "kirsch1996",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "08-governance-and-accountability.md"
+    ],
+    "heading": "Kirsch (1996)",
+    "anchor": "kirsch-1996"
+  },
+  {
+    "author": "Kirsch, Laurie S.",
+    "title": "Portfolios of Control Modes and IS Project Management",
+    "journal": "Information Systems Research",
+    "year": "1997",
+    "volume": "8",
+    "number": "3",
+    "pages": "215--239",
+    "doi": "10.1287/isre.8.3.215",
+    "key": "kirsch1997",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "Publisher abstract consulted; no new full-text inspection recorded.",
+    "chapters": [
+      "08-governance-and-accountability.md"
+    ],
+    "heading": "Kirsch (1997)",
+    "anchor": "kirsch-1997"
+  },
+  {
+    "author": "Jensen, Michael C. and Meckling, William H.",
+    "title": "Specific and General Knowledge, and Organizational Structure",
+    "journal": "Journal of Applied Corporate Finance",
+    "year": "1995",
+    "volume": "8",
+    "number": "2",
+    "pages": "4--18",
+    "doi": "10.1111/j.1745-6622.1995.tb00283.x",
+    "key": "jensenmeckling1995",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "08-governance-and-accountability.md"
+    ],
+    "heading": "Jensen and Meckling (1995)",
+    "anchor": "jensen-and-meckling-1995"
+  },
+  {
+    "author": "Bovens, Mark",
+    "title": "Analysing and Assessing Accountability: A Conceptual Framework",
+    "journal": "European Law Journal",
+    "year": "2007",
+    "volume": "13",
+    "number": "4",
+    "pages": "447--468",
+    "doi": "10.1111/j.1468-0386.2007.00378.x",
+    "key": "bovens2007",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "Publisher abstract consulted; no new full-text inspection recorded.",
+    "chapters": [
+      "08-governance-and-accountability.md"
+    ],
+    "heading": "Bovens (2007)",
+    "anchor": "bovens-2007"
+  },
+  {
+    "author": "Lindberg, Staffan I.",
+    "title": "Mapping Accountability: Core Concept and Subtypes",
+    "journal": "International Review of Administrative Sciences",
+    "year": "2013",
+    "volume": "79",
+    "number": "2",
+    "pages": "202--226",
+    "doi": "10.1177/0020852313477761",
+    "key": "lindberg2013",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "08-governance-and-accountability.md"
+    ],
+    "heading": "Lindberg (2013)",
+    "anchor": "lindberg-2013"
+  },
+  {
+    "author": "Curtis, Bill and Kellner, Marc I. and Over, Jim",
+    "title": "Process Modeling",
+    "journal": "Communications of the ACM",
+    "year": "1992",
+    "volume": "35",
+    "number": "9",
+    "pages": "75--90",
+    "doi": "10.1145/130994.130998",
+    "key": "curtisetal1992",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "09-process-architecture.md"
+    ],
+    "heading": "Curtis et al. (1992)",
+    "anchor": "curtis-et-al-1992"
+  },
+  {
+    "author": "van der Aalst, Wil M. P.",
+    "title": "Business Process Management: A Comprehensive Survey",
+    "journal": "ISRN Software Engineering",
+    "year": "2013",
+    "pages": "1--37",
+    "doi": "10.1155/2013/507984",
+    "key": "vanderaalst2013",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "Publication or manuscript passages consulted for this update; not a claim of exhaustive full-text review.",
+    "reading_url": "https://pure.tue.nl/ws/portalfiles/portal/72806486/507984.pdf",
+    "chapters": [
+      "09-process-architecture.md"
+    ],
+    "heading": "van der Aalst (2013)",
+    "anchor": "van-der-aalst-2013"
+  },
+  {
+    "author": "Dumas, Marlon and La Rosa, Marcello and Mendling, Jan and Reijers, Hajo A.",
+    "title": "Fundamentals of Business Process Management",
+    "edition": "2",
+    "publisher": "Springer",
+    "address": "Berlin",
+    "year": "2018",
+    "doi": "10.1007/978-3-662-56509-4",
+    "key": "dumasetal2018",
+    "type": "book",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "09-process-architecture.md"
+    ],
+    "heading": "Dumas et al. (2018)",
+    "anchor": "dumas-et-al-2018"
+  },
+  {
+    "author": "Mendling, Jan and Reijers, Hajo A. and van der Aalst, Wil M. P.",
+    "title": "Seven process modeling guidelines (7PMG)",
+    "journal": "Information and Software Technology",
+    "year": "2010",
+    "volume": "52",
+    "number": "2",
+    "pages": "127--136",
+    "doi": "10.1016/j.infsof.2009.08.004",
+    "key": "mendlingetal2010",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "09-process-architecture.md"
+    ],
+    "heading": "Mendling et al. (2010)",
+    "anchor": "mendling-et-al-2010"
+  },
+  {
+    "author": "Dijkman, Remco M. and Vanderfeesten, Irene T. P. and Reijers, Hajo A.",
+    "title": "Business Process Architectures: Overview, Comparison and Framework",
+    "journal": "Enterprise Information Systems",
+    "year": "2016",
+    "volume": "10",
+    "number": "2",
+    "pages": "129--158",
+    "doi": "10.1080/17517575.2014.928951",
+    "key": "dijkmanetal2016",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "Publication or manuscript passages consulted for this update; not a claim of exhaustive full-text review.",
+    "reading_url": "https://pure.tue.nl/ws/portalfiles/portal/8727921/17517575.2014.pdf",
+    "chapters": [
+      "09-process-architecture.md"
+    ],
+    "heading": "Dijkman et al. (2016)",
+    "anchor": "dijkman-et-al-2016"
+  },
+  {
+    "author": "vom Brocke, Jan and Schmiedel, Theresa and Recker, Jan and Trkman, Peter and Mertens, Willem and Viaene, Stijn",
+    "title": "Ten Principles of Good Business Process Management",
+    "journal": "Business Process Management Journal",
+    "year": "2014",
+    "volume": "20",
+    "number": "4",
+    "pages": "530--548",
+    "doi": "10.1108/BPMJ-06-2013-0074",
+    "key": "vombrockeetal2014",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "09-process-architecture.md"
+    ],
+    "heading": "vom Brocke et al. (2014)",
+    "anchor": "vom-brocke-et-al-2014"
+  },
+  {
+    "author": "Fahland, Dirk and van der Aalst, Wil M. P.",
+    "title": "Model Repair: Aligning Process Models to Reality",
+    "journal": "Information Systems",
+    "year": "2015",
+    "volume": "47",
+    "pages": "220--243",
+    "doi": "10.1016/j.is.2013.12.007",
+    "key": "fahlandvanderaalst2015",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "09-process-architecture.md"
+    ],
+    "heading": "Fahland and van der Aalst (2015)",
+    "anchor": "fahland-and-van-der-aalst-2015"
+  },
+  {
+    "author": "Okhuysen, Gerardo A. and Bechky, Beth A.",
+    "title": "Coordination in Organizations: An Integrative Perspective",
+    "journal": "Academy of Management Annals",
+    "year": "2009",
+    "volume": "3",
+    "number": "1",
+    "pages": "463--502",
+    "doi": "10.5465/19416520903047533",
+    "key": "okhuysenbechky2009",
+    "type": "article",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "No new full-text inspection recorded in this update.",
+    "chapters": [
+      "02-coordination.md"
+    ],
+    "heading": "Okhuysen and Bechky (2009)",
+    "anchor": "okhuysen-and-bechky-2009"
+  },
+  {
+    "doi": "10.5465/amr.2018.0072",
+    "key": "raischkrakowski2021",
+    "type": "article",
+    "title": "Artificial Intelligence and Management: The Automation–Augmentation Paradox",
+    "author": "Raisch, Sebastian and Krakowski, Sebastian",
+    "year": "2021",
+    "journal": "Academy of Management Review",
+    "volume": "46",
+    "number": "1",
+    "pages": "192--210",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "Publisher abstract consulted; no new full-text inspection recorded.",
+    "chapters": [
+      "01-organisation-design.md"
+    ],
+    "heading": "Raisch and Krakowski (2021)",
+    "anchor": "raisch-and-krakowski-2021"
+  },
+  {
+    "doi": "10.1177/0008125619862257",
+    "key": "shresthaetal2019",
+    "type": "article",
+    "title": "Organizational Decision-Making Structures in the Age of Artificial Intelligence",
+    "author": "Shrestha, Yash Raj and Ben-Menahem, Shiko M. and von Krogh, Georg",
+    "year": "2019",
+    "journal": "California Management Review",
+    "volume": "61",
+    "number": "4",
+    "pages": "66--83",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "Publication or manuscript passages consulted for this update; not a claim of exhaustive full-text review.",
+    "reading_url": "https://ethz.ch/content/dam/ethz/special-interest/mtec/strategic-mgmt-and-innovation/img_news/cmr.pdf",
+    "chapters": [
+      "03-decisions.md"
+    ],
+    "heading": "Shrestha et al. (2019)",
+    "anchor": "shrestha-et-al-2019"
+  },
+  {
+    "doi": "10.1016/j.infoandorg.2018.02.005",
+    "key": "farajpachidisayegh2018",
+    "type": "article",
+    "title": "Working and organizing in the age of the learning algorithm",
+    "author": "Faraj, Samer and Pachidi, Stella and Sayegh, Karla",
+    "year": "2018",
+    "journal": "Information and Organization",
+    "volume": "28",
+    "number": "1",
+    "pages": "62--70",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "Publication or manuscript passages consulted for this update; not a claim of exhaustive full-text review.",
+    "reading_url": "https://api.repository.cam.ac.uk/server/api/core/bitstreams/e3c9b466-61c7-464e-a0e9-cccc69208b7c/content",
+    "chapters": [
+      "02-coordination.md"
+    ],
+    "heading": "Faraj et al. (2018)",
+    "anchor": "faraj-et-al-2018"
+  },
+  {
+    "doi": "10.1093/qje/qjae044",
+    "key": "brynjolfssonetal2025",
+    "type": "article",
+    "title": "Generative AI at Work",
+    "author": "Brynjolfsson, Erik and Li, Danielle and Raymond, Lindsey",
+    "year": "2025",
+    "journal": "The Quarterly Journal of Economics",
+    "volume": "140",
+    "number": "2",
+    "pages": "889--942",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "Publication or manuscript passages consulted for this update; not a claim of exhaustive full-text review.",
+    "reading_url": "https://doi.org/10.1093/qje/qjae044",
+    "chapters": [
+      "04-implementation.md"
+    ],
+    "heading": "Brynjolfsson et al. (2025)",
+    "anchor": "brynjolfsson-et-al-2025"
+  },
+  {
+    "doi": "10.1287/orsc.2020.1377",
+    "key": "pachidietal2021",
+    "type": "article",
+    "title": "Make Way for the Algorithms: Symbolic Actions and Change in a Regime of Knowing",
+    "author": "Pachidi, Stella and Berends, Hans and Faraj, Samer and Huysman, Marleen",
+    "year": "2021",
+    "journal": "Organization Science",
+    "volume": "32",
+    "number": "1",
+    "pages": "18--41",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "Publication or manuscript passages consulted for this update; not a claim of exhaustive full-text review.",
+    "reading_url": "https://research.vu.nl/ws/portalfiles/portal/123184593/Make_Way_for_the_Algorithms_Symbolic_Actions_and_Change_in_a_Regime_of_Knowing.pdf",
+    "chapters": [
+      "05-routines.md"
+    ],
+    "heading": "Pachidi et al. (2021)",
+    "anchor": "pachidi-et-al-2021"
+  },
+  {
+    "doi": "10.1145/3449287",
+    "key": "bucincaetal2021",
+    "type": "article",
+    "title": "To Trust or to Think: Cognitive Forcing Functions Can Reduce Overreliance on AI in AI-assisted Decision-making",
+    "author": "Buçinca, Zana and Malaya, Maja Barbara and Gajos, Krzysztof Z.",
+    "year": "2021",
+    "journal": "Proceedings of the ACM on Human-Computer Interaction",
+    "volume": "5",
+    "number": "CSCW1",
+    "pages": "1--21",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "Publication or manuscript passages consulted for this update; not a claim of exhaustive full-text review.",
+    "reading_url": "https://www.eecs.harvard.edu/~kgajos/papers/2021/bucinca21trust.pdf",
+    "note": "Article 188; 21 pages.",
+    "chapters": [
+      "03-decisions.md",
+      "08-governance-and-accountability.md"
+    ],
+    "heading": "Buçinca et al. (2021)",
+    "anchor": "bu-inca-et-al-2021"
+  },
+  {
+    "doi": "10.1145/3411764.3445518",
+    "key": "sambasivanetal2021",
+    "type": "inproceedings",
+    "title": "“Everyone wants to do the model work, not the data work”: Data Cascades in High-Stakes AI",
+    "author": "Sambasivan, Nithya and Kapania, Shivani and Highfill, Hannah and Akrong, Diana and Paritosh, Praveen and Aroyo, Lora M",
+    "year": "2021",
+    "pages": "1--15",
+    "booktitle": "Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "Publication or manuscript passages consulted for this update; not a claim of exhaustive full-text review.",
+    "reading_url": "https://www.shivanikapania.com/assets/chi2021paper.pdf",
+    "chapters": [
+      "07-infrastructure-and-standards.md"
+    ],
+    "heading": "Sambasivan et al. (2021)",
+    "anchor": "sambasivan-et-al-2021"
+  },
+  {
+    "doi": "10.1145/3458723",
+    "key": "gebruetal2021",
+    "type": "article",
+    "title": "Datasheets for datasets",
+    "author": "Gebru, Timnit and Morgenstern, Jamie and Vecchione, Briana and Vaughan, Jennifer Wortman and Wallach, Hanna and Daumé, III, Hal and Crawford, Kate",
+    "year": "2021",
+    "journal": "Communications of the ACM",
+    "volume": "64",
+    "number": "12",
+    "pages": "86--92",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "Expanded author manuscript (arXiv v8, 2021) consulted; journal version is cited.",
+    "reading_url": "https://arxiv.org/pdf/1803.09010",
+    "chapters": [
+      "07-infrastructure-and-standards.md"
+    ],
+    "heading": "Gebru et al. (2021)",
+    "anchor": "gebru-et-al-2021"
+  },
+  {
+    "doi": "10.1145/3287560.3287596",
+    "key": "mitchelletal2019",
+    "type": "inproceedings",
+    "title": "Model Cards for Model Reporting",
+    "author": "Mitchell, Margaret and Wu, Simone and Zaldivar, Andrew and Barnes, Parker and Vasserman, Lucy and Hutchinson, Ben and Spitzer, Elena and Raji, Inioluwa Deborah and Gebru, Timnit",
+    "year": "2019",
+    "pages": "220--229",
+    "booktitle": "Proceedings of the Conference on Fairness, Accountability, and Transparency",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "Author manuscript on arXiv consulted; published proceedings version is cited.",
+    "reading_url": "https://arxiv.org/pdf/1810.03993",
+    "chapters": [
+      "08-governance-and-accountability.md"
+    ],
+    "heading": "Mitchell et al. (2019)",
+    "anchor": "mitchell-et-al-2019"
+  },
+  {
+    "doi": "10.1145/3351095.3372873",
+    "key": "rajietal2020",
+    "type": "inproceedings",
+    "title": "Closing the AI accountability gap: defining an end-to-end framework for internal algorithmic auditing",
+    "author": "Raji, Inioluwa Deborah and Smart, Andrew and White, Rebecca N. and Mitchell, Margaret and Gebru, Timnit and Hutchinson, Ben and Smith-Loud, Jamila and Theron, Daniel and Barnes, Parker",
+    "year": "2020",
+    "pages": "33--44",
+    "booktitle": "Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "Author manuscript on arXiv consulted; published proceedings version is cited.",
+    "reading_url": "https://arxiv.org/pdf/2001.00973",
+    "chapters": [
+      "08-governance-and-accountability.md"
+    ],
+    "heading": "Raji et al. (2020)",
+    "anchor": "raji-et-al-2020"
+  },
+  {
+    "doi": "10.5465/annals.2018.0174",
+    "key": "kelloggetal2020",
+    "type": "article",
+    "title": "Algorithms at Work: The New Contested Terrain of Control",
+    "author": "Kellogg, Katherine C. and Valentine, Melissa A. and Christin, Angèle",
+    "year": "2020",
+    "journal": "Academy of Management Annals",
+    "volume": "14",
+    "number": "1",
+    "pages": "366--410",
+    "metadata_status": "Crossref record checked, 8 November 2026",
+    "access": "Publication or manuscript passages consulted for this update; not a claim of exhaustive full-text review.",
+    "reading_url": "https://angelechristin.com/wp-content/uploads/2020/01/Algorithms-at-Work_Annals.pdf",
+    "chapters": [
+      "06-technology-in-practice.md",
+      "08-governance-and-accountability.md"
+    ],
+    "heading": "Kellogg et al. (2020)",
+    "anchor": "kellogg-et-al-2020"
+  },
+  {
+    "key": "vidgofetal2023",
+    "type": "misc",
+    "author": "Vidgof, Maxim and Bachhofner, Stefan and Mendling, Jan",
+    "year": "2023",
+    "title": "Large Language Models for Business Process Management: Opportunities and Challenges",
+    "eprint": "2304.04309",
+    "archiveprefix": "arXiv",
+    "url": "https://arxiv.org/abs/2304.04309",
+    "reading_url": "https://arxiv.org/pdf/2304.04309",
+    "metadata_status": "arXiv author record checked, 8 November 2026",
+    "access": "Author manuscript v1 (9 April 2023) consulted; cited here as a preprint, not a validated deployment study.",
+    "chapters": [
+      "09-process-architecture.md"
+    ],
+    "heading": "Vidgof et al. (2023)",
+    "anchor": "vidgof-et-al-2023"
+  }
+]

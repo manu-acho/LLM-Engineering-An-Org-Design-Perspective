@@ -6,6 +6,8 @@ AI engineering concerns how to build a system that can perform selected parts of
 
 You do not need to arrive knowing Python, statistics, cloud computing or machine learning. When an unfamiliar term is needed, a lesson introduces it before relying on it. Some concepts take several encounters. Being able to repeat a definition is different from being able to trace an example; the worked lessons are there to support that second step.
 
+[Meet Harbour](HARBOUR.md) introduces the fictional business case. The first concept lesson explains next-word prediction without code, and the [notebook guide](notebooks/README.md) shows how to run the 14 companion workshops without an API key.
+
 ## Inspired by Ed Donner's LLM Engineering course
 
 This guide is inspired by and builds on [Ed Donner's LLM Engineering course](https://github.com/ed-donner/llm_engineering). His course provides the engineering foundation: a practical sequence of notebooks and projects covering model requests, conversation and tools, open models, evaluation, retrieval, training and agents. The first eight modules here follow that broad progression. Credit for the original course, its projects and its implementation examples belongs to Ed and the contributors credited in his repository.
@@ -14,7 +16,7 @@ This guide develops that foundation in three connected ways:
 
 - **Step-by-step explanations of concepts and code.** Concepts are introduced in ordinary language. Small code examples explain what enters a program, what each important instruction does, what comes back and how it can fail. Alternatives help show why a pattern might be useful and when a simpler approach would do.
 - **A connection from technical behaviour to business decisions.** Each module asks what a mechanism would change in work, how its value could be assessed and what evidence would justify using it. A faster answer, for example, may still leave a delivery dispute unresolved.
-- **An organisation-design perspective throughout.** Literature from organisation design research helps examine handoffs, shared understanding, decision authority, routines and the conditions needed for a feature to become useful. The continuing Harbour Services case connects these questions across the modules.
+- **An organisation-design perspective throughout.** Literature from organisation design research helps examine handoffs, shared understanding, decision authority, routines and the conditions needed for a feature to become useful. The continuing Harbour case connects these questions across the modules.
 
 The purpose of these additions is to help readers move between understanding a mechanism and judging its use at work. Managers and executives can explore the concepts and organisational choices, while readers who want technical depth can follow the code.
 
@@ -46,7 +48,7 @@ For an initial overview, you can read the concepts and business applications fir
 
 The guide has two parts: [AI engineering foundations](README.md#part-i-ai-engineering-foundations), Modules 1 to 8, and [agent engineering and business integration](AGENT-ENGINEERING.md), Modules 9 to 14. Start with the foundations if the vocabulary is new. If you already understand tools, state and evaluation, the second part offers a route into more detailed agent design.
 
-Harbour Services is a fictional case used throughout the guide. The examples explore possible designs and consequences; they do not report results from a real deployment.
+Harbour is a fictional case used throughout the guide. The examples explore possible designs and consequences; they do not report results from a real deployment.
 
 ## What is a computer program?
 
@@ -121,7 +123,7 @@ Learning to locate the failure is part of learning the mechanism. Breaking an ap
 
 ## Learning through one continuing situation
 
-Harbour Services, our fictional organisation, receives delivery complaints and internal service requests. Sales knows the customer relationship; operations sees fulfilment records; finance controls credits; specialists handle exceptions. In later lessons, the short-delivery example becomes a summary, a conversation, an evidence retrieval task, a classification exercise and a proposed workflow.
+Harbour, our fictional organisation, receives delivery complaints and internal service requests. Sales knows the customer relationship; operations sees fulfilment records; finance controls credits; specialists handle exceptions. In later lessons, the short-delivery example becomes a summary, a conversation, an evidence retrieval task, a classification exercise and a proposed workflow.
 
 The continuity is intentional. You can see what each technical addition changes without needing to learn a new business situation every time. Additional short cases show when the same design should not be transferred mechanically.
 

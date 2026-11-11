@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+A claim may wait overnight for a human decision. The next day, the program needs a saved account of what it knows and where the work stopped. That account is state. A graph describes the steps and paths between them; a checkpoint saves state at a boundary where work can later continue. Follow the case from drafting to the point it waits for review.
+
 ## A review that takes until tomorrow
 
 Harbour's assistant has gathered evidence and prepared a proposal. Finance cannot review it until the next morning. The application needs to remember which case is waiting, what version was proposed and what happens after a reviewer responds. Keeping a Python function running overnight is a fragile way to do that.
@@ -11,6 +13,8 @@ Harbour's assistant has gathered evidence and prepared a proposal. Finance canno
 ## Graphs connect functions and decisions
 
 LangGraph represents work through nodes and edges. A **node** performs a step and returns state updates. An **edge** connects steps. A **conditional edge** chooses a route based on the current result, such as returning from a tool to the model or sending an incomplete case for clarification.
+
+On paper the path could be “prepare brief → check evidence → request review”. A failed evidence check could instead take the case to “ask for clarification”. Those steps are nodes; the arrows are edges. At review, record the case identifier and draft in saved state. The next day's run needs both the stored facts and the point where work stopped.
 
 A node need not call a model. The course begins with a graph producing a simple sentence, then adds model calls, tools and memory. This order exposes the underlying scheduling pattern before introducing probabilistic behaviour.
 

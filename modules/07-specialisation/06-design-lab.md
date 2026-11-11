@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next module](../08-agents/README.md)
 
+Suppose extra training produces a better-looking complaint brief but still treats “reported” as “confirmed”. That is the failure the decision needs to address. Compare a revised instruction, better evidence and further training on the same cases. Include who will maintain the examples and what happens when a case no longer fits an approved category.
+
 ## State the remaining failure
 
 **Fictional case.** Harbour has a stable routing guide and labelled examples. A prompted model handles ordinary requests but repeatedly confuses “delivery evidence needed” with “financial remedy ready”. The team compares better instructions, retrieval of the category guide, a smaller classifier and adaptation. Training is a candidate intervention because a measured behavioural weakness remains.
@@ -46,3 +48,5 @@ Harbour selects a bounded adaptation pilot because the fictional exception resul
 ## Read the organisational connection
 
 Corrections need interpretation before they become durable training or procedure changes. The research chapter explains [repeated action and learning](../../reference/research/05-routines.md#repeated-action-and-learning).
+
+The research chapter also explains [the organisational effects of categories](../../reference/research/07-infrastructure-and-standards.md#classification-changes-what-an-organisation-can-see).

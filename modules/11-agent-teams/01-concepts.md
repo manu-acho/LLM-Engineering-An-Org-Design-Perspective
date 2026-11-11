@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+Imagine one specialist checking dispatch and another checking the delivery report. A role specifies the kind of contribution expected; a task asks for a particular piece of work. A dependency appears if one task needs another task's result. Draw those relationships for the case before deciding who or what should coordinate the work.
+
 ## Dividing an investigation
 
 Harbour separates a difficult delivery case into evidence gathering, policy interpretation and response preparation. Instead of writing one large prompt, the team defines a specialist for each contribution. This may make instructions clearer. It also creates a new problem: how do the contributions fit together?
@@ -11,6 +13,8 @@ CrewAI offers a way to describe agents, tasks and the process connecting them. T
 ## An agent role is a configuration
 
 An agent configuration can describe a role, goal, background instructions, model and tools. “Researcher” helps express the intended contribution. The name does not supply expertise or independent knowledge by itself. Two differently named agents can use the same model and repeat the same misconception.
+
+The warehouse specialist can read the dispatch record without waiting for the policy specialist. A third task that combines both reports must wait for both. That is the division of work. The next design question is what the combined report should do if one specialist returns nothing or the two reports use “received” differently.
 
 A **task** describes work to be done and the output expected. The task may specify which agent handles it, which earlier results it needs and where the result should be written. Separating agent and task lets a reusable capability serve several activities without making every activity a new software persona.
 

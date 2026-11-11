@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next module](../03-open-models/README.md)
 
+A service that drafts replies can give advisers freedom to reword a message while keeping the rules for credit approval fixed. Discretion is the room someone has to choose how to act within their role. Compare who can change a draft, choose evidence and approve a credit. Those choices do not have to be assigned to the same person or program.
+
 ## Put the decision on the table
 
 **Fictional worked case.** Harbour wants its assistant to resolve small disputed credits. The proposal gives the assistant an order lookup and a credit tool. An operations manager argues that anything below £50 should be automatic. Finance argues that every credit needs review. Both positions hide several decisions.
@@ -45,3 +47,5 @@ The pilot measures correct remedies, specialist waiting, frontline effort and re
 ## Read the organisational connection
 
 Task framing, rule configuration and exception handling locate judgement at different points. The research chapter explains [where discretion moves](../../reference/research/03-decisions.md#where-discretion-moves).
+
+The research chapter also explains [what makes review practical](../../reference/research/08-governance-and-accountability.md#meaningful-review-needs-resources-and-a-practical-alternative).

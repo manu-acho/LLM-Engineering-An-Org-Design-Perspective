@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+One worker can read dispatch and another can read policy, but a brief still needs both contributions brought together. Orchestration is the application logic that orders, starts and combines work. The two reads can run at the same time if neither needs the other's result. Combining them requires rules for missing or incompatible answers.
+
 ## Three specialists do not yet make a service
 
 Harbour now has an assistant that checks order evidence, another that reads policy and a third that drafts a customer response. The team calls them a multi-agent system. But who combines their answers? Can they run together? What happens when policy lookup fails? Who owns the final response?
@@ -11,6 +13,8 @@ Harbour now has an assistant that checks order evidence, another that reads poli
 ## Defining an agent and running it are different acts
 
 In the course, `Agent(...)` creates a configuration containing a name, instructions, a model and optional tools or other settings. `Runner.run(...)` starts a run. The runner manages the repeated model/tool interaction introduced in Module 9. A final result contains an output and other run information; it is more than a bare text string.
+
+Compare writing a job description with asking someone to handle a specific case. The configuration is like the job description: it defines what the specialist should do and what it can use. Running it supplies the case and starts the work. Inspect the returned evidence and any checks before treating the job as complete.
 
 An **SDK**, or software development kit, is reusable code that helps applications use a platform. It removes repeated implementation work. It does not decide whether a credit should be permitted, which policy version is authoritative or how a reviewer should investigate a disagreement.
 

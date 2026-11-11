@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next: follow the data and baseline code](05-source-walkthrough.md)
 
+Think of a rule that initially gives the word “invoice” little influence on a routing decision. If it makes a mistake on an example with that word, a training update can change a numerical value so the word has more influence next time. Follow one update before comparing errors. Improving an example used for training does not show the same improvement on new cases.
+
 ## Fit a rule instead of specifying it completely
 
 Consider a deliberately tiny numerical task: predict `y` from `x` using `prediction = weight × x`. The training examples are `(1, 2)` and `(2, 4)`. Start with weight zero. Predictions are zero and zero, so squared errors are four and sixteen. Mean squared error is ten.

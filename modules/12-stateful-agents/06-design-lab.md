@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next module](../13-agent-frameworks/README.md)
 
+Imagine twenty cases waiting for one reviewer. More drafts will not create more reviewing time. Compare a dedicated reviewer, shared coverage, escalation or a narrower scope in terms of who receives each case and what they can decide. Choose a design that makes sense when the queue is busy, not just in a demonstration.
+
 ## A pause creates a dependency
 
 **Fictional case.** Harbour's graph correctly pauses 50 cases a day. Finance has 90 minutes of review capacity. At three minutes per case, it can review 30. The pending queue grows by approximately 20 a day before accounting for variation, absence and rework.
@@ -50,3 +52,5 @@ The pilot can expand when supported review decisions, waiting, effort and custom
 ## Read the organisational connection
 
 Meaningful review depends on access, expertise, time and a practical route to respond. The research chapter explains [actualisation](../../reference/research/06-technology-in-practice.md#actualisation-from-possibility-to-action).
+
+The research chapter also explains [what a reviewer needs beyond an approval button](../../reference/research/08-governance-and-accountability.md#meaningful-review-needs-resources-and-a-practical-alternative).

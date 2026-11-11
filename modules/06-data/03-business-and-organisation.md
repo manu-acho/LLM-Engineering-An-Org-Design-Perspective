@@ -2,6 +2,8 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+Suppose an old spreadsheet shows “Warehouse” because someone forwarded a complaint there, even though customer service eventually owned it. A label is the answer attached to an example for learning. Decide whether the label should record the first stop, the team with the next useful evidence or the owner responsible for resolution.
+
 ## What did the team column record?
 
 **Fictional case.** Harbour exports two years of request assignments. Most disputed deliveries went to account management. A trained router reproduces that pattern accurately. Operations objects: account managers were absorbing the work because a specialist queue was understaffed. The new operating model is meant to change that arrangement.
@@ -65,3 +67,5 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Historical labelling choices can move judgement into the design of the training set. The research chapter explains [where discretion moves](../../reference/research/03-decisions.md#where-discretion-moves).
+
+The research chapter also explains [how classification changes which work becomes visible](../../reference/research/07-infrastructure-and-standards.md#classification-changes-what-an-organisation-can-see).

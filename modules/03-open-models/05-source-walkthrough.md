@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: design a trustworthy meeting record](06-design-lab.md)
 
+A local inference program loads a tokenizer and the learned model, converts the question into identifiers, then asks the model to extend that sequence. Trace where the program removes the original question before displaying the new text. A failed load and an unhelpful answer occur at different stages and need different checks.
+
+[Open the companion workshop notebook](../../notebooks/03-open-models.ipynb).
+
 ## Separate local and remote source material
 
 Ed Donner's [Week 3 notebooks](https://github.com/ed-donner/llm_engineering/tree/103f4bf045180f3b8b7721fd55b7897305a72672/week3) point to Colab lessons for pipelines, tokenizers, model inference and meeting minutes. The linked Colab contents were not accessible for inspection in preparing this expansion. The walkthrough below is an independent teaching lab, not a reconstruction of unseen cells.

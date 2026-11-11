@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next: implement a common result contract](07-common-contracts.md)
 
+For another team to use a service, it needs to know what to send, what a response establishes and who will fix it when it breaks. An acceptance contract describes what the receiver can rely on. Write those conditions before choosing whether a central team or individual teams maintain the shared service.
+
 ## Connection solves only part of the boundary
 
 **Fictional case.** Harbour's regional teams use different agent runtimes. Each can return JSON and write to a common task board. One team marks `done` when a draft exists; another uses it when a reviewer accepts the result. The board appears integrated while its central status has two meanings.
@@ -47,3 +49,5 @@ Measure accepted contributions, rework, cross-team clarification, version failur
 ## Read the organisational connection
 
 Interoperability requires attention to interpretation and interests alongside schemas. The research chapter explains [knowledge boundaries](../../reference/research/02-coordination.md#shared-data-and-shared-meaning).
+
+The research chapter also explains [what teams must maintain across a shared interface](../../reference/research/07-infrastructure-and-standards.md#growth-requires-more-than-an-open-interface).

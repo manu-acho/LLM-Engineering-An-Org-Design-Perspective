@@ -1,5 +1,7 @@
 # Module 13: Frameworks and interoperable work
 
+[Meet Harbour](../../HARBOUR.md) · [Run the workshop notebook](../../notebooks/13-agent-frameworks.ipynb)
+
 [Curriculum index](../../README.md) · [Start here](../../START-HERE.md) · [Local lab guide](../../reference/local-labs.md)
 
 Compare real worker implementations through their shared task. Preserve meaning in adapters and decide how teams should own shared contracts.

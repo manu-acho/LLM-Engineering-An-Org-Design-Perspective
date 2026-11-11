@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next: train and reload a tiny adapter](05-source-walkthrough.md)
 
+A training batch is a group of examples used together for one training step. Loss is a number that measures how poorly predictions fit the expected answers under a chosen rule. Trace one prediction for an expected answer: the lesson's rule penalises it more when the model gives that answer a lower probability. Then see which values an adapter is allowed to change.
+
 ## Two smaller tables change a larger transformation
 
 LoRA represents an update through two smaller matrices. A matrix is a rectangular table of numbers with defined multiplication rules. Suppose a layer's existing transformation is a two-by-two identity matrix: it preserves a two-value input. Add a rank-one update formed from a column `[1, 2]` and a row `[0.5, -0.5]`. Their product is `[[0.5, -0.5], [1, -1]]`.

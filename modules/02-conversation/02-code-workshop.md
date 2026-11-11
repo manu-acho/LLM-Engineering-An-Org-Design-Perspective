@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+Read the follow-up in the first block against the two earlier messages. Then find the separate operation that looks up the order. The program checks the operation name, order identifier and caller's permitted orders before it retrieves anything. The last block shows how successive pieces of text build the display.
+
+[Open the companion workshop notebook](../../notebooks/02-conversation.ipynb).
+
 ## Start with two messages
 
 This example uses synthetic data and no model service. We will imitate a tool request so every step remains visible. In a connected application, a model could propose the same request, but the execution boundary remains the application's responsibility.

@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: decide where discretion belongs](06-design-lab.md)
 
+A model might ask for a lookup and wait for the result before it answers. A call identifier lets the application match that result to the particular request. Follow it back into the conversation, then read how a callback, a function run in response to an interface event, lets the screen use the resulting answer.
+
+[Open the companion workshop notebook](../../notebooks/02-conversation.ipynb).
+
 ## Inspect the actual exchange
 
 Open [the airline assistant notebook](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week2/day4.ipynb). Find the tool description, `get_ticket_price`, the tool-call handler and the final `chat` callback. Read them as one route. A tool description alone does not implement an operation.

@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next: evaluate the service over time](07-service-evaluation.md)
 
+The proposal is a worked decision. Read it first for which cases are in scope and what Harbour does about them today. Then compare the chosen design with the alternatives and ask what result would justify changing course. A working prototype is one piece of the argument.
+
 ## The proposal in one paragraph
 
 **Entirely fictional worked dossier.** Harbour proposes a referenced drafting service for non-urgent delivery disputes. It will gather permitted order and current policy records, identify missing evidence and prepare a proposal for an accountable reviewer. It will retain case ownership, record acceptance of handoffs and expose recovery work. It will not grant remedies automatically during the pilot.
@@ -71,3 +73,5 @@ Suppose the pilot achieves the effort figures but elapsed resolution stays at tw
 ## Read the organisational connection
 
 A proposal needs a defined population, comparator, roles and outcome measures. The research chapter explains [the worked implementation choice](../../reference/research/04-implementation.md#a-worked-implementation-choice).
+
+The research chapter also explains [who maintains common definitions after integration](../../reference/research/07-infrastructure-and-standards.md#standards-make-comparison-possible-and-require-continuing-work).

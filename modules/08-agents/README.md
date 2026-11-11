@@ -1,5 +1,7 @@
 # Module 8: Agents, workflow and the operating organisation
 
+[Meet Harbour](../../HARBOUR.md) · [Run the workshop notebook](../../notebooks/08-agents.ipynb)
+
 [Curriculum index](../../README.md) · [Start here](../../START-HERE.md) · [Local lab guide](../../reference/local-labs.md)
 
 Trace the original capstone through services, estimates, stored work and presentation. Complete a pilot operating design and examine failures, queues and recovery.

@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+Discovery is finding out which operations a service offers. Execution is asking it to perform a particular operation with particular arguments. In the workshop, follow a permitted read and a refused handoff. Discovering a name does not confer the right to use it.
+
+[Open the companion workshop notebook](../../notebooks/14-agent-integration.ipynb).
+
 ## An interface boundary in ordinary Python
 
 This is a local simulation of application checks around tool operations, not an MCP protocol implementation. It makes no network requests, issues no credits and writes no files. A tool catalogue describes capabilities; a separate function enforces scope before preparing a simulated result.

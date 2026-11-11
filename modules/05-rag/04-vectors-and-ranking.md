@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next: build the retrieval pipeline](05-source-walkthrough.md)
 
+A long policy might put an exception in the paragraph after a general rule. A chunk is a piece of text prepared for search. If the two paragraphs are split, the search might find the rule and miss the exception. Compare what the system ranks with what the adviser actually needs, then count how many required pieces made it into the returned list.
+
 ## Why turn text into numbers?
 
 Keyword search compares visible words. An embedding model maps text into vectors so related expressions can have useful numerical relationships even when their words differ. The embedding is learned; a two-dimensional illustration cannot reproduce that learning. It can make the comparison operation understandable.

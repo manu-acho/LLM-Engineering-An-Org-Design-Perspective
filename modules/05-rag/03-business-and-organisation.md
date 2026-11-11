@@ -2,6 +2,8 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+A policy says when credit is allowed, a warehouse note says what was dispatched, and a customer email says what arrived according to the customer. A search can bring up all three. Ask what question each source can answer and who can resolve a conflict. The position of a search result cannot grant the author of an email authority over credit policy.
+
 ## Three sources tell different stories
 
 **Fictional case.** Harbour has an approved credit policy, a team procedure and an interview with an experienced account manager. The policy assigns disputed credits to finance. The procedure asks operations to verify delivery first. The account manager says small cases are often resolved informally to preserve customer relationships.
@@ -67,3 +69,5 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Access to a policy passage does not confer authority to settle a disputed interpretation. The research chapter explains [permission and authority](../../reference/research/03-decisions.md#permission-and-authority).
+
+The research chapter also explains [who maintains the meaning of a shared record](../../reference/research/07-infrastructure-and-standards.md#worked-design-a-quantity-agreement).

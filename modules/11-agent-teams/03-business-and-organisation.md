@@ -2,6 +2,8 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+Giving agents titles such as “warehouse specialist” and “manager” divides work on paper. Integration is the work of bringing their separate results together so Harbour can resolve a case. Follow a disagreement from the two reports to the person who can settle it. The software's reporting line does not grant that person or agent authority on its own.
+
 ## Harbour draws an organisation chart of agents
 
 **Fictional case.** Harbour replaces one general assistant with an evidence researcher, policy analyst, service manager and quality reviewer. The diagram resembles a department. Early demonstrations look more thorough because every case produces several reports.
@@ -61,3 +63,5 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 Separating contributions creates a need for reintegration even when all roles use software. The research chapter explains [division and integration](../../reference/research/01-organisation-design.md#division-creates-a-need-for-integration).
+
+The research chapter also explains [how specialist processes connect](../../reference/research/09-process-architecture.md#process-architecture-connects-the-processes).

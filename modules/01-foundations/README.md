@@ -1,5 +1,7 @@
 # Module 1: Foundations: from a request to a generated answer
 
+[Meet Harbour](../../HARBOUR.md) · [Run the workshop notebook](../../notebooks/01-foundations.ipynb)
+
 [Curriculum index](../../README.md) · [Start here](../../START-HERE.md) · [Local lab guide](../../reference/local-labs.md)
 
 Follow information from a complaint through token generation and a real request interface. Compare information preparation with changing the work around it.

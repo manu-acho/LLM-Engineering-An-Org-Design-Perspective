@@ -2,6 +2,8 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md) · [Framework tour](04-framework-tour.md)
 
+Two teams can both return a field named “received” while one uses a customer's report and the other uses a verified count. An interface standard can align the field names. The teams still need an agreement about what goes into the field and who maintains that agreement.
+
 ## Several teams connect their assistants
 
 **Fictional case.** Harbour's regional teams have built assistants with different frameworks. Headquarters proposes a shared task board and a common result format. Management expects the assistants to become interchangeable and move cases between regions automatically.
@@ -61,3 +63,5 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 A common interface can transfer values while leaving their meaning or ownership disputed. The research chapter explains [knowledge boundaries](../../reference/research/02-coordination.md#shared-data-and-shared-meaning).
+
+The research chapter also explains [what teams must maintain across a shared interface](../../reference/research/07-infrastructure-and-standards.md#growth-requires-more-than-an-open-interface).

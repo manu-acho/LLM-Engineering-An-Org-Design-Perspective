@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: redesign the information work](06-design-lab.md)
 
+Imagine giving someone a web address and asking for a summary. Before any words can be drafted, the software has to open the page and extract material to pass to the model. Follow one page from address to extracted text to request. This reveals which parts of the source can be lost before the model sees it.
+
+[Open the companion workshop notebook](../../notebooks/01-foundations.ipynb).
+
 ## Start with the entry point
 
 Open Ed Donner's [first notebook](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week1/day1.ipynb) beside [the scraper](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week1/scraper.py). Follow the invocation of `display_summary`. That function presents a result; `summarize` obtains it. This distinction lets a later web interface reuse the logic without also trying to display notebook Markdown.

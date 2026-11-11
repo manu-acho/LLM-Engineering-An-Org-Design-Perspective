@@ -1,5 +1,7 @@
 # Module 10: Orchestration, specialists and review
 
+[Meet Harbour](../../HARBOUR.md) · [Run the workshop notebook](../../notebooks/10-agent-orchestration.ipynb)
+
 [Curriculum index](../../README.md) · [Start here](../../START-HERE.md) · [Local lab guide](../../reference/local-labs.md)
 
 Connect parallel contributions, structured results, SDK execution and traces. Compare coordination designs that preserve ownership and required evidence.

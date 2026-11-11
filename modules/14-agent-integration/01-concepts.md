@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+An assistant needs a way to discover how to read Harbour's case records. Model Context Protocol (MCP) gives connected software common rules for describing and requesting capabilities. The host is the application using the connection; its client exchanges messages with the server that offers the capability. Harbour still decides who may read or change a case.
+
 ## Connecting an assistant to existing systems
 
 Harbour's assistant needs order records, policy information and a place to prepare handoffs. Without a common interface, each agent framework may need custom code for every system. MCP, the **Model Context Protocol**, supplies a way for applications and capability servers to exchange defined requests and responses.
@@ -11,6 +13,8 @@ The organisational opportunity is reuse: a maintained interface can serve severa
 ## Host, client and server
 
 An MCP **host** is the AI application managing the interaction. A **client** handles communication with a particular server. A **server** exposes capabilities such as tools or resources. The model may propose using a capability, but the surrounding runtime and service perform the actual operation.
+
+In a case lookup, the host is the assistant application. Its client asks a server what operations are available. The server describes a lookup and, when a permitted request arrives, returns the record. This shows the purpose of the connection. It does not give the assistant a right to see another region or grant a credit.
 
 The [architecture overview](https://modelcontextprotocol.io/docs/learn/architecture) explains these roles. The course shows concrete SDK connections rather than requiring us to implement protocol messages by hand. When diagnosing a failure, distinguish the model's choice, the client's request, the server's operation and the underlying business system's response.
 

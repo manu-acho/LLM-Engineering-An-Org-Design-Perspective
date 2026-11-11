@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+A coordinator can collect order and policy evidence together because neither read requires the other. It still needs both before it can prepare the draft. Follow the source identifiers in the returned result and then check why permission for an actual handoff requires another step.
+
+[Open the companion workshop notebook](../../notebooks/10-agent-orchestration.ipynb).
+
 ## A coordinator with two required inputs
 
 This original teaching example models the dependency behind a research manager. It uses Python's standard library and fake evidence functions. It calls no models, sends no messages and uses no external accounts.

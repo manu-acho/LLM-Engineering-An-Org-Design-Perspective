@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+A simple starting rule can send every request to the most common team in the examples. This is a baseline, a reference result for judging whether more complicated methods help. Count the training labels, make one prediction for the held-out examples, then compare the prediction with what those examples actually say.
+
+[Open the companion workshop notebook](../../notebooks/06-data.ipynb).
+
 ## A baseline with no model library
 
 We will learn the most frequent team in a tiny training set and use that one team for every prediction. This is intentionally unhelpful for interpreting descriptions. It gives us a transparent starting point.

@@ -2,7 +2,7 @@ import http from 'node:http';
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { networkInterfaces } from 'node:os';
-import { buildReader, distRoot } from './build.mjs';
+import { buildReader, distRoot, downloads } from './build.mjs';
 
 const host = process.env.READER_HOST || '0.0.0.0';
 const port = Number(process.env.READER_PORT || 4186);
@@ -17,7 +17,8 @@ const allowed = new Map([
   ['/index.html', ['index.html', 'text/html; charset=utf-8']],
   ['/app.js', ['app.js', 'text/javascript; charset=utf-8']],
   ['/styles.css', ['styles.css', 'text/css; charset=utf-8']],
-  ['/content-index.json', ['content-index.json', 'application/json; charset=utf-8']]
+  ['/content-index.json', ['content-index.json', 'application/json; charset=utf-8']],
+  ...Object.values(downloads).map(({ url, type }) => [url, [url.slice(1), type]])
 ]);
 const server = http.createServer(async (request, response) => {
   try {

@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+A fixed workflow can always look up an order before preparing a note. An agent can select the next permitted step based on the information returned so far. If the agent can ask for a carrier record, that does not entitle it to issue a credit. List which steps the software can take and which decisions Harbour still assigns to a person.
+
 ## The promise of handling the whole request
 
 Harbour's assistant can gather evidence and suggest a route. The next proposal is to let it select the next step: look up another record, ask for clarification, recommend an outcome and prepare a handoff. This is where people often start speaking about an “agent”.
@@ -11,6 +13,8 @@ The term is used broadly. In this curriculum, inspect the actual control: what o
 ## Fixed workflows and model-selected steps
 
 A **fixed workflow** might always gather an order, retrieve policy, check required evidence and draft a handoff. Python specifies the order. A model can still interpret text at a bounded stage.
+
+Suppose dispatch has a record but the carrier does not. One fixed design can always check both sources. An agent can choose whether the second lookup is useful after seeing the first result, subject to the application's rules. Both designs must stop short of a credit when Harbour has only granted permission to read. The difference is who chooses the next step, not who owns the final decision.
 
 An **agent loop** can ask a model to choose among permitted tools repeatedly. Its next action depends on what it has observed. That flexibility may be useful when requests genuinely require different paths. It also expands the possible sequences you must test and supervise.
 

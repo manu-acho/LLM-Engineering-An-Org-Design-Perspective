@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+An adviser might check dispatch first, then look for carrier evidence if it is missing. An agent loop repeats a similar cycle: choose a permitted step, check and run it, inspect what came back, then decide whether to stop or continue. The tool's result becomes part of the information used for the next choice.
+
 ## From answering a question to investigating a case
 
 Harbour's assistant can summarise a delivery complaint. An account manager now asks it to investigate: find the order, compare the quantities, look for the applicable rule and prepare a response. The necessary next step depends on what the earlier steps reveal. If the order number is missing, searching policy first may accomplish little.
@@ -13,6 +15,8 @@ Module 8 introduced bounded workflows. Here we open the loop itself and examine 
 ## Four parts of the loop
 
 A **goal** states what is being attempted. **Context** supplies the information available now. A **tool** exposes a particular operation, such as retrieving an order. **Control flow** determines what happens after a model response.
+
+For H-17, the goal might be “prepare a brief with sources”. The initial context contains the question and case identifier. The model requests a lookup. The application checks the request and runs the lookup if permitted. The record comes back as new context. If it lacks proof of delivery, the next decision is whether another allowed lookup would help or the brief should say that the proof is missing.
 
 Suppose the model requests `lookup_order` with order ID `O-17`. The application checks that the name is permitted, the argument has the expected form and the current user may read that record. It calls the function and returns the result as a tool message. The model can then use that evidence in its next response.
 

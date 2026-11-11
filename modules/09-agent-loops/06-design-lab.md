@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next module](../10-agent-orchestration/README.md)
 
+A screen that says “I am handling this” can sound like someone has accepted responsibility. Decide what happens after the assistant reaches its limit. Name the person who receives the case, the information they need and the message the customer sees while responsibility is being transferred.
+
 ## The interface creates expectations
 
 **Fictional case.** Harbour's website assistant says “I'll handle your complaint.” Visitors reasonably expect more than a transcript. Internally, the assistant can only collect an order ID, retrieve status and draft a case. The mismatch is organisational: the wording promises a service that the receiving arrangement does not yet supply.
@@ -45,3 +47,5 @@ These are actor-specific possibilities to investigate, drawing on the [technolog
 ## Read the organisational connection
 
 The intake promise depends on what the receiving activity can actually accept and perform. The research chapter explains [the worked handoff design](../../reference/research/02-coordination.md#a-worked-handoff-design).
+
+The research chapter also explains [how an agent run fits the wider process](../../reference/research/09-process-architecture.md#a-good-agent-run-can-end-before-the-business-problem-does).

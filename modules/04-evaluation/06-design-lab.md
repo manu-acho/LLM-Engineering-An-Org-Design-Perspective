@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next module](../05-rag/README.md)
 
+An assistant can reduce the time to draft a note without reducing the time to resolve a claim. Measure from the customer's first report through the actual resolution and see where the saved time went. A before-and-after comparison can also reflect changes in case mix or staffing. Use those possibilities to decide what evidence a pilot would need.
+
 ## Put the entire case into the measurement
 
 **Fictional comparison.** Harbour evaluates two drafting systems on 100 comparable delivery complaints. Both reduce drafting time. System A is cheaper per request; System B preserves qualifications more consistently. The decision concerns completed work, so the team records effort after generation as well.
@@ -44,3 +46,5 @@ A scale decision requires both technical quality and an operating arrangement. I
 ## Read the organisational connection
 
 The effect of a measured improvement depends on information, capacity, roles and incentives around it. The research chapter explains [fit among design choices](../../reference/research/01-organisation-design.md#fit-is-a-relationship-among-choices).
+
+The research chapter also explains [where to start and stop measuring success](../../reference/research/09-process-architecture.md#worked-design-extend-the-boundary-of-success).

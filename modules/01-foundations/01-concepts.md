@@ -4,11 +4,25 @@
 
 ## Begin with the short delivery
 
-A customer ordered twelve boxes and reports receiving ten. The account manager asks an AI assistant: “Summarise the problem and suggest what we should check.” It produces a sensible paragraph. What happened between the request and the answer?
+Harbour sells packaging to other businesses. A customer says ten of the twelve boxes it ordered arrived, and an adviser asks an assistant to draft an investigation brief. Before asking how the assistant knows what to write, start with a simpler question: how does a phone suggest the next word?
 
-The application first assembled some text: the customer's message, perhaps the order record, and instructions about the answer. It sent that input to a model. The model generated a continuation. The application displayed it. Looking fluent is one property of the output. Whether it used the right order, preserved the uncertainty and suggested a permitted next step are different questions.
+Imagine typing `the parcel is` and seeing a phone suggest `delayed`. The text already typed is a **sequence**: pieces of text in a particular order. A **continuation** is whatever gets added next. If the suggestion is accepted, the sequence becomes `the parcel is delayed`. The phone could then suggest another piece, such as a full stop. Each accepted piece becomes part of what comes before the next suggestion.
 
-This lesson opens that chain. We will use **language model** for a learned system that processes and generates language, and **application** for the larger program around it. A model by itself does not automatically open the order system or know your company's credit policy.
+Where could the first suggestion come from? Suppose a very simple program has seen ten examples that begin with `the parcel is`. In six, the next word was `delayed`; in three it was `ready`; in one it was `missing`.
+
+| Possible next word | Count out of ten examples | Estimated probability in this example |
+| --- | ---: | ---: |
+| delayed | 6 | 60% |
+| ready | 3 | 30% |
+| missing | 1 | 10% |
+
+A **probability** expresses how likely a particular possibility is under a stated assumption or model. In this counting example, the estimate for `ready` is three out of ten, or 30%. It applies when the preceding words are `the parcel is`. A different beginning could give very different estimates. The 60% estimate describes the word that follows those three words in the examples. To estimate the chance that a particular parcel is delayed, Harbour would need evidence about that delivery.
+
+A **language model** learns patterns in text that it can use to give possible next pieces different chances. A piece of text used by the model is called a **token**. It can be a word, part of a word, punctuation or another piece. The phone example uses whole words and simple counting so the arithmetic is visible. Large language models (LLMs) learn much richer numerical patterns; they do not have to find ten identical openings and count the following words. A model can build a longer answer by selecting a piece, adding it to the text and repeating the process. Different ways of selecting pieces can produce different answers.
+
+The assistant can draft a plausible sentence such as “Two boxes went missing in the warehouse.” The records do not establish that cause. Harbour needs a person to check what each source says and where the accounts disagree. The **application** is the software around the model. It can look up records, prepare a request and check the draft, provided it has the relevant connections and permissions. For the model to use an order record, the application must include it in the request or make it available through a permitted lookup.
+
+[Meet Harbour and follow the delivery investigation](../../HARBOUR.md).
 
 ## Text becomes tokens
 
@@ -66,9 +80,9 @@ The next lesson traces an intentionally small pipeline with no network access. T
 
 ## Explain it back
 
-In your own words, explain why a model can write a convincing answer without verifying the complaint. Then explain what changes when you include an order record in the prompt.
+In the phone example, what does the 30% describe? Then explain why a model can write a convincing answer without verifying the complaint. What changes when you include an order record in the prompt?
 
-**Worked response:** The model generates a continuation from available input and learned patterns. Convincing language is not an independent check against the order system. Supplying the record changes the evidence available during inference; it does not establish that the record is accurate, that the model used it correctly or that the model has been retrained.
+**Worked response.** Three of the ten examples use `ready` after `the parcel is`. The model generates a continuation from available input and learned patterns. Convincing language is not an independent check against the order system. Supplying the record changes the evidence available during inference; it does not establish that the record is accurate, that the model used it correctly or that the model has been retrained.
 
 **Reading connection:** The compact [week 1 chapter](../01-foundations-and-pipelines.md) links the original notebook and scraper functions. Technical source notes are in the [source map](../../SOURCE-MAP.md).
 

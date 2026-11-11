@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+If a customer asks which returns rule applies, Harbour needs to find the right policy before drafting a reply. Retrieval is the step that finds material for the request. Searching for matching words is one method; an embedding represents text as numbers so a search can also compare patterns of meaning. Finding a similar passage does not establish that it applies to the customer's region or date.
+
 ## The policy is not automatically inside the model
 
 Harbour's assistant is asked: “Who can authorise a credit when delivery is disputed?” The answer may depend on current policy, the order's region, value and exception category. A language model's general training does not establish the current internal rule.
@@ -11,6 +13,8 @@ One solution is to retrieve relevant records and provide them to the model befor
 ## Begin with ordinary search
 
 Suppose a small folder contains three policies. A keyword search can find documents containing “credit”. This approach is easy to inspect but may miss a policy that calls the same action a “commercial adjustment”. It may also retrieve an irrelevant discussion of credit cards.
+
+Imagine three search results for a question about approving a credit: a current policy that says “commercial adjustment”, a credit card guide and an expired policy that says “approve credit”. A keyword search may rank the last two above the current policy. Searching for similar meaning can help with the wording difference. A separate date and access check must still determine whether a result can be used.
 
 Search therefore needs a representation of the question, a way of comparing it with records and a rule for selecting candidates. Different approaches solve those problems differently. Exact search is useful for IDs and precise phrases. Semantic search can help with paraphrases. Neither alone establishes which policy is authoritative.
 

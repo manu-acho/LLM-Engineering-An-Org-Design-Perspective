@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: decide whether specialisation is worthwhile](06-design-lab.md)
 
+Training produces values that can be saved. A reconstruction check asks whether a new session can load those values and make the same kind of prediction. Follow the training step, the saved material and the reloaded prediction in order. This is narrower than demonstrating a useful change in Harbour's work.
+
+[Open the companion workshop notebook](../../notebooks/07-specialisation.ipynb).
+
 ## Inspect the source contract first
 
 The course's [Week 7 preparation](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week7/pricer/items.py) creates prompts ending in `Price is $` and stores completions separately. Some splits use rounded targets; test examples retain original price representations. Those choices affect what is learned and measured.

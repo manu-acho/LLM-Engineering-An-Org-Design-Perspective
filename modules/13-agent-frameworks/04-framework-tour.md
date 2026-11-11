@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Code workshop](02-code-workshop.md) · [Next module](../14-agent-integration/README.md)
 
+Start with one task and keep its required contribution fixed while comparing frameworks. For each version, find which part runs the worker, stores or passes state and records the result. The names of framework features are easier to understand once the job they perform is visible.
+
 ## Keep the task in view
 
 The course's comparison week begins with a worker translating a file and recording steps on a small board. The final project combines workers to build a language-game site. These deliberately visible outputs help us ask where a framework supplies machinery and where application code supplies the contract.

@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next module](../07-specialisation/README.md)
 
+A complaint about a damaged box may need photographs from the warehouse and a reply from customer service. A rule for labelling training examples must say whether it asks for the next useful contribution or the owner of the whole case. Write the rule so two colleagues can apply it to that same example and explain why their answers agree or differ.
+
 ## A clear column can contain an unclear task
 
 **Fictional case.** Harbour exports old complaints with an `assigned_team` column. Staff want a classifier to reproduce it. Examination reveals that the value sometimes means the first contacted team, sometimes the final owner and sometimes the only team available that day.
@@ -47,3 +49,5 @@ The [routines review](../../reference/research/05-routines.md) helps explain why
 ## Read the organisational connection
 
 A routing category can create role or data mismatches even when prediction accuracy is high. The research chapter explains [six kinds of misfit](../../reference/research/04-implementation.md#six-kinds-of-misfit).
+
+The research chapter also explains [how classification changes which work becomes visible](../../reference/research/07-infrastructure-and-standards.md#classification-changes-what-an-organisation-can-see).

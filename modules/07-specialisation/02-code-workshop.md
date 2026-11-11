@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+A training example can contain a question and the answer the model is supposed to learn to give. When the system later asks for an answer, it supplies only the question. In the workshop, follow which pieces are used as context and which pieces the training calculation counts when it judges a prediction.
+
+[Open the companion workshop notebook](../../notebooks/07-specialisation.ipynb).
+
 ## A training record has two roles
 
 The course prepares product-price examples. To keep the mechanism visible, our teaching example uses a synthetic category target instead. We will create prompt/completion records and then illustrate loss labels using invented token IDs. No model is trained.

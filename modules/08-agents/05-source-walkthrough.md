@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: complete the operating design](06-design-lab.md)
 
+The capstone spans an adviser interface, model requests, services and saved records. Pick one action and follow where it is proposed, where permission is checked and what record shows its outcome. This separates generating words about an action from carrying it out and knowing it happened.
+
+[Open the companion workshop notebook](../../notebooks/08-agents.ipynb).
+
 ## Begin where the application begins
 
 The source [DealAgentFramework](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week8/deal_agent_framework.py) opens a vector collection, loads stored opportunities and leaves the planner uninitialised until needed. `run` initialises it, calls `plan`, appends a returned opportunity and writes memory. That stored memory records surfaced opportunities; it is not a complete ledger of every source ever examined.

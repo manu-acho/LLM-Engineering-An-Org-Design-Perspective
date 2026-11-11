@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: decide what the measured gain means](06-design-lab.md)
 
+Generated code should be judged on cases with known answers before it is timed. Follow the instruction given to the model, then compare what its proposed program does with the reference calculation. Locate which work the timer includes so the speed claim is about a defined operation.
+
+[Open the companion workshop notebook](../../notebooks/04-evaluation.ipynb).
+
 ## Read the course as a sequence of artefacts
 
 In [day 3](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week4/day3.ipynb), find the Python source string, system-information helper, model prompt, returned C++, written file, compiler invocation and executable run. A failure can occur at each boundary. A successful later stage cannot retrospectively establish that an earlier semantic choice was correct.

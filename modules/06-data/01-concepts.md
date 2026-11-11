@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+To teach a program to send complaints to the right team, start with examples of complaints and the destinations they should go to. A feature is a piece of information the program can use, such as whether a message contains “invoice”. The target is what it is trying to predict, such as “Finance”. Before fitting anything, check who chose those destinations and whether they describe the future task.
+
 ## The task must be defined before the model
 
 Harbour has thousands of old requests. A manager asks whether AI can learn which team should receive a new one. Before choosing a model, ask what the old assignment means. Was it the appropriate team, the first team contacted, the team available that day or the team that eventually repaired the problem?
@@ -11,6 +13,8 @@ A dataset can contain a clear column called `assigned_team` while leaving that q
 ## Examples, features and targets
 
 An **example** is one case used for learning or evaluation. Its **input features** are the information available for prediction. Its **target**, often called a label, is what the model is supposed to predict.
+
+For “My invoice lists two extra boxes”, the message is the example's input. The presence of “invoice” is one possible feature. If the agreed route is Finance, “Finance” is the target for this example. For a new message the program has the features, but it does not yet have the target. The predicted team is its attempt to supply that missing answer.
 
 For routing, the request description is an input and the desired team is a categorical target. This is **classification**, selecting a category. The original course's price estimation is **regression**, predicting a numerical quantity. The difference matters: a price error of £10 and a request assigned to the wrong team require different ways of measuring error.
 

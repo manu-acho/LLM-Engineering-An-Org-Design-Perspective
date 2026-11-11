@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next module](../06-data/README.md)
 
+A shared folder does not tell an adviser which policy is current or who can correct it. A source registry is a list that names the records a service may use and identifies who owns them, when they apply and what they establish. Make one entry for a policy and one for a dispatch record. They are useful for different reasons and should not settle the same questions.
+
 ## Resolve what “knowledge” means for this task
 
 **Fictional case.** Harbour has three documents: a finance policy, an operations procedure and an account-manager interview. The first defines authority, the second describes a prescribed sequence, and the third describes how one person says small complaints are usually handled. A search index can hold all three. It should not turn them into one undifferentiated source of instruction.
@@ -47,3 +49,5 @@ Measure retrieval coverage, supported claims and appropriate abstention alongsid
 ## Read the organisational connection
 
 A knowledge service needs routes for translation and contestation as well as document transfer. The research chapter explains [knowledge boundaries](../../reference/research/02-coordination.md#shared-data-and-shared-meaning).
+
+The research chapter also explains [who maintains the meaning of a shared record](../../reference/research/07-infrastructure-and-standards.md#worked-design-a-quantity-agreement).

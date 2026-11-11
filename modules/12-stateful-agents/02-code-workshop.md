@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+A case may change while an approval is waiting. The saved state records which version was reviewed. Follow the approval from the saved draft into the resume operation. Then compare it with an approval for a version that has been superseded.
+
+[Open the companion workshop notebook](../../notebooks/12-stateful-agents.ipynb).
+
 ## Separate saved state, approval and effect
 
 This example simulates a pause and resumption using ordinary Python. JSON serialization makes the state easy to inspect. It does not save anything to disk. There is no external execution: the receipt is labelled `simulated`.

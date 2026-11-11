@@ -2,6 +2,8 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md) · [Integration plan](04-integration-plan.md)
 
+Several assistants might rely on the same case lookup. When a field changes, those teams need someone to explain the change and respond if their work breaks. Name the service owner and describe what the lookup promises, who may use it and how that promise is maintained.
+
 ## The interface becomes shared infrastructure
 
 **Fictional case.** Harbour publishes internal tools for case lookup, policy retrieval and handoff preparation. Several departments connect their assistants. The technical team celebrates reuse. A month later, a source field changes, one assistant uses an old interpretation and nobody is sure who owns the resulting customer error.
@@ -63,3 +65,5 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 A reusable service needs ownership for change, support and recovery after launch. The research chapter explains [implementation beyond launch](../../reference/research/04-implementation.md#implementation-extends-beyond-launch).
+
+The research chapter also explains [who maintains common definitions after integration](../../reference/research/07-infrastructure-and-standards.md#standards-make-comparison-possible-and-require-continuing-work).

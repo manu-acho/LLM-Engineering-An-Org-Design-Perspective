@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: design the review service](06-design-lab.md)
 
+The first run saves information at a point where a human decision is needed. A later run uses the same thread identifier to find the saved information. Trace what gets restored and what must be checked again before any action can proceed.
+
+[Open the companion workshop notebook](../../notebooks/12-stateful-agents.ipynb).
+
 ## Connect the source's layers
 
 The course [graph lab](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/4_langchain_langgraph/2_lab2.ipynb) begins with state, nodes and edges before adding tools and memory. The later [agent-layer lab](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/4_langchain_langgraph/3_lab3.ipynb) shows a higher-level assembly. Following both reveals what the abstraction supplies rather than making the graph appear magical.

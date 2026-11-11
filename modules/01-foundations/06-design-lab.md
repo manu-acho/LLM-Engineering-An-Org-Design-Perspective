@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next module](../02-conversation/README.md)
 
+Consider two ways of preparing a delivery brief. One adviser might obtain all the records directly, or a central team might gather them for several advisers. Compare where each approach puts the work of requesting evidence, correcting mistakes and deciding whether a case can proceed.
+
 ## Three plausible designs
 
 **Fictional worked case.** Harbour receives 800 delivery enquiries a month. Staff spend 12 minutes assembling records for each enquiry. Some are straightforward status checks; others contain conflicting evidence. The managing director asks for “an AI summary for every case”. Before accepting that scope, compare three arrangements.
@@ -47,3 +49,5 @@ Harbour selects a four-week referenced-brief pilot for the 300-case population, 
 ## Read the organisational connection
 
 Compare lookup, drafting and specialist conversation against the dependency each addresses. The research chapter explains [the worked organisational comparison](../../reference/research/01-organisation-design.md#a-worked-comparison-at-harbour).
+
+The research chapter also explains [how the complete process extends beyond drafting](../../reference/research/09-process-architecture.md#process-architecture-connects-the-processes).

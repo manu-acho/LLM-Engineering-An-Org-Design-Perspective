@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+Twelve ordered minus ten reported gives a difference of two. The code below keeps the two source figures, calculates their difference and then hands the evidence to a function that writes a draft. Follow the value two through those steps. The example uses a fixed function for the writing so the calculation and the evidence are easy to inspect.
+
+[Open the companion workshop notebook](../../notebooks/01-foundations.ipynb).
+
 ## What we are trying to learn
 
 The aim is to read a program without treating its symbols as decoration. We will build a delivery brief using a deliberately fake generator. No model is called. This lets you understand the arrangement of functions before learning a service's response format.

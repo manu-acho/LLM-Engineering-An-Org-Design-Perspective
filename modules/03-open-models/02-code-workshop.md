@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+The miniature vocabulary below gives a number to each word. Encode “delivery was”, add one supplied number, then decode only the added piece. A real model chooses the new numbers itself. Keep the miniature exercise separate from the later code that shows how to load and use a real model.
+
+[Open the companion workshop notebook](../../notebooks/03-open-models.ipynb).
+
 ## A miniature representation exercise
 
 Real tokenizers handle large vocabularies, subword fragments and special tokens. We will use a tiny invented word vocabulary to make the representation changes visible. This is not a language model and does not demonstrate learning.

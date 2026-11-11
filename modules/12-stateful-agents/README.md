@@ -1,5 +1,7 @@
 # Module 12: State, memory and human review
 
+[Meet Harbour](../../HARBOUR.md) · [Run the workshop notebook](../../notebooks/12-stateful-agents.ipynb)
+
 [Curriculum index](../../README.md) · [Start here](../../START-HERE.md) · [Local lab guide](../../reference/local-labs.md)
 
 Build understanding of reducers, durable state, interrupts and replay. Follow a persistent graph and design review as an operating service.

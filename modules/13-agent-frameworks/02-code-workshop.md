@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+Two workers can see the same waiting task. Only one should gain ownership. Follow the database condition that checks whether the task is still free at the moment the claim is recorded. Then distinguish a worker's report of completion from acceptance of the work by a receiving team.
+
+[Open the companion workshop notebook](../../notebooks/13-agent-frameworks.ipynb).
+
 ## Stop two workers from both claiming the same task
 
 The source course uses a SQLite board across its framework examples. This small independent example focuses on the claim transition. It uses an in-memory database, so no file survives after the program closes. It calls no agents and writes no external output.

@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+Harbour can show the model one example of a good brief in each request, find the current policy for that request, or train it further on examples of the desired brief. Fine-tuning is the third option: it changes learned values in the model or adds trainable values used alongside it. First diagnose whether the failure is a missing fact or a repeated behaviour before choosing what to change.
+
 ## When a repeated behaviour remains weak
 
 Harbour has clarified a stable set of request categories. A general model still confuses two categories despite clear instructions and sufficient evidence. The team has representative, reviewed examples. This is a plausible reason to investigate fine-tuning, further training intended to adapt behaviour.
@@ -11,6 +13,8 @@ It is not evidence that fine-tuning will help. Compare it with simpler intervent
 ## Prompting, retrieval and fine-tuning
 
 Prompting changes instructions or examples supplied at inference time. Retrieval changes which evidence is supplied. Fine-tuning changes learned parameters in the model or an attached adaptation.
+
+Three failures suggest different repairs. If the brief has the right facts but omits the requested headings, try making the instruction clearer. If it uses an expired rule, fix which policy is supplied. If the desired writing behaviour remains unreliable across many correctly supplied examples, further training may be worth comparing. In all three cases, reuse the same test cases so the comparison shows which failure changed.
 
 If the current credit threshold changes every month, retrieval or a business tool usually gives a clearer evidence/update route than trying to encode each value in parameters. If the model repeatedly struggles to apply a stable classification scheme, adaptation may be worth testing. These are diagnostic tendencies, not universal rules.
 

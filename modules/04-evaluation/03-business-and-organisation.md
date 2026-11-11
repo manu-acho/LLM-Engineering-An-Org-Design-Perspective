@@ -2,6 +2,8 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+The warehouse might clear its own queue by sending ambiguous cases to customer service. Its completion number improves, while the total time to resolve a complaint can get worse. A metric is a measured quantity used to judge performance. Ask where it starts and stops counting, and what work it leaves to another team.
+
 ## Two teams, two successes
 
 **Fictional case.** Harbour pilots an assistant. Account management reports faster drafting. Operations reports more incomplete handoffs. Finance reports unchanged resolution time. Each statement can be true.
@@ -63,3 +65,5 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 The metric selects properties to reward and can redirect attention. The research chapter explains [decision premises](../../reference/research/03-decisions.md#decision-premises).
+
+The research chapter also explains [where to start and stop measuring success](../../reference/research/09-process-architecture.md#worked-design-extend-the-boundary-of-success).

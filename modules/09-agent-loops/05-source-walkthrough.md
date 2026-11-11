@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: design the service promise](06-design-lab.md)
 
+Read the digital twin as a series of boundaries. A tool description tells the model how to request an operation. The application decides whether it can run that request, then hands back a result or reports a failure. Follow which step can send a notification and which one only proposes it.
+
+[Open the companion workshop notebook](../../notebooks/09-agent-loops.ipynb).
+
 ## Find the final implementation
 
 In Ed Donner's [foundations lab 3](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/1_foundations/3_lab3.ipynb), the `chat` function evolves through the notebook. The final version handles successive tool requests. Notebook execution order matters: a later definition replaces an earlier binding, while a running process can retain imported modules. Read the function that the final interface actually calls.

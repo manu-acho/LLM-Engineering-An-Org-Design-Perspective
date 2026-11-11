@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+An investigation might look up an order, then decide whether the result is enough for a draft. The scripted responder below gives the same lookup request each time it sees the opening question. Follow the request, the access check and the record that returns to the loop before the final draft appears.
+
+[Open the companion workshop notebook](../../notebooks/09-agent-loops.ipynb).
+
 ## Make the moving parts visible
 
 The original course moves from a single model response to a loop over tool requests. We will use a scripted response provider instead of a model, so the sequence is predictable. This example makes no network calls and changes no business records. It demonstrates dispatch and evidence flow, not model competence.

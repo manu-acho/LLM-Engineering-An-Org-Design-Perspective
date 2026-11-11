@@ -1,5 +1,7 @@
 # Module 9: Agent loops and bounded autonomy
 
+[Meet Harbour](../../HARBOUR.md) · [Run the workshop notebook](../../notebooks/09-agent-loops.ipynb)
+
 [Curriculum index](../../README.md) · [Start here](../../START-HERE.md) · [Local lab guide](../../reference/local-labs.md)
 
 Follow model-selected steps through schemas, execution and evidence. Bound the loop and align the interface promise with accepted service responsibility.

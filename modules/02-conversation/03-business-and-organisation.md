@@ -2,6 +2,8 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+There are three different acts when a customer asks for credit: suggesting it, approving it and changing the account. A decision premise is a starting point for a decision, such as the policy that says which claims require proof of delivery. Identify who sets that policy before assigning any of the three acts to the assistant or a person.
+
 ## The proposal
 
 **Fictional case.** Harbour's assistant can retrieve quantities and draft a response. The founder now proposes “one-click resolution”: the assistant recommends a credit and finance clicks approve. Management calls this human control.
@@ -69,3 +71,5 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 A technical entitlement does not by itself establish an organisational mandate. The research chapter explains [permission and authority](../../reference/research/03-decisions.md#permission-and-authority).
+
+The research chapter also explains [what makes review practical](../../reference/research/08-governance-and-accountability.md#meaningful-review-needs-resources-and-a-practical-alternative).

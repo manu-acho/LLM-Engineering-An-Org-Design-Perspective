@@ -2,6 +2,8 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+Pausing a run can prevent an unauthorised action. It also creates a queue of cases somebody has to check. Estimate what the reviewer needs to see, how quickly they must respond and who covers an absence. A button giving formal approval rights does not supply evidence, time or a backup.
+
 ## Human review becomes a queue
 
 **Fictional case.** Harbour adds approval interrupts before customer commitments. The system pauses correctly, but cases accumulate. Finance receives no protected review time. Some reviewers approve quickly to clear the queue; others ask account managers to investigate outside the system.
@@ -63,3 +65,5 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 A pause creates a dependency on reviewer attention and capacity. The research chapter explains [shared-resource dependencies](../../reference/research/02-coordination.md#identify-what-depends-on-what).
+
+The research chapter also explains [what a reviewer needs beyond an approval button](../../reference/research/08-governance-and-accountability.md#meaningful-review-needs-resources-and-a-practical-alternative).

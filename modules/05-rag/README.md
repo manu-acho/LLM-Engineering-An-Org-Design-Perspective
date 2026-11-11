@@ -1,5 +1,7 @@
 # Module 5: Organisational knowledge and retrieval
 
+[Meet Harbour](../../HARBOUR.md) · [Run the workshop notebook](../../notebooks/05-rag.ipynb)
+
 [Curriculum index](../../README.md) · [Start here](../../START-HERE.md) · [Local lab guide](../../reference/local-labs.md)
 
 Follow knowledge from source through vectors and retrieval to an answer. Build the evidence path and the source-ownership arrangement together.

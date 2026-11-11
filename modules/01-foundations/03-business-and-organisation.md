@@ -2,6 +2,8 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+A draft can save an adviser time and still leave the customer waiting. The next step may need a warehouse count or a carrier record. Compare the work of making the brief with the work of investigating the discrepancy. If the person receiving the brief cannot get the missing record, faster writing does not remove the wait.
+
 ## The case
 
 **Fictional teaching case.** Harbour's account managers spend time collecting delivery complaints, shipment records and policy extracts for operations. A founder proposes an AI brief: put the relevant material in one place, summarise it and recommend the next check. The demonstration is persuasive. The team hopes to halve handling time.
@@ -73,3 +75,5 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 A useful brief needs source access, a recipient and a correction route. The research chapter explains [fit among design choices](../../reference/research/01-organisation-design.md#fit-is-a-relationship-among-choices).
+
+The research chapter also explains [how the complete process extends beyond drafting](../../reference/research/09-process-architecture.md#process-architecture-connects-the-processes).

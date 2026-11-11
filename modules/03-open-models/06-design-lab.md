@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next module](../04-evaluation/README.md)
 
+Consider a meeting note that says “Finance to follow up”. The people who were present might understand it, but a colleague needs an owner, a next step and the expected timing. Compare notes that record what was said with records that confirm an assignment. Decide who can challenge a mistaken assignment and where the correction must appear.
+
 ## Begin with the work the record must support
 
 **Fictional case.** Harbour's weekly meeting produces notes that sales uses for customer communication, finance uses for control and operations uses for follow-up. The teams disagree about what “agreed” means. An automatic note generator could make this disagreement less visible by producing one smooth account.
@@ -53,3 +55,5 @@ The pilot compares omitted conditions, incorrect owners, time spent confirming n
 ## Read the organisational connection
 
 A correction interface needs to connect to the recurring work of confirming and using the record. The research chapter explains [artefacts and patterns of action](../../reference/research/05-routines.md#designing-an-artefact-and-designing-a-pattern).
+
+The research chapter also explains [how shared records acquire consistent meanings](../../reference/research/07-infrastructure-and-standards.md#standards-make-comparison-possible-and-require-continuing-work).

@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next: run a small SDK application](05-source-walkthrough.md)
 
+A free-text specialist report may hide the source number inside a sentence. A structured result gives the source and the claim named places. A trace records events such as a call, a returned result and a check. Follow one contribution through the trace to see whether it was returned, checked and accepted.
+
 ## A paragraph is difficult to combine reliably
 
 Two specialists return advice. One writes “probably ready”; the other supplies a long policy explanation. A coordinator cannot safely treat those as equivalent approval records. A structured contract separates contribution, evidence, uncertainty and status.

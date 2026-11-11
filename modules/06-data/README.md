@@ -1,5 +1,7 @@
 # Module 6: Data, labels, baselines and adaptation
 
+[Meet Harbour](../../HARBOUR.md) · [Run the workshop notebook](../../notebooks/06-data.ipynb)
+
 [Curriculum index](../../README.md) · [Start here](../../START-HERE.md) · [Local lab guide](../../reference/local-labs.md)
 
 Trace raw records, features, training updates and predictions. Redesign ambiguous routing labels before learning from them.

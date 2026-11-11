@@ -6,6 +6,8 @@ This guide explores those questions through fourteen modules in two connected pa
 
 Inspired by [Ed Donner's LLM Engineering course](https://github.com/ed-donner/llm_engineering) and [his Agents course](https://github.com/ed-donner/agents), it builds on the original engineering projects with step-by-step code explanations, business applications and ideas from organisation design research. [Read how the two connect](START-HERE.md#inspired-by-ed-donner-s-llm-engineering-course).
 
+The [companion notebooks](notebooks/README.md) let you run the small workshops locally. Follow [Harbour’s delivery case](HARBOUR.md) through the course or take the [organisation design research route](reference/literature-guide.md) through nine chapters.
+
 ## What you will learn
 
 You will learn to follow a request through an AI application, recognise common programming patterns, compare design alternatives and judge claims about business value. Along the way, you will examine how AI changes handoffs, decision-making, responsibility and everyday work.
@@ -56,7 +58,7 @@ Use the [framework tour](modules/13-agent-frameworks/04-framework-tour.md) and [
 
 ## Follow one problem as it develops
 
-Harbour Services is a fictional organisation handling a disputed delivery. The customer reports missing boxes, the warehouse record says the order is complete, and finance needs evidence before issuing a credit.
+Harbour is a fictional organisation handling a disputed delivery. The customer reports missing boxes, the warehouse record says the order is complete, and finance needs evidence before issuing a credit.
 
 Across the modules, this situation becomes a brief, an assistant conversation, meeting notes, a search task, a classification problem and a proposed workflow. Following the same situation makes it easier to see what each technical addition changes. Part II follows that work into specialist coordination, review queues and shared service interfaces. The case figures and events are invented for learning, not reported implementation results.
 

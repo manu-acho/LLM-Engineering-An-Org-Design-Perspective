@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: design knowledge ownership](06-design-lab.md)
 
+Follow a small set of documents into storage, through search and into the supplied context. Embeddings are lists of numbers that allow text to be compared; the local example makes the representation visible. Finding a passage supplies material for a response, while the source and its limits still need to travel with it.
+
+[Open the companion workshop notebook](../../notebooks/05-rag.ipynb).
+
 ## Follow the original ingestion path
 
 Open the course's [ingestion implementation](https://github.com/ed-donner/llm_engineering/blob/103f4bf045180f3b8b7721fd55b7897305a72672/week5/implementation/ingest.py). `fetch_documents` iterates through folders, loads Markdown and adds a `doc_type` field. The folder structure therefore becomes metadata used to interpret sources.

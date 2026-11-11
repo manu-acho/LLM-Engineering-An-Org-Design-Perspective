@@ -2,6 +2,8 @@
 
 [Previous lesson](02-code-workshop.md) · [Module route](README.md)
 
+“We could review the backlog on Friday” is a suggestion in a meeting. In notes, “Warehouse will review the backlog on Friday” gives a team an apparent commitment. Follow who said the original words, how the draft changed them and who can accept or correct the final record. A shorter sentence can assign work that nobody agreed to take.
+
 ## A sentence becomes a commitment
 
 **Fictional case.** In Harbour's meeting, an account manager says, “If the recount confirms the shortage, finance could consider a credit.” An AI note says, “Finance will issue a credit.” The note is clear and concise. It also removes a condition, changes a possibility into a commitment and reallocates responsibility.
@@ -67,3 +69,5 @@ The [complete module route](README.md) continues into the technical mechanism, [
 ## Read the organisational connection
 
 A generated meeting record is an artefact, distinct from participants' accounts and actions. The research chapter explains [understandings and performances](../../reference/research/05-routines.md#understandings-and-performances).
+
+The research chapter also explains [how shared records acquire consistent meanings](../../reference/research/07-infrastructure-and-standards.md#standards-make-comparison-possible-and-require-continuing-work).

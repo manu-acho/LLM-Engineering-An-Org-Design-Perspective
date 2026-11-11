@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+Two versions of the same brief can use the same model while organising their steps differently. A framework supplies reusable ways to run application work; a protocol sets rules for systems to communicate; an adapter translates between interfaces. Follow one input and output through each version so the comparison is about what the software actually does.
+
 ## The same goal, different machinery
 
 Harbour has teams experimenting with different agent frameworks. One prefers Google ADK, another Pydantic AI, and a third wants a TypeScript implementation. They all demonstrate a worker that reads a task, creates steps, writes an output and marks the task complete.
@@ -13,6 +15,8 @@ The course's fifth week deliberately repeats a small board-and-file task across 
 ## Separate model, framework, protocol and application
 
 A **model** generates predictions or text. A **framework** supplies reusable machinery for tools, loops, messages and other runtime behaviour. A **protocol** defines how components exchange particular kinds of requests and responses. An **application** combines those parts with a user-facing purpose and operating controls.
+
+In a draft-brief service, the model writes text. The framework can run a lookup and then pass its result to the next step. A protocol can define how the lookup request and response are exchanged. Harbour's application decides which case the caller may see and shows the answer to the adviser. Changing how requests travel should not change the case access rule.
 
 Changing the framework does not necessarily change the model. Two frameworks can call the same model with different prompts or tool descriptions, producing different results for reasons unrelated to the framework's scheduler. Likewise, a protocol can connect components built with different frameworks without making their business meanings agree.
 

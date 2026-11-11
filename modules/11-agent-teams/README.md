@@ -1,5 +1,7 @@
 # Module 11: Agent teams and task dependencies
 
+[Meet Harbour](../../HARBOUR.md) · [Run the workshop notebook](../../notebooks/11-agent-teams.ipynb)
+
 [Curriculum index](../../README.md) · [Start here](../../START-HERE.md) · [Local lab guide](../../reference/local-labs.md)
 
 Read task configuration and real crew execution. Decide where specialisation creates enough value to justify its integration and review work.

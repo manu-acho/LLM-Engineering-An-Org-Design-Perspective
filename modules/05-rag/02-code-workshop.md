@@ -2,6 +2,10 @@
 
 [Previous lesson](01-concepts.md) · [Module route](README.md) · [Next lesson](03-business-and-organisation.md)
 
+If a withdrawn policy contains the best search terms, Harbour still should not use it. First identify which records the rules allow, then see how word matches rank those records. Follow the source identifier into the text the assistant would receive so the evidence can be checked later.
+
+[Open the companion workshop notebook](../../notebooks/05-rag.ipynb).
+
 ## Build a search you can inspect
 
 We will use keyword overlap rather than embeddings. This makes the retrieval procedure visible without installing libraries. The limitations are part of the lesson, not a claim that this is a complete RAG service.

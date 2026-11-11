@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next: follow a real crew](05-source-walkthrough.md)
 
+A configuration is a set of settings that tells software what to run and how. A task listed below another one is not necessarily dependent on it; the dependency exists when it requires the earlier result. Read the settings as instructions for an actual case and identify where the result passes from one task to the next.
+
 ## Configuration changes behaviour
 
 A YAML file is structured text. Indentation groups fields. A key such as `agent` identifies a configured contributor; a `context` list names earlier outputs. A folded block introduced with `>` combines multiple written lines into a text value. The file is not Python, but the program can load it and use its values to construct Python objects.

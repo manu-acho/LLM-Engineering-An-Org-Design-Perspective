@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next: follow the full pipeline](05-source-walkthrough.md)
 
+When a model suggests the next piece of text, several pieces could fit. A probability gives each possible piece a share of the chance of being selected under the model's calculation. Follow one choice, add it to the text and see how it affects the next choice. Then follow the same reply through the application that presents it.
+
 ## What is being selected?
 
 Suppose a toy model gives three possible next tokens these probabilities: `confirmed` 0.6, `reported` 0.3 and `disputed` 0.1. These numbers concern continuations of a particular input. They are not a confidence assessment of the delivery evidence.

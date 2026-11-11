@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next module](../09-agent-loops/README.md)
 
+If a program reports “sending” and then stops, Harbour needs to know whether anything was sent. A terminal outcome marks the end of a run, such as completion or failure. Use the case record to distinguish a confirmed result from an unknown result. Recovery may require checking what happened before trying again.
+
 ## A progress message is not a final result
 
 A web interface starts work in a background thread so it can remain responsive. The worker sends progress events through a queue. If it fails before sending a final event, the interface can wait forever. The failure has happened, but the user-facing state never reaches a conclusion.

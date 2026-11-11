@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next: build a persistent graph](05-source-walkthrough.md)
 
+If warehouse and carrier each add a note, state must preserve both without duplicating them on replay. A reducer is a rule for combining an update with what is already stored. Replay runs work again from a chosen boundary; it can repeat an operation that had an outside effect. Follow one update and identify what could happen twice.
+
 ## State updates are partial contributions
 
 A node can return an update such as `{"stage": "review"}` without recreating every field in the case. The framework combines that update with existing state. For a scalar stage, replacement can be appropriate. For a list of events, replacement might discard history.

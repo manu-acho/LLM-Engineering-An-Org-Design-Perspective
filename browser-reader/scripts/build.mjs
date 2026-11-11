@@ -18,7 +18,8 @@ const moduleNames = {
 // An explicit reading list prevents authoring records or future working files
 // from appearing on the site just because they are Markdown.
 const readingFiles = [
-  'README.md', 'START-HERE.md', 'WORKBOOK.md', 'AGENT-ENGINEERING.md', 'SOURCE-MAP.md',
+  'README.md', 'START-HERE.md', 'HARBOUR.md', 'WORKBOOK.md', 'AGENT-ENGINEERING.md', 'SOURCE-MAP.md',
+  'notebooks/README.md', 'reference/further-learning.md', 'reference/research-study-pathways.md', 'reference/bibliography.md',
   'reference/glossary.md', 'reference/python-patterns.md', 'reference/literature-guide.md', 'reference/agents-source-guide.md',
   'modules/01-foundations-and-pipelines.md', 'modules/02-conversation-and-tools.md',
   'modules/03-open-models-and-inference.md', 'modules/04-evaluation-and-code-generation.md',
@@ -29,12 +30,19 @@ const readingFiles = [
 const researchFiles = [
   'reference/research/01-organisation-design.md', 'reference/research/02-coordination.md',
   'reference/research/03-decisions.md', 'reference/research/04-implementation.md',
-  'reference/research/05-routines.md', 'reference/research/06-technology-in-practice.md'
+  'reference/research/05-routines.md', 'reference/research/06-technology-in-practice.md',
+  'reference/research/07-infrastructure-and-standards.md',
+  'reference/research/08-governance-and-accountability.md', 'reference/research/09-process-architecture.md'
 ];
 
+export const downloads = Object.fromEntries([
+  ...Object.keys(moduleNames).map(name => [`notebooks/${name}.ipynb`, 'application/x-ipynb+json; charset=utf-8']),
+  ['references/references.bib', 'text/plain; charset=utf-8']
+].map(([source, type]) => [source, { url: `/downloads/${path.basename(source)}`, type }]));
+
 function sectionFor(relative) {
-  if (relative === 'reference/literature-guide.md' || researchFiles.includes(relative)) return 'Organisation design research';
-  if (['README.md', 'START-HERE.md', 'WORKBOOK.md', 'AGENT-ENGINEERING.md'].includes(relative)) return 'Start and study';
+  if (['reference/literature-guide.md', 'reference/research-study-pathways.md', 'reference/bibliography.md'].includes(relative) || researchFiles.includes(relative)) return 'Organisation design research';
+  if (['README.md', 'START-HERE.md', 'HARBOUR.md', 'WORKBOOK.md', 'AGENT-ENGINEERING.md', 'notebooks/README.md'].includes(relative)) return 'Start and study';
   if (relative.startsWith('modules/')) return moduleNames[relative.split('/')[1]] || 'Engineering references';
   return 'Sources and further reading';
 }
@@ -81,12 +89,16 @@ export async function buildReader() {
     { title: 'Part I: AI engineering foundations', sections: Object.values(moduleNames).slice(0, 8) },
     { title: 'Part II: Agent engineering and business integration', sections: Object.values(moduleNames).slice(8) }
   ];
-  const payload = { generatedAt: new Date().toISOString(), repoName: 'AI engineering and organisation design', documents, sectionOrder, moduleGroups, warnings: [] };
+  const payload = { generatedAt: new Date().toISOString(), repoName: 'AI engineering and organisation design', documents, sectionOrder, moduleGroups, downloads, warnings: [] };
+  await fs.mkdir(path.join(distRoot, 'downloads'), { recursive: true });
+  for (const [source, { url }] of Object.entries(downloads)) {
+    await fs.copyFile(path.join(projectRoot, source), path.join(distRoot, url.slice(1)));
+  }
   await fs.mkdir(distRoot, { recursive: true });
   await fs.writeFile(path.join(distRoot, 'content-index.json.tmp'), JSON.stringify(payload));
   await fs.rename(path.join(distRoot, 'content-index.json.tmp'), path.join(distRoot, 'content-index.json'));
   for (const file of ['index.html', 'app.js', 'styles.css']) await fs.copyFile(path.join(readerRoot, 'src', file), path.join(distRoot, file));
-  return { documents: documents.length, lessons: documents.filter(d => /^modules\/[^/]+\/\d{2}-/.test(d.path)).length, warnings: [] };
+  return { documents: documents.length, lessons: documents.filter(d => /^modules\/[^/]+\/\d{2}-/.test(d.path)).length, downloads: Object.keys(downloads).length, warnings: [] };
 }
 
 if (process.argv[1] && await fs.realpath(process.argv[1]) === await fs.realpath(fileURLToPath(import.meta.url))) console.log(await buildReader());

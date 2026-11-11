@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next module](../11-agent-teams/README.md)
 
+A central coordinator can request and combine contributions, or the specialists can take more responsibility for what they hand over. In either design, specify what each specialist must return, how a missing answer is shown and who resolves conflict. Consider whether running two reads at once saves enough time to justify the work of combining them.
+
 ## Two architectures express different working assumptions
 
 **Fictional case.** Harbour considers a central coordinator that gathers specialist advice and composes the response. A second proposal transfers cases to a specialist service that continues the conversation. The code can implement both. The organisation must decide what responsibility each arrangement expresses.
@@ -46,3 +48,5 @@ If technical handoffs succeed but specialists repeatedly return cases as unusabl
 ## Read the organisational connection
 
 Specialist contributions need to justify the coordination work their separation creates. The research chapter explains [decomposition and integration](../../reference/research/01-organisation-design.md#when-more-agents-create-more-integration-work).
+
+The research chapter also explains [the roles and events behind a handoff](../../reference/research/09-process-architecture.md#activities-events-roles-and-objects).

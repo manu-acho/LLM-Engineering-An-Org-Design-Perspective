@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next: inspect a real inference interface](05-source-walkthrough.md)
 
+A model cannot calculate directly with a phrase as printed. It starts by looking up a number for each piece of text, then uses a list of numbers to represent that piece. Attention lets the representation for one piece draw on information at other positions the model is allowed to use. Trace one piece through those changes before looking at the final scores for what could come next.
+
 ## Identifiers become representations
 
 A token ID is an address in a vocabulary. Its numerical size does not describe its meaning: token 900 is not necessarily more important than token 90. An **embedding layer** looks up a learned vector, a list of numerical values, for each ID. Position information also enters the computation so that ordering matters.

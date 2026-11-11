@@ -2,6 +2,8 @@
 
 [Module route](README.md) · [Next lesson](02-code-workshop.md)
 
+When a customer writes “What about the other order?”, the missing order number may be clear to a person who remembers the previous turn. A model request needs enough of that earlier exchange supplied again to make sense of it. History is the exchange so far; state is the information the application currently relies on, such as the selected case. The application must decide what to carry into the next request and when to ask which order the customer intends.
+
 ## The user thinks they are having one conversation
 
 The account manager writes: “Check order O-17.” The assistant replies with the order quantities. The manager then asks: “Who should review it?” To the person, this is one continuous exchange. To the application, it is a sequence of requests, stored messages, data lookups and generated responses.
@@ -11,6 +13,8 @@ If the program sends only “Who should review it?”, the meaning of “it” m
 ## History, state and memory
 
 **History** is a record of earlier turns. **State** is the information the application retains to continue its work. It can include history, a selected order ID, whether a lookup completed and whether an action is awaiting approval. “Memory” is often used for all of these, so ask what is actually stored and where.
+
+Suppose the saved messages say “Inspect order O-17” and “Who should review it?” The first message gives the second its meaning. The application can separately store H-17 as the case currently open. The order and case have different identifiers because they are different records. If the adviser switches to another case, updating the selected case does not erase the messages. The application has to decide which information the next answer should rely on.
 
 A list of messages is a simple history representation. A database record is more suitable for durable work across sessions. A summary can compress older turns, but it is another generated representation that can omit a qualification. None of these operations changes the model's weights by itself.
 

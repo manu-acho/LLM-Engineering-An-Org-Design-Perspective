@@ -2,6 +2,10 @@
 
 [Module route](README.md) · [Next: redesign the division of work](06-design-lab.md)
 
+The CrewAI project describes agents and tasks in settings and connects them in code. Find the instructions for one task, identify the agent assigned to it and follow the returned artefact. Reading the files together shows which dependencies exist in the running programme rather than in the names alone.
+
+[Open the companion workshop notebook](../../notebooks/11-agent-teams.ipynb).
+
 ## Open the files that cooperate
 
 Read the source [researcher crew](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/3_crewai/reference/researcher/src/researcher/crew.py) with its [tasks](https://github.com/ed-donner/agents/blob/542a7036c321a9308379507b06ce8d0deb370d5d/3_crewai/reference/researcher/src/researcher/config/tasks.yaml). `@CrewBase` supplies project conventions. Methods marked `@agent` construct configured agents; methods marked `@task` construct tasks. `@crew` assembles them with `Process.sequential` in the inspected implementation.
