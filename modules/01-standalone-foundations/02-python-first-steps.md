@@ -6,33 +6,21 @@
 
 ## What you'll learn and why it matters
 
-Read a short Python program and explain what each line stores, calculates or displays. Harbour needs these rules to keep a missing number or a customer report from turning into a confirmed figure.
+Start with two numbers and learn to read the four lines that give Harbour a difference of two boxes. Then give those numbers a source and teach the program what to do when one is missing. By the end, you should be able to predict what the program will display in each case and explain what the adviser can do with that result.
+
+Read the examples on this page or run them in the matching notebook. Run one code cell at a time from the top. The first cell is the subtraction itself. The examples use ordinary Python and need no API key, model or course package.
 
 ## Business context: Harbour
 
-Start with the subtraction on paper: twelve boxes recorded, ten reported, a difference of two. Python is a language for writing instructions a computer can follow. The first example gives a name to each number before asking Python to subtract them. Read the right side of each line first and then see where the result is kept. The program can find the difference; only the names explain what was compared.
+In Lesson 1.1, Harbour's adviser needed to find out why the customer said ten boxes arrived when the dispatch record showed twelve. This lesson uses two of the records for a smaller question: how does the customer's report compare with the order for twelve boxes? The dispatch record will enter the fuller investigation brief in Lesson 1.4.
 
-The investigator needs to read quantities and source labels reliably; the first Python operations make those distinctions visible.
+Try the comparison on paper before reading the code. Write “12 ordered” and “10 reported received”, then subtract ten from twelve. The result is two. Keep the labels beside both numbers, because “ten reported received” tells the adviser where to look next. “Ten received” would treat the customer's account as a confirmed count.
 
-[Company and supply-chain context](../../HARBOUR.md) · [Module 1 business situation](../../reference/harbour-learning-journey.md#module-1)
+[Company and supply-chain context](../../HARBOUR.md)
 
-## A program is a sequence of explicit operations
+## Calculate and display the difference
 
-Begin with the three lines under “Names and values”. The Python **interpreter** is the program that reads the instructions and carries them out. In a notebook, each **cell** holds a block of instructions or an explanation. Run one code cell at a time in the matching notebook, or read the lines on the page and predict the result. A line beginning with `#` is a comment for the reader.
-
-The complete lab lives in `foundations_lab.py`. Running a file from the terminal is another way to ask Python to carry out instructions. It is useful after the first example, but is optional for reading the lesson.
-
-The [setup guide](../../SETUP.md) prepares the checkout. In the checkout’s `examples/01-foundations` folder, the command below starts the word prediction example. The terminal is where this command goes; the three-line subtraction belongs in a Python cell.
-
-```sh
-python3 foundations_lab.py model
-```
-
-On Windows, use `py -3` in place of `python3`. `model` is an argument passed to the program. The command-line parser accepts `model`, `brief` or `request`; an unrecognised choice produces an error rather than quietly running a different example.
-
-## Names and values
-
-An assignment gives a value a name:
+Python is a language for writing instructions a computer can follow. Here is the complete first program:
 
 ```python
 ordered = 12
@@ -41,77 +29,87 @@ difference = ordered - reported_received
 print(difference)
 ```
 
-The first line stores twelve under the name `ordered`. The second stores ten under `reported_received`. The third reads those two values, subtracts ten from twelve and stores two under `difference`. The final line displays `2`. Change just the second line to `reported_received = 11` and the displayed value becomes `1`. This change alters the calculation's input; it does not verify a delivery.
+| Line | What Python does |
+| --- | --- |
+| `ordered = 12` | Gives twelve the name `ordered`. The equals sign assigns the value on the right to the name on the left. A name used this way is called a **variable**. |
+| `reported_received = 10` | Gives ten the name `reported_received`. The underscore keeps the two words together in one name. |
+| `difference = ordered - reported_received` | Looks up the two numbers, subtracts ten from twelve, and gives the result the name `difference`. |
+| `print(difference)` | Displays the current value of `difference`, which is `2`. The parentheses tell Python to run `print` with that value. |
 
-`=` assigns a value; it is not a mathematical claim that two expressions are always equal. `12` is an integer, a whole number. `"reported"` is a string, text between quotation marks. Clear names communicate the meaning of the values. Calling the second value `actual_received` would hide a qualification before any model was involved.
+Change ten to eleven and run all four lines again. The displayed result becomes `1`. The third line has to run again because it calculates the difference from the values available at that moment. Restore ten before continuing in the notebook.
 
-A **dictionary** holds values under named keys. A **list** holds values in an order. The lab's case uses a dictionary containing smaller dictionaries:
+## Keep the source with the quantity
 
-```python
-order = {"quantity": 12, "source_id": "order-17"}
-facts = [order]
-```
-
-`order["quantity"]` retrieves twelve. `facts[0]` retrieves the first item, because Python counts positions from zero. `order.get("quantity")` retrieves the value when present and returns `None` otherwise. `None` is a special value used here to represent absence. It does not mean zero.
-
-## Functions make a contract visible
-
-A **function** groups operations under a name. Its parameters name the inputs, and `return` supplies an output:
+A Harbour adviser needs to see where the figure came from. Store the quantity and source together in a **dictionary**, which is a group of named entries inside curly brackets. Each entry has a name, called a **key**, and a value.
 
 ```python
-def compare(ordered, reported_received):
-    return ordered - reported_received
-
-result = compare(12, 10)
+customer_report = {"quantity": 10, "source_id": "customer-17"}
+reported_received = customer_report.get("quantity")
+print(reported_received)
+print(customer_report["source_id"])
 ```
 
-`def` begins the definition. Indentation identifies the function's body. Parentheses in `compare(12, 10)` call the function. The returned value is assigned to `result`. The function does not print it automatically.
+Inside the curly brackets, `"quantity": 10` pairs the key `"quantity"` with the number ten. The comma separates it from the next entry. The value `"customer-17"` is a **string**, a piece of text between quotation marks. It identifies the record in this exercise. The number `10` has no quotes, so Python can use it in arithmetic.
 
-For any function, identify four things: inputs, output, side effects and failures. A **side effect** changes something outside the returned value, such as writing a file or sending a request. The lab's evidence preparation returns a new brief without changing the input. Its command-line entry point prints the result. It makes no remote request.
+Both square brackets and `.get()` look up an entry by its key. The example prints `10`, then `customer-17`. We use `.get("quantity")` because a report can arrive without a count. In that case, `.get()` gives back `None`, a special Python value that can represent missing information. Square brackets would stop with an error if the requested key were missing.
 
-## Conditions, loops and explicit failure
+## Decide what to do when the count is missing
 
-An `if` statement selects behaviour according to a condition. A `for` loop repeats operations over a collection. The brief builder checks each required record before adding it to the output. If a record is missing, it raises `ValueError`, an exception indicating an unacceptable value.
+Imagine that the customer's report arrives with a source identifier and no quantity. On paper there is nothing to subtract. The program can apply the same reasoning.
 
 ```python
-quantity = order.get("quantity")
-if type(quantity) is not int or quantity < 0:
-    raise ValueError("Expected a nonnegative whole quantity")
+incomplete_report = {"source_id": "customer-17"}
+reported_received = incomplete_report.get("quantity")
+
+if reported_received is None:
+    print("Customer count missing. Ask for the quantity.")
+else:
+    print(ordered - reported_received)
 ```
 
-Read the check as “If the value is not a whole number or is below zero, stop and report that it was invalid.” The colon opens the block that runs if the check finds a problem. The check keeps missing quantities from becoming zero. It also rejects `True`, a **boolean** or yes/no value, so it cannot be counted as one box. This strict rule suits the toy input contract. A different application might accept decimal weights, but it would need to state the unit and validation rules explicitly.
+Read `if reported_received is None:` as “if the lookup found no value, do the indented step below”. The colon opens that group of instructions. Spaces at the start of the next line show it belongs to the condition. `else` gives the alternative when a number is available. Python runs one of the two branches. Here it displays the request for a count.
 
-## Modules and the entry point
+A report that gives zero boxes should go through the subtraction branch. Zero is a recorded answer to the question “how many?” An absent count leaves the question open.
 
-`import json` makes Python's standard JSON tools available. An **import** can also load another local file, which is why the tests and lab file must remain together. The **standard library** is the collection distributed with Python; no additional package installation is needed here.
+## Give the comparison a name
 
-The final guard is:
+If Harbour uses the check on many reports, it can write the instructions once and reuse them. A **function** is a named group of instructions. Defining it prepares the instructions for later use. Calling it runs them with particular inputs.
 
 ```python
-if __name__ == "__main__":
-    main()
+def compare_quantities(ordered_boxes, reported_boxes):
+    if reported_boxes is None:
+        return "Customer count missing. Ask for the quantity."
+    return ordered_boxes - reported_boxes
+
+print(compare_quantities(12, 10))
+print(compare_quantities(12, None))
 ```
 
-When the file is run as the program, it calls `main`. When the tests import the file to examine its functions, that command-line entry point does not run. Separating reusable functions from the entry point makes checks easier.
+1. `def` introduces the function. The names in the first pair of parentheses are placeholders for the inputs.
+2. `compare_quantities(12, 10)` runs it with twelve under the name `ordered_boxes` and ten under `reported_boxes`. The check finds a number, so the function uses the last line of its indented instructions.
+3. `return` hands a result back to whoever called the function and ends that call. The outer `print` displays the returned value, `2`.
+4. In the second call, `reported_boxes` is `None`. The first `return` sends back the message straight away, and the subtraction is skipped.
 
-## A first reading exercise
+Returning a number or a message makes the two paths easy to see in a first example. In a larger application, callers need a reliable way to distinguish results from problems. Lesson 1.4 shows how the full lab checks required records before building a brief.
 
-Predict what `order.get("missing")` returns and why the lab should not treat it as a delivered quantity.
+## Try it with three reports
 
-**Worked response:** it returns `None`. The missing field supplies no quantity. Substituting zero would create a factual claim not contained in the record. The [decision-premises discussion](../../reference/research/03-decisions.md#decision-premises) explains why such defaults can matter to subsequent choices.
+Predict what the function gives for each of these inputs. Write down what the adviser can conclude in each case before checking the answer.
 
-The [official Python introduction](https://docs.python.org/3/tutorial/introduction.html) provides further explanation of assignments, numbers and strings. The runnable lab and subsequent lessons supply the patterns needed for this module.
+- Twelve ordered and thirteen reported received.
+- Twelve ordered and zero reported received.
+- Twelve ordered and no count supplied.
+
+**Worked answer.** The first result is `-1`. The customer reported one more box than ordered. The second result is `12`, a difference based on a report of zero. In the third case, Python displays a request for the count. That case is still missing an input. Even with a number, the adviser still has a comparison of records to investigate before reaching a conclusion about the delivery.
 
 ## What to remember
 
-A variable gives a value a name, a function groups operations, and a check can refuse unsuitable input. A missing quantity carries different information from zero.
+A variable names a value, a dictionary keeps named values together, and a function lets the program reuse instructions. A condition lets the program ask for missing evidence before calculating. The labels explain what the arithmetic compares, and the result shows the size and direction of the disagreement.
 
 ## What this means for the business process
 
-Agree the meaning of each quantity with the people who supply and use it before writing the check. For H-17, a missing receipt count should send the adviser to the source, because substituting zero silently supplies a premise for a later remedy decision.
-
-For the research behind this design choice, read [Decision premises](../../reference/research/03-decisions.md#decision-premises).
+At Harbour, customer service should obtain a missing count before the application calculates a difference. Once a number is available, the brief should carry its source and describe it as reported. An investigator can then decide whether to ask the warehouse or carrier for more evidence. Replacing a blank count with zero would change the information the investigator relies on and could make a missing report look like a reason to consider a full replacement. The decisions chapter explains how the information supplied at one step shapes the choices available later. [Decision premises](../../reference/research/03-decisions.md#decision-premises).
 
 ## Next lesson
 
-Having traced a rule written by a programmer, you can now trace a rule the program derives from examples by counting what follows each word. [Lesson 1.3: Train a tiny language model](03-learning-and-generation.md).
+Here, every rule came from the person writing the program. In the next lesson, you will reuse named values and function calls to follow a program that builds a rule from examples. It counts which word follows another and uses those counts to choose what to write next. [Lesson 1.3: Train a tiny language model](03-learning-and-generation.md).
